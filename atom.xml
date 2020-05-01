@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>NemoLaw</title>
+  
+  <subtitle>work hard, be persistent, and good luck</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://luoxugeng.github.io/"/>
+  <updated>2019-12-30T02:41:00.000Z</updated>
+  <id>http://luoxugeng.github.io/</id>
+  
+  <author>
+    <name>NemoLaw</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2019四季度回顾</title>
+    <link href="http://luoxugeng.github.io/2019/12/30/2019-review/"/>
+    <id>http://luoxugeng.github.io/2019/12/30/2019-review/</id>
+    <published>2019-12-30T02:41:00.000Z</published>
+    <updated>2019-12-30T02:41:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>其实我做的比较多的是月回顾和季度回顾,因为一年的时间周期太长了。</p><h2 id="财务上"><a href="#财务上" class="headerlink" title="财务上"></a>财务上</h2><h3 id="净现金流变成-1"><a href="#净现金流变成-1" class="headerlink" title="净现金流变成+1"></a>净现金流变成+1</h3><p>我的资产在2019年6月才由负转为正。在今年12月，我的现金流也变成正的了。 我在年初的时候设立了一个目标： 让自己的净现金流变成+1元。在12月那么多支出的情况下，这个目标还能达成是十分高兴的事情。</p><h3 id="定投A股一年了"><a href="#定投A股一年了" class="headerlink" title="定投A股一年了"></a>定投A股一年了</h3><p>在之前文章：<a href="https://nemolaw.com/2019/10/04/20191004-talk-about-money/" target="_blank" rel="noopener">今天我们谈谈钱相关的</a> ，我谈到了我现在财务的规划方式. 在定投上，截止到20191230，绝对收益率是 5.03%. 今年会想到开始定投A股，是因为意识到我们个体跟国家的命运其实是息息相关的。这相当于我拿部分的资金来看好中国经济的未来。</p><h3 id="BTC回本了"><a href="#BTC回本了" class="headerlink" title="BTC回本了"></a>BTC回本了</h3><p>而且目前是我所有投资品类里面收益率最高的一个。 但我现在发现，我就算想卖出，也是十分麻烦而且没有保障的。BTC算是我真正意义上的纸面财富。我现在还没想好接下来怎么操作</p><h3 id="股市略赚"><a href="#股市略赚" class="headerlink" title="股市略赚"></a>股市略赚</h3><p>股市就是一个磨练心性的地方。按我在<a href="https://nemolaw.com/2019/10/04/20191004-talk-about-money/" target="_blank" rel="noopener">今天我们谈谈钱相关的</a> 说的，股市只是一个辅助手段。  </p><h3 id="今年的消费情况"><a href="#今年的消费情况" class="headerlink" title="今年的消费情况"></a>今年的消费情况</h3><p><img src="https://nemolaw.s3.amazonaws.com/2019-review.jpg" alt=""></p><ol><li>家庭支出(31%)是的，虽然我经常说我对家庭没心没肺，但花费上却是大头。来自家庭的财务压力，今年开始就少了很多了。</li><li>投资性支出(25%): 主要是定投，BTC</li><li>住宅（13%）： 因为平常吃饭都在公司，在北京的生活成本剩下的就是租房了。</li><li>保险,医疗 ： 这种属于必要的开支，今年我大学遗留至今的牙体牙髓根治了。也算是一件好事。</li><li>电子产品，话费交通， 书籍，服饰： 今年给我的启示就是，这些以后不要取纠结了，想花就花，因为没多少</li><li>宠物（2%）：今年急剧上升的，因为养了两只猫。哈哈，算是一种陪伴吧。</li></ol><h3 id="收入"><a href="#收入" class="headerlink" title="收入"></a>收入</h3><p>这个没什么好说的了。</p><p>我82%的收入由上班带来, 来年的收入预计完全取决于我继续上班的能力. 哈哈哈😂.  </p><p>资产负债表里面，现在属于固定资产的有： 每个月上缴的公积金； 每个月到账的期权。</p><h3 id="财务总结"><a href="#财务总结" class="headerlink" title="财务总结"></a>财务总结</h3><p>我给我的朋友说过：当生活感觉不如意的时候，把你的所有一条条列出来， 就像上面一样，看看自己有什么，要什么。 在这过程也避免了情绪决定，在面对未知的时候才有更多的底气。</p><h2 id="工作上的满足"><a href="#工作上的满足" class="headerlink" title="工作上的满足"></a>工作上的满足</h2><p>自从11月22日加入K3的战役以来，一天大部分时间是被工作占据的.遇到的问题其实跟复杂软件开发遇到的问题一样</p><ul><li><p>涉及多方，如何协同</p></li><li><p>需求变更/迭代频繁. </p></li></ul><p>但我们的CTO有一句话是说的对的:** 不是每个互联网人都有这样的机会，例如当年3Q大战对腾讯的影响。当时参与其中的人可能没多大的感觉，但在回忆起来时就显得弥足珍贵 **</p><p>满足点在于： </p><ol><li>这是一场目标十分明确的战役. </li></ol><p>1.1 面向春节，有时间的压力</p><p>1.2 我们有自己的目标且已经对外宣称。</p><ol start="2"><li>参与的人想的都是贡献一份力量.</li></ol><p>这种时候平时只会说无法落地到实处的人自然会有所收敛.</p><ol start="3"><li>不管遇到什么问题，都能解决，都要解决.</li></ol><p>第三点这种状态我是十分喜欢的，日常的工作太多扯皮的事情了， 也有一些事情好像做与不做，好坏参半。在这种时候，最高效地把问题解决是第一要事。给了我们很大的发挥空间。</p><p>事后我想的是，要是我不是在10月的时候， 从海外的业务抽离出来，这场战役我是不是只能是个旁观者。 可能这才是我的目的吧。</p><h2 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h2><p>我有个计划， 今年回去的时候找个很久没见的朋友。 在北京这三年的时间， 其实我发现我没有我想象的喜欢波动性，我也没有我想象的那么有才。生活，或许是两个人的事情，而不是一个人单打独斗。</p><p>我为啥至今单身？ 可能是源自我的家庭. 任何人都拜托不了原生家庭对自己的影响吧.我对家庭的看法，感情的看法,我知道,是有问题的。</p><p>但要是现在有个人我愿意去跟她分享，仔细想想，这个人也是存在的。</p><p>这个年后，或许我这薛定谔的生活会有个答案。</p><h2 id="身体健康"><a href="#身体健康" class="headerlink" title="身体健康"></a>身体健康</h2><p>还是没心没肺一如既往地好. 我一旦专注起来是没日没夜的,也因为如此才会更关注自己的身体健康.今年4月体检报告显示轻度脂肪肝(就是肥). 来北京三年体重暴增30斤,大部分是因为开了家店后每天的压力与不健康的饮食.我大学4年深圳两年,体重一直在60kg徘徊,老实说是有点瘦的. 店关了之后,心态一调整, 已经从75kg下降到70kg.理想一点的体重是65kg吧,努力加把油是能降下来的😄😄.</p><h2 id="展望"><a href="#展望" class="headerlink" title="展望"></a>展望</h2><ol><li>财务上: 持续上升的现金流是一件好事. </li><li>工作：现在对工作我不会说疲倦，反而说是在一个最好的状态。 我对于我要走的路是没有任何质疑的，只是实现的方式（工作能带给我的满足感）我要继续探索。</li><li>生活：年后会深圳一趟再决定吧</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      其实我做的比较多的是月回顾和季度回顾。
+    
+    </summary>
+    
+    
+      <category term="瓶中小人" scheme="http://luoxugeng.github.io/categories/%E7%93%B6%E4%B8%AD%E5%B0%8F%E4%BA%BA/"/>
+    
+    
+      <category term="个人圈" scheme="http://luoxugeng.github.io/tags/%E4%B8%AA%E4%BA%BA%E5%9C%88/"/>
+    
+      <category term="心智成熟" scheme="http://luoxugeng.github.io/tags/%E5%BF%83%E6%99%BA%E6%88%90%E7%86%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>企业和员工是契约关系，不是家人关系</title>
+    <link href="http://luoxugeng.github.io/2019/12/03/20191203about-recently/"/>
+    <id>http://luoxugeng.github.io/2019/12/03/20191203about-recently/</id>
+    <published>2019-12-03T04:00:00.000Z</published>
+    <updated>2019-12-03T04:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="事情"><a href="#事情" class="headerlink" title="事情"></a>事情</h2><p>华为某员工因为赔偿没有谈妥，被抓进去200多天。整个过程，我是有几个疑惑点的。 </p><ul><li>接近40多岁， 上有老下有小的，对一个理性人来说， 这么死磕的动机何在？ </li></ul><blockquote><p>想想他老婆的心理压力， 连期间去世的爷爷也没有见着。 正常人中途就认怂了。 所以这一部分， 当事人是没有说出why的</p></blockquote><ul><li><p>华为缺钱吗？ </p></li><li><p>要是当事人整个过程没有录音， 并且多处备份。舆论估计会两极化而不是一边倒。 </p></li></ul><p>整个过程， 其实就是个人与庞大组织的对抗，个人最有利的武器就是舆论了。</p><h2 id="我的想法"><a href="#我的想法" class="headerlink" title="我的想法"></a>我的想法</h2><p> 其实我并不关心这个人， 真的不关心。 对我意义更大的或许是： 我怎么可以不陷入他那样的境地？ </p><p> 事情会演变成这样子， 他心理在很早之前，在面临选择之前，其实应该能察觉到。估计是因为懒惰才会在最后拼命挣扎。</p><p> 互联网行业，按我之前说的， 我是一个受益者。它在短短几年的时间<strong>加速</strong>改变了我整个生涯轨迹。<strong>我感恩我遇到的一切，我也相信我会继续幸运下去。</strong></p><h2 id="一篇日记"><a href="#一篇日记" class="headerlink" title="一篇日记"></a>一篇日记</h2><p> 这是我2014年的一篇日记， 当时大三快大四了，也陷入了找工作的焦虑， 或者说，对未来的焦虑。<br> 现在回过头来看， 我觉得<em>吸引力法则</em>是有效果的。 你吸引你设想的事情。</p><p><img src="https://nemolaw.s3.amazonaws.com/20140815-about-work.jpg" alt=""></p><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>这几个问题， 在工作快5年的时间， 我是在问自己的</p><ul><li><p>你是怎么认识这个世界的？</p></li><li><p>这个世界对你意味着什么？ </p></li><li><p>工作对你意味着什么？</p></li><li><p>你要怎么衡量你的人生？ </p></li><li><p>家庭对你意味着什么？ </p></li></ul><p>尝试回答这些问题，在某个时刻，面临取舍的时候， 或许你会更有底气一些，重要的是，可能是，让自己少一些遗憾。</p>]]></content>
+    
+    <summary type="html">
+    
+      华为的事情，我写点。
+    
+    </summary>
+    
+    
+      <category term="每日写一点" scheme="http://luoxugeng.github.io/categories/%E6%AF%8F%E6%97%A5%E5%86%99%E4%B8%80%E7%82%B9/"/>
+    
+    
+      <category term="每日写一点" scheme="http://luoxugeng.github.io/tags/%E6%AF%8F%E6%97%A5%E5%86%99%E4%B8%80%E7%82%B9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>人生的愿景(资料搜集方法)</title>
+    <link href="http://luoxugeng.github.io/2019/11/04/to_explore_why/"/>
+    <id>http://luoxugeng.github.io/2019/11/04/to_explore_why/</id>
+    <published>2019-11-04T05:05:00.000Z</published>
+    <updated>2019-11-04T05:05:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="为什么"><a href="#为什么" class="headerlink" title="为什么?"></a>为什么?</h2><p>首先是为什么.</p><p>2017年的时候我的财务陷入了困境,当时我做的一件事就是,拿起笔和纸,每个月计算一下,脱离这样的困境需要我做什么.<br>过去一年每个月我都能很明确看到我财务上的进展,我也很清楚接下来几个月大致的方向, 这种确定性让我很心安.也让我知道哪些风险我是可以继续承担,哪些是需要三思的.<br>最近工作的不舒适感也恰好促发了我进一步的思考: <strong>其实,我到底要怎么来衡量我的人生?</strong></p><p>有钱?是的,肯定是要有钱,然后呢? 工作满足感? 社会关系? 家人? …</p><p>当我摸不着头脑的时候,我的第一反应是: </p><ul><li><p><strong>或许这个话题是已经有人研究过了,我应该找些书来读读</strong></p></li><li><p>我是做数据的,为了避免自己的局限性, 我需要扩充我的数据集来帮助我更好的决策.</p></li></ul><h2 id="首先目标要明确"><a href="#首先目标要明确" class="headerlink" title="首先目标要明确"></a>首先目标要明确</h2><p>我的目标是: 人生有哪些主题是要被考虑的.细节方面先不要去深究.</p><p>例如,我能肯定财富是其中一个. 财富衍生出来的话题,例如对财富的态度, 赚取财富的方法, 投资相关的等等, 这些是重要但次要的。</p><p>大限将至的人心理念念不忘的是什么? 活得自在的人他们是做对了哪些事情? 这些是我会关心的.</p><h2 id="搜集资料的阶段"><a href="#搜集资料的阶段" class="headerlink" title="搜集资料的阶段"></a>搜集资料的阶段</h2><h3 id="Youtube-Google"><a href="#Youtube-Google" class="headerlink" title="Youtube/Google/"></a>Youtube/Google/</h3><p>搜索 vision life . 搜索结果前5页， 视频播放量/点赞最高的，都会在我的to read list 里面。 </p><h3 id="豆瓣-Amazon"><a href="#豆瓣-Amazon" class="headerlink" title="豆瓣/Amazon"></a>豆瓣/Amazon</h3><p>关于书籍,自然会想到豆瓣.</p><p>先找到我认为值得学习的人:</p><p>我关注的人, 张一鸣,战隼,刘未鹏…然后通过知乎扩展人数:<a href="https://www.zhihu.com/question/21142623" target="_blank" rel="noopener">豆瓣上面有哪些值得关注的用户？</a></p><p>接下来,爬取他们豆瓣阅读过的书籍.总共有6k多本.然后做了一些过滤： 评价4星以上,看书名和他们的评价.我觉得可能跟我探索主题有关的我就加入我的to read 列表. 结果添加了100本书籍.</p><h2 id="带着目的性去阅读这些资料。"><a href="#带着目的性去阅读这些资料。" class="headerlink" title="带着目的性去阅读这些资料。"></a>带着目的性去阅读这些资料。</h2><p>一本书，花不到10min的时间，可能只有5%的收获，但我可以在数量上弥补。</p>]]></content>
+    
+    <summary type="html">
+    
+      这篇文章主要讲,过去一周，为了确认人生应该关注哪些主题,我都干了些啥.
+    
+    </summary>
+    
+    
+      <category term="瓶中小人" scheme="http://luoxugeng.github.io/categories/%E7%93%B6%E4%B8%AD%E5%B0%8F%E4%BA%BA/"/>
+    
+    
+      <category term="数据科学" scheme="http://luoxugeng.github.io/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/"/>
+    
+      <category term="心智成熟" scheme="http://luoxugeng.github.io/tags/%E5%BF%83%E6%99%BA%E6%88%90%E7%86%9F/"/>
+    
+      <category term="迷思的天空" scheme="http://luoxugeng.github.io/tags/%E8%BF%B7%E6%80%9D%E7%9A%84%E5%A4%A9%E7%A9%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>丢猫手册-如何丢弃一只猫</title>
+    <link href="http://luoxugeng.github.io/2019/10/09/20191009-how-to-abandon-a-cat/"/>
+    <id>http://luoxugeng.github.io/2019/10/09/20191009-how-to-abandon-a-cat/</id>
+    <published>2019-10-09T10:00:00.000Z</published>
+    <updated>2019-10-09T10:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>不同的人有不同的养猫方式.我见过有一些对猫很粗鲁的.也有一些就喜欢小猫,长大之后不可爱了就送人了.</p><p>不管出于什么原因有人会把猫丢弃, 我也不想去judge. 以一个理智的人提出我的一些看法.</p><p>** 当舍弃不可避免,请让ta离开你之后有更高的生存几率.**</p><ul><li><p>提前规划, 避免在大冬天的时候把猫扔出大街</p></li><li><p>提前规划, 逐渐减少它的粮食, 如果ta平时被你宠的嘴很挑, 这时候更要把它的习惯改过来</p></li><li><p>提前规划, 你附近一定会有一个像样一点的小区(小区不是很旧,周围树荫多), 请把ta丢在那里. </p></li><li><p>提前规划, 让猫把指甲生长出来.家宠指甲都是剪掉的,但是在野外这是它们的生存工具.</p></li></ul><p>最后,听天由命. 反正与你无关了</p><p>丢猫的理由千奇百怪</p><p>对我而言,它们是彼此的陪伴,它们是我的陪伴.</p><p>有时候看看我家nemo一世和nemo二世,我很好奇,最后到底是我目送它们离世,还是我走在它们前面?</p><p>至少不像小孩吧,我在哪,它们就在哪.</p><p>对小王子来说,满园的玫瑰只会让他思忆.</p><p><img src="https://nemolaw.s3.amazonaws.com/nemo-and-his-cats.jpg" alt="妖娆的姿势"></p>]]></content>
+    
+    <summary type="html">
+    
+      北京的冬天已经来了,一天就降温十几度.看到街头的流浪猫在瑟瑟发抖.
+    
+    </summary>
+    
+    
+      <category term="每日写一点" scheme="http://luoxugeng.github.io/categories/%E6%AF%8F%E6%97%A5%E5%86%99%E4%B8%80%E7%82%B9/"/>
+    
+    
+      <category term="迷思的天空" scheme="http://luoxugeng.github.io/tags/%E8%BF%B7%E6%80%9D%E7%9A%84%E5%A4%A9%E7%A9%BA/"/>
+    
+      <category term="每日写一点" scheme="http://luoxugeng.github.io/tags/%E6%AF%8F%E6%97%A5%E5%86%99%E4%B8%80%E7%82%B9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于这个假期</title>
+    <link href="http://luoxugeng.github.io/2019/10/07/20191007-holiday/"/>
+    <id>http://luoxugeng.github.io/2019/10/07/20191007-holiday/</id>
+    <published>2019-10-07T08:00:00.000Z</published>
+    <updated>2019-10-07T08:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>有些人会因为放假而焦虑的. 例如我上一年的沙拉店. 因为是在写字楼, 消费群众都是办公司白领.放一个国庆意味着:</p><ul><li>连续7天,即使你想开店, 也没有客源.</li><li>店不开,房租继续交,工人的工资继续付.</li></ul><p>单单是这一点,上一年已经让我从假期前焦虑到假期后. 这让我养成了一个习惯,没事我会估算着一家店的<br>成本, 利润率 , 一天要多少流水才不至于倒闭… 是的,如此的焦虑,只有一个目标:不至于倒闭…</p><p>发现公司有钱真好. 发现打工真好. (即使磨洋工好像也是理所当然的样子 )</p><p>** 可怜的资本家**</p>]]></content>
+    
+    <summary type="html">
+    
+      说件事情,关于这个7天假期
+    
+    </summary>
+    
+    
+      <category term="每日写一点" scheme="http://luoxugeng.github.io/categories/%E6%AF%8F%E6%97%A5%E5%86%99%E4%B8%80%E7%82%B9/"/>
+    
+    
+      <category term="个人圈" scheme="http://luoxugeng.github.io/tags/%E4%B8%AA%E4%BA%BA%E5%9C%88/"/>
+    
+      <category term="冰山下的80%" scheme="http://luoxugeng.github.io/tags/%E5%86%B0%E5%B1%B1%E4%B8%8B%E7%9A%8480/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(电影)守望者</title>
+    <link href="http://luoxugeng.github.io/2019/10/05/20191005-watchmen/"/>
+    <id>http://luoxugeng.github.io/2019/10/05/20191005-watchmen/</id>
+    <published>2019-10-05T04:00:00.000Z</published>
+    <updated>2019-10-05T04:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://movie.douban.com/subject/1972698/" target="_blank" rel="noopener">豆瓣:Watchmen</a></p><p>列举一下我在电影中享受到的’愉悦点’:</p><h2 id="基调"><a href="#基调" class="headerlink" title="基调"></a>基调</h2><p>电影的基调是阴冷,场景: 晚上,下雨的晚上,  唯一一个明亮的场景是荒芜的南极.</p><h2 id="反差"><a href="#反差" class="headerlink" title="反差"></a>反差</h2><ul><li><p>电影里的英雄心理都是有问题的, 披着英雄的外衣,有着平常人一样疲惫不堪,阴暗的内心.</p></li><li><p>战争场面响起欢快的Ride Of The Valkyries</p></li><li><p>情侣的吵架变成默片</p></li></ul><h2 id="情节"><a href="#情节" class="headerlink" title="情节"></a>情节</h2><p>这电影的故事情节根本没有,或者一句话就能说完.后面能找到大boss也是靠着碰运气–猜电脑密码(要是猜不出估计没法玩了).但你又会发现导演讲了很多.</p><p>整部电影都是依靠这每个人的内心活动来支撑的.导演也没打算讲一个滴水不漏的故事.这样的拍片方式其实很容易把观众整懵.这部片高超在于导演用一条线把英雄的内心活动串联起来: Comedian 的死去. 每个人在回忆Comedian的同时,他们的人格其实也塑造了起来.</p><p>一开始以为Comedian就是反社会,随着回忆递进,我们会发现 Comedian 和 Rorschach 一样都是活得明白的人,嗯,两个活得明白,仍然令人讨厌的反社会.一个选择用Joke来面对,一个选择伸张正义.</p><p>有一幕我是特别感动的:第一代 Owl 死去的时候, 那一段拍的很悲壮: 他每一次挥拳,过去的高光时刻与现在的英雄迟暮形成反差,但至少, 他还是选择战斗.”廉颇老矣,尚能饭否?”. 还有第一代Silk Spectre 在回忆过往时候的动作,很多事情导演都没有只说,却刚刚好给我们留下了想象的空间: 她在想念Comedian那个混蛋.其实Comedian也是.</p><h2 id="一个没想明白的细节"><a href="#一个没想明白的细节" class="headerlink" title="一个没想明白的细节"></a>一个没想明白的细节</h2><p>Rorschach 一直很在意自己的面具,他说过,面具下的那个人已经死去,只剩下Rorschach.但最后让 MANHATTAN 杀了自己的时候,他是把面具脱下来的.这个我没想明白是什么意思,作为人类死去而不是一个英雄?</p><h2 id="台词摘录"><a href="#台词摘录" class="headerlink" title="台词摘录"></a>台词摘录</h2><p>这里做台词的摘录,把电影拍得像在吟诗一样</p><p><a href="https://www.imsdb.com/scripts/Watchmen.html" target="_blank" rel="noopener">电影剧本</a></p><h3 id="Rorschach"><a href="#Rorschach" class="headerlink" title="Rorschach"></a>Rorschach</h3><p>Tonight, a comedian died in New York.Somebody knows why. Soon there will be war,Millions will perish in sickness and mesery.Why does one death matter against so many? Because there is good and evil,and evil must be punished.Even in the face of armageddon,I will not compromise in this (Rorschach)</p><p>Edward Blake–the Comedian. Born 1944, buried in the rain. Murdered. Is that what happends to us ? no time for friends? only our enemies leave roses.</p><p>Violent lives ending violently.</p><p>I heard a joke once. Man goes to a doctor, says he’s depressed. Life seems harsh and cruel. Doctor says, “the treatment is simple.<br>The great clown Pagliacci is in town tonight. Go and see him. That should pick you up.”<br>The man bursts into tears. “But doctor,” he says.”I am Pagliacci.” Good joke. Everybody laugh.Roll on snare drum,Curtains.</p><p>The streets are extended gutters …and the gutters are full of blood.And when the drains finally scab over…all the vermin…will drown.The accumulated filth of all their sex and murder…will foam up around their waists…and all the whores and…politicians will look up and shout,”Save us.” And I’ll whisper,”No.”</p><p>what you call compassion, wanting to protect and understand the guilty. This rotting society,what is calls rehabilitation,noting short of compromise.there are other men in here with behavior more extreme than mine,doctor…you wanna know about Rorschach?I’ll tell you about Rorschach… Once a man has seen society’s black underbelly,he can never turn his back on it .Never pretend,like ypu do, that it does’t exist,no matter who orders him to look the other way.We don’t do this thing because it’s permitted .We do it because we have to ,We do it because we’re compelled.</p><p>From then on , there was only Rorchach.See, doctor,God didn’t kill that little girl,Fate didn’t butcher her and destiny didn’t feed her to those dogs,If God swa what any of us did that night,he didn’t seem to mind . From then on , I knew:God doesn’t make the world this way,We do.</p><p>I live my life free of compromise,and step into the shadow without complaint or regret. – Rorschach, November 1st</p><h3 id="First-Silk-Spectre"><a href="#First-Silk-Spectre" class="headerlink" title="First Silk Spectre"></a>First Silk Spectre</h3><p>what happended happended 40 years ago.I am 67 years old,Every day, the future  looks a little bit darker,but the past, even the grimy parts of it ,keep on getting brighter.</p><h3 id="Comedian"><a href="#Comedian" class="headerlink" title="Comedian"></a>Comedian</h3><p>You know, mankind is been trying to kill each other off since the beginning of time.Now we finally have the power to finish the job. nothing gonna matter once those nukes start flying.We’ll all be dust.</p><p>Watchmen.That is the real joke.</p><p>Blake understood.Human are savage in nature,No matter how much you try to dress it up ,to disguise it ,Blake saw society’s true face,chose to be a parody of it.A joke.</p><p>DR. MANHATTAN : Blake. She was pregnant. You gunned her down. Blake turns on him, spitting fury.</p><p>BLAKE:That’s right! And you know what? You watched me! You could’ve changed the gun into steam or the bullets into mercury or the bottle into snowflakes, but you didn’t, did you? You’re drifting outta touch, Doc–I’ve seen it. Don’t tell me the war got to you. Blake walks off shouting “Medic!” Dr. Manhattan turns to the girl’s body and regards it, curious.</p><h3 id="Osterman"><a href="#Osterman" class="headerlink" title="Osterman"></a>Osterman</h3><p>It’s like this world,this real world to him, it’s like walking through mist.And people are just shadows.Shadows in a fog.</p><p>i am looking at the starts.They’re so far away,and their light takes so long to reach us ,all we ever see of stars are their old photographs.</p><p>I am tired of being caught in the tangle of their lives.They claim their labors are to build a heaven,yet their heaven is populated with horrors.Perhaps the world is not made ,Perhaps noting is made . A clock without a craftsman. It’s too late,Always has been…always will be too late.</p><p>The most powerful thing in the universe is still just a puppet?<br>We are all puppets,Laurie,I’m just a puppet who can see the strings.</p><p>In my opinion, the existence of life  is a highly overrated phenomenon.</p><p>but you, Adrian , you’re just a man,the world’s smartest man poese no more threat to me than does its smartest termite.</p><h3 id="最后一个场景"><a href="#最后一个场景" class="headerlink" title="最后一个场景"></a>最后一个场景</h3><p>Rorschach 质问 Osterman,但我感觉他就是在质问上帝一样,质问他为什么对一切都无动于衷.</p><p>“ If you’d cared from the start,none of this would have happended “</p><p>I can change almost anything,but I can’t change human nature.</p>]]></content>
+    
+    <summary type="html">
+    
+      今年观影最佳.但竟然是2009年的电影.
+    
+    </summary>
+    
+    
+      <category term="书影空间" scheme="http://luoxugeng.github.io/categories/%E4%B9%A6%E5%BD%B1%E7%A9%BA%E9%97%B4/"/>
+    
+    
+      <category term="迷思的天空" scheme="http://luoxugeng.github.io/tags/%E8%BF%B7%E6%80%9D%E7%9A%84%E5%A4%A9%E7%A9%BA/"/>
+    
+      <category term="每日写一点" scheme="http://luoxugeng.github.io/tags/%E6%AF%8F%E6%97%A5%E5%86%99%E4%B8%80%E7%82%B9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>今天我们谈谈钱相关的</title>
+    <link href="http://luoxugeng.github.io/2019/10/04/20191004-talk-about-money/"/>
+    <id>http://luoxugeng.github.io/2019/10/04/20191004-talk-about-money/</id>
+    <published>2019-10-04T06:00:00.000Z</published>
+    <updated>2019-10-04T06:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a>基础篇</h2><p>我直接说我认为的结论吧, 非常基础,刚入门的人可能都没这个意识</p><ol><li>先重心放在工作上,积累原始资本</li></ol><p>一份正常固定的工作,让你有稳定的收入来源. 即使你遇到了很糟糕的事情,这份工作至少会给你度过难关的信心.</p><p>另外一点: 投资股市一年8%增长,那算是万中无一. 但要是你专注于工作,一年调薪8%是个小目标. 别想着赚快钱,这种心态容易让人失衡,本末倒置</p><ol start="2"><li>3~6个月的现金缓冲期.</li></ol><p>这里说的是现金流.统计你过去半年每个月的支出.你需要预留3~6个月的现金防止意外发生(例如公司裁员等等)</p><ol start="3"><li>按照自己的实际情况,适当买保险.</li></ol><p>哪些人出了事情你是不会见死不救的? 思考这一点,然后想想他们现在是否有足够的保障.<br>建议,理解重疾险,医疗保险,意外险各自的作用,也不要瞎买一堆保险.</p><ol start="4"><li>记录自己的收入/支出</li></ol><p>入门: 简单记录流水</p><p>进阶:  财务有三大报表: 资产负债表/现金流表/权益表.可以把自己当成一家企业来管理,这是一项一次学习,受用终身的技能.</p><h3 id="评估自己的财务状况"><a href="#评估自己的财务状况" class="headerlink" title="评估自己的财务状况."></a>评估自己的财务状况.</h3><p>参见基础篇.</p><h3 id="对财务的展望"><a href="#对财务的展望" class="headerlink" title="对财务的展望"></a>对财务的展望</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">例如,想早点退休:</span><br><span class="line"></span><br><span class="line">据说,净现金达到300w&#x2F;人就足以退休.当然是过着基本朴素的生活.</span><br><span class="line"></span><br><span class="line">例如,想攒钱凑够房子的首付.</span><br><span class="line"></span><br><span class="line">例如,只是单纯看到数字的增长让自己很安心.</span><br></pre></td></tr></table></figure><p>写下来,每个季度展望的时候,我就感觉到特别安心.</p><h2 id="投资篇"><a href="#投资篇" class="headerlink" title="投资篇."></a>投资篇.</h2><p>我2017年~2018年初其实玩得很凶,完全忽视了基础篇说的东西.还加杠杆.(关于杠杆可以另开一篇).</p><p>我之所以没被杠杆压死,就是起码还有一份能赚钱的工作,另一点就是年轻.(但人不会永远年轻)</p><p>现在我投资的做法是:</p><ol><li>强制储蓄的部分用单独的卡放着,每周一花500块钱购买A股的指数.</li></ol><p>其实就是定投.一周500块钱,一个月就是2500封顶.资金的来源来自我每个月的强制储蓄. 要是你看过犹太人相关的书籍,就会知道他们会有10%强制储蓄用来捐赠的习惯,这个习惯我从初中一直记录着. 定投的周期,考虑到我的实际习惯,觉得一个月周期对我来说太长了.参考知乎<a href="https://www.zhihu.com/question/35163926" target="_blank" rel="noopener">基金定投一定赚钱吗？</a>,所以是每周一雷打不动买.</p><p>购买指数,其实我的目的就是: 保守,只想赚平均数.当收益率到达30%的时候,我会考虑开始撤离. 让读者看看我现在的收益情况.</p><p><img src="https://nemolaw.s3.amazonaws.com/my-fixasset-rate.png" alt=""></p><p>半年过去了,收益率1.4%,还曾经亏损-4.5%. 但其实我的确是闲钱投资,这样的波动其实我没感觉到啥.</p><h2 id="股市"><a href="#股市" class="headerlink" title="股市"></a>股市</h2><p>我离场了半年,让自己静静.年轻有一个好处, 可以忍受高的波动性(不确定性).所以又一次进场了. 但大部分时间在观望状态.</p><blockquote><p>最近上了新策略，把自己资金分成十份，一个月只出手一次，甚至两个月出手一次。其他时间只能观望调整基准。止损是3个点，止盈是10个点。一年6%的收益似乎是可行的。 一颗老韭菜的独白 (20190905 在朋友圈写的)</p></blockquote><p>前几天阿里跌的时候,以前的我回想着”抄底博反弹”.现在我会想,现在入场,我最大收益有10%吗? 短期内好像没有,那继续等等吧.</p><h2 id="认识"><a href="#认识" class="headerlink" title="认识"></a>认识</h2><p>写一下,当作是总结. 但我没提到的是,我对财务到底有什么目标? 其实是没有的.现在看着这些数字的跳动,至少我知道我正处于进可攻退可守的地位.知道这一点,我很满足,心很安.</p><p>就是这样</p>]]></content>
+    
+    <summary type="html">
+    
+      今天我们聊聊财务.财务上我做了哪些工作,有什么目标,希望得到什么样的结果.想到哪写到哪
+    
+    </summary>
+    
+    
+      <category term="瓶中小人" scheme="http://luoxugeng.github.io/categories/%E7%93%B6%E4%B8%AD%E5%B0%8F%E4%BA%BA/"/>
+    
+    
+      <category term="迷思的天空" scheme="http://luoxugeng.github.io/tags/%E8%BF%B7%E6%80%9D%E7%9A%84%E5%A4%A9%E7%A9%BA/"/>
+    
+      <category term="每日写一点" scheme="http://luoxugeng.github.io/tags/%E6%AF%8F%E6%97%A5%E5%86%99%E4%B8%80%E7%82%B9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(纪录片)竞相灭绝</title>
+    <link href="http://luoxugeng.github.io/2019/10/03/20191003-racing-extinction/"/>
+    <id>http://luoxugeng.github.io/2019/10/03/20191003-racing-extinction/</id>
+    <published>2019-10-03T15:00:00.000Z</published>
+    <updated>2019-10-03T15:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>这部片要是只是提出人类灭绝其他生物这个观点, 它不会变成我的最佳. 因为除了短时间的情绪共鸣很快会被时间冲淡.导演把更多的篇幅放在了一些人的努力上,’即使黑暗,也有烛光’.</p><blockquote><p>让人们去感受这些生物的美好,让他们意识到, 有一些生物活着会比他们死去还要美好.</p></blockquote><p><img src="https://nemolaw.s3.amazonaws.com/howmanysharkthere.jpg" alt="这一排有多少鲨鱼?"></p><p>进化了几亿年的的鲨鱼，躲过了第五次物种灭绝也没逃过人类的猎杀</p><p>我们总是认为， 会有别人做些什么来改变这一切. 但是事实经常是相反的， 它们就在我们的等待中永远消失了</p><p><img src="https://nemolaw.s3.amazonaws.com/movie/racing.extinction.jpg" alt="它还活着,但还能活多久?"></p><ul><li>知道有个饭馆在出售濒危生物,比起在餐馆门口高喊抗议, Ady Gil 在门口立了一个投影仪, 上面写着:  The Blue Fin Tuna on your menu will soon be extinct !! 背景是这些生物在海里游着.</li></ul><blockquote><p>I can be here for a month or two or a year or whatever.How long can resturant survive while i am here?</p></blockquote><ul><li>The Cornell Bioacoustial Laboratory : 拥有全世界最丰富的动物声音仓库.</li></ul><blockquote><p>The whole world is singing, But we’ve stopped listening.</p></blockquote><blockquote><p>This is a song recording of a male ‘o’o singing on <a href="https://www.engadget.com/2018/05/25/kauai-oo-honeyeater-youtube-memorial-ghost-media/?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAALCljyWruXd3y1DCxNOesBYftOs6kzKvDZO0bPxq28dL2hj1HCEomockztJnvC6y0OZXbp-6f3_O6TX-JGB5ttlRZSysucXAQIeptEJ-TpuqvBJ8hAj3tDKF2E9JFX-W7Phsyh6354YPnRfW0d22zW9GN41Vz1YpgxkTNGRObQ5w" target="_blank" rel="noopener">Kauaʻi ʻōʻō</a>, these birds mate for life,,so he would be singing a duet with his mate,where he sings,and then she sings back and forth.Here comes the mate’s song,there’s no response. Here’s the mate’s song again. That’s the last male of a species,singing for a female,who will never come. He’s totally alone.. And now his voice has gone.</p></blockquote><ul><li>利用特制镜头拍摄二氧化碳, 你可以看到我们呼出的CO2,汽车的,飞机的… 这些平常大家肉眼看不到的东西,现在就呈现在你的面前.让人们自己去思考,这些到底意味着什么</li></ul><p>对导演Louie Psihoyos 而言: 影像并不是只能用于单纯的娱乐，它可以是世界上最有力的武器</p><h2 id="摘录"><a href="#摘录" class="headerlink" title="摘录"></a>摘录</h2><p>what if it’s going on right now and everbody’s missing it?Each year, about one in a million species shuold expire naturally, in the next few decade ,we’ll driving species to extinciton a thousand times faster than they should be.</p><p>I want people understand that we’re the only generation left that can save these animals.There’s not other future generation that we can count on to save us .It’s us .</p><p>people will look back on this particular period and say to themself :”how did those people at that time just allow all these amazing creatures to vanish?” But it would be very little use in me or anybody else exerting all this energy to save the wild places,if people are not being educated into being better stewards than we’re been. If we all lose hope ,there is no hope .Without hope ,people faill into apathy. There’s still a lot left,that’s worth fighting for. — Jane Goodall</p><p>photographs isn’t just about showing somebody how beautiful something is .it’s a weapon</p><p>I think we live in a very visual world.Imagery is very powerful.Cause you can walk into a room,they might speak 15 different language.But you show them a photograph,people get it .They understand.</p><p>**  My hope is that if you can show people the beauty of these animals,there’s a chance to save these things.**</p><p>We want them to get an entirly new view,that the stuff they go out in the water and they see everyday and they stick a spear in is worth for more alive than death.<br>The  concept of converting this hunting culture to a tourism culture on the surface seems pretty daunting ,but we show them the success stories that we’ve had in these others areas,We’re just bringing  a message.It’s really up to them.</p><p>Most people say you can’t beat money,you can’t beat polities,you can’t beat those thing with just hope and inspiraton.</p><p>As we face more and more animals extinctions,we need more and more of these indomitable spirits.and we need more people to understand it’s worth doing .The small choices we make each day can lead to the kind of world that we all want for the future.</p><p>Better to light one candle than curse the darkness .There’s so many people who sit back and say,but you know what ? That candle … that candle means something, because with that one candle ,maybe  someone else with a candle will find you.And I think that’s where movements are started.</p>]]></content>
+    
+    <summary type="html">
+    
+      真是意外,这竟然是我今年看过最赞的纪录片.
+    
+    </summary>
+    
+    
+      <category term="书影空间" scheme="http://luoxugeng.github.io/categories/%E4%B9%A6%E5%BD%B1%E7%A9%BA%E9%97%B4/"/>
+    
+    
+      <category term="探索与发现" scheme="http://luoxugeng.github.io/tags/%E6%8E%A2%E7%B4%A2%E4%B8%8E%E5%8F%91%E7%8E%B0/"/>
+    
+      <category term="AhaMoment" scheme="http://luoxugeng.github.io/tags/AhaMoment/"/>
+    
+      <category term="冰山下的80%" scheme="http://luoxugeng.github.io/tags/%E5%86%B0%E5%B1%B1%E4%B8%8B%E7%9A%8480/"/>
+    
+      <category term="每日写一点" scheme="http://luoxugeng.github.io/tags/%E6%AF%8F%E6%97%A5%E5%86%99%E4%B8%80%E7%82%B9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TED-工作中的鸡群效应</title>
+    <link href="http://luoxugeng.github.io/2019/10/02/ted-margaret_heffernan_why_it_s_time_to_forget_the_pecking_order_at_work/"/>
+    <id>http://luoxugeng.github.io/2019/10/02/ted-margaret_heffernan_why_it_s_time_to_forget_the_pecking_order_at_work/</id>
+    <published>2019-10-02T12:00:15.000Z</published>
+    <updated>2019-03-30T07:25:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>新型管理三原则<br>1.不应该有超级明星,我们需要每个人<br>2.做事只遵循一个标准,没有最好,只有更好<br>3.不应该干涉,干涉别人的破坏力不容忽视</p><p><a href="https://www.ted.com/talks/margaret_heffernan_why_it_s_time_to_forget_the_pecking_order_at_work" target="_blank" rel="noopener">https://www.ted.com/talks/margaret_heffernan_why_it_s_time_to_forget_the_pecking_order_at_work</a></p><p>普渡大学一位名叫威廉·谬尔的 生物进化学家研究了鸡. 他对生产率很感兴趣– 我觉得他的研究关系到我们每个人– 但计算鸡的生产率很简单, 只需要数数鸡蛋就行了. (笑声) 他想要知道如何提高鸡的生蛋率, 所以他设计了一个巧妙的实验. 鸡都是群居的,所以他 先选择了一群普通的鸡, 然后他让这一群鸡 独自生存繁衍直到第六代. 然后他又用生产力最强的鸡 创建了第二个鸡群– 你可以叫它们 “超级鸡”– 他将超级鸡放在一起 成了”超级鸡群”, 然后在每一代里, 他都选择最高产的鸡来繁衍.<br>An evolutionary biologist at Purdue University named William Muir studied chickens. He was interested in productivity – I think it’s something that concerns all of us – but it’s easy to measure in chickens because you just count the eggs. (Laughter) He wanted to know what could make his chickens more productive, so he devised a beautiful experiment. Chickens live in groups, so first of all, he selected just an average flock, and he let it alone for six generations. But then he created a second group of the individually most productive chickens – you could call them superchickens – and he put them together in a superflock, and each generation, he selected only the most productive for breeding.</p><p>在经过六代以后, 他发现了什么呢? 第一群普通的鸡,表现都不错. 它们都身形结实,羽翼丰满, 并且鸡蛋的产量急剧增加. 而第二群呢? 除了三只以外,全死了. 那三只鸡把其他的鸡都啄死了. (笑声) 这些个个高产的鸡只是通过挤兑同伴 才获得了成功.<br>After six generations had passed, what did he find? Well, the first group, the average group, was doing just fine. They were all plump and fully feathered and egg production had increased dramatically. What about the second group? Well, all but three were dead. They’d pecked the rest to death. (Laughter) The individually productive chickens had only achieved their success by suppressing the productivity of the rest.</p><p>现在,我走遍世界, 在各类组织和公司里 讲述这个故事, 人们几乎立刻就看出了其中的关联, 然后都跑来对我说这样的话: “我们的公司就是那个超级鸡群.” (笑声) 有的说:”那就是我的国家.” 还有的说:”那就是我的人生.”<br>Now, as I’ve gone around the world talking about this and telling this story in all sorts of organizations and companies, people have seen the relevance almost instantly, and they come up and they say things to me like, “That superflock, that’s my company.” (Laughter) Or, “That’s my country.” Or, “That’s my life.”</p><p>我的一生中都被告知 要获得成功只有不断地竞争: 进好的学校,找好的工作,要做人上人, 但我从来没有觉得 这些话有多激励人. 我开始为自己的事业奋斗, 因为创造是快乐的, 也因为与许多优秀的, 有创造力的人并肩奋斗, 本身就是一种回报. 我自己从来不会 通过挤兑他人或被他人挤兑 而获得激励. 但是五十多年过去了, 我们用超级鸡的模式经营了 大多数组织和很多社会. 我们曾觉得成功靠的是挑选顶尖人才, 把那些最聪明的男人 或者女人放在一起, 然后给他们所有的资源和权利. 结果也和威廉的实验如出一辙: 那些拔尖者野心勃勃, 组织功能失调,还出现了各种资源的浪费. 如果成功实现高生产率的唯一途径 是通过抑制对手的生产率的话, 那我们就更加迫切的需要另外一条路, 和更多样的方法去生存. (掌声)<br>All my life I’ve been told that the way we have to get ahead is to compete: get into the right school, get into the right job, get to the top, and I’ve really never found it very inspiring. I’ve started and run businesses because invention is a joy, and because working alongside brilliant, creative people is its own reward. And I’ve never really felt very motivated by pecking orders or by superchickens or by superstars. But for the past 50 years, we’ve run most organizations and some societies along the superchicken model. We’ve thought that success is achieved by picking the superstars, the brightest men, or occasionally women, in the room, and giving them all the resources and all the power. And the result has been just the same as in William Muir’s experiment: aggression, dysfunction and waste. If the only way the most productive can be successful is by suppressing the productivity of the rest, then we badly need to find a better way to work and a richer way to live. (Applause)</p><p>那么,到底是什么造就了一些团队, 比其他的更加成功,更加高效? 这也是麻省理工大学的 一个研究团队提出的问题. 他们邀请了几百名志愿者, 将他们分成几组, 让他们解决非常困难的问题. 结果与你期望的一样, 其中一些团队会比另外一些优秀很多, 但真正有趣的是,表现优异的团队 并不是拥有一两个 超高智商的人的团队. 也不是那些整体智商水平 最高的团队. 反之,那些成功的团队都有三个特点. 第一,他们都有着较高的社交灵敏度. 这是由一种叫”由眼及心”的 测试检测出来的. 它被广泛的理解为同理心测试, 在这个测试里面获得高分的团队 解决问题的表现更优异. 第二 ,成功的团队给了 每个人同样的时间, 这样就没有任何人会成为主导, 也没有任何人有机会搭便车. 第三,成功的团队里 都有更多的女性员工. (掌声) 是不是因为女性 通常在”由眼及心”测试里 得分更高, 所以她们所在的团队具有双倍的同理心? 或者是因为她们用更多的视角看问题? 这个问题我们无从知晓, 然而重要的是 这个实验证实了我们的理论: 那些团队表现优异的关键 在于每个人和队友的关系.<br>So what is it that makes some groups obviously more successful and more productive than others? Well, that’s the question a team at MIT took to research. They brought in hundreds of volunteers, they put them into groups, and they gave them very hard problems to solve. And what happened was exactly what you’d expect, that some groups were very much more successful than others, but what was really interesting was that the high-achieving groups were not those where they had one or two people with spectacularly high I.Q. Nor were the most successful groups the ones that had the highest aggregate I.Q. Instead, they had three characteristics, the really successful teams. First of all, they showed high degrees of social sensitivity to each other. This is measured by something called the Reading the Mind in the Eyes Test. It’s broadly considered a test for empathy, and the groups that scored highly on this did better. Secondly, the successful groups gave roughly equal time to each other, so that no one voice dominated, but neither were there any passengers. And thirdly, the more successful groups had more women in them. (Applause) Now, was this because women typically score more highly on the Reading the Mind in the Eyes Test, so you’re getting a doubling down on the empathy quotient? Or was it because they brought a more diverse perspective? We don’t really know, but the striking thing about this experiment is that it showed what we know, which is some groups do better than others, but what’s key to that is their social connectedness to each other.</p><p>那么这个原理是 怎样在现实生活中体现的? 这意味着人与人之间的互动非常重要, 因为在成员之间高度契合 和反应灵敏的团队里, 创意才会涌动并且发展壮大. 人们不会被某个想法困扰住, 不会浪费精力钻牛角尖.<br>So how does this play out in the real world? Well, it means that what happens between people really counts, because in groups that are highly attuned and sensitive to each other, ideas can flow and grow. People don’t get stuck. They don’t waste energy down dead ends.</p><p>举个例子: Arup是世界上最成功的工程公司之一, 它是北京奥运会 马术中心的建造商. 现在,这个建筑必须容纳 2500匹刚由长途飞机运送过来的 高质量的纯种马, 这些马儿有很严重的时差, 身体状况也并不算好. 而工程师面临的问题是 要应付多少马粪? 这个问题在工程学院可没学过– (笑声)– 但是谁也不想把这种问题搞砸, 其实他本可以花上几个月时间 和兽医交流,做各种研究, 调整电子数据表, 但实际上他通过四处寻求帮助, 找到了一个曾经设计过 纽约赛马场的人, 问题用了不到一天就解决了. Arup 相信他们成功的精髓 是互帮互助的文化.<br>An example: Arup is one of the world’s most successful engineering firms, and it was commissioned to build the equestrian center for the Beijing Olympics. Now, this building had to receive two and a half thousand really highly strung thoroughbred horses that were coming off long-haul flights, highly jet-lagged, not feeling their finest. And the problem the engineer confronted was, what quantity of waste to cater for? Now, you don’t get taught this in engineering school – (Laughter) – and it’s not really the kind of thing you want to get wrong, so he could have spent months talking to vets, doing the research, tweaking the spreadsheet. Instead, he asked for help and he found someone who had designed the Jockey Club in New York. The problem was solved in less than a day. Arup believes that the culture of helpfulness is central to their success.</p><p>互帮互助听起来很没士气, 但它在成功的团队里却至关重要, 其作用往往胜过个体的智慧. 互帮互助意味着 “我没有必要了解所有事”. 我只需要在一群愿意寻求 并给予帮助的人之间工作. 在SAP(德国软件公司),他们算出一个人 可以在17分钟之内回答任何问题. 但是,从没有一个 和我合作过的高科技公司 曾经觉得这是个技术问题, 因为驱使大家互助的 正是彼此间的互相了解. 既然互助听起来那么浅显, 让我们觉得它会自然发生, 但并非如此. 当我在经营第一家软件公司时, 我意识到我们陷入了困境. 除了许多摩擦就没有别的了, 后来我渐渐认识到, 我雇的那些聪明又有创造力的人 并不了解彼此. 他们将全部的精力都 投入了各自的工作, 他们甚至都不知道 是谁坐在他们旁边, 只有当我坚持让大家停掉工作, 花些时间去认识他人的时候, 我们才取得了一些突破性的进展. 那是20年以前的事儿了, 如今我访问的公司<br>Now, helpfulness sounds really anemic, but it’s absolutely core to successful teams, and it routinely outperforms individual intelligence. Helpfulness means I don’t have to know everything, I just have to work among people who are good at getting and giving help. At SAP, they reckon that you can answer any question in 17 minutes. But there isn’t a single high-tech company I’ve worked with that imagines for a moment that this is a technology issue, because what drives helpfulness is people getting to know each other. Now that sounds so obvious, and we think it’ll just happen normally, but it doesn’t. When I was running my first software company, I realized that we were getting stuck. There was a lot of friction, but not much else, and I gradually realized the brilliant, creative people that I’d hired didn’t know each other. They were so focused on their own individual work, they didn’t even know who they were sitting next to, and it was only when I insisted that we stop working and invest time in getting to know each other that we achieved real momentum.</p><p>都不允许员工在桌上放咖啡杯, 因为公司希望人们能够走到 咖啡机前与人交流. 在瑞士,甚至有个与之相关的专有名词. 他们管这叫做 fika, 意思是超越茶歇的活动. 也表示集体的休整. 在缅因州的Idexx公司, 他们在园区里修了一个菜园, 让所有部门的人 能够凑到一起干活儿, 并且了解整个公司的运营状况. 是这些人都疯了吗? 恰恰相反, 他们知道了当事情进展不顺时, 当然,如果你的工作具有突破性的意义, 就必然会遇到瓶颈期, 人们需要的是社交上的支持, 也需要知道他们可以向谁求助. 公司造不出创意,只有人可以. 真正激励人的 是彼此间建立的联系,忠诚和信任. 重要的是砂浆, 而不只是砖头.<br>Now, that was 20 years ago, and now I visit companies that have banned coffee cups at desks because they want people to hang out around the coffee machines and talk to each other. The Swedes even have a special term for this. They call it fika, which means more than a coffee break. It means collective restoration. At Idexx, a company up in Maine, they’ve created vegetable gardens on campus so that people from different parts of the business can work together and get to know the whole business that way. Have they all gone mad? Quite the opposite – they’ve figured out that when the going gets tough, and it always will get tough if you’re doing breakthrough work that really matters, what people need is social support, and they need to know who to ask for help. Companies don’t have ideas; only people do. And what motivates people are the bonds and loyalty and trust they develop between each other. What matters is the mortar, not just the bricks.</p><p>当你将两者放在一起, 就是所谓的社会资本. 它是一种信赖和依存, 能够建立信任. 这个名词来自于一位社会学家, 他对社区的研究证明了 社会在紧张时期具备更高的适应性. 社会资本可以让公司稳固, 也可以使公司更有活力. 那它有什么实际意义吗? 它代表:时间就是一切, 社会资本会随着时间增加. 所以团队磨合得越久就工作得越好, 因为要让人真正坦诚和坦率, 就需要时间来建立信任. 时间会造就价值. 当Alex Pentland在建议一家公司 整合茶歇时间, 让所有人都有时间去和别人交流时, 公司的利润增加了1500万美元, 并且雇员满意度上升了10%. 这份社会资本的回报还不赖, 甚至消耗的过程中还会不断增加. 这里不涉及裙带关系, 也没有懒人的位置, 因为这样去做的人 总是会有些毛毛躁躁, 急功近利,心里只有自己, 因为他们觉得 这才能体现出自己的价值. 冲突会很频繁,但坦率总是好的. 这就是一个尚可的点子变成杰作的过程, 因为没有哪个点子生来就完美. 它就像新生儿的诞生一样, 有点混乱,困惑,但是未来充满可能. 在接受外界慷慨的帮助, 有了信念,战胜挑战之后, 才能发挥出它们最大的潜能. 这就是社会资本所支持的.<br>Now, when you put all of this together, what you get is something called social capital. Social capital is the reliance and interdependency that builds trust. The term comes from sociologists who were studying communities that proved particularly resilient in times of stress. Social capital is what gives companies momentum, and social capital is what makes companies robust. What does this mean in practical terms? It means that time is everything, because social capital compounds with time. So teams that work together longer get better, because it takes time to develop the trust you need for real candor and openness. And time is what builds value. When Alex Pentland suggested to one company that they synchronize coffee breaks so that people would have time to talk to each other, profits went up 15 million dollars, and employee satisfaction went up 10 percent. Not a bad return on social capital, which compounds even as you spend it. Now, this isn’t about chumminess, and it’s no charter for slackers, because people who work this way tend to be kind of scratchy, impatient, absolutely determined to think for themselves because that’s what their contribution is. Conflict is frequent because candor is safe. And that’s how good ideas turn into great ideas, because no idea is born fully formed. It emerges a little bit as a child is born, kind of messy and confused, but full of possibilities. And it’s only through the generous contribution, faith and challenge that they achieve their potential. And that’s what social capital supports.</p><p>但我们很少谈论这个话题, 很少用这种方式谈论智慧和创造力. 我们习惯谈论明星员工. 所以我开始想, 如果我们开始以这种方式培养人才, 是不是就不会再有明星员工了呢? 所以当我在欣赏 伦敦皇家艺术学院戏剧的试演时, 眼前的一切真的让我很惊讶, 因为教授们并不看重个人的表演能力. 他们看重的是学生之间那种互动, 因为戏剧就是这样产生的. 而当我与一些畅销专辑的 制作人交谈时, 他们通常说, “当然了,我们有很多音乐巨星. 只不过他们的名气并没有持续很久. 合作性非常强的人, 在事业上往往可以做得更久, 因为当他们激励别人做到最好的同时, 也往往会将最好的自己呈现出来.” 当我访问那些以独特性 和创造性闻名的公司, 我甚至并没有看到什么明星员工, 因为每个人都很重要. 当我反思自己的事业, 以及我有幸合作的出色的同事时, 我意识到如果我们放弃 做”超级鸡”的话, 我们其实可以给予对方更多. (笑)(鼓掌) 一旦你们真正理解 人与人之间的互动, 很多问题就会迎刃而解. 人才竞赛类型的管理哲学总是鼓励 员工们互相竞争. 如今社会资本已经代替了竞争. 几十年来, 我们试过用金钱去激励人们, 尽管已有大量的研究表明, 金钱将破坏人与人之间的社会连接. 现在,我们应该让人们互相激励. 多年来,我们认为领导者 应该像救世主那样 独自解决复杂的难题. 如今,我们应该重新定义领导力, 领导力就是有能力 去创造一种环境, 让其中的每个人都能集思广益.<br>Now, we aren’t really used to talking about this, about talent, about creativity, in this way. We’re used to talking about stars. So I started to wonder, well, if we start working this way, does that mean no more stars? So I went and I sat in on the auditions at the Royal Academy of Dramatic Art in London. And what I saw there really surprised me, because the teachers weren’t looking for individual pyrotechnics. They were looking for what happened between the students, because that’s where the drama is. And when I talked to producers of hit albums, they said, “Oh sure, we have lots of superstars in music. It’s just, they don’t last very long. It’s the outstanding collaborators who enjoy the long careers, because bringing out the best in others is how they found the best in themselves.” And when I went to visit companies that are renowned for their ingenuity and creativity, I couldn’t even see any superstars, because everybody there really mattered. And when I reflected on my own career, and the extraordinary people I’ve had the privilege to work with, I realized how much more we could give each other if we just stopped trying to be superchickens. (Laughter) (Applause) Once you appreciate truly how social work is, a lot of things have to change. Management by talent contest has routinely pitted employees against each other. Now, rivalry has to be replaced by social capital. For decades, we’ve tried to motivate people with money, even though we’ve got a vast amount of research that shows that money erodes social connectedness. Now, we need to let people motivate each other. And for years, we’ve thought that leaders were heroic soloists who were expected, all by themselves, to solve complex problems. Now, we need to redefine leadership as an activity in which conditions are created in which everyone can do their most courageous thinking together.</p><p>我们知道这行得通. 当蒙特利尔议定书提倡 逐步禁用氯氟烃时, 因为氯氟烃会导致臭氧空洞, 这样的风险是极大的. 氯氟烃无处不在, 而且没有人清楚能否找到替代品. 但是有个团队迎接了挑战 并采用了三个关键原则. 工程学院的院长Frank Maslen这样说: 第一,团队里不应该有明星队员. 我们需要每个人. 每个人都有独到的见解. 第二, 我们做事只遵循一个标准: 没有最好,只有更好. 第三,他告诉他的老板Geoff Tudhope, 不应该进行干涉, 因为Frank明白 干涉别人的破坏力不容忽视. 当然,这并不意味着 Tudhope只能毫无作为. 他要保证团队的正常运作, 也会倾听团队的意见 并确保他们遵守原则. 这招奏效了:Tudopen的公司在处理 这个棘手问题时的表现,远远超越了其他公司, 首先获得了成功. 到目前为止,蒙特利尔协定书 是执行的最成功的 国际环境合约.<br>We know that this works. When the Montreal Protocol called for the phasing out of CFCs, the chlorofluorocarbons implicated in the hole in the ozone layer, the risks were immense. CFCs were everywhere, and nobody knew if a substitute could be found. But one team that rose to the challenge adopted three key principles. The first was the head of engineering, Frank Maslen, said, there will be no stars in this team. We need everybody. Everybody has a valid perspective. Second, we work to one standard only: the best imaginable. And third, he told his boss, Geoff Tudhope, that he had to butt out, because he knew how disruptive power can be. Now, this didn’t mean Tudhope did nothing. He gave the team air cover, and he listened to ensure that they honored their principles. And it worked: Ahead of all the other companies tackling this hard problem, this group cracked it first. And to date, the Montreal Protocol is the most successful international environmental agreement ever implemented.</p><p>那时还有好多亟待处理的事情,<br>There was a lot at stake then, and there’s a lot at stake now, and we won’t solve our problems if we expect it to be solved by a few supermen or superwomen. Now we need everybody, because it is only when we accept that everybody has value that we will liberate the energy and imagination and momentum we need to create the best beyond measure.</p><p>现在也一样. 如果我们仅仅寄希望于一两个超人, 那么肯定不能解决问题. 现在我们需要每一个人, 因为只有我们承认每个人都有价值, 才能充分释放我们需要的能量, 想象力和动力, 创造出一片新天地.<br>Thank you.</p><p>谢谢大家. (掌声)<br>(Applause)</p>]]></content>
+    
+    <summary type="html">
+    
+      一种理想化的管理方式
+    
+    </summary>
+    
+    
+      <category term="Wiki" scheme="http://luoxugeng.github.io/categories/Wiki/"/>
+    
+    
+      <category term="20%的收获" scheme="http://luoxugeng.github.io/tags/20-%E7%9A%84%E6%94%B6%E8%8E%B7/"/>
+    
+      <category term="TedTranscript" scheme="http://luoxugeng.github.io/tags/TedTranscript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>20191002-decoding-bill-gates</title>
+    <link href="http://luoxugeng.github.io/2019/10/02/20191002-decoding-bill-gates/"/>
+    <id>http://luoxugeng.github.io/2019/10/02/20191002-decoding-bill-gates/</id>
+    <published>2019-10-02T04:00:00.000Z</published>
+    <updated>2020-04-09T07:59:24.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://movie.douban.com/subject/34807113/" target="_blank" rel="noopener">2019:走进比尔：解码比尔·盖茨 Inside Bill’s Brain: Decoding Bill Gates</a></p><h2 id="效用最大化"><a href="#效用最大化" class="headerlink" title="效用最大化"></a>效用最大化</h2><p>纪录片围绕Bill基金会的三件事情</p><ul><li><p>设计低成本的马桶与污水处理系统,让发展中的国家远离痢疾.这里需要的是技术创新</p></li><li><p>持续的资金投入, 试图消灭脊髓灰质炎.被地区冲突,文化差异阻碍着.</p></li><li><p>新型的核电站建设.中美贸易,夹在世界上两个强国之间. </p></li></ul><p>这些事情,一件比一艰难.</p><p>当被问做这些事情的目的是,Bill不是抛出一个悲天悯人的姿态,而是以一种彻底的理科思维: ** 他只是在追求效用最大化**.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Bill:我的目标不是鼓舞人心</span><br><span class="line">如果你不是为了鼓舞人心,那你是为了什么?</span><br><span class="line">Bill:效果最大化.</span><br><span class="line">Bill: 世界的资源是有限的.为了消灭一种疾病,如果你做到了零发病率,那是很了不起的成就.因为意味着在接下来很多年里,你都不需要再花钱去做预防,也不用再花资源去治疗.悲剧在源头就被消除了.但如果你只是尝试但还是失败了,那很糟糕,因为你损害了全球医疗卫生事业整体声誉和可信度.天花是唯一被消灭的疾病,1980年,它从地球上被消灭了.</span><br></pre></td></tr></table></figure><p><a href="https://zh.wikipedia.org/zh-hant/效用最大化" target="_blank" rel="noopener">效用最大化</a>,在我的理解,这已经是一种偏执的状态了,你在以开始你就要追求把事情做对,做成.身在企业,我们总是会抛出两个各有优缺点的方案, 自诩为考虑周到,然后让老板做选择. 实际上,要是是一个偏执(追求效用最大化)的人,他就会想,我为什么要做选择, 为什么不能在一开始的时候都要到最好的结果?(有这种贪婪想法的不偏执才怪).但我真的宁愿跟这种人做事情.</p><p>当然Bill 也在片中说了</p><blockquote><p>因为我比较成功, 有资源去做高风险的事情</p></blockquote><p>在脊灰项目已经投入数亿美元的前提下,项目希望再增加两亿美元.Bill看了计划书,是这样回应的</p><blockquote><p>我觉得你们要这个数目,是因为这是你们认为可以要到的最大数.你们要的不是为了实现较大成功概率所需的那个数目.</p></blockquote><p>他们要的是2亿美元,Bill加到了4亿.但他说: ‘我要亲眼看看这个项目.’</p><p>看到这的时候我是微微一笑. Bill 很多方面都体现了这个特性, 例如谈到工作</p><blockquote><p>我的一个优势在于我的狂热, 我会全力以赴,不分昼夜. 我喜欢狂热, 说到底,我很享受.我不相信什么周末,什么度假,我会非常极端</p></blockquote><blockquote><p>如果你说一项任务需要一周的时间,他会大喊,”我一天就能完成, 为什么你不像我那样卖力”</p></blockquote><blockquote><p>谈话的主题 ,不是关注于很难解决,而是为什么没能解决. 尝试过什么,有哪些是不敢尝试过的? Bill 和 Dulai 花了几个小时提出各种问题: 厕所是否可以收集垃圾同时变成燃料? 是否能提供足够的能量供自身使用? 厕所是否能重复使用”</p></blockquote><h2 id="关于阅读"><a href="#关于阅读" class="headerlink" title="关于阅读"></a>关于阅读</h2><p>对于一个话题,Bill 不是读一本书,而是5本.</p><p>他对很多话题都感兴趣,但他通常是现在脑海里建立一个框架,然后开始把信息分类放进去.</p><p>他会确保他可以读到市面上关于某个主题最好的书籍,即便晦涩难懂.导演说,他的阅读就是一种天赋. (BTW 大部分好的书籍是英文的,无障碍阅读英语书籍的确应该是基础能力.)</p><h2 id="Bill-的Hammer"><a href="#Bill-的Hammer" class="headerlink" title="Bill 的Hammer:"></a>Bill 的Hammer:</h2><p>Q: 你是不是认为,所有的问题可以通过使用技术创新来解决.<br>Bill: 我就知道这个,我就擅长这个.所以那就是我应对一切问题的方式.因为我有一把锤子,所以很多问题看起来就像是钉子(程序员的梗)</p><blockquote><p>只有基于创新的生意,我才比较…擅长.</p></blockquote><p>这一点,我想起的是Warren 的能力圈.如出一辙</p><h2 id="CPU时间"><a href="#CPU时间" class="headerlink" title="CPU时间"></a>CPU时间</h2><p>90年代开始,Bill开始过’思考周’.</p><p>时间是Bill无法用金钱买到的商品.他必须选择一些有限的事情, 告诉大脑它应该关心什么.</p><p>他会前往湖的运河,在那里独自一人过一个星期.阅读,思考.</p><blockquote><p>CPU时间就是你思考问题的时间.你把这些问题写下来,思考这些问题</p></blockquote><p>他吸收大量的书籍和科技文章,任何帮助他理解未来的东西.</p><blockquote><p>比如,低利率时代什么时候会结束? 医院为什么不能做得更好? … 我们是不是真低估了这些? 我们怎么做安全测试? 人们的排泄物里面都有什么? 然后你会想:我是不是应该找些书籍来阅读?我需要找谁探讨这些问题? 有些问题,我是不是自己思考就可以? </p></blockquote><h2 id="Bill和Warrent"><a href="#Bill和Warrent" class="headerlink" title="Bill和Warrent"></a>Bill和Warrent</h2><p>基金会面临着很多挑战,即使Bill这样的富豪也会感到钱不够.影片有这么一段Q&amp;A,挺有意思的.</p><p>Q: Warren, 你是怎么决定把这些钱捐给Bill 基金会的?<br>Warren: 一旦你接受了每个人的生命具有平等的价值这个前提,那就会指导你很多你金钱,精力的流向以及那些因此被你吸引的人</p><p>Q:Bill ,接受Warren的馈赠,你有压力吗?</p><p>Bill : 当然有.从某种方面来说,我花自己的钱,浪费了其实心理压力没那么大,但Warren的钱乱花,感觉就不一样了…处在这个位置上,要承担巨大的责任.Warren拿出自己大部分财产,说,’我就指望你了,Bill ,你要让这笔钱发挥巨大的效果.’</p><p>Bill: 因为我比较成功, 有资源去做高风险的事情.就像任何优秀的领导者一样,人们会追随你.但如果你带到坑里面, 那就太糟糕了.</p><p>(关键时刻有个愿意给你几百亿美金的朋友,囧…)</p><h2 id="面对挫折"><a href="#面对挫折" class="headerlink" title="面对挫折"></a>面对挫折</h2><blockquote><p>不稳定地区成了地球上消灭脊灰最大的变数.尼日利亚,巴基斯坦,阿富汗,死灰复燃的塔利班.甚至世界上很多人是戴着有色眼镜看待外来人的.除非你能得到当地社区的最大支持.但地区的动荡不安让脊灰一次次死灰复燃.而且,更让人受挫的事情接连不断,路边炸弹炸死了疫苗工作者,保护脊灰的警官中枪身亡,两个歹徒用4岁的儿童做诱饵追踪,杀害了志愿者.八个孩子的母亲,挨家挨户实施疫苗接种时被杀害.</p></blockquote><blockquote><p>有人劝Bill,这样做不值得,脊灰永远不会被消灭.</p></blockquote><p>而其他两个项目:新型厕所,目前来看有希望,但还是太贵了;新能源, 夹在贸易战中间,无限期推迟.</p><p>面对这些困难,Bill 这样说:</p><blockquote><p>有时候你的确不得不说,我们放弃吧.有时候你不得不说,我需要work harder(果然工作对他来说就是一种类似嗜好的东西…)</p></blockquote><p>导演这时候心里提出了一个问题,也是抛给观众的问题: <em>但你也忍不住会想，这些优点是不是也是缺点？他是不是陷得太深，想做太多，但也并不能把全部问题都解决？</em> </p><h2 id="影片结尾"><a href="#影片结尾" class="headerlink" title="影片结尾"></a>影片结尾</h2><p>结尾引用了Bill 母亲,Marry Gate生前的一段话:</p><blockquote><p>每个人一开始都要给成功下一个自己的定义,有了这些对我们自身具体的期待,我们就更可能达成目标.说到底,不在于你得到了什么, 甚至也不在于你给予了什么,而在于你成为了一个什么样的人.</p></blockquote><h2 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h2><p>关于脊髓灰质炎, 我找了一些资料当作是科普</p><p><a href="https://www.who.int/zh/news-room/fact-sheets/detail/poliomyelitis" target="_blank" rel="noopener">脊髓灰质炎</a></p><p><a href="https://www.who.int/features/factfiles/polio/zh/" target="_blank" rel="noopener">关于消灭脊髓灰质炎的10个事实</a></p><p><a href="https://www.who.int/publications/list/polio-strategy-2013/zh/" target="_blank" rel="noopener">消灭脊髓灰质炎最后阶段战略计划(2013~2018)</a></p>]]></content>
+    
+    <summary type="html">
+    
+      BillGate基金的三个项目: 新型的厕所,脊髓灰质炎疫苗,核能. 他本可以不必,却执意. 非常值得推荐的纪录片.
+    
+    </summary>
+    
+    
+      <category term="书影空间" scheme="http://luoxugeng.github.io/categories/%E4%B9%A6%E5%BD%B1%E7%A9%BA%E9%97%B4/"/>
+    
+    
+      <category term="20%的收获" scheme="http://luoxugeng.github.io/tags/20-%E7%9A%84%E6%94%B6%E8%8E%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(书摘)哲学的殿堂</title>
+    <link href="http://luoxugeng.github.io/2019/10/01/20191001the-mansions-of-philosophy/"/>
+    <id>http://luoxugeng.github.io/2019/10/01/20191001the-mansions-of-philosophy/</id>
+    <published>2019-10-01T07:00:01.000Z</published>
+    <updated>2019-10-01T07:00:01.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>由于翻译挺糟糕的,摘录我会随性发挥.</p><p><a href="https://book.douban.com/subject/26822913/" target="_blank" rel="noopener">豆瓣链接</a></p><p><img src="https://img3.doubanio.com/view/subject/l/public/s28952211.jpg" alt=""></p><h2 id="童年"><a href="#童年" class="headerlink" title="童年"></a>童年</h2><p>看看这脏兮兮的小孩,看似滑稽却拥有着终极的能力-成长. 这赋予了ta无限的可能.<br>你哪能想象到,这个整天哭哭啼啼的家伙将会懂得爱,焦虑,祈祷,痛苦,创造.形而上,死亡.<br>ta不安,因为ta在母亲温暖舒适的子宫熟睡了那么长的一段时间,却突然被迫去呼吸,本能地吸入ta人生的第一口空气,用眼睛去感受那刺痛的光线,用耳朵去倾听令ta感到害怕的噪音.一阵风吹过,皮肤感受到的冰凉都会使ta恐惧.</p><p>ta只能哭.不断地哭.直到哭累了.</p><p>在ta学会走路之前,ta甚至不如一只猿猴,他那滑稽的小腿如同一只青蛙般生硬难看.在ta学会说话后,ta才能”摆脱”猿猴的身份,开始向人这一物种靠近.你注视着ta,会看着ta如何一点点地,通过随机的探索而领会到事物的本性.世界对ta来说就像一个哑谜一样,好奇心使ta着迷并使ta发展;ta会触摸并品尝从ta身边经过的所有东西.</p><p>我们从小孩身上感受到的, 不是一个抽象的概念,而是一种打破了我们所有机械的分类,物理定律的真实存在.ta会不断成长,从无助到有力,从童年到成熟,从害怕世界到改造世界. 他们是斯宾塞的不可知物,康德的本体, 经院哲学家的实在存在体, 亚里士多德的第一动因,柏拉图的形而上.<br>我们能看到一种总不满意的生命,总去奋斗与追寻,战斗到最后一刻的生命. </p><h2 id="青年"><a href="#青年" class="headerlink" title="青年"></a>青年</h2><p>青春,喜爱极致,夸张,没有界限,因为它有丰富的精力与烦恼去释放它的力量.它喜爱新的危险的事物. 它的座右铭是: 万事皆过度.</p><p>他们也迎来性启蒙的时期.本能让位于思考,行动悄悄变成了安静的沉思.青年仔细观察自身与世界: 它伸出无数疑问与理论的触角去把握事物的意义;它不可避免地追问罪恶,起源,演化,命运,灵魂与上帝.精神伴随着不知疲倦的活跃不断向前着;</p><p>在发现世界的同时,青年发现了罪恶,恐惧于了解到人的本性.家庭的准则是相互帮助,强者对弱者的扶持,对好东西的分享; 但青年发现,社会的准则是竞争,是弱肉强食.青年感到震惊,厌恶,呼唤世界自身变成一个家庭,给予它家庭般的欢迎,这就是社会主义出现的方式.之后青年缓慢地卷入到利己主义生活的赌博之中,游戏的热情渗透进了血液,占有欲被唤醒,同时伸出了向金钱与权力的触手.</p><p>反派结束了,而游戏还在继续. </p><h2 id="中年"><a href="#中年" class="headerlink" title="中年"></a>中年</h2><p>青年提议, 老年反对,中年处置.</p><p>当我们在经济世界中找到一个位置的时候,青年的反叛就消退了.当我们的脚踩在大地上的时候,我们不喜欢地震.我们忘记了我们的激进主义,取而代之的是一种温和的自由主义.我们越是适应了我们的环境,就越害怕任何根本的变化导致重新适应过程所带来的痛苦.在40岁之后,我们偏爱世界保持静止,偏爱生命的电影凝结成一副绘画.</p><p>我们开始哀悼.死亡,本来是我们从来不会去考虑的,抽象且不切实际的概念,突然间它就无情地出现在我们的面前.我们尽全力试图忘记它的存在,于是我们把目光转向了回忆,我们沉浸在年轻人的陪伴之中,因为他们向我们展示出他们对死亡这无可避免事情的忽视.</p><h2 id="死亡"><a href="#死亡" class="headerlink" title="死亡"></a>死亡</h2><p>在这场游戏中,知识,科学,智慧相汇在一个路口.七十年来,这个男人带着痛苦努力地获取知识,他的大脑成为各种思想与行动构建起来的储藏中心.他的心灵尽管痛苦,却领悟到了高贵;七十年来,他从一个动物成长成一个可以寻求真理,创造美丽的人.但是死亡降临到他身上,使他受苦,使他窒息,凝结他的血液,控制他的心灵. 使他的大脑破裂,喉咙咯咯作响. </p><p>胜利的会是死亡.</p><h2 id="尾"><a href="#尾" class="headerlink" title="尾"></a>尾</h2><p>达芬奇的草图上,人是有翅膀可以翱翔在天空的.在他的年代,他失败了. 但生命却用了三百年来坚持.个人失败了,生命却成功了.个人死了,但生命,不知疲倦且从不气馁,继续着,期待着,渴望着,计划着,尝试着,上升着, 达成着.</p>]]></content>
+    
+    <summary type="html">
+    
+      整本书的翻译就是一种灾难.但你用英语的思维来看其实会发现的确是不错的散文集。其中 童年-青年-中年-死亡写的很有意思.决定摘录
+    
+    </summary>
+    
+    
+      <category term="书影空间" scheme="http://luoxugeng.github.io/categories/%E4%B9%A6%E5%BD%B1%E7%A9%BA%E9%97%B4/"/>
+    
+    
+      <category term="20%的收获" scheme="http://luoxugeng.github.io/tags/20-%E7%9A%84%E6%94%B6%E8%8E%B7/"/>
+    
+      <category term="迷思的天空" scheme="http://luoxugeng.github.io/tags/%E8%BF%B7%E6%80%9D%E7%9A%84%E5%A4%A9%E7%A9%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>强制自己做总结</title>
+    <link href="http://luoxugeng.github.io/2019/09/08/20190908note/"/>
+    <id>http://luoxugeng.github.io/2019/09/08/20190908note/</id>
+    <published>2019-09-08T01:46:40.000Z</published>
+    <updated>2019-09-08T02:25:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>例如,最近一周每一天回家之前都会写一封日报,抄送给leader. 这个更大的意义在于,让自己思考自己这一天做了什么.</p><blockquote><p>知道自己这一天是要做总结的时候,你对你现在要做的事情可能会想的多一点. 简单重复的机械工作自然是要避免,或者想办法提高效率.</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      强制自己做总结
+    
+    </summary>
+    
+    
+      <category term="每日写一点" scheme="http://luoxugeng.github.io/categories/%E6%AF%8F%E6%97%A5%E5%86%99%E4%B8%80%E7%82%B9/"/>
+    
+    
+      <category term="每日写一点" scheme="http://luoxugeng.github.io/tags/%E6%AF%8F%E6%97%A5%E5%86%99%E4%B8%80%E7%82%B9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>最近的状态就是,好好赚钱</title>
+    <link href="http://luoxugeng.github.io/2019/08/30/20190830note/"/>
+    <id>http://luoxugeng.github.io/2019/08/30/20190830note/</id>
+    <published>2019-08-30T12:52:40.000Z</published>
+    <updated>2019-08-30T12:25:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>下面这段话我是临场发挥，回顾的时候我甚至被自己的这种思考给惊讶住了。我激进的行为是在考虑了风险和收益做出来的。没想到我这个人还有不脾气用事的时候。不知道是什么时候转变过来了的。 很高兴看到自己的思维模型往理性的方面走了。</p><p><img src="https://nemolaw.s3.amazonaws.com/tobe.jpg" alt=""></p><p>无论如何，好好赚钱。</p>]]></content>
+    
+    <summary type="html">
+    
+      下面这段话我是临场发挥，回顾的时候我甚至被自己的这种思考给惊讶住了
+    
+    </summary>
+    
+    
+      <category term="每日写一点" scheme="http://luoxugeng.github.io/categories/%E6%AF%8F%E6%97%A5%E5%86%99%E4%B8%80%E7%82%B9/"/>
+    
+    
+      <category term="每日写一点" scheme="http://luoxugeng.github.io/tags/%E6%AF%8F%E6%97%A5%E5%86%99%E4%B8%80%E7%82%B9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>意识到自己有思维定势</title>
+    <link href="http://luoxugeng.github.io/2019/07/24/20190724note/"/>
+    <id>http://luoxugeng.github.io/2019/07/24/20190724note/</id>
+    <published>2019-07-24T14:46:40.000Z</published>
+    <updated>2019-07-24T14:25:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>有时候你分析的指标就是会反应产品本身的形态,而内容社区关键是内容,是生产. 但我工作大部分是围绕这用户和设备行为来的.</p><p>出现这个原因也很简单: 衡量一家互联网公司,看的是你的日活,是你的留存.内容好与不好,没有一个衡量的标准.</p><p>这造成的一个结果是,我知道今天用户增长了多少,却忽略了他们在生产视频上的一些感受.加上物理位置相隔太远, 我甚至不知道是什么样的人在使用我们的产品.</p><p>这个想法是 #存在即完美# 在微博成为话题开始出现的, 最近也被自己生产的数据被使用的方式刺激到了: 业务方其实不用.</p><p>我在建设数据的时候,第一反应是建设用户画像,看设备,这没错.但对一个内容产品来说,可能更重要的是内容本身.这是一种职业上的思维定势吧.</p>]]></content>
+    
+    <summary type="html">
+    
+      这个意识是慢慢叠加最后成型的:  对一款内容app,大部分建设工作围绕用户和设备是有问题的
+    
+    </summary>
+    
+    
+      <category term="每日写一点" scheme="http://luoxugeng.github.io/categories/%E6%AF%8F%E6%97%A5%E5%86%99%E4%B8%80%E7%82%B9/"/>
+    
+    
+      <category term="每日写一点" scheme="http://luoxugeng.github.io/tags/%E6%AF%8F%E6%97%A5%E5%86%99%E4%B8%80%E7%82%B9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>民主只是一个伪命题</title>
+    <link href="http://luoxugeng.github.io/2019/07/22/20190722note/"/>
+    <id>http://luoxugeng.github.io/2019/07/22/20190722note/</id>
+    <published>2019-07-21T18:00:00.000Z</published>
+    <updated>2019-07-21T18:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>从雅典至今的民主, 就是一个伪命题,底层人民关心的是能不能吃饱吃好.</p><a id="more"></a><p>我最怕的是有一小部分人,借着民主的旗号制造混乱,然后拍拍屁股走人,留下一堆烂摊子.最后还是普通老百姓吞下恶果.</p><p>民主真的有那么重要吗? 政府的本质是什么?</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;从雅典至今的民主, 就是一个伪命题,底层人民关心的是能不能吃饱吃好.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="每日写一点" scheme="http://luoxugeng.github.io/categories/%E6%AF%8F%E6%97%A5%E5%86%99%E4%B8%80%E7%82%B9/"/>
+    
+    
+      <category term="每日写一点" scheme="http://luoxugeng.github.io/tags/%E6%AF%8F%E6%97%A5%E5%86%99%E4%B8%80%E7%82%B9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>香港在联合国人权理事会的表态</title>
+    <link href="http://luoxugeng.github.io/2019/07/09/20190709note/"/>
+    <id>http://luoxugeng.github.io/2019/07/09/20190709note/</id>
+    <published>2019-07-09T15:46:40.000Z</published>
+    <updated>2019-07-09T15:46:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>他们打着救世主的名号想赋予我们自由,我怀疑,怀疑那只是谈判的一种筹码</p><p>我并不是排斥民主,我只是不相信人性中恶的那一部分</p><p>要是民主是让民众20年的生活水平不见增长,奋斗一生(打工)的货币财富变成纸</p><p>这样的民主我一点也不想要</p><p>是的, 我这样的人, 不会成为一名烈士, 能醉生梦死过完这一生有何不可?</p>]]></content>
+    
+    <summary type="html">
+    
+      还挺无聊的
+    
+    </summary>
+    
+    
+      <category term="每日写一点" scheme="http://luoxugeng.github.io/categories/%E6%AF%8F%E6%97%A5%E5%86%99%E4%B8%80%E7%82%B9/"/>
+    
+    
+      <category term="每日写一点" scheme="http://luoxugeng.github.io/tags/%E6%AF%8F%E6%97%A5%E5%86%99%E4%B8%80%E7%82%B9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>无奈朝来寒雨晚来风</title>
+    <link href="http://luoxugeng.github.io/2019/06/29/20190629note/"/>
+    <id>http://luoxugeng.github.io/2019/06/29/20190629note/</id>
+    <published>2019-06-29T06:46:40.000Z</published>
+    <updated>2019-06-29T07:25:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>我: 我擦,早上洗的被子被风吹了</p><p>古诗词: 无奈朝来寒雨,晚来风.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">林花谢了春红,太匆匆.无奈朝来寒雨晚来风.</span><br><span class="line">胭脂泪,相留醉,几时重.自是人生长恨水长东</span><br><span class="line">       李煜- 相见欢·林花谢了春红</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      感觉古人文艺范天然加星
+    
+    </summary>
+    
+    
+      <category term="每日写一点" scheme="http://luoxugeng.github.io/categories/%E6%AF%8F%E6%97%A5%E5%86%99%E4%B8%80%E7%82%B9/"/>
+    
+    
+      <category term="每日写一点" scheme="http://luoxugeng.github.io/tags/%E6%AF%8F%E6%97%A5%E5%86%99%E4%B8%80%E7%82%B9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>再说996,加班是为了能在短时间内快速套现</title>
+    <link href="http://luoxugeng.github.io/2019/06/29/20190630note/"/>
+    <id>http://luoxugeng.github.io/2019/06/29/20190630note/</id>
+    <published>2019-06-29T06:46:40.000Z</published>
+    <updated>2019-06-30T07:25:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>套现一方面指的是钱,另一方面是知识.</p><p>大部分人工作是为了钱.</p><p>在一个急速发展的行业,例如互联网,我们就是在用高强度的代价换取客观的报酬.行业本身的动能也会把我们的强度成果放大.</p><p>但加班不该是常态, 因为人需要成长. 安全感的要素之一就是成长感.</p><p>而知识的变现是指: 大部分人其实是类似职业经理人的角色,在几个地方积累了行业的知识/资源,最后选择一家公司快速的变现.这时候需要知识高强度输出阶段.</p><p>可能有极少部分人习惯了高强度的加班,可能是掌握了精力的管理,时间的管理.</p><p>对于还在成长的菜鸟来说, 好处在于,你不用特地去找知识,知识在这里会不断来找你,你留意你使用的工具,质疑工具本身的合理性, 这时候你已经在成长.</p><p>感觉就像是辐射圈.</p>]]></content>
+    
+    <summary type="html">
+    
+      加班是有目的性的
+    
+    </summary>
+    
+    
+      <category term="每日写一点" scheme="http://luoxugeng.github.io/categories/%E6%AF%8F%E6%97%A5%E5%86%99%E4%B8%80%E7%82%B9/"/>
+    
+    
+      <category term="每日写一点" scheme="http://luoxugeng.github.io/tags/%E6%AF%8F%E6%97%A5%E5%86%99%E4%B8%80%E7%82%B9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>还是要相信人拥有主观能动性的</title>
+    <link href="http://luoxugeng.github.io/2019/06/23/20190623note/"/>
+    <id>http://luoxugeng.github.io/2019/06/23/20190623note/</id>
+    <published>2019-06-23T06:46:40.000Z</published>
+    <updated>2019-06-23T07:25:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>一家还年轻的公司,最大的潜质的就是: 可塑性.</p><a id="more"></a><p>今天有意无意回忆起以前在以前公司呆过的日子.以前的工作经验,有些是宝贵的财富,是值得你带到这新的公司的.而有一些你看不惯的,不希望在这里看到的,那就用你的方式去避免.</p><p>有时候觉得,管理的确是一门艺术, 你要让几千个人, 协同地去为一个目标服务还要减少混乱的发生.这种实战经验只属于少数人而且不能才书籍学习.哎…</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;一家还年轻的公司,最大的潜质的就是: 可塑性.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="每日写一点" scheme="http://luoxugeng.github.io/categories/%E6%AF%8F%E6%97%A5%E5%86%99%E4%B8%80%E7%82%B9/"/>
+    
+    
+      <category term="每日写一点" scheme="http://luoxugeng.github.io/tags/%E6%AF%8F%E6%97%A5%E5%86%99%E4%B8%80%E7%82%B9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>能知道父母担忧出远门的孩子是为啥了</title>
+    <link href="http://luoxugeng.github.io/2019/06/13/20190613note/"/>
+    <id>http://luoxugeng.github.io/2019/06/13/20190613note/</id>
+    <published>2019-06-13T12:46:40.000Z</published>
+    <updated>2019-06-13T13:25:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>因为活得越久,越感觉到这世界的无常.反而是年轻的时候,对很多事情没有概念.</p><p>可能意外突然就发生了, 可能昨天还好好的跟你说话的,今天说没就没了,可能…</p><p>很多事情其实不是靠个人能控制的, 这是岁月给人的赠予,虽然我们从来都不想要.</p><p>年轻的时候觉得没什么,其实只是自己没有考虑太多. 现在年纪大了,想想还挺神奇的.</p>]]></content>
+    
+    <summary type="html">
+    
+      自己年纪大了,自然也知道为啥了
+    
+    </summary>
+    
+    
+      <category term="每日写一点" scheme="http://luoxugeng.github.io/categories/%E6%AF%8F%E6%97%A5%E5%86%99%E4%B8%80%E7%82%B9/"/>
+    
+    
+      <category term="每日写一点" scheme="http://luoxugeng.github.io/tags/%E6%AF%8F%E6%97%A5%E5%86%99%E4%B8%80%E7%82%B9/"/>
+    
+  </entry>
+  
+</feed>
