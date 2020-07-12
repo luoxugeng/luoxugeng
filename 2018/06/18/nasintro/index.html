@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="hq5sRpd2t4HpGsWwIxrXzsnIb0QBcNnMpCt91cXxT7s">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://luoxugeng.github.io').hostname,
+    root: '/',
+    scheme: 'Mist',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="向大家介绍我端午折腾两天的成果,关于 NAS(网络附属存储,接地气叫做我的个人数据中心)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="工作流:NAS搭建">
+<meta property="og:url" content="http://luoxugeng.github.io/2018/06/18/nasintro/index.html">
+<meta property="og:site_name" content="Nemo">
+<meta property="og:description" content="向大家介绍我端午折腾两天的成果,关于 NAS(网络附属存储,接地气叫做我的个人数据中心)">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s3.amazonaws.com/nemolaw/mynas1.JPG">
+<meta property="og:image" content="https://s3.amazonaws.com/nemolaw/mynas2.JPG">
+<meta property="og:image" content="https://s3.amazonaws.com/nemolaw/mynas3.png">
+<meta property="og:image" content="https://s3.amazonaws.com/nemolaw/mynas4.PNG">
+<meta property="og:image" content="https://s3.amazonaws.com/nemolaw/mynas5.PNG">
+<meta property="og:image" content="https://s3.amazonaws.com/nemolaw/mynas6.png">
+<meta property="article:published_time" content="2018-06-18T02:51:13.000Z">
+<meta property="article:modified_time" content="2018-06-18T02:51:13.000Z">
+<meta property="article:author" content="NemoLaw">
+<meta property="article:tag" content="nemolaw NAS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s3.amazonaws.com/nemolaw/mynas1.JPG">
+
+<link rel="canonical" href="http://luoxugeng.github.io/2018/06/18/nasintro/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>工作流:NAS搭建 | Nemo</title>
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131534564-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-131534564-2');
+</script>
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Nemo" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Nemo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">work hard, be persistent, and good luck</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-movies">
+
+    <a href="/movies" rel="section"><i class="fa fa-fw fa-film"></i>观影</a>
+
+  </li>
+        <li class="menu-item menu-item-books">
+
+    <a href="/books" rel="section"><i class="fa fa-fw fa-book"></i>阅读</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://luoxugeng.github.io/2018/06/18/nasintro/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/author.jpg">
+      <meta itemprop="name" content="NemoLaw">
+      <meta itemprop="description" content="Nemo's Blog">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nemo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          工作流:NAS搭建
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-06-18 10:51:13" itemprop="dateCreated datePublished" datetime="2018-06-18T10:51:13+08:00">2018-06-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ToolorToy/" itemprop="url" rel="index">
+                    <span itemprop="name">ToolorToy</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2018/06/18/nasintro/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/06/18/nasintro/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+            <div class="post-description">向大家介绍我端午折腾两天的成果,关于 NAS(网络附属存储,接地气叫做我的个人数据中心)</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>最近一周最大的成就就是报了一个学车的速成班, 练了一个星期的车,过了科目二.已经达到目的了.科目三和科目四只能找找时间再去考了.海淘的HPE ProLiant MicroServer Gen10 端午前到货,趁着假期捣鼓了一把.</p>
+<h2 id="我的需求"><a href="#我的需求" class="headerlink" title="我的需求"></a>我的需求</h2><p>总体来说, Life Hack 的目标都是自动化以及减少依赖.看看我有的痛点: </p>
+<ol>
+<li>我的视频都放在移动硬盘里面,每一次要看片都需要插入到电脑. 要是想在手机看, 需要提前下载到文件夹.麻烦.</li>
+</ol>
+<p>我对电影的口味偏老,喜欢的视频会反复看.所以使用视频 app 在线观看是不符合我的.</p>
+<ol start="2">
+<li><p>Mac 的 Time Machine十分优秀,但每一次备份都要拿硬盘插入电脑. 太麻烦了.</p>
+</li>
+<li><p>数据资料可靠性未知: 很害怕有一天硬盘坏了我就懵逼了,我需要一个备份,最好是能自动下来不用我操心. </p>
+</li>
+<li><p>我的数据本身其实很分散,我希望可以在一个地方可以集中管理.</p>
+</li>
+</ol>
+<h2 id="目前实现的功能"><a href="#目前实现的功能" class="headerlink" title="目前实现的功能"></a>目前实现的功能</h2><p><a href="只要我的电脑和服务器在同一个局域网下面,就会通过无线网络自动备份.">x</a> : 所有的影片都放在一个4T 的硬盘里面,并通过 Samba在局域网内共享. iPhone 和 ipad 安装一个 Infuse 可以随时访问里面内容.</p>
+<p><a href="只要我的电脑和服务器在同一个局域网下面,就会通过无线网络自动备份.">x</a>: 数据备份. 一个脚本可以解决~~ </p>
+<h2 id="可以继续探索"><a href="#可以继续探索" class="headerlink" title="可以继续探索:"></a>可以继续探索:</h2><p>[]: 搭建自己的私有云.</p>
+<p>[]: 把服务器放在公网上(使得外部网络也能访问)</p>
+<p>这两点可以做,但我现在没有足够的动力.需求不强.</p>
+<h2 id="放靓照"><a href="#放靓照" class="headerlink" title="放靓照"></a>放靓照</h2><p><img src="https://s3.amazonaws.com/nemolaw/mynas1.JPG" alt="开机开机安装系统"></p>
+<p><img src="https://s3.amazonaws.com/nemolaw/mynas2.JPG" alt="放在一个不起眼的角落"></p>
+<p><img src="https://s3.amazonaws.com/nemolaw/mynas3.png" alt="局域网内安静备份"></p>
+<p><img src="https://s3.amazonaws.com/nemolaw/mynas4.PNG" alt="通过Infuse远程看片"></p>
+<p><img src="https://s3.amazonaws.com/nemolaw/mynas5.PNG" alt="通过Infuse远程看片"></p>
+<h2 id="具体实施"><a href="#具体实施" class="headerlink" title="具体实施"></a>具体实施</h2><p>上图</p>
+<p><img src="https://s3.amazonaws.com/nemolaw/mynas6.png" alt=""></p>
+<h3 id="Q-amp-A-我的一些理解"><a href="#Q-amp-A-我的一些理解" class="headerlink" title="Q&amp;A 我的一些理解"></a>Q&amp;A 我的一些理解</h3><p>Q: 系统为啥选择 Ubuntu</p>
+<p>A: 对读者分两步走. 先确定你要的系统: 市面上可选的有三种, Window, 群辉, Linux. 群辉是专门干家庭 NAS, 配套的软件很多,但价格贵,软件功能也没有开源的 Linux 系统多. 尤其当你依赖别人的系统和软件,有自己的需求时就很被动了. 所以第一步我选择了 Linux.第二步,确认是 Ubuntu Desktop. 因为我不想折腾,我希望我的服务器稳定,操作人性化,对 docker 友好(不想弄乱自己的系统环境,操作尽可能用 docker). 所以选择了Ubuntu Desktop. 最后为啥不是最新版本的18.04,而是16.04, 因为制作 U 盘镜像的时候, Gen10 一直安装不了18.04,整了很久,最后放弃用16.04.</p>
+<p>Q: 一定要买专用的服务器才能制作自己的数据中心?<br>A: 肯定不是.看上面,发挥作用的大部分是软件,你拿一台快淘汰的机器(配置一般但还能跑),能跑起 Linux, 有空间装服务软件就可以了.我买 HP 的原因在于:机身min, 好看一些.惠普的机器其实很耐 cao,避免我今后花很多时间在硬件维护上.4个硬盘,上面大部分两个硬盘位我肯定不够用.至于很多人考虑的节能,噪音我看来差不多就可以了.</p>
+<p>Q: 使用 docker的原因是?<br>A: 配置复杂的软件,要是手动装,容易搞乱系统不说,删除也麻烦. docker 就是专门为此而生的.</p>
+<p>Q: 为啥没有使用 Emby</p>
+<p>Emby 的确很厉害,全平台通吃.但我喜欢看的电影更多是主动搜索下载的,最重要的原因,手机一些功能收钱,太贵了…就我的需求来看,花钱是浪费的.所以最后使用 服务器走Samba共享文件, 手机端使用Infuse远程访问的形式. 需求完全满足美滋滋☺️.</p>
+<p>Q: 其他:<br>系统直接上 ssd,200G 够用,操作没有卡顿就是爽. 在设置 Samba,出现访问不了的,看看ip 有没有问题,文件权限是否设置 OK. Samba 账号密码是否设置 OK,还可以查看smaba 服务日志,(默认在/ var/log/samba 查看日志)看看哪里出了问题. 早上我定位老半天,最后通过日志发现是我配置文件写错了. users 写成 user. 哭死😭 😭. 网上有说smb 和 asp 协议效率有差异, asp 更快.现在够用,再说.</p>
+<h2 id="参考的大量文章"><a href="#参考的大量文章" class="headerlink" title="参考的大量文章"></a>参考的大量文章</h2><p><a href="https://www.zhihu.com/question/21359049/answer/87285282" target="_blank" rel="noopener">搭建家庭 NAS 服务器有什么好方案? - 無拘野馬的回答 - 知乎</a></p>
+<p><a href="https://mechanus.io/zai-linux-shang-da-jian-time-machine-bei-fen-fu-wu-qi/" target="_blank" rel="noopener">在 Linux 上搭建 Time Machine 备份服务器</a></p>
+<p><a href="https://www.jianshu.com/p/d9b180f6d397" target="_blank" rel="noopener">如何自己搭建一个Time Machine服务器</a></p>
+<p><a href="https://blog.csdn.net/iam333/article/details/17224115" target="_blank" rel="noopener">ubuntu开机自动挂载新硬盘</a></p>
+<p><a href="https://www.howtoing.com/ubuntu-docker-portainer" target="_blank" rel="noopener">如何在Ubuntu上使用Portainer管理Docker容器</a></p>
+<p><a href="https://linux.cn/article-5466-2.html" target="_blank" rel="noopener">如何在局域网中将Ubuntu文件夹共享给Windows</a></p>
+<p><a href="https://blog.csdn.net/TongxinV/article/details/72631062" target="_blank" rel="noopener">ubuntu 16.04 samba安装与设置访问权限</a></p>
+<p><a href="https://www.zhihu.com/question/22242306" target="_blank" rel="noopener">怎么在同一wifi里用手机播放电脑上的视频</a></p>
+
+    </div>
+
+    
+    
+    
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E6%8E%A2%E7%B4%A2%E4%B8%8E%E5%8F%91%E7%8E%B0/" rel="tag"><i class="fa fa-tag"></i> 探索与发现</a>
+              <a href="/tags/workflow/" rel="tag"><i class="fa fa-tag"></i> workflow</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/05/30/sst_basic_skill_netword/" rel="prev" title="安全技能树简版:计算机网络基础">
+      <i class="fa fa-chevron-left"></i> 安全技能树简版:计算机网络基础
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/06/24/multi-screen/" rel="next" title="工作流:多屏幕切换">
+      工作流:多屏幕切换 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#我的需求"><span class="nav-number">1.</span> <span class="nav-text">我的需求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目前实现的功能"><span class="nav-number">2.</span> <span class="nav-text">目前实现的功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可以继续探索"><span class="nav-number">3.</span> <span class="nav-text">可以继续探索:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#放靓照"><span class="nav-number">4.</span> <span class="nav-text">放靓照</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#具体实施"><span class="nav-number">5.</span> <span class="nav-text">具体实施</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Q-amp-A-我的一些理解"><span class="nav-number">5.1.</span> <span class="nav-text">Q&amp;A 我的一些理解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考的大量文章"><span class="nav-number">6.</span> <span class="nav-text">参考的大量文章</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="NemoLaw"
+      src="/images/author.jpg">
+  <p class="site-author-name" itemprop="name">NemoLaw</p>
+  <div class="site-description" itemprop="description">Nemo's Blog</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">181</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:luoxugeng12581@163.com" title="E-Mail → mailto:luoxugeng12581@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope-o"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">NemoLaw</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">370k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">5:36</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://luoxugeng12581.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://luoxugeng.github.io/2018/06/18/nasintro/";
+    this.page.identifier = "2018/06/18/nasintro/";
+    this.page.title = "工作流:NAS搭建";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://luoxugeng12581.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>
