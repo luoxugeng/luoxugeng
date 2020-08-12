@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://nemolaw.com/"/>
-  <updated>2020-08-11T13:21:00.000Z</updated>
+  <updated>2020-08-12T06:01:00.000Z</updated>
   <id>https://nemolaw.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>听雨发呆</title>
+    <link href="https://nemolaw.com/2020/08/12/20200812-strange-mind/"/>
+    <id>https://nemolaw.com/2020/08/12/20200812-strange-mind/</id>
+    <published>2020-08-12T06:01:00.000Z</published>
+    <updated>2020-08-12T06:01:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>突然想做一些奇怪的事情, 例如</p><ul><li>想去湖中央划水</li><li>鳗鱼拌辣条不知道什么味道</li><li>停着走着回头望</li></ul><p>一个月两个月的，时间真快</p>]]></content>
+    
+    <summary type="html">
+    
+      下雨，中午楼下发呆，脑中一堆思绪
+    
+    </summary>
+    
+    
+      <category term="饭否" scheme="https://nemolaw.com/categories/%E9%A5%AD%E5%90%A6/"/>
+    
+    
+      <category term="饭否" scheme="https://nemolaw.com/tags/%E9%A5%AD%E5%90%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>人与人之间连结真的很脆弱</title>
@@ -468,31 +491,6 @@
       <category term="探索与发现" scheme="https://nemolaw.com/tags/%E6%8E%A2%E7%B4%A2%E4%B8%8E%E5%8F%91%E7%8E%B0/"/>
     
       <category term="计算机科学与技术" scheme="https://nemolaw.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%8A%80%E6%9C%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于这个假期</title>
-    <link href="https://nemolaw.com/2019/10/07/20191007-holiday/"/>
-    <id>https://nemolaw.com/2019/10/07/20191007-holiday/</id>
-    <published>2019-10-07T08:00:00.000Z</published>
-    <updated>2019-10-07T08:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>有些人会因为放假而焦虑的. 例如我上一年的沙拉店. 因为是在写字楼, 消费群众都是办公司白领.放一个国庆意味着:</p><ul><li>连续7天,即使你想开店, 也没有客源.</li><li>店不开,房租继续交,工人的工资继续付.</li></ul><p>单单是这一点,上一年已经让我从假期前焦虑到假期后. 这让我养成了一个习惯,没事我会估算着一家店的<br>成本, 利润率 , 一天要多少流水才不至于倒闭… 是的,如此的焦虑,只有一个目标:不至于倒闭…</p><p>发现公司有钱真好. 发现打工真好. (即使磨洋工好像也是理所当然的样子 )</p><p>** 可怜的资本家**</p>]]></content>
-    
-    <summary type="html">
-    
-      说件事情,关于这个7天假期
-    
-    </summary>
-    
-    
-      <category term="饭否" scheme="https://nemolaw.com/categories/%E9%A5%AD%E5%90%A6/"/>
-    
-    
-      <category term="饭否" scheme="https://nemolaw.com/tags/%E9%A5%AD%E5%90%A6/"/>
-    
-      <category term="冰山下的80%" scheme="https://nemolaw.com/tags/%E5%86%B0%E5%B1%B1%E4%B8%8B%E7%9A%8480/"/>
     
   </entry>
   
