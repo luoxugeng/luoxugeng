@@ -14,45 +14,19 @@
 <link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
-
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
 <script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    hostname: new URL('https://nemolaw.com').hostname,
-    root: '/',
-    scheme: 'Mist',
-    version: '7.7.0',
-    exturl: false,
-    sidebar: {"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},
-    copycode: {"enable":false,"show_result":false,"style":null},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
-    bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
-    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
-    algolia: {
-      appID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: 'search.xml',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
-  };
-</script>
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nemolaw.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
 
-  <meta name="description" content="Nemo&#39;s Blog">
+  <meta name="description" content="种一棵树最好的时间一个是十年前,另一个是现在">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Nemo">
 <meta property="og:url" content="https://nemolaw.com/page/2/index.html">
 <meta property="og:site_name" content="Nemo">
-<meta property="og:description" content="Nemo&#39;s Blog">
+<meta property="og:description" content="种一棵树最好的时间一个是十年前,另一个是现在">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="NemoLaw">
 <meta property="article:tag" content="nemolaw">
@@ -67,8 +41,9 @@
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
   };
 </script>
 
@@ -121,18 +96,6 @@
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
-  <div class="site-meta">
-
-    <div>
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Nemo</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-        <p class="site-subtitle">work hard, be persistent, and good luck</p>
-  </div>
-
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏">
       <span class="toggle-line toggle-line-first"></span>
@@ -140,45 +103,62 @@
       <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Nemo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">work hard, be persistent, and good luck</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
 </div>
 
 
+
+
 <nav class="site-nav">
-  
-  <ul id="menu" class="menu">
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
 
   </li>
         <li class="menu-item menu-item-movies">
 
-    <a href="/movies" rel="section"><i class="fa fa-fw fa-film"></i>观影</a>
+    <a href="/movies" rel="section"><i class="film fa-fw"></i>观影</a>
 
   </li>
         <li class="menu-item menu-item-books">
 
-    <a href="/books" rel="section"><i class="fa fa-fw fa-book"></i>阅读</a>
+    <a href="/books" rel="section"><i class="book fa-fw"></i>阅读</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -186,29 +166,34 @@
         </a>
       </li>
   </ul>
-
 </nav>
-  <div class="site-search">
+
+
+
+  <div class="search-pop-overlay">
     <div class="popup search-popup">
-    <div class="search-header">
+        <div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+    <input autocomplete="off" autocapitalize="off"
            placeholder="搜索..." spellcheck="false"
-           type="text" id="search-input">
+           type="search" class="search-input">
   </div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result"></div>
-
-</div>
-<div class="search-pop-overlay"></div>
-
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
   </div>
+</div>
+
+    </div>
+  </div>
+
 </div>
     </header>
 
@@ -224,35 +209,33 @@
         <div class="content-wrap">
           
 
-          <div class="content">
+          <div class="content index posts-expand">
             
-
-  <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://nemolaw.com/2020/07/23/simpleliving/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/author.jpg">
       <meta itemprop="name" content="NemoLaw">
-      <meta itemprop="description" content="Nemo's Blog">
+      <meta itemprop="description" content="种一棵树最好的时间一个是十年前,另一个是现在">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Nemo">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/2020/07/23/simpleliving/" class="post-title-link" itemprop="url">笔记/实践:丟掉50樣東西</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -260,13 +243,11 @@
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B9%A6%E5%BD%B1%E7%A9%BA%E9%97%B4/" itemprop="url" rel="index">
-                    <span itemprop="name">书影空间</span>
-                  </a>
+                  <a href="/categories/%E4%B9%A6%E5%BD%B1%E7%A9%BA%E9%97%B4/" itemprop="url" rel="index"><span itemprop="name">书影空间</span></a>
                 </span>
             </span>
 
@@ -275,7 +256,7 @@
   <span class="post-meta-item">
     
       <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
+        <i class="far fa-comment"></i>
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
@@ -287,14 +268,14 @@
   <br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
+                <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
               <span>2.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
+                <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               <span>2 分钟</span>
@@ -309,7 +290,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          趁著又一次搬家的經歷，隨手翻了 丟掉50樣東西 這本書，關鍵是要思考我面前的這些東西對我意味著什麼。書籍其實一般，花個15min翻一翻就夠了
+          <p>趁著又一次搬家的經歷，隨手翻了 丟掉50樣東西 這本書，關鍵是要思考我面前的這些東西對我意味著什麼。書籍其實一般，花個15min翻一翻就夠了</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/07/23/simpleliving/">
@@ -332,31 +313,31 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://nemolaw.com/2020/07/21/20200720-untouched/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/author.jpg">
       <meta itemprop="name" content="NemoLaw">
-      <meta itemprop="description" content="Nemo's Blog">
+      <meta itemprop="description" content="种一棵树最好的时间一个是十年前,另一个是现在">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Nemo">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/2020/07/21/20200720-untouched/" class="post-title-link" itemprop="url">欣赏诗歌</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -364,13 +345,11 @@
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8F%AA%E6%98%AF%E6%AC%A3%E8%B5%8F/" itemprop="url" rel="index">
-                    <span itemprop="name">只是欣赏</span>
-                  </a>
+                  <a href="/categories/%E5%8F%AA%E6%98%AF%E6%AC%A3%E8%B5%8F/" itemprop="url" rel="index"><span itemprop="name">只是欣赏</span></a>
                 </span>
             </span>
 
@@ -379,7 +358,7 @@
   <span class="post-meta-item">
     
       <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
+        <i class="far fa-comment"></i>
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
@@ -391,14 +370,14 @@
   <br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
+                <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
               <span>79</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
+                <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               <span>1 分钟</span>
@@ -413,7 +392,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          在备忘录翻出这篇:来自2019年12月某个加班回去的夜晚，为什么要读诗，因为你不可言喻的心境在另一个时间点也有人经历过
+          <p>在备忘录翻出这篇:来自2019年12月某个加班回去的夜晚，为什么要读诗，因为你不可言喻的心境在另一个时间点也有人经历过</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/07/21/20200720-untouched/">
@@ -436,31 +415,31 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://nemolaw.com/2020/07/20/spare-the-child/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/author.jpg">
       <meta itemprop="name" content="NemoLaw">
-      <meta itemprop="description" content="Nemo's Blog">
+      <meta itemprop="description" content="种一棵树最好的时间一个是十年前,另一个是现在">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Nemo">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/2020/07/20/spare-the-child/" class="post-title-link" itemprop="url">数据项目:spare-the-child </a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -468,13 +447,11 @@
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/StoryTeller/" itemprop="url" rel="index">
-                    <span itemprop="name">StoryTeller</span>
-                  </a>
+                  <a href="/categories/StoryTeller/" itemprop="url" rel="index"><span itemprop="name">StoryTeller</span></a>
                 </span>
             </span>
 
@@ -483,7 +460,7 @@
   <span class="post-meta-item">
     
       <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
+        <i class="far fa-comment"></i>
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
@@ -495,14 +472,14 @@
   <br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
+                <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
               <span>403</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
+                <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               <span>1 分钟</span>
@@ -517,7 +494,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          这是我在六一发布上线的一个数据项目，关于儿童猥亵，儿童性侵的。 这个项目对我意义重大，习惯性无作为的我第一次跟社会本身产生联结
+          <p>这是我在六一发布上线的一个数据项目，关于儿童猥亵，儿童性侵的。 这个项目对我意义重大，习惯性无作为的我第一次跟社会本身产生联结</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/07/20/spare-the-child/">
@@ -540,31 +517,31 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://nemolaw.com/2020/07/18/20200720learn-to-song/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/author.jpg">
       <meta itemprop="name" content="NemoLaw">
-      <meta itemprop="description" content="Nemo's Blog">
+      <meta itemprop="description" content="种一棵树最好的时间一个是十年前,另一个是现在">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Nemo">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/2020/07/18/20200720learn-to-song/" class="post-title-link" itemprop="url">欣赏诗歌</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -572,13 +549,11 @@
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8F%AA%E6%98%AF%E6%AC%A3%E8%B5%8F/" itemprop="url" rel="index">
-                    <span itemprop="name">只是欣赏</span>
-                  </a>
+                  <a href="/categories/%E5%8F%AA%E6%98%AF%E6%AC%A3%E8%B5%8F/" itemprop="url" rel="index"><span itemprop="name">只是欣赏</span></a>
                 </span>
             </span>
 
@@ -587,7 +562,7 @@
   <span class="post-meta-item">
     
       <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
+        <i class="far fa-comment"></i>
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
@@ -599,14 +574,14 @@
   <br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
+                <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
               <span>508</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
+                <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               <span>1 分钟</span>
@@ -621,7 +596,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          尝试这让自己去欣赏诗歌计划，一个早上醒来看见晴朗的天空触发的念头
+          <p>尝试这让自己去欣赏诗歌计划，一个早上醒来看见晴朗的天空触发的念头</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/07/18/20200720learn-to-song/">
@@ -644,31 +619,31 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://nemolaw.com/2020/07/12/20200712-fooled-by-randomness/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/author.jpg">
       <meta itemprop="name" content="NemoLaw">
-      <meta itemprop="description" content="Nemo's Blog">
+      <meta itemprop="description" content="种一棵树最好的时间一个是十年前,另一个是现在">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Nemo">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/2020/07/12/20200712-fooled-by-randomness/" class="post-title-link" itemprop="url">随机漫步的傻瓜(书摘)</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -676,13 +651,11 @@
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B9%A6%E5%BD%B1%E7%A9%BA%E9%97%B4/" itemprop="url" rel="index">
-                    <span itemprop="name">书影空间</span>
-                  </a>
+                  <a href="/categories/%E4%B9%A6%E5%BD%B1%E7%A9%BA%E9%97%B4/" itemprop="url" rel="index"><span itemprop="name">书影空间</span></a>
                 </span>
             </span>
 
@@ -691,7 +664,7 @@
   <span class="post-meta-item">
     
       <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
+        <i class="far fa-comment"></i>
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
@@ -703,14 +676,14 @@
   <br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
+                <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
               <span>2.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
+                <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               <span>2 分钟</span>
@@ -725,7 +698,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          从里面提到的两个投资策略说起
+          <p>从里面提到的两个投资策略说起</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/07/12/20200712-fooled-by-randomness/">
@@ -748,31 +721,31 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://nemolaw.com/2020/07/12/20200712-begin/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/author.jpg">
       <meta itemprop="name" content="NemoLaw">
-      <meta itemprop="description" content="Nemo's Blog">
+      <meta itemprop="description" content="种一棵树最好的时间一个是十年前,另一个是现在">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Nemo">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/2020/07/12/20200712-begin/" class="post-title-link" itemprop="url">半年分割线-回归正常话唠模式</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -780,13 +753,11 @@
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%A5%AD%E5%90%A6/" itemprop="url" rel="index">
-                    <span itemprop="name">饭否</span>
-                  </a>
+                  <a href="/categories/%E9%A5%AD%E5%90%A6/" itemprop="url" rel="index"><span itemprop="name">饭否</span></a>
                 </span>
             </span>
 
@@ -795,7 +766,7 @@
   <span class="post-meta-item">
     
       <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
+        <i class="far fa-comment"></i>
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
@@ -807,14 +778,14 @@
   <br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
+                <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
               <span>1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
+                <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               <span>1 分钟</span>
@@ -829,7 +800,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          博客回归正常话唠模式
+          <p>博客回归正常话唠模式</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/07/12/20200712-begin/">
@@ -852,31 +823,31 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://nemolaw.com/2020/07/12/20200712topeople/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/author.jpg">
       <meta itemprop="name" content="NemoLaw">
-      <meta itemprop="description" content="Nemo's Blog">
+      <meta itemprop="description" content="种一棵树最好的时间一个是十年前,另一个是现在">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Nemo">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/2020/07/12/20200712topeople/" class="post-title-link" itemprop="url">致那些人</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -884,13 +855,11 @@
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/StoryTeller/" itemprop="url" rel="index">
-                    <span itemprop="name">StoryTeller</span>
-                  </a>
+                  <a href="/categories/StoryTeller/" itemprop="url" rel="index"><span itemprop="name">StoryTeller</span></a>
                 </span>
             </span>
 
@@ -899,7 +868,7 @@
   <span class="post-meta-item">
     
       <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
+        <i class="far fa-comment"></i>
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
@@ -911,14 +880,14 @@
   <br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
+                <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
               <span>0</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
+                <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               <span>1 分钟</span>
@@ -933,7 +902,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          你可以看到人性的恐慌自私，也可以看到人性的至善光辉； 你可以看到什么是世事无常，你也可以看到有很多人是在拼命着去改变；致敬那些努力的人，努力在生活的人，努力在呐喊的人，努力在岗位奉献的人; 交接棒下一次就给我们吧。
+          <p>你可以看到人性的恐慌自私，也可以看到人性的至善光辉； 你可以看到什么是世事无常，你也可以看到有很多人是在拼命着去改变；致敬那些努力的人，努力在生活的人，努力在呐喊的人，努力在岗位奉献的人; 交接棒下一次就给我们吧。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/07/12/20200712topeople/">
@@ -956,7 +925,6 @@
   
   
 
-  </div>
 
   
   <nav class="pagination">
@@ -970,7 +938,7 @@
 
 <script>
   window.addEventListener('tabs:register', () => {
-    let activeClass = CONFIG.comments.activeClass;
+    let { activeClass } = CONFIG.comments;
     if (CONFIG.comments.storage) {
       activeClass = localStorage.getItem('comments_active') || activeClass;
     }
@@ -1021,7 +989,7 @@
     <img class="site-author-image" itemprop="image" alt="NemoLaw"
       src="/images/author.jpg">
   <p class="site-author-name" itemprop="name">NemoLaw</p>
-  <div class="site-description" itemprop="description">Nemo's Blog</div>
+  <div class="site-description" itemprop="description">种一棵树最好的时间一个是十年前,另一个是现在</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -1048,7 +1016,7 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="mailto:luoxugeng12581@163.com" title="E-Mail → mailto:luoxugeng12581@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope-o"></i>E-Mail</a>
+        <a href="mailto:luoxugeng12581@163.com" title="E-Mail → mailto:luoxugeng12581@163.com" rel="noopener" target="_blank"><i class="envelope-o fa-fw"></i>E-Mail</a>
       </span>
   </div>
 
@@ -1068,17 +1036,19 @@
       <div class="footer-inner">
         
 
+        
+
 <div class="copyright">
   
   &copy; 2015 – 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
-    <i class="fa fa-heart"></i>
+    <i class="heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">NemoLaw</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
+      <i class="fa fa-chart-area"></i>
     </span>
     <span title="站点总字数">385k</span>
     <span class="post-meta-divider">|</span>
