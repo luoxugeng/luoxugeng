@@ -11955,7 +11955,7 @@
   <entry>
     <title>20200901(一周唠叨)</title>
     <url>/2020/09/03/20200910-weely/</url>
-    <content><![CDATA[<html><head></head><body><h2 id="孩子对我来说不是必须的，Ta跟远在非洲吃不饱饭的儿童来说对我没有什么两样：-我就是没感觉"><a href="#孩子对我来说不是必须的，Ta跟远在非洲吃不饱饭的儿童来说对我没有什么两样：-我就是没感觉" class="headerlink" title="孩子对我来说不是必须的，Ta跟远在非洲吃不饱饭的儿童来说对我没有什么两样： 我就是没感觉"></a>孩子对我来说不是必须的，Ta跟远在非洲吃不饱饭的儿童来说对我没有什么两样： 我就是没感觉</h2><p>孩子对我来说不是必要的,即使有,也不一定要亲生. 但这跟你有屁毛线关系呢？ </p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><html><head></head><body><h2 id="孩子对我来说不是必须的，Ta跟远在非洲吃不饱饭的儿童来说对我没有什么两样：-我就是没感觉"><a href="#孩子对我来说不是必须的，Ta跟远在非洲吃不饱饭的儿童来说对我没有什么两样：-我就是没感觉" class="headerlink" title="孩子对我来说不是必须的，Ta跟远在非洲吃不饱饭的儿童来说对我没有什么两样： 我就是没感觉"></a>孩子对我来说不是必须的，Ta跟远在非洲吃不饱饭的儿童来说对我没有什么两样： 我就是没感觉</h2><p>孩子对我来说不是必要的,即使有,也不一定要亲生. 但这跟你有屁毛线关系呢？ </p>
 <p>有一些话题真的说一次就好了,我没有能力,也不该去插手别人的生活.</p>
 <p>而且有些问题,当你觉得它是个问题的时候，它就会一直存在， 例如性别歧视，例如肤色歧视. 当我们揪着问题本身不放, 只是无休止的辩论,批判,探讨,本来我们可以把精力放在更好的地方,技术在进步情况下，有些问题是可以自动被化解的.  </p>
 <p>我对人性是悲观的,现在应该说,我对个体表现出来的人性是悲观的,但群体却可以因为突变产生巨大的能量. 而这是我现在必须前进的方向.</p>
@@ -11996,12 +11996,48 @@
 <h2 id="互联网永远是工具-2"><a href="#互联网永远是工具-2" class="headerlink" title="互联网永远是工具 - 2"></a>互联网永远是工具 - 2</h2><p>工具造就了我们人类本身. (我们身体在进化上真的越来越脆弱，区分我们的是我们使用的工具.)<br>按我之前这篇文章的观点 <a href="nemolaw.com/2018/03/22/aboutfacebook">磕叨两句</a></p>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">这样的情况下, 我只能奉劝大家接受: **尽早接受机器将会比你更懂你,更懂群体这个事实**.</span><br><span class="line">第一个发现火的人是被试做神明,但现在每一个人都会用,神也自然不存在了,只剩下玩具. Toy&Tool, get 到我这个目录的意思了么? 大数据,这是一个工具,也能是一个玩具.</span><br></pre></td></tr></tbody></table></figure>
 
+<h2 id="豆瓣读书暂停评论功能"><a href="#豆瓣读书暂停评论功能" class="headerlink" title="豆瓣读书暂停评论功能"></a>豆瓣读书暂停评论功能</h2><p>一片和谐</p>
 </body></html>]]></content>
       <categories>
         <category>饭否</category>
       </categories>
       <tags>
         <tag>饭否</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>20200830-假如你失眠，那就朗读吧</title>
+    <url>/2020/09/01/20200830-insomnia-day/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><html><head></head><body><p>喜马拉雅，因为版权问题，我的音频直接被下架了. 也没有找到合适的音频托管商. 所以还是放在我的博客吧. </p>
+<h2 id="苏菲的世界-第一章-伊甸园"><a href="#苏菲的世界-第一章-伊甸园" class="headerlink" title="苏菲的世界-第一章-伊甸园"></a>苏菲的世界-第一章-伊甸园</h2>
+        <div id="aplayer-zbHQYqCD" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-zbHQYqCD"),
+            narrow: false,
+            autoplay: false,
+            showlrc: false,
+            music: {
+              title: "第一章-伊甸园",
+              author: "苏菲的世界",
+              url: "https://nemolaw.s3.amazonaws.com/sofies-verden/sofies-verden-01-%E4%BC%8A%E7%94%B8%E5%9B%AD.mp3",
+              pic: "https://nemolaw.s3.amazonaws.com/sofies-verden/sofies-verden.png",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+
+
+</body></html>]]></content>
+      <categories>
+        <category>StoryTeller</category>
+      </categories>
+      <tags>
+        <tag>TedBookFilm</tag>
       </tags>
   </entry>
 </search>
