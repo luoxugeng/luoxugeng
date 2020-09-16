@@ -12006,16 +12006,18 @@
       </tags>
   </entry>
   <entry>
-    <title>20200830-假如你失眠，那就朗读吧</title>
+    <title>朗读计划-苏菲的世界-第一章-伊甸园</title>
     <url>/2020/09/15/20200830-insomnia-day/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><html><head></head><body><p>喜马拉雅，因为版权问题，我的音频直接被下架了. 也没有找到合适的音频托管商. 所以还是放在我的博客吧. </p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><html><head></head><body><p>想开启一个朗读计划，就是找本书阅读,录下音频.</p>
+<p>第一想法是放在 喜马拉雅，但因为版权问题，我的朗读的音频直接被下架了. </p>
+<p>国内国外都没有也没有找到合适的音频托管商. 所以还是放在我的博客吧. </p>
 <h2 id="苏菲的世界-第一章-伊甸园"><a href="#苏菲的世界-第一章-伊甸园" class="headerlink" title="苏菲的世界-第一章-伊甸园"></a>苏菲的世界-第一章-伊甸园</h2>
-        <div id="aplayer-kSJqAQXE" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-RGijazIG" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-kSJqAQXE"),
+            element: document.getElementById("aplayer-RGijazIG"),
             narrow: false,
             autoplay: false,
             showlrc: false,
@@ -12038,6 +12040,7 @@
       </categories>
       <tags>
         <tag>TedBookFilm</tag>
+        <tag>朗读者</tag>
       </tags>
   </entry>
   <entry>
@@ -12071,6 +12074,41 @@
       </categories>
       <tags>
         <tag>探索与发现</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>朗读计划-苏菲的世界-第二章-魔术师的帽子</title>
+    <url>/2020/09/16/20200916-sofies-verden-c2/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><html><head></head><body><h2 id="苏菲的世界-第二章-魔术师的帽子"><a href="#苏菲的世界-第二章-魔术师的帽子" class="headerlink" title="苏菲的世界-第二章-魔术师的帽子"></a>苏菲的世界-第二章-魔术师的帽子</h2>
+        <div id="aplayer-iXOtkKrT" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-iXOtkKrT"),
+            narrow: false,
+            autoplay: false,
+            showlrc: false,
+            music: {
+              title: "第二章-魔术师的帽子",
+              author: "苏菲的世界",
+              url: "https://nemolaw.s3.amazonaws.com/sofies-verden/苏菲的世界-02-魔术师的礼帽.mp3",
+              pic: "https://nemolaw.s3.amazonaws.com/sofies-verden/sofies-verden.png",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+
+
+</body></html>]]></content>
+      <categories>
+        <category>StoryTeller</category>
+      </categories>
+      <tags>
+        <tag>TedBookFilm</tag>
+        <tag>朗读者</tag>
       </tags>
   </entry>
 </search>

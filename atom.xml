@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://nemolaw.com/"/>
-  <updated>2020-09-15T10:46:00.000Z</updated>
+  <updated>2020-09-15T17:46:00.000Z</updated>
   <id>https://nemolaw.com/</id>
   
   <author>
@@ -17,13 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>20200830-假如你失眠，那就朗读吧</title>
+    <title>朗读计划-苏菲的世界-第二章-魔术师的帽子</title>
+    <link href="https://nemolaw.com/2020/09/16/20200916-sofies-verden-c2/"/>
+    <id>https://nemolaw.com/2020/09/16/20200916-sofies-verden-c2/</id>
+    <published>2020-09-15T17:46:00.000Z</published>
+    <updated>2020-09-15T17:46:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><html><head></head><body><h2 id="苏菲的世界-第二章-魔术师的帽子"><a href="#苏菲的世界-第二章-魔术师的帽子" class="headerlink" title="苏菲的世界-第二章-魔术师的帽子"></a>苏菲的世界-第二章-魔术师的帽子</h2>        <div id="aplayer-iXOtkKrT" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-iXOtkKrT"),            narrow: false,            autoplay: false,            showlrc: false,            music: {              title: "第二章-魔术师的帽子",              author: "苏菲的世界",              url: "https://nemolaw.s3.amazonaws.com/sofies-verden/苏菲的世界-02-魔术师的礼帽.mp3",              pic: "https://nemolaw.s3.amazonaws.com/sofies-verden/sofies-verden.png",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script></body></html>]]></content>
+    
+    <summary type="html">
+    
+      苏菲的世界-第二章-魔术师的帽子
+    
+    </summary>
+    
+    
+      <category term="StoryTeller" scheme="https://nemolaw.com/categories/StoryTeller/"/>
+    
+    
+      <category term="TedBookFilm" scheme="https://nemolaw.com/tags/TedBookFilm/"/>
+    
+      <category term="朗读者" scheme="https://nemolaw.com/tags/%E6%9C%97%E8%AF%BB%E8%80%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>朗读计划-苏菲的世界-第一章-伊甸园</title>
     <link href="https://nemolaw.com/2020/09/15/20200830-insomnia-day/"/>
     <id>https://nemolaw.com/2020/09/15/20200830-insomnia-day/</id>
     <published>2020-09-15T10:46:00.000Z</published>
     <updated>2020-09-15T10:46:00.000Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><html><head></head><body><p>喜马拉雅，因为版权问题，我的音频直接被下架了. 也没有找到合适的音频托管商. 所以还是放在我的博客吧. </p><h2 id="苏菲的世界-第一章-伊甸园"><a href="#苏菲的世界-第一章-伊甸园" class="headerlink" title="苏菲的世界-第一章-伊甸园"></a>苏菲的世界-第一章-伊甸园</h2>        <div id="aplayer-kSJqAQXE" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-kSJqAQXE"),            narrow: false,            autoplay: false,            showlrc: false,            music: {              title: "第一章-伊甸园",              author: "苏菲的世界",              url: "https://nemolaw.s3.amazonaws.com/sofies-verden/sofies-verden-01-%E4%BC%8A%E7%94%B8%E5%9B%AD.mp3",              pic: "https://nemolaw.s3.amazonaws.com/sofies-verden/sofies-verden.png",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script></body></html>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><html><head></head><body><p>想开启一个朗读计划，就是找本书阅读,录下音频.</p><p>第一想法是放在 喜马拉雅，但因为版权问题，我的朗读的音频直接被下架了. </p><p>国内国外都没有也没有找到合适的音频托管商. 所以还是放在我的博客吧. </p><h2 id="苏菲的世界-第一章-伊甸园"><a href="#苏菲的世界-第一章-伊甸园" class="headerlink" title="苏菲的世界-第一章-伊甸园"></a>苏菲的世界-第一章-伊甸园</h2>        <div id="aplayer-RGijazIG" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-RGijazIG"),            narrow: false,            autoplay: false,            showlrc: false,            music: {              title: "第一章-伊甸园",              author: "苏菲的世界",              url: "https://nemolaw.s3.amazonaws.com/sofies-verden/sofies-verden-01-%E4%BC%8A%E7%94%B8%E5%9B%AD.mp3",              pic: "https://nemolaw.s3.amazonaws.com/sofies-verden/sofies-verden.png",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script></body></html>]]></content>
     
     <summary type="html">
     
@@ -36,6 +61,8 @@
     
     
       <category term="TedBookFilm" scheme="https://nemolaw.com/tags/TedBookFilm/"/>
+    
+      <category term="朗读者" scheme="https://nemolaw.com/tags/%E6%9C%97%E8%AF%BB%E8%80%85/"/>
     
   </entry>
   
@@ -456,29 +483,6 @@
     
     
       <category term="冰山下的80%" scheme="https://nemolaw.com/tags/%E5%86%B0%E5%B1%B1%E4%B8%8B%E7%9A%8480/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>欣赏诗歌</title>
-    <link href="https://nemolaw.com/2020/07/18/20200720learn-to-song/"/>
-    <id>https://nemolaw.com/2020/07/18/20200720learn-to-song/</id>
-    <published>2020-07-18T00:16:00.000Z</published>
-    <updated>2020-07-18T00:16:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>On many an idle day have i grieved over lost time.<br>But it is never lost , my lord .<br>Thou hast taken every moment of my life in thine own hands.</p><p>Hidden in the heart of thing thou art nourishing seeds into sprouts ,<br>buds into blossoms , and ripening flowers into fruitfulness . </p><p>I was tired and sleeping on my idle bed and imagined all work had ceased .<br>In the morning I woke up and found my garden full with wonders of flowers . </p><p>from  泰戈尔  吉檀迦利</p></blockquote><p>我的理解: 在一个同样懒散的一个早上,惊奇地发现不曾辜负过的时光竟开出满园的烂漫</p><p><strong>I was tired and sleeping on my idle bed and imagined all work had ceased . In the morning I woke up and found my garden full with wonders of flowers</strong></p>]]></content>
-    
-    <summary type="html">
-    
-      尝试这让自己去欣赏诗歌计划，一个早上醒来看见晴朗的天空触发的念头
-    
-    </summary>
-    
-    
-      <category term="只是欣赏" scheme="https://nemolaw.com/categories/%E5%8F%AA%E6%98%AF%E6%AC%A3%E8%B5%8F/"/>
-    
-    
-      <category term="也读读诗" scheme="https://nemolaw.com/tags/%E4%B9%9F%E8%AF%BB%E8%AF%BB%E8%AF%97/"/>
     
   </entry>
   
