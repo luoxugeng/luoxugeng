@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://nemolaw.com/about/index.html</loc>
+    
+    <lastmod>2020-11-20T05:53:57.859Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://nemolaw.com/recommend/index.html</loc>
+    
+    <lastmod>2020-11-20T02:36:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://nemolaw.com/2020/11/08/2020year-about-past-present-and-future/</loc>
     
     <lastmod>2020-11-08T15:37:00.000Z</lastmod>
@@ -33,13 +47,6 @@
     <loc>https://nemolaw.com/2020/10/14/20201014split/</loc>
     
     <lastmod>2020-10-14T12:22:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://nemolaw.com/about/index.html</loc>
-    
-    <lastmod>2020-10-14T09:37:25.548Z</lastmod>
     
   </url>
   
