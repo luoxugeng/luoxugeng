@@ -3,6 +3,7 @@ Allow: /
 Allow: /archives/
 Allow: /categories/
 Allow: /about/
+Allow: /spare-the-child/
 
 Disallow: /js/
 Disallow: /css/
