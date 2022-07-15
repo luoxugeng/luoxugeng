@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <base target="_blank">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+  position: relative;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color:  #222;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color:  #eee;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color:  #5b4636;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color:  #586e75;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color:  #2e3440;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color:  #cec4ac;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #839496;
+  border-color:  #839496;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color:  #e5e9f0;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] ::selection {
+  background-color: #fff740;
+  color: #000;
+}
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+<title>Reddit问答版：... - @阑夕的微博 - 微博 :: Reader View</title></head>
+<body tabindex="1" data-images="true" data-mode="light" data-font="sans-serif" data-loaded="true">
+  <span></span> <!-- for IntersectionObserver -->
+  <a id="reader-domain" href="https://weibo.com/1560906700/LxXYu8hYi">
+    <span>weibo.com</span>
+    <span>/1560906700/LxXYu8hYi</span>
+  </a>
+  <h1 dir="auto" id="reader-title">Reddit问答版：... - @阑夕的微博 - 微博</h1>
+  <span dir="auto" id="reader-credits"></span>
+  <span dir="auto" id="reader-estimated-time">2-3 minutes</span>
+  <span dir="auto" id="published-time"></span>
+  <hr>
+  <div id="readability-page-1" class="page"><div><p>Reddit问答版：你的工作中有哪些事实是大家不知道的？</p><p>- 我是一名火葬场的焚烧师，我想说的是，不管我工作得有多么细致，也无法保证你拿到的骨灰盒里只有死去亲人的骨灰，凑某种意义上，他/她在那个盒子里不是孤单的……（指的是会掺杂炉子里其他火化者的骨灰）</p><p>- 我在IT运维部门工作，通过重启电脑可以解决80%的日常求助。</p><p>- 我是911接线员，在你拨打这个电话时，<mark class="hghlght">请一定记得首先报出你的地址</mark>，有了地址，我们就能派人去查看出了什么事情，哪怕之后电话中断了，无论如何，地址是最重要的信息，没有之一。</p><p>- 博物馆里的大多数化石都是塑料复制品，如果你是一个死灵法师，对着一具霸王龙骨架化石吟唱复生咒语，很抱歉，你的施法注定是会失败的。</p><p>- 我在垃圾回收站和慈善机构都工作过，然后发现你们这些混蛋会把很好的东西扔到垃圾桶里，同时把一些狗屎捐给穷人。</p><p>- 我是一名厨师，简单来说，你们觉得这顿饭菜的好吃程度，和我在里面添加盐和油的数量成正比关系。</p><p>- 我是航运工作者，提供一个可能大多数人用不到的建议，如果你不幸从船上落水且未被及时发现，只要不是距离岸边很近，就不要试图游泳，保持漂浮，等待救援，千万别浪费任何多余的体力，除非海水温度过低，你可以适当的活动肢体。</p><p>- 在一家汽车装配厂工作，生产线每中断1分钟，工厂就会损失1万美元，所以确保生产线的运作是重中之重，每个人都厌恶意外，这是一份待遇不错的工作，唯一的要求是高中以上学历，每周工作5-6天，10-12小时轮班制，年薪10万美元起步。</p><p>- 我是空乘，航班延误了不要朝我们大喊大叫，<mark class="hghlght">这是我能解决的问题吗，傻逼们。</mark></p><p>- 我是说唱歌手的提词器操作员，是的，就这个职业，可能你们都是第一次听说，你理解的也没错，那些Rapper们并不都是把歌词全部都倒背如流。</p><p>- 我是癌症化疗师，最烦那些喜欢打高尔夫球的病人了，因为如果治疗的时间和他们打球的日程冲突了，他们永远选择打球。</p><p>- 我是一名理财规划师，我的工作通常是<mark class="hghlght">管理客户的心理</mark>而非投资，他们的行为方式对其财务的影响远远高于买卖哪支股票。</p><p>- 麦当劳员工，作为兼职工作来说其实很不错，时薪15美元，每周工作35小时，可以免费在店里用餐，工作时间可以兑换礼品券和积分，值夜班的话不会很忙，麦当劳还提供低息助学贷款。</p><p>- 我是肛肠科医生，如果你的菊花里卡进去了黄瓜、螺丝刀、水瓶——我见多了——请不要隐瞒或是编造原因，这可能会误导手术方案。</p><p>- 电台主播，我想说的是，如果你受到了家庭暴力的伤害，请报警，而不要打电话过来诉苦，我接到过很多这样的电话，并为自己无法解决问题而感到沮丧，<mark class="hghlght">媒体无法带来正义，律师、警察、救助机构才是最有用的求助对象。</mark></p><p>- 如果你在餐馆打烊前的15分钟内进来点餐，你会和整个后厨为敌，留心饭里的口水。</p><p>- 我是酒店安保人员，从监控录像里，我看过你们在电梯里拉屎、在走廊里做爱、在沙滩上斗殴，是的，我都能看到。</p><p>- 社交媒体运营，有人指责我们无理由屏蔽了他的竞选广告，事实是他的账户钱包里没钱了，广告自动下线了，有人抱怨他的新书链接被系统标记为垃圾信息，但这是因为他在几百个群里发那个链接并被1/3的管理员拉黑了，你的照片发出去没被点赞不是因为我们他妈的闲得没事做限你的流，纯粹就是因为你的朋友看到了却不想互动，你去问他们的时候他们不好意思承认于是就告诉你他们没有刷到的你更新，<mark class="hghlght">很多人故意分不清「你是一个傻逼」和「你是一个傻逼，我希望你赶紧去死」的区别，并在因为后者而被禁言时，对别人说自己因为说别人是傻逼而被禁言了这还有言论自由吗</mark>。</p><p>- 在手术前最好清洗一下你的肚脐，很多人根本不会接触那里，我曾在一位病人的肚脐眼里得到了一只死去多年的蜘蛛。</p><p>- 脱衣舞娘前来报道，<mark class="hghlght">大多数客人都很孤独，只是想找人聊天</mark>，我踏入这行之前从没想过还要兼任心理顾问的角色，听男人们毫无保留的对你袒露一切真的很怪，而这只是因为他们视你为「不真实的」，有一次我脱下胸罩后，面前的男人开始为他死去的一条狗哭泣，还有一个男人在被我贴身跳舞时陷入了他对自己父亲多年以来严酷教育的沉思。</p><p>source:r/AskReddit/comments/va1wul/what_are_facts_about_your_job_that_general_public/</p></div></div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+</body><style>body {
+      font-size:  20px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 900px;
+      text-align: justify
+    }
+    .page {
+      line-height: 30.0px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

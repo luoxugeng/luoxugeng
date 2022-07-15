@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <base target="_blank">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+  position: relative;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color:  #222;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color:  #eee;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color:  #5b4636;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color:  #586e75;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color:  #2e3440;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color:  #cec4ac;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #839496;
+  border-color:  #839496;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color:  #e5e9f0;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] ::selection {
+  background-color: #fff740;
+  color: #000;
+}
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+<title>真实地活着 :: Reader View</title></head>
+<body tabindex="1" data-images="true" data-mode="sepia" data-font="sans-serif" data-loaded="true" style="user-select: initial;">
+  <span></span> <!-- for IntersectionObserver -->
+  <a id="reader-domain" href="https://www.douban.com/note/823981521/?_i=5093448cQPOxl6">
+    <span>www.douban.com</span>
+    <span>/note/823981521/</span>
+  </a>
+  <h1 dir="auto" id="reader-title">真实地活着</h1>
+  <span dir="auto" id="reader-credits"></span>
+  <span dir="auto" id="reader-estimated-time">4-5 minutes</span>
+  <span dir="auto" id="published-time">2022/1/14</span>
+  <hr>
+  <div id="readability-page-1" class="page"><div id="note-823981521" data-url="https://www.douban.com/note/823981521/" data-author="山水居士" data-is-original="1"><p data-align="">-
+从18年初选择离开北京进入退休生活到现在已经快四年了，对于一个曾把晋升赚钱与娱乐旅游消费看成是生命全部的人来说，过去这四年对我而言可以说是桑田变海了，今天这篇简单聊聊四年来的变化与感受：&nbsp;</p><p data-align=""><br></p><p data-align="">&nbsp;1、退休是对“过去自己”的颠覆：众所周知，<mark class="hghlght">人是环境型动物</mark>，我们如何认知自我、如何感受思考、如何言行、在碰到事物后如何反应从很大层面讲是由我们的环境决定地，可以说环境塑造了我们；而离开职场环境进入退休状态则会把一个人的曾经彻底分解掉，然后根据新的环境信息重新塑造一个“我”。在这个过程中，你可能会对过去的认知习惯或生活习惯坚持/抵抗一段时间，但终将会被新的环境与生活元素所颠覆，很多之前认定的事情会逐渐松动、改变。这个变化的过程可能会让绝大多数人感到不适，因为你的记忆和惯性认知还存在于退休前的状态中，而新的生活会把你的思想带入一个未曾可知的新模式里，新旧交替难免出现自我意识层面的冲突与不适，其难度和在职场上发生一次人事巨变或全公司的组织架构调整不相上下，而这次你要面对的“对手”不再是资本和老板，而是你自己。各种情绪上的、认知上的波动是很正常的，你只需要接受它、拥抱它、然后积极改变，当你适应了退休后的生活、塑造出新的思想体系与价值观人生观后，你将重回平静，而之前的职场环境你是很难再回去了，道理很简单，享受过自由闲散的人很难再接受奴役、习惯了温暖光明的人无法再接受寒冷黑暗。</p><p data-align=""><br></p><p data-align="">&nbsp;2、复盘四年前的离职选择：回想2017年底的资本寒冬依然记忆犹新，那时候我意识到发达国家的经济周期问题即将在我们这片陆地上以它特有的方式发生。虽然那个时候市场上还是一副欣欣向荣的景象、也没有现在这么多负面的社会情绪，但是作为掌握公司一多半线上收入的部门leader来说，我清楚地认识到业绩很难再持续高速增长了，<mark class="hghlght">与其在老板的KPI和500多人的团队中间被挤压，不如体体面面地放下、自己从那个位置上走下来。</mark>“知止”对于一个职业经理人来说是非常困难的，但在长期的职场拼杀中会让你具备对市场特有的敏感度，让你能辨别出哪些是上升期的阵痛与挑战、哪些是黑暗前的暮光，所以我知道这轮游戏结束了——it's time to move on。<mark class="hghlght">有的时候“体面地离开”是一个成年人对自我的最好保护、也是对那些职场成就的珍惜与尊重，不要等到一切丑恶被揭开后再选择离去，那个时候拥抱地也只有痛苦了。</mark>对此，我很庆幸四年前的退休决定，扔掉了那层“皮”也就远离了勾心斗角、尔虞我诈，终于可以逍遥于世外了。&nbsp;</p><p data-align="">&nbsp;3、对赚钱断了念想：赚钱是退休前的主要社会行为，个体用职权、信息、人脉、技能、学识、投资来换取金钱收益。而个体只要对金钱的获得还有关注或还在为赚钱而烦恼，无论是否退休，其实都还是在劳作，只不过换了一种形态而已，本质上还是在为金钱工作，那么风险、焦虑、时间与精力的付出就依然会存在，退休也就只能流于形式了。因此我会刻意地去隔绝这方面的问题，如果朋友有什么样的投资项目，我会留出一笔和我退休无关的钱任由他们去操作，挣了就放在池子里、赔了我也不过问，只当是维系朋友们之间的纽带了。以我的实际体验来看<mark class="hghlght">只要还有挣钱的想法或对金钱仍有匮乏感，那么就无法真正地脱离束缚、安稳地享受生活</mark>。&nbsp;</p><p data-align=""><br></p><p data-align="">&nbsp;4、年龄大了才知道自己要什么：现在回头去看，很难想像一个每天莺燕环绕、烟酒不离手、饭局夜店缠身的大俗人是怎么成为今天的“我”的，代替以上这些的是：冬天三亚的温暖、夏天大理的凉爽、健康的饮食以及优质的空气质量。不是主观层面的改变，而是身体自发地需求——你的肺、你的心脏、你的肝、你的胃、你的肩颈腰、你的关节会在三十五岁后告诉你它们需要什么、不需要什么；我逐渐认识到身体并不是一个整体，每一个器官与部位都有发言权，当它不舒服的时候你是要去认真聆听它们的“控诉”，否则它们就会要你好看。<mark class="hghlght">我现在服务于我的器官们、充分地“尊重”它们，这样我们才能相安无事、健康快乐地一起生活。&nbsp;</mark></p><p data-align=""><br></p><p data-align="">&nbsp;5、<mark class="hghlght">有了子女是很难真正退休的</mark>：因为我自己没有家庭子女，这段中的内容都是来自旁边已为父母的朋友们，TA们给了我一些我不曾认识到的观点。我曾以为“鸡娃”是社会焦虑情绪的产物，而朋友告诉我并不单单源于社会环境：“孩子不是给予一定的物质支持与陪伴就可以放手不管的，对于贫困家庭确实可以，因为即使父母想付出也没有什么可以给予的，与其面对父母的责骂与毒打可能不“教育”反而对孩子的成长会好些。事实上对大部分一二线城市的父母来说教育子女不单是一种责任也是为了孩子未来能拥有更多选择的一种努力，它会具体到孩子每天的作业情况、老师随时打过来的电话、每天孩子的接送与饮食、孩子的成绩变化与心理变化；当TA厌倦学习、不完成作业时作为父母的你如何应对，当TA发生叛逆拒绝沟通的时候作为父母的你如何反应；这里面还会涉及家庭成员之间的博弈，老人看不好孩子怎么办、夫妻教育方式有矛盾怎么办…即使按照其中一个人的教育方式为主、且孩子接受了这种教育方式，你会发现一旦你离开孩子几天，TA的成绩很有可能因为你的短暂缺席而有所后退，如果是这样你就需要长期地陪伴着TA，否则前面的时间和精力就白费了——从小学四年级开始到高考，任何一个放松或外界原因都会使孩子的成绩一蹶不振、再想找回来也很难，正所谓“行百里者半九十”，前面地都做到位了很有可能一时的失误而导致孩子在高考上功亏一篑，TA失去的并不仅仅是一个好大学的毕业证书而是失去了很多未来选择的机会，当一个年轻人失去了挑战同龄人的资本时，就很有可能会放弃自我然后逃避现实甚至是走上歪路，最后衍生出的一系列问题还是要由父母来承担的；只有当TA认为在职场上有成功的可能性或对自己有一定自信的情况下TA才会持续努力与优化自己，这和学习成绩是一个道理（成绩太差或者完全没有自信能提高分数就很容易放弃学习）。即使父母能接受让孩子成为一名普通的职员或技工，但孩子未必在进入社会后会这么想，TA很有可能会羡慕那些同样工作一个小时、但收入却是TA们几十倍或几百倍的职场精英们，<mark class="hghlght">TA会埋怨自己的同时也会埋怨父母，毕竟自己年少时爱玩不喜欢学习是每一个孩子的正常反应，为什么自己的父母没有拉自己一把呢，那样自己可能就会有更多的选择、而不是在一个小公司小厂子里消磨生命做自己厌恶的重复性工作、依靠出卖劳动力与健康来换取低微的报酬，或干脆没有工作、无所事事、蹲家啃老。</mark>任何一个父母除了担心子女的未来，还有一个原因就是不希望孩子未来埋怨自己，而作为父母也希望能给予孩子未来更多的选择与发展空间，而不是被迫地按一种方式去活着。因此，拥有孩子的那一刻起就是一种责任的绑定，无论你挣了多少钱，如果孩子教育不好、未来都会为孩子的各种困境买单或种种错误行为而“亏”回去。作为父母，可以离开职场，但很难离开孩子上学的城市，对于大多数中产父母来说，至少要等到高考结束才能松一口气了，在这之前无论是风花雪月还是去小城退休都是不切实际的，因为孩子的分数会把你从退休的美梦里拉回现实。”在过去的四年中，我看到旁边的朋友在退休问题上由于和家人的想法相左发生了多次争吵，而每次的退让与妥协基本上也是为了孩子的学业与健康成长，<mark class="hghlght">所以只要这份牵挂在，责任和义务就会继续。&nbsp;</mark></p><p data-align="">&nbsp;6、现在的生活：睡到自然醒也不过七点来钟，磨咖啡豆加预热机器熟练操作下来不过几分钟，一边听着青年时候喜欢的歌曲、喝着手里的咖啡、一边看着远方的海景；上午去海边散步再去买菜，如果不想做了就去旺豪超市买一堆海鲜然后让加工餐馆帮忙烹饪：一斤大个儿的罗氏虾（下图二）、四个大闸蟹（三亚冬天的大闸蟹和九十月份的阳澄湖大闸蟹一样肥，五两左右）、一打生蚝、两个蒜蓉带子、一盘姜葱炒蛏子（这一套是我常点的）。溜达回来洗澡加洗衣服，接着是午休，两点起来吃些水果然后健身到三点多、趁着太阳西斜出去遛个弯、接着就是准备晚餐；吃完晚饭后会在阳台看完日落再去散步，晚上回来看看电视剧就可以准备休息了；如果晚上无剧可刷，我会选择坐在一个三亚小巷的饮品店内（见下图四），观看那些进进出出的少男少女们，听着TA们聊天欢笑、看着TA们充满青春活力的样子，也不失为一种有趣的晚间娱乐。三亚的冬天就这点好，晚上有地方可遛，不像北京的冬天晚上除了穿着厚棉衣窝在家里，哪里都去不了，在这里可以随时外出欣赏这个海边城市的夜景与热闹，我之前在随笔中提到过“
+<mark class="hghlght">我们经常在定义'幸福'、'家'这些概念，最后都会归结于一个成年人的切身感受：哪里有蓝天白云、哪里有苍丘碧波、哪里有自由玩耍的圈子、哪里有闲适自在的生活，哪里才是目的地。这就需要想明白一件事你打算牺牲哪些利益和人性中的欲望来换取到达那里的权利。</mark>”&nbsp;</p><p data-align=""><br></p><p data-align="">&nbsp;这几年退休下来，渐渐停止了对两类事物的投入：<mark class="hghlght">与人交往的投入、对信息流的投入</mark>。<mark class="hghlght">前者的动力无非源于“交配、排解孤独、利益”，一旦没有了这三方面的需求，人际交往可以说是一种负累；对于信息流来说，无论是个体的发言、还是权威的喉舌对我的生命体验而言都没有太多的营养和价值，索性就不去沾染，把全部的注意力转移到自己每日的具体生活中，真真切切地去观察身边的一切、并感受每一个细小的瞬间。</mark>这种较为彻底的遁世生活会给予我一种宽和的宁静，不必烦忧、不必牵扯，踏踏实实地吃饭、睡觉，就这样真实地活着，直到那天的到来。</p><div><p><img height="auto" src="https://img9.doubanio.com/view/note/l/public/p87163675.webp"></p></div><div><p><img height="auto" src="https://img9.doubanio.com/view/note/l/public/p87163685.webp"></p></div><div><p><img height="auto" src="https://img2.doubanio.com/view/note/l/public/p87163681.webp"></p></div><div><p><img height="auto" src="https://img2.doubanio.com/view/note/l/public/p87163683.webp"></p></div><div><p><img height="auto" src="https://img9.doubanio.com/view/note/l/public/p87168004.webp"></p></div><div><p><img height="auto" src="https://img9.doubanio.com/view/note/l/public/p87168005.webp"></p></div><div><p><img height="auto" src="https://img2.doubanio.com/view/note/l/public/p87163682.webp"></p></div><div><p><img height="auto" src="https://img2.doubanio.com/view/note/l/public/p87168141.webp"></p></div><div><p><img height="auto" src="https://img3.doubanio.com/view/note/l/public/p87168140.webp"></p></div></div></div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+</body><style>body {
+      font-size:  20px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 900px;
+      text-align: justify
+    }
+    .page {
+      line-height: 30.0px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

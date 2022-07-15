@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <base target="_blank">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+  position: relative;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color:  #222;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color:  #eee;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color:  #5b4636;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color:  #586e75;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color:  #2e3440;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color:  #cec4ac;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #839496;
+  border-color:  #839496;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color:  #e5e9f0;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] ::selection {
+  background-color: #fff740;
+  color: #000;
+}
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+<title>我所害怕的 :: Reader View</title></head>
+<body tabindex="1" data-images="true" data-mode="sepia" data-font="sans-serif">
+  <span></span> <!-- for IntersectionObserver -->
+  <a id="reader-domain" href="https://mp.weixin.qq.com/s/m0MNErG6Kv39eo-_hrXiyg">
+    <span>mp.weixin.qq.com</span>
+    <span>/s/m0MNErG6Kv39eo-_hrXiyg</span>
+  </a>
+  <h1 dir="auto" id="reader-title">我所害怕的</h1>
+  <span dir="auto" id="reader-credits">一只柱柱柱柱子哥</span>
+  <span dir="auto" id="reader-estimated-time">4-5 minutes</span>
+  <span dir="auto" id="published-time"></span>
+  <hr>
+  <div id="readability-page-1" class="page"><section data-role="outer" label="Powered by 135editor.com" id="js_content"><p><span>Hello大家好，我是最近有点困惑的柱子哥。</span></p><p><span>这是东北回忆录系列（四），其他几篇：</span></p><p><span><a target="_blank" href="http://mp.weixin.qq.com/s?__biz=MzUyMjM5NDMxMw==&amp;mid=2247483653&amp;idx=1&amp;sn=088ffe479a82514b73491bc1ba5b4e39&amp;chksm=f9cdcea3ceba47b5af26d6b8c2d66f9ae8f22407e8edd42f74445d7f7a60872e5c8c615cd1f6&amp;scene=21#wechat_redirect" data-itemshowtype="0" tab="innerlink" data-linktype="2" wah-hotarea="click">席梦思与硬板床</a><br></span></p><p><a target="_blank" href="http://mp.weixin.qq.com/s?__biz=MzUyMjM5NDMxMw==&amp;mid=2247484062&amp;idx=1&amp;sn=76788226a5b12f0353ed137b7a9ba1cd&amp;chksm=f9cdcd38ceba442e1984cab84b918d7a74fbbd519e8a898dd974a42b15317030010b709ba49d&amp;scene=21#wechat_redirect" data-itemshowtype="0" tab="innerlink" data-linktype="2" wah-hotarea="click">一个晚期癌症患者之死</a><br></p><p><a target="_blank" href="http://mp.weixin.qq.com/s?__biz=MzUyMjM5NDMxMw==&amp;mid=2247483986&amp;idx=1&amp;sn=479072b002be773d31b5050dd268b86b&amp;chksm=f9cdcdf4ceba44e2e62587198d657af6c8e207dc5962142ed65b0de69a97ea3a0e227fb15b23&amp;scene=21#wechat_redirect" data-itemshowtype="0" tab="innerlink" data-linktype="2" wah-hotarea="click">如何开心地打一手烂牌|从《名姝》说起</a><br></p><p><em><span><strong><span>01</span></strong></span></em></p><p><span>周六见到王姨的时候，我内心的冲击很大，甚至有点恍惚的耳鸣，仿佛在极速飞车里撒把，被吸入了另一个时空。</span></p><p><span>二十年前的时空。</span></p><p><span>我还是小孩子的时候。</span></p><p><span>从小学开始，王姨和我爸爸一起骑自行车从那片破平房去学校接她女儿小南和我，我们是小学同班同学。大人不接我们的时候，我们就晃晃逛逛走路回家。</span></p><p><span>我们住在一片破破烂烂的平房区，我家前院偏房开了个小卖店，家里有个大园子基本蔬果肉自足，被土墙围着，院外是一个开放垃圾堆，房后是这个片区的公共厕所，厨房窗户打开对着后排养牛家的奶牛圈。</span></p><p><span>我走路十分钟穿过两个半胡同，可以到小南家写作业，她家的平房更低矮，前院是破旧的杂物间门房，走过一条旧木板小径之后是主房，一条炕，房中央有个小桌子，吃饭之外当学习桌。</span></p><p><span><strong><span>二十年前的王姨就是让我感觉不一样的，跟这个平房区所有的阿姨、大娘都不一样。</span></strong></span></p><p><span>王姨戴眼镜、话不多、友好和善，而且矫正牙齿。</span></p><p><span>在东北小城全民下岗国企倒闭的时代里，住在那个平房区的所有家庭差不多的贫富水平。所有我认识的三四十岁的女性形象，多给我愤怨感，贫穷窘迫的境遇下，生活里为鸡零狗碎纠缠不休、聚在一起闲言碎语家长里短、妯娌间斤斤计较愤懑卑劣，总是见不得别人好，在日复一日的抱怨里打牌、摘菜、坐炕头里消磨人生、找补存在感。</span></p><p><span>我是小孩子的时候，我就有种类似讨厌和害怕的感觉。</span></p><p><span>不是因为她们粗鄙骂骂咧咧，不是因为她们看起来没正事不管孩子学习，不是因为她们的苦相和白眼，而是，</span><span><strong>她们让我觉得，她们像挨饿的、贫乏的、饿到心慌的人</strong></span><span>。</span></p><p><span><strong><span>你不敢让她们知道你也饿、心里也苦，更不敢让她们知道你吃饱了、今天幸福。</span></strong></span></p><p><span>我在那个年纪无法描述自己的感受，很多年后我读苏童、张爱玲这些善于描摹女性的作家，我才知道怎么形容那样的感受：</span><span><strong>对匮乏的忌惮</strong></span><span>。</span></p><p><em><span><strong><span>02</span></strong></span></em></p><p><span>我害怕阿姨们如芒在背的关心刺探，害怕她们闲来无事也多往我家瞟一眼。</span></p><p><span>没条件经常洗澡，我的脖子和耳后黑黑皴皴的时候，我会被阿姨们揪过来说「你妈也不知道给你搓搓泥的么」，「她一天穿那么好花枝招展的是忙什么呢」，「这孩子没人管的么」。</span></p><p><span>她们给我原始的自卑感。</span></p><p><span>可是我不能解释，越解释越错越是被讥笑。</span></p><section><img data-croporisrc="https://mmbiz.qpic.cn/mmbiz_jpg/1XeLx65nHKqibevFiaw8scgpBCfkt0aAQBmJiaU52Z6LnsUGibZPYicL9Mas5IaoaO5EOdDJF0ogFseFzgubnXEkX2w/0?wx_fmt=jpeg" data-cropx1="0" data-cropx2="766" data-cropy1="0" data-cropy2="1086.712802768166" data-ratio="1.4177545691906006" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_jpg/1XeLx65nHKqibevFiaw8scgpBCfkt0aAQBuc71P3MqOR6sGzkcyEABG1eLia5pGlwcJribrOKLibUq7sxCpicwic9labg/640?wx_fmt=jpeg" data-type="jpeg" data-w="766" _width="368px" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" crossorigin="anonymous" alt="图片"></section><p><span>90年代东北女性，图片来源于网络，如侵删</span><br></p><p><span><strong><span>可是王姨没有，她看起来很忙，她没空说这些话，接送孩子、做饭、上班，穿着朴素干净，脸上永远是温和的淡然的笑容。</span></strong></span></p><p><span>有一次我不小心踩空了她家平房的木板，踩到了粪便，她一句话没说，帮我把鞋子刷的干干净净送我回家。</span></p><p><span>过了十年，过了二十年，她的长相和笑容没有一丝一毫的变化。</span></p><p><span>所以在我上海的家里重聚时，只是我和小南两个孩子长大到快一米七的个子，她还是她。</span></p><p><span>她没有变化，短发更显年轻了，穿着也是三十几岁职场姐姐的穿着，完全和老家那些五六十岁的阿姨们隔着世代。如果说二十年岁月真的有痕迹，只是让她看起来更温和、稳重、妥帖、淡然、落落大方。</span></p><p><span>我们聊着二十年前的人事光景，聊着住在哪家哪院的家庭怎么样了。</span></p><p><span>那个平房区拆了变成楼房了，那些人还是生活在那里，包括我家，三代人生活了一辈子。</span></p><section><img data-ratio="0.562037037037037" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_jpg/1XeLx65nHKqibevFiaw8scgpBCfkt0aAQBWkqWfDsibibFJT71AtXDZkzkcT27yp5PhcmEhxkRqeK4l4AmIEic2zTqA/640?wx_fmt=jpeg" data-type="jpeg" data-w="1080" _width="677px" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" crossorigin="anonymous" alt="图片"></section><p><span>图为《城堡岩》剧照</span><br></p><p><span>我想起这些阿姨的面目。</span></p><p><span>她们有的病了、有的老了、有的皱成缩水的羊毛衫了，人生格局在方寸之间，有的晚景凄凉、有的依旧单纯的刻薄，刻薄偏执地只能让人莞尔一笑。</span></p><p><span><strong><span>她们对别人的恶意，提纯后，只是来自于自己人生的苦和失落。</span></strong></span></p><p><span>在她们老了以后，我甚至不觉得任何一句刻薄的语言值得怪责。</span></p><p><strong><span>在时代际遇切换的时候，不是每个人都能做对选择、理解处境、改变人生的。</span></strong></p><p><span>就在我回忆起这些脸的时候，我的心脏如同俯冲下来的海盗船，有时间停滞的失重感。</span></p><p><span>原来，工作和不工作，对女性人生的影响那么大。</span></p><p><span><strong><span>原来，是不是有事做，追求还是放弃人生，二十年后会差那么多。</span></strong></span></p><p><span>原来，在二十年前根本意识不到的坚持选择，暗中标好了昂贵的价格。</span></p><p><em><span><strong><span>03</span></strong></span></em></p><p><span>一九九八年一夜之间城市里很多国企职工下岗，有人无法面对变化上吊自杀了，有人拿着买断工龄的遣散费做小生意、凑出租车、包干小柜台，有人蹲在家里酗酒骂单位，有人举家南下谋生活，有人卖体力蹬三轮车，有人去市场里做小工，无论如何，为了活下去讨生活。</span></p><p><span>王姨家没有下岗，只是有合适的机会，举家离开小城在上海定居。一家人都在更好的城市生活，永远地离开了那个会拉扯人一起堕落的平房区。</span></p><p><span>哪怕过了五十五岁，她还是可以重新找工作，还是要努力工作，还是想充实的过每一天，也「越老越吃香」了。</span></p><p><span>可是曾经那些阿姨、婶婶们，</span><span><strong>却永远留在那个生存资源和认知资源匮乏的环境里了</strong></span><span>，她们是彼此的邻居、朋友、亲戚，中年失意时怨念体制，没有自己的事业后攀比老公和孩子，在一起统一着一样见人下菜碟的价值观，斤斤计较、乐于逞口舌之快，要撇嘴比自己过得好的人，要奚落更不如意的人，要盯着跟自己差不多的人分毫不离，唯独，</span><span><strong>不再好好经营自己的人生，错失了时代的际遇也放弃了挣扎和努力</strong></span><span>。</span></p><section><img data-ratio="0.562037037037037" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_jpg/1XeLx65nHKqibevFiaw8scgpBCfkt0aAQBUyqr3vAicdAdGNy5kxJ1eeUeURREibdyoolO7xPThX4tYw6orjssl5UA/640?wx_fmt=jpeg" data-type="jpeg" data-w="1080" _width="677px" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" crossorigin="anonymous" alt="图片"></section><p><span>图为《城堡岩》剧照</span></p><p><span><strong><span>除了以身度事，其他一切认知能力用进废退。</span></strong></span></p><p><span>留在那个环境里就不得不被她们影响，她们会站在你家窗户下指指点点、指桑骂槐，她们会坐上门打量你、贬损你、冷嘲热讽你，用她们理解世界的方式评判你，仿佛把你也拉扯到一般不堪，她们人生的苦就被堵住了，就不再过饮鸩止渴的人生了。</span></p><p><span>虽然匮乏，却也复杂，因为这让人忌惮的匮乏中也有着贪婪、懒惰、狭隘和自私。</span></p><p><span>因为匮乏，也更容易人性探底，一点小事就会让人睚眦必报。</span></p><p><span>在这些面目越发清晰的瞬间，我忽然明白了我一直以来难以名状的焦虑是什么。</span></p><p><span><strong><span>我知道我害怕的是什么了，是我真的就在人生坠落的时点含着心里的苦再去反刍，自怨自艾这样过人生，像她们一样过人生，成为她们。</span></strong></span></p><p><em><span><strong><span>04</span></strong></span></em></p><p><strong><span>我所害怕的</span></strong></p><p><span>我真希望这个阶段的治疗尽快平安的结束，我可以尽快地回到朝九晚五的搬砖状态，可是身边家人都担心我累，觉得我只要工作、只要做事（哪怕只是看书看剧写点东西）一定</span><span><strong>会「对自己要求太高」累到自己</strong></span><span>，哪怕是在家里，也经常被叮嘱「多休息，身体为重」，仿佛他们隔着很远都知道我在熬夜。</span></p><p><span>用东北话来说，我的状态是「点灯熬油」，十分担心我「油尽灯枯」。</span></p><p><span>可是他们不知道，我不怕疾病的复发、不怕累到身体、甚至不怕生命短暂，</span><span><strong>我害怕的是永远地「落下病根儿」：早早放弃人生，早早失去智识成长，早早迷失追求的方向。</strong></span></p><p><span>我所害怕的</span><span><strong>不是平庸</strong></span><span>，是不再知道什么是好的、美的、对的，不再知道这世间有更大的坐标系，不再渴望改变生活的任何一个变量。</span></p><p><span>我所害怕的</span><span><strong>不是察觉自己身上有张爱玲笔下女性悲剧的痕迹</strong></span><span>，是成为曹七巧，是戴着黄金枷锁永远无法扭转自卑和绝望的人生轨迹，悲剧倾轧悲剧，见不得旁人幸福。</span></p><p><span>我所害怕的</span><span><strong>不是长期的独处</strong></span><span>，是在独处的岁月里越来越聚焦自己，放大自己以至于看不到、感受不到其他人事、隔绝了其他的能量交换，是自我生长也许停滞而不自知，是按照自己的思维方式去逻辑自洽解释世界、把一切事物都和自己的理解力拉平。</span></p><p><span>我所害怕的</span><span><strong>不是全职照顾家庭</strong></span><span>，是把自我价值和内心认同全部捆绑在家人身上，人生角色只是职责的附属品，余生只有家长里短、柴米油盐。</span></p><p><span>我所害怕的</span><span><strong>不是不工作本身</strong></span><span>，而是我失去了求知精进、敏而好学的人生态度，觉得活一天是一天得过且过，用「佛系」掩盖懒惰，用「随遇而安」粉饰倦怠，用「现世安好」服从局限性，是心安理得接受一个年轻的自己路径依赖，是不再为变化而努力、为成长而挣扎。</span></p><p><span>我所害怕的</span><span><strong>不是成为专职病人</strong></span><span>，是只以病人的身份生活，只围绕着病友圈子打转，只在更弱势的群体面前找优越感，只安慰自己不必追逐曾经同行同伴的脚步，只顾盼眼前几个人的抱团取暖，看不到更大的世界、更广阔的天地。</span></p><p><span>我所害怕的</span><span><strong>不是病假期的两年时间流逝</strong></span><span>，是任由时间流逝而不觉，虚度光阴无所收获，心智仍是28岁的样子，没有决心和毅力知行合一，选择性敷衍自己渴求成长的内心，选择性蒙蔽自己自我认知的不足。</span></p><section><img data-ratio="0.562037037037037" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_jpg/1XeLx65nHKqibevFiaw8scgpBCfkt0aAQBQk8Yq4dv5tVeYAhcTYibqM6RLZl4402O6qEp5TGlPibm47JdO06v1FSw/640?wx_fmt=jpeg" data-type="jpeg" data-w="1080" _width="677px" src="https://mmbiz.qpic.cn/mmbiz_jpg/1XeLx65nHKqibevFiaw8scgpBCfkt0aAQBQk8Yq4dv5tVeYAhcTYibqM6RLZl4402O6qEp5TGlPibm47JdO06v1FSw/640?wx_fmt=jpeg&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" crossorigin="anonymous" alt="图片" data-fail="0"></section><p><span>图为《城堡岩》剧照</span></p><p><span>我害怕。</span></p><p><span>我害怕只要这样顺其自然下去，</span><span><strong>怠惰比疾病本身更消耗我</strong></span><span>，让这漫长的病假把我永远地留在了《城堡岩》般穿越的时光磁场，我永远是这个样子。</span></p><p><span>我害怕自己这辈子就稀里糊涂、不求甚解地混过去了，</span><span><strong>没有任何成长</strong></span><span>，「这辈子就这么回事了」，直到离开那一天，都没有证明过自己，不知道自己的局限和边界在哪里，也没有镜子照到我的灵魂。</span></p><p><span>前阵子我学长跟我说「外面的世界很精彩啦，确实需要外部刺激才能不断思考。很多看似不关联的事情，很有可能会催生出新的机遇，要抬头看看」。<br></span></p><p><span>人，最终是要给自己一个交代的。</span></p><p><span>有没有过好自己的人生，自己心里是知道的。</span></p><p><span>今天也一样，留言区互动的朋友抓一只寄送新书。</span></p><p><span>今天也一样，拜托读过的朋友，帮我当当/豆瓣评论，也请给我建议，我真的想做得更好一点。</span></p><p><span>微信公众号更改了推送规则，麻烦点「在看」或者把我的公众号加「星标」才能收到更新噢。</span></p><section><mpcps frameborder="0" data-datakey="1596036438981_0.5413309245202143" data-uid="1596036438966" data-type="1" data-product="" data-templateid="list" data-pid="28984037" data-packid="" data-smartnum="" data-color="#fa7834" data-categoryid="3" data-appid="wx831660fe3ded4389" data-report="s0%3D3%26s1%3D3%26s2%3D0%26s3%3D%25E5%2590%2591%25E9%2598%25B3%25E8%2580%258C%25E7%2594%259F%26s4%3D0%26s5%3D10%26s6%3Did_1596036661135_827745%26s7%3D%26s8%3D%26s9%3D%26s10%3D%26pid%3Dwx831660fe3ded4389_28984037%26uuid%3D35223943131059591036%26title%3D%25E5%2590%2591%25E9%2598%25B3%25E8%2580%258C%25E7%2594%259F%2B%25E6%259F%25B1%25E5%25AD%2590%25E5%2593%25A5%25E7%259A%2584%25E6%258A%2597%25E7%2599%258C%25E6%258C%2587%25E5%258D%2597%25EF%25BC%2588%25E4%25BD%259C%25E8%2580%2585%25E7%25AD%25BE%25E5%2590%258D%25E7%2589%2588%25EF%25BC%2589%26sid%3D3%26cid%3D3%26ratio%3D17.00%2525%26price%3D44.20%26" data-cpsstatus="loading" data-showed="no">  </mpcps></section></section></div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+</body><style>body {
+      font-size:  20px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 900px;
+      text-align: justify
+    }
+    .page {
+      line-height: 30.0px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

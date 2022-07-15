@@ -1,0 +1,257 @@
+<html><head><title>一个常识性问题。。 :: Reader View</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color: %light-color%;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color: %dark-color%;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color: %sepia-color%;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color: %solarized-light-color%;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color: %nord-light-color%;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color: %groove-dark-color%;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #93a1a1;
+  border-color: %solarized-dark-color%;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color: %nord-dark-color%;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] .tts-word {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  background-color: red;
+  height: 2px;
+}
+.tts-word.hidden,
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+</head>
+<body tabindex="1" data-images="true" data-mode="sepia" data-font="sans-serif" data-loaded="true">
+  <span></span> <!-- for IntersectionObserver -->
+  <a id="reader-domain" href="https://mp.weixin.qq.com/s?__biz=Mzg4NTE3NTE2NQ==&amp;mid=2247489501&amp;idx=1&amp;sn=403d7cb632c7838304a6f9d9464344ab&amp;chksm=cfadb1cff8da38d9f0d95bec0fbef15051758c92f5e9c188d1e5b16dc29cd3cd4a6f7a546698&amp;scene=21#wechat_redirect">
+    <span>mp.weixin.qq.com</span>
+    <span>/s</span>
+  </a>
+  <h1 dir="auto" id="reader-title">一个常识性问题。。</h1>
+  <span dir="auto" id="reader-credits">小声比比的饭爷</span>
+  <span dir="auto" id="reader-estimated-time">2-3 minutes</span>
+  <span dir="auto" id="published-time"></span>
+  <hr>
+  <div id="readability-page-1" class="page"><div id="js_content">
+                    
+
+                    
+                    
+                    
+                    <section><span><span><img data-ratio="1" data-type="gif" data-w="400" data-src="https://mmbiz.qpic.cn/mmbiz_gif/Lvm6UAoJibrP9JEWQRXR3swLXRYlFicicbg2q6gYPiapiaCkPr8GibxibGO0jcDe76cnAUJ3KBkCmyTIZBueDAOslJ0Zw/640?wx_fmt=gif" _width="30px" src="https://mmbiz.qpic.cn/mmbiz_gif/Lvm6UAoJibrP9JEWQRXR3swLXRYlFicicbg2q6gYPiapiaCkPr8GibxibGO0jcDe76cnAUJ3KBkCmyTIZBueDAOslJ0Zw/640?wx_fmt=gif&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" data-order="0" alt="图片" data-fail="0">戳上面蓝字</span><span><strong><span><span>“</span><span>饭爷的江湖</span><span>”</span></span></strong></span><span>发现更多精彩</span></span></section><section><img data-copyright="0" data-ratio="0.75" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_jpg/BSbL23YpK40hWPuVyEibKyjq1zibDI27HSoszFH0jC83AxGfpCpverojoKrDlIroPsyWEN4rgNJ2ql274ic4DNFsA/640?wx_fmt=jpeg" data-type="jpeg" data-w="1280" _width="677px" src="https://mmbiz.qpic.cn/mmbiz_jpg/BSbL23YpK40hWPuVyEibKyjq1zibDI27HSoszFH0jC83AxGfpCpverojoKrDlIroPsyWEN4rgNJ2ql274ic4DNFsA/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" crossorigin="anonymous" alt="图片" data-fail="0"></section><section><span><strong>这是饭爷的江湖发出的第255</strong></span><strong>篇文章</strong></section><section><span>前两天看到有人讨论楼市的问题，有人说未来楼市见顶了，有人说未来楼市远没有见顶，各有各的理由吧。</span></section><section><span>很多人从人口到月供，讲出来一大堆理由，感觉根本没有讲到关键的点上，我们这里也讲讲自己的理解。</span></section><section><span>首先大家都应该有一个常识：<strong>房子这类资产从整体上看，反应的是普通人财富的积累量。</strong></span></section><section><span>而普通人财富的积累量，和人均GDP是高度相关的，而且是高度正相关。</span></section><section><span><strong><span>这是一条适合全世界任何国家和地区的普适规律，基本上没有哪里是例外的。</span></strong><span></span></span></section><section><span>这也是为啥我们在这篇，写台湾地区房地产市场起飞的《</span><a target="_blank" href="http://mp.weixin.qq.com/s?__biz=Mzg4NTE3NTE2NQ==&amp;mid=2247484944&amp;idx=1&amp;sn=3947a8050cc49d93251dce1f8571c302&amp;chksm=cfada002f8da2914c425a89a7b32b4f8894d4e6137b61b7d0d1e6d4f109bed98516a33aafa18&amp;scene=21#wechat_redirect" data-itemshowtype="0" tab="innerlink" data-linktype="2" wah-hotarea="click"><span>连楼市都一模一样</span></a><span>》里面，会提到一个问题。</span></section><section><span>当台湾地区因为经济起飞以后，当</span><span>人均GDP跨过某个数字以后，楼市就开始起飞。</span></section><section><span>经济学上的描述是：<strong>当某个地区人均GDP超过5000美元的时候，房地产投资开始在大众普及，价格开始爆发性增长。</strong></span></section><p><span>我们的一二线城市道理也一样。2004年开始，北京上海的人均GDP开始突破5000美元。</span></p><p><span>如果没记错的话，北京上海这些一线城市的房价也从这里开始起步。<br></span></p><p><img data-ratio="0.23880597014925373" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_png/oIUpFu9RaAcAZB4t6MB25oNnS0XP4SuoLdSMDV0fRWzKtR8ZjZz6RHFqh2ConmjlUEdGF1k4oDLpW9a4tdKsRQ/640?wx_fmt=png" data-type="png" data-w="603" _width="603px" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" crossorigin="anonymous" alt="图片"></p><p><span><strong><span>如果你早早明白这个规律，那时候就可以开始考虑下注了，后面回报必定是丰厚的。</span></strong></span></p><section><span>既然房价本身和普通人财富的积累量正相关，那么只要经济还在持续增长，不管你能分到多少吧，总量依然是在不断累积的。</span></section><section><span>所以从整体趋势上看，在一个经济向上增长的地区或者国家，房价的整体趋势是上涨的。</span></section><section><span>因为房产是多数百姓，积累财富的唯一手段。</span><span>只不过在经济发展的不同阶段，整体上涨速度和斜率不一样。</span></section><section><span>另外就是同一个国家的地区之间，因为经济和人口差异，房价也会出现区域性分化。</span></section><section><span>所以你才看到，一个国家内部会出现发达地区房价高，欠发达地区房价低。</span></section><section><span>就像美国有纽约洛杉矶加州这种经济发达，房价处在高位的地区，也有底特律这种铁锈带。</span></section><section><span>从我们国家的角度来说，现在人均GDP只有1万美元，未来的增长空间还很大。</span></section><section><span>所以如果从整体上看，目前我们的房价并不是最终的顶部，只是处在回调之中。</span></section><section><span></span><span>因为国家经济还在持续向上发展，而且我们是全世界经济发展，比较快的国家。</span></section><section><span>这就导致了普通百姓的财富还在不断积累，所以房子这个资产整体上，依</span><span>然是处于向上趋势之中的。</span></section><section><span>2050年我们建成现代化强国的时候，人均GDP是要达到3万美元的。</span></section><section><span>那么在这种情况下，全国楼市的平均价格，很可能会比现在翻一番。</span></section><section><span>也就是现在全国平均房价是1万元人民币上下，到时候可能会是2万元左右。</span></section><section><span>如果全国的均价是在30年翻番，那我们经过简单计算，可以得出一个结论。</span></section><section><span>按照单利计算的话 ，整体年均增长率大概在3.3%，计算复利的化话，大概在2.34%，</span><span>这并不是一个很难达成的数字。</span></section><section><strong><span>当然了，从投资收益率和人口的角度来看，很多城市可能已经不值得投资了。</span></strong></section><section><span><span>在人口和经济持续分化的情况下，未来区域分化和差异依然是存在的。</span></span></section><section><span>所以不是每个城市增长都在3%，有的可能低一点，有的可能高一点。</span></section><section><span>这也是为啥我们会说，《</span><a target="_blank" href="http://mp.weixin.qq.com/s?__biz=Mzg4NTE3NTE2NQ==&amp;mid=2247485634&amp;idx=1&amp;sn=8160613668439ea2368d4f5a34b56707&amp;chksm=cfadaed0f8da27c6daed1845d364bbbe10333df792623b0ce63fbbd32302962b2f1c99d4b1b7&amp;scene=21#wechat_redirect" data-itemshowtype="0" tab="innerlink" data-linktype="2" wah-hotarea="click"><span>未来楼市会出现明显分化</span></a><span>》。这个分化不光体现在城市内部，也体现在不同城市之间。</span></section><section><span><span>至于这个差异未来</span><span>是继续扩大</span><span>还是收敛，就要看区域间经济再平衡的情况了。</span></span></section><section><span>另外最近两年还有个很大的不同是，房产的调控越来越趋向于精细化。</span></section><section><span>以前房产投资长持是金，原因也很简单。</span><span>当时的调控比较粗放，基本一年回调换来的是三年缓涨。</span></section><section><span>最终楼市的走势体现出来就是牛长熊短，和我们看到的美国股市很类似。</span></section><section><strong><span>现在如果再来做房投，基本已经告别之前的阶段，需要进入到精挑细选阶段了。</span></strong><span></span></section><section><span>就算是某些倒挂楼盘，只要倒挂不厉害，其实最终卖出的时候，是很难获利的。</span></section><section><span>如果选到合适标的没选好买卖点 ，五年可能就赚个利息。如果标的和买卖点都没选好的话，可能贷款利息都跑不赢。</span></section><section><span>另外就是，四个月前的6月份，我们写过篇《</span><a target="_blank" href="http://mp.weixin.qq.com/s?__biz=Mzg4NTE3NTE2NQ==&amp;mid=2247488427&amp;idx=1&amp;sn=6cd55ea349773153b53f691687167fb4&amp;chksm=cfadb5b9f8da3cafcce80a2b47e6b3b0d549945c6e76e354de56b29fbeb7c6e525512d9c2858&amp;scene=21#wechat_redirect" data-itemshowtype="0" tab="innerlink" data-linktype="2" wah-hotarea="click"><span>房产打新开始冷却了</span></a><span>》。</span></section><section><strong><span>当时说的是没有足够的倒挂，非常不建议在这个阶段再冲进楼市，尤其是二手房市场。</span></strong><span></span></section><section><span>因为你很快要看到的，不止是一手打新的冷却。那些当时热火朝天的城市，二手市场也会出现冷却，现在大家应该都看到了。<br></span></section><p><strong><span>全文完，感谢阅读！！如果觉得写的不错，那就点个赞或者“<span>在看</span>”吧。</span></strong><br></p><p><strong><span>如果转载本文，文末务必注明：“转自微信公众号：饭爷的江湖。”</span></strong></p><p><strong><span><em><span><strong><span>点击关注下方账号，获取最有用财经信息和投资趣闻，每篇文章都有彩蛋或者惊喜！！</span></strong></span></em></span></strong></p><section><mpprofile data-pluginname="mpprofile" data-id="Mzg4NTE3NTE2NQ==" data-headimg="http://mmbiz.qpic.cn/mmbiz_png/oIUpFu9RaAdtyOibJPibsgBluddKDeZkLNULKm8AQ7zrhxDgWGzxbfatEyRdKKKB6Q86ic7UoeHQqnF5f10FXfD2w/0?wx_fmt=png" data-nickname="饭爷的江湖" data-alias="" data-signature="这是个小号，主要说投资故事，讲人生道理。大号：炒股拌饭 通过历史经济大视野回顾过去展望未来" data-from="0" wah-hotarea="click"> <!-- profile卡片 -->  </mpprofile></section><p><span>PS：文章的最后想说，我们的第一本书出版了，反响还是非常不错的。</span><br></p><p><span>本书从经济学的角度，剖析很多问题。可能不少小伙伴工作生活里的疑惑，都能在这本书里得到解答。</span></p><p><strong><span>点击下方图片，或者左下角“阅读原文”</span></strong><span>，还有在当当网搜索《效率人生》都可以购买。</span></p><p><a data-miniprogram-appid="wx7bb576902363f4ff" data-miniprogram-path="pages/product/product?pid=29267520" data-miniprogram-nickname="当当购物" data-miniprogram-type="image" data-miniprogram-servicetype="" wah-hotarea="click" href=""><img data-ratio="1" data-s="300,640" data-src="https://mmbiz.qpic.cn/sz_mmbiz_png/tnE2st4BmibaZFic3sPomSgqtnbPibzFUKzX1KD5licIdgMBgozHsnQFdw2u4hn7LN3KLMTFibVMiaX6YuWCeLvW9gKg/640?wx_fmt=png" data-type="png" data-w="800" _width="359px" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" crossorigin="anonymous" alt="图片"></a></p><p><strong><span>延伸阅读：</span></strong></p><p><a target="_blank" href="http://mp.weixin.qq.com/s?__biz=Mzg4NTE3NTE2NQ==&amp;mid=2247488427&amp;idx=1&amp;sn=6cd55ea349773153b53f691687167fb4&amp;chksm=cfadb5b9f8da3cafcce80a2b47e6b3b0d549945c6e76e354de56b29fbeb7c6e525512d9c2858&amp;scene=21#wechat_redirect" data-itemshowtype="0" tab="innerlink" data-linktype="2" hasload="1" wah-hotarea="click"><span>房产打新开始冷却了</span></a><br></p><p><span><a target="_blank" href="http://mp.weixin.qq.com/s?__biz=Mzg4NTE3NTE2NQ==&amp;mid=2247488221&amp;idx=1&amp;sn=3c8d92002f664a589bee42f56983ac6e&amp;chksm=cfadb4cff8da3dd92fc32094986352cb1f84038696db9c946632a751ef6abcbc4403b3b80b65&amp;scene=21#wechat_redirect" data-itemshowtype="0" tab="innerlink" data-linktype="2" hasload="1" wah-hotarea="click">对策从来比预测要重要</a></span></p><p><span><a target="_blank" href="http://mp.weixin.qq.com/s?__biz=Mzg4NTE3NTE2NQ==&amp;mid=2247484882&amp;idx=1&amp;sn=b1ffecae47f2e69f1ac1f9c06c535ca8&amp;chksm=cfada3c0f8da2ad698e6c1b3e7aa065b56a79e252620255a0c08d902179848e0d67004afd107&amp;scene=21#wechat_redirect" data-itemshowtype="0" tab="innerlink" data-linktype="2" hasload="1" wah-hotarea="click">人生更重要的是避坑</a></span></p>
+                </div></div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+</body><style>body {
+      font-size:  20px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 900px;
+    }
+    .page {
+      line-height: 30.0px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

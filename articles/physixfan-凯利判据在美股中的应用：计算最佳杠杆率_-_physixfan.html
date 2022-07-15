@@ -1,0 +1,156 @@
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style>
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 30px auto 0 auto;
+    padding: 10px;
+  }
+  body[data-mode="light"] {
+    color: #2B2B2B;
+    background-color: #EBEBEB;
+  }
+  body[data-mode="dark"] {
+    color: #D8D8D8;
+    background-color: #464646;
+  }
+  body[data-mode="sepia"] {
+    color: #2B2B2B;
+    background-color: #E7E2D5;
+  }
+  body[data-mode="black"] {
+    color: #ACACAC;
+    background-color: #121212;
+  }
+  body[data-loaded=true] {
+    transition: color 0.4s, background-color 0.4s;
+    margin-top: 56px;
+  }
+  body[data-images=false] img {
+    display: none;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  body[data-links=false] #reader-domain {
+    display: none;
+  }
+  #reader-domain {
+    font-size: 0.9em;
+    line-height: 1.48em;
+    padding-bottom: 4px;
+    font-family: Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    border-bottom-color: currentcolor;
+    color: #0095dd;
+  }
+  #reader-title {
+    font-size: 1.6em;
+    line-height: 1.25em;
+    width: 100%;
+    margin: 20px 0;
+    padding: 0;
+  }
+  #reader-credits {
+    font-size: 0.9em;
+    line-height: 1.48em;
+    margin: 0 0 10px 0;
+    padding: 0;
+    font-style: italic;
+  }
+  #reader-estimated-time {
+    font-size: 0.85em;
+    line-height: 1.48em;
+    margin: 0 0 10px 0;
+    padding: 0;
+  }
+  #reader-credits:empty {
+    disply: none;
+  }
+  </style>
+</head>
+<body data-images="true" data-links="true" data-mode="sepia" data-font="sans-serif" data-loaded="true">
+  <span></span> <!-- for IntersectionObserver -->
+  <a id="reader-domain" href="https://www.physixfan.com/kailipanjuzaimeiguzhongdeyingyongjisuanzuijiagangganshuai/">www.physixfan.com</a>
+  <h1 dir="auto" id="reader-title">凯利判据在美股中的应用：计算最佳杠杆率 - physixfan</h1>
+  <div dir="auto" id="reader-credits"></div>
+  <div dir="auto" id="reader-estimated-time">2-3 minutes</div>
+  <hr>
+  <div id="readability-page-1" class="page"><div>
+
+						<p><strong>作者： physixfan </strong></p><p>之前在《<a href="https://www.physixfan.com/yongkailipanjuwanzhuanqianwenzhongdeyigeyouqudexiaoshuxueyouxi/" target="_blank" rel="noopener noreferrer">用凯利判据玩转前文中的“一个有趣的小数学游戏”</a>》中我提到过凯利判据 (Kelly Criterion)，在赌博游戏中可以通过最大化 expected log return 来计算最佳投注比例。这个世界上最大的赌博游戏当然就是股市了，所以凯利判据在股市中的应用也是一个很重要的问题。在股市中应用凯利判据的话稍微有一点不同的就是股市可以视作一个连续函数，而不是离散的结果。在Wikipedia的<a href="https://en.wikipedia.org/wiki/Kelly_criterion#Single_asset" target="_blank" rel="noopener noreferrer">这个页面</a>里讲了这个问题，本文稍作翻译介绍一下结果。</p>
+<p>一个简化的模型是把股市看做几何布朗运动 (<a href="https://en.wikipedia.org/wiki/Geometric_Brownian_motion" target="_blank" rel="noopener noreferrer">Geometric Bronian Motion</a>)，即 <span></span><span id="MathJax-Element-1-Frame" tabindex="0"><nobr><span id="MathJax-Span-1"><span><span><span id="MathJax-Span-2"><span id="MathJax-Span-3"><span><span><span id="MathJax-Span-4">𝑆<span></span></span><span></span></span><span><span id="MathJax-Span-5">𝑡</span><span></span></span></span></span></span><span></span></span></span><span></span></span></nobr></span> 满足如下的微分方程：</p>
+<p><span></span></p><p><span id="MathJax-Element-2-Frame" tabindex="0"><nobr><span id="MathJax-Span-6"><span><span><span id="MathJax-Span-7"><span id="MathJax-Span-8">𝑑</span><span id="MathJax-Span-9"><span><span><span id="MathJax-Span-10">𝑆<span></span></span><span></span></span><span><span id="MathJax-Span-11">𝑡</span><span></span></span></span></span><span id="MathJax-Span-12">=</span><span id="MathJax-Span-13">𝜇</span><span id="MathJax-Span-14"><span><span><span id="MathJax-Span-15">𝑆<span></span></span><span></span></span><span><span id="MathJax-Span-16">𝑡</span><span></span></span></span></span><span id="MathJax-Span-17"></span><span id="MathJax-Span-18">𝑑</span><span id="MathJax-Span-19">𝑡</span><span id="MathJax-Span-20">+</span><span id="MathJax-Span-21">𝜎<span></span></span><span id="MathJax-Span-22"><span><span><span id="MathJax-Span-23">𝑆<span></span></span><span></span></span><span><span id="MathJax-Span-24">𝑡</span><span></span></span></span></span><span id="MathJax-Span-25"></span><span id="MathJax-Span-26">𝑑</span><span id="MathJax-Span-27"><span><span><span id="MathJax-Span-28">𝑊<span></span></span><span></span></span><span><span id="MathJax-Span-29">𝑡</span><span></span></span></span></span></span><span></span></span></span><span></span></span></nobr></span></p>
+<p></p><p>其中 <span></span><span id="MathJax-Element-3-Frame" tabindex="0"><nobr><span id="MathJax-Span-30"><span><span><span id="MathJax-Span-31"><span id="MathJax-Span-32"><span><span><span id="MathJax-Span-33">𝑊<span></span></span><span></span></span><span><span id="MathJax-Span-34">𝑡</span><span></span></span></span></span></span><span></span></span></span><span></span></span></nobr></span> 是维纳过程 (<a href="https://en.wikipedia.org/wiki/Wiener_process" target="_blank" rel="noopener noreferrer">Wiener Process</a>)，其性质包括增量独立于历史值、服从正态分布。<span></span><span id="MathJax-Element-4-Frame" tabindex="0"><nobr><span id="MathJax-Span-35"><span><span><span id="MathJax-Span-36"><span id="MathJax-Span-37">𝜇</span></span><span></span></span></span><span></span></span></nobr></span> 是漂移百分比 (the percentage drift)，<span></span><span id="MathJax-Element-5-Frame" tabindex="0"><nobr><span id="MathJax-Span-38"><span><span><span id="MathJax-Span-39"><span id="MathJax-Span-40">𝜎<span></span></span></span><span></span></span></span><span></span></span></nobr></span> 是波动百分比 (the percentage volatility)。这里的 <span></span><span id="MathJax-Element-6-Frame" tabindex="0"><nobr><span id="MathJax-Span-41"><span><span><span id="MathJax-Span-42"><span id="MathJax-Span-43">𝜇</span></span><span></span></span></span><span></span></span></nobr></span> 我稍微强调一下，其含义应该是股市年回报率的算术平均值 (arithmetic average)。</p>
+<p>根据伊藤积分 (<a href="https://en.wikipedia.org/wiki/It%C3%B4_calculus" target="_blank" rel="noopener noreferrer">Ito Calculus</a>)，可以得到上面微分方程的解析解：</p>
+<p><span></span></p><p><span id="MathJax-Element-7-Frame" tabindex="0"><nobr><span id="MathJax-Span-44"><span><span><span id="MathJax-Span-45"><span id="MathJax-Span-46"><span><span><span id="MathJax-Span-47">𝑆<span></span></span><span></span></span><span><span id="MathJax-Span-48">𝑡</span><span></span></span></span></span><span id="MathJax-Span-49">=</span><span id="MathJax-Span-50"><span><span><span id="MathJax-Span-51">𝑆<span></span></span><span></span></span><span><span id="MathJax-Span-52">0</span><span></span></span></span></span><span id="MathJax-Span-53">exp</span><span id="MathJax-Span-54"></span><span id="MathJax-Span-55"><span id="MathJax-Span-56"><span>(</span></span><span id="MathJax-Span-57"><span id="MathJax-Span-58"><span>(</span></span><span id="MathJax-Span-59">𝜇</span><span id="MathJax-Span-60">–</span><span id="MathJax-Span-61"><span><span><span id="MathJax-Span-62"><span><span><span id="MathJax-Span-63">𝜎<span></span></span><span></span></span><span><span id="MathJax-Span-64">2</span><span></span></span></span></span><span></span></span><span><span id="MathJax-Span-65">2</span><span></span></span><span><span></span><span></span></span></span></span><span id="MathJax-Span-66"><span>)</span></span></span><span id="MathJax-Span-67">𝑡</span><span id="MathJax-Span-68">+</span><span id="MathJax-Span-69">𝜎<span></span></span><span id="MathJax-Span-70"><span><span><span id="MathJax-Span-71">𝑊<span></span></span><span></span></span><span><span id="MathJax-Span-72">𝑡</span><span></span></span></span></span><span id="MathJax-Span-73"><span>)</span></span></span></span><span></span></span></span><span></span></span></nobr></span></p>
+<p></p><p>其中 <span></span><span id="MathJax-Element-8-Frame" tabindex="0"><nobr><span id="MathJax-Span-74"><span><span><span id="MathJax-Span-75"><span id="MathJax-Span-76">𝜇</span><span id="MathJax-Span-77">–</span><span id="MathJax-Span-78"><span><span><span id="MathJax-Span-79"><span><span><span id="MathJax-Span-80">𝜎<span></span></span><span></span></span><span><span id="MathJax-Span-81">2</span><span></span></span></span></span><span></span></span><span><span id="MathJax-Span-82">2</span><span></span></span><span><span></span><span></span></span></span></span></span><span></span></span></span><span></span></span></nobr></span> 是股市年回报率的几何平均值 (geometric average)，即 CAGR (Compound Annual Growth Rate)。这里稍微强调一下 <span></span><span id="MathJax-Element-9-Frame" tabindex="0"><nobr><span id="MathJax-Span-83"><span><span><span id="MathJax-Span-84"><span id="MathJax-Span-85">𝜇</span></span><span></span></span></span><span></span></span></nobr></span> 和 CAGR 的区别以便准确理解。<span></span><span id="MathJax-Element-10-Frame" tabindex="0"><nobr><span id="MathJax-Span-86"><span><span><span id="MathJax-Span-87"><span id="MathJax-Span-88"><span><span><span id="MathJax-Span-89">𝑆<span></span></span><span></span></span><span><span id="MathJax-Span-90">0</span><span></span></span></span></span></span><span></span></span></span><span></span></span></nobr></span> 是初值，不重要，设为1即可。</p>
+<p>当标的只有股市的时候，expected log return 即：</p>
+<p><span></span></p><p><span id="MathJax-Element-11-Frame" tabindex="0"><nobr><span id="MathJax-Span-91"><span><span><span id="MathJax-Span-92"><span id="MathJax-Span-93"><span id="MathJax-Span-94"><span id="MathJax-Span-95">𝔼</span></span></span><span id="MathJax-Span-96">log</span><span id="MathJax-Span-97"></span><span id="MathJax-Span-98">(</span><span id="MathJax-Span-99"><span><span><span id="MathJax-Span-100">𝑆<span></span></span><span></span></span><span><span id="MathJax-Span-101">𝑡</span><span></span></span></span></span><span id="MathJax-Span-102">)</span><span id="MathJax-Span-103">=</span><span id="MathJax-Span-104">log</span><span id="MathJax-Span-105"></span><span id="MathJax-Span-106">(</span><span id="MathJax-Span-107"><span><span><span id="MathJax-Span-108">𝑆<span></span></span><span></span></span><span><span id="MathJax-Span-109">0</span><span></span></span></span></span><span id="MathJax-Span-110">)</span><span id="MathJax-Span-111">+</span><span id="MathJax-Span-112"><span id="MathJax-Span-113"><span>(</span></span><span id="MathJax-Span-114">𝜇</span><span id="MathJax-Span-115">−</span><span id="MathJax-Span-116"><span><span><span id="MathJax-Span-117"><span><span><span id="MathJax-Span-118">𝜎<span></span></span><span></span></span><span><span id="MathJax-Span-119">2</span><span></span></span></span></span><span></span></span><span><span id="MathJax-Span-120">2</span><span></span></span><span><span></span><span></span></span></span></span><span id="MathJax-Span-121"><span>)</span></span></span><span id="MathJax-Span-122">𝑡</span><span id="MathJax-Span-123">=</span><span id="MathJax-Span-124"><span id="MathJax-Span-125"><span>(</span></span><span id="MathJax-Span-126">𝜇</span><span id="MathJax-Span-127">−</span><span id="MathJax-Span-128"><span><span><span id="MathJax-Span-129"><span><span><span id="MathJax-Span-130">𝜎<span></span></span><span></span></span><span><span id="MathJax-Span-131">2</span><span></span></span></span></span><span></span></span><span><span id="MathJax-Span-132">2</span><span></span></span><span><span></span><span></span></span></span></span><span id="MathJax-Span-133"><span>)</span></span></span><span id="MathJax-Span-134">𝑡</span></span><span></span></span></span><span></span></span></nobr></span></p>
+<p></p><p>现在我们假设资金可以不投入股市，而是放在银行里赚一个无风险利率 <span></span><span id="MathJax-Element-12-Frame" tabindex="0"><nobr><span id="MathJax-Span-135"><span><span><span id="MathJax-Span-136"><span id="MathJax-Span-137">𝑟</span></span><span></span></span></span><span></span></span></nobr></span>，设我们应该把比例 <span></span><span id="MathJax-Element-13-Frame" tabindex="0"><nobr><span id="MathJax-Span-138"><span><span><span id="MathJax-Span-139"><span id="MathJax-Span-140">𝑓<span></span></span></span><span></span></span></span><span></span></span></nobr></span> 的资金投入股市，于是现在凯利判据的目标就是 <span></span><span id="MathJax-Element-14-Frame" tabindex="0"><nobr><span id="MathJax-Span-141"><span><span><span id="MathJax-Span-142"><span id="MathJax-Span-143">𝑓<span></span></span></span><span></span></span></span><span></span></span></nobr></span> 应该是多少才能最大化 expected log return。我们只关心单位时间的话，其 expected log return 是：</p>
+<p><span></span></p><p><span id="MathJax-Element-15-Frame" tabindex="0"><nobr><span id="MathJax-Span-144"><span><span><span id="MathJax-Span-145"><span id="MathJax-Span-146">𝐺</span><span id="MathJax-Span-147">(</span><span id="MathJax-Span-148">𝑓<span></span></span><span id="MathJax-Span-149">)</span><span id="MathJax-Span-150">=</span><span id="MathJax-Span-151">𝑓<span></span></span><span id="MathJax-Span-152">𝜇</span><span id="MathJax-Span-153">–</span><span id="MathJax-Span-154"><span><span><span id="MathJax-Span-155"><span id="MathJax-Span-156">(</span><span id="MathJax-Span-157">𝑓<span></span></span><span id="MathJax-Span-158">𝜎<span></span></span><span id="MathJax-Span-159"><span><span><span id="MathJax-Span-160">)</span><span></span></span><span><span id="MathJax-Span-161">2</span><span></span></span></span></span></span><span></span></span><span><span id="MathJax-Span-162">2</span><span></span></span><span><span></span><span></span></span></span></span><span id="MathJax-Span-163">+</span><span id="MathJax-Span-164">(</span><span id="MathJax-Span-165">(</span><span id="MathJax-Span-166">1</span><span id="MathJax-Span-167">−</span><span id="MathJax-Span-168">𝑓<span></span></span><span id="MathJax-Span-169">)</span><span id="MathJax-Span-170">&nbsp;</span><span id="MathJax-Span-171">𝑟</span><span id="MathJax-Span-172">)</span></span><span></span></span></span><span></span></span></nobr></span></p>
+<p></p><p>最大化 <span></span><span id="MathJax-Element-16-Frame" tabindex="0"><nobr><span id="MathJax-Span-173"><span><span><span id="MathJax-Span-174"><span id="MathJax-Span-175">𝐺</span><span id="MathJax-Span-176">(</span><span id="MathJax-Span-177">𝑓<span></span></span><span id="MathJax-Span-178">)</span></span><span></span></span></span><span></span></span></nobr></span>，可得：</p>
+<p><span></span></p><p><span id="MathJax-Element-17-Frame" tabindex="0"><nobr><span id="MathJax-Span-179"><span><span><span id="MathJax-Span-180"><span id="MathJax-Span-181"><span><span><span id="MathJax-Span-182">𝑓<span></span></span><span></span></span><span><span id="MathJax-Span-183">∗</span><span></span></span></span></span><span id="MathJax-Span-184">=</span><span id="MathJax-Span-185"><span><span><span id="MathJax-Span-186"><span id="MathJax-Span-187">𝜇</span><span id="MathJax-Span-188">−</span><span id="MathJax-Span-189">𝑟</span></span><span></span></span><span><span id="MathJax-Span-190"><span><span><span id="MathJax-Span-191">𝜎<span></span></span><span></span></span><span><span id="MathJax-Span-192">2</span><span></span></span></span></span><span></span></span><span><span></span><span></span></span></span></span></span><span></span></span></span><span></span></span></nobr></span></p>
+<p></p><p>上式就是最终结果，很简洁明了，对我们来说具有很强的现实指导意义。</p>
+<p>在<a href="http://www.moneychimp.com/features/market_cagr.htm" target="_blank" rel="noopener noreferrer">这个网站</a>里，我们可以查询到美股标普500指数在过去上百年的历史中，回报率和波动率具体有多少。根据选取的时间段不同，数值可能会略有不同。现在我们选取1919-2019这一百年的时间段，不考虑通胀，计算入分红。于是查询到的结果是：arithmetic average return 即 <span></span><span id="MathJax-Element-18-Frame" tabindex="0"><nobr><span id="MathJax-Span-193"><span><span><span id="MathJax-Span-194"><span id="MathJax-Span-195">𝜇</span><span id="MathJax-Span-196">=</span><span id="MathJax-Span-197">12.33</span><span id="MathJax-Span-198">%</span></span><span></span></span></span><span></span></span></nobr></span>，volatility 即 <span></span><span id="MathJax-Element-19-Frame" tabindex="0"><nobr><span id="MathJax-Span-199"><span><span><span id="MathJax-Span-200"><span id="MathJax-Span-201">𝜎<span></span></span><span id="MathJax-Span-202">=</span><span id="MathJax-Span-203">19.66</span><span id="MathJax-Span-204">%</span></span><span></span></span></span><span></span></span></nobr></span>，risk free rate <span></span><span id="MathJax-Element-20-Frame" tabindex="0"><nobr><span id="MathJax-Span-205"><span><span><span id="MathJax-Span-206"><span id="MathJax-Span-207">𝑟</span></span><span></span></span></span><span></span></span></nobr></span> 我们就假设为3%吧。代入数字即可算出：</p>
+<p><span></span></p><p><span id="MathJax-Element-21-Frame" tabindex="0"><nobr><span id="MathJax-Span-208"><span><span><span id="MathJax-Span-209"><span id="MathJax-Span-210"><span><span><span id="MathJax-Span-211">𝑓<span></span></span><span></span></span><span><span id="MathJax-Span-212">∗</span><span></span></span></span></span><span id="MathJax-Span-213">≈</span><span id="MathJax-Span-214">2.3</span></span><span></span></span></span><span></span></span></nobr></span></p>
+<p></p><p>等等，<span></span><span id="MathJax-Element-22-Frame" tabindex="0"><nobr><span id="MathJax-Span-215"><span><span><span id="MathJax-Span-216"><span id="MathJax-Span-217"><span><span><span id="MathJax-Span-218">𝑓<span></span></span><span></span></span><span><span id="MathJax-Span-219">∗</span><span></span></span></span></span></span><span></span></span></span><span></span></span></nobr></span> 的含义不是投入资金进股市的最佳比例吗，为什么会得到大于1的结果？是不是哪里出错了？</p>
+<p>并非出错了，而是：美股标普500指数的历史回报确实足够高，波动足够小，以至于100%投入股市都不是最佳的，而是应当上2倍多的杠杆！</p>
+<p>这个结果给了我们一个很重要的启示：杠杆不一定是坏东西，如果你投资的标的预期回报率足够高、波动足够低，比如美股标普500指数就是很好的例子，那么很可能只有上一定的杠杆才是最优的。当然，另一方面，也说明杠杆率不是越高越好的，假设市面上可以买到标普500指数的10x杠杆的ETF，我们应该买吗？凯利判据告诉我们答案是否定的。</p>
+<p>这一事实也需要和《<a href="https://www.physixfan.com/nianqingshiyinggaijiagangganrangyishengzhongdefengxianbianjunheng/" target="_blank" rel="noopener noreferrer">年轻时候应该加杠杆：让一生中的风险变均衡</a>》结合起来：年轻时和中年以后相比资产太少，如果一生中用同样的比例投资股市，那么年轻时承受的波动绝对值就过小了，年轻时需要加杠杆才能让风险在一生中变均衡。加杠杆的坏处是会让波动变大，如果你这笔投资很短时间内就有可能需要卖出的话，那么波动太大对你来说真的是不行的；但若你的投资 time horizon 有30年或更长那么久，那么短时间的波动就不是风险，你完全可以在年轻时加杠杆获得最佳回报率。等年纪越来越大以后，就不要再继续追求 max log return 了，需要把杠杆率逐渐降回1。</p>
+<hr>
+<p>P.S. 我认为上面的标准答案其实有一点不合理，即：股市其实并不是按正态分布走的，股市有非常明显的肥尾效应 (fat tail)。所以凯利判据算出来的最佳杠杆率仅供参考，不要把它当做信仰。我认为为了克服掉这个缺陷，最佳杠杆率不能是一个恒定的值，而是要经常频繁的根据近期的volatility来计算并rebalance。Volatility 有显著的 <a href="https://en.wikipedia.org/wiki/Volatility_clustering" target="_blank" rel="noopener noreferrer">volatility clustering</a> 现象，所以用近期的历史 volatility 来预测接下来一小段时间的 volatility 是能起到一定效果的。</p>
+
+ 																				</div></div>
+  <span></span> <!-- for IntersectionObserver -->
+
+</body><style>@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=IBM+Plex+Serif:wght@400;500;700&family=Montserrat:wght@400;700&family=Zilla+Slab:wght@400;500&display=swap'); body {
+      font-size:  19px;
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 28px;
+      width: 850px;
+    }</style><style>body {
+  padding-bottom: 64px;
+}
+a:link, a:link:hover, a:link:active {
+  color: #0095dd;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style></html>

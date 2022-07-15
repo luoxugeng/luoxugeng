@@ -1,0 +1,152 @@
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style>
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 30px auto 0 auto;
+    padding: 10px;
+  }
+  body[data-mode="light"] {
+    color: #2B2B2B;
+    background-color: #EBEBEB;
+  }
+  body[data-mode="dark"] {
+    color: #D8D8D8;
+    background-color: #464646;
+  }
+  body[data-mode="sepia"] {
+    color: #2B2B2B;
+    background-color: #E7E2D5;
+  }
+  body[data-mode="black"] {
+    color: #ACACAC;
+    background-color: #121212;
+  }
+  body[data-loaded=true] {
+    transition: color 0.4s, background-color 0.4s;
+    margin-top: 56px;
+  }
+  body[data-images=false] img {
+    display: none;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  body[data-links=false] #reader-domain {
+    display: none;
+  }
+  #reader-domain {
+    font-size: 0.9em;
+    line-height: 1.48em;
+    padding-bottom: 4px;
+    font-family: Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    border-bottom-color: currentcolor;
+    color: #0095dd;
+  }
+  #reader-title {
+    font-size: 1.6em;
+    line-height: 1.25em;
+    width: 100%;
+    margin: 20px 0;
+    padding: 0;
+  }
+  #reader-credits {
+    font-size: 0.9em;
+    line-height: 1.48em;
+    margin: 0 0 10px 0;
+    padding: 0;
+    font-style: italic;
+  }
+  #reader-estimated-time {
+    font-size: 0.85em;
+    line-height: 1.48em;
+    margin: 0 0 10px 0;
+    padding: 0;
+  }
+  #reader-credits:empty {
+    disply: none;
+  }
+  </style>
+</head>
+<body data-images="true" data-links="true" data-mode="sepia" data-font="sans-serif" data-loaded="true">
+  <span></span> <!-- for IntersectionObserver -->
+  <a id="reader-domain" href="https://www.8btc.com/article/297152">www.8btc.com</a>
+  <h1 dir="auto" id="reader-title">专访Mikko：货币学者视角下的稳定币</h1>
+  <div dir="auto" id="reader-credits"></div>
+  <div dir="auto" id="reader-estimated-time">5-6 minutes</div>
+  <hr>
+  <div id="readability-page-1" class="page"><div data-v-4c8bae98=""><blockquote>很多人都不知道Mikko，当我在例会上提出要采访Mikko的时候，同事们脸上的黑人问号让我倍感压力。</blockquote><p>
+10月的一个周末，我在上海参加了一场主题为“稳定币与货币理论”的线下活动。Mikko是其中的一位演讲嘉宾，他的演讲题目是“Stablecoin and Eurodollar（稳定币与离岸美元）”。说实话，整场演讲听下来，我只记住了他的开场白。他说：
+</p><blockquote>“大家好，我今天给大家讲的主题是‘Stablecoin and Eurodollar’。我在stablecoin这个领域写了很多字，光是那个手册就写了2万4千多字吧。然后，我再写的话，下一版应该就有3万字了。如果我不写的话，可能很多公众号里有关stablecoin的文章就写不出来。因为过去一个月里，我看到的火的文章，大多都借鉴了我那篇文章的核心内容。但没关系啦，大家都要活命嘛。”</blockquote><p>
+（现场笑）</p><p>从9月GUSD和PAX被批准合规化，到10月USDT的闪崩，稳定币无疑是近两个月圈内最热门的话题。虽然网上有很多分析稳定币的文章，但是<strong>极少有人从货币学的角度去研究稳定币，而Mikko就是其中之一</strong>。上述开场白中的“那个手册”，指的是他7月份发表的《<strong>稳定数字货币手册</strong>》。该手册从<strong>本体论和方法论</strong>的哲学角度阐释了稳定数字货币的概念。</p><p>尽管看的懵懵懂懂，但我觉得能用货币理论解释稳定币的人也算是个“奇葩”。于是，活动结束后，我向Mikko递了名片，并相互加了微信。四天后，我去上海采访了他。
+</p><h2>1</h2><p>
+今年28岁的Mikko，本名叫朱尘，戴着眼镜，身高1米9，瘦高的身材让我想起了中国男篮的周琦。</p><p>他是一个很随性的人，高中的时候沉迷游戏、爱看闲书，以至于高考失利，没能读大学。不过这段时间，他闲暇时会阅读<strong>哲学、经济学</strong>方面的书籍，这为他以后做投资、从事宏观经济研究以及创立巴别塔自由主义研究社埋下了伏笔。高中毕业后，他开始专职做传统领域的投资，期间他知道了比特币。他的淘宝里，<strong>仍能找到2012年2月20日购入比特币的历史记录</strong>。</p><p>当时的Mikko被比特币吸引了，他经常在豆瓣上和一些自由主义者讨论比特币，并着手货币理论的研究。然后他认识了烤猫，后者曾在消失之前，将500万的资产交给Mikko打理（原计划是1千万，分两期，第二期交付之前烤猫消失）。Mikko认为，比特币的财富效应吸引了一批“无聊”的人进入这个圈子，这让他很失望。于是，<strong>他在2014年底选择了清仓退圈</strong>。</p><p>我问他，既然在2014年就退圈了，那为什么还要写稳定币的文章。Mikko说，他平时是做传统的货币理论、宏观经济和金融市场方面的研究。<strong>之所以写稳定币的文章，是想给一些圈内的好友看下，不要被一些稳定币项目骗了</strong>。把稳定币的本质写清楚后，他们就不会被一些项目所蒙蔽。</p><p>我们知道，随着加密货币市场的快速发展，比特币、以太坊等主流加密货币虽然市值大，但价格波动也很强烈，因此难以成为有效的交易媒介和贮藏手段。稳定币的诞生，主要为了解决加密货币的价格波动问题。</p><p>然而，稳定币并不总是“稳定”的。10月15日下午，USDT出现闪崩行情，从6.79元一路下跌，两个小时之内跌破6.24元，跌幅达7.5%，场外折价接近2%。对此，Mikko在微信朋友圈评论道：
+</p><blockquote>“就像我周末活动时所说的，tether的设计即危险又精妙，爆死于透明度，存乎于薄纱中。”</blockquote><p>
+采访中，他向我解释了这条朋友圈：
+</p><blockquote>“这其实是个理论上的信任问题。假如你怀疑一个人背叛了你，然后你就去搜集这个人背叛你的证据。后来，你搜集了半天都没找到证据，但是你不会因为找不到证据而放弃怀疑，因为你认为只是自己没找到证据而已。<p>货币市场就是这样，如果你怀疑托管行有问题，你又找不到证据，那你就会一直怀疑USDT有问题，但是你越是怀疑有问题，就越可能有问题。因为怀疑，你有可能去挤兑。但是USDT的设计是有问题的，无论它存在多么安全的银行，它的资金是存放在那家银行，可那家银行的资产负债表是不可控的。</p><p>因此，<strong>当你怀疑USDT的时候，其实就已经走在自我毁灭的路上了</strong>。”</p></blockquote><p>
+实际上，这并不是Mikko第一次对USDT产生怀疑。</p><h2><span>2</span></h2>
+&nbsp;<p>关于USDT的争论，我们可以追溯到今年1月份。当时网上出现了一篇名为“<strong>The Tether Report</strong>”的匿名报告，剑指当时最热门的加密货币--USDT。</p><p>报告显示，截至2018年1月4日，Tether 一共增发了 91 次 USDT（转账到 Bitfinex 的钱包地址）。该报告提出了审计疑问：Tether 是否在没有收到美元的情况下就向Bitfinex的钱包里转账USDT，并将USDT用于购买低价的比特币来牟利或者操盘。并否定了“USDT增发与比特币上涨不存在相关性”的假设，认为“USDT 的增发应为本轮比特币上涨负责40%”。</p><p>那段时间起，Mikko开始研究稳定币，他最常用的分析工具是<strong>资产负债表</strong>。他<strong>把整个Tether的稳定货币机制分为四张资产负债表</strong>（事实上这张图还可以扩展下去），每一个T字表的左边是资产，右边是负债，箭头表示四张资产负债表的嵌套关系。</p><p><a href="http://v1.8btc.com/wp-content/uploads/2018/10/201810241417337795.png" target="_blank"><img alt="10566547-05d50b27ca202a03" src="https://cdn.8btc.cn/wp-content/uploads/2018/10/201810241417337795.png" width="1240" height="384" rel="nofollow noopener"></a></p><p>中间的Tether公司的T字表（资产负债表）。在右边的负债，发行的Tether即是所有持有Tether的使用者对Tether公司的债权，而是Tether公司的债务。我们最右边的Psyducks代表广大的Tether持有者。原先这些持有者的资产是银行存款（Deposits），或者美元现金（Federal Reserve Notes，缩写为FRN），前者是银行的负债，后者是主权货币当局的负债，体现在左边的美联储和Bank A的两张T字表的右边（作为负债）。</p><p>他在文章《<strong>稳定数字货币的逻辑与其不可及性</strong>》中写道：
+</p><blockquote>用户买入Tether的过程，实际上是把自己的资产降级了。因为原先他们持有的是主权货币当局的负债，他是政府的债权人，或者是银行的债权人，而且这部分债务由存款保险的限额所担保，因此也算是有限担保的政府债权人。<p>但买入Tether以后，他就变成私人公司的债权人了，即稳定数字货币发行方的债权人，这意味着Tether的持有者暴露在公司的信用风险之下。因为银行存款和美元现钞都是政府担保足额兑付的，不过Tether作为中心化的机构，在自己的白皮书当中已经诚实地言明这种风险。</p></blockquote><p>
+Mikko将<strong>基于特定法币（或法币存款）作为抵押品的稳定数字货币，统称为数字离岸美元</strong>。他认为，<strong>Tether的实质就是一种数字离岸美元</strong>，因为它的整个发行与创生机制与传统的离岸美元非常类似，只要一家银行在美国在岸拥有美元存款，他就可以在离岸发行美元，并以在岸美元作为抵押品——只不过，离岸美元的业务并不在100%足额准备的前提下开展，银行都希望通过信用扩张和货币创造来受益。而Tether的发行机制是近似的。他还指出：
+</p><blockquote><strong>Tether的问题并不在于其超发、滥发和暗箱操作</strong>，这种问题只要通过定期的流动性准备和资产负债表每日申报（类Basel那套监管体系）的手段来监管就可以随时化解，中心化管理和透明度问题根本就不是稳定问题背后的真正症结。<strong>症结在于</strong>，假设你完全透明，通过各种托管，和各种Trustless（去信任）的机制，打造出一种完美的名义上的“稳定货币”，它在本质上还是：<p>1.<strong>政府货币的代币</strong>，<strong>以Tether为例，即美元的代币，对联储债权</strong>。无论你嵌套几层金融中介，最终的终点只要是联储的负债，那就是主权负债在担保你的稳定货币。既然永远无法逃离主权资产负债表，那么创造一种基于法币的稳定货币有什么用？如果你的最终担保（法币）并不稳定，那你能基于它创造一种稳定的货币吗？</p><p>2.<strong>面对无处不在的信用风险，这在投资组合理论上是个多元化问题</strong>。即假设你想逃离主权担保，那实际上稳定货币的发行者变成了一个资产管理者（AssetManager），他需要通过自身的资管能力来维持自身的负债稳定性。而如何选取资产等问题都是传统金融领域内的问题了。和是不是区块链、有没有数字货币技术做支撑没有关系。</p></blockquote><p>
+Mikko说，在10月15日USDT闪崩的那一天，有7、8个人让他写评论，但都拒绝了。因为如果写的话，就得引向USDT的资产负债表问题。写出来万一引起市场波动，blablablabla，我不想大家空仓都亏钱。</p><p>我：......</p><p>尽管没写USDT的评论，但他向我透露了下一版稳定币手册的写作计划。他认为，如果把数字货币的团队看做是“数字央行”，那么他们就应该<strong>引入“数字财政部”、“数字债券”等概念</strong>。</p><p>因为既然要走传统的道路，那么他们就要使用这些金融工具。很多人认为货币政策是由央行决定的，但其实央行只是财政部创设出来的一个机构。<strong>所有货币本身的价值都是主权的税收权力</strong>。如果你不能设计出带有主权价值的数字货币，那么这种数字货币就无法像传统货币一样，被人们直观地接受。</p><h2><span>3</span></h2>
+&nbsp;<p>其实关于稳定币的问题，我们并没有聊得很深入。一方面是因为他对稳定币的理解基本都写在其文章里了，另一方面是因为作为采访者的我不懂货币学。正如Mikko在采访中所说，就目前网上公开的资料来看，国内能在稳定币这个话题能和他无摩擦沟通的，或许也只有潘超（MakerDAO经济研究员）了，<strong>可能99%的人都不理解基础的货币学</strong>。</p><p>尬聊了半个小时后，我把话题从稳定币转移到了最近同样很火的STO（证券型通证发行）。有人认为，通过STO对现有资产进行Token化是一个全新的领域，将可能于2019年开始爆发；也有人认为，在证券化代币仅仅将传统证券进行代币化的情况下，从现行法律和监管的角度，进行STO几乎没有优势。Mikko更认同后者，在他看来，<strong>STO、通证经济等新词只不过是货币学的一种同义反复</strong>。
+</p><blockquote>“STO这个概念其实很早就有了，当年烤猫和我闲聊的时候也有过类似的想法，说‘所有资产上链，以比特币计价，然后开交易所’，类似的概念。”</blockquote><p>
+他承认行业肯定是朝着合规化的方向发展的，但是他<strong>对此并不乐观</strong>。因为比特币本来是外化于主权当局的私人货币体系，如果所有的数字货币都往央行的范畴内去靠，接受银行业监管，接受传统的会计准则，接受传统的资产负债表的框架。一旦变成了传统资产，那就会按照传统资产给这个行业估值。</p><p>这样的话就失去了原本乌托邦的性质，行业里比较乌托邦的从业人员就会流失掉，<strong>数字货币就会因为外化于传统行业和法币体系，而只能在非常狭隘的环境里生存</strong>。</p><p>虽然Mikko在2014年底就退出了数字货币的圈子，但是他一直关注着<strong>“货币理论与数字货币”的交叉领域</strong>，其中包括稳定币、央行数字货币和证券化等主题。按他自己的话来说，就是“爱之深，责之切”，因为热爱这个行业，所以选择离开这个行业，这一点和Netscape公司的创始人吉姆·克拉克（Jim Clark）很像。</p><p><span><strong>小记：</strong></span></p><p>写这篇文章的目的是向读者展示货币学者视角下的稳定币，但事实上，<strong>“货币学者”不算是一种职业</strong>。Mikko在没有生存压力之后，开始大量阅读、搜集宏观经济、金融市场等领域的研究报告，并翻译、写作这些领域的文章，这个习惯他至今保持了8年。货币也是其重点研究的领域之一。“学者”一词则来自于台湾作家李敖的微博认证--“学者李敖”，Mikko对此非常认可。所以才有了“<strong>货币学者</strong>”的称谓。</p><p>我问他会不会担心自己的货币理论可能出现错误，他说会的，所以要多读书嘛。因此，<strong>本文所述不构成投资建议，币市有风险，投资需谨慎，熊市不读书，牛市接着哭</strong>。</p><p><span><strong>推荐阅读：</strong></span></p><p>《<a href="http://wisburg.com/2018/02/23/%e7%a8%b3%e5%ae%9a%e8%b4%a7%e5%b8%81%ef%bc%88stablecoin%ef%bc%89%e7%9a%84%e9%80%bb%e8%be%91%e4%b8%8e%e5%85%b6%e4%b8%8d%e5%8f%af%e5%8f%8a%e6%80%a7/" target="_blank" rel="nofollow noopener">稳定数字货币（STABLECOIN）的逻辑与其不可及性</a>》，2018年2月
+《<a href="http://wisburg.com/2018/02/24/%e7%a8%b3%e5%ae%9a%e6%95%b0%e5%ad%97%e8%b4%a7%e5%b8%81%e7%9a%84%e9%80%bb%e8%be%91%e4%b8%8e%e5%85%b6%e4%b8%8d%e5%8f%af%e5%8f%8a%e6%80%a7%ef%bc%88%e4%ba%8c%ef%bc%89%ef%bc%9a%e6%8a%b5%e6%8a%bc%e5%93%81/" target="_blank" rel="nofollow noopener">稳定数字货币的逻辑与其不可及性（二）：抵押品</a>》，2018年2月
+《<a href="http://wisburg.com/2018/02/25/%e7%a8%b3%e5%ae%9a%e6%95%b0%e5%ad%97%e8%b4%a7%e5%b8%81%e7%9a%84%e9%80%bb%e8%be%91%e4%b8%8e%e5%85%b6%e4%b8%8d%e5%8f%af%e5%8f%8a%e6%80%a7%ef%bc%88%e4%b8%89%ef%bc%89%ef%bc%9a%e7%bb%88%e6%9e%81%e9%94%9a/" target="_blank" rel="nofollow noopener">稳定数字货币的逻辑与其不可及性（三）：终极锚</a>》，2018年2月
+《<a href="http://wisburg.com/2018/07/03/%e7%a8%b3%e5%ae%9a%e6%95%b0%e5%ad%97%e8%b4%a7%e5%b8%81%e6%89%8b%e5%86%8c/" target="_blank" rel="nofollow noopener">稳定数字货币手册</a>》，2018年7月
+《<a href="https://mp.weixin.qq.com/s/L_0s78D-7Fp39BNvXDjO2g" target="_blank" rel="nofollow noopener">稳定数字货币手册（Beta Version）</a>》，2018年7月</p></div></div>
+  <span></span> <!-- for IntersectionObserver -->
+
+</body><style>@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=IBM+Plex+Serif:wght@400;500;700&family=Montserrat:wght@400;700&family=Zilla+Slab:wght@400;500&display=swap'); body {
+      font-size:  19px;
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 28px;
+      width: 850px;
+    }</style><style>body {
+  padding-bottom: 64px;
+}
+a:link, a:link:hover, a:link:active {
+  color: #0095dd;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style></html>

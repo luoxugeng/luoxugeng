@@ -1,0 +1,250 @@
+<html dir="ltr"><head><title>如何发现并保护孩子的天赋 :: Reader View</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color: %light-color%;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color: %dark-color%;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color: %sepia-color%;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color: %solarized-light-color%;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color: %nord-light-color%;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color: %groove-dark-color%;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #93a1a1;
+  border-color: %solarized-dark-color%;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color: %nord-dark-color%;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] .tts-word {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  background-color: red;
+  height: 2px;
+}
+.tts-word.hidden,
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+</head>
+<body tabindex="1" data-images="false" data-mode="sepia" data-font="sans-serif" data-loaded="true">
+  <span></span> <!-- for IntersectionObserver -->
+
+  <h1 dir="auto" id="reader-title">如何发现并保护孩子的天赋</h1>
+  <span dir="auto" id="reader-credits"></span>
+  <span dir="auto" id="reader-estimated-time">2-2 minutes</span>
+  <span dir="auto" id="published-time"></span>
+  <hr>
+  <div id="readability-page-1" class="page"><div id="post-body-6013553364195477397" itemprop="description articleBody">
+<meta http-equiv="Content-Type" content="text/html; charset=GB18030"><p>分享一个有关赖斯的故事。</p><p>美国前国务卿赖斯生在一个富人中产之家，家里的亲戚长辈有音乐家，她的梦想也是成为音乐家，从小练钢琴苦学不辍，非常努力，也极有天赋，老师们都夸。</p><p>在美国搞音乐一定要读茱莉亚，她也的确去去参加了入围考试——在自传里，她生动的回忆起当时考试的情景：随便出来一个小孩子，都把她秒的渣都不剩，从小家人夸赞的天赋，在真正的高手面前，一文不值。而且她很清楚的知道，这不是努力的问题，她哪怕努力一辈子，也只能达到别人入学时候的水平，以后的差距会越来越大。</p><p>所以是成为一个注定的三流音乐家，还是寻找别的路？她当机立断的选择了后者。她由衷的感激自己的选择。</p><p>赖斯的权势地位很高，一直做到了美帝的国务卿，虽然她的天赋才能和成绩确实有限，比如她当国务卿那几年，基本没有什么拿得出手的政绩，对国家对世界都没什么贡献。但如果她当年继续选择走音乐的路线，在音乐领域绝对不可能像她在个人事业达到国务卿的成就。</p><p>这一点，就是家长们一定要懂的基本常识。<mark class="hghlght">天赋，或者说技能，也是分类型的。</mark></p><p>它主要分为<mark class="hghlght">金字塔型和橄榄型。</mark></p><p><mark class="hghlght">金字塔型的天赋技能，就是典型的winner takes all，金字塔顶端的人拿走一切财富，哪怕是金字塔中层的人，收入状况和底端也差不多。</mark></p><p><mark class="hghlght">而橄榄型的天赋技能，就是底端和顶端的人都很少，混个普通中层水平，也可以收入殷实。</mark></p><p>举个例子，东北的体育氛围特别浓厚，但很多省级运动员的家长，都不希望孩子继续走体育这条路，还是希望他们好好读书，考大学，毕业了找份国企工作或者考个公务员。这些家长对社会的认知不会特别的深刻，但他们的本能潜意识里，仍然保留着基本常识。</p><p>那就是文体领域属于金字塔模型，而读书考大学毕业了工作属于橄榄型。这个，就是最重要的常识，大家一定要承认，并且一定要告诉孩子：</p><p><mark class="hghlght">体育，艺术类的天赋技能，属于典型的金字塔类型;科学，STEM，学术，商业类的天赋技能，属于橄榄型</mark>。</p><p>你家孩子在绘画和音乐上有天赋，不代表他就能成为梵高和莫扎特，在运动上有天赋，不代表他就能成为刘翔和姚明。<mark class="hghlght">绝大部分人所谓的天赋，大概率最后的出路就是当个音乐舞蹈培训班老师，运动兴趣班教练。然后没了。省级比赛拿铜牌的水平，以他们的天赋，都是达不到的</mark>。</p><p>保护孩子的天赋没有问题。但前提是，一定要让他在橄榄型的技能里有一个保底才可以。</p><p>国内的社会情况还不太一样。赖斯喜欢音乐，但她是在普通学校学的，不耽误文化课学习，她照样可以接触科学商业，还是可以发展橄榄型技能。而我们这里是举国体制，有天赋的人，要去读专门的体校和艺术戏剧类院校，文化课的学习无法兼顾。</p><p>这是什么意思呢？如果你真的想保护和发展孩子的天赋，就必须送他们去这类学校学习。而这种行为的本质，就是拿你孩子的人生来一场梭哈。赢了别墅靠海，输了一无是处。你敢么？</p><p><mark class="hghlght">不要说你家孩子不是姚明，就是真正的姚明，他爸妈也不敢。姚明小学时候就因为天赋过人被送去体校训练，但他爸妈也没有让他专门进入体校读书，而是一边训练，一边在普通的小学里学习文化课，经常要他去补课</mark>。他在鲁豫有约时就说过，自己小时候不是专业体校的学生，仍然是普通小学的学生，只是在体校里训练而已。</p><p>天赋，只是一门兴趣。对知识文化的启发，才是每个家长都一定要注重的。&nbsp;</p>
+
+</div></div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+</body><style>body {
+      font-size:  20px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 900px;
+    }
+    .page {
+      line-height: 30.0px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

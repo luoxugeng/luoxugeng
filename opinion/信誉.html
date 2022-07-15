@@ -1,0 +1,250 @@
+<html dir="ltr"><head><title>信誉 :: Reader View</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color: %light-color%;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color: %dark-color%;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color: %sepia-color%;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color: %solarized-light-color%;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color: %nord-light-color%;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color: %groove-dark-color%;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #93a1a1;
+  border-color: %solarized-dark-color%;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color: %nord-dark-color%;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] .tts-word {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  background-color: red;
+  height: 2px;
+}
+.tts-word.hidden,
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+</head>
+<body tabindex="1" data-images="true" data-mode="sepia" data-font="sans-serif" data-loaded="true">
+  <span></span> <!-- for IntersectionObserver -->
+
+  <h1 dir="auto" id="reader-title">信誉</h1>
+  <span dir="auto" id="reader-credits"></span>
+  <span dir="auto" id="reader-estimated-time">3-3 minutes</span>
+  <span dir="auto" id="published-time"></span>
+  <hr>
+  <div id="readability-page-1" class="page"><div id="post-body-7783682792333679483" itemprop="description articleBody"><p>
+别人为什么给你掏钱？因为你有信誉。</p><p>有信誉的人都可以赚到钱，没信誉的人都赚不到钱。反过来讲，如果一个人一直穷——那他肯定是个没信誉的人。如果一个人有钱，他的信誉一定特别好。</p><p>那很多人会说——恒大不是违约了，许家印不是很有钱么？</p><p>你说对了。一个人从开始没信誉开始——就要开始走下坡路了。因为大家不信任他了。所以和我说的并不矛盾。他能赚到钱，是因为他以前有信誉。他现在要破产了，是因为他开始不重视自己的信誉了——或者维护不了自己的信誉了。</p><p>因为维护信誉是需要巨大的成本的。你想赚的钱越多——你为了信誉所需要付出的代价越大。</p><p>经常有人跟我说，我特别讨厌某个网红，特别讨厌某个企业家，特别讨厌某个有钱人，我不认同他的观点。我觉得他就是割韭菜。</p><p>这完全是幻觉。</p><p>我可以明确无误的告诉你——只要是比你有钱的人，无论你认不认同他的观点，无论你是不是觉得他割韭菜——他绝对比你有信誉。只要是追随的人比你多的人，无论你认不认同他的观点，只要追随他的人、信任他的人比你的多，他绝对比你有信誉。</p><p>就算有一天他违约了，就算他有一天失信了，就算有一天他没有信誉了——他也比你有信誉。</p><p>为什么？</p><p>因为这个世界欠钱不还的人太多了，这个世界说话不算数的人太多了。人家只要成功过，你没成功过，就说明人家比你有信誉。哪怕人家有一天没有信誉了，那可能确实是维持信誉的成本太高了，他可能最初也没想到。但如果他没你有信誉，就不可能比你有钱，就不可能信他的人比信你的人多。</p><p>不要因为别人有一天没有信誉了——就认为自己有信誉。不要认为别人有一天失败了——就认为自己是成功的。不要认为其他人都是傻子，只有自己最聪明。如果你真的有信誉——为什么没有人追随你，为什么没有人相信你，为什么你赚不到钱呢？</p><p>那很多人会问——信誉是什么东西决定的？</p><p>信誉之所以对一个人，对一个公司，甚至对一个国家如此的重要，甚至是对赚钱有直接的影响——就在于——大多数人低估了信誉的深度和宽度。</p><p>第1——信誉首先是时间经营的结果。任何事情，只要没做够足够的时间，就不可能具有足够的信誉。无论是做事业，还是感情，甚至还是打工，只要你没在一个公司、一个行业或者和一个人经营足够长的时间，你就不可能在对方眼里有足够的信誉。</p><p>信誉就是品牌的本质。而品牌的本质是时间。</p><p>第2——信誉其次是专业度认可。而专业度意味着——专业背景、荣誉获得、从事时间的长短。这不是一朝一夕能获得的。</p><p>就像恒大再有钱，做矿泉水依然做不过农夫山泉，就像恒大再有钱，做电动车依然做不过特斯拉比亚迪。因为消费者觉得你不专业。</p><p>可比克薯片其实是属于宝洁公司的——但是宝洁公司并不想让别人知道可比克薯片是他们生产的——因为这会让人感觉不专业。因为你会感觉你的薯片是用洗发水做的。</p><p>第3——信誉是一次又一次的履约造就的。只有付费才能看出来信誉。而不是好评。</p><p>很多人误以为自己很有信誉——尤其是很多普通人、穷人。这只是幻觉。他们以为自己朋友圈很多人给他点赞，他们就是在朋友圈中非常有信誉的人——这是一个完全意义上的错觉。100个人给你点赞，但是等你收200块钱的时候，可能给你付费的人1个都没有——那等于你的信誉是0。</p><p>免费的东西总是容易受到人的追捧。不用花钱的支持总是可以听到好听的话。但是一旦进入付费环节——你就会进入到一种残酷的竞争中。</p><p>信誉就是你的品牌，就是你的综合定位，就是你在一个行业中的生态位。信誉是非常本质的东西。</p><p>如果你在一个行业里赚不到钱，说明你的信誉不够高。如果你已经赚到了钱，然后不再重视自己的信誉，很快你就会赚不到钱。</p><p>无论是做生意，还是谈感情，还是打工，还是做任何事，都一样。你的每一次履约，都可以帮助你成为更好的人，你的每一次失信，都会让你的处境更差。你履约多了，自然信任你的人就多了。你失信的多了，自然就没有人再相信你。</p><p>你要记住——不管是金融行业，还是投资行业，还是房地产行业，还是任何行业——本质上都是信心行业——信心比黄金更贵。事实上，就连黄金的价格——都是信心决定的。</p><p>信誉可以给人带来信心。而失信只会让人加深怀疑，最后导致流动性危机，甚至导致挤兑。</p><p>其实谈恋爱也是。<br>你失恋的次数多了——说明你没有履行恋爱承诺的能力——本质上就是不信任他的人多——所以他才会谈很多次恋爱之后还单身。不论男女，都一样。所以我们一直不赞同和谈恋爱次数很多的人在一起长择——短期玩玩可以——长择宁愿找一个没有信用卡的人，也不要找一个有好几个信用卡都失信的人。<br>没有信用卡的人，白纸一张。你可以试试。不还款就拉黑。<br>有好多信用卡还违约的人——就是老油条。你拉黑他，他也不还你钱。<br>没谈过恋爱的人，白纸一张。你可以试试，不管聪明不聪明，作不作，有钱没钱，至少对感情有可能是比较重视的。</p><p>谈过好多次恋爱还没在一起的人，可以玩玩，但最好不要长期在一起——因为这说明和他在一起的人都不愿意和他长期在一起。说明他低价值。而且他的对象条件越好，他越是单身——越是说明他心比天高，命比纸薄，说明这个人喜欢过度承诺和包装——别人才会跟他尝试在一起——但是时间长了就发现他无法履约，发现这个人没有信誉，就不再跟他在一起。所以他才会和很多人谈过恋爱之后还单身。他可能以为是别人的问题——但如果遇到了好几个人都是别人的问题——说明是他自己的问题。因为吸引力法则。</p><p>一定要小心穷人。<br>一定要小心年龄大还穷的人。<br>一定要小心没赚过钱的人。<br>一定要小心心比天高，命比纸薄的人。<br>一定要小心你的那些穷亲戚和穷朋友。他们没有信誉。
+</p>
+</div></div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+</body><style>body {
+      font-size:  20px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 900px;
+    }
+    .page {
+      line-height: 30.0px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

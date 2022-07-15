@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <base target="_blank">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+  position: relative;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color:  #222;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color:  #eee;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color:  #5b4636;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color:  #586e75;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color:  #2e3440;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color:  #cec4ac;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #839496;
+  border-color:  #839496;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color:  #e5e9f0;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] ::selection {
+  background-color: #fff740;
+  color: #000;
+}
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+<title>1.5万儿科医生消失背后，9000万中国家庭无路可退 :: Reader View</title></head>
+<body tabindex="1" data-images="true" data-mode="light" data-font="sans-serif" data-loaded="true" style="user-select: initial;"><h1 dir="auto" id="reader-title">1.5万儿科医生消失背后，9000万中国家庭无路可退</h1>
+  <span dir="auto" id="reader-credits">古蒙儿</span>
+  <span dir="auto" id="reader-estimated-time">4-5 minutes</span>
+  <span dir="auto" id="published-time"></span>
+  <hr>
+  <div id="readability-page-1" class="page"><div id="js_content">
+                    
+
+                    
+                    
+                    
+                    <p><span>文|古蒙儿</span></p><p><span>来源|花瓣志(ID:iihuacao)</span></p><section><span><p>勿让提灯者寒心！</p></span></section><blockquote data-type="2" data-url="" data-author-name="" data-content-utf8-length="86" data-source-title=""><section><p><span>我们科室建立到现在为止是4年，</span></p><p><span>4年辞职4个医生。</span></p><p><span>想要招一些年轻的大夫、年轻的医生，</span></p><p><span>真的好难。</span></p><p><span>他们科室只有两个名额，有6个人来报名；</span></p><p><span>我的这个科室有8个名额，只有1个人来报名。</span></p></section></blockquote><p><span>在《人间世》第8集里，</span></p><p><span>ICU儿科主任朱晓东用寥寥数语，</span></p><p><span>告诉我们一个骇人的真相：</span></p><p><span>比孩子看病难更可怕的是，</span></p><p><span>儿科医生正在消失……</span></p><p><span>就在他说话间，已经又走了一名医生。</span></p><p><br></p><p><span>这个医生，能力出众，</span></p><p><span>在医生和患者中皆有口碑。</span></p><p><span>可惜，没有博士学位，又没有时间准备论文，</span></p><p><span>他的职业生涯一眼看得到头，</span></p><p><span>最后选择辞职。</span></p><p><span><strong><span>与其说是选择离开，不如说是被迫离开。</span></strong></span></p><p><span>一个人是一群人的缩影。</span></p><p><span>张医生的离开，不是个例，而是儿科的普遍现象。</span></p><section powered-by="xiumi.us"><section><span>01</span></section><section><span>&nbsp;</span></section></section><section><span><strong><span>正在消失的10万儿科医生</span></strong></span></section><section><span>近两年，我国儿科医生缺口已经超过20万，</span></section><section><span>医生总数仅有10万人，</span></section><section><span>但我国0-14岁的儿童约有2.6亿。</span></section><section><span><strong><span>10万儿科医生要服务2.6亿儿童，</span></strong></span></section><section><span><strong><span>一个医生要服务2600名。</span></strong></span></section><section><span>平均每8小时，</span></section><section><span>一个医生要接诊60——80位患儿，甚至更多。</span></section><section><span>所以深夜里的儿科，人比春运火车站还多。<br></span></section><section><span>有人埋怨，</span></section><section><span>医生只用3、5分钟就接诊一个患儿。</span></section><section><span>但这样的速度，</span></section><section><span>还有大批患儿光排队就要等上4小时。</span></section><section><span>在医院里排队的人</span></section><section><span>直到现在，</span></section><section><span>儿科医生缺口不但没填补上，</span></section><section><span>反而在不断扩大。</span></section><section><span><strong><span>2014年到2016年，</span></strong></span></section><section><span><strong><span>3年时间，儿科医生流失14310人，</span></strong></span></section><section><span><strong><span>占总数的十分之一。</span></strong></span></section><section><span>在医学生中，流传着一个顺口溜，</span></section><section><span>“金眼科，银外科，打死不去小儿科”。</span></section><section><span>年轻的医学生，</span></section><section><span>宁愿去内科、妇科，也不想来儿科。</span></section><section><span>后果是，</span></section><section><span>15年里，我国的儿科医生仅增加了5000人。</span></section><section><span>每年有80万医科生毕业，</span></section><section><span>成为医生的只有2.2万人，</span></section><section><span><span>而成为儿科医生的仅</span><span>300多人</span><span>。</span></span></section><section><span>一边是新增医生人数锐减，</span></section><section><span>科室连人都招不满；</span></section><section><span>一边则是儿科医生逐渐离开这个行业。</span></section><section powered-by="xiumi.us"><section><span>02</span></section><section><span>&nbsp;</span></section></section><section><span><strong><span>儿科医生消失之谜，你需要知道这3个真相</span></strong></span></section><section><span><strong><span>真相一：</span></strong></span></section><section><span><strong><span>治病救人的医生，随时都会丧命。</span></strong></span></section><section><span>2016年，山东莱钢医院。</span></section><section><span>儿科医生李宝华被患儿家属砍成重伤后，</span></section><section><span>不治身亡，</span></section><section><span>身中27刀，头部多达12刀。</span></section><section><span>▼</span></section><section><span>最让人不能释怀的是，</span></section><section><span>被砍前，他刚刚结束了16个小时的夜班，</span></section><section><span>忙的一夜没有睡觉。</span></section><section><span>湖南邵东的王俊医生，</span></section><section><span>只因没有停下手术为新到的患儿清创，</span></section><section><span>就被家属围殴致死。</span></section><section><span>▼</span></section><section><br></section><section><span>不光自己的安全，</span></section><section><span>有时连他们自己的至亲骨肉都难以保全。</span></section><section><span>在湖南益阳，</span></section><section><span>一位医护人员年仅10岁的孩子，</span></section><section><span>在上学途中被患者家属尾随，捅了13刀。</span></section><section><span><strong><span>这一切，</span></strong></span></section><section><span><strong><span>就因为他们是医生，</span></strong></span></section><section><span><strong><span>就因为他们从事了这一行，</span></strong></span></section><section><span><strong><span>挨打挨骂成为了常态。</span></strong></span></section><section><span>孩子喊声疼，父母就对医生拳脚相加；</span></section><section><span>一针不见血，耳光就甩在了护士脸上……</span></section><section><span>除却暴力伤医，</span></section><section><span>猝死、抑郁症也正在围攻他们。</span></section><section><span>43岁的郭庆源，</span></section><section><span>是一个有口皆碑的外科医生，</span></section><section><span>但他的生命，</span></section><section><span>却永远停在了2018年1月23日那天。</span></section><section><span>事发当晚，</span></section><section><span>他一共接诊了40个病人。</span></section><section><span>▼</span></section><section><span>43岁的赵变香医生，</span></section><section><span>倒下的地方是505病房。</span></section><section><span>倒下的前一秒，</span></section><section><span>她还在微笑着问询病人女儿，</span></section><section><span>“你妈妈感觉怎么样？”</span></section><section><span>▼</span></section><section><span>因为人手不足，如果不加班加点，</span></section><section><span>他们根本撑不起庞大的治疗量，</span></section><section><span><strong><span>他们能做的，</span></strong></span></section><section><span><strong><span>就是用自己的健康，换取患者的健康。</span></strong></span></section><section><span><strong><span>真相二：<br></span></strong></span></section><section><span><strong><span>与儿科医生的付出成反比的，是他们的工资水平。</span></strong></span></section><section><span>据调查，</span></section><section><span>有76%的儿科医生，工资在5000元以下，</span></section><section><span>其中有一半人，工资不足3000元。</span></section><section><span>顶着难以想象的压力，每天都是超负荷运转，</span></section><section><span>到手的工资却连自己都养不活。</span></section><section><span>40岁的朱月钮医生，</span></section><section><span>2005年就已读完博士，</span></section><section><span>2018年12月底才晋升副主任医生。</span></section><section><span>这时候，很多和她同年龄的同行同事，</span></section><section><span>早已是主任医师甚至已经是研究生导师了。</span></section><section><span>不是能力不行，</span></section><section><span>而是因为忙着诊治，天天待在病房，</span></section><section><span>没有时间做科研写论文，评不上职称。</span></section><section><span>评不上职称，待遇就涨不上去。</span></section><section><span><strong><span>真相三：</span></strong></span></section><section><span><strong><span>大部分的儿科医生，每天都要工作16个小时。</span></strong></span></section><section><span>作为唯一一个有能力管着ICU的医生，</span></section><section><span>朱月钮每天需要照顾十几床病人，</span></section><section><span>这些病人，都还是孩子，却都是重症。</span></section><section><span>肚子里长肿瘤、骨髓里长肿瘤、脑子里长肿瘤……朝不保夕。</span></section><section><span>为了这些孩子，</span></section><section><span>她忙到没时间喝水、吃饭、上厕所，</span></section><section><span>甚至无暇顾及自己的女儿。</span></section><section><span>女儿腿受伤，不能上学，</span></section><section><span>她能做的也只是把孩子安顿在值班室。</span></section><section><span>女儿期末考试期间，</span></section><section><span>她遇上一个仅10岁的突发心肌炎患者，</span></section><section><span>不得不在医院坚守了116个小时、整整四天半。</span></section><section><span>想到家里无人关心的女儿，</span></section><section><span>一贯强势的她也不禁崩溃痛哭。</span></section><section><span>一头是病房里翻江倒海般的生死，</span></section><section><span>一头是女儿一去不复返的童年，</span></section><section><span>选哪个，怎么选？</span></section><section><span>她没有选择的机会，</span></section><section><span>因为连回家的时间都没有。</span></section><section><span>她能做的，就是给家里的阿姨打个电话，</span></section><section><span>嘱托她给女儿多做点好吃的。</span></section><section><span>她能为女儿做的，就只有这么多了。</span></section><section><span>这不是朱医生的常态，</span></section><section><span>而是所有儿科医生的常态。</span></section><section><br></section><section><br></section><section><span>谈到女儿，马健医生忍不住落泪</span></section><section><span>每天都是16个小时以上的工作，</span></section><section><span>他们牺牲了健康、牺牲了休息时间，</span></section><section><span>以至于连自己的孩子的成长都不能参与。</span></section><section><span>付出这样大代价后获得的回报就是，</span></section><section><span><strong><span>少的可怜的工资、家人的不理解，</span></strong></span></section><section><span><strong><span>患者的纠缠打骂甚至砍杀，连孩子都不放过。</span></strong></span></section><section><span>真实镜头下的儿科医生，熟悉又陌生。</span></section><section><span>外界看来，它高薪、稳定、社会地位高，</span></section><section><span>但几乎没人去深入调查过他们真实的生存现状。</span></section><section><span>刨除工资低、工作压力大、晋升难、猝死、医闹、暴力伤医……</span></section><section><span>他们也在承受着许多来自生活的压力，</span></section><section><span>白大褂下的他们，也是有家庭的普通人。</span></section><section><span><strong><span>一边忙着救人，</span></strong></span></section><section><span><strong><span>一边想方设法保命，</span></strong></span></section><section><span><strong><span>这就是他们最真实的世界。</span></strong></span></section><section><span>所以不难理解为什么，</span></section><section><span>有34%的儿科医生在两年内有辞职计划，</span></section><section><span>在基层医院，这个比例已经达到了41%。</span></section><section><span>当这批医生也离开后，</span></section><section><span>等着我们的会是什么？</span></section><section powered-by="xiumi.us"><section><span>03</span></section><section><span>&nbsp;</span></section></section><section><span><strong><span>儿科医生大逃亡的背后，上千万家庭退无可退</span></strong></span></section><section><span>早在5年前的时候，就频频曝出，</span></section><section><span>由于儿科医生紧缺，</span></section><section><span>医院被迫取消儿科急诊夜诊。</span></section><blockquote><section><span>上海各个医院的儿科，平均排队4小时；<br></span></section><section><span>深圳某医院里，儿科医生一天接诊300个患儿，</span></section><section><span>是普通门诊工作量的三倍，不少医生带病坚持；</span></section><section><span>天津某三甲医院因为儿科医生全部病倒而导致儿科停诊……</span></section></blockquote><section><br></section><section><span>也是这时候，</span></section><section><span>部分人才惊觉自己的孩子早已身处危险之中。</span></section><section><span>石田衣良在《反自杀俱乐部》里说，</span></section><section><span>人们往往会对别人的危险处境毫无察觉，</span></section><section><span>只因为自己没有置身其中，</span></section><section><span>所以感觉变得愚钝。</span></section><section><span>这是人类的通病。</span></section><section><span>在我写这篇文章、查询儿科医生资料的时候，</span></section><section><span>依然时不时就能看到这样愚蠢的言论：</span></section><blockquote><section><span>“我是一时情急就打了她（医生）一巴掌，</span></section><section><span>但她收入那么高，</span></section><section><span>也不至于就不干医生这一行了吧。”</span></section></blockquote><blockquote><section><span>“就是说啊，</span></section><section><span>医者仁心，他们不会辞职不干的。”</span></section></blockquote><blockquote><section><span>“你没吃饭，关我屁事。”</span></section></blockquote><section><span>我不知道如何评说这一类人，</span></section><section><span>他们最常用的伎俩就是，</span></section><section><span><strong><span>你跟他讲道理，他跟你讲道德。</span></strong></span></section><section><span>他们的言语，声声嘲讽，句句诛心，</span></section><section><span>成了压垮医生的最后一根稻草。</span></section><section><span>他们很快就会意识到，</span></section><section><span>儿科医生大逃离的背后，将是9000万家庭退无可退。</span></section><section><span>早前就有广州日报发布消息称，</span></section><section><span>中山大学附属第一医院东院，</span></section><section><span>21名儿科医生中，</span></section><section><span><span>有</span><span>4名被民营医院高薪挖走，</span></span></section><section><span>月薪三万，还不用上夜班。</span></section><section><span>一边是高薪、时间自由、受人尊重，</span></section><section><span>一边是收入不高、加班严重、动辄被打被骂。</span></section><section><span>不难想象，不久的将来，</span></section><section><span>儿科医生从公立医院流向民营医院的速度会越来越快。</span></section><section><span>到那时，只会出现一种情况：</span></section><section><span>愿意且能支付更多钱的家长，</span></section><section><span>孩子将会在民营医院接受更好的治疗。</span></section><section><span>而剩下的人，</span></section><section><span>则只能在下半夜孩子生病的时候，</span></section><section><span>守在急诊门口，</span></section><section><span>掰着指头算还有多久医生才上班，</span></section><section><span>医院才开门。</span></section><section><span><strong><span>暴力伤医—医生流失—医患关系加剧，</span></strong></span></section><section><span><strong><span>这个恶性循环的闭环已经形成，</span></strong></span></section><section><span><strong><span>而我们每一个人都身处其中。</span></strong></span></section><section><span><span>可以预见，</span>儿童医疗已经到了寒冬，</span></section><section><span><span>在寒冬里，</span>没有谁能独善其身。</span></section><section><br></section><section powered-by="xiumi.us"><section><span>04</span></section><section><span>&nbsp;</span></section></section><section><span>在《人间世》里，</span></section><section><span>有这么一个片段，</span></section><section><span>抢救一个病危儿童、</span></section><section><span>连一顿饭都没顾得上吃的朱月钮医生，</span></section><section><span>因为对另一个患儿家属说话没有耐心，</span></section><section><span>被投诉到医院医务处和市民热线。</span></section><section><span>花了大半天时间解释、写保证书、座谈后，</span></section><section><span>家属同意和解，同时也提了一个疑问：</span></section><section><span><strong><span>“是什么让你继续坚持在这里的？”</span></strong></span></section><section><span>朱医生的一段话，或许就是答案。</span></section><section><span>她说：</span></section><section><blockquote data-type="2" data-url="" data-author-name="" data-content-utf8-length="62" data-source-title=""><section data-content-utf8-length="44"><section><span><strong><span>“人的一生，绝不只是面朝大海春暖花开，</span></strong></span></section><section><section><span><strong><span>它在隐藏着忧伤、尴尬、伤痛、苟且，</span></strong></span></section><section><span><strong><span>但我相信，</span></strong></span></section><section><span><strong><span>医生这个职业，</span></strong></span></section><section><span><strong><span>会比别的更容易找到人生存在感。</span></strong></span></section></section></section></blockquote></section><section><span>医者是暗夜里的提灯者，</span></section><section><span>他们一心想为我们抵御黑暗，</span></section><section><span>为何总有人试图打破那盏灯。</span></section><section><span>寒冬之下，</span></section><section><span>提灯者尚在坚持，</span></section><section><span>而我们普通人能做且一定要做的，</span></section><section><span>难道不是更多的善意与尊重？</span></section><p><span>完</span></p><section data-tools="135编辑器" data-id="91244" data-role="outer" label="Powered by 135editor.com"><p><span>参考资料</span></p><p><span>1.共青团中央 ID：gqtzy2014</span></p><p><span>2.《中国儿科资源现状白皮书》</span></p><p><span>3.医米调研，《调研：中国儿科医生工作现状，你所想不到的几个数据》</span></p><p><span>4.医学界儿科频道，《儿科医生大逃亡的背后》</span></p><p><span>5.纪录片《人间世2-儿科医生》</span></p><p><span>6.威海市儿科副主任医师儿科主任田致洲，《家庭医生可能是缓解儿科现状的最后稻草》</span></p><p><span>7.白衣山猫，《为什么年轻医生们会逃离这个行业？》</span></p><section><br></section></section><section><mpprofile data-pluginname="mpprofile" data-id="MzA3MDExMzcyMQ==" data-headimg="http://mmbiz.qpic.cn/mmbiz_png/gOCKmtteVjSjtbfMnn9aDLoMNsKfticfjFptY8bV7VmnzKAE5P5xGwrueD4h0BsXD79lRb0E5wP5WKUZkZzLNkA/0?wx_fmt=png" data-nickname="读心先生" data-alias="czhapp" data-signature="“把书读进你心里” ——新都市读书群体第一微刊，曾入选中国最具影响力自媒体50人" data-from="1" wah-hotarea="click"> <!-- profile卡片 -->  </mpprofile></section>
+                </div></div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+</body><style>body {
+      font-size:  20px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 900px;
+      text-align: justify
+    }
+    .page {
+      line-height: 30.0px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

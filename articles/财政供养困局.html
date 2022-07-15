@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <base target="_blank">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+  position: relative;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color:  #222;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color:  #eee;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color:  #5b4636;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color:  #586e75;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color:  #2e3440;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color:  #cec4ac;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #839496;
+  border-color:  #839496;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color:  #e5e9f0;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] ::selection {
+  background-color: #fff740;
+  color: #000;
+}
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+<title>【转载】财政供养困局 - 日记 :: Reader View</title></head>
+<body tabindex="1" data-images="true" data-mode="sepia" data-font="sans-serif" data-loaded="true" style="user-select: initial;"><h1 dir="auto" id="reader-title">财政供养困局&nbsp;</h1><div><br></div><div id="readability-page-1" class="page"><div id="note-body"><div id="content"><p data-page="0">我称这种现象为财政供养困局。</p><p data-page="0">例如我县实际常住人口九十万人，拥有五家A股上市企业，另有三十几家制造业上市企业在我县开立了分公司，规模以上制造业企业四百多家，三个省级工业园区，一个国家级战略园区。全国百强县排名前三十。单从账面数据来看很不错，但是！但是！我们整个县的工资收入极度不均衡，造成了问题中的困境。</p><p data-page="0">举例，我县上市企业的一线工人的平均工资是六千多，一天工作十二小时，月休四天。办公室研发人员工资全包也仅只有二十万一年，而且学历普遍为研究生学历，996很正常。更不提普通工厂打工的工人及自由从业者了。据我了解，我县人均工资收入2021年是四千多每月，对应政府发布的我县城镇人均可支配收入五万四千多是匹配的。</p><p data-page="0">但是，我县财政供养人员是一万五千余人，普通事业单位员工第一年收入全包是十六万，普通公务员第一年收入全包是二十万，财政局，也就是女性公务员居多的单位第一年收入全包是二十二万。而等到五年后，工资收入全包分别为十八万，二十万和二十五万。而普通主课老师，第一年工资收入全包是二十万，但是我县潜规则每年每个学生是两千元到五千元不等的红包，而一个班有三十名学生，大家可以估算下他们的收入。</p><p data-page="0">在我们县，靠着财政吃饭的一群人和贡献财政收入的一群人的工资收入是完全倒挂的。而且我相信，这种现象放眼全国都是适用的。</p><p data-page="0">例如我熟知的河北某县，属于较为知名的旅游县，其中普通新入职公务员全包年收入是十万元，但是该县常住人口80万人，全年GDP还没超过300亿元，全县人均可支配收入刚过两万五千元。我印象最深的是当地国有平台下辖的混改旅游公司，给景点售票员开出的工资是1800元每月，就这样的工作居然还要托关系找门路上下打点五万元才能进去。而每当我跟当地的公务员朋友深夜从市里回到县城，看到沿着古城墙开着的一排排小吃店都亮着灯，就为做那么一单或者两单生意时，我心中是酸楚且不解的。我那时还很好奇为什么当地不发展轻工业或者其他制造业，他们总是笑笑不说话。后来我住到当地亲戚家时，才惊讶发现当地居民居然在2020年还没普遍安上洗衣机，我问为什么？他们说为了保障北京供水，所以三点以后就集中断水了，而且还会时不时停水，如果买了洗衣机，很容易就把洗衣机洗坏，所以还是干脆手洗。当地公务员可以买房子买到市区，那里自来水是二十四小时不会断的，但是普通人呢？普通人如何生活？制造业如何在当地发展？如果我的女儿考上北方的公务员，她愿意嫁进普通的，连洗衣机都不能装的家庭吗？</p><p data-page="0">说回我现在所处的县，我县财政供养人员这么高的收入依托就是收税和卖地了。我县2021年全口径税收收入是一百四十亿元，其中每年上缴70%到80%不固定。而我县出让土地收入才是大头，每年工业土地出让收入是六亿元左右，商业土地出让收入是十亿元，住房土地出让收入基本在十二三亿元左右。所以我县园区内工业用地价格是十五到二十万元一亩，住宅最高价格是一万四千元每平。对于普通人，需要不吃不喝十五年才能买的起一户60平米的小房子。对于企业主，开办一个普通企业前期投入就需要两百万元。而对于新入职的公务员，他们眼中永远对标的是苏州的公务员，银行支行行长，上市企业财务负责人，烟草局科长和特级资质建筑企业项目负责人的收入。每次在饭桌上他们跟我探讨的都是他们的工资如何低时，而我只能埋头一饮而尽。</p><p data-page="0">我县每年新招聘财政供养人员在三百到四百人左右，其中三分之二为女性，而应届毕业生又占到三分之二。恕我说句不讲道理的话，她们完全不理解也不想理解整个县是如何运作的，普通人是如何生活的。因为，他们只看到老一辈的公务员当年新城改造三千买到的住房现在因为是学区，涨到了一万三。只看到老一辈的公务员拿着上百万积蓄去买国有平台的私融产品，三年利息是8%，五年是10%。只看到老一辈女性公务员遇到车辆违章只需要打个电话给交警老公就能销掉违章。想看电影，想吃蛋糕，想做SPA，想干洗衣服，只需要打个电话给从公务员调到国有平台企业做领导的老公，而国有平台领导再去问银行客户经理要各种兑换券，她们只需要让银行客户经理把券放在政府大门的门卫那里，她们去取就行。为什么不让银行客户经理直接送到办公室？是她们不想吗？不是，是进政府办公大楼需要专门的进出证件。她们的生活已经跟正常人的生活完全脱节。</p><p data-page="0">那你让这种情况下的女性如何去向下选择？换作任何一个人也不会去选除体制外或者资产不超过五百万元的配偶，因为那意味着阶级下降，信息渠道减少，满足感下降，可支配收入减少，未来的不确定因素实在太多了。</p><p data-page="0">那这种情况可持续呢？</p><p data-page="0">目前我县新建未售住宅两万余套，二手房挂牌一万六千余套。</p><p data-page="0">八个外部评级为AA级及以上国有平台共有银行负债一千四百余亿元，每年支出利息八十亿元。外加各类公开，非公开公司债，美元债等各类金融负债六百余亿元。</p><p data-page="0">我县每年新增出生人口一千四百多位，但每年人口流出及死亡近万人。</p><p data-page="0">我县2022年截止到今天倒闭关停企业七十几家，新增个体户和企业创历年新低。</p><p data-page="0">我县规模以上工业企业的员工平均年龄已经到了四十周岁，而我县每年过年返工的包车在一年年的减少。</p><p data-page="0">覆舟水是苍生泪，不到横流君不知。当去企业走访时，我面对的一线员工是满脸皱纹，穿着粘上油污的工作服的中年人和在硕大的办公室里抽烟，跟我侃侃而谈如何走出疫情困境，两鬓斑白的企业老板;然后再去政府时，我看到的是青年才俊在那里做着精美的PPT,商讨着平台承接县保障房项目，用底价接拍今年新挂牌的土地时，我真的觉得这个我呆了三十年的县城很陌生，短短十五分钟的路程，铁栅栏里面和外面是天地悬殊的社会。</p><p data-page="0">说点题外话，十年二十年前，我县公务员虽贪但是做事，让我印象最深刻的是那时某局员工周六周日去开垦滩涂，问大海要土地，开垦农田，保住农田红线，这样才能有多出的土地去建厂房。某局局长能跪在省里发改委的办公室里，只为求一个能源指标。工商局的公务员在每年招工时期都愿意陪着企业主坐硬皮火车，去往西部城市的各类中职中专院校招工。</p><p data-page="0">现在呢？我接触到公务员，尤其是部分的年轻女性公务员，只把躺平写在了脸上。反正工资不能少，因为需要每周去苏州，上海购物。市里有什么小京都适合拍照一清二楚，但上级部门要什么数据，就把表格直接发给企业会计去填，而真的需要填什么却一问三不知。</p><p data-page="0">我做为一个生于小县城，长于小县城，大概率会死于小县城的普通人，面对这个问题只能说其实大家心里都知道是怎么回事。<mark class="hghlght">做为普通人，如果我也有个女儿，我也会倾尽所有让她在家看书复习考个公务员，如果西部县城财政崩溃了，那就让她考东部县城的，如果东部县城甚至百强县的财政崩溃了，我会让她考地级市的，地级市的财政崩溃了，我会让她考北京，上海的，然后再让她找个同为公务员的老公。因为做为普通人，我知道，普通人的生活实在太苦了</mark>。</p><p data-page="0">在这里祝福所有人都能考上公务员，衷心祝福大家。</p><p data-page="0">分割线…………………………………………</p><p data-page="0">1、我这里说的工资收入全包不光指拿到手的工资，还包含五险一金，年终绩效，工会福利，创文明城市奖金等，很多人觉得我说的太夸大其词了，我这里截取了我县某单位的决算报告，该单位核定编制人员25名，人员经费是1206万元。下面截图为证：</p><div><p><img height="auto" data-src="https://img9.doubanio.com/view/note/l/public/p89118541.jpg" src="https://img9.doubanio.com/view/note/l/public/p89118541.jpg"></p></div><div><p><img height="auto" data-src="https://img9.doubanio.com/view/note/l/public/p89118540.jpg" src="https://img9.doubanio.com/view/note/l/public/p89118540.jpg"></p></div><div><p><img height="auto" data-src="https://img9.doubanio.com/view/note/l/public/p89118542.jpg" src="https://img9.doubanio.com/view/note/l/public/p89118542.jpg"></p></div><div><p><img height="auto" data-src="https://img9.doubanio.com/view/note/l/public/p89118543.jpg" src="https://img9.doubanio.com/view/note/l/public/p89118543.jpg"></p></div><p data-page="0">2：如果大家猜到是某县就是某县吧，因为我觉得我说的应该是一个普遍现象。而且我写这篇文章的本意不是去攻击体制内的女性。因为体制内的某些男性更烂，如果我写了他们做的事，那么我就在写真正违法犯罪的办法。相较某些男性公务员，虽然某些女性公务员不愿做事，但是她们也不徇私枉法，化公为私。</p><p data-page="0">3：针对老师收红包这个事没想到会有这么多困惑，我以为这是习以为常的事情。我县是教育百强县，大家普遍对孩子的教育很上心，如果想要帮我举报的请私信我，我能提供的证据远超想象。举例：我县有一家综合贸易体，其中一楼开设有SKII 等二线品牌，二楼则是均价在一千以上的休闲服装。每到九月一日开学或者教师节前，该综合贸易体会较常规月份多进账三千万到五千万元不等，销售商品多为不记名消费卡。而这个综合贸易体也会在开学及教师节后出账很大一部分流动资金用于补货。而最妙的是该综合贸易体是采用会员制的。<mark class="hghlght">中国太大了，大家遇到不理解的事情很正常</mark>。</p><p data-page="0">言尽于此，请大家多多点赞。</p><p data-page="0"><br></p></div>
+
+
+
+
+
+
+
+                    </div></div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+</body><style>body {
+      font-size:  20px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 900px;
+      text-align: justify
+    }
+    .page {
+      line-height: 30.0px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

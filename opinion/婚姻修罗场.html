@@ -1,0 +1,250 @@
+<html dir="ltr"><head><title>婚姻修罗场 :: Reader View</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color: %light-color%;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color: %dark-color%;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color: %sepia-color%;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color: %solarized-light-color%;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color: %nord-light-color%;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color: %groove-dark-color%;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #93a1a1;
+  border-color: %solarized-dark-color%;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color: %nord-dark-color%;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] .tts-word {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  background-color: red;
+  height: 2px;
+}
+.tts-word.hidden,
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+</head>
+<body tabindex="1" data-images="false" data-mode="sepia" data-font="sans-serif" data-loaded="true">
+  <span></span> <!-- for IntersectionObserver -->
+
+  <h1 dir="auto" id="reader-title">婚姻修罗场</h1>
+  <span dir="auto" id="reader-credits"></span>
+  <span dir="auto" id="reader-estimated-time">2-2 minutes</span>
+  <span dir="auto" id="published-time"></span>
+  <hr>
+  <div id="readability-page-1" class="page"><div id="post-body-8962387828989809432" itemprop="description articleBody">
+<meta http-equiv="Content-Type" content="text/html; charset=GB18030"><p>两个人劲往一处使才是家，心不往一处使就是修罗场。</p><p>其实大多数人的婚姻并不是一个两个人一起努力共同拼搏赚钱的利益共同体，而是一个又一个修罗场。什么叫修罗场？修罗场就是战场，就是地狱——大多数人的婚姻就是战场，就是地狱。</p><p>大多数人的婚姻，表面看恩恩爱爱、有孩子有幸福，没事旅旅游、吃个烛光晚餐、送个节日礼物，其实这些都是表象。实质要么是一个人的能力特别强——去养另一个人，另一个人天天想着的是如何从另一半身上转移财产。</p><p>要么是一个人非常努力的工作、创业和做生意，另一个人在家里，随便做一个垃圾工作，还觉得自己很优秀，然后只关心另一半每个月给自己交多少钱，根本不关心对方的生意做的怎么样，也不关心对方的生意能不能做起来。甚至很多人想的是——你做不起来才好呢。你做起来我还怕你出轨呢，你做起来我地位就低了，巴不得你做不起来。</p><p><mark class="hghlght">很多人表面看很支持对方的事业——都是假象。凡是不出钱不出力的支持——全部是假象</mark>。尤其是那种一个人在外面拼命赚钱养家，而且成功了，但是女的既不挣钱，一个月1万5自己花光，生了一个孩子就不生了，就开始享受生活了，嫁了一个老公本质上就是通过生了一个孩子嫁了一个金主。</p><p>实际上大多数人根本不关心另一半的事业，哪怕自己的家庭其实就是靠另一半赚的钱养活的，哪怕对方比你赚的多20倍，他依然觉得和自己无关，只有花钱的时候和自己有关，其他一律无关。一旦遇到风险，遇到亏损，遇到破产，遇到行业波动，巴不得早点离婚。就算很多人不离婚，其实也都是因为找不到更好的而已，并不是他们有多么恩爱——穷人哪来的爱。</p><p><mark class="hghlght">穷人只有利益，反而富人才有余力爱人。以上几种家庭模式都是修罗场，都是内耗，都是战场</mark>。</p><p>夫妻本是同林鸟，大难临头各自飞。<mark class="hghlght">大部分人的感情之所以能维持下去——并不是因为他们恩爱，只是因为他们太穷了，压根没有利益诱惑他们，因为他们既出不了名，也赚不到钱，谁诱惑他们啊。那当然就算是耗也能耗下去。但是这不代表他们恩爱。</mark></p><p>所有需要一个人哄另一个人的感情，所有一个人创业另一个人在旁边看着的感情，所有一个人赚钱另一个人享受的感情，本质上都不是爱，都是索取、内耗、自私、占有、转移，都是在靠一个人的心力艰难的维持着的。这根本不叫爱情。这根本不叫婚姻。</p><p><mark class="hghlght">大多数人最大的问题是——他们心中总是有一种奇怪的认为这个世界上应该人人平等的想法——他们认为这个世界上每个人都值得拥有好的感情，都值得拥有好的婚姻，都值得拥有好的爱情。这是瞎扯的。</mark></p><p><mark class="hghlght">一个基本的常识是——任何一种好东西，都只有少数人才配拥有。而大多数人有的，一定是不好的东西。</mark></p><p>清华很好，有几个人能考上？江西省40万考生，只有200个人能上清华北大；深圳1800万人，每年去70万人找工作，有多少人能买得起房能留下来？深圳的商品房只有180万套，最多10分之1。</p><p><mark class="hghlght">千万不要有每个人都可以拥有好东西的想法。这是完全错误的。任何好东西，都只有少数人才能拥有，越好的东西，拥有的人越少。</mark></p>
+
+</div></div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+</body><style>body {
+      font-size:  20px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 900px;
+    }
+    .page {
+      line-height: 30.0px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

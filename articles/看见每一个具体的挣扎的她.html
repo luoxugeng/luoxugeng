@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <base target="_blank">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+  position: relative;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color:  #222;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color:  #eee;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color:  #5b4636;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color:  #586e75;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color:  #2e3440;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color:  #cec4ac;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #839496;
+  border-color:  #839496;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color:  #e5e9f0;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] ::selection {
+  background-color: #fff740;
+  color: #000;
+}
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+<title>乐活--看见每一个具体的、挣扎的她 :: Reader View</title></head>
+<body tabindex="1" data-images="true" data-mode="light" data-font="sans-serif" data-loaded="true" style="user-select: initial;"><h1 dir="auto" id="reader-title">看见每一个具体的挣扎的她&nbsp;</h1>
+  <span dir="auto" id="reader-credits"></span>
+  <span dir="auto" id="reader-estimated-time">5-6 minutes</span>
+  <span dir="auto" id="published-time"></span>
+  <hr>
+  <div id="readability-page-1" class="page"><div id="readability-page-1" class="page"><div>
+					<p>
+	作者：@穿条纹睡衣的阿盐<a target="_blank" href="https://vip.weibo.com/personal?from=main"></a>
+</p>
+
+<p>
+	姐姐在生下小侄女的第二年因为严重的双相情感障碍住进了精神病院。在此之前，我和其他所有人一样从未理解过她时常的哭泣、失落、歇斯底里。
+</p>
+<p>
+姐姐和姐夫两家算是近邻，只隔了一条街。姐姐十八岁开始和正在读大二的姐夫谈恋爱，一谈就是八年。八年后结婚，又过了两年有了一个漂亮可爱的女儿。</p><p>
+
+由于当时还没钱在工作的城市买房，小侄女出生后姐姐就回到家乡县城全职带孩子，姐夫则继续在省会城市工作，赚钱养家。</p><p>
+
+在家乡小县城，虽然姐姐晚上都是一个人带孩子睡觉，但婆家、娘家都只隔了二分钟路程，亲朋好友也都在方圆一公里内，白天有不少人帮手，做饭、洗衣之类的其他家务都不需要自己动手。姐夫因为工作忙很少回来，但在经济上从未让姐姐操心。</p><p>
+
+怎么看都不算糟的寻常日子，姐姐却似乎打定主意过不下去了。情绪肉眼可见地变得极不稳定，深深的不快乐。焦躁易怒，与家人爆发争吵，又常常崩溃痛哭。无时无刻地抱怨累、睡不好觉，彷佛受了天大的委屈和罪。</p><p>
+
+那时我们私下谈论起来，都是真心实意的困惑和不解——只不过是带一个小孩，还有那么多人帮手，周围多少女人生孩子养孩子不都好好的吗，为什么只有姐姐搞得像全世界都欠她一样，数不清的不满和怨言。</p><p>
+
+我不理解的理由更加肤浅一些，只因为小侄女实在长得漂亮可爱，一出门必被围着夸像洋娃娃，询问是不是混血儿。我想当然地觉得换成别人生了一个这样漂亮的女儿大概做梦都要笑醒，不明白为什么姐姐还不满足。</p><p>
+
+这种低气压、彼此都疲倦的氛围一直持续到小侄女出生的第二年冬天。</p><p>
+
+姐姐突然沉迷上了某二手app，一开始只是买卖些闲置物，但没过多久姐姐就斗志昂扬地声称自己发现巨大商机，其实就是在app上进货售卖。后来我们才知道那段时间姐姐下单了上万块钱论斤称的玩具、饰品，还有几千几千的皮草。</p><p>
+
+大家最初并没有当回事，以为姐姐只是打发时间玩玩，但姐姐越来越投入，越来越狂热，没日没夜地捧着手机，电话、语音不断，甚至试图说服亲戚朋友投钱，信誓旦旦地许诺以后会有十倍百倍的回报。</p><p>
+
+姐姐平时是很嘴笨的人，但那段时间她变得滔滔雄辩，思维敏捷，说话彷佛开了倍速，能够不带喘气地跟你侃侃而谈上几个小时，加上成天打电话、发语音忙得不可开交的样子，导致周围的人不仅没有起疑，甚至隐隐被说动。</p><p>
+
+直到某天半夜凌晨二点多，姐姐打电话给一个远在深圳的表弟，哭着向他借一百万，急切又混乱地表示只差这一笔资金就能发大财，以后表弟就是合伙人、大股东。</p><p>
+
+也是后来我们才知道，那一两个星期姐姐几乎没怎么睡过觉。躁狂的时候就整夜亢奋地计划着做大生意，觉得自己站在世界之巅，抑郁的时候就埋在被子里痛哭，将自己否定得一无是处。</p><p>
+
+表弟意识到姐姐的精神状态异常，立马告知了这件事。姐夫连夜从省会城市赶回来，第二天连哄带骗地带姐姐上了客车，去市里的精神专科医院检查。车子开到中途，姐姐竟又哭着向周围不认识的乘客借钱，一模一样的说辞，坚信自己马上就要做成大买卖，到时会数倍偿还。</p><p>
+
+到了医院后，姐姐拒绝看医生，在医院大厅大吼大叫，情绪剧烈波动，最后直接体力不支晕了过去。</p><p>
+
+姐姐被诊断为双相情感障碍，严重到已经伴有妄想，当天就办了手续，住进了封闭病区，家属只能规定时间探视。</p><p>
+
+姐姐醒来后否认自己生病，和我们通电话都是声泪俱下地质问为什么都不相信她，她马上就要成大老板，会带我们所有人都过上好日子。</p><p>
+
+姐姐住院后，我登录了姐姐的app账号，为了处理那些订单。我一条条点开聊天列表，听着那些深夜发出去的大段大段、有些甚至对方未读的语音，姐姐嘶哑、激越的声音听上去如同呼救。我没有勇气再听下去。</p><p>
+
+姐姐的病像一把锐利的刀，一下子刺破了长久以来遮在我眼前的布。<mark class="hghlght">我猛然惊醒，当我们用孩子有人帮手带、老公挣钱养家这样的三言两语来描述姐姐的生活时，其实从未真正注视过具体的、活生生的她，而是轻巧地将她置于母亲这个身份的天平上衡量判断，一次次发出质问——明明其他女人都是这样过来的，为什么只有你做不到</mark>？</p><p>
+
+我像第一次见光的盲人一样开始重新看见姐姐，看见她生活遍布伤口的肌理和血肉。</p><p>
+
+抑郁的隐患在生产的时候已经埋下。</p><p>
+
+姐姐生产的过程很不顺利。凌晨三点去的医院，原计划顺产，但挨了十几个小时的痛到了隔天下午，实在无法再坚持，不得不中途转剖腹产。又因为吃了东西，麻药没有完全起作用，相当于经历了双倍的痛。</p><p>
+
+生完孩子，月子期间姐姐堵奶严重，只好每天请人推奶，一次两三个小时，痛到全身发抖。堵奶持续了几个月，也就生不如死的痛了几个月。</p><p>
+
+生理上的、刻骨铭心的痛，可以说是姐姐一开始对生孩子这件事全部的记忆。可是从前我们苦苦思索为什么姐姐如此不快乐的时候，这些痛甚至从未触及我们的思绪，彷佛毫无价值的垃圾邮件一般被大脑自动屏蔽过滤。</p><p>
+
+是，人人都知道生孩子痛，可是人人对生孩子痛的了解和想象也就止步于此了。因为紧接着就是每个女人都是这样过来的，只要是女人总是要经历的，于是个体生育的痛就这样在从来如此的理所当然中被轻易消解、忽视。</p><p>
+
+<mark class="hghlght">与生理上的疼痛伴随的是严重的睡眠问题。</mark></p><p>
+
+作为一个在外地读书、偶尔假期回家迫不及待带小侄女玩的小姨，我看到的是小侄女如何漂亮可爱，近乎虚荣地享受着每次带她上街来自陌生人的艳羡和赞美。可是，如果我曾哪怕一次站在姐姐的位置看过去，就会看到完全不同的另一番景象。</p><p>
+
+小侄女出世只有四斤多，体质很弱，三天两头生病，半夜常常尿床、吐奶。晚上睡觉也特别不乖，喜欢满床滚，一不留神就会从床头滚到床尾，甚至滚下床。姐姐因为堵奶，奶水特别少。小侄女不喝奶粉，因为喝不饱哭闹得更凶。</p><p>
+
+后来姐姐出院后曾不止一次用谈论天气的平淡口吻跟我们说，你们要是和我一样两年没有睡过一个好觉，你们也会疯的。波澜不惊的陈述句，却来自于姐姐最鲜血淋漓的生命体验。</p><p>
+
+写到这些时，我不得不好几次询问姐姐一些关于生产、坐月子的细节，姐姐每次噼里啪啦地回复完，最后一句都是不能想，一想又要抑郁了。时隔七八年仅仅是回忆一下身心都会自动触发不适和痛苦，就是姐姐生孩子头两年煎熬程度的概括。</p><p>
+
+夜晚总是很难捱，以为白天有人帮手总会好很多，但真实情况依旧很糟糕。</p><p>
+
+姐姐的婆婆是那种不会带孩子、也不怎么会做家务的人。倒不是说她不愿意带，而是确实带不好，从不注意小孩子的穿衣、饮食，有时候抱回去几个小时，送回来就上吐下泻。两家住得又太近，一来二去，彼此间的矛盾也日渐增多。</p><p>
+
+在这种情况下，帮带孩子的任务最主要就落到了舅妈，也就是姐姐的妈妈身上。舅妈是那种嘴上不饶人的人。她一边帮姐姐带孩子，一边心里极不平衡，觉得都怪姐姐没用，连累她一把年纪还要累死累活，跟着受气，而谁谁家谁谁家的女儿多能干，父母跟着沾光享清福。</p><p>
+
+来自至亲之人的伤害最让人不知如何是好，一方面姐姐本身情绪很坏，受不了舅妈刻薄的责骂，两人一言不合就会吵起来，但另一方面姐姐又真心觉得很愧疚，因为她比谁都清楚带孩子有多辛苦，舅妈帮她带两年孩子不夸张地说老了五岁。</p><p>
+
+<mark class="hghlght">很讽刺的是，社会歌颂母爱伟大，但现实却是母亲的工作从来得不到世俗价值的承认。因为姐姐不工作没用收入，哪怕明明是为了专职带孩子，却轻易被身边的人定义为没出息、没用</mark>。</p><p>
+
+人生价值被不断打压是压垮姐姐的最后一根稻草。姐姐生病时就是被赚钱的执念紧紧缠住，恨不得带上所有的亲朋好友发家致富，她以为只有这样才配得到一点尊严和认可。</p><p>
+
+故事写到这里，出现了不会做家务的婆婆、刀子嘴的妈妈、彼此不理解的姐妹，那男人们呢？男人们做对了什么吗，所以才免于被展示鞭挞？</p><p>
+
+<mark class="hghlght">恰恰相反，男人们什么都没有做，他们如同约好般在育儿的劳作中里一脉相承地缺席了</mark>。</p><p>
+
+从舅舅开始，就已经在我两个姐姐的成长过程中彻底地隐身。姐夫工作的省会城市离家乡县城只有三个多小时的车程。跑得勤的话，周五晚上走，周一早上回完全是可以的。但在小侄女出生的头两年间，姐夫以忙工作为由回来的次数屈指可数。最夸张的一次是国庆七天假期，姐夫回来待了一天，嫌家里太吵闹，第二天就又搭车走了。即便是这样，因为工作，因为赚钱，周围人都慷慨地拍拍姐夫的肩头，点点头表示充分的理解。与此相对的是，女性在家庭劳动中的付出却被看成不值一提。</p><p>
+
+姐姐和姐夫的结合是百分百的爱情，至少是姐姐的百分百爱情。姐姐在最青春的年纪陪姐夫一起走过了清贫的学生时代以及刚毕业租住600元地下室、煤气灶就在床边的窘迫，至今她回忆起那段日子西北风仿佛都能嚼出一丝甜。无论这份感情在漫长的岁月里有怎样的辗转起落，姐夫或者说爱情始终是姐姐生命中很重要的部分。</p><p>
+
+可生孩子后长期的分居两地，让母亲这个身份像个强盗般渐渐侵占了姐姐的所有，代替她的存在。<mark class="hghlght">她不再是她自己，甚至不再是谁的爱人，而仅仅是一个年轻妈妈。又因为她并不适应、擅长妈妈的角色而一再收到质疑、责备</mark>。</p><p>
+
+经历了如此从身到心全方位的碾压，不久前谈起过往，姐姐却说你知道那时候最让我痛苦的是什么吗，是没有一个人理解我。当时无论姐姐试图向任何人倾诉得到的都是反问和指责，包括她最亲近的姐姐，包括她本以为最有机会理解她的我。</p><p>
+
+「大家不都是这样带孩子吗，为什么只有你搞得这么苦大仇深。」<br>
+「你妈帮你带孩子那么辛苦，嘴上抱怨两句怎么了。」<br>
+「你老公已经很不错了，至少在钱上面从不亏待。」</p><p>
+
+最后姐姐只好发疯，用医生的一纸诊断证明了她的痛苦。我们终于得以看见她心里那只日夜啃噬她的小兽，不是矫情、不是软弱、更不是身在福中不知福，而是母亲的身份真实地在日日溃击她、虐杀她。</p><p>
+
+姐姐一个月后出院，开始吃药，姐夫花更多的时间照顾家庭，舅妈收起了伤人的言语，大家不再质疑她的伤心失落，生活渐渐又回到柴米油盐的正轨。</p><p>
+
+现在回过头看，我们大可以庆幸地说生病对姐姐未尝不是一件好事。姐姐曾一度被母亲的身份挤压得无限小，疾病反而将她凸显，拉扯人们的眼球。不管是出于真正的理解，还是仅仅对疾病的畏惧，姐姐因此得到了周围人的小心关怀，一天天好起来。</p><p>
+
+但并不是所有人都有第二次机会，我们都曾看过社会新闻里抑郁的年轻妈妈抱着孩子跳楼的惨剧。姐姐在某种程度上来说是幸运的，没有造成不可挽回的后果。但如果在某种处境里，一个人唯有依靠一点幸运才有可能安然无恙，这种处境必定是不利的、不健康。</p><p>
+
+这并不是一个励志逆袭的爽文故事。姐姐只是一个普通的女性，生病康复后生活也并没有本质上的改变。这几年从县城到了城市依然在家专门带孩子，也依然面临着全职妈妈面临的诸多困境。</p><p>
+
+独立自主的职业女性固然更值得鼓励追求，但我常常想起上野千鹤子教授说的，“我们要建立的是，弱者也能安心生活的社会。”</p><p>
+
+我想，向上追逐星辰大海，努力打破女性就业天花板的同时，向下社会也应为弱势的女性兜底，让女性无论做出何种选择、身处何种环境，权益都能得到保障，安全、安心的生活。</p><p>
+
+三月八号是妇女节，我原本想没有比在妇女节这天讲述一个不被看见、不被理解的herstory更有意义。但我后来改变了主意，今天是三月十八号，我希望它有一个新的意义，那就是不止在妇女节才高喊口号，看见女性。</p><p>
+	<mark class="hghlght">看见女性的意思是，看见每一个具体的、挣扎的她，而不是某种身份的平均数。</mark>
+</p>
+
+
+				</div></div></div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+</body><style>body {
+      font-size:  20px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 900px;
+      text-align: justify
+    }
+    .page {
+      line-height: 30.0px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

@@ -1,0 +1,257 @@
+<html><head><title>一骰一面 :: Reader View</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color: %light-color%;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color: %dark-color%;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color: %sepia-color%;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color: %solarized-light-color%;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color: %nord-light-color%;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color: %groove-dark-color%;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #93a1a1;
+  border-color: %solarized-dark-color%;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color: %nord-dark-color%;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] .tts-word {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  background-color: red;
+  height: 2px;
+}
+.tts-word.hidden,
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+</head>
+<body tabindex="1" data-images="false" data-mode="sepia" data-font="sans-serif" data-loaded="true">
+  <span></span> <!-- for IntersectionObserver -->
+  <a id="reader-domain" href="https://mp.weixin.qq.com/s/8APxH0kMDWbJDSlm7FpaYg">
+    <span>mp.weixin.qq.com</span>
+    <span>/s/8APxH0kMDWbJDSlm7FpaYg</span>
+  </a>
+  <h1 dir="auto" id="reader-title">一骰一面</h1>
+  <span dir="auto" id="reader-credits">老喻的</span>
+  <span dir="auto" id="reader-estimated-time">3-4 minutes</span>
+  <span dir="auto" id="published-time"></span>
+  <hr>
+  <div id="readability-page-1" class="page"><div id="js_content">
+                    
+
+                    
+                    
+                    
+                    <p><span>一个生命，</span></p><p><span>就是宇宙的一面。</span><br></p><p><span><strong><span>一</span></strong></span></p><p><span>假如你发现自己被一个渣男（或渣女）欺骗，那么你是否还相信他（她）当年与你的海誓山盟？你是否选择将其从记忆中<span>彻底</span>删除？</span><br></p><p><span>想起这个问题，是在朋友的朋友的首饰工作室，我为妈妈定制生日礼物。工作室主人提及最近收到一个被女主退回的求婚戒指，背后正是某个关于“始爱终弃”的故事。</span></p><p><span>女主角选择此刻不再相信那枚戒指。那么，她如何看待当初自己对戒指的相信？假如将来她又收到求婚，是否不再有心境相信任何一个男人？</span></p><p><span>这个话题，是<span>“<strong>假如生活欺骗了你</strong>”这一更大命题的小小变形。显然普希金的答案至少不令伤痕累累的人们信服：“不要悲伤，不要心急”不像是一个实用主义年代的有效解决方案。</span></span></p><p><span>理工宅男如我突然对“情感主题”产生兴趣，是因为我发现背后有一个好玩儿的模型。<br></span></p><p><span>先说我的答案：<br></span></p><p><span>1、女主角应该选择相信当年男主角求婚时是全心全意（100%）的；<br></span></p><p><span>2、假如再遇到被求婚，女主角仍然应该相信新男主角当时也是100%真心的；<br></span></p><p><span>3、但是女主角应该意识到，男主角100%的这一面，只是他其中的一面。</span></p><p><span>用一个骰子来打比方吧：</span></p><p><span>1、当年男主角求婚时，相当于抛出了一个“六”，这个“六”是真实的；<br></span></p><p><span>2、新男主角又抛出了一个“六”，女主角不应该因为曾经遇到渣男就怀疑眼前骰子的这一面的真实；<br></span></p><p><span>3、<mark class="hghlght">女主角应该从渣男那里学会男人有好几面，就像骰子有6面，眼前抛出来的“六”这一面，当下是100%的，整体而言可能只是1/6。</mark></span></p><p><span><mark class="hghlght">从认知的角度，兼容100%和1/6，不是容易的事情。</mark></span></p><p><span><strong><span>二</span></strong></span></p><p><span>《最接近生活的事物》一书里，詹姆斯．伍德说自己的小说家妻子在给朋友的信里写道：</span></p><blockquote data-type="2" data-url="" data-author-name="" data-content-utf8-length="56" data-source-title=""><section><p>“人生的故事非常奇特，它没有形状--或者更精确地讲，它只有当下--直到终结出现；到那时，整个轨迹突然清晰可见。”</p></section></blockquote><p><span>既然骰子启发了人类思考概率，既然概率可以用于描述不确定的事物，那么我用骰子来建模，描述我们没有形状的人生故事中最模糊难辨的情感话题，也许是个聪明好玩儿的想法。<br></span></p><p><span>建模之后，我们就能大致描述一下人们对<span>100%和1/6的态度和类型：</span></span></p><p><span><strong><span>A类型：</span></strong></span><strong><span>相信100%，不相信1/6；</span></strong><span><br></span></p><p><span>这类人黑白分明，认为一个人要么是好人，要么是坏人；</span></p><p><strong><span>B类型：</span></strong><span><strong><span>相信1/6，不相信100%；</span></strong></span></p><p><span>这类人早早洞察了世事，看穿看透，有一点儿早熟的世故；</span></p><p><span><strong><span>C类型：</span></strong></span><strong><span>既不相信1/6，也不相信100%；</span></strong><span></span></p><p><span>这类人怀疑，怯懦，自哀自怨，一会儿相信一切，一会儿憎恨一切；</span></p><p><span><strong><span>D类型：</span></strong></span><strong><span>相信1/6，也相信100%。</span></strong><span></span></p><p><strong><span>这类人既能理性地理解这个世界，又一直守护着自己童真的一面，愿意信、而不迷，能够爱、且只因为“我能”。</span></strong><span></span></p><p><span><mark class="hghlght">骰子是一个隐喻，生命柔软而无形，骰子坚硬且结构分明</mark>。</span><br></p><p><span>可是，舞动的骰子，多么像我们的人生？</span></p><p><span>骰子暂时呈现出来的一面，是我们的当下，看似万物确凿，其实暗潮涌动，处处都是未知，一切悬而未决。</span></p><p><span>兼容100%和1/6，是因为我们<strong>体验生命</strong>和<strong>理解生命</strong>在维度上的差异而造成的。<br></span></p><p><span>人类只是时间河流之中可怜的浮游动物，我们只能感知当下这一点点没有大小的时刻，我们的自我意识也许只是这许多个没有大小的“此刻（幻觉）”串联在一起的幻觉之上的幻觉。</span></p><p><span>我们无法像上帝那样俯瞰自己的一生。</span></p><p><span>詹姆斯·伍德说：</span></p><blockquote data-type="2" data-url="" data-author-name="" data-content-utf8-length="88" data-source-title=""><section><p>“但是，如果这种能直观生命整个过程的能力如上帝一般，那么它同样包含着反抗上帝的苗头在内：一个人的一生一旦走完，走到了终点，仿佛压扁在日记本的一页页里，它就开始变小，开始收缩。”</p></section></blockquote><p><span>慢，别那么早压扁岁月，我还小......<br></span></p><p><span><span>兼容100%和1/6，就像我们既要扮演与命运抗争的“自我”而与上帝对抗，又要</span></span><span>假扮上帝以获得无所不能的观察和叙述。</span><span></span></p><p><span>这很难。</span></p><p><span>人生最大的遗憾，何止是海明威说的“是一个人无法同时拥有青春和对青春的感受”，</span><span><strong><mark class="hghlght">我们的整个一生都在时间的迷宫和意义的虚无之间笨拙地穿行着</mark></strong></span><span><mark class="hghlght">。</mark></span></p><p><span><strong><span>三</span></strong></span></p><p><span>将时间的概率与空间的概率做一个置换，有助于帮我们去相信：</span></p><p><span>当眼前那个未来可能成为渣男的家伙为你献上求婚戒指的时候，他是100%真心的。</span></p><p><span>没错，也许他除了现在这一面抛出来的是个“六”，其它的5面全都是“一”。可是，因为时间的唯一性和现实空间的唯一性，刚才抛出来的“六”，100%地占领了那个瞬间。<br></span></p><p><span>再假如，那个未来有一万面可能抛出“一”的家伙，他刚刚抛出一次让你心神不定的“六”，世界就毁灭了，渣男的一万种可能性被消除，那个“六”不就变成100%了吗？<br></span></p><p><span>这不是荒唐的假设。<mark class="hghlght">很多好人其实并非那么好，他们只是装够了一辈子。</mark><br></span></p><p><span>让我把这个被过于放大的“一期一会”的概念，拖回到现实尺度。</span></p><p><span><mark class="hghlght">一期一会是</mark></span><span><mark class="hghlght">一个源于日本茶道的</mark></span><span><mark class="hghlght">成语</mark></span><span><mark class="hghlght">，意思是在茶会时领悟到这次相会无法重来，是一辈子只有一次的相会，故宾主须各尽其诚意。</mark></span></p><ul><li><p><span>“一期”为佛语，指人的一生；</span></p></li><li><p><span>“一会”则意味着仅有一次相会。</span></p></li></ul><p><span><span><span>一期</span><span>一会与</span><span>禅</span><span>的</span><span>“瞬间”概</span><span>念有关。每个瞬间都是</span></span></span><span>一生一次</span><span>的机会</span><span>，当下的时光不会再来，须珍重之。</span></p><p><span>我在下围棋中对</span><span>“一期一会”深有感触。<mark class="hghlght">每一手棋都应该被认真对待，每一个对手都不能掉以轻心。</mark></span></p><p><span>就像选择是否相信献上求婚钻戒的男友，下围棋时最好相信对方是和你旗鼓相当的棋手。</span></p><p><span>觉得对方弱而掉以轻心，假设对方强而孤注一掷，二者都会令自己加速失败。</span></p><p><span>有人评论全盛时期的克林顿，说他有一种天赋：每一个和他对话的人，不管身份高低，都会感觉被他置于宇宙的中心，被100%地关注着。<br></span></p><p><span>类似的说法，还有乔布斯与人交流时，对方感觉似乎被激光照射，而一旦移开则像掉入黑暗里。<br></span></p><p><span><span>“一期一会”</span></span><span>也常在</span><span>武道</span><span>中出现，警醒来竞技者在</span><span>面临生死关头没机会“再试一次”。</span></p><p><span><mark class="hghlght">所以，不管遭遇了多少渣男渣女，也别轻易总结“天下男人（女人）都是样子”，在那个瞬间，假如你看见了滚动的骰子落在“六”那一面，选择100%地</mark></span><span><mark class="hghlght">相信他（她）是真心的。</mark></span></p><p><span><mark class="hghlght">这是最优解。</mark></span></p><p><span><mark class="hghlght">但，只是在那个瞬间。</mark></span></p><p><span><strong><span>最后</span></strong></span></p><p><span>我无意亦无能将本文变成一篇情感攻略，但是从完备性的角度，请允许我将以上话题做个逻辑完整的交代：</span></p><p><strong><span>1、每个瞬间都是真实的。</span></strong><span>每个骰子在某个瞬间所呈现出来的那一面，在那一刻都值得100%相信，并且那个</span><span>瞬间一期一会，此生不再来；</span></p><p><span>2、兼容<strong>自我体验的100%</strong>和<strong>上帝视野的1/6</strong>。要知道，这100%只是骰子的1/6，勿以小样本而轻易对骰子作出全面描述；<br></span></p><p><span>3、<strong>做一个假设，然后继续扔骰子，获取新信息，验证这个假设</strong>。贝叶斯定律可以帮助你，无需扔出一个人所有的面（这个数据远大于6），就可以大致对其做一个判断；</span></p><p><span>4、由于人不是骰子，一个只有1/6面是“六”的他（她），可能在你的信任和鼓励下，努力让自己在更多的瞬间留在这一面，甚至装够一辈子。这就是“</span><strong><span>自我指涉</span></strong><span>”和“<strong>反身性</strong>”的话题了；</span></p><p><span>5、像一名职业的棋手，</span><strong><span>不管</span><span>对手如何，走好自己的每一步</span></strong><span>。</span></p><p><span>以一期一会的态度面对每个瞬间，和对方是否如此无关，这样做很酷。</span></p><p><span>就像《火星救援》的男主角说的--“每天，我都会去外面看看一望无际的地平线，</span><span><strong>Just because I can</strong></span><span>.”</span></p><p><span>以上五点，倒过来看，也有一个了不起的逻辑：</span></p><p><strong><span>假如一个人在某个瞬间只抛出了“一”，别因此对他（她）关上你的大门。</span></strong><span><br></span></p><p><span>某位朋友对你冷漠，也许只是因为他最近有些麻烦；外卖员没能及时送来你的午餐，或许是因为遭遇了堵车；孩子闷闷不乐不愿学习，或是因为某件大人<span>觉得</span>很小的事儿对他而言是天大的事</span><span>情。<br></span></p><blockquote data-type="2" data-url="" data-author-name="" data-content-utf8-length="57" data-source-title=""><section><p>"每逢你想要批评任何人的时候，"他对我说，"你就记住，这个世界上所有的人，并不是个个都有过你拥有的那些优越条件。"</p></section></blockquote><p><span>上面这段小说里的名句子，也许可以稍加改编：<br></span></p><p><strong><span>请记住，这个世界上所有的人，并不是个个都有机会扔出自己人生骰子最美好的那一面。</span></strong></p>
+                </div></div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+</body><style>body {
+      font-size:  20px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 900px;
+    }
+    .page {
+      line-height: 30.0px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

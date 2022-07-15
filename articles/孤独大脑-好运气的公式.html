@@ -1,0 +1,257 @@
+<html><head><title>好运气的公式 :: Reader View</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color: %light-color%;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color: %dark-color%;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color: %sepia-color%;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color: %solarized-light-color%;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color: %nord-light-color%;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color: %groove-dark-color%;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #93a1a1;
+  border-color: %solarized-dark-color%;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color: %nord-dark-color%;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] .tts-word {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  background-color: red;
+  height: 2px;
+}
+.tts-word.hidden,
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+</head>
+<body tabindex="1" data-images="false" data-mode="sepia" data-font="sans-serif" data-loaded="true">
+  <span></span> <!-- for IntersectionObserver -->
+  <a id="reader-domain" href="https://mp.weixin.qq.com/s/NgCRAHQOVkSitCXhSDwtWg">
+    <span>mp.weixin.qq.com</span>
+    <span>/s/NgCRAHQOVkSitCXhSDwtWg</span>
+  </a>
+  <h1 dir="auto" id="reader-title">好运气的公式</h1>
+  <span dir="auto" id="reader-credits">老喻的</span>
+  <span dir="auto" id="reader-estimated-time">5-7 minutes</span>
+  <span dir="auto" id="published-time"></span>
+  <hr>
+  <div id="readability-page-1" class="page"><div id="js_content">
+                    
+
+                    
+                    
+                    
+                    <p><span><strong><span>“关键不在于你游戏玩得多好，</span></strong></span></p><p><span><strong><span>而在于你想玩什么游戏。”</span></strong></span></p><p><span>夸梅·阿皮亚</span></p><section><span><strong><span>一、道理</span></strong></span></section><section><span>“做难而正确的事情”，这个说法流行起来，也许是因为现在做事越来越难。</span></section><section><span>我欣赏这句话出处背后的故事和主角。但是，<span>“做难而正确的事情”，</span>会给正在做“难而错误的事情”的人们以错觉。</span></section><section><span>未必正确的事情，可能因为难而显得正确，这错觉和“丑男人很忠厚”一样不靠谱。</span></section><section><span>难而正确的事情，不是说做的时候难，而在于识别“正确的事情”很难，识别后做出选择更难。<br></span></section><section><span>本文将讲述一个“好运气的公式”：<br></span></section><section><strong><span><span>好运气</span><span>=</span></span></strong><span><strong><span>做对的事情✖️把事情做对</span></strong></span></section><section><span>这个所谓公式，能解释很多“道理”，例如：选择比努力更重要。</span></section><ul><li><p><span>“做对的事情”，是选择；<br></span></p></li><li><p><span>“把事情做对”，是努力。</span></p></li></ul><section><span>创业者如元气森林的创始人，用贝叶斯定理的基础概率（或“基本比率”），来解释自己为什么要做饮料：</span></section><section><span>1、饮料领域看起来很老土，但基数极大。中国饮料市场规模超过一万亿。</span></section><section><span>2、对比而言，类似于SaaS市场，看起来很性感，可市场规模仅为百亿级别。</span></section><section><span>3、所以，<mark class="hghlght">做饮料啃一小口也很大，做SaaS做到老大也很小</mark>。（这不代表创业公司不因为某个领域的增长空间而去做。）</span></section><section><span>投资人如芒格，他鼓励“去鱼多的地方捕鱼”：</span></section><section><span>1、典型的例子如中国过去二十年的地产大牛市，赢家们是因为正好撞进了鱼多的地方。</span></section><section><span>2、而一旦鱼群退去，那些误以为自己是靠捕鱼能力赚钱的人就可能陷入困境。</span></section><section><span>聪明勤奋的雷军，悟到“顺势而为”，中年再出发去做智能手机，是一样的道理。</span><br></section><section><span>可是，智能手机市场虽然基数很大，为什么对绝大多数参与者并非意味着机会呢？如果是一个赢家通吃的市场，基数再大有什么用呢？</span></section><section><span>“时代是万位数、行业是千位数、个人专业是百位数”这类提法很生动，但确切说：时代和个人之间，是一种乘积关系。</span></section><section><span>所以我们应该再完整地看看“好运气的公式”：<br></span></section><section><strong><span><span>好运气</span><span>=</span></span></strong><span><strong><span>做对的事情✖️把事情做对</span></strong></span></section><ul><li><p><span><mark class="hghlght">做对的事情，是指基数大的市场，大趋势，大概率正确的事情</mark>；</span></p></li><li><p><span><mark class="hghlght">把事情做对，是指鱼再多，也要和你有关系才有价值</mark>；</span></p></li><li><p><span>上面两项中间的“✖️”，是指<mark class="hghlght">你在鱼多的地方抓住鱼的匹配策略</mark>。</span></p></li></ul><section><span><mark class="hghlght">我喜欢用大白话将之总结为“运气三问”：</mark></span></section><section><span><mark class="hghlght">1、天上为什么掉馅饼？</mark><br></span></section><section><span><mark class="hghlght">2、馅饼凭什么掉在你的头上？</mark><br></span></section><section><span><mark class="hghlght">3、你如何将这个馅饼吃进嘴巴里？</mark><br></span></section><section><span>所以，智能手机对雷军来说也许是个馅饼，对罗永浩来说也许就是个陷阱了。（我很喜欢罗永浩，期待他早日回归科技界。）</span></section><section><span>我对这个话题感兴趣，是因为发现这个烂大街的道理，的确是许多高手们的“通用算法”。<br></span></section><section><span>可是，这个道理并没有得到很好的解释和描述。</span></section><section><span>恰好这个道理背后，又有一些严密而有趣的计算。</span></section><section><span>假如一个道理能够构建出一个模型，假如这个模型能够相对精确地被数学描述，没准儿真能成为“高手的公式”。<br></span></section><section><span>所以，本文是尝试做一件“将陈词滥调讲出新意”的事情，恰恰这类事情也是符合该公式的。<br></span></section><section><span><strong><span>二、计算</span></strong></span></section><section><span>人们对基础概率的忽视，经常带来现实中决策上的误判。</span></section><section><span>例如，你在街头看见一个美女貌若天仙，于是你猜：</span></section><section><span>a、她是一位演员或者模特；<br></span></section><section><span>b、她是一位普通的公司职员。<br></span></section><section><span>不少人会猜是a，但是该美女是后者的可能性更大，<mark class="hghlght">因为公司职员的基数远大于演员</mark>。<br></span></section><section><span>为什么会出现误判？<mark class="hghlght">一个是因为鲜活效应，二是因为忽视基础概率，三是颠倒了因果</mark>。</span></section><section><span>综合以上三点，人类喜欢根据鲜明的特征去套“规律”：</span></section><section><span>演员通常很美，所以这位如此美的美女大概率是位演员。</span></section><section><span>再比如</span><span><span>你看到</span><span>一项研究结果表明：四分之三的车祸发生在离家25英里以内的地方。于是有人开始分析，离家近开车更不安全，是不是因为快到家了着急或者放松警惕？</span></span></section><section><span>这也是一个基础概率谬误。真相是90%的时间你都在家附近开车，发生车祸的概率当然更大。相比3/4的比例，实际上离家近开车可能更安全。</span></section><section><span>我还是用那个老掉牙的例子，来描述一下<strong>基础概率</strong>和<strong>相乘关系</strong>。</span></section><blockquote data-type="2" data-url="" data-author-name="" data-content-utf8-length="125" data-source-title=""><section><p><span>塔勒布在投资研讨会说：“我相信下个星期市场略微上涨的概率很高，上涨概率大概70%。”</span></p><p><span>但他却大量卖空标准普尔500指数期货，赌市场会下跌。</span></p><p><span><mark class="hghlght">他的意见是：市场上涨的可能性比较高（我看好后市），但最好是卖空（我看坏结果），因为万一市场下跌，它可能跌幅很大</mark>。&nbsp;</span></p></section></blockquote><section><span>分析如下：</span></section><ul><li><p><span>假使下个星期市场有70%的概率上涨，30%的概率下跌。</span></p></li><li><p><span>但是如果上涨只会涨1%，下跌则可能跌10%。</span></p></li><li><p><span>未来预期结果是：70%×1%+30%×（-10%）=-2.3%。</span></p></li><li><p><span><mark class="hghlght">因此应该赌跌</mark>，卖空股票盈利的机会更大。</span></p></li></ul><section><span>好几个聪明朋友对我说，这类计算太简单了，初中就学过。但其实并没有。</span></section><section><span>而且之所以我老拿这个例子说事，是因为<span>塔勒布的故事发生在华尔街，那帮顶尖聪明人也会在这个简单计算上犯糊涂。</span></span></section><section><span>姑且用上面这个计算套一下“好运气的公式”：</span></section><section><span>先看一下天上掉下来的是什么馅饼。<br></span></section><p><img data-galleryid="" data-ratio="0.64921875" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_jpg/SF9cpK1TBChBklibP1xeJgU4JZZfAY1uIXjrIUbibCfmehENhiahxelMpibCqXm2ciaYjznyUCyP1uHvY49uw5Ph30w/640?wx_fmt=jpeg" data-type="jpeg" data-w="1280" _width="468px" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" crossorigin="anonymous" alt="图片"></p><section><span>看起来是一个“上涨”馅饼。但是根据公式我们知道，要计算的是乘积，所以对好运气的计算应该是：</span></section><p><img data-ratio="0.64921875" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_jpg/SF9cpK1TBChBklibP1xeJgU4JZZfAY1uIfUWLJejbL5HNgGOiaiav8oqib0Ay4yibVGxOicADb7jTpe6gFp2EZ2xlqZA/640?wx_fmt=jpeg" data-type="jpeg" data-w="1280" _width="468px" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" crossorigin="anonymous" alt="图片"></p><section><span>乘积的结果就是求面积。下跌的概率更低，但是可能下跌的幅度更大，所以下跌的期望值（红色面积），大于上涨的期望值（绿色面积）。</span></section><section><span>因为是乘积关系，所以长和宽是可以颠倒的。其隐喻是，哪怕是基础概率小的事情，也可以靠把事情做得更好而扳回来。一些专业领域的小而美的公司的确也是这样做的。<br></span></section><section><span>但是，假如二者的基础概率差一百倍，要扳回来的代价就高很多。<br></span></section><section><span>为什么如此简单的计算，华尔街最聪明的人都会搞错呢？<br></span></section><section><span>因为这里面的计算拐了两道弯，而我们的直觉更加适合解决拐一道弯的问题。</span></section><section><span>上面说了人类容易因为鲜活效应而忽视基础概率，那么请允许我再拐一道弯：<br></span></section><section><strong><span>假如你在街头看见三位貌若天仙的美女在一起走，你认为她们是演员还是普通公司职员呢？</span></strong></section><section><span>我们的直觉，对于概率问题，通常是两头摇摆的。</span></section><p><span>再看一道让很多绝顶聪明的人也为难的题目：<br></span></p><blockquote data-type="2" data-url="" data-author-name="" data-content-utf8-length="76" data-source-title="《思维的发现》"><section>某市八年级学生的平均智商是100。为检验当地的教育水平，你随机选择了50名学生接受测试。第一个学生的智商测试得分为150，请判断这50名学生的平均智商。</section><section data-json="%7B%22type%22%3A%22out%22%2C%22source%22%3A%22url%22%2C%22digest%22%3A%22%22%2C%22digestLen%22%3A76%2C%22text%22%3A%22%E6%9F%90%E5%B8%82%E5%85%AB%E5%B9%B4%E7%BA%A7%E5%AD%A6%E7%94%9F%E7%9A%84%E5%B9%B3%E5%9D%87%E6%99%BA%E5%95%86%E6%98%AF100%E3%80%82%E4%B8%BA%E6%A3%80%E9%AA%8C%E5%BD%93%E5%9C%B0%E7%9A%84%E6%95%99%E8%82%B2%E6%B0%B4%E5%B9%B3%EF%BC%8C%E4%BD%A0%E9%9A%8F%E6%9C%BA%E9%80%89%E6%8B%A9%E4%BA%8650%E5%90%8D%E5%AD%A6%E7%94%9F%E6%8E%A5%E5%8F%97%E6%B5%8B%E8%AF%95%E3%80%82%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%AD%A6%E7%94%9F%E7%9A%84%E6%99%BA%E5%95%86%E6%B5%8B%E8%AF%95%E5%BE%97%E5%88%86%E4%B8%BA150%EF%BC%8C%E8%AF%B7%E5%88%A4%E6%96%AD%E8%BF%9950%E5%90%8D%E5%AD%A6%E7%94%9F%E7%9A%84%E5%B9%B3%E5%9D%87%E6%99%BA%E5%95%86%E3%80%82%22%2C%22article%22%3A%7B%7D%2C%22hasReportOverSize%22%3Afalse%2C%22editorReportData%22%3A%5B%7B%22id%22%3A%22122333%22%2C%22key%22%3A%2276%22%2C%22len%22%3A1%7D%5D%2C%22from%22%3A%22%E3%80%8A%E6%80%9D%E7%BB%B4%E7%9A%84%E5%8F%91%E7%8E%B0%E3%80%8B%22%7D"><span>《思维的发现》</span></section></blockquote><p><span>答案难道不应该是平均数100吗？</span></p><p><span>毕竟那个智商150的孩子只是特例，也许会被得分较低的拉平。</span></p><p><span>正确答案应该是101。</span></p><p><span>假如你错了，不必在意。当年这道题曾经考倒了一群精通概率的专家。</span></p><p><span>看似只是多了个“1”，差别其实很大。背后的有趣逻辑，提醒了我们<mark class="hghlght">基础概率与新证据之间的互动关系</mark>。</span></p><section><span><strong><span>三、应用</span></strong></span></section><section><span>我用公式来讲述一个世俗的道理，绝非是用所谓自然科学来套用社会科学。</span></section><section><span>理解基础概率，有助于我们摆脱人类典型性的依赖，避免由此产生的误判。</span></section><section><span>作为基于比较的直观动物，人类<span>在某种意义上缺乏全局性。所以，计算中的乘法，用面积来代表期望值，能帮助我们做出全面而理性的决策。</span></span></section><section><span>这也是一种基于第一性原理的思考。</span></section><section><span>这么做，并非完全基于基础概率来做判断。多个新证据的出现，会大幅修正基础概率，这正是贝叶斯定理的杠杆效应。<br></span></section><section><span>回到我们的“好运气的公式”：</span></section><section><strong><span><span>好运气</span><span>=</span></span></strong><span><strong><span>做对的事情✖️把事情做对</span></strong></span></section><section><span>来看一下这个公式无处不在的应用。</span></section><section><span><strong><span>1、马斯克如何招聘？</span></strong></span></section><section><span>马斯克招聘时，会问两个问题：</span></section><section><span>a、你处理过哪些棘手问题。处理得怎么样？</span></section><section><span>b、你在关键节点时如何做决策？</span></section><section><span>在围棋里，“解决难题”相当于做死活题，很有挑战，但有最优解，或者说在具体情境、资源约束、时间限制下，有最优解；</span></section><section><span>“决策”则是指选点能力，例如左上角有个对杀，右下角有个大场，选哪个战场？然后才是具体解决问题。</span></section><section><span>二者也是乘积关系，最终价值取决于二者相乘的面积。</span></section><section><span>决策之难，不止是价值评估之难，你需要构建一个价值函数，还要代入数据估算。</span></section><section><span>决策更难之处是：要超越可以计算（例如有解的死活题）、能够看见的事物，去预见未来的结果，进而作出跨期决策。</span></section><section><span>以上这两种能力，是二位一体的。只会做局部死活题，容易“赢了每一场局部战役却输掉整个战争”；</span></section><section><span>只会“选点”而不会做死活题……如果不会做死活题，根本谈不上“选点”这件事。</span></section><section><span><strong><span>2、大局观和资源分配</span></strong></span></section><section><span>选点能力，就是找寻“什么是正确的事情”。</span></section><section><span>不管企业，还是个人，资源都是有限的。所谓选点，就是以全局视野，来找寻能够形成竞争优势的主战场，并分配资源。</span></section><section><span>做到这一点，需要非常艰难的思考。所谓“做艰难而正确的事情”，难在选择。<br></span></section><section><span>大部分人会为了逃避这种艰难，而假装很辛苦地埋头去做事情。</span></section><section><span>难在哪里？<br></span></section><section><span>难在大局观。</span></section><section><span>我将其概括为三种大局观：<br></span></section><section><span>1、空间的大局观；<br></span></section><section><span>2、时间的大局观；</span></section><section><span>3、资源的大局观。</span></section><p><span><strong><span>空间的大局观</span></strong></span></p><p><span>就像下围棋，哪里重要下在哪里。</span></p><section><span>我从AI那里学到的最重要的一点，就是脱先：</span></section><section><span>AI永远去下全局中最重要的那一点，哪怕战场再激烈，一旦不是主战场了，立即转移，绝不纠结。<br></span></section><section><span>围棋毕竟还是一个完美的二维游戏，现实世界要复杂得多。</span></section><section><span>现实世界不会像围棋那样在某个维度上有极深的计算，而是由很多个维度的不那么深的计算交织在一起。</span></section><section><span>所以，我们只有用概率去评估，去计算各种变量的可能性，并通过加权计算期望值。</span></section><section><span>事物的概率，是一大堆交织在一起的模糊因果。</span></section><section><span>所谓“正确的事情”，本质上是去找寻大概率正确的事情。</span></section><p><span><strong><span>时间的大局观</span></strong></span></p><p><span>这一点更容易在投资和创业那里找到案例。</span></p><section><span>例如“长期持股”。价值投资者的长期主义，建立在他们的计算深度、以及预留的足够的安全边际基础之上。时间的大局观消除了短期的不确定性，令长期的确定性价值显露出来。</span></section><section><span>价值投资者的时间大局观，代表了概率的频率派。创业者的时间大局观，则代表了概率的贝叶斯派。</span></section><section><strong><span>1、创业者大多从小概率事件入手，然后随着时间不断优化概率。</span></strong></section><section><strong><span>2、价值投资者更相信基础概率中的大概率事件，他们对“力挽狂澜”并不感兴趣。</span></strong></section><section><span>时间的大局观，还应该包括对时代和周期的理解。<br></span></section><p><span><strong><span>资源的大局观</span></strong></span></p><p><span>指的是如何根据空间的大局观和时间的大局观分配有限的资源。</span></p><section><span>所谓战略，就是对有限资源的权衡取舍，以确保在优势地带形成局部的差异化优势，以追求达到某个浓度之后的“炸裂”。</span></section><section><span><strong><span>3、选择之后的努力</span></strong></span></section><p><span>假如“选择”有用，那么每个选择理论上都对应着几种不同的可能性，就像几个不同结局的平行宇宙。</span></p><p><span>然而在现实中，为什么命运似乎只是单线程地滑落？似乎并没有多个可能性的并行，哪怕只是在一念之间。</span></p><p><span>原因之一是，在已知变量里，个体的变量太微不足道了，如同一滴水落入大海般带不来任何改变，所以“选择”所带来的别的可能性并非没有，只是概率极低，可以忽略不计。</span></p><p><span>由此，选择也与浓度有关，进而与边界有关。</span></p><p><span>所以，选择不仅是一个过程，还是一个系统。</span></p><p><span><strong>个体的努力，必须基于一个相对封闭、但又能够与外界发生关系的系统。</strong><br></span></p><p><span>就像制冷的冰箱，行驶的汽车。系统实现了局部的熵减，从而可以对外做功。</span></p><p><span>很多人去追逐时代的大机会，去学习，去混圈子，但是假如没有自己的系统，没有手中的筹码，乘积仍然是零。</span></p><p><span>当我们的选择过于聚焦时，可能迷失在过于狭窄的空间里；</span></p><p><span>当我们的视野足够宏大时，选择的浓度不足以产生改变。</span></p><p><span>前者的浓度，需要靠空间来实现；</span></p><p><span>后者的浓度，则有赖于前者通过时间的叠加来实现。</span></p><p><span>关于选择和努力，聪明人最容易犯的错误是，试图将不正确的事情做成正确的事情。这并非不可能，但概率较低，费力很大。</span></p><p><span>例如马斯克选择自己的路线，也是先自上而下思考，去找寻那些人类非做不可的事情。那些事当下也许是小概率的，但未来则可能是大概率的。</span></p><section><span><strong><span>4、乘号和匹配质量</span></strong></span></section><p><span>陈春花教授大约讲过一段类似的话：</span></p><p><strong><span>解决问题的价值，也取决于该问题的需求的强度。</span></strong><span><br></span></p><p><span>如果用公式来表达，就是：<br></span></p><p><span><strong><span>价值=需求✖️解决。</span></strong></span></p><p><span>这个公式和好运气的公式大致是一样的。</span></p><p><span>这就会引发出一个概念：<strong>匹配质量</strong>。</span></p><p><span>我在朋友发来的一段文字里看到这个概念，它尤其适用于个人成就，对于孩子的教育格外有启发。<br></span></p><p><span><strong><span>个人成就=领域✖️个人努力。</span></strong></span></p><p><span>一个人只有热爱自己的工作，才能够有持续的激情，长久的专注力。所以，长期主义从来都不是靠坚持的，而是靠高匹配质量下的兴趣和天性驱动。</span></p><p><span>围棋的关键是选点，企业的关键是选人。例如海底捞，服务员的热情不是靠培训出来的，而是靠选出来的。这是关于一个人的基础概率的命题。<br></span></p><p><span>有项研究表明，那些职业生涯的早期，花了较多时间在“匹配质量”上的人，貌似起跑的时候有点儿游手好闲，兴趣太多，其实是在寻求对个人而言的全局最优点，一旦找到就会后来居上，势不可挡。</span></p><p><span>对于孩子的教育更是如此，漫长童年期的发明，就是为了让孩子在适度混乱的安全环境里，通过探索和试错，快速而低成本地实现自我认识。<br></span></p><p><span>可惜我们的教育大多做反了：我们花了太多时间教会孩子去提前学那些早晚都会并且成年后基本用不上的应试知识，却让他们在成年之后才开始思考“我喜欢什么？我擅长什么？我该做什么。”</span></p><p><span><strong><span>总结</span></strong></span></p><p><span>本杰明·富兰克林说：20岁时起支配作用的是意志，30岁时是机智，40岁时是判断。</span></p><p><span>什么是正确的事情？</span></p><p><span>这是个非常复杂的问题。你需要有自己的价值评判标准，有目标，进而构建一个用于评估的价值函数。</span></p><p><span>而且，“正确”总是一个概率化的问题，并且是一个渐进的过程。</span></p><p><span>什么叫把事情做对？<br></span></p><p><span>同样非常复杂。</span></p><p><span>这背后还是关于决策的话题，大之又大。</span></p><p><span>也许我会在另外的文章里讲述上面的话题。<br></span></p><section><span>关于“好运气的公式”：</span></section><section><strong><span><span>好运气</span><span>=</span></span></strong><span><strong><span>做对的事情✖️把事情做对</span></strong></span></section><section><span>请记住“运气三问”：</span></section><section><strong><span>1、天上为什么掉馅饼？<br></span></strong></section><section><strong><span>2、馅饼凭什么掉在你的头上？<br></span></strong></section><section><strong><span>3、你如何将这个馅饼吃进嘴巴里？</span></strong></section><section><span>这背后看似简单的数学计算，有着许多好玩儿让又让聪明人犯晕的题目。<br></span></section><section><span>请允许我用下面这道题作为2022年的新年礼物送给你：<br></span></section><blockquote data-type="2" data-url="" data-author-name="" data-content-utf8-length="64" data-source-title=""><section><p>有一个净重10千克的西瓜，含水量非常丰富，达到了99%，放在太阳底下晒了一段时间后，含水量变成98%了，那么，这个西瓜现在多重？</p></section></blockquote><p><span>好好算一下，你也许有意料之外的思考乐趣。</span></p><p><strong><span>祝你2022年走好运，全家健康平安！</span></strong></p>
+                </div></div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+</body><style>body {
+      font-size:  20px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 900px;
+    }
+    .page {
+      line-height: 30.0px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

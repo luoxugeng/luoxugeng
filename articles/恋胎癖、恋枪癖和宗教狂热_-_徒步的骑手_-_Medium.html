@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <base target="_blank">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+  position: relative;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color:  #222;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color:  #eee;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color:  #5b4636;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color:  #586e75;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color:  #2e3440;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color:  #cec4ac;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #839496;
+  border-color:  #839496;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color:  #e5e9f0;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] ::selection {
+  background-color: #fff740;
+  color: #000;
+}
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+<title>[Design Mode]</title></head>
+<body tabindex="1" data-images="true" data-mode="light" data-font="sans-serif" data-loaded="true" style="user-select: initial;">
+  <span></span> <!-- for IntersectionObserver -->
+  <a id="reader-domain" href="https://medium.com/@caminodetexas/%E6%81%8B%E8%83%8E%E7%99%96-%E6%81%8B%E6%9E%AA%E7%99%96%E5%92%8C%E5%AE%97%E6%95%99%E7%8B%82%E7%83%AD-36abad1b6c69">
+    <span>medium.com</span>
+    <span>/@caminodetexas/%E6%81%8B%E8%83%8E%E7%99%96-%E6%81%8B%E6%9E%AA%E7%99%96%E5%92%8C%E5%AE%97%E6%95%99%E7%8B%82%E7%83%AD-36abad1b6c69</span>
+  </a>
+  <h1 dir="auto" id="reader-title">恋胎癖、恋枪癖和宗教狂热 - 徒步的骑手 - Medium</h1>
+  <span dir="auto" id="reader-credits">徒步的骑手</span>
+  <span dir="auto" id="reader-estimated-time">2-3 minutes</span>
+  <span dir="auto" id="published-time">2022/6/25</span>
+  <hr>
+  <div id="readability-page-1" class="page"><div><p></p><h2 id="de1b" data-selectable-paragraph="">恋胎癖、恋枪癖和宗教狂热</h2><p></p><p id="2b59" data-selectable-paragraph="">美国最高法院取消宪法对妇女堕胎权的保护，跟频发的校园枪击案一样，令美国在文明世界蒙羞。这类似于1950年代南方的种族隔离，严重影响美国在文明世界民众中的道德形象 — — 当时很多欧洲民众不解：美国把欧洲从纳粹控制中解放出来，让欧洲人获得民主和自由，却把自己的国民按种族区别对待。当时美国国务院曾有报告，认为这削弱了美国对民主世界的领导力。</p><p id="33ad" data-selectable-paragraph="">当今世界最强大的民主国家被一群有恋枪癖和恋胎癖的宗教极端分子绑架，一到选举，共和党右翼就忽悠选民按枪、堕胎、上帝站队，向最封闭、最落后、最排外、最矇昧地区底层民众的精神世界看齐，给人一种超现实的错乱感。</p><p id="995f" data-selectable-paragraph="">美国越封闭落后的地方，越流行恋枪癖和恋胎癖。今年春天，骑行穿越美国，从加利福尼亚到弗罗里达，在得克萨斯西部的桑德森镇，路边餐馆的女招待腰里别着一把枪，态度冷漠粗鲁。我们随队的一位阿拉巴马来的支援人员说他活这么大，从没见过这么粗鲁的女招待，一顿饭功夫，他说了五六遍“粗鲁”。我们给镇上的浸信会捐助，换取他们提供伙食。牧师吹嘘他跟警长是铁哥们，毫不掩饰地嘲笑墨西哥人。牧师的夫人告诉我们，路上遇到有人求助，不要停下来。封闭的环境培育封闭的心灵，从腰间挎枪的餐馆女招待到牧师一家，无不散发出一种开放社会少见的粗鲁、冷漠和绝望。这是保守主义的一个侧面，这种保守主义在学界和政界都有不少代理人。</p><p id="eb3e" data-selectable-paragraph="">一些大陆新移民信教专拣美国教会中的垃圾，接受政治也是专拣美国政治中的垃圾。从墙内出来，到了开放社会，现代文明的方方面面有那么多值得学，一辈子都学不完。但不少墙内出来的人却放着那么多好的不学，专门逐臭：信基督教，专拣福音派民族主义这种美国教会中的垃圾信；自称搞民主，却专拣美国政治中反人性的极右翼垃圾吞。逐臭好像已经成了他们的第二本能。为什么呢？</p><p id="2e93" data-selectable-paragraph="">对枪的想象是一回事；现实中的枪是另一回事。我本人拥枪，长枪短枪都有好几支，也支持自卫，但厌恶极右分子和政客的恋枪癖表演。<mark class="hghlght">所谓用枪反对政府压迫是一种想象。现实是那些恋枪癖分子从来不敢主动招惹FBI、警察和军队，他们杀害的大都是些学生、老师、少数族裔等弱势群体。受害者没有压迫他们。</mark></p><p id="ce77" data-selectable-paragraph="">至于一些中国知识分子想像有了枪，政府就不敢强拆了，只说明他们内心的怯懦和认知的不堪 — — <mark class="hghlght">反抗是一种意志和勇气，对自由人来讲是一种本能。对于懦弱的人群，即便家里有大炮，他们也不敢反抗。这不是说他们应该去反抗或牺牲，而是说应该像正常人一样面对真实的自己和现实，了解问题的结症。</mark></p><p id="de24" data-selectable-paragraph="">有些中国知识分子把极右势力的恋枪癖想象成“昂格鲁-撒克逊武德”。不少中文世界的青年相信这种不着边际的扯淡。现实是，连美国的主流右翼都不好意思扯什么“昂格鲁-撒克逊”。去年初，马昭莉·格林（Marjorie Greene）和几名共和党众议员中的极右分子要成立弘扬“昂格鲁撒克逊政治传统“的决策团。媒体披露之后，众议院共和党领袖凯文·麦卡锡（Kevin McCarthy）称之为“本土主义狗哨”。他发推特表示：“<mark class="hghlght">美国是建立在人人平等和以诚实、勤劳获得成功的理念上面，不是建立在身份、种族和宗教上面</mark>。共和党是林肯的党，是为所有美国人争取更多机会的党，不是本土主义的狗哨党。”</p><p id="0c06" data-selectable-paragraph="">在遭到共和党内外广泛谴责之后，国会极右小团体弘扬“盎格鲁萨克逊政治传统”的计划胎死腹中。可见所谓“昂撒”的论调在美国政治语境中已经成为过街老鼠类的东西，连共和党自己都不再容忍这种意识形态垃圾。搞不懂为什么中文世界一些人对诸如此类的过时意识形态情有独钟，当美国正统吹捧。</p><p id="37f2" data-selectable-paragraph="">美国的恋胎癖和恋枪癖是同一伙宗教狂热分子，用普通读者能理解的语言讲，大概相当于基督教中的塔利班。一个曾经教过的学生问，为什么反堕胎的人如此珍惜生命却同时反对控枪减少滥杀无辜的机会。我说，<mark class="hghlght">宗教狂热分子的精神世界都是颠三倒四的，共同特点是利用政治把自己的宗教信条强加给别人</mark>。就像George Carlin生前经常调侃的那样：福音派反堕胎打prolife旗号，他们貌似最关心还没生的胚胎，一生出来，却觉得你活该自生自灭。福音派反堕胎，也反全民医保和贫穷家庭的儿童福利，反对限制立法控制青少年和精神病人获得枪支 — — 不生不行，但出来的孩子，病死、打死没事。这不是什么保守主义，这是宗教狂热导致的价值错乱。</p></div></div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+<span style="position: absolute; width: 16px; height: 16px; background-color: rgba(125, 0, 0, 0.5); border: 1px solid rgb(255, 255, 255); box-sizing: border-box; display: none; cursor: move;"></span></body><style>body {
+      font-size:  15px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 650px;
+      text-align: justify
+    }
+    .page {
+      line-height: 22.5px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

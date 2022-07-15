@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <base target="_blank">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+  position: relative;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color:  #222;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color:  #eee;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color:  #5b4636;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color:  #586e75;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color:  #2e3440;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color:  #cec4ac;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #839496;
+  border-color:  #839496;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color:  #e5e9f0;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] ::selection {
+  background-color: #fff740;
+  color: #000;
+}
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+<title>[Design Mode]</title></head>
+<body tabindex="1" data-images="true" data-mode="light" data-font="sans-serif" data-loaded="true" style="user-select: initial;"><h1 dir="auto" id="reader-title">人生更重要的是避坑。。</h1>
+  <span dir="auto" id="reader-credits">小声比比的饭爷</span>
+  <span dir="auto" id="reader-estimated-time">2-3 minutes</span>
+  <span dir="auto" id="published-time"></span>
+  <hr>
+  <div id="readability-page-1" class="page"><div id="js_content">
+                    
+
+                    
+                    
+                    
+                    <section><br></section><section><span><strong>这是饭爷的江湖发出的第100篇文章</strong></span></section><p><span>大家可能还记得，我们常说的一句话就是，<mark class="hghlght">如果你不是行业里的老手，突然有个大机会掉在你的面前。</mark></span></p><p><span><span><mark class="hghlght">你着实应该多一分小心，因为是陷阱的概率远比是馅饼的概率要大得多</mark>。</span></span></p><p><span><span>说起来这是老生常谈了，之前我们翻来覆去讲了好多次，今天可以再讲一次。<br></span></span></p><section><span>每次当某个观点烂大街，大家都觉得这玩意赚钱的时候，基本意味着起码短期内疯狂介入的这些人要亏钱了，从没例外过。</span><br><span></span></section><p><span>你看当年的P2P，最早一小波人去投的时候，其实他们赚到钱了。</span></p><p><span>等到铺天盖地的人去投的时候，后面基本上全都爆了，这批人都是去买单的。<br>数字货币比如比特币，不声不响只有一圈码农玩的时候，这波人也赚到钱了。</span><br></p><p><span>等到比特币两万美金一个时候，外面连做传销的都在讲区块链了，后面比特币又是啥样子。<br></span></p><p><span>更明显的指标是大妈们，每次只要菜场大妈开始告诉你现金放在手里要贬值，必须买点啥资产时候。</span></p><p><span>基本上现金会逐渐变成最安全的资产，大妈想买的所谓资产价格却要开始下跌了，这个故事从没例外过。</span></p><p><span>要知道所有赚钱的东西都是本身熟悉的行内一小波人开始先搞，最终大众介入，基本大众介入就是流动性最高点。</span></p><p><span>连大妈都开始疯狂介入了，后面的购买力就快衰竭了，新的接盘侠哪里去找？</span></p><p><span>这时候你该做的是逐步兑现，绝不是不断加码，否则真成接盘侠了。</span></p><p><span>我们上面讲的是投资里最最通用的逻辑，即使是老手没想清楚这个问题，其实也会掉坑。<br></span></p><p><span>最近的例子是有小伙伴说他朋友开口罩厂的，以前因为竞争激烈生意一般般，疫情来了突然完成了小目标。</span></p><p><span>高利润让他上头了，扩大生产高价购买厂房和设备奔着第二个小目标去了，<br></span></p><p><span>还花了不少钱进了出口的白名单，然后刚费半天劲进了白名单，订单突然就没了。</span></p><p><span>现在很多人做一件事情的思考的逻辑和顺序都是不对的，上来就想着自己肯定赚钱。<br></span></p><p><span><mark class="hghlght">正常逻辑是你首先应该想到我是个行业新手，每个行业的水都很深，老司机又那么多。</mark></span></p><p><span><mark class="hghlght">我一个新手进入到一个新的行业会不会被坑，而不是上来就想会不会赚钱。</mark><br></span></p><p><span>就像以前人人创业都跑去开饭店，你去商业街看看，每年开了关关了开，能活过半年的店都不多。</span></p><p><span>开店的很多人从来没想过，你一个餐饮行业的新手，怎么和人家在餐饮行业里操练了很多年的老手竞争。<br></span></p><p><span>大家都跑去开这玩意无非是因为这东西入门比较容易，可是但凡入门门槛很低的行业赚钱需要的技能点必定很高。<br></span></p><p><span>就像股市开户放点钱进去很容易，但是炒股赚钱这件事很难，不然怎么会有1赚2平8个亏的统计学数据。</span></p><p><span>而且开个像样点的饭店投入也并不少，装修加房租少说几十上百万，很多新手掉进这个坑里就好多年爬不起来。</span></p><p><span><mark class="hghlght">人生陷阱远比机会多，要知道踩进坑里一次，损失少的话几千上万，多的话几十上百万。</mark></span></p><p><span><mark class="hghlght">对多数人来说，一次大的损失至少等于白干几年，多的甚至需要十几年才能挽回损失。</mark></span></p><p><span><mark class="hghlght">所以做一件事的时候，首先思考的从来不应该光是机会问题，还得考虑陷阱问题。</mark></span></p><p><span>而且机会这东西也是和时代捆绑的，时代变了很多固有的东西也会变，保持固有思路就是掉坑的节奏。</span></p><p><span>大家都知道以前次序很多年商铺写字楼是优质资产，大家买了就能一铺养三代。<br></span></p><p><span>现在商铺写字楼妥妥的劣质资产啊，不光空置率税费高高，价格也很难涨起来。</span></p><p><span>而且因为现在电商和商业综合体冲击，很多街铺买了还就很难租出去，还得每个月还贷款。</span></p><p><span>这真的是花高价买了个爹回家，妥妥的变成了三代养一铺，亏到姥姥家了。</span></p><p><span>租不好租，卖不好卖，亏本卖了还不甘心。这</span><span>不是妥妥的掉坑里了么</span><span>，还很难爬出来。</span></p><p><span>商铺写字楼的故事，我们之前在《</span><a target="_blank" href="http://mp.weixin.qq.com/s?__biz=Mzg4NTE3NTE2NQ==&amp;mid=2247483960&amp;idx=1&amp;sn=6547bbfc20b7f87bcd044391390f3355&amp;chksm=cfada42af8da2d3c8c51cf07527e3419fb54020622902ea9b2ba81be17d2b1e4d05d71180105&amp;scene=21#wechat_redirect" data-itemshowtype="0" tab="innerlink" data-linktype="2" wah-hotarea="click" hasload="1"><span>资产和人一样，同样会被时代淘汰</span></a><span>》还有《</span><a target="_blank" href="http://mp.weixin.qq.com/s?__biz=Mzg4NTE3NTE2NQ==&amp;mid=2247484117&amp;idx=1&amp;sn=54e57c3367fd4af58a3a6565b642b3fe&amp;chksm=cfada4c7f8da2dd1522a18b80f8b8e847f012224109242d2097538ccda0edec4bd6ba3c150e7&amp;scene=21#wechat_redirect" data-itemshowtype="0" tab="innerlink" data-linktype="2" wah-hotarea="click" hasload="1"><span>漂洋过海来骗你</span></a><span>》里面讲过，这里就不再赘述了。</span></p><p><span>关于近几年的各种坑我们也在之前的《<a target="_blank" href="http://mp.weixin.qq.com/s?__biz=Mzg4NTE3NTE2NQ==&amp;mid=2247484563&amp;idx=1&amp;sn=1502e779aa3a086dc8fc6e860168a32d&amp;chksm=cfada281f8da2b976010c8949e41a57eb7c1885f8acc65598d7e82b7d20368edefa2f1611dcb&amp;scene=21#wechat_redirect" data-itemshowtype="0" tab="innerlink" data-linktype="2" wah-hotarea="click" hasload="1">一个血亏的教训</a>》和《<a target="_blank" href="http://mp.weixin.qq.com/s?__biz=Mzg4NTE3NTE2NQ==&amp;mid=2247484577&amp;idx=1&amp;sn=9f3ea4e04fa72f780774036450230b3e&amp;chksm=cfada2b3f8da2ba58669af27880dcced61ca51e9440f277520b8e33e6d1d5a9a8e0764c6d119&amp;scene=21#wechat_redirect" data-itemshowtype="0" tab="innerlink" data-linktype="2" wah-hotarea="click" hasload="1">银行那些你不知道的骚操作</a>》里面讲过<br></span></p><p><span>还是那句话：<span><mark class="hghlght">对普通人来说，</mark></span><span><mark class="hghlght">把握机会固然重要，但是</mark></span><span><mark class="hghlght">避坑这件事更加</mark></span><span><mark class="hghlght">重要。</mark></span></span></p><p><span><span>遇到一件事大家都在一窝蜂上，自己千万别上头，人人都知道的东西可能人人都赚钱么？<br></span></span></p><p><span><span>全文完！！<br></span></span></p><p><br></p><p><br></p><section><span></span></section>
+                </div></div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+<span style="position: absolute; width: 16px; height: 16px; background-color: rgba(125, 0, 0, 0.5); border: 1px solid rgb(255, 255, 255); box-sizing: border-box; display: none; cursor: move;"></span></body><style>body {
+      font-size:  20px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 900px;
+      text-align: justify
+    }
+    .page {
+      line-height: 30.0px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

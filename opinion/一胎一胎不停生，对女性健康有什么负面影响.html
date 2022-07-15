@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <base target="_blank">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+  position: relative;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color:  #222;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color:  #eee;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color:  #5b4636;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color:  #586e75;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color:  #2e3440;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color:  #cec4ac;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #839496;
+  border-color:  #839496;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color:  #e5e9f0;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] ::selection {
+  background-color: #fff740;
+  color: #000;
+}
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+<title>一胎一胎不停生，对女性健康有什么负面影响？ :: Reader View</title></head>
+<body tabindex="1" data-images="true" data-mode="light" data-font="sans-serif" data-loaded="true" style="user-select: initial;"><h1 dir="auto" id="reader-title">一胎一胎不停生，对女性健康有什么负面影响？</h1>
+  <span dir="auto" id="reader-credits"></span>
+  <span dir="auto" id="reader-estimated-time">5-6 minutes</span>
+  <span dir="auto" id="published-time">2021/12/19</span>
+  <hr>
+  <div id="readability-page-1" class="page"><div id="article_content">
+        <div>
+            <!-- 正文广告top start -->
+
+            <!-- 正文广告top end -->
+            <!-- 引文 start -->
+
+            <!-- 引文 end -->
+            <!-- 正文 start -->
+			<div id="artibody" data-sudaclick="blk_content">
+
+<!--新增众测推广文案-->
+
+<!--新增众测推广文案end-->
+<!--添加App专享导流-->
+		<p cms-style="font-L">　　<span cms-style="font-L">2021年12月18日，某歌手前妻在社交媒体上的爆料，相信也让很多关注娱乐圈的小伙伴大感惊讶。长信中提到当事人被<span cms-style="font-L strong-Bold">“一胎接一胎不停的催生”，“不是在备孕，怀孕，就是在产后哺乳育儿”，所以被迫放弃工作和人生，身心都经历了很多变化。</span>短短几句，道出了女性的不易。</span><br></p>
+<p><br></p>
+
+<p cms-style="font-L">　　<span cms-style="font-L">作为一个专注生物医学方向的公众号，公众人物的家长里短，自然不是我们的关注对象。<span cms-style="font-L strong-Bold">但女性的怀孕间隔时间，以及这个时间长短对女性的健康影响，却是一个严肃的科学话题。</span>对于要养育多胎的女性来说，这个话题从来不会轻松：一方面，随着年龄增长，与怀孕有关的风险也会随之增高；另一方面，过短的怀孕周期可能会影响母亲和胎儿的健康。两者之间应该怎么做平衡呢？</span></p>
+<p cms-style="font-L">　　<span cms-style="font-L">2018年，发表在知名医学期刊<span cms-style="font-L">JAMA Internal Medicine</span>的一篇论文对这个问题进行了详尽的分析。<span cms-style="font-L strong-Bold">研究人员们收集了将近15万名加拿大孕妇的数据，以了解两胎之间间隔时间过短，对于不同年龄段的孕妇意味着什么。</span>这里是他们的发现。</span></p>
+<p cms-style="font-L"><mark class="hghlght">　　</mark><span cms-style="font-L color210"><span cms-style="font-L strong-Bold color210"><mark class="hghlght">发现一：怀孕太频繁，对所有年龄段的女性均有风险。</mark></span></span></p>
+<p cms-style="font-L">　　<span cms-style="font-L">这个发现虽然看起来容易理解，但其实出乎了研究人员们的预料。他们将孕妇按照年龄分为多组，一组是20岁以下，一组是20到34岁，另一组则是35岁及以上。<span cms-style="font-L strong-Bold">根据他们最初的猜想，随着年龄的增长，女性的社会经济水平应有所提高，医疗保险等的准备也会更为充分。</span>此外，这些女性倘若在短时间里想要生育多个孩子，也更有可能和家人等做好了规划。</span></p>
+<p cms-style="font-L">　　<span cms-style="font-L">相比较为年长的女性，更年轻的女性则更有可能出现意外怀孕等现象，也可能在经济上并没有做好最充分的准备。<span cms-style="font-L strong-Bold">基于这个考量，研究人员们原本猜测如果一胎一胎不停生，年轻女性会面临更大的风险。</span></span></p>
+
+<p cms-style="font-L">　　<span cms-style="font-L">但分析结果表示这个猜测并不准确。“<span cms-style="font-L strong-Bold">事实上，我们发现对所有年龄段的女性而言，（过短的间隔）都会有对婴儿的负面风险。</span>”本研究的第一作者Laura Schummers博士说道。</span></p>
+<p cms-style="font-L">　　<span cms-style="font-L color210"><span cms-style="font-L strong-Bold color210"><mark class="hghlght">发现二：对于不同年龄段的女性，风险的类型并不一样。</mark></span></span></p>
+<p cms-style="font-L">　　<span cms-style="font-L">无论对20到34岁，还是35岁及以上的女性，过于频繁的怀孕都会带来风险，但这些风险的类型并不一致。<span cms-style="font-L strong-Bold">对于年轻女性来说，这一风险更多是发生在胎儿或是新生儿身上。这包括自发的早产等问题；而对于35岁以上的女性，风险则更多是在自己身上。</span></span></p>
+<p cms-style="font-L">　<mark class="hghlght">　</mark><span cms-style="font-L color210"><span cms-style="font-L strong-Bold color210"><mark class="hghlght">发现三：怀孕不宜太频繁，建议至少等上一年半。</mark></span></span></p>
+<p cms-style="font-L">　　<span cms-style="font-L">既然频繁怀孕会带来风险，那么多频繁算频繁呢？<span cms-style="font-L strong-Bold">世界卫生组织的建议是从上一胎出生到怀上新生命，至少要等大约18个月的时间。</span><span cms-style="font-L strong-Bold">短于这个时间，都会使相关风险明显升高，比如出现新生儿死亡、出生体重低、以及早产等问题。</span></span></p>
+<p cms-style="font-L">　　<span cms-style="font-L">本研究的发现与世界卫生组织的推荐相一致。对于35岁及以上的孕妇，如果生育后仅间隔6个月就再怀孕，那么每1000人里，大约有6.2个会出现严重的疾病，甚至死亡。而等待18个月再怀孕，能将风险降低到每1000个人里只有2.6个出现问题。虽然绝对数看起来区别不大，但实际却是很大的改善。</span></p>
+<p cms-style="font-L">　　<span cms-style="font-L">对于20到34岁的女性也同样如此。如果在生育后仅6个月就又怀上，那么每1000人里，会有20起死胎、早产、新生儿过小等问题。而倘若等上18个月，风险能减少到约每1000人里14起。</span></p>
+
+<p cms-style="font-L">　　<span cms-style="font-L">综合来看，这项研究表明怀孕过于频繁对于女性和后代健康可能带来风险。至于背后的原因，研究人员们提出了目前的一个理论：<span cms-style="font-L strong-Bold">生育一次，可能会大量消耗女性身体里的铁和叶酸等营养物质。因此女性需要一段时间，才能恢复到生育前的水平。过早的再次怀孕，对女性身体会是一个负担。</span>当然，这个理论还需要进一步研究来证实。</span></p>
+<p cms-style="font-L">　　<span cms-style="font-L">随着社会的进步，现代女性有了更多受教育的机会，也有不凡的见识与优秀的谋生能力，能为社会做出大量贡献。如果仅仅将女性作为生育的机器，那显然是一种过时且不正确的看法。本研究作者指出，间隔18到24个月再怀孕，会是一个比较好的时间间隔。<span cms-style="font-L strong-Bold">而通过了解怀孕间隔对健康的影响，有助于每一名想要多个孩子的女性了解风险，更好地安排自己的人生，过上自己想要的生活。</span></span></p>
+<p cms-style="font-L align-Center">　　<span cms-style="font-L align-Center color210"><span cms-style="font-L strong-Bold align-Center color210">参考资料</span></span></p>
+<p cms-style="font-L">　　<span cms-style="font-L">[1] Laura Schummers et al。， （2018）， Association of Short Interpregnancy Interval With Pregnancy Outcomes According to Maternal Age， JAMA Intern Med。 doi：10.1001/jamainternmed.2018.4696</span></p>
+<p cms-style="font-L">　　<span cms-style="font-L">[2] How Long Should Older Moms Wait Before Getting Pregnant Again？ Retrieved December 17， 2021， from https：//www.npr.org/sections/health-shots/2018/11/01/663181674/how-long-should-older-moms-wait-before-getting-pregnant-again</span></p>
+<p cms-style="font-L"><br></p></div></div><div><div data-sudaclick="right_wechat_p"><div id="weixin-slider"><div>
+                            </div>
+
+
+                        </div>
+            </div>
+            <!-- 公众号 end -->
+            <!-- 底部导航 start -->
+            
+            <!-- 底部导航 end -->
+            <!-- 改版调查 start -->
+<!--
+            <div class="ch-invest">
+                <a href="" target="_blank">
+                    <img src="//n.sinaimg.cn/tech/content/fb.png">
+                </a>
+            </div>
+-->
+            <!-- 改版调查 end -->
+
+            
+
+        </div>
+
+			
+			
+    </div></div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+</body><style>body {
+      font-size:  20px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 900px;
+      text-align: justify
+    }
+    .page {
+      line-height: 30.0px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

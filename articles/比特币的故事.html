@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <base target="_blank">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+  position: relative;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color:  #222;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color:  #eee;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color:  #5b4636;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color:  #586e75;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color:  #2e3440;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color:  #cec4ac;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #839496;
+  border-color:  #839496;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color:  #e5e9f0;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] ::selection {
+  background-color: #fff740;
+  color: #000;
+}
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+<title>比特币的故事 :: Reader View</title></head>
+<body tabindex="1" data-images="true" data-mode="light" data-font="sans-serif" data-loaded="true" style="user-select: initial;">
+  <span></span> <!-- for IntersectionObserver -->
+  <a id="reader-domain" href="https://mirror.xyz/0xbeC73ba0817403cd11C11bE891D671EA30443562/QCsa7J5oDO22AIipDTivYas4lwP9ofyLTDiLHi0QcQY">
+    <span>mirror.xyz</span>
+    <span>/0xbeC73ba0817403cd11C11bE891D671EA30443562/QCsa7J5oDO22AIipDTivYas4lwP9ofyLTDiLHi0QcQY</span>
+  </a>
+  <h1 dir="auto" id="reader-title">比特币的故事</h1>
+  <span dir="auto" id="reader-credits"></span>
+  <span dir="auto" id="reader-estimated-time">3-4 minutes</span>
+  <span dir="auto" id="published-time"></span>
+  <hr>
+  <div id="readability-page-1" class="page"><div><h2 id="比特币的故事">比特币的故事</h2>
+<p>比特币的发展史绝非比特币本身，而是密码朋克精神的延续。比特币是站在现代密码学的肩膀上成长的，而就像生物的进化一样，有些项目虽然已经死去甚至从未流行，但仍然留下了养料滋养后人。<br>
+<!-- -->在浩如烟海的比特币发展史中，我选择三个层面的六个人物/故事，推荐给读者。</p>
+<h2 id="精神层面：">精神层面：</h2>
+<h3 id="第一个推荐：《密码学无政府主义者宣言》">第一个推荐：《密码学无政府主义者宣言》</h3>
+<p>密码朋克的精神可以在蒂姆·梅(Tim May) 的《<a href="https://groups.csail.mit.edu/mac/classes/6.805/articles/crypto/cypherpunks/may-crypto-manifesto.html" rel="noreferrer" target="_blank">密码学无政府主义者宣言</a>》(<a href="https://xiongxiaoer.gitbook.io/the-crypto-anarchist-manifesto/" rel="noreferrer" target="_blank">译本1</a>，<a href="https://matters.news/@septentrium/13298-%E8%92%82%E8%8E%AB%E8%A5%BF-%E6%A2%85-%E5%8A%A0%E5%AF%86%E6%97%A0%E6%94%BF%E5%BA%9C%E4%B8%BB%E4%B9%89%E8%80%85%E5%AE%A3%E8%A8%80-zdpuAkjSbbFHuc1EuFUnEjxzJLJDEUkAjT4VX7qvr8RiwCx8b" rel="noreferrer" target="_blank">译本2</a>)中读到，里面充满了预言——</p>
+<blockquote>
+<p>「正如印刷术动摇了中世纪行会权力以及整个社会的权力结构，密码学方法也将从根本上改变公司的本质，改变政府干预经济的本质。密码学无政府主义将与新型的信息市场一起，为任何可以用文字和图片表达的事物，缔造出一个流动的市场。」</p>
+</blockquote>
+<h2 id="工具层面：">工具层面：</h2>
+<h3 id="第一个推荐：crypto">第一个推荐：<a href="https://www.cryptopp.com/" rel="noreferrer" target="_blank">Crypto++</a></h3>
+<p>这是一个自由的密码学协议的代码库，包含了超过100个密码学协议的C++实现。<a href="http://www.weidai.com/" rel="noreferrer" target="_blank">戴维(Wei Dai)</a> 于1995年在他大学期间创建了这个项目，并独立维护了超过20年。2015年后这个项目转向社区维护，目前已有超过80名代码贡献者。公共物品是如何建立的，我想这个案例给了很好的答案。共识不是说出来的，英雄一往直前，直至水滴石穿。戴维同时也是<a href="http://www.weidai.com/bmoney.txt" rel="noreferrer" target="_blank">b-money</a>——比特币白皮书的第一篇参考文献——的作者。</p>
+<h3 id="第二个推荐：pgp">第二个推荐：PGP</h3>
+<p>PGP的意思是Pretty Good Privacy，是一个使用非对称密码学来保护数据和通信秘密的密码学工具。<a href="https://philzimmermann.com/ZH/background/index.html" rel="noreferrer" target="_blank">Philip Zimmermann</a> 最早发布了这个工具，帮助公众保护自己的邮件秘密。当时，美国的武器出口标准规定了可出口密码的最大强度，很显然PGP远远超出了它。美国政府找到他让撤除，他拒绝了，但怎么办呢？他出版了一本书，内容就是 PGP 的源代码。<a href="https://philzimmermann.com/EN/news/PRZ_case_dropped.html" rel="noreferrer" target="_blank">最终法庭判例</a>认可了「代码代表思想」，因此通过宪法第一修正案的言论自由来保护了这些代码的安全。(<a href="https://www.caa-ins.org/archives/6785" rel="noreferrer" target="_blank">参考阅读</a>)<br>
+<!-- -->_密码学是武器，代码是思想。<br>
+<!-- -->此外，PGP的项目里有一个早期成员亦是核心贡献者，他的名字叫做Hal Finney。</p>
+<h2 id="社区层面">社区层面</h2>
+<h3 id="第一个推荐：哈尔·芬尼和比特币">第一个推荐：哈尔·芬尼和比特币</h3>
+<p>哈尔·芬尼(Hal Finney)可能是中本聪之外第一个开启比特币客户端挖矿的人。他有一条推特非常著名，甚至成为了 meme——「<a href="https://twitter.com/halfin/status/1110302988?s=21&amp;t=hGiGe2dJhJE29GzyWqNNjw" rel="noreferrer" target="_blank">Running Bitcoin</a>」。同时，他给中本聪提了很多代码层面的建议，此后他就暂时远离了对比特币的关注。应该说，他为比特币的发展提供了巨大的帮助。此后的故事大家也都知道了，他不幸罹患渐冻人症，于2014年去世了。在2013年，他发表了一篇感人至深的文章《<a href="https://bitcointalk.org/index.php?topic=155054.msg1643833#msg1643833" rel="noreferrer" target="_blank">比特币和我</a>》（<a href="https://www.btcstudy.org/2021/11/23/bitcoin-and-me-by-Hal-Finney/" rel="noreferrer" target="_blank">译本1</a>，<a href="https://zhuanlan.zhihu.com/p/34005388" rel="noreferrer" target="_blank">译本2</a>），在那里你可以发现更多奇妙的连接。首先，哈尔·芬尼是个真正的密码朋克。此外，基于工作量证明的货币恰恰是哈尔·芬尼的思想，中本聪借鉴了他。另外，他没有固步自封，一直保持乐观的精神。</p>
+<blockquote>
+<p>与此同时，我也参与了密码朋克邮件组（Cypherpunk）。我运行了首个基于密码学的匿名电子邮件转发器，还参与了其它密码学运动。<br>
+<!-- -->快进到 2008 年末，即，比特币宣告诞生之际，我发现密码学行业的 “老人们”（当时我已经年过半百）变得犬儒，我反而变得更加理想主义。我一直热爱着密码学，爱它的神秘莫测、也爱它的悖论。<br>
+<!-- -->中本聪在密码学邮件列表中公告比特币项目时遭到了很多怀疑。密码学界已经看过太多无知菜鸟的 “宏伟” 计划，产生了条件反射式的怀疑心理。<br>
+<!-- -->我则积极一些。我一直都对密码学支付方案很感兴趣。而且我很有幸见过 Wei Dai 和尼克·萨博（Nick Szabo）并与他们有过很多通信交流；众所周知，他们早就创造出了比特币尝试实现的理念。我自己也曾尝试过创建基于工作量证明的货币，并将它命名为 RPOW。因此，我对比特币产生了浓厚的兴趣。</p>
+</blockquote>
+<h3 id="第二个推荐：拉斯洛·汉耶茨与披萨饼">第二个推荐：拉斯洛·汉耶茨与披萨饼</h3>
+<p>这可能是比特币历史上最传奇的故事，佛罗里达的程序员拉斯洛·汉耶茨(Laszlo Hanyecz)  用10000个比特币换取2个披萨——中文圈子里「大饼」的由来。再补充一些基础知识，这笔交易发布在 <a href="https://bitcointalk.org/index.php?topic=137.0" rel="noreferrer" target="_blank">bitcointalk</a> 上，最终双方在IRC上完成了交易，跨度4天时间。提供披萨的小伙子Jercos很快就将这些比特币出售了，据说用于某次旅游。但我要说的不仅仅是这些—— Laszlo，其实是比特币的<a href="https://medium.com/geekculture/legends-of-bitcoin-laszlo-hanyecz-ee4cc6eb7d91" rel="noreferrer" target="_blank">首个 MacOS 客户端的开发者</a>，他独立地开发了GPU挖矿协议，并和中本聪就此交流过。在接受 <a href="https://cointelegraph.com/news/satoshi-invented-gpu-mining-to-defend-the-network-says-early-dev" rel="noreferrer" target="_blank">CoinTelegraph 的采访</a>中他表示，中本聪早已预备好了GPU挖矿程序，以预防可能的51%攻击。他的代码是更高效的，但是似乎中本聪无意优化的原因是无意过早提高网络的难度。基于这些事实，我不认为拉斯洛是个错失财富的倒霉鬼，_这次传播学意义上的伟大事件是Laszlo有意策划的。</p>
+<h3 id="第三个推荐：赵小姐爱上比特币">第三个推荐：赵小姐爱上比特币</h3>
+<p>以下内容来自播客节目 [大学生迈向比特币核心的航程] <a href="https://bitcoinundco.com/en/gloria-zhao/" rel="noreferrer" target="_blank">https://bitcoinundco.com/en/gloria-zhao/</a><br>
+<!-- -->格洛丽亚·赵(Gloria Zhao)是伯克利的计算机系学生，刚刚毕业没多久。她对去Facebook这些公司毫无兴趣，并且和同学们也发生过争论，她觉得如果知道这些公司在用技术做什么后，再为他们工作，是不可接受的「你在为自己造笼子么？」，他的同学们表示从未想过这些问题，那就是事情的本来样子。但是她学习比特币和区块链的过程也是不顺畅的，学校教授了分布式系统的原理、钱包的编码规范，但是她并不能理解。她的老师 Max Fang告诉她，要先成为真正的密码朋克，先要去读Tim May的宣言，再去读数字黄金，再去读阿桑奇，这样才能更好的了解比特币。<br>
+<!-- -->然而，她仍然对比特币和区块链的发展是失望的，一个暑假，她准备考虑去Facebook或者Google实习，但一次非常巧合的事情改变她的人生。Chainnode Labs的Adam Jonas给她发邮件，问她是否对Chaincode的驻留感兴趣。她犹豫后，还是选择与 Chaincode 的成员见面——John Newbery 和 Amiti Uttarwar，没想到他们直接邀请她参与比特币代码的贡献。「你是计算机科学的学生。比特币就是代码。下载看看吧」<br>
+<!-- -->她有些犹豫，这里的障碍是什么，心理障碍是首位的，而非技术障碍。审阅PR，参与审核俱乐部，和Amiti讨论代码，帮助Gloria走进了比特币的世界。她学到了密码学、分布式系统、数学，最终她说「这就是我想去的地方。它是我的征途。就像一见钟情一样，我爱上了比特币。我不再回头了（似乎是致敬Bob Dylan），这就是我想要做的」。她每天4点多起床，开始做比特币相关的学习和工作。她认为，了解比特币有很多路径，每个人都不一样，她的建议是去读1984、黑镜，或者搏击俱乐部，对世界产生愤怒，然后想做点什么。</p>
+<h2 id="延展阅读">延展阅读</h2>
+<p><a href="https://www.btcstudy.org/2021/10/26/bitcoin-is-an-idea-by-Gigi/" rel="noreferrer" target="_blank">[1] 比特币是一种思想</a><br>
+<a href="https://www.whatbitcoindid.com/podcast/funding-bitcoin-development" rel="noreferrer" target="_blank">[2] John Newbery：资助比特币开发</a><br>
+<a href="https://bitcoinmagazine.com/technical/interview-developing-bitcoin-with-john-newbery" rel="noreferrer" target="_blank">[3] 与约翰一起开发比特币</a><br>
+<a href="https://bitcoincore.reviews/" rel="noreferrer" target="_blank">[4] 比特币核心代码审核俱乐部</a></p></div></div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+</body><style>body {
+      font-size:  20px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 900px;
+      text-align: justify
+    }
+    .page {
+      line-height: 30.0px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

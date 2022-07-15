@@ -1,0 +1,250 @@
+<html dir="ltr"><head><title>[Design Mode]</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color: %light-color%;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color: %dark-color%;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color: %sepia-color%;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color: %solarized-light-color%;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color: %nord-light-color%;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color: %groove-dark-color%;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #93a1a1;
+  border-color: %solarized-dark-color%;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color: %nord-dark-color%;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] .tts-word {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  background-color: red;
+  height: 2px;
+}
+.tts-word.hidden,
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+</head>
+<body tabindex="1" data-images="false" data-mode="sepia" data-font="sans-serif" data-loaded="true" style="user-select: initial;">
+  <span></span> <!-- for IntersectionObserver -->
+
+  <h1 dir="auto" id="reader-title">她是否觉得吃亏</h1>
+  <span dir="auto" id="reader-credits"></span>
+  <span dir="auto" id="reader-estimated-time">1-2 minutes</span>
+  <span dir="auto" id="published-time"></span>
+  <hr>
+  <div id="readability-page-1" class="page"><div id="post-body-1984071677017735832" itemprop="description articleBody">
+<meta http-equiv="Content-Type" content="text/html; charset=GB18030"><p>女人愿不愿意和你在一起的决定性因素是——她是否觉得和你在一起吃亏了。</p><p>经常有各种穷男人、性焦虑的男人、还在上大学的屌丝小男孩在网上提问——如何让一个女人喜欢自己，甚至会问的更直接——为什么自己追求了很久的女生不愿意和自己上床？是不是我付出的还不够多？是不是我对她还不够好？是不是我不懂她的心？</p><p>在这些没有钱、缺乏生存资源、没有名气、没有女人崇拜的底层男人的眼中——世界是复杂的，多变的，女人是不可捉摸的，</p><p>可怜。可悲。可叹。</p><p>底层男人的生活生不如死。就连自己爱一个女人都不可得，还要被女人的那套好人卡话术玩的团团转。这就是这个世界的残酷之处——如果你真的相信了这套话术，那毫无疑问，你就是一个底层男人，如果你不相信，那你还有救。</p><p>一个女人和一个男人在一起的关键要素是——她不能在心里觉得和你在一起吃亏了。</p><p>只要她不觉得吃亏，她根本不需要你猜测太多东西。</p><p>比如你比她有钱的多，她就会觉得和你在一起不吃亏。比如你比她有名的多，她就会觉得和你在一起不吃亏。比如你比她成功的多，她就会觉得和你在一起不吃亏。比如你的长相比她好得多，她就会觉得和你在一起不吃亏。</p><p><b>不要相信女人那套爱情话术——其实她们自己都不信。</b></p><p>女人是很聪明的动物。<b>大多数男人都低估了女人的趋利避害性。</b></p><p>她一旦觉得和你在一起吃亏了，就会找各种借口不和你在一起，就算你疯狂地给她买东西，她也只是想要那个东西，并不会和你在一起，也不会爱你，你给再多的彩礼，她也不会爱你。因为你给她的彩礼越多——证明她越吃亏。</p><p>其实女人都希望能找到一个完全不需要给自己彩礼的男人。只不过大部分人找不到。因为优秀的男人太少了。出名的男人太少了。有钱的男人太少了。</p><p>女人是非常简单的动物——你只要比她牛逼的多，她什么都听你的，而且她愿意。</p><p>她一年赚20万，你赚2000万。她30岁，你也30岁。她没名气，你有名气，她什么都愿意听你的，巴不得第二天就去跟你领结婚证，根本不会要什么彩礼，根本不会多说废话的，连婚都不用求，她巴不得嫁给你。</p><p><b>人都是功利的，人都是世俗的</b>。</p><p>这个世界上没有公主，也没有王子。</p><p>王子不如王总。王子没钱，王总有钱。</p><p>所以男人如果没钱，把心思放在如何追求女人上——他就永远是一个底层。</p><p>女人做保养、做护肤、做美容、做整形，不是为了嫁给一个穷男人的，是为了嫁给一个条件远比自己好的男人的。女人做美容，是雌竞，男人做事业，是雄竞。只有底层男人，才会不好好干事业，天天他妈的研究自己对女朋友是不是不够关心不够好——舔狗式男人，只能找到作女。这个感情模式，注定了世世代代的穷。</p>
+
+</div></div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+<span style="position: absolute; width: 16px; height: 16px; background-color: rgba(125, 0, 0, 0.5); border: 1px solid rgb(255, 255, 255); box-sizing: border-box; display: none; cursor: move;"></span></body><style>body {
+      font-size:  20px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 900px;
+    }
+    .page {
+      line-height: 30.0px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

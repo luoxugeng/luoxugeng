@@ -1,0 +1,362 @@
+<html><head><title>多年后，我终于看清了比特币的本质 :: Reader View</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color: %light-color%;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color: %dark-color%;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color: %sepia-color%;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color: %solarized-light-color%;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color: %nord-light-color%;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color: %groove-dark-color%;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #93a1a1;
+  border-color: %solarized-dark-color%;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color: %nord-dark-color%;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] .tts-word {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  background-color: red;
+  height: 2px;
+}
+.tts-word.hidden,
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+</head>
+<body tabindex="1" data-images="true" data-mode="light" data-font="sans-serif" data-loaded="true">
+  <span></span> <!-- for IntersectionObserver -->
+  <a id="reader-domain" href="https://eurychen.me/post/the-essence-of-bitcoin/">
+    <span>eurychen.me</span>
+    <span>/post/the-essence-of-bitcoin/</span>
+  </a>
+  <h1 dir="auto" id="reader-title">多年后，我终于看清了比特币的本质</h1>
+  <span dir="auto" id="reader-credits">EuryChen</span>
+  <span dir="auto" id="reader-estimated-time">6-8 minutes</span>
+  <span dir="auto" id="published-time">2021/4/10</span>
+  <hr>
+  <div id="readability-page-1" class="page"><div>
+      <p><a href="https://chendongze.oss-cn-shanghai.aliyuncs.com/ipic/yd93d.png" data-fancybox="gallery" data-caption=""><img src="https://chendongze.oss-cn-shanghai.aliyuncs.com/ipic/yd93d.png" alt=""></a></p>
+<h2 id="httpschendongzeoss-cn-shanghaialiyuncscomipick9u5cpng"><a href="#httpschendongzeoss-cn-shanghaialiyuncscomipick9u5cpng"><i></i></a><a href="https://chendongze.oss-cn-shanghai.aliyuncs.com/ipic/k9u5c.png" data-fancybox="gallery" data-caption=""><img src="https://chendongze.oss-cn-shanghai.aliyuncs.com/ipic/k9u5c.png" alt=""></a></h2>
+<blockquote>
+<p>花半秒钟就看透事物本质的人，和花一辈子都看不清事物本质的人，注定是截然不同的命运。 – 《教父》</p>
+</blockquote>
+<p><strong>在波谲云诡的比特币世界，即便你不是半秒钟看清本质的天才，但也千万别当个一辈子都看不清本质的傻瓜。</strong></p>
+<p>早年间，我还是一名区块链研发人员，在那段三点一线的时光里，在那些 todolist 被勾掉的深夜中 ，我的技术水平成长很快。那时候，炒币的盈利加之技术的领先让我「认知膨胀」。膨胀虽然是个中性词，但如果在时间的长河中俯瞰，那么无论从经济学还是物理，膨胀的事物往往都走向恶性结果，比如有经济鸦片之称的通货膨胀；宇宙的持续膨胀将走向空间大撕裂而最终灭亡。而「认知膨胀」让我失去了冷静与思考，自大的认为看懂了比特币的本质，拿到了财富大门的钥匙。而殊不知，仅仅技术水平的提高不等于认知能力的提高，我只不过从一个普通傻瓜变成了一个发际线被提高的傻瓜而已。最终，一身的武艺也没躲过资本镰刀的当头一割。</p>
+<p>东隅已逝，桑榆非晚。</p>
+<p>最近两年，我汗牛充栋的阅读了大量文字，其中囊括了比特币发布之初的两年中本聪本人对比特币的探讨邮件与回帖、比特币白皮书和源代码、以及大量奥地利学派经济学、行为学、货币史等书籍。渐渐地我摸到了一点感觉，每合上一本书，我都在心的底里对比特币的本质增多一点隐隐约约的理解。</p>
+<p><strong>那么比特币的本质是什么？我们该如何找到答案？</strong></p>
+<p>比特币诞生至今，它就像一条源远流长的大河，有着自己的方向与力量。它川流不息，一路上淹没大坑滋养农场，暗流涌动于堤坝之内，扶摇直上于山谷之间，等到浪潮退去，平静又如初时，这大河却流淌的更加宽广了。</p>
+<p>要寻求比特币的本质，我们绝不能刻舟求剑式的站在岸边，而必须踏上一段溯本清源的旅程，回到这条河的发源地去一探端倪。</p>
+<h2 id="httpschendongzeoss-cn-shanghaialiyuncscomipic42pv7png"><a href="#httpschendongzeoss-cn-shanghaialiyuncscomipic42pv7png"><i></i></a><a href="https://chendongze.oss-cn-shanghai.aliyuncs.com/ipic/42pv7.png" data-fancybox="gallery" data-caption=""><img src="https://chendongze.oss-cn-shanghai.aliyuncs.com/ipic/42pv7.png" alt=""></a></h2>
+<p>2008 年 11月 1 日，一个 ID 叫中本聪的匿名人士在网络上留下了他的青云之志：「我一直在研究一种全新的完全点对点的电子现金系统，抛弃第三方信用机构。」紧接着是比特币白皮书的链接。之后，bitcointalk 论坛吸引了天南海北的各路大神，形成了一个围绕比特币活动的小圈子。</p>
+<p>就是这个小圈子为比特币这条大河注入了原初力量，他们人虽不多，但各个武艺卓绝。这其中就包括了密码学领域的大神哈尔·芬尼 （Hal Finney），他也是比特币网络第一笔转账的接受者；还有计算机安全的科学家达斯汀·D·特拉梅尔（Dustin D.Trammell），以及文件共享协议 BitTorrent 的创始者布拉姆·科恩（Bram Cohen） 等。</p>
+<p>接下来两年，这个小圈子陆陆续续的对比特币展开了全面讨论，例如比特币的价值、技术架构的设计、物料的管理、以及安全防御等等。</p>
+<p>而就在 2010 年 12 月 12 日，中本聪发布了比特币0.3.19版本之后，他就事了拂衣去似的没了音讯。</p>
+<p>而  2008.11.1 ~ 2010.12.12 这两年期间所有的论坛讨论和来往邮件都被公开。这些原始的资料对于比特币研究人员具有极高价值。可以这么说，这价值好比是三星堆遗址于历史学家、达芬奇的手稿于文艺复兴史研究员、拉斯科洞窟的壁画于人文学者、宇宙微波背景辐射照片于物理学家。</p>
+<p>这些资料就是我们溯本清源一探究竟的内容，我们要在这里找到关于比特币本质的答案。</p>
+<p>这些资料完整的记录了比特币从一个胚胎发育成婴儿的过程，也记录了以中本聪为核心的小圈子对于比特币的初心、期待、担忧与预言。</p>
+<p>比如在 2010 年 2 月，有人对比特币经济模型提出质疑</p>
+<blockquote>
+<p>由于比特币的挖矿持续难度增加，而比特币的产出数量却不断减少，因此这个经济模型不可持续。</p>
+</blockquote>
+<p>关于这个质疑，一名 ID 叫 xc 的人率先做出了回复:</p>
+<blockquote>
+<p>这是个庸人自扰的问题，没有人会死于通货紧缩的漩涡。怀着通货紧缩而购买力增加的期待，收藏和储蓄币绝不是坏事。这可以把比特币集中起来做更大规模的事情，甚至将来会出现比特币银行，以市场利率借出比特币。</p>
+</blockquote>
+<p>十一年后的今天，再来看这段回复；这个小圈子在当时就聊到了比特币收藏储蓄的特质，并预言了比特币银行的出现，而比特币银行不正是当下币圈最火热的 DEFI 的核心要旨么。</p>
+<p>这些资料中像这样见卓识的探讨比比皆是，而对我启发最大的，是这个小圈子对比特币价值的探讨。当我读完那些关于比特币价值的讨论资料，我发现这似乎正是我一直寻找的钥匙，它打开了我的一道思想之门，引领我通向了一个自由辽阔的地方 – 奥地利学派经济学。</p>
+<h2 id="httpschendongzeoss-cn-shanghaialiyuncscomipicnsm68png"><a href="#httpschendongzeoss-cn-shanghaialiyuncscomipicnsm68png"><i></i></a><a href="https://chendongze.oss-cn-shanghai.aliyuncs.com/ipic/nsm68.png" data-fancybox="gallery" data-caption=""><img src="https://chendongze.oss-cn-shanghai.aliyuncs.com/ipic/nsm68.png" alt=""></a></h2>
+<p>关于比特币的价值，这个小圈子曾讨论过一个主题：<strong>「比特币并不违反米塞斯回归定理」</strong>。这个主题下面有多个回帖，主要内容是比特币的经济模式是否违背了先贤们提出一些经济学理论，其中出现最多的几个名字就是门格尔，米塞斯、罗斯巴德等，而这些人有一个共同点 – 他们都是奥地利学派的经济学家。</p>
+<p>奥地利学派经济学（以下简称奥派经济学）可谓是一个历史悠远的传统，奥派经济学家们都具有共通性，比如 16 世纪西班牙经院哲学家代表人物马里亚纳、奥派第一代掌门人卡尔门格尔、被称为「奥地利最伟大的灵魂」的米塞斯、以及诺贝尔经济学奖得主哈耶克，他们都认可主观价值论、个人主义和自由市场等基本思想。</p>
+<p>而这些基本思想与比特币之间存在着某种量子纠缠似的关联，以至于他们在很多问题上都有一种不约而同的默契，比如对于通货膨胀的态度等等。</p>
+<p>奥派经济学家们对通货膨胀是极度厌恶的，并认为：「通货膨胀是一种不公平的过程，它会对不同群体的命运造成不同的影响，而最先获得新增货币的群体获利最大。」比如，当下美国 1.9 万亿美元的大放水，最先获得 1400 美元的美国人民的将获利最大，而他国人民将为其买单。</p>
+<p>中本聪在曾比特币的创世区块中留下了 50 个比特币和当天《泰晤士报》的头版文章标题：「2009年1月3日，财政大臣正处于实施第二轮银行紧急援助的边缘」。可见中本聪与通货膨胀之间的对立。</p>
+<p><strong>那么，那个小圈子所讨论的米塞斯回归定理又是什么？它与比特币的本质有什么关系？</strong></p>
+<p>我想这问题的答案或许就在先贤的著作之中。</p>
+<p>于是，我久逢甘露似的阅读米塞斯、哈耶克、罗斯巴德等奥派经济学家的著作，欲求在先贤们的思想宇宙中找到链接比特币本质的虫洞。</p>
+<p>但是先贤的著着实难啃，晦涩语言加之庞杂概念，让我在阅读中总有一种两眼摸黑的感受，甚至一度陷入了自我怀疑。</p>
+<p>直到有一天，当我合上米塞斯那本《人的行为》时，窗外绿色梧桐树叶漏进来的金色阳光在红棕色的牛皮桌垫上照射出形状各异的斑驳，原来天已经亮了。我看向《人的行为》深色的胶版纸封皮上的米塞斯，非零曲率的纸面却折射出来一些波长不同的光，我揉揉眼睛，一时间我竟错乱的把米塞斯和中本聪当成了同一个人。</p>
+<p>我回过神来，脑袋里的回归定理、行为学、比特币、区块链等词汇就像几块量子力学的乐高积木，毫无规则的随机出现又消失，而后的几秒钟它们竟然有点完美的组合了。</p>
+<h2 id="httpschendongzeoss-cn-shanghaialiyuncscomipic5ul5epng"><a href="#httpschendongzeoss-cn-shanghaialiyuncscomipic5ul5epng"><i></i></a><a href="https://chendongze.oss-cn-shanghai.aliyuncs.com/ipic/5ul5e.png" data-fancybox="gallery" data-caption=""><img src="https://chendongze.oss-cn-shanghai.aliyuncs.com/ipic/5ul5e.png" alt=""></a></h2>
+<p>想要真正看明白那个小圈子讨论的话题 –「比特币不违法米塞斯的回归定理」，– 我们就要搞清楚两个问题： 米塞斯是谁？ 如何理解回归定理？</p>
+<h2 id="那么米塞斯是谁"><a href="#那么米塞斯是谁"><i></i></a>那么米塞斯是谁？</h2>
+<p>维基百科的描述是：「1881年9月29日出生于奥匈帝国的兰堡路的德维希·冯·米塞斯（Ludwig von Mises）是知名的经济学家，历史学家，哲学家，作家，现代自由意志主义运动的主要领导人，也是古典自由主义第一把交椅。」</p>
+<p>已获诺奖的哈耶克于 1977 年为老师的《米塞斯回忆录》作序时写道：「当我回顾社会科学领域的思想史，我发现他这样的人在教授中间是找不到的，甚至亚当·斯密也难望其项背；能够与他相提并论的只有伏尔泰、孟德斯鸠、托克维尔或约翰·斯图亚特·穆勒这样的大思想家」</p>
+<p>1973 年 10 月 10 日，92 岁的米塞斯于美国纽约寿终正寝。他的遗孀玛吉特认为米塞斯曾引述的一段话最能描述他的个性：「他最令人敬仰的品质是宁折不弯的诚实，毫不犹豫的真诚。他从不屈服。他总是自由的说出他认为对的东西。如果他曾打算收敛一点或仅仅弱化一点对流行却不负责任的政策的批评，那些最有影响力的位置和大门都将向他敞开。但他从未妥协。」</p>
+<p><strong>而如果让我用一句话来介绍这位先贤，那一定是：「他是一位遗世独立的预言家」。</strong></p>
+<p>他在维也纳担任讲师期间，就在私人讨论班中预言了 30 年代的大萧条。不仅如此，他还在1932 年 9 月的一次专业人士聚会中，对大家说这很可能是他们最后一次见面了，因为再过 12 个月希特勒就会掌权。当时在场的人都不相信的笑了起来。事实证明，米塞斯的预言都是对的。</p>
+<p>米塞斯虽然高瞻远瞩但却非常孤独。1940 年，他被迫背井离乡，踏入美利坚的土地。耳顺之年的他必须抛弃过往，在异国他乡重新开始，于是他用一种写遗书的状态开始写下《米塞斯回忆录》。当他在书中回望奥派第一代掌门人门格尔的人生时，他写下了这样的一句话：「一个人不到四十岁就如此清晰的预见到了灾难和所有他珍视的事物的毁灭，不可避免地会陷入悲观绝望」。同样的，这句话亦可以用来描述米塞斯自己的人生，反正当我读到这句话时，脑海中浮现出来的是一位遗世独立的预言家茕茕孑立的背影。</p>
+<p>然而，事业与生活上挫折无法击垮一个心中充满学术理想的人。</p>
+<p><strong>也正如米塞斯在回忆录中所言：「直到今天，我还是没有失去勇气。我会尽到作为经济学家的职责。为了传达心中的真理，我永远不会感到疲劳」。</strong></p>
+<p>来到美国的米塞斯重整旗鼓，穷经皓首般于 1949 年出版了他的扛鼎之作《人的行为》。这本书被罗斯巴德称为20世纪人类智慧最好的产物之一；虽然从本书出版到今天已经过去了 72 年，令人欣慰的是，直到今天，即使在年轻读者活跃的豆瓣上，本书的评分也都一直在 9 分以上；</p>
+<p><strong>也应照本书译者夏道平先生那声感叹：「不朽的名著，没有时效问题，因而也没有过时的翻译；有的，只是无常的时运」；</strong></p>
+<p>而这本《人的行为》也是本次溯源比特币本质的一条必经之路。</p>
+<h2 id="httpschendongzeoss-cn-shanghaialiyuncscomipic6cr9tpng"><a href="#httpschendongzeoss-cn-shanghaialiyuncscomipic6cr9tpng"><i></i></a><a href="https://chendongze.oss-cn-shanghai.aliyuncs.com/ipic/6cr9t.png" data-fancybox="gallery" data-caption=""><img src="https://chendongze.oss-cn-shanghai.aliyuncs.com/ipic/6cr9t.png" alt=""></a></h2>
+<p>关于回归定理，米塞斯早在他 1912 年出版的《货币和信用理论》中就曾提出了回归定理的概念。稍微通俗的表述就是：</p>
+<p><strong>「货币的供需关系决定了货币的购买力强度，今天的供需关系决定了今天的购买力，而今天的供需关系是被昨天的购买力所决定，以此向前类推，可追溯到货币第一次具有交换价值的那一刻，在那之前，它还具有一定工业价值」。</strong></p>
+<p>而米塞斯从《货币和信用理论》中提出回归定理之之时，经过了三十二年，米塞斯又在《人的行为》中用行为学对回归定理再次做出了解释。</p>
+<p>关于行为学，别指望仅靠阅读我这篇浮皮潦草的文章就能深入理解，它更需要通读米塞斯之后的逻辑推演与反复思考。</p>
+<p>而我的任务，就是在行为学、比特币、回归定理之间建立起来一个彼此关系，帮助我们发现比特币的本质。接下来我们就来梳理下三者的关系。</p>
+<h2 id="httpschendongzeoss-cn-shanghaialiyuncscomipichg5jxpng"><a href="#httpschendongzeoss-cn-shanghaialiyuncscomipichg5jxpng"><i></i></a><a href="https://chendongze.oss-cn-shanghai.aliyuncs.com/ipic/hg5jx.png" data-fancybox="gallery" data-caption=""><img src="https://chendongze.oss-cn-shanghai.aliyuncs.com/ipic/hg5jx.png" alt=""></a></h2>
+<p>根据行为学所言，人是自利的。这是探讨人之行为的出发点。如果你要问人为什么是自利的？对不起，这是一个极据（Ultimate Given），也就是人类现有所能硏求到的知识极限。就像光速为什么是三十万公里每秒一样，是个极据。</p>
+<p>一个人的行为总归是增进他的满足。消除他的的不适之感。</p>
+<p>即使这个行为的直接目的是改善别人的生活情况，也是自利的行为。因为行为者认为使别人吃的好比自己吃的好更让自己舒服。行为者的不适之感是由于看见别人饥饿引起的。</p>
+<p><strong>而人之行为，总归是消除自己的不适之感。并且这个不适之感完全来自行为者自身的感受，其他人无法评价。</strong></p>
+<p>而由于每个人的不适之感不同，消除不适之感选择手段也就不同，行为就会不同。即使不同的人彼此面对同样的事物，掌握了同样的资料，他们的对这个事物的评价也会不同。</p>
+<p>而对于比特币市场，正是由于人之差异，彼此的不适之感受不同，于是在同一时刻对同样一枚比特币也有不同的评价。而交易就可以同时消除双方的不适之感受。比如对于一位比特币的买方，多一枚比特币是要比不少掉 6 万美金更能增进他的满足的，而对于卖方则正好相反。</p>
+<p>而正是由于比特币交易者彼此之间各不相同的个体行为，才形成了这波谲云诡的比特币交易市场。</p>
+<h2 id="httpschendongzeoss-cn-shanghaialiyuncscomipicyyws3png"><a href="#httpschendongzeoss-cn-shanghaialiyuncscomipicyyws3png"><i></i></a><a href="https://chendongze.oss-cn-shanghai.aliyuncs.com/ipic/yyws3.png" data-fancybox="gallery" data-caption=""><img src="https://chendongze.oss-cn-shanghai.aliyuncs.com/ipic/yyws3.png" alt=""></a></h2>
+<p>回归定理提到「货币的购买力是由货币的供需关系决定的」，这很好理解。比特币的总供应固定是 2100 万，而体现购买力的就是价格，价格是随供需关系而变。</p>
+<p>而回归定理还提到「今天的供需关系决定了今天的购买力，而今天的供需关系是被昨天的购买力所决定，以此向前类推」。</p>
+<p>关于这部分的解释，米塞斯在《人的行为》第十七章第四节的「货币购买力决定」中有所提及：</p>
+<p><strong>「因为行为总是把将来的情况做更好的安排，那么一个人在考虑取得或放弃货币的时候，他首先要注意的，自然是将来的货币购买力和物价情况。但是，他除了从刚刚过去的货币购买力的情况来考虑之外，他不能对将来的货币购买力做任何的判断。」</strong></p>
+<p>也就是说，行为人对于未来货币购买力的判断，只能依赖刚刚过去那一秒中的货币购买力知识。</p>
+<p><strong>假如我们把货币购买力的历史知识全部忘记，那么货币的发展历程就要从头开始。</strong></p>
+<p>所以说，一个货币的购买力是可回溯的，回溯到有人第一次想把这个货币作为交换媒介来保存的那一刻，而再之前，它一定是有一些工业需求的。</p>
+<p>那么接下来，我们来看看比特币是否满足回归定理。</p>
+<h2 id="httpschendongzeoss-cn-shanghaialiyuncscomipic45uy5png"><a href="#httpschendongzeoss-cn-shanghaialiyuncscomipic45uy5png"><i></i></a><a href="https://chendongze.oss-cn-shanghai.aliyuncs.com/ipic/45uy5.png" data-fancybox="gallery" data-caption=""><img src="https://chendongze.oss-cn-shanghai.aliyuncs.com/ipic/45uy5.png" alt=""></a></h2>
+<p>现在，让我们回到那篇 2010 年的帖子 –「比特币并不违反米塞斯回归定理」，来看看中本聪对这个问题的回答：</p>
+<blockquote>
+<p>作为思想实验，设想有一种贱金属像黄金一样稀有，但有以下的特性：
+▲ 单调的灰色。
+▲ 导电性不太好。
+▲ 不是特别硬，但是没有延展性或者不容易锻造。
+▲ 没有任何实用或装饰用途。
+以及一个特殊的、神奇的属性：
+▲ 可以通过通信信道传输。
+如果因为某种原因、以某种方式多少获得了一点儿价值，那么想要远距离转移财富的人可以买一些，传输出去，并让接收人把它卖掉。</p>
+</blockquote>
+<p>中本聪的回复非常精彩，中本聪把比特币当成了一种可通过通信信道传输的神奇的金属。这对我们理解比特币的本质至关重要。</p>
+<p>想想为什么元素符号为 AU 的金成为了长久以来的货币。</p>
+<p>主要原因有两点：</p>
+<ol>
+<li>金（Au）属于惰性金属，不容易发生化学反应</li>
+<li>金是稀有金属，其总量很难有爆发式的增加
+而金的其它特性，比如美观、导电性好、中子捕获能力强等，这些特性在使其成为货币的过程中，并不是加分项。</li>
+</ol>
+<p>那么假如现在存在一种神奇的金属，它具备比黄金更强的惰性、更稳定的的总量、并可以在通信信道传输。那么这种金属是否适合做货币呢？</p>
+<p>回答这个问题之前，我们先来理解下「可以在通信信道传输」这个特性，这理解比特币本质的关键。</p>
+<p><strong>我们可以这样理解：「比特币是一种特殊的金属，其本身就有质量转移的能力，而对于扮演货币角色的金属，质量的大小就是价值的多少，因此质量转移能力就相当于支付能力」。</strong></p>
+<p>在古代，如果我们想用金银做一笔做跨物理距离的支付，无非就是人马车船的运输。即使现在借助于互联网金融平台，但那也要依赖中心化服务器的。</p>
+<p>而比特币这种金属则不同，借助于区块链技术，它本身就有质量转移的能力，可实现夸物理距离的支付；这个而这质量转移能力与货币属性又是合二为一的。这就是理解比特币本质的关键。</p>
+<p><strong>比特币的本质就是一种惰性极强、总量稳定、且自身融合了质量转移能力的特殊金属。</strong></p>
+<p>我们再次回看米塞斯的假定，如果人类将货币购买力的历史知识全部忘记，将会怎样？</p>
+<p>那么必然的，货币的发展历程就要从头开始。而在成为货币的特质上，比特币确实是选项之一。</p>
+<p>而到底选择哪一个，金银、比特币、美元、人民币或其它？或者比特币会代替黄金么？这便不是我的任务了。就像米塞斯对行为学的表述那样：「行为学是中立的，他不涉及价值判断，而是陈述」。而我想要做的，同样是根据自己的所见所闻所学所想，将比特币的本质做一个陈述。</p>
+<p>至此，一起都如此清晰了。</p>
+<p>以上</p>
+
+    </div></div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+</body><style>body {
+      font-size:  17px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 600px;
+    }
+    .page {
+      line-height: 25.5px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

@@ -1,0 +1,257 @@
+<html><head><title>替代者：元宇宙的另一种可能 :: Reader View</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color: %light-color%;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color: %dark-color%;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color: %sepia-color%;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color: %solarized-light-color%;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color: %nord-light-color%;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color: %groove-dark-color%;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #93a1a1;
+  border-color: %solarized-dark-color%;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color: %nord-dark-color%;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] .tts-word {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  background-color: red;
+  height: 2px;
+}
+.tts-word.hidden,
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+</head>
+<body tabindex="1" data-images="false" data-mode="sepia" data-font="sans-serif" data-loaded="true" style="user-select: initial;">
+  <span></span> <!-- for IntersectionObserver -->
+  <a id="reader-domain" href="https://mp.weixin.qq.com/s/jnV6q0LPbGr-SYVvARxzMA">
+    <span>mp.weixin.qq.com</span>
+    <span>/s/jnV6q0LPbGr-SYVvARxzMA</span>
+  </a>
+  <h1 dir="auto" id="reader-title">替代者：元宇宙的另一种可能</h1>
+  <span dir="auto" id="reader-credits">老喻的</span>
+  <span dir="auto" id="reader-estimated-time">10-12 minutes</span>
+  <span dir="auto" id="published-time"></span>
+  <hr>
+  <div id="readability-page-1" class="page"><div id="js_content">
+                    
+
+                    
+                    
+                    
+                    <p><span>转眼已经是前年的事情，温哥华疫情开始严重，为防止可能的感染，我让妈妈住到楼下，与孩子们分开吃饭、生活。</span></p><p><span>人类社会从未像今天这样，在全球范围内展开以家为单位的隔离。我做了个思想实验，如果病毒继续进化，人类的隔离要进行到以个体为单位，世界会发生什么变化。</span></p><p><span>替代人是个有趣的构想，它兼具了可实施性与成本优势。我几乎没看过科幻小说，所以就能像不自知其傻的小孩子般，认真搭建了替代人社会的逻辑框架。</span></p><p><span>今天再看这个想法，仿佛是最近大热的“元宇宙”概念的另一种可能：</span></p><p><span><strong><span>用仿生人来实时映射真实的人。</span></strong></span></p><p><span>关于替代人的哲学与伦理问题，对比起AI、赛博人、意识上传来说，会更微妙。某种意义上，当代人人手一部智能手机，其实已经把自己关在一个盒子里了。</span></p><p><span>下文稍有改变，若你看过，就不必往下翻了。</span></p><p><span><strong>灵魂无法替代，</strong></span></p><p><span><strong>生死可以。</strong></span></p><p><span><strong>1</strong></span></p><p><span>假如你将来回忆起来，关于我的部分，我希望，是从这里开始。</span></p><p><span>那是我们第一次见面的前夜，故事发生在某个地下赌场，多年以后人们仍会说起。</span></p><p><span>传说中的主角凭借他的勇气和智慧，战胜了所有的对手。人们说他冷静得像个老无所依的牛仔，孤身一人走进酒吧，不曾有过半丝怯懦。</span></p><p><span><span>事实并非如此，我当时坐在</span><span>“平行宇宙轮盘”旁，怕得要命。</span></span></p><p><span>这是史前游戏“俄罗斯轮盘”的变形，史前的人们在左轮手枪里放入一发子弹，六个人轮流对着脑袋扣动扳机，直到有人中弹，其余的人分掉他的钱。<br></span></p><p><span><span><span>“平行宇宙轮盘”混合了物理世界和虚拟世界的游戏</span>形式和下注方法，</span><span>玩家们使用一种网络控制的银针。这种针极锐利，能够轻松扎穿人的手掌，人们称之为“银弹”。</span></span></p><p><span>最初的玩家并没有用“现实赌注”来玩儿这个游戏。大家会押上虚拟物品，或者直接押联盟币，用游戏程序来模拟左轮手枪。</span></p><p><span>后来有个年轻的小子偷看了一部叫《猎鹿人》的禁片，悄悄设计了一种真正的“银弹”，模仿左轮手枪里的真实子弹。</span></p><p><span>地下赌徒们发现，一旦随机性与现实连接起来，会产生一种完全不同的生理反应，手心出汗，汗毛立起，身体微颤。</span></p><p><span>这种感觉，再厉害的虚拟游戏也无法替代。</span></p><p><span>显然，在一个随机性被回收了的世界里，这是违法的。</span></p><p><span>全球联盟鼓励游戏，但是反对“真随机性”游戏，尤其是“现实随机游戏”。<br></span></p><p><span><span>“平行宇宙轮盘”的</span><span>每个玩家都可以途中加码，<span>假如你下的注没人敢跟，他们就要留下桌面的钱离开。</span></span></span></p><p><span>这是一个可以诈唬的游戏。</span></p><p><span>年纪小的孩子们会押上自己的最新款游戏手套，有时还会特别要求是限量款。大家在网络上下注，扣动扳机，倒霉的家伙会亲眼看着自己最心爱的玩具<span>在物理意义上</span>被“银弹”扎坏。<br></span></p><p><span>有时候，那些玩儿过火的家伙们，还会真的押上自己的指头，直到某人鲜血淋淋为止。<br></span></p><p><span>明明可以通过虚拟就能完成的游戏，为什么要冒肉身的风险呢？这个逻辑和史前那些玩儿极限运动的家伙们一样。<br></span></p><p><span>那晚是我的孤注一掷。当希望、恐惧和绝望一起发生时，往往会成为你记忆深处的某个难忘时刻，三者缺一不可。</span></p><p><span>第二天，你的那班飞船就会起飞，船票钱还差3000万，<span>我没有更多的选择。</span><br></span></p><p><span>那晚，我挑了新手较多的一个轮盘。</span></p><p><span>经过几轮下注，桌面上的筹码已经超过了我想要的钱。</span></p><p><span>轮到我下注，我已经用光了所有的筹码。</span></p><p><span>“嘿，你还打算押什么？手指吗？”一个左手缠着纱布的小子问。<br></span></p><p><span>众人一起笑。</span></p><p><span>我说：“眼睛。”<br></span></p><p><span>那九个人都愣住了。<br></span></p><p><span>从来没有人会押上自己的眼睛。</span></p><p><span>我旋转了“银弹”的方向，对准了自己的右眼。我有十分之一的可能性变成独眼。</span></p><p><span>我是个左撇子，假如只能有一只眼睛，最好是左眼。<br></span></p><p><span>接着，我转动了游戏里的轮盘。<br></span></p><p><span><span>其实，</span>90%是很高的胜率。</span></p><p><span>在史前岁月，人们在生活中遇到的确定性达到90%的事情并不多。</span></p><p><span><mark class="hghlght">关键在于赌注，一个损失大到令人无法承受的赌注，能够吓退对手</mark>。</span></p><p><span><span>即使我已走投无路，也不会去和大数定律作对。</span><span>如果用常规套路，哪怕玩儿上一整个晚上，我也很难赚到什么钱。</span></span></p><p><span><mark class="hghlght">我只能利用诈唬</mark>。<br></span></p><p><span>轮盘徐徐停下，我眼珠前的“银弹”啪嗒一声--<br></span></p><p><span>是空弹。<br></span></p><p><span>我后面的那个小子没有跟，再后面的也没有。<br></span></p><p><span><mark class="hghlght">我运气太好了，这一桌只有一个疯子。</mark><br></span></p><p><span>我收下了桌面的全部筹码，刚好超过3000万。</span></p><p><span>怯懦之下方为勇气，不确定时才有机会。<br></span></p><p><span><strong>2</strong></span></p><p><span>那晚之后，将是我此生中最美好的一天。</span></p><p><span>我俩会第一次“真正相见”，也是最后一次。</span></p><p><span>这么说似乎对我们之间18年的相处岁月不公平。</span></p><p><span>从你出生到长大成人，我们几乎一直在一起，我比你的父母和你还要亲近。</span></p><p><span>尽管有人对“替代者计划”略有怀疑，但人们已经完全适应了这个全新的世界。</span></p><p><span>从医生到心理学家，甚至包括哲学家，都认为新世界与史前毫无区别。<br></span></p><p><span>不管是在心理上，还是在生理上，甚至是在灵魂上。</span></p><p><span>的确如此，当我从你妈妈（其实是她的替代人）的怀中接过初生的你（尽管也是你的替代者）时，这个婴儿几乎是百分之百真实的，柔软，炙热，仿佛能够融化一切。<br></span></p><p><span>然而，无论“替代人世界”多么完美，有些人注定是要逃离的。</span></p><p><span>自打你生下来就与众不同，我知道这一天早晚会来到。</span></p><p><span>你对我说过，自己会在18岁的那一年离开。<br></span></p><p><span>“我会悄悄地离开，你、爸爸、妈妈的盒子里的那三个和我一模一样的替代人，会继续和你们在一起，你们丝毫不会觉察，这样，我也不至于太内疚。”你认真对我说。</span></p><p><span>尽管，事实上你是通过映射在我盒子里的那个“你”来和我说话的。<br></span></p><p><span>见字且如晤，何况那个与你一模一样的替代人太逼真了，甚至比我在镜子里看到的自己还要逼真。<br></span></p><p><span>我说：在你成年的那一天，不管你想要什么，我会送你一样礼物。我只求你，永远不要悄无声息地离开。</span></p><p><span>有时候，望着你，觉得你可能是个永远不会长大的孩子。</span></p><p><span>有时候，你如一组时光的快照，18年一晃而过。</span></p><p><span>今天，时间已到。<br></span></p><p><span>我换上了一双没有芯片的跑步鞋，戴上了一块黑市淘来的纯机械手表，对准时间。</span></p><p><span>我打开了客厅南侧的窗户，确切说，是砸开了那块以假乱真地显示着那棵30岁枣树的显示器。紧促的警报声立即响起。</span></p><p><span><span>这是</span><span>第一步：我冲出盒子。</span></span></p><p><span><span>第二步，</span><span>我去休斯敦接上你。</span></span></p><p><span><span>第三步，我们飞去</span><span>墨西哥湾，赶今晚最后一班火箭。</span></span></p><p><span><span>计划并不复杂，</span><span>最大的难题在于</span><span>：破解你所住盒子的报警系统，然后接上你。</span></span></p><p><span>一个盒子，一个生命，这是盒子的第一设计原则。<br></span></p><p><span>一旦你离开自己的盒子，系统会迅速感知，我们将被机器人保安逮捕。<br></span></p><p><span><strong>3</strong></span></p><p><span>盒子，是一个天才的构想。</span></p><p><span>2050年，距离全面实施“全球个体隔离计划”已经20年了。</span></p><p><span>23年前，全球联盟执行长盖茨坚信人类无法抵御病毒的第六波进攻。他认为唯一的方法是：</span></p><p><span>将隔离计划升级为让每个人单独封闭于一个纳米级洁净空间。<br></span></p><p><span>经过13年的艰苦卓绝的斗争，以家庭为单位的隔离计划彻底失效了，快速演化的病毒变得像花粉一样，在空气中无处不在。</span></p><p><span>在尝试了用量子计算和基因重组等技术暂时阻挡了病毒的第五次进攻之后，全球联盟启动了最后的堡垒计划：</span></p><p><span>单独隔离全世界的每个人。<br></span></p><p><span><span>生产和生活物资已经不是问题。</span><span>量子计算加速了奇点的来临，AI在绝大多数领域已经超过了人类。</span></span></p><p><span>让每个人单独生活在一个盒子里，技术上成为可能。</span></p><p><span>人类社会用智能机器人代替自己工作，人类则躲在几乎无尘的盒子里。机器人生产各种富足的物资，食物，玩具，咖啡，纸巾......然后送到盒子旁，并更新电池，清除垃圾。<br></span></p><p><span>“全球个体隔离计划”绝非实施残忍的单人牢狱，因为其中一个极为重要又极其聪明的发明--“替代人”，世界反而变得更加美好了。</span></p><p><span>事实上，在经历了多年隔离之后，人类已经习惯了以家庭为单位来生活。</span></p><p><span>从家庭隔离到个体隔离，最大的挑战是家庭成员的分离。</span></p><p><span>地球联盟的AI实验室研发出一种以假乱真的替代机器人，可以与真人建立起一种映射关系。<br></span></p><p><span>比方说，一家四口，父母姐弟，每个人都被单独隔离在不同的空间里，然后，配备另外的三个“家人”的替代者。</span></p><p><span>以父亲为例，全球联盟为他准备了替代人妻子、替代人女儿和替代人儿子。</span></p><p><span>而他的真实的妻子，在另外一个单独的隔离空间里，拥有替代人丈夫、替代人女儿和替代人儿子。</span></p><p><span>一家共有四个独立<span>空间，每个盒子里都有一个真人和三个替代人。</span></span></p><p><span><mark class="hghlght">替代机器人并非简单模拟真人，而是与真人完全建立起一种实时的“映射”</mark>。<br></span></p><p><span>所以，在四个不同的隔离空间里，发生着一模一样的事情，不管从理论上，还是从体验上，父母姐弟几乎都还算是生活在一起。<br></span></p><p><span>同时，完全屏蔽掉了病毒在人和人之间的传播。</span></p><p><span>在人们搞懂时空之谜之前，替代人是个天才般的构想：</span></p><p><span>沿着同一个时间轴，将同一个空间拆成数个，然后通过映射关系，整合到同一条故事轴上。<br></span></p><p><span>天衣无缝，而且成本极低。</span></p><p><span>据一个由真人和超级AI联合组成的研究机构调查表明，人类的幸福度反而增加了。<br></span></p><p><span>原因之一是，在真人和替代人的映射之间，有个一秒左右的“混乱调谐器”，用于缓冲可能产生的不确定性。例如家人之间偶然的情绪失控与争吵。<br></span></p><p><span>由于人类的一切都独自在单独的盒子里发生，超级智能稳妥有序地接管了人类繁杂事务，战争、犯罪、贪婪、污秽，似乎一夜之间全部消失了。<br></span></p><p><span><span>全球联盟因此做出一个决定：</span><span>人类不再需要随机性了。</span></span></p><p><span>在一个极度安稳而美好的世界里，人们可能的随机性，以及由此引发的欲望，会破坏那些牢不可破的个体隔离盒子。</span></p><p><span>全球联盟委员会认为，只有建立全新的伦理体系，才能让人类安全渡过这次有史以来最急促的生活颠覆。<br></span></p><p><span>经过一场彻底的文明革新，随机性作为一种概念，被消除了。</span></p><p><span>科技进步所需要的随机性，完全可以由超级AI模拟，丛林时代的人肉试错不再需要了。<br></span></p><p><span>全球联盟回收了绝大部分不必要的随机性。</span></p><p><span><mark class="hghlght">随之而来的，是一场“消除不确定性”启蒙运动，人们骄傲地宣称去除了随机性，类似于车祸、雷劈等飞来横祸，以及别人中了头奖等令人不快之事，全部成了历史。</mark></span></p><p><span>个体安居于确定性的盒子里，无害的“伪随机性”仅被允许出现在虚拟游戏里。</span></p><p><span>2040年，成为人类新元年。</span></p><p><span>此前，被归为史前文明。</span></p><p><span><strong>4</strong></span></p><p><span>整个逃离计划里，最让我激动不已的环节，将发生在第二步。</span></p><p><span>那时我会在你的盒子的“屋顶”，把你拉出来。<br></span></p><p><span>前后也许只有3秒。在我漫长的一生，从未对如此短暂的瞬间这般期待。</span></p><p><span>你还记得我们一起在屋顶看星星的那个夜晚吗？</span></p><p><span>那天晚上，银河系像是圣诞树上电压不稳的彩灯，忽明忽暗，仿佛无边的黑暗中有个生命在呼吸。</span></p><p><span>我哼起了《露西在缀满钻石的天空》。</span></p><p><span>你听我讲过南方古猿“露西”的故事，于是问：</span></p><p><span>“外公，为什么最后智人吃光了尼安德特人？”</span></p><p><span>我说：“尼安德特人只是灭绝了。”</span></p><p><span>你摇头：“不，一定是吃光了。人们很容易把另外的物种当作食物。”</span></p><p><span>你这个从小就和别人不一样的男孩，永远有自己的想法。</span></p><p><span><span>我说：“</span><span>因为信仰，共同的信仰，将人类聚集和连接在一起。”</span></span></p><p><span>你问：“尼安德特人没有信仰吗？”</span></p><p><span><span>我答：“</span><span>有。但他们不会讲故事。”</span></span></p><p><span>你翘起腿，双手枕在脖子后面，说：“也许这个解释就是故事的一部分。”</span></p><p><span>我问：“那你觉得原因是什么？”</span></p><p><span>你说：“有本书说尼安德特人灭亡是因为他们的眼睛太大，需要利用过多脑部空间去处理视觉信息，这让他们在进化过程中处于劣势。但我认为，原因只有一个......”</span></p><p><span>你顿了一顿，斜过来看着我，说：<br></span></p><p><span>“因为智人更残忍。”<br></span></p><p><span>我不知道眼前这个刚刚成年的男孩，是因为青春期的叛逆，还是别的什么原因，才说出这番话。这和学校教的不一样，与我试图去影响你的，也不一样。<br></span></p><p><span>我坐了起来，对你说：“我想给你讲个故事。”</span></p><section><p><span>“故事发生在远古时代，主角是两个绝顶聪明的人类，一个叫凯恩斯，一个叫哈耶克，他们都是经济学家，对了，经济学家是一种绝迹了的远古职业，你可以把他们想像成哲学家吧，或者就是你玩儿的游戏里最厉害的大师。”<br></span></p><p><span>你侧过头来。</span></p><p><span>“那时是1942年，世界上正在发生着一场可怕的战争。好人炸了坏人的古城，于是坏人也要炸好人的古城。其中就有剑桥大学的国王学院。<br></span></p><p><span>坏人的轰炸机瞄准古建筑扔燃烧弹，让那些华丽的哥特式教堂变成火海。所幸的是，燃烧弹有时候不会马上爆炸，所以，可以将其扔到墙壁外，让损失减小。</span></p><p><span>于是，国王学院的教授和学生们，轮流在教堂的屋顶巡逻，以铁铲为武器，仰望天空，等待坏人的轰炸机飞来。<br></span></p><p><span>这其中，就有凯恩斯和哈耶克，全体人类最有价值的两个头脑。凯恩斯当时年近60岁，哈耶克41岁。他们手握铁铲，准备在燃烧弹落在屋顶时冲上去。”</span></p></section><p><span>你对这个故事很感兴趣，也坐起身来，说：</span></p><p><span>“可是游戏里不会有这种愚蠢的设计，最厉害的大师只会在最后关头出现，不会为仅有象征价值的古老建筑冒生命危险。而且虚拟技术可以恢复所有年代的任何古老建筑。”<br></span></p><p><span>我望着你说：“永远会有人愿意为别人牺牲。这可能才是智人流传下来的原因。”<br></span></p><p><span>你盯着我，认真地说：“我不要你为我牺牲，否则我宁可一辈子都在这个盒子里。”</span></p><p><span>你又问：“你讲的故事是真的吗？”<br></span></p><p><span><span>我说：“人类不仅会讲故事，还会去亲身创造这些故事。那两个Master，真的曾经站在古老的屋顶，试图去用生命捍卫他们在意的价值。</span><span>是真的、活生生的生命。不是游戏里可以重来的那种。”</span></span></p><p><span>你望着我说：“那么，什么是真正的屋顶呢？”</span></p><p><span>我关掉银河模拟，家庭厅的白色天花板和水晶灯又回来了。</span></p><p><span>我们并没有在真正的屋顶。整个房子的四面全是显示屏，它们可以栩栩如生地模拟任何场景，星空，草地，森林，湖泊，大海，街道，学校，后巷，动物园......</span></p><p><span>但更多时候，显示屏模拟房子本身。<br></span></p><p><span>5</span></p><p><span><span>我们终将在一个真正的“屋顶”相逢，即使那一刻你我都无暇仰望星空</span><span>。</span></span></p><p><span>极少有孩子会问“什么是真正的屋顶”，就像几乎没孩子去关心真正的星空是什么样子。<br></span></p><p><span>他们从小就在一个无所不能的盒子里出生，在这个盒子里他们能够得到具有确定性的一切必备物资，包括和最亲密家人们在一起。<br></span></p><p><span>确切说，是家人们的替代人。可是，假如孩子一出生，就处在这样一个世界里，他们丝毫不会感到奇怪。<br></span></p><p><span>相反，像你这样问“什么是真正的屋顶”，这才奇怪呢。<br></span></p><p><span>孩子的世界和我们不一样。在我看来，一切似乎是慢慢发生的。<br></span></p><p><span>就像你去看日本海啸的视频，海浪似乎并不是那么高，速度也不是那么快，一切似乎都是慢镜头，车辆看起来有机会顺着马路跑掉，行人好像也还来得及爬到建筑的高处。<br></span></p><p><span>可事实并非如此。缓慢的海浪冲上岸，如蟒蛇般静静地将一切卷入，人、车、房子都毫无声息地消失在小小的浪花中。</span></p><p><span>全球个体隔离计划，也和海啸一样缓慢而决绝。<br></span></p><p><span>起初，一个北欧国家开始实施“垂直隔离”，四十岁以下可以自由工作生活，四十岁到六十岁之间的半隔离，六十岁以上则实施全面隔离。</span></p><p><span>盒子是为老人设计的。<br></span></p><p><span>此前，在漫长的居家隔离岁月里，人们习惯了以家庭为单位的生活。为了安全，老人通常住在地下室，尽量与孩子隔开。即使住在一起，其实大家也很少会面。<br></span></p><p><span>替代人是一个伟大的发明，独自在盒子里的老人，终于可以和孙子孙女一起玩耍，和家人们一起吃饭，看电视。尽管并非真人，但是感谢科技，一切如此真实，而且似乎比真实的更加美好。</span></p><p><span>技术上的最后一个难点，是真人与替代人的眼神对视。理论上说，只要可以100%复制真人的眼球到替代人的眼球，就可以实现。<br></span></p><p><span>然而，眼神似乎是“意识”的影子，真人总能从真的眼神里读出些什么，而替代人则不能。后来，一位史前做过摄影师的实验员提出：增加替代人眼珠里模拟光泽的投影仪的流明，数值达到了真人眼球光泽真实数值的近两倍，才勉强过关。<br></span></p><p><span>替代人与真人的实时而精确的映射关系，结合了科技、人性和商业成本的优势，开发机器人的公司在人工智能的设计上，有更大的回旋空间。</span></p><p><span>此前，不管机器人被设计得多么聪明，智能模型多么强大，就是没法做到像个真正的人。</span></p><p><span>人是一种很会自我欺骗的动物，当你身边的替代人，与自己的亲人长得一模一样，行事方式一模一样，说话一模一样，你会渐渐觉得就是和他们在一起。</span></p><p><span><span>只有极少人表示怀疑，</span><span>一个真人经由复制人映射，已经不是“他自己”了。假如还是的话，一个真人可以同时映射几个复制人，假如这几个复制人分别与不同的异性交往，那么如何理解自我意识的唯一性呢？</span></span></p><p><span>反驳者说，首先技术上映射是一个人状态的完全复制，所以几个复制人不可能做到以不同的言行，与不同的异性交往。</span></p><p><span>可是，有想法，就会有实现者。有一家地下黑客公司，专门为一些人格分裂者提供“非即时”的映射服务。</span></p><p><span>例如，有个花花公子在三个时区利用三个不同的复制人，与三个国家的女性交往，他利用时差，以及自己旺盛的精力，在地下黑客公司的帮助下，成功实现了肉体和灵魂的分裂。</span></p><p><span>绝大多数人接受了（或是习惯了）“替代人计划”。</span></p><p><span>我们通常说这个世界的时间和空间都具有唯一性，“替代人计划”像是沿着同一个时间主线，将空间拆分了，但最后各个空间的故事线仍然重叠在一起。<br></span></p><p><span>多么完美的构想啊！</span></p><p><span>以家庭为单位的隔离，事实上降低了空间拆分的成本。例如，假如你想拆分一个学校，那就太难了。假如一个学校人数为n，就需要n个空间，以及每个人都需要（n-1）个复制人。</span></p><p><span>有些理论更完美，数学表达更精确，例如“平行宇宙”，但是“成本”太高了。</span></p><p><span>而且，家庭才是一个人存在于这个世界的基本单元。在漫长的居家隔离岁月里，地球人早已习惯了在家里搞掂一切。</span></p><p><span>随着病毒的不断演变，比“家庭隔离”更激烈的“个体隔离”势在必行，替代人计划，一点点推广开来，温和得让你感觉不到。</span></p><p><span>就像一场平静的海啸，从一个小小的角落开始，最终覆盖了整片大地。</span></p><p><span>绝大多数人甚至忘记了，自己真正的亲人正孤零零地生活在另外一个遥远的盒子里。</span></p><p><span>当你们这一代人来到世界上时，用于个体隔离的盒子，已经是一种出厂设置了。</span></p><p><span>你们生于盒子，从未走出过盒子，此生可能会一直在这个盒子里。</span></p><p><span><strong>6</strong></span></p><p><span><span>计划的第三步，我们飞去</span><span>墨西哥湾，赶当晚最后一班偷渡火箭。</span></span></p><p><span>每年，世界上都有一千多名青年偷渡。</span></p><p><span>他们的目的地是火星。偷渡组织从太平洋的某个偏僻小岛发射火箭，飞往月球。经过一个月的隔离处理后，再前往火星。<br></span></p><p><span>火星殖民地早已落成，然而，对于移民火星的价值和意义，地球上的人们吵成一团。<br></span></p><p><span>反对者认为，移民火星的成本太高，即使到了火星，人们有可能还是关在玻璃房子里。<br></span></p><p><span>支持者认为，经由月球中转再飞往火星，可以让人类彻底摆脱事实上已经占领了地球的病毒。<br></span></p><p><span>反对者还设计了一个登陆火星游戏，人们在逼真的虚拟游戏中完全体验了整个过程，90%的游戏者在假装登陆火星后，不到一个星期，就选择了进入一个和地球上一模一样的盒子。<br></span></p><p><span>游戏的最后有一段插入广告：“每个冒险后的孩子最后都要回家。”<br></span></p><p><span>你不相信这个广告。<br></span></p><p><span>我问你为什么想去火星，你说：</span></p><p><span>“我想爬上真正的屋顶，想在火星表面打滚。最主要的是，我想和真正的你在一起。”<br></span></p><p><span>“真正的我？”我一时间有些恍惚，作为一个随机性黑市的常客，一个沉迷于史前文明的胡思乱想者，我居然无法确认：</span></p><p><span>什么是“真正的我”？<br></span></p><p><span>你认真说：“真正的星空，真正的大地，真正的你。”<br></span></p><p><span>为什么你选择与外公一起，而不是你的亲生父母？<br></span></p><p><span>尽管你的父母是与对方的替代人make love，然后生出了你，但你的确是由父亲的精子和母亲的卵子受精而成。<br></span></p><p><span>难道仅仅是因为你是培养盒而非母胎孕育而生？难道是因为像你这样一个真正的敏感的人类孩子，能够感知到真切抚摸你的父母的双手是无法经由替代人来传递的，哪怕那些手，那些力量，那些温度丝毫不差？</span></p><p><span>又或者是因为，我的基因隔代之后在你的身上被神奇唤醒了？</span></p><p><span>总之，你从小就有一种特别的忧郁和虚无感。即使是隔着替代人，当我把你搂在怀里仰望星空时，都能感受到这一点。<br></span></p><p><span>我们一起嬉戏，一起打游戏，一起发呆，像两个兄弟。</span></p><p><span>你说：“外公，我想和你一起。我们一起去火星。去一个跳出盒子的、不确定性的世界。”</span></p><p><span>你遵守了承诺，向我敞开了自己的内心。</span></p><p><span>现在，该我兑现给你的成人礼。<br></span></p><p><span>就是那晚，我孤身走进赌场，押上自己的右眼，为你换来一张船票，并在第二天见到你--第一次，也是最后一次。</span></p><p><span><strong>7</strong></span></p><p><span><strong><span>第一步：我离开盒子。</span></strong></span></p><p><span>“一个盒子，一个生命。”这同样是我的枷锁。<br></span></p><p><span>然而，这一步我已有解。<br></span></p><p><span>《天龙八部》里，虚竹解珍珑棋局，靠的是杀死己方棋子。</span></p><p><span>我的解法是，不戴防护面罩，直接砸开盒子。</span></p><p><span>即使是偷渡者，也不会这么做。</span></p><p><span>因为，根据医学论文的报告，破损的盒子外的病毒会在三十分钟内入侵我的体内。<br></span></p><p><span><span>我的</span><span>皮下监视感应器会提前通知控制中心，系统会将此视为泄漏事故，紧急，但不严重。</span></span></p><p><span>辖区内的急救机器人将会在五分钟内赶来，把我塞入防护服，放进隔离舱，运往急救中心。</span></p><p><span>同时，我与替代人之间的“映射”临时中断，替代人进入自动驾驶状态，模拟我的日常言行。除了外孙，我的家人不会有什么觉察。</span></p><p><span>这正是我想要的。<br></span></p><p><span>约二十分钟后，一家地下黑客组织会派出一个打劫机器人，在途中劫持运送我的急救机器人。</span></p><p><span>入侵盒子，是重罪。<br></span></p><p><span>而劫持急救机器人则相对容易得多，要价也低。</span></p><p><span>请原谅没有告诉你，我会以这样简单粗暴的方式来完成第一步。</span></p><p><span>随后，被挟持的急救机器人，载着我一路从北美西岸飞往休斯敦。<br></span></p><p><span><strong><span><span>第二步，带</span><span>你<span>离开盒子。</span></span></span></strong></span></p><p><span>你的盒子，位于休斯敦西侧的一个基地，与你爸爸妈妈以及我的三个替代人生活在一起。</span></p><p><span>你不用冒着危险砸开盒子。作为一名计算机天才，你发现了漏洞：盒子位于二楼主卧衣帽间的顶部，有一个隐蔽的活动结构，只有超级AI云才有权限控制这个应急暗道。<br></span></p><p><span>“唯一的麻烦是，”你说：“当我从这个打开的暗道爬到屋顶，盒子的感应器会立即感知里面唯一的有机生命体消失了，报警系统马上会响。”<br></span></p><p><span>我说：“让我来解决这个麻烦。”<br></span></p><p><span>你说：“我也可以远程帮你打开你的盒子的隐蔽出口。”<br></span></p><p><span>“不。”我摇头，“我已经有更好的安排。”<br></span></p><p><span>我们必须要有一个急救机器人，否则即使出了盒子，哪里也去不了。<br></span></p><p><span>我计算过无数次，让自己感染，是最优解。</span></p><p><span>第一步是为了第二步、第三步。</span></p><p><span>45分钟后，我和急救机器人飞到了休斯敦的基地，那里曾经是一片农田，一个个被太阳能电池覆盖的盒子密密麻麻地排列着。<br></span></p><p><span>我隐约觉得病毒正在进入自己的肺部，不由得深深呼吸了一口。<br></span></p><p><span>飞行急救车悬浮在你的那个盒子的上方，吹起一片尘土。<br></span></p><p><span>盒子上面打开一个盖子，我跳下急救车，拉起你。</span></p><p><span>三秒，两秒，一秒。<br></span></p><p><span>我此生的时刻啊。</span></p><p><span>随后，我把你推上急救车，然后踢上盖子，再爬上急救车，劫匪机器人赛车手般迅速地带着我们离去了。</span></p><p><span>你穿着早就准备好的防护服，注视着头罩后的我，说：<br></span></p><p><span>“嘿，真正的你！”<br></span></p><p><span>是的，就在刚才，真正的我，在一片迷雾中，拉起了你这个真正的男孩。</span></p><p><span>在过去18年，我无数次地抚摸过你清秀的面庞，牵过你从小到大的手掌，亲吻过你柔软的嘴唇，但从来没有像刚才那样真实，哪怕是隔着厚厚的衣服，哪怕尘土漫天。<br></span></p><p><span>“好样的！”我和你击掌。</span></p><p><span>你伸出食指，想了想，说：“警报没响，按理说三秒后盒子就会报警。你怎么做到的？”</span></p><p><span>我说：“很快你就会知道。”</span></p><p><span><strong><span><span>第三步，</span>赶今晚最后一班火箭。</span></strong></span></p><p><span>接应的潜艇将在墨西哥湾的一个断崖边等候。</span></p><p><span>劫匪机器人将我们放在海边两公里的地方，那是一片警戒区，两个静悄悄的人，要比飞行车安全得多。</span></p><p><span>傍晚的海边，枯黄的草地上长满了紫色的野菊花。</span></p><p><span>我，和我的那个真正的小男孩，肩并肩奔跑着，像是两个嬉戏的男生，你追我赶，快乐得不像在逃亡。</span></p><p><span>在真正的大地上。</span></p><p><span>“嘿，你是说，待会儿我们要从悬崖上跳下去吗？”你边跑边问。</span></p><p><span>“是的，我们必须跳进大海中，才能获救。”我气喘吁吁地答。</span></p><p><span>“有个问题，一会儿我们的冲刺速度，百米大约是13秒，我算过悬崖的高度和礁岩的大小，我们可能会摔死在石头上。”</span></p><p><span>“你漏了一个数字，我看过天气预报，今晚有70%的概率刮六级强风，风速每秒12米！”</span></p><p><span>“嘿，70%？你这个老赌徒！”</span></p><p><span>“所以，你相信我吗？”</span></p><p><span>“100%。”</span></p><p><span>距离悬崖还有30米，我们停下来，喘了会儿气，相视一笑，然后一起向前冲去，在巨大的岩石边一跃而起。</span></p><p><span><strong>8</strong></span></p><p><span>我撒谎了。</span></p><p><span>当晚的风速并没有六级，70%的概率也没有落在我们这一边。<br></span></p><p><span>随机性并不总是站在我们这一边。<br></span></p><p><span>你对了，假如按照抛物线计算，我们会落在礁岩上，摔得稀烂。</span></p><p><span>但是，你没计算到的是，当我们一同跃起时，我会在空中用力地推一把你的后背。</span></p><p><span>根据牛顿第三运动定律，你记得吧，是我教你的，我和你中间会出现大小相等、方向相反的作用力和反作用力。</span></p><p><span>这股力量并不大，但刚好够把你送到水里。</span></p><p><span>当你落水时，会害怕，会惊愕，潜艇里的人会救起你，并告诉你另外一个人重重地摔在了石头上，不会有任何生还的机会。</span></p><p><span>你会难过好一阵子，撕心裂肺那种，比“银弹”扎穿手指要痛得多，是你这辈子从来没有感受过的。</span></p><p><span>不久你就会看到我留给你的小纸条，然后更加愕然。</span></p><p><span>我撒谎了。</span></p><p><span>没有人能够破解你所住盒子的报警系统，一个盒子，一个生命，这是盒子的第一设计原则。</span></p><p><span>当我拉出你时，便迅速跳入了盒子，然后把你盒子里的“我的替代人”顶了出去。</span></p><p><span>不多不少，刚好三秒。</span></p><p><span>我购买的黑客服务，额外赠送了身份欺骗程序，盒子的报警系统不仅感知到了一个活生生的人，而且不会觉得换了人。</span></p><p><span><span>真有趣，</span><span>“真实的我”在盒子里成了“真实的你”的替代者。</span></span></p><p><span>随后，我的替代人将你举上飞行器，踢上盖子，和你一起飞驰而去。</span></p><p><span>然而，我一点儿都没错过和你一起high的时刻。</span></p><p><span>尽管我留在你的盒子里，但通过一个模拟器，我控制着我的替代人，一直和你在一起。</span></p><p><span>你知道吗？我真真切切地和你奔跑在长满紫色野菊花的真正的大地上，像是可以一直这样跑下去。</span></p><p><span>那一刻，我<span>手心出汗，汗毛立起，身体微颤</span>，差点儿相信灵魂也可以替代。<br></span></p><p><span>我没有错过和你一起在星空下跃起，没有错过属于我的英雄时刻。</span></p><p><span>当我全力推你一把时，我感觉自己像是100多年前在教堂屋顶上，举起铁铲，冲向即将爆炸的燃烧弹。<br></span></p><p><span>不要内疚。摔在岩石上的，只是我的替代人。</span></p><p><span>真正的我，在你的盒子里，在那个瞬间，也被逼真的模拟映射系统狠狠撞击了一下，痛得要命。<br></span></p><p><span>即使从潜艇来到火箭发射基地，你仍然不会平复自己的心情。你在余生都会记起这一刻，我期望如此。</span></p><p><span>我将在凌晨三点再次爬上屋顶，爬得很辛苦，并且不得不躺下来。</span></p><p><span>今晚有60%的概率晴朗。如果我运气足够好（好吧，今天我的好运气已经足够多了），我会在东南方向看到运送你和别的年轻人的火箭腾空而起，冲向真正的星空。</span></p><p><span>我希望你在火星上，习惯在床头看到我的照片，而不是我的替代人。</span></p><p><span>我是你的过去替代者，你是我的未来替代者。</span></p><p><span>孩子，将来你也许会知道，有了想守护的人，生命是多么值得。</span></p>
+                </div></div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+</body><style>body {
+      font-size:  20px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 900px;
+    }
+    .page {
+      line-height: 30.0px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

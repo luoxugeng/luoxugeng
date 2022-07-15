@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html dir="ltr"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <base target="_blank">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+  position: relative;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color:  #222;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color:  #eee;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color:  #5b4636;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color:  #586e75;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color:  #2e3440;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color:  #cec4ac;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #839496;
+  border-color:  #839496;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color:  #e5e9f0;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] ::selection {
+  background-color: #fff740;
+  color: #000;
+}
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+<title>其实男人更有消费力 :: Reader View</title></head>
+<body tabindex="1" data-images="true" data-mode="sepia" data-font="sans-serif" data-loaded="true" style="user-select: initial;"><h1 dir="auto" id="reader-title">其实男人更有消费力</h1>
+  <span dir="auto" id="reader-credits"></span>
+  <div id="readability-page-1" class="page"><div id="post-body-1339027352494890479" itemprop="description articleBody"><p>赚小钱靠女人，赚大钱必须要靠男人。</p><p>很多人说男人没有钱，太穷了。年薪10万的女人，全身名牌，年薪50万的男人，全身优衣库。从日用消费品层面确实如此，所有1万以下的日用消费品，女人的消费力绝对比男人强10倍。</p><p>但是如果因此你觉得男人没有消费力，想赚钱不用认识男人，那就大错特错了。</p><p>一个东西只要上了10万，主力消费群体100%都是男人。不管是汽车、还是房子还是飞机、游艇、甚至高端夜店，甚至就连高端月子会所，虽然是女人去住，但是掏钱的也都是男人。这个和中国的家庭财务结构也有关系——小钱女人管，大钱男人管。当然，大部分家庭没有大钱，造成了很多人认为中国的家庭都是女人管钱的错觉。</p><p>有的女人说自己生了三个孩子，现在家里钱她管，这也是她的付出获得的信任。<mark class="hghlght">这个和生几个孩子没关系——特别有钱的家庭，不可能让女人管钱，不管她生几个孩子。因为没赚过钱的人，没有能力管钱。管钱是需要能力的，投资是需要能力的，创业是需要能力的。</mark></p><p>真正有钱的人家，都是谁挣钱谁管，家庭开销女人管可以，大钱不可能让女人管的。家里开销，再有钱的人家，如果不算买车买房的钱，其实一年1、2百万足够了，就算请好几个保姆和司机，一年200万也足够了。这对特别有钱的家庭，都是小钱。</p><p><mark class="hghlght">真正有钱的家庭，大部分钱要么在公司里，要么在股票里，家里最多有1000到2000千万现金放着应急。不可能把2个亿取出来放家里让女人管</mark>。</p><p>实际上2个亿狠多了，90%的上市公司一年的利润都没有两个亿，几千个员工利润都没有2个亿，很多资产千亿的公司，公司每个月还完银行的钱，其实账上也就剩1个亿了。<mark class="hghlght">没赚过钱的人，张口闭口就是几十亿，那是放屁的，王健林也拿不出来几十亿现金。准确的说5亿他都拿不出来。</mark></p><p>男人的钱，一般是用来买消耗品的，不是用来买消费品的，比如车子房子，是消耗品，也是中国人一生中花钱最多的两个大件。要么就是用来做生意、进货、创业的，不是用来买衣服买包的。</p><p>你要想做个赚大钱的生意——那可是要花很多钱的。那可不是买个课买个衣服买个包，或者买个化妆品那么简单的。随随便便500万1000万甚至5000万1个亿就出去了。而且还不听响。做生意，5000万砸出去，连一个响声你都不一定能听到。</p><p>你要想找人合伙做一个投资2000万的生意，找女人一点用没有。只能找男人。女人拿不出钱来。就算她能拿出来，大部分有钱的女人，其实钱也是男人给的，你最后还是得跟男人聊，男人同意了才行，大钱她不敢做决定，一般都是男人做决定。</p><p>包括找合伙人也是，最好找男人。女人太麻烦。不是因为女人能力不如男人，而是大部分女人，即使能力很强，还是照顾孩子，还要听老公的话。没办法为了工作全力以赴。</p><p>那很多人会说——那找合伙人就找一个单身的女人啊。</p><p>这？当然也不是不可以。但是能力强的人，一般也都30岁左右了，就算她现在单身，后面马上就结婚生孩子了，也很麻烦。而且另外一方面吧，实话实说，女人的力量一般来自于男人，要么是她爸爸，要么是她老公，如果她单身，又不是富二代，那除非她能力特别强，否则也没必要。你想想，一个人得多优秀，他的能力才能远远超过同龄人啊。很难的。这种人大部分是男人。当然不是说女人没有优秀的，也有很多。但是不是一种优秀。</p><p>那很多人说——很多微商都是女人，很赚钱啊。很多微商老板也是女人啊。</p><p>我们认识的微商大老板可能比推上99%的人都多。见过面、吃过饭、聊过天的微商的大老板很多，而且基本上是国内一二线的微商大品牌，和之前的结论不冲突。只能说到这了。</p><p>总之——我并没有说女人不优秀。</p><p>我热爱女人。是一个热爱女人的男人。但是我的意思是说——很多女人，对男人有偏见，尤其是在各种女权思想的影响下，甚至还有很多人加女人不加男人。这是不好的。会限制你的发展。至少目前在全世界，不论哪个国家，最有钱的那批人，最顶尖的那批人，说白了还是男人居多。绝大部分国家、企业和财富，还是掌握在男人手里的。<mark class="hghlght">这不是一个倾向，这是一个事实。尊重事实，才能尊重世界。</mark></p>
+
+</div></div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+</body><style>body {
+      font-size:  20px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 900px;
+      text-align: justify
+    }
+    .page {
+      line-height: 30.0px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

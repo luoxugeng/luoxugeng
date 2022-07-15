@@ -1,0 +1,296 @@
+<html><head><title>聊聊大家关心的通胀、房产与股市 :: Reader View</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color: %light-color%;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color: %dark-color%;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color: %sepia-color%;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color: %solarized-light-color%;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color: %nord-light-color%;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color: %groove-dark-color%;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #93a1a1;
+  border-color: %solarized-dark-color%;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color: %nord-dark-color%;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] .tts-word {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  background-color: red;
+  height: 2px;
+}
+.tts-word.hidden,
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+</head>
+<body tabindex="1" data-images="true" data-mode="sepia" data-font="sans-serif" data-loaded="true">
+  <span></span> <!-- for IntersectionObserver -->
+  <a id="reader-domain" href="https://www.douban.com/group/topic/250073275/">
+    <span>www.douban.com</span>
+    <span>/group/topic/250073275/</span>
+  </a>
+  <h1 dir="auto" id="reader-title">聊聊大家关心的通胀、房产与股市</h1>
+  <span dir="auto" id="reader-credits"></span>
+  <span dir="auto" id="reader-estimated-time">1-2 minutes</span>
+  <span dir="auto" id="published-time"></span>
+  <hr>
+  <div id="readability-page-1" class="page"><div id="topic-content">
+      <p><a href="https://www.douban.com/people/216159123/"><img src="https://img1.doubanio.com/icon/u216159123-19.jpg" alt="山水居士"></a>
+      </p>
+
+      <div>
+        
+  
+  <h3>
+    <span>来自: <a href="https://www.douban.com/people/216159123/">山水居士</a></span>
+    <span>2021-10-17 10:10:47</span>
+  </h3>
+
+
+        
+
+
+        <!-- 正文内容 -->
+        <div id="link-report">
+    <div><p><img height="auto" src="https://img9.doubanio.com/view/group_topic/m/public/p500649466.webp" width="500"></p></div><div><p><img height="auto" src="https://img9.doubanio.com/view/group_topic/m/public/p500588215.webp" width="500"></p></div><div><p><img height="auto" src="https://img9.doubanio.com/view/group_topic/m/public/p500588264.webp" width="500"></p></div><div><p><img height="auto" src="https://img1.doubanio.com/view/group_topic/m/public/p500588199.webp" width="500"></p></div><div><p><img height="auto" src="https://img9.doubanio.com/view/group_topic/m/public/p500588226.webp" width="500"></p></div><div><p><img height="auto" src="https://img2.doubanio.com/view/group_topic/m/public/p500588212.webp" width="500"></p></div><div><p><img height="auto" src="https://img2.doubanio.com/view/group_topic/m/public/p500588291.webp" width="500"></p></div><div><p><img height="auto" src="https://img1.doubanio.com/view/group_topic/m/public/p500588277.webp" width="500"></p></div><div><p><img height="auto" src="https://img2.doubanio.com/view/group_topic/m/public/p500588242.webp" width="500"></p></div><div><p><img height="auto" src="https://img1.doubanio.com/view/group_topic/m/public/p500588229.webp" width="500"></p></div><div><p><img height="auto" src="https://img2.doubanio.com/view/group_topic/m/public/p500588223.webp" width="500"></p></div><div><p><img height="auto" src="https://img3.doubanio.com/view/group_topic/m/public/p500588250.webp" width="500"></p></div><div><p><img height="auto" src="https://img2.doubanio.com/view/group_topic/m/public/p500588203.webp" width="500"></p></div><div><p><img height="auto" src="https://img1.doubanio.com/view/group_topic/m/public/p500588218.webp" width="500"></p></div><div><p><img height="auto" src="https://img9.doubanio.com/view/group_topic/m/public/p500588256.webp" width="500"></p></div><p data-align="">四、个人建议
+计划当丁克的朋友在保证身心健康的同时，减少不必要的开支、制定合理的储蓄计划、并按照个人的实际情况设定好自己的未来目标才是关键（见文章：<a href="https://www.douban.com/note/789563207/" rel="nofollow">普世价值观下的标配幸福都是坑</a> ）。
+
+有儿女的朋友把教育的本质看明白（见文章：<a href="https://www.douban.com/note/800518474/" rel="nofollow">谈教育</a> ），即别焦虑地鸡娃也别鸡自己（见文章：<a href="https://www.douban.com/note/813584332/" rel="nofollow">成长过程的痛苦解析（共23页）</a>  ），孩子的未来与幸福不单单取决于这些，有健全的人生观、健康的体魄、强大的意志力与受挫力、良好的家庭关系、善于沟通的能力与积极乐观的心态才是TA终身的财富，而不仅仅是留给TA的钱与房产（这些往往造成了富不过三代的结果，人性使然）；可以想象一下在经济增速缓慢、充满变数的未来社会中，一个从小就被焦虑与内卷缠身的孩子长大后很难拥有美好的人生与健全的心理；能让TA扛过一次次挫折的是上面这些身心财富，而不是房本（房本对失恋、空心病、抑郁症并不管用）。因此，如果父母有条件在拥有自有住房与充沛现金流的前提下可以帮孩子挣一套投资性房产，如果没有条件也无需在目前的形势下去承担高负债、作接盘侠。作为父母，降低自身的欲望、增加充沛的现金流、保持好自己的身心健康（这点很重要）才是正途。</p><p data-align="">*这篇文章首写于五月，因为一些语句被屏了，后来有读者希望再发一遍（见下图），就做了某些删减，最后发在本组里。本文不是一篇专业的经济学文章，只是在我所观察与体悟到的一些规律，主旨是缓解大家对未来与FIRE的焦虑、把关注点放在当下，而不是把子孙与未来的问题都提前解决与算计完美，从历史的周期看这是很难的，我们能着眼预估的也就是未来一二十年的范畴（退一万步说如果真出现极端情况所有的财富储存形式也都丧失意义了）。希望能对大家有所帮助🙏。</p><div><p><img height="auto" src="https://img1.doubanio.com/view/group_topic/m/public/p502906677.webp" width="500"></p></div>
+  </div>
+
+        <!-- 来源、投诉按钮 -->
+        
+  
+  
+
+
+        
+  
+
+  
+
+    
+    
+
+      </div>
+      
+  
+  
+  
+  
+  
+
+    </div></div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+</body><style>body {
+      font-size:  20px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 900px;
+    }
+    .page {
+      line-height: 30.0px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

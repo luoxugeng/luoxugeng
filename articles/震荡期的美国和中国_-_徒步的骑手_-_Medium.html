@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <base target="_blank">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+  position: relative;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color:  #222;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color:  #eee;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color:  #5b4636;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color:  #586e75;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color:  #2e3440;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color:  #cec4ac;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #839496;
+  border-color:  #839496;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color:  #e5e9f0;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] ::selection {
+  background-color: #fff740;
+  color: #000;
+}
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+<title>震荡期的美国和中国 - 徒步的骑手 - Medium :: Reader View</title></head>
+<body tabindex="1" data-images="true" data-mode="light" data-font="sans-serif" data-loaded="true">
+  <span></span> <!-- for IntersectionObserver -->
+  <a id="reader-domain" href="https://medium.com/@caminodetexas/%E9%9C%87%E8%8D%A1%E6%9C%9F%E7%9A%84%E7%BE%8E%E5%9B%BD%E5%92%8C%E4%B8%AD%E5%9B%BD-f7fb206d4387">
+    <span>medium.com</span>
+    <span>/@caminodetexas/%E9%9C%87%E8%8D%A1%E6%9C%9F%E7%9A%84%E7%BE%8E%E5%9B%BD%E5%92%8C%E4%B8%AD%E5%9B%BD-f7fb206d4387</span>
+  </a>
+  <h1 dir="auto" id="reader-title">震荡期的美国和中国 - 徒步的骑手 - Medium</h1>
+  <span dir="auto" id="reader-credits">徒步的骑手</span>
+  <span dir="auto" id="reader-estimated-time">2-2 minutes</span>
+  <span dir="auto" id="published-time">2022/6/3</span>
+  <hr>
+  <div id="readability-page-1" class="page"><div><p></p><h2 id="4616" data-selectable-paragraph="">震荡期的美国和中国</h2><p></p><p id="787c" data-selectable-paragraph="">这十年是观察中国和美国政治、社会和民情的绝佳窗口。这两个国家在政治稳定性、社会开放程度和民众精神世界的文明程度方面，都不在一个历史时段，有些现象表面看起来类似，但没有多少有实质意义的可比性。前些天跟一位朋友聊天，说起来像样的民主都不是一个突发的事件，而是一个漫长的过程。</p><p id="42c5" data-selectable-paragraph="">美国这个国家事实上是在内战之后才算大致成形，民主进程经过第十四（1868）和第十九修正案（1920）后才算在宪法层面告一断落，但在社会层面形成民众共识是在二战之后，大致是从政治、法律和学界精英开始，逐渐向中产阶级和底层民众蔓延。这是个漫长的进程，目前这个进程仍然在持续，震荡程度已经大为减弱，不但跟内战前后的惨烈没法比，跟1960年代民权运动时期的动荡也没法比。这些年，很多靠说话揾食的人不断讲，美国政治极化，民间冲突“前所未有”，很多人没有历史记忆，跟着传来传去。内战和民权运动时的冲突和引起的社会震荡都比这几年要猛烈，所谓“前所未有”，不符合历史常识。</p><p id="2882" data-selectable-paragraph="">川普折腾四年，撼不动美国行政系统的职业传统，灰溜溜下台。反观中国，稍微正常一点也不过几十年，就重新进入震荡期，行政系统没有什么职业传统，任何一个人，不管有多愚蠢，只要被放到权力的位置上，足够蛮横，都能把那个系统弄成木偶，中产阶级鼠目寸光，底层群众自私冷漠，随时进入上下共震的局面。</p><p id="2b4a" data-selectable-paragraph="">人身自由、个人权利、民主选举、人人享有基本的尊严等是现代文明的核心价值。美国是经历了两百多年，才从只让一小部分人享有这些东西，逐渐进步到让所有民众共享，至少在法律、制度和人心层面是这样。所以，现代文明化不是一个事件，而是一个漫长的过程。在天朝，这个现代文明化的进程还没开始。可能发生过个别的事件，像六四，只是进入现代文明化门槛多次难产中的一次。事件可以是偶发，有很强的偶然性，需要历史机缘，甚至阴差阳错，才可能发生，但现代文明化的进程不可能靠偶然性持续，事实上也没有哪个现代文明国家是靠偶然的一个或几个事件发展到现在，而是有更广泛和深厚的社会土壤。</p><p id="112e" data-selectable-paragraph="">单纯从抗震荡能力讲，美国社会的韧性令人惊叹。很难想像川普之乱发生在其他国家 — — 不管是民主国家还是独裁国家 — — 后果会怎样？国家元首为保住权力亲自出马煽动暴乱，试图利用总统权力强制行政系统达到个人目的，暴乱分子一度占据国会。这在大部分国家都会引发全国性动乱，但在美国引起的震荡有限，行政系统、国会、法院和民间都是该干什么干什么。民权运动中，总统和民权领袖在几年内先后被刺杀，越战变成美国青年的绞肉机，国内暴力抗议四起，首都曾一度火光周期性漫天，变得“像战场”（当时的司法部长语）。即使是在那种震荡中，行政系统、国会、法院、各行各业和民众该干什么干什么，20多年后，苏联阵营垮台，一蹶不振。</p><p id="1bb6" data-selectable-paragraph="">历史不会简单重复，但没有任何东西能比历史更让人看清楚一个国家的走向和国民精神世界的底色。中文世界不少人看现实，就像石头缝里蹦出来的猴子，只有前生的神话传说，没有现世的历史感，所谓中国“稳定”、“超越美国”、“东升西降”云云，都是这路货色。</p><p id="0f93" data-selectable-paragraph="">从国际关系到国内防疫，天朝近期大致进入了无头苍蝇乱撞的时段。前十年犯下的无数错误积累到了临界点，乌克兰和大瘟疫只是催化剂而已。正常一点的时候，体制内的精英和窝囊废共治，这十年体制内的窝囊废阶层上位，加上颟顸横行，到处玩火，不但殃及四邻，把自家房子也点着了，谁也不知道怎么收场，体制成了无头苍蝇。党国体制正常一点时，有个常识性共识：权力稳固是经济发展和社会宽松的结果，要控制但不能绝对控制，扼死社会活力。这十年反常识完全弄颠倒了，所有的做法都是在告诉各界精英：要绝对控制你们；经济发展被当成了政治控制的副产品，社会宽松不复存在。近期的乱像只是多年的颟顸和错乱进入了开花结果时段。</p></div></div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+</body><style>body {
+      font-size:  15px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 650px;
+      text-align: justify
+    }
+    .page {
+      line-height: 22.5px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

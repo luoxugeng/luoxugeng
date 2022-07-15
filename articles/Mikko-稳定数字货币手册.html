@@ -1,0 +1,539 @@
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style>
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 30px auto 0 auto;
+    padding: 10px;
+  }
+  body[data-mode="light"] {
+    color: #2B2B2B;
+    background-color: #EBEBEB;
+  }
+  body[data-mode="dark"] {
+    color: #D8D8D8;
+    background-color: #464646;
+  }
+  body[data-mode="sepia"] {
+    color: #2B2B2B;
+    background-color: #E7E2D5;
+  }
+  body[data-mode="black"] {
+    color: #ACACAC;
+    background-color: #121212;
+  }
+  body[data-loaded=true] {
+    transition: color 0.4s, background-color 0.4s;
+    margin-top: 56px;
+  }
+  body[data-images=false] img {
+    display: none;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  body[data-links=false] #reader-domain {
+    display: none;
+  }
+  #reader-domain {
+    font-size: 0.9em;
+    line-height: 1.48em;
+    padding-bottom: 4px;
+    font-family: Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    border-bottom-color: currentcolor;
+    color: #0095dd;
+  }
+  #reader-title {
+    font-size: 1.6em;
+    line-height: 1.25em;
+    width: 100%;
+    margin: 20px 0;
+    padding: 0;
+  }
+  #reader-credits {
+    font-size: 0.9em;
+    line-height: 1.48em;
+    margin: 0 0 10px 0;
+    padding: 0;
+    font-style: italic;
+  }
+  #reader-estimated-time {
+    font-size: 0.85em;
+    line-height: 1.48em;
+    margin: 0 0 10px 0;
+    padding: 0;
+  }
+  #reader-credits:empty {
+    disply: none;
+  }
+  </style>
+</head>
+<body data-images="true" data-links="true" data-mode="sepia" data-font="sans-serif" data-loaded="true">
+  <span></span> <!-- for IntersectionObserver -->
+  <a id="reader-domain" href="https://wisburg.com/articles/180507">wisburg.com</a>
+  <h1 dir="auto" id="reader-title">稳定数字货币手册</h1>
+  <div dir="auto" id="reader-credits">朱尘Mikko哥谭联储主席米抠君</div>
+  <div dir="auto" id="reader-estimated-time">30-37 minutes</div>
+  <hr>
+  <div id="readability-page-1" class="page"><div>
+<p><span>免责声明：本文作者为Mikko，禁止任何未经授权和许可的转载、引用以及洗稿行为。本文中所提到的所有币种，与作者都不存在利益关系，作者所做的点评不可作为投资依据。感谢</span><span><strong>小葱APP</strong></span><span>、</span><span><strong>币信Bixin</strong></span><span>以及</span><span><strong>Moneyness研究院</strong></span><span>的相关工作支持。</span></p>
+<p><span><em>Alpha版的撰写完成于2018年7月2日</em></span></p>
+<p><span><em>Beta版的撰写完成于2018年7月22日，我增补了更多货币学范畴以外的内容，涵盖如下问题：</em></span></p>
+<blockquote>
+<p><span><em>去中心化（Decentralization）与去中介化（Disintermediation）究竟是一种终极目标，还是只是一种状态？如何在产业、治理与货币（金融）模型当中得以应用？</em></span></p>
+<p><span><em>信息完备与信息对称兼备的市场是否还需要（稳定）数字货币？</em></span></p>
+<p><span><em>风险共担、风险转移与风险定价对于货币模型有多重要？</em></span></p>
+<p><span><em>稳定数字货币的政府模型与信仰模型是什么？</em></span></p>
+<p><span><em>为什么通证是货币的一种同义反复？</em></span></p>
+</blockquote>
+<p><span><strong>0.核心结论与指引</strong></span></p>
+<ul data-mark="-">
+<li>
+<p><span>稳定不是静态的概念。</span></p>
+</li>
+<li>
+<p><span>通胀是个分配问题，而非绝对价格高低的问题。</span></p>
+</li>
+<li>
+<p><span>无独立支付/结算/交割体系支撑的稳定数字货币只是</span><span><strong>法币的依附品</strong></span><span>，并不具备</span><span><strong>强货币性</strong></span><span>。</span></p>
+</li>
+<li>
+<p><span>若稳定数字货币被排除出法币的结算体系（银行-央行），且本身具备确切的法币抵押品，则</span><span><strong>本质是地下钱庄</strong></span><span>。</span></p>
+</li>
+<li>
+<p><span>若稳定数字货币被接入了法币的结算体系，且本身具备确切的法币抵押品，则本质是</span><span><strong>离岸货币</strong></span><span>。</span></p>
+</li>
+<li>
+<p><span>接入法币的支付/结算/交割体系，就需要接受</span><span><strong>KYC/AML</strong></span><span>。</span></p>
+</li>
+<li>
+<p><span>基于货币主义（货币数量论）、费雪恒等式、部分准备金模型以及算法中央银行的稳定数字货币</span><span><strong>都会失败</strong></span><span>。</span></p>
+</li>
+<li>
+<p><span>权益/债权相割裂的</span><span><strong>二元化稳定数字货币是不科学的</strong></span><span>。</span></p>
+</li>
+<li>
+<p><span>不应该把各类理财和投资基金形式的数字货币与稳定数字货币混淆。</span></p>
+</li>
+<li>
+<p><span>抵押品框架和折扣率与传统央行的框架</span><span><strong>没有差别</strong></span><span>。</span></p>
+</li>
+<li>
+<p><span>稳定数字货币</span><span><strong>是个货币市场问题</strong></span><span>，而非权益市场问题，因此</span><span><strong>与央行强相关</strong></span><span>，而非证券监管部门。</span></p>
+</li>
+<li>
+<p><span>数字财政部、数字金边债、数字货币市场、数字资本市场以及数字结算联盟是重中之重。</span></p>
+</li>
+<li>
+<p><span>稳定数字货币的主权模型即法币的数字孪生，</span><span><strong>只不过边界不再是国界</strong></span><span>。</span></p>
+</li>
+<li>
+<p><span>在法币体系内，人们的信任是一种“对称无知”，</span><span><strong>没有人知道抵押物的确切价值是什么，但却仍然在使用法币</strong></span><span>。</span></p>
+</li>
+<li>
+<p><span>稳定数字货币的</span><span><strong>信仰模型就是一种形式的拜物教</strong></span><span>。</span></p>
+</li>
+<li>
+<p><span>在货币问题上，</span><span><strong>绝对的去中心化与去中介化是不可及的目标</strong></span><span>。</span></p>
+</li>
+<li>
+<p><span>通证是对货币性的同义反复，</span><span><strong>并没有增加新的内涵</strong></span><span>，因此所谓的”币改“也是伪命题。</span></p>
+</li>
+<li>
+<p><span>政法缺位下的市场是很迷茫的。</span></p>
+</li>
+<li>
+<p><span>信息完备性与对称性会消除风险与不确定性，</span><span><strong>进而消除货币的必要性</strong></span><span>。</span></p>
+</li>
+<li>
+<p><span>安全（稳定性）需求与风险（不确定性）需求是一币两面，他们是双生的。</span></p>
+</li>
+<li>
+<p><span>货币视角——即期决定即期，核心是现金流；金融视角——远期决定即期，核心是估值定价。</span></p>
+</li>
+<li>
+<p><span>永续的货币需要永续的资产（比如税权）。</span></p>
+</li>
+<li>
+<p><span>稳定数字货币需要稳定数字资产。</span></p>
+</li>
+<li>
+<p><span>核算、会计体系、簿记、账户体系以及数字资产负债表是</span><span><strong>重要的基础设施</strong></span><span>。</span></p>
+</li>
+</ul>
+<p><span><strong>I.介绍</strong></span></p>
+<p><span>本文试图阐明稳定数字货币的本体论（Ontology）与方法论（Methodology），就本体论而言，建基于传统的货币理论，笔者试图将（稳定）货币的本质特征嫁接到数字货币的范畴内，传统货币理论的形式化推理是可以映射到（稳定）数字货币的领域内的；就方法论而言，建基于现有的诸多货币（以及准货币）形态，笔者将尝试构建一个稳定数字货币的设计流程、规范与框架，并参照比对现有的中央银行-财政货币体系、银行货币体系与私人货币体系，来寻找稳定数字货币的竞争切口。</span></p>
+<p><span><strong>II.本体论</strong></span></p>
+<p><span>本体论是指一系列的概念集，倘若我们要科学地审视并解构一个问题，那我们必须先行明确该问题的范畴，以及范畴内的概念、概念的关系。</span></p>
+<p><span><strong>II.a.定义问题：当我们在说稳定数字货币的时候，我们在说什么？</strong></span></p>
+<p><span>我们使用稳定作为定语，是因为我们期许货币作为一种</span><span><strong>价值尺度</strong></span><span>，其潜在的购买力可以在时间维度上</span><span><strong>保持相对于所有可交换物（亦即价值全频谱）的恒稳态。</strong></span></p>
+<p><span>我们使用数字作为定语，是因为我们期许这种货币的</span><span><strong>形态（Form）</strong></span><span>是虚拟的、数字化的且基于互联网的，而非以物理性为存在作为先决条件的。</span></p>
+<blockquote>
+<p><span>*哈耶克曾经论述：</span></p>
+<p><span>“只要我的活动是在与我自己同样的人当中展开的，那么我就极可能根据银行支票或左轮手枪所具有的物理特性而得出结论说，对于持有者来说，它们是货币或是武器。当我看到一个拿着一个贝壳或一根细长管子的土著人的时候，这件东西的物理特性很可能无法告诉我任何东西。但是，当有关的观察告诉我贝壳之于他是货币、而细长管子之于他则是武器的时候，这就会使这个客体明确地显现出来——如果我对这些货币观念或装器观念不熟悉的话，那么对于我来讲，类似的观察很难使这些客体较为明确地表现出来。正是在认识这些东西的过程中，我开始理解这些人的行为。我之所以能够理解并适应一种‘有意义’的行动方案，就是因为我渐渐地不再把它视作是一种具有某些物理特性的东西，而是把它视作是一种与我自己有目的的行动之模式相符合的东西。”</span></p>
+</blockquote>
+<p><span>而当我们使用“货币”一词的时候，实质上是在指涉具有</span><span><strong>价值尺度</strong></span><span>、</span><span><strong>价值媒介</strong></span><span>以及</span><span><strong>价值承载</strong></span><span>功能的对象（Objectives）。正如齐美尔所言，货币在起初是我们通向目的地的桥梁（作为价值尺度衡量价值，并作为媒介转移价值与购买力），但随后就成为了目的地本身（成为了一种价值诉求）。</span></p>
+<blockquote>
+<p><span><em>*根据席美尔的论述：</em></span></p>
+<p><span><strong>*相对主义试图将每一个自我呈现的绝对都融入一种关系中</strong></span><span>，并且以与绝对一样的方式潜行，将自己显现为新关系的基础。*</span></p>
+<p><span><em>货币被定义为“*</em></span><span>抽象的价值</span><span><strong>”。……如果客体的经济价值是通过它们可交换性的相互关系建立的，那么货币就是这一</strong></span><span>关系的独立表达</span><span><em>*。</em></span></p>
+<p><span><em>货币从它的价值当中*</em></span><span>获得了其内容</span><span><em>*。</em></span></p>
+<p><span><em>由于这种*</em></span><span>既处于价值序列中又处于其外的双重角色</span><span><em>*，它在对货币的实践和理论处理中造成了无数的困难。</em></span></p>
+<p><span><em>这些有区别的性质使货币被还原成一个市场中的客体，并服从于商业循环……它们使货币*</em></span><span>丧失了其关系表达的绝对位置</span><span><strong>，</strong></span><span>迫使它进入了一个相对的位置</span><span><strong>，因此</strong></span><span>它不再反映一种关系，而是拥有了关系</span><span><em>*。</em></span></p>
+<p><span><em>价格的起伏表示的不是货币和客体的关系的变化，*</em></span><span>而只是客体自身关系的变化</span><span><em>*。</em></span></p>
+<p><span><em>经济客体的意义通过这种相对性被建立起来，货币的意义将成为这一相对性的清晰表达。</em></span></p>
+</blockquote>
+<p><span>令人倍感遗憾的是，在笔者阅读的诸多稳定数字货币的白皮书中，“稳定”与“数字”的论述篇幅要远多于“货币”，几乎所有的团队都执迷于“稳定”的机制设计，并热衷于鼓吹“数字化”的技术优势，比如引入智能合约和区块链技术。而有关“货币”的论述，则普遍令人贻笑大方，比较普遍的情况是揣着哈耶克所著的《货币的非国家化》当令箭，可事实上，在这本书中，哈耶克并</span><span><strong>未能阐明其货币理论</strong></span><span>，而仅是陈述了</span><span><strong>“货币可以被私人发行”</strong></span><span>这一自古以来的传统，哈耶克还强调</span><span><strong>竞争性的货币发行可以促进货币稳定</strong></span><span>这一自由市场机制，这一自均衡论断对于稳定数字货币而言，可谓“正确的废话”。</span></p>
+<p><span>此外，还有一些论述基本沿袭了错误的货币数量论，源自于付丽敏的货币主义。而看上去非常吸引人的</span><span><strong>“算法中央银行”</strong></span><span>以及</span><span><strong>“自平衡供需”</strong></span><span>等概念，实际上远没有现代中央银行负债管理来得复杂丰满，究其实质，无非是</span><span><strong>类泰勒规则</strong></span><span>和</span><span><strong>平准基金</strong></span><span>的自动化与智能合约化，并没有脱离传统货币理论与中央银行学的范畴，只不过在这些白皮书中的新词更加流于表面且看似光鲜而已，这些新词背后的实质内容根本无法协调一个真实货币体系的多变环境。除此以外，许多有瑕疵的稳定数字货币设计只是在重复货币（铸币）史中的诸多谬误，这种对历史经验的忽视与冷漠让笔者感到非常困惑。即便是我们耳熟能详的</span><span><strong>布雷顿森林体系的瓦解</strong></span><span>以及</span><span><strong>凯恩斯爵士折戟“bancor”</strong></span><span>的经验，似乎也未能遏制一些设计者的一腔热血。</span></p>
+<p><span>讽刺的是，被视为“灵丹妙药”的区块链（分布式账本技术）、去中心化以及智能合约等概念，反倒是在货币问题下的子领域——支付（Payment）、结算（Settlement）以及簿记（Booking）生根发芽，这些枯燥的货币基础设施相关问题不可逾越而又难以企及，使得诸多稳定数字货币项目变得更加单薄。</span></p>
+<p><span><strong>II.b.什么是稳定？</strong></span></p>
+<p><span>什么是稳定？笔者认为，所谓稳定，实质上是一种动态的自平衡（再平衡）过程，它是流动的状态，而非静止的状态。我们在货币范畴中可以追求的只能是</span><span><strong>动态自稳定机制（Dynatic Homeostasis）</strong></span><span>，而不是一种绝对的</span><span><strong>恒静态稳态</strong></span><span>。如果用经济学语言来说，那就是我们追求的实际上是货币的动态供需平衡，在传统中央银行学范畴内，中央银行需要预测每天的银行准备金（或者广义的货币市场）需求，然后通过自身的准备金（基础货币）供给来调整广义货币的供需平衡，而调整基础货币的供需平衡的目的，是希望据此避免实际的通胀水平超越自身的通胀目标，因此传统的货币动态自稳定机制，</span><span><strong>实际上是基于通胀目标为锚</strong></span><span>，建立起来的相对的购买力稳定。</span></p>
+<p><span>因此，所谓的“稳定”，实际上是一种相对的概念，而非绝对的。如果一种稳定数字货币的设计基于对绝对稳定的追求，那可能在起点上就犯了概念错误。比如：</span></p>
+<p><span>将恒定的供给量等价于稳定：不少稳定数字货币的项目寄望于通过恒定的供给量来达至稳定，这种谬误的心理根源起源于</span><span><strong>黄金的恒定总量</strong></span><span>与</span><span><strong>比特币的供给曲线</strong></span><span>。事实上，固定的供给面对动态的需求变化，意味着每时每刻市场都需要进行再定价。</span></p>
+<p><span>认为稳定（不变）的算法等价于稳定的货币：一些项目中，认为货币的增长路径只要是可预测的，那么就能实现稳定，这种逻辑的起源是</span><span><strong>“货币主义”</strong></span><span>以及传统中央银行学的</span><span><strong>“规则基准”</strong></span><span>（Rule-Based），前者的代表人物是弗里德曼，后者的代表人物则是约翰·泰勒。货币主义的论点已经被现实所证伪——并非我们抛弃了货币总量，而是货币总量抛弃了我们（不可预测且不可控制）。而有关规则基准的争议，请参考笔者的补充阅读。</span></p>
+<p><span>用间接稳定掩盖掉直接稳定：一些项目建立了高卖低买的机制以维持自身处于某个区间范围内，事实上就是法币体系内固定汇率和平准基金的玩法，但此时这种稳定的来源并非货币直接产生的，而是建基于某种既定的货币的（比如美元）。通过一种既定的购买力去创造锚定该购买力的货币，本身并没能解答购买力从何而来的问题，或者说，这类所谓的稳定币是无法拥有“独占”的经济定价体系的，它们最多只能“映射”，且只是既定某种货币购买力的另一种表征而已。这类间接的稳定虽然也是稳定，但这种稳定不具备竞争其稳定器的能力。</span></p>
+<p><span><strong>*<em>算法中央银行可以保证货币的稳定吗？</em></strong></span></p>
+<blockquote>
+<p><span>有关算法中央银行，实际上与中央银行学领域的“规则（算法）基准”是类似的概念，“规则基准”的代表人物是约翰·泰勒，即政策利率（联邦基金利率）应该被设定为产出缺口（实际产出减去潜在产出）和通胀缺口（实际通胀率减去目标通胀率）的加权平均数。</span></p>
+<p><span>而米尔顿·弗里德曼的货币主义也是基于类似的逻辑，他倡导货币增长规则，在这个规则中，货币供应量由央行设定，并且以固定速度增长。</span></p>
+<p><span>而所谓的自由裁量权，即中央银行行长的自由权，审时度势，因地制宜。使用数字货币语言来形容的话，自由裁量权对应“中心化风险”。</span></p>
+<p><span>自由裁量权与规则基准的对立引发了中央银行学者以及经济学家的广泛争论，问题也进而衍生至“中央银行家应该基于规则基准来行使自由裁量权。”这些争辩与数字货币领域的治理争议非常类似，即“以人为本”还是“代码至上”？可无论怎么样，代码还是人写的，规则还是人定的。因此算法中央银行的核心其实并非算法，而是如何决定算法？在数字货币的范畴内，是否还需要被迫去中心化地（分布式地）决定合意的算法？这个问题已经脱离了货币学的范畴，其实质是一个中央银行的治理问题。</span></p>
+<p><span>反对采用货币政策和工具规则的主要论点有五种，因此他们主张采取某种自由裁量的货币政策：</span></p>
+<ul data-mark="-">
+<li>
+<p><span>规则需要一个可靠的宏观经济模型。</span></p>
+</li>
+<li>
+<p><span>规则要求经济结构是稳定的。</span></p>
+</li>
+<li>
+<p><span>规则不能预见每一个偶然性。</span></p>
+</li>
+<li>
+<p><span>规则不允许判断。</span></p>
+</li>
+<li>
+<p><span>货币政策制定者并不比规则更不值得信任。</span></p>
+</li>
+</ul>
+</blockquote>
+<p><span>对稳定的追求事实上并不只是数字货币的终极追求，货币史就是一部追求稳定货币的历史，稳定货币得以持续的情景在历史上</span><span><strong>并非常态反而是特例</strong></span><span>。</span></p>
+<p><span>事实上，在历史上，信任的崩溃相当频繁，历史就是货币的坟墓。世界各地的博物馆中有许多东西都能被放进这个坟场 - 例如，大英博物馆的68号房间里陈列着石头，贝壳，烟草，无数的硬币和纸片，还有许多其他的物品都失去了作为交换媒介的可接受性，并最终被“埋葬”。一些则受到扩大的贸易和经济活动的影响，因为它们无法适应规模较大的交易而变得不方便。另一些则是支撑它们的政治秩序弱化或消退，就被抛弃了。 而其他许多（货币）则因为对价值稳定性的信任受到侵蚀而成为受害者。”（BIS，2018）</span></p>
+<p><span>历史证明，无论是通过私人手段，以竞争的方式，还是由主权国家作为垄断的供应商供应，货币都可能是脆弱的。因此，避免主权国家的滥用是货币设计中的一个重要考虑因素。（BIS，2018）</span></p>
+<p><span><strong>II.c.稳定性的构建</strong></span></p>
+<p><span>我们在本段继续分解现有稳定数字货币项目对“稳定性”的建构方式。</span></p>
+<p><span>笔者阅读了不少有关稳定数字货币文章，发现国内的许多原创文事实上都是洗稿文，顺着他们的复制粘贴内容，我们可以发现原文来自Haseeb Qureshi的Medium文章</span><span><em>Stablecoins: designing a price-stable cryptocurrency</em></span><span>，在该文章中，作者将稳定数字货币的设计分成了三大类：</span><span><em>fiat-collateralized coins, crypto-collateralized coins, and non-collateralized coins</em></span><span>，并就其优缺点进行了简述。</span></p>
+<p><span>在笔者看来，这种分类模型过于简洁，不能展现货币性（Moneyness）的全貌。只是对有抵押/无抵押作出了区分，并将有抵押的货币分为了简单的两类。</span></p>
+<p><span>此外，国际清算银行的“货币之花”（Money Flower）分类也是广为流转的中央银行视角下的货币分类，货币之花涵盖的要素更多，并且在排列组合以后形成了不同的货币品类。<img src="https://rocks.wisburg.com/ea7c4d3f-0875-44d6-b633-aebb90a0f4de.png" data-wisburg-media-id="2091" data-wisburg-media-mime="image/png" data-wisburg-media-fsize="334676"></span><span></span></p>
+<blockquote>
+<p><span>货币之花区分了货币的四个关键属性：</span><span><strong>发行者，形态，可得性程度和支付转移机制</strong></span><span>。 发行者可以是中央银行，银行或无发行者（比如商品货币）。 其形态可以是有物理实体的，例如金属硬币或纸币，也可以是数字化的。</span></p>
+<p><span>它可以像商业银行存款那样广泛获得，或者像中央银行的准备金那样狭隘（私人无法存款在中央银行）。</span></p>
+<p><span>最后一个属性则是关于转移机制，货币的转移可以是P2P式的，也可以是经由中心化的中介机构，比如存款就是这样。</span></p>
+<p><span>货币通常基于两种基本的技术之一：所谓的“代币”或账户系统。</span></p>
+</blockquote>
+<p><span>基于“代币”的货币（例如钞票或实体硬币）可以P2P地交易，但这种交换严重依赖收款人验证付款对象有效性的能力 - 以现金为例，即担心是假币。相比之下，基于账户资金的系统从根本上取决于验证账户持有人身份的能力。</span></p>
+<p><span>笔者的视角并不局限于这两种分类法，而是希望将整个稳定数字货币用</span><span><strong>现代货币理论的“货币视角”（Money View）</strong></span><span>来呈现（Zoltan Pozsar，Perry Mehrling），这种货币分类与描绘方法深挖货币发行方（前提是有发行方）资产负债表两端的结构与细节，进而在</span><span><strong>现代会计分录</strong></span><span>以及</span><span><strong>复式记账法</strong></span><span>的基础上解构各类货币之间的差异性以及其构建逻辑。</span></p>
+<p><span>在货币视角（Money View）的框架内，现有的许多稳定数字货币根本无法被称为货币，至多只是准货币（quasi-money），或者说具备一定的货币性（Moneyness）。根据Zoltan Pozsar的定义：</span></p>
+<p><span>并非所有的货币债权是”生而平等”的。它们之间的一大差异就在于其功能性——既是否它们可以被</span><span><strong>用于交易-以达到清算（清偿）目的</strong></span><span>。</span></p>
+<p><span>银行是整个</span><span><strong>支付体系的支柱</strong></span><span>——即通过存款在不同的经济主体之间进行</span><span><strong>净额支付</strong></span><span>和</span><span><strong>结算</strong></span><span>。需要指出的是，银行服务的净额支付以及结算主体在</span><span><strong>整个货币体系的层级之中低于银行</strong></span><span>——包括交易商银行以及货币基金也是如此，</span><span><strong>因为他们最终都需要通过银行存款进行结算</strong></span><span>。（Zoltan Pozsar，2014）</span></p>
+<p><span>货币在交易中的支付（并清算）功能是货币性的根基。一些存在货币性的准货币——比如货币基金份额与回购余额，无法被用于清算的目的。就像你无法用你持有的某基金份额，也无法出示自己的证券账户中的回购余额去超市买东西一样。这些准货币与货币的差异性就在于支付/清算功能。与活期存款不同，</span><span><strong>它们不能被用于清算的目的</strong></span><span>。但是它们可以</span><span><strong>被足额地转换成活期存款</strong></span><span>，所以他们才会被视为货币。换句话说，</span><span><strong>它们可以被转成支付系统（所认同）的货币</strong></span><span>，既，现金，以活期存款的形式，并用于清算目的。 对于回购以及资产净值份额的持有者而言，它们如何转化为可用于清算与交易的目的并没有它们会在怎样的价格（平价可转换性）转换成与票面净额（比如曾经也在我国流通过的国库券）相关的现金来的重要。</span></p>
+<blockquote>
+<p><span>在我国历史上曾经出现过“国库券”作为货币流通的情况，笔者的奶奶就曾在我小学时赠送过我一张100元面值的国库券。</span></p>
+<p><span>廉良琴说：1981年国库券计划发行采取3种不同方式：对国营企业、集体所有制企业、企业主管部门和地方政府采取“分配发行”；对机关团体、部队、事业单位和农村富裕社采取“适当认购”；对个人采取“自愿选购”。当时，国有单位都有购买国库券的任务，廉良琴所在的物资公司因为员工多，任务量也大。第一次发放时，她很耐心地向每一位职工解释了国库券的用途和性质，此后的几年，每年年初，单位的领导都带头认购，职工也按照规定主动买一些。</span></p>
+<p><span>“我当时的月工资是37元，但年初拿到的工资中有6元是国库券，其中一张1元，一张5元”。 廉良琴还讲道：那两年常能听到同事这样的对话：一个说，嗨，你这回工资拿了多少？另一个说，我工资袋里头少了10块钱，多了10块钱国库券！</span></p>
+<p><span>廉良琴告诉记者，最初国家规定，国库券不得当作货币流通，不得自由买卖。但很多人把国库券很便宜地卖了。“尤其是年轻人，常常在买后不久，就把国库券以五折甚至更低的价格贱卖。”</span></p>
+<p><span>“因为规定国库券不得当作货币流通，不得自由买卖，为防止黑市交易，为此，财政部、人民银行、国家工商总局和公安部还联合发出通知，坚决取缔国库券黑市，打击票贩子，声势浩大。”廉良琴回忆说。</span></p>
+<p><span>（国库券：新时代“信任券” ，腾讯金融）</span></p>
+</blockquote>
+<p><span>当下的稳定数字货币，是排斥中介化的银行记账式支付与清算的，</span><span><strong>点对点（P2P）无中介支付</strong></span><span>已被视为稳定数字货币的必要属性，在这样的前提下，鉴于支付与货物的交割的时滞（无法一手交钱一手交货），即便数字化的支付和转账像银行存款一样消除了交易双方的距离边界，但无中介的支付仍然隐含着信用风险的问题（交钱货没发）。此外，究竟是因为不稳定而无法应用于支付和结算？还是因为无法应用于支付和结算而不稳定呢？这个类似先有鸡还是先有蛋的问题同样困扰着稳定数字货币的设计。</span></p>
+<p><span>考虑到建构成本，没有团队会在理性的前提下选择相信</span><span><strong>“稳定性的必要前提是完善的支付与结算体系”</strong></span><span>，构建一个支付和结算体系所需要的时间、专业知识、经验、行业协同以及资金规模可能过于庞大。但是，如果选择相信币值的不稳定导致了支付和结算应用的匮乏，则借用一套已经被视为</span><span><strong>稳定的货币体系</strong></span><span>与</span><span><strong>受认可的结算/支付体系</strong></span><span>就是合乎理性的。</span></p>
+<p><span><strong>II.d.抵押品</strong></span></p>
+<p><span>本段将解析最受欢迎的基于抵押品（Collateral-Based）稳定数字货币。基于抵押品的稳定数字货币事实上是欲图锚定抵押品本身的价值，并借用抵押品来消除自身的信用风险。这类稳定数字货币承诺持币者可以活期（on demand）且平价（par）将币兑换为抵押品，与现代金融业中的回购交易（以及典当行交易）非常类似。对于发行者而言，要解决的问题在于：</span></p>
+<p><span><strong>如何选择抵押品？</strong></span><span>——即支撑自身稳定数字货币（作为一种负债）的资产池，比如，如果使用法币作为抵押品，则该币种实质上成为了</span><span><strong>数字法币</strong></span><span>；如果使用单一商品（比如黄金）作为抵押品，则该币种实质上是一种</span><span><strong>数字商品货币</strong></span><span>；如果使用一揽子金融债权资产作为抵押品，则该币种实质上是一种</span><span><strong>数字ABS/ABCP或数字基金份额</strong></span><span>。或许有读者会对数字ABS或基金份额的定义感到很困惑，但这不是资产的属性所致，而是发行团队对自身稳定数字货币的（资产负债表右端）定位所致，如果发行团队将自己的稳定数字货币定义为一种货币/负债，则它必须具备活期（on demand）且平价（par）的实时兑付（可转换性）功能，比如余额宝虽然名义上是一种货币基金份额，但实质上拥有货币的活期、平价的实时兑付（转换为人民币）性，因此其性质名股实债，</span><span><strong>持币人是发行团队的债权人</strong></span><span>（就像持有人民币现钞你就是中国人民银行的债权人一样），这也是为什么监管当局将刚兑的理财和货币基金都纳入比较严格的监管当中的原因，因为</span><span><strong>它们在名义上是投资产品和权益投资，但由于可以即时地刚性兑付成法币而具备货币性和债权的特点</strong></span><span>；而如果发行团队将自己的稳定数字货币定义为一种权益，那实际上所有的持币人只是你的</span><span><strong>持股人</strong></span><span>，</span><span><strong>权益投资人</strong></span><span>，你发行的只是基金份额/股票/ETF，你拿着股票是无法兑付到任何东西的，以市价赎回和变现则可能存在非平价风险（资产价格波动），这与“稳定”的前提相悖，存在着自相矛盾。</span></p>
+<p><span><strong>如何决定抵押品的质押率？</strong></span><span>——由于抵押品的特性各不相同，一些抵押品的价值如果波动太大，则需要就其市值变化进行追加抵押品，如果不对抵押品进行追加，则币值就应该相应贬值。因此，事先对资产端的抵押品质押率（或者折扣率、扣减率haircut）进行评估是非常重要的，尤其是对于那些分布式发行的稳定数字货币而言，由于任何人都可以抵押特定资产参与该稳定数字货币的发行，因此保障抵押品选择和质押率的工作就显得尤为重要，对应到传统央行的政策框架当中，实际上这些工作都可以被涵盖在“货币政策的抵押品框架”之下。</span></p>
+<p><span>包括重要的公开市场操作在内的所有欧元体系信贷业务，都是以</span><span><strong>充足的抵押品为基础</strong></span><span>的。按抵押品市场价格并适用</span><span><strong>扣减率</strong></span><span>（即折扣率，笔者注）后向银行提供流动性。在危机期间，欧元体系调整了它的抵押品框架，以</span><span><strong>接受低评级资产</strong></span><span>作为抵押品（</span><span><strong>抵押品池的主动、中心化管理</strong></span><span>，笔者注）。适用</span><span><strong>更高的扣减率是为了防范流动性风险</strong></span><span>（对应上文提到的质押率，笔者注），防范</span><span><strong>低评级资产</strong></span><span>的更大的价格波动。</span></p>
+<p><span>欧元体系的所有信贷业务，包括重要的公开市场操作，都要求有足够的抵押品，这就是说，欧盟国家中央银行在批出贷款时，要 求有抵押品（用于担保的资产）来保护自己的资产负债表以及借方的违约风险（信用风险）。抵押品以经过“扣减率”（haircut）调整的市场价格计价，</span><span><strong>适用扣减率就是为了确保不受流动性风险（即抵押品无法变现的风险）和抵押品价格下行变化的影响</strong></span><span>。</span></p>
+<p><span>抵押品的去中心化管理与发行的去中心化——为了迎合数字货币的“终极信仰”，如何在去中心化地前提下实施抵押品的选择、质押率的决定以及发行成为了核心问题之一。但事实上，即便整个流程通过</span><span><strong>智能合约</strong></span><span>以及</span><span><strong>动态算法</strong></span><span>完成了自动化，可自动化本身并不等价于去中心化，合约以及算法的设计仍然需要人的参与。</span></p>
+<p><span>图：巴塞尔III中对高质量流动性资产的定义与扣减率</span></p>
+<p><span data-src="C:\Users\ADMINI~1\AppData\Local\Temp\1532261982660.png"><img src="https://rocks.wisburg.com/90149cec-18c8-4c5c-9504-5a064af1c3ad.png" data-wisburg-media-id="2092" data-wisburg-media-mime="image/png" data-wisburg-media-fsize="548404"></span><span><strong>Single-Fiat Collateral——单一法币抵押，数字离岸美元（Digital Eurodollar）</strong></span></p>
+<p><span>我们以USDT（Tether）为例，USDT是100%美元准备金的稳定数字货币，我们首先把整个Tether的稳定货币机制分为四张资产负债表（事实上这张图还可以扩展下去），每一个T字表的左边是</span><span><strong>资产</strong></span><span>，右边是</span><span><strong>负债</strong></span><span>，箭头表示四张资产负债表的嵌套关系。</span></p>
+<p><span>首先，我们来看中间的Tether公司的T字表（资产负债表）。在右边的负债，发行的Tether即是所有持有Tether的使用者对Tether公司的债权，而是Tether公司的债务。我们最右边的Psyducks代表广大的Tether持有者。</span></p>
+<p><span>原先这些持有者的资产是银行存款（Deposits），或者美元现金（Federal Reserve Notes，缩写为FRN），前者是银行的负债，后者是主权货币当局的负债，体现在左边的美联储和Bank A的两张T字表的右边（作为负债）。</span></p>
+<p><span>用户买入Tether的过程，实际上就是把自己的资产降级了，为什么呢？因为原先他们持有的是主权货币当局的负债，他是政府的债权人，或者是银行的债权人，而且这部分债务由存款保险的限额所担保，因此也算是有限担保的政府债权人。</span></p>
+<p><span>*中国的存款保险实行限额偿付，最高偿付限额为人民币50万元。</span></p>
+<p><span>但买入Tether以后，</span><span><strong>他就变成私人公司的债权人了</strong></span><span>！即稳定数字货币发行方的债权人，这意味着Tether的持有者暴露在公司的信用风险之下！因为银行存款和美元现钞都是政府担保足额兑付的，不过Tether作为中心化的机构，在自己的白皮书当中已经诚实地言明这种风险。Tether的资产端，实际上持有的还是对政府的债权，因为Tether在发行Tether并持有相对应1:1的流动性准备时，无非也只有两种选择，请注意图中Tether的T字表的左侧，我们在USD的箭头下写出了这两种选择：</span></p>
+<p><span data-src="https://upload-images.jianshu.io/upload_images/10566547-05d50b27ca202a03.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><img src="https://rocks.wisburg.com/248a81ba-026f-43cd-bf7a-6e66a63a6783.png" data-wisburg-media-id="2093" data-wisburg-media-mime="image/png" data-wisburg-media-fsize="92599"></span><span> </span></p>
+<p><span>1.存放在银行（Deposits）</span></p>
+<p><span>2.持有美元现钞（FRN）</span></p>
+<p><span>请注意，这两者都是存在风险或成本的！对应1，因为</span><span><strong>银行的存款保险是有上限的</strong></span><span>，也就是说超过存款保险的那部分就存在信用风险，你无法控制银行用于对应自身存款负债的资产质量，政府不会担保超出其存款保险的上限的那部分存款。而如果你在银行的存款超出了存款保险，你就不得不审视银行资产端的稳健程度，如果银行的资产100%都是准备金，那其实经过Tether-银行存款-准备金的链条，你持有的最终还是美联储的负债，如果银行仅持有10%的准备金呢？剩下90%的资产是什么？这就是两层中心化结构的风险链条，一方面你无力管制Tether的发行方，另一方面你也无法决定Tether的美元抵押品流向。</span></p>
+<p><span>对应2，如果持有的全是美元现钞抵押品，则风险不会增加银行这一中介链条。这相当于Tether公司的足额美元流动性准备，不经过银行，直接持有对美联储的债权FRN，但是，由于大批量的处理现金存款是有成本的——包括损耗，造金库，安保等，这隐含了一个负利率。这一部分的成本应该由谁承担？</span></p>
+<p><span>我们在小标题当中提到了数字离岸美元（Digital Eurodollar），笔者认为，Tether的实质就是一种数字离岸美元，它的整个发行与创生机制与传统的离岸美元非常类似，只要一家银行在美国在岸拥有美元存款，他就可以在离岸发行美元，并以在岸美元作为抵押品——只不过，离岸美元的业务不可能在100%足额准备的前提下开展，因为离岸美元银行希望能赚取利差收益。而Tether的发行机制是近似的。</span><span><strong>基于特定法币（或法币存款）作为抵押品的稳定数字货币</strong></span><span>，笔者将其统称为</span><span><strong>数字离岸货币</strong></span><span>，此处的“离岸”不再指得是国界和区域的边界，而是“数字”边界。</span></p>
+<p><span><strong>#离岸货币的监管问题</strong></span></p>
+<p><span>如果你熟悉离岸货币市场，那么你一定会了解到离岸市场得以发展起来的原因：为了规避利率管制、税收辖区限制以及存款准备金率。离岸货币市场面对的最大敌人就是监管，数字离岸货币亦是如此。</span></p>
+<p><span>离岸货币得以维系下去的核心在于发行离岸货币的机构可以被允许在在岸货币市场交易美元，以获取足够的美元流动性用于支撑自己发行的离岸美元，并参与到整个美联储主导的最高层级的美元结算体系当中，如果离岸美元的发行银行被在岸的存款行挤出（比如Tether被富国银行挤出），并被禁止参与到整个美元结算体系当中，那么这部分数字离岸美元就成为了“孤岛”，无法流动起来的死水美元还是美元吗？</span></p>
+<p><span>因此，足额抵押的单一法币抵押品如果是基于银行存款形式存在，一方面存在资产负债表嵌套的信用风险，因为你无法控制银行的资产负债表。若被银行排挤出整个美元货币市场与美元结算体系，则相当于被阉割的美元，只能通过实体美元现钞的流转（涉洗钱与黑钱问题）。在这样的监管环境内，数字离岸货币</span><span><strong>无法行使与抵押品一致的货币功能</strong></span><span>。</span></p>
+<p><span><strong>Multi-Fiat Collateral Pool——多元法币池抵押，Quasi-SDR（类IMF特别提款权）</strong></span></p>
+<p><span>这种类型的稳定数字货币只是简单地做了</span><span><strong>单一法币抵押</strong></span><span>和</span><span><strong>多元化投资组合</strong></span><span>的加法。虽然其</span><span><strong>表面和IMF的SDR</strong></span><span>有些类似。但由于发行者的目标并不是将创生的多元法币抵押稳定数字货币用于国际结算，而只是借用多元法币的稳定性和“分散投资”理念锚定币值，因此本质上还是有所不同。这类稳定数字货币的结构类似于多币种的狭义现金管理基金，对于持币人而言像是买入了一款外币理财产品（仅投资现汇，且可能不存在收益许诺）。</span></p>
+<p><span><strong>Traditional Financial Asset Pool——传统金融资产池抵押，Quasi-ABS/ABCP/ETF（类资产支持证券/ETF基金）</strong></span></p>
+<p><span>这类设计的实质是投资产品或投资基金，而非“货币”，举例而言，假设你的传统金融资产池当中有1亿美元的信贷资产，利率为5%，并基于此发行了1亿枚代币，市场就会根据</span><span><strong>信贷资产的质量（评级）</strong></span><span>和</span><span><strong>利率</strong></span><span>进行风险定价，从而转化为对你发行的代币的定价。如果发行所基于的传统金融资产池结构越简单，品类越少，则估值越是容易，和传统金融的定价模式没有任何差异性。</span></p>
+<p><span><strong>Traditional Digital Asset Pool——数字资产池抵押，DABS</strong></span></p>
+<p><span>与传统金融资产池抵押类似，只不过资产端变为了数字货币（或其他数字资产）。</span></p>
+<p><span><strong>Real Asset Pool——实物资产抵押</strong></span></p>
+<p><span>实质是基于某种特定的商品，比如黄金、钻石、红酒、贵州茅台、房地产以及其他实物有形资产的投资产品/基金，之所以实物资产抵押受青睐，是因为可被纳入池中的实物资产大多不具腐蚀性，并且经得起时间的考验。用金融语言来说，就是</span><span><strong>期限足够长</strong></span><span>，</span><span><strong>价值的稳定性已经受到了大众的认同</strong></span><span>。</span></p>
+<p><span>本段提到的多种稳定数字货币的结构差异，来自于</span><span><strong>资产端的结构差异</strong></span><span>。其共性在于，有抵押品支持的情况下，发行方都会致力于抵押品管理的透明化（*有研究者认为，资产的透明度并非不是稳定的必要条件，反而一些“不透明”可能会建立起稳定，2016诺奖得主），因此，持币人可以就抵押品的估值来形成对该币种的（价格）预期，如果透明度足够高，且传统资产占据主导的话，估值和定价的复杂程度不高。因此，基于抵押品的稳定数字货币，其稳定建立在</span><span><strong>资产端</strong></span><span>的</span><span><strong>抵押品价值</strong></span><span>（资产的估值与定价）和</span><span><strong>足额且活期兑付</strong></span><span>（资产流动性与可转换性）之上。</span></p>
+<p><span><strong>II.e.无抵押品与负债/权益结构</strong></span></p>
+<p><span>本段将从负债/权益（即发行方的资产负债表右侧）入手，审查无抵押的稳定数字货币的设计问题。如果发行方在没有资产的情况下发行稳定数字货币，则其实质与无抵押融资和售卖股份几无差异，白皮书类似招股说明书。</span></p>
+<p><span><strong>Unsecured Lending——无担保借款</strong></span></p>
+<p><span>如果发行方发行了一种不可兑换的无抵押“稳定数字货币”，并吸收法币资金，则实质是发行方写下了一张以自己币种计价的欠条（IoU），并且这张欠条不包含法定的兑付义务。虽然笔者不能将其定义为诈骗，但如果一张欠条不包含法定的兑付义务，那这张欠条可能就失去的存在的意义（作为一种兑付凭证）。因此，这类币种在信息对称的情况下可被称为是“慈善”行为，即单纯的财富转移；在信息不对称的情况下，则是比较低级的诈骗行为，业内统称为空气币。</span></p>
+<p><span><strong>*Multi-Layer Structure——多层次负债结构</strong></span></p>
+<p><span>在这里，我们不得不提及多层负债结构，这类结构的设计理念来自</span><span><strong>影子银行体系的证券化结构设计</strong></span><span>。比如，基于某个特定的资产池（假设是房地产贷款），将该资产证券化为三层，分别称为Senior，Mezzanine，Equity层，最高层享受固定的较低的无风险收益，并刚性兑付（不承担资产端违约的信用风险），中间层享受固定的无风险收益加浮动的部分溢价收益，兑付比例高但不会全额兑付（承担少量信用风险，换取更高的收益），权益层则享受剩余的收益，但需要承担资产端的风险，如果资产端出现违约，权益层就用于兑付。在国内，这类分层出现在分级基金以及优先-劣后型产品设计当中。其机理在于权益层接手了债务层所承担的风险，这类多层次负债/权益结构的本质，是在发行人的资产负债表右侧调整负债和权益的结构，来满足不同投资者的风险承担和避险需求。应用在稳定数字货币之上，就演变为了单币种的</span><span><strong>二元化</strong></span><span>。</span></p>
+<p><span>这类设计在无资产抵押的前提下也是可行的，即发行方募集了一笔优先资金和一笔劣后资金，再将募集的款项用于自己的投资（先负债后资产）。优先级之所以可以被视为稳定数字货币，是因为其风险被劣后投资者吸收掉了。因此整个货币结构的风险被转移给了第三方。</span></p>
+<p><span><strong>Equity Finance——权益融资</strong></span></p>
+<p><span>还有一种简单的结构即权益融资结构。发行方承诺持有其稳定数字货币的持币人将获得其资产端的红利收益，但持币人仍然无法兑付到任何流动性资产。其实质就是发行了股票。</span></p>
+<blockquote>
+<p><span><strong>#股权还是债权？</strong></span></p>
+<p><span>稳定数字货币市场实质上归属于</span><span><strong>货币市场（Money Market）</strong></span><span>，它和债权/债务</span><span><strong>（Debt/Liability）</strong></span><span>关系紧密相关；但当下许多数字货币项目的定性其实类似股权（股票）（Equity），因此，很多项目团队实质上混淆了自己的项目性质，他们把稳定数字货币项目当成一个权益项目运维，而非一个债权/债务项目。</span></p>
+<p><span>2016年的诺贝尔经济学奖得主Bengt Holmstrom曾经在自己的论文当中对货币市场以及权益市场的特征做出过区分。</span></p>
+<p><span>货币市场的流动性的一大特征即在于“不要多过问”，在这种状态下，货币市场得以正常运行。</span></p>
+<p><span>当前市场总是呼吁要“揭开货币市场的面纱”，增强市场透明度，实际上这种呼吁误解了债务的逻辑以及货币市场的运作机制。</span></p>
+<p><span>公众总是认为缺乏透明度的市场一定暗藏着肮脏的交易。但事实上，货币市场与股票市场的特征是相反的，因为股票市场服务的是</span><span><strong>风险共担以及总风险的分配</strong></span><span>，而要达到此目的则必须有完善的市场价格发现机制——即有效市场假说中指出的样子，没有人可以长期利用信息优势，且获取相对优势必须付出等价成本。因此，不少研究者寄希望于类似的机制可以对货币市场同样发挥效果，而大多数建议也汇聚在</span><span><strong>增强资产估值的透明度</strong></span><span>等监管相关的改革政策，主要是为了提供市场纪律并规避系统性风险。</span></p>
+<p><span>但事实上股票市场这一套市场透明度的逻辑不能无缝嫁接到货币市场。对于货币市场而言，对私人及企业提供流动性的最经济方法就是通过“过剩抵押”负债来规避价格发现机制的必要性。而一旦价格发现机制不再必要，那公共市场透明度也就无关紧要了。货币市场天性就是不透明的，而不透明有时还会加强市场流动性。</span></p>
+<p><span>典当行的出现远早于股票与交易所的出现，最早记载于唐朝时期。而影子银行的爆发性增长实际上佐证了抵押（物）贷款的长盛不衰的逻辑。</span><span><strong>抵押物贷款的一大隐藏优点在于不需要发现抵押品的确切价格</strong></span><span>，如果借方持有的抵押物是名表，出售手表面临着许多摩擦成本，比如折价，</span><span><strong>还需要双边议价磋商</strong></span><span>，但通过典当，借贷双方不需要明确表的价值。只需确定赎回</span><span><strong>抵押物权</strong></span><span>以及</span><span><strong>期限</strong></span><span>即可，这削减了议价成本。要达成基于手表价格的协议所需的信息很小。贷方可以明确抵押物折扣来保证借方违约的情况下可以卖出该抵押物。他只需要确定安全的抵押物估值下限。（阈值，而非明确的价格）而当代的影子银行体系则与该交易流程类似。两者的差异仅在于——</span><span><strong>典当行是借方发起，因为存在流动性需求</strong></span><span>；</span><span><strong>而回购则是贷方发起，因为他的流动性（现金）需要寻找安全（无风险）资产</strong></span><span>。</span></p>
+<p><span>股票市场与货币市场的体系是截然不同的，股票市场特性在于：风险共担、价格发现、信息敏感、透明、大规模的投资信息、交易者多、交易不紧急、成交波动大；而货币市场则服务流动性供应与借款、规避价格发现、信息不敏感、不透明、中等投资信息、交易者少、交易紧急且成交稳定。</span></p>
+<p><span><strong>违约（Default）</strong></span><span>实际上是后者的价格发现机制，且强调债务是投资融资的最佳契约，因为债务最小化了价格发现的成本。此外，债务对信息也不太敏感。也因此，货币市场实际上是被刻意设计为含糊而又不透明的。</span></p>
+<p><span>钻石巨头De Beers的售钻方式，是不会给交易商机会以观察他们的供应的，因为一旦给交易上挑选，他们一定会极力选择最佳成色的钻石。交易商提交了订单以后获得“信封”（内有不同成色的钻石，同质度低），检查钻石供应的成色（对于交易商）是有利可图的，但De Beers不允许这么做。交易商只能检查是否“所见即所得”，而如果不愿意接受这个流程，则只能被排除出未来的交易。这么设定的原因是为了逆向选择——劣胜优汰几乎是开放检查钻石以后必然的结果。De Beers依赖自己的交易声誉与长期客户关系来维持这种体系的不透明，对于交易而言，这节省了大量的“检查成本”，即信息获取的成本。</span></p>
+<p><span>汽车拍卖，批发二手车市场的情况类似，买家只能在外部检查，而不能内部检查。一般买家只能草草地检查车辆（一分半钟），这么做的好处是交易迅速，且避免一些精明的专业买家获得更多的车辆信息。</span></p>
+<p><span>此外，货币市场共同基金资产端的价值在波动，且投资者的资金一直在进出，但他们不用每日汇报资产净值，而只需要向SEC季度汇报，汇报的净值还存在30天时滞。这样的形式给了基金足够的时间避免“信息”带来的流动变动，使他们得以调整自己的资产端，而投资者则无法获取足够的信息来了解基金清偿力是否足够。一旦清偿力问题被曝光，往往会带来灾难性的结果。收入的随机性对于投资者而言不那么敏感，而潜在抵押物（基金资产端）的不确定性则相当致命了。行业内许多研究者也表态道，如果货币基金的净值可以高效波动，那它无法被视为和银行一样安全的存在了，因为透明度会降低货币基金份额的货币性。换句话说，</span><span><strong>透明度削减了流动性——这和股票市场恰恰相反</strong></span><span>。</span></p>
+<p><span>此外，债务评级以及信用货币本身实际上也是“不透明”的优势例证。事实上，在法币体系内，</span><span><strong>人们的信任是一种“对称无知”</strong></span><span>，</span><span><strong>没有人知道抵押物的确切价值是什么，但却仍然在使用法币</strong></span><span>。</span></p>
+<p><span>“泡沫”也是一个很好的例子，当资产价格大大超过基本价值的时候，投资者虽然意识到自己才处于泡沫当中，也知道未来一天泡沫会破裂，但没有人知道那一刻何时会来临，越是资产价格与潜在价值脱钩，交易者的信息越对称。这种“对称无知”促使泡沫成为了一种存放流动性的安全避风港，至少短期如此。而假设这个观点正确，那么若是安全的抵押物出现稀缺，泡沫越是会出现。清算行的机制也是类似的。比如在危机期间提供联合担保流动性，一般将私人债务转化为共担义务（所有成员行）。清算行发型借款凭证使得银行可以依赖凭证来置换掉自己的不良资产。实际上这和美联储以及欧洲央行在危机时的做法类似。另外，清算行也不会透露成员行的更多信息（以避免出现污点效应，市场会得知哪些银行的流动性情况差，且在使用央行的流动性工具，从而要求溢价回滚，笔者注）。</span></p>
+<p><span>上述提及的货币市场特点也是存在</span><span><strong>负面性</strong></span><span>的，在常态期间增加的流动性会把风险推至尾部（Everything that adds to liquidity in good times pushes risk into the tail.），如果</span><span><strong>抵押物受损且互信被打破，那么整个货币市场会迎来灾难性的结果</strong></span><span>。所有的金融恐慌都有债务的身影，而</span><span><strong>主因则在于原先信息不敏感的债务突然变为信息敏感的了，投资者的问题开始变多，对于抵押物开始担心，这将引发流动性与价格的暴跌</strong></span><span>。债务的流动性基于过剩抵押的水平以及对抵押物价值的互信。但金融危机期间一切都消失了。资金的紧缺伴随着信息蔓延、资产甩卖、多米诺效应以及资产负债表渗透愈发变得严重。而我认为，这一切的起点都在于债务变得信息敏感！让市场变得透明在此时变得毫无益处。</span></p>
+<p><span>金融危机的终结只会伴随着信心的恢复，</span><span><strong>这意味着市场要回到“不要多过问”的状态</strong></span><span>，而不是简单地把不良资产从金融机构内移出（比如量化宽松资产，笔者注），即使有毒资产被大量的卖出，</span><span><strong>市场还是会担心银行资产端的其他资产质量，透明度也不会让市场平静下来。</strong></span></p>
+<p><span>通常人们所认为的：对称信息会带来流动性</span></p>
+<p><span>但是：透明度≠对称信息Because private info may become more relevant:Symmetric information often easier to achieve throughshared ignorance (+ guarantees)</span></p>
+</blockquote>
+<hr>
+<p><span>我们在本段围绕着抵押品对诸多稳定数字货币的资产负债表实质进行了分析，枚举类型的目的是解构不同有抵押/无抵押框架的缺陷——比如外部性成本、信用（违约）风险、结算限制等等。</span></p>
+<p><span><strong>外部性</strong></span></p>
+<p><span>抵押品框架中的外部性成本是一个不受发行团队控制的问题，比如，假设发行团队决定可被接受的合格抵押品为美国国债，所有的美国国债都可以经由智能合约创生出等额的“稳定数字货币”，但是，</span><span><strong>发行团队是无法干预美国国债的发行的</strong></span><span>，因此，抵押品的数量波动会影响到基于其发行的稳定数字货币的数量。</span></p>
+<p><span><strong>信用（违约）风险</strong></span></p>
+<p><span>Tether的例子中，团队白皮书非常豁达地承认了“信用风险”，这也一度成为了许多用户的攻击点。但在笔者看来，用户使用Tether所承担的Tether发行主体的信用风险（所谓跑路风险）固然存在，但除此以外还存在Tether的关联方信用风险。因为关联方银行吸收掉Tether的美元存款准备金，并没有义务完全按照Tether给用户承诺的100%准备金形式来存放在自己的资产负债表内。</span></p>
+<p><span>换句话说，纵使Tether是诚实、透明（公开存款账户）且100%美元准备金的。但Tether的存款行未必是诚实、透明且100%美元准备金的。对于银行而言，它只是在进行普通的吸储。超过存款保险上限的那部分Tether存款，完全暴露在存款银行的信用风险之下——你可不知道你的银行的资产状况和健全程度，即便在银行业或世俗意义上它的资产负债表是合规的，但是用户未必会认可。</span></p>
+<p><span><strong>结算限制</strong></span></p>
+<p><span>同样是Tether的例子，我们假设USDT与USD的币值稳定在一比一的水平。但在整个兑换过程结束以后，买入USDT的用户实际上被排除出了USD现钞的P2P结算体系以及USD存款的银行结算体系，而被限定在整个USDT的结算/支付体系以内。而整个基于USDT的结算和支付体系的用途选择非常狭隘，你无法使用USDT在日常生活当中消费——虽然它是100%基于足额的美元抵押品的，你能做的就是在有限的支持USDT结算的交易和商户环境内使用它——可能仅剩下数字资产交易所了。</span></p>
+<p><span>USDT的结算限制已经是所有稳定数字货币当中最小的了，因为它锚定了全球结算的核心货币——美元，且它联结了整个数字经济交易的大头——交易所。其他类型的有抵押稳定数字货币的结算和用途限制问题更为严重。这种限制将我们引向下一个核心问题：为什么稳定数字货币在借助法币抵押品（的购买力）的前提下，仍然无法作为我们传统认知中的货币发挥作用？</span></p>
+<p><span><strong>II.e.货币性</strong></span></p>
+<p><span>建立与受认可的稳定资产（比如美元）的联结过程，是</span><span><strong>与既定购买力建立关系</strong></span><span>，从而</span><span><strong>映射到稳定资产的购买力价值网络</strong></span><span>。这个过程的结果</span><span><strong>只解答了稳定性的来源</strong></span><span>问题，且这个来源并不是</span><span><strong>直接地</strong></span><span>，而是</span><span><strong>间接地</strong></span><span>被建立起来的。但</span><span><strong>稳定性≠货币性，建立稳定性不会随之附赠货币性</strong></span><span>。</span></p>
+<p><span>就货币性这一问题，发行者面临的问题变得更为复杂。我们在前文提到，考虑到建构成本，没有团队会在理性的前提下选择相信</span><span><strong>“稳定性的必要前提是完善的支付与结算体系”</strong></span><span>，因为大多采纳了更为间接的方案，即锚定已经被视为</span><span><strong>稳定的货币</strong></span><span>。</span></p>
+<p><span>锚定带来的稳定事实上是一种静态的幻觉，两个静止不动的物件，和两个物体同向同速运动的相对静止（稳定）——其差异性</span><span><strong>就在于流动性</strong></span><span>，而货币性的建立，是需要流动性支持的。换句话说，货币性来源于货币本身作为一种参照物，与其他价值对象不断互动（交易）而产生的直接相关关系。</span></p>
+<p><span>以USDT为例，虽然USDT通过以USD作为抵押品，勾连了USD的现有购买力价值网络，但是这种间接地勾连并没能把这个USD购买力价值网络的交易/支付/结算流程直接地映射过去。你无法（或者说不会）使用USDT在便利店购买商品，无法用USDT购买美股股票，也无法用USDT购买各类服务。USDT的整个购买力网络，勾连了绝大多数数字资产；但是外化于传统商品和服务。当你把你手中的美元存款或美元现钞转换为USDT的时候，也就是你放弃了美联储的债权，也放弃了美联储债权（美元现钞）构成的结算体系——现钞、P2P支付、面对面的交易；你也放弃了对银行的债权（存款），以及存款构成的结算体系——中心化的电子支付。但是，你获得了通往数字资产交易和数字资产价值网络的钥匙，在这个环境中，人们接受USDT、ETH以及BTC作为结算/支付/和交易货币，反而是法币需要经由他们作为链条的中介，渗透到这个体系中来。</span></p>
+<p><span>需要指出的是，选择货币的前提是</span><span><strong>交易的达成</strong></span><span>，传统货币理论当中的“需求的双重巧合”无法达至时，才需要引入货币这一中介。因此，货币性的建立，不可能脱离于交易本身。创造了交易的条件不代表可以促成交易。许多数字货币的白皮书都会提到生态、行业价值网络（产业链）和自由选择，并寄望于通过科学的市场机制设计来吸引用户；而在稳定数字货币的白皮书中，都会提到稳定性的建立、发行逻辑以及市场的动态均衡（平衡）机制设计，希望通过算法、确定性、透明度与市场化行为来吸引用户。但这些“理性设计”并不一定可以带来货币性。</span></p>
+<p><span><strong>III.方法论</strong></span></p>
+<p><span>在这一章节，笔者将就有关稳定数字货币的设计流程与方法的核心问题进行分析。现存的稳定数字货币当中，存在诸多方法论层面的谬误与逻辑悖论，通过对这些案例的分析，我们从中推出合乎理性的设计流程与方法。</span></p>
+<p><span><strong>III.a.因果倒置</strong></span></p>
+<p><span>因果倒置即错判了两件事物之关系，主要源于误判其影响方向。在稳定数字货币领域，这种错判的典型即认为“稳定数字货币的供应量必须固定且有限。”这种推论的根源，是对“稀缺性”的错误理解。</span></p>
+<blockquote>
+<p><span>根据经济主体的部署，对于一个经济客体的存在而言</span><span><strong>首先需要的是效用</strong></span><span>。如果客体想要获得某个特殊的价值，那么</span><span><strong>缺失</strong></span><span>必须作为一个</span><span><strong>次要决定因素</strong></span><span>被附加其上。如果经济价值被认为是</span><span><strong>供给和需求决定的</strong></span><span>，那么</span><span><strong>供给将和稀缺</strong></span><span>、</span><span><strong>需要将和效用</strong></span><span>相一致。效用作为</span><span><strong>经济价值的绝对部分</strong></span><span>呈现出来……稀缺性只是</span><span><strong>一个相对的因素</strong></span><span>。对一个客体的简单需要尚不足以创造一个经济价值，只有多个需求的比较，即其</span><span><strong>客体的可交换性</strong></span><span>，才能赋予它们中的每个以特定的经济价值。</span></p>
+<p><span>商品的稀缺以客观上</span><span><strong>涉及那些商品的需要的交换为条件</strong></span><span>，并且只有</span><span><strong>交换</strong></span><span>才能使稀缺成为价值中的一个要素。</span></p>
+<p><span>根据所有这些情况得出，交换是一种自成一格的社会学现象、一种社会生活的最初形式和功能。</span><span><strong>它绝不是事物的那些被称为效用与稀缺的性质与数量因素的逻辑结果……客体并不是因为它们稀罕才难得到，而是因为它们很难得到才稀罕</strong></span><span>。它们是否在经济意义上是稀缺的，是由在交换中获得它们所必须的力量、耐性和牺牲（这样的牺牲预设了对客体的需要）的程度来决定的……它的稀缺只是外在表现，</span><span><strong>数量形式中它的客观化</strong></span><span>。稀缺</span><span><strong>只是一种否定条件，它通过不存在来表现存在的特性</strong></span><span>，这一点常常被我们忽略了。</span></p>
+<p><span>——齐美尔《货币哲学》</span></p>
+</blockquote>
+<p><span>齐美尔的论述可能不够直观。</span></p>
+<p><span>在笔者看来，一些稳定数字货币的供给量固定，希望将“黄金的有限供给”和“通缩经济”的概念结合起来来人为的创造货币的稀缺性，并臆想绝对稀缺成为需求的先决条件。但事实上，货币绝不会因为稀缺而有价值，而是有价值才稀缺。</span></p>
+<p><span>因此，</span><span><strong>在稳定数字货币的设计中，对绝对供给量的管控事实上并没有任何逻辑依据，也无法成为其价值的根基</strong></span><span>。</span></p>
+<p><span><strong>III.b.创造目标的条件≠达至目标</strong></span></p>
+<p><span>一些稳定数字货币的项目认为只要创造了良好的生态环境、足够透明的发行机制和抵押品管理以及通俗直观的应用场景既可以达到流通的目标。但事实并非如此，汽车不会因为加满油就发动；银行不会因为有充裕的准备金就扩张自己的资产负债表；你也不会因为钱包鼓鼓就去消费。</span></p>
+<p><span><strong>III.c.回溯定律带来的问题</strong></span></p>
+<p><span>如果因为货币因为被用作一种交换媒介被使用而有价值，那么货币作为交换媒介的价值从而何来？</span></p>
+<p><span>米塞斯认为，货币能够用于交换商品，即基于货币的先前的用商品衡量的购买力。简而言之，要使持有货币有边际效用，商品的货币价格，</span><span><strong>货币的购买力，必须首先存在</strong></span><span>，从而需要回溯定律摆脱循环。正如前文所提到的，当前许多稳定数字货币的问题，虽然</span><span><strong>通过一种既定的购买力（通过货币抵押品）去创造锚定该购买力的货币，但本身并没能解答购买力从何而来的问题。</strong></span></p>
+<p><span><strong>因此，解决货币价值的问题，事实上需要解决的是购买力问题，简言之，如果没有交易，就无法衡量购买力。</strong></span></p>
+<p><span><strong>III.d.不必要的二元化</strong></span></p>
+<p><span>为了保障自身的项目利益，不少稳定数字货币使用了</span><span><strong>二元化</strong></span><span>的货币体系即Coin+Token的体系，一方面发行Coin，另一方面发行Token，这些Token和Coin存在各种不同的关系，比如攫取整个持币群体使用Coin所带来的价值增量，获取远期的Coin增发等等。</span></p>
+<p><span>有一些设计的逻辑非常古怪，即货币双轨制设计。令笔者感到非常困惑的是，一些奇葩设计就把Token设计为Coin的远期兑换券，实质上就是不同期限的Coin——比如你发行了一种Coin，然后以该Coin计价发行了一种远期（假设三个月后兑付）的Token，实际上该Token和法币体系中央银行发行央票（吸收流动性）没有任何差别。根本没有必要设计两种币种来混淆投资者，直接以项目方身份发行以自身Coin计价的债券即可，也能达到所谓“</span><span><strong>吸收流通量以紧缩供给</strong></span><span>”的效果。</span></p>
+<p><span>选择Token和Coin的二元化必须</span><span><strong>明确地言明两者性质的差异</strong></span><span>，比如Coin是一种负债（兑付），Token是一种权益（无兑付），再在企业资本结构的视角下做实操，是更为审慎的做法。在笔者看来，</span><span><strong>许多项目盲目的二元化只是妄图在发行环节就攫取首次发行Token的铸币税，因为Coin本身的发行似乎看上去无利可图，因此只能靠Token的ICO环节来完成收割</strong></span><span>。这种做法可以说是市场的你情我愿，但这类发行方如果在白皮书中嘲讽法币的不稳定性和政府货币创造通货膨胀，那可就太讽刺太魔幻了。</span></p>
+<p><span><strong>III.f.去中心化（Decentralization）与去中介化（Disintermediation）</strong></span></p>
+<blockquote>
+<p><span><strong>Intermediation is the practice of middlemen operating between an originator/producer and end user/consumer.</strong></span><span> </span></p>
+<p><span>Intermediaries include agents, brokers, distributors, publishers, wholesalers, and retailers;</span></p>
+<p><span>in the financial realm, the term encompasses banks and insurance agents or brokers, credit card companies, fund managers, stock exchanges, and underwriters;</span></p>
+<p><span>in corporate governance, intermediaries include independent directors as well as service providers also called gatekeepers, such as accountants, lawyers, and rating agencies, along with assorted investor advocates and shareholder proxy advisors.</span></p>
+</blockquote>
+<p><span>在泛数字货币领域，对去中心化与去中介化的追求似乎已经成为了从业人员基因中的东西，从业人员通常迷恋于</span><span><strong>分布式逻辑（离散的价值网络结构、原子论）</strong></span><span>、</span><span><strong>行业价值链重塑</strong></span><span>（没有中间商赚差价）以及</span><span><strong>信息的对称性与完备性</strong></span><span>。</span></p>
+<blockquote>
+<p><span>如果你对以下论点深信不疑，可以先行拷问自己是否能做出顺畅且逻辑自洽的推理：</span></p>
+<p><span>1.去中心化是未来人类社会关系的终极形态，重塑经济体、社会组织、利益实体与公共治理。</span></p>
+<p><span>2.去中介化的行业形态是效率最高的，市场信息完全对称，在信息完备的情况下，行业的参与者可以在真空（无摩擦）环境中交易，一切都是公开透明的。</span></p>
+<p><span>3.去中介化与去中心化都可以有效地降低</span><span><strong>交易成本，最大化经济效益</strong></span><span>。</span></p>
+</blockquote>
+<p><span><strong>综合来看，从业者无非是想通过去中心化与去中介化运动来消除掉存在于市场中的“集中与聚合”——对应垄断与中央机构；“层级与环节”——对应产业链上下游与门槛；以及“风险与不确定性”——对应时际维度的不可预测性。</strong></span></p>
+<p><span>很遗憾，在这三个条件之下，货币也会消失——因为货币即是作为中介才出现在经济活动与市场当中的，以应对供需在时际维度下无法完成匹配的情况。</span></p>
+<p><span>笔者认为，去中心化与去中介化不应该成为项目的终极目标，项目可以以追求达致（趋近于）这两种状态。但需要明确地规划究竟自己想要的是哪种去中心化/去中介化？许多去中心化活动只是将</span><span><strong>中心职能中的人力干预部分弱化了，比如算法和机器替代</strong></span><span>；类似的，许多去中介化的活动只是对</span><span><strong>原先的层级与中介进行了替代、切割或者再分层</strong></span><span>——这在金融领域当中屡见不鲜。</span></p>
+<p><span>在治理问题上，建构去中心化网络（分布式、节点）并在此基础上形成共识的机制已经被广泛讨论。但仅从当前的诸多案例来看，许多团队的工作</span><span><strong>仍然聚焦于技术和基础设施的搭建</strong></span><span>。我们做得似乎只是在映射一套传统的治理体系（比如民主制度），开发一套链上的数字孪生系统，治理的维度不再被国界所限制，身份的迁移似乎不难，但整个价值网络的迁移仍然困难重重。</span></p>
+<p><span>#</span><span>行业的去中介化</span></p>
+<p><span>笔者的耳朵已经被行业去中介化的呼声磨出了老茧。许多从业人员致力于通过所谓的“上链”和“币改”重新塑造传统行业，但在我所阅读的白皮书当中，项目方都普遍比较乌托邦，并且堆砌了大量没有意义的行业数据和事实现状（比如</span><span><strong>广受非难的广告行业与内容行业</strong></span><span>），此外，最近崛起的“通证派”也让我感到非常困惑，因为他们口中的通证事实上并没有任何独特的内容创新，他们所寄予厚望的币改根本就不是什么新兴事物，现在的权益（或价值）凭证早就不在基于物理实体了，银行存款也是数字化的，至于流动性和安全性，也并不是通证的专属特征。</span></p>
+<p><span>调侃地说，所谓的币改逻辑能被“无法被盗号（安全性）的喜爱充值氪金（价值）的手机游戏白金玩家（身份）。”所替代，笔者所看到的与资产证券化、权益发行有关的通证创新和传统框架内的类似活动没有任何差异性和优越性，这类金融活动在传统的法律框架内本身就是公民自由权的一部分。</span><span><strong>我为什么要把法币计价的资产通证化以后以通证的形式持有并被排除在法币的结算体系以外？</strong></span><span>如果通证和法币体系形成联系（可兑换性），那它相比于支付宝余额、银行存款这类准货币的区别在哪？一定要强调通证的意义在哪？是“货币”或者“货币性”的内涵不足以与“通证”相比吗？</span></p>
+<blockquote>
+<p><span>Q币、月饼券、赌场筹码、公共交通卡、积分、认购券……</span></p>
+</blockquote>
+<p><span>#</span><span>金融的去中介化</span></p>
+<p><span>在金融活动中寻求去中介化是非常困难的，因为金融业天然地具备中介属性，即金融机构作为一张额外的资产负债表，链接起借贷两端。以房贷为例，如果A想要获得房贷，而B想要放贷，在P2P的前提下达成交易只涉及A和B两张资产负债表，但是如果引入金融机构——比如银行，则纳入了第三张资产负债表。A不再是对B承担债务，而是对银行承担债务，B不再对A拥有固定期限的现金索取权（债务偿付），而是由银行获得。在这笔交易当中，银行作为相比于A和B更高层级的金融机构（中介），使用自身的资产负债表吸纳掉了借款人的信用风险，让B成为了自身的债权人。</span></p>
+<p><span>同理，银行间市场当中，假设A和B变为了银行，此时，央行作为相比于A和B更高层级的金融机构（中介）进行结算。</span></p>
+<p><span>因此，金融机构和金融市场（金融工具）作为高度中介化的基础设施，其功能是为了“配置”所有节点（市场参与者）的风险结构，在2008年的金融危机当中，大量的新型金融机构出现在整个房地产资产泡沫的价值链上，整个链条横向上非常臃肿（涉及的机构繁多），在纵向上也非常臃肿（杠杆与资产负债表规模）。由于底层资产（房地产）的泡沫非常严重，许多借款人的负债变得不可持续，相关的违约风险（无法偿付负债）溢出到了资产价格之上。最终使得参与风险共担与风险转移的影子银行链条得以瓦解——这些影子中介（包括评级机构）在泡沫进程中不断地进行流动性转换、期限转换与信用转换，使得流动性风险、期限风险以及信用风险被多重链条和分层结构被掩盖（共担），而风险定价的含糊最终使得资产价格狂飙突进。</span></p>
+<p><span>Everything that adds to liquidity in good times pushes risk into the tail.</span></p>
+<p><span>俄罗斯套娃式的资产负债表嵌套通过增加金融中介的数量来稀释（分摊）掉底层资产的风险，最终引发了灾难性的结果。</span></p>
+<p><span data-src="https://upload-images.jianshu.io/upload_images/10566547-d5ec2313fa5faa7d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><img src="https://rocks.wisburg.com/fc081d9f-b70d-4df1-a780-ef8a9db428c6.png" data-wisburg-media-id="2094" data-wisburg-media-mime="image/png" data-wisburg-media-fsize="160762"></span><span> </span></p>
+<p><span>人们总会惯性地去指责金融机构的“风险工程学”偏好，但这种视角是错误的。金融活动中的借贷行为本身就是非对称的，借方的借款需求源于时际错配（拿自己远期的流动性贴现以满足即期的流动性需求）以进行风险承担的活动，但借方的risk-taking却面对的是追求安全需求的贷方，贷方存在盈余（余额）并想获取利息（那即期的流动性换取远期的流动性+利息），但有着非常明确的Safety needs，金融中介作为货币交易商和风险交易商同时满足了两端的需求，并通过这种服务来赚取Carry。</span></p>
+<p><span>真正的问题在于，金融机构应不应该主动地去创造风险，并利用风险来满足自身的Carry目标呢？</span></p>
+<p><span>在笔者看来，我们所追求的金融去中介化，实质上是想杜绝掉主动的风险创造与连带的风险转移和分发活动，而非被动的（需求主导）中介活动，举例而言，典当行是需方主导下的信用产物，但央行的回购政策就是主动的了。事实上，主被动的界定非常困难——节点可以选择中介，但中介反过来也可以引导节点。只要两者形成联系，就不太可能仅限于单向的活动。</span></p>
+<p><span><strong>IV.流程与方法</strong></span></p>
+<p><span>沿着稳定性、抵押品、资产负债表结构以及货币性的脉络，并结合已经言明的诸多设计问题，本段将探讨设计流程与方法的实操。</span></p>
+<h2><span><strong>找到可以带来永续现金流的资产（Perpetual Cash Flow）</strong></span></h2>
+<p><span>之所以笔者将“永续现金流的资产”视为稳定数字货币设计中的</span><span><strong>重中之重。</strong></span><span>是因为现有的成功货币形态当中——以公共发行的货币-纸币或硬币形态的法币；私人部门发行的货币-银行存款为典型，都作为隔夜且永续（Perpetual）的货币而存在，而它们作为一种负债，出现在货币发行者的资产负债表内。因此，对于发行者而言，为了</span><span><strong>匹配资产和负债的期限</strong></span><span>，寻找一种可以带来永续现金流的（固定）资产是非常重要的。</span></p>
+<p><span>举例而言，假设你发行了一种自己的货币（以欠条形式，IoU），并且指望他永远在你的社交圈子领域内流通，比如朋友A，B，C，D接受你的欠条作为支付货币，势必是因为这个欠条可以在你这里兑换到有价值的东西（可以是商品也可以是服务），它可以是暗晦的，也可以是言明的。</span></p>
+<p><span><strong>言明</strong></span><span>的例子比如月饼券，在月饼券的到期日前，月饼券具备一定的准货币性，甚至可以在企业、个人、黄牛之间流通，而其流通价值即消费者对</span><span><strong>可兑换到的月饼的估值</strong></span><span>。但是，月饼券的流通价值，在中秋过后就消亡了。这就是我们提到的期限匹配的问题——月饼券作为一种债权凭证的货币价值，伴随着对应的资产——月饼的可兑换性而消亡，月饼有保质期——不能作为永续资产。虽然在中秋以后月饼仍然可以被生产，月饼券仍然可以被发行。但由于流通需求本身会因月饼交易需求的锐减而消褪，故也因此失去了货币性。</span></p>
+<p><span>我们可以通过使用法币作为抵押品的稳定数字货币的资产负债表嵌套关系进一步找到现行成熟的货币体系中的永续资产。</span></p>
+<p><span>USDT以美元作为抵押品，那么美元本身的价值又来自于什么呢？所谓法币，事实上就是“不兑现纸币”，而不兑现所对应的，是金本位时期的兑付制度——即你持有的法币，必定有等价的黄金来支撑它的价值。现代中央银行的发展不再用足额的黄金来保证自身法币的兑付。而是把一部分黄金资产置换为生息债券（或类似的债权），也就是说，法币的价值支撑，从商品本身的价值，蜕变为了债权价值。</span></p>
+<p><span>存在对其他实体的债权，就存在另一张资产负债表。</span></p>
+<p><span>以美联储为例，其资产端拥有大量的美国国债（和其他债权），在负债端则是美联储发行的纸钞——联邦储备券（即美元现钞，Federal Reserve Notes）以及其他形式的负债，比如准备金。因此，当我们持有对美联储的债权（法币）的时候，这部分债权的对应资产端，事实上是美联储对美国财政部的债权——即</span><span><strong>美国国债</strong></span><span>。</span></p>
+<p><span>这个链条还没有终结，国家（政府）债务的背后对应的是其资产。因为根据美国宪法，宪法赋予国会花费支出和</span><span><strong>征税的权力</strong></span><span>。</span><span><strong>当国会行使其支出权力时，同时创造了国家债务</strong></span><span>。例如，国会每年都要拨款来支付美国的军事支出和联邦雇员费用。</span><span><strong>在帐目的另一端（收入端）</strong></span><span>，国会制定的收入法确定了多少钱可以流入财政部。由于收入不足以支付国家的许多定期债务，国家必须借款来弥补差距，</span><span><strong>因为支出的决定已经被锁定下来</strong></span><span>。宪法还赋予国会以美国信用来借款的权力。行政部门通过其宪法的角色“保障法律得到忠实执行”，然后负责根据需要进行支出，通过征收税收和通过代表美国发行债务来执行国会决定。在行政部门内，财政部是负责为政府融入所需借款额的机构。</span></p>
+<p><span>美国国债是美国财政部的负债，那么财政部又用什么资产来支撑这一部分负债的价值呢？</span></p>
+<p><span>美国政府的永续征税权！</span><span><strong>永续征税权意味着永续现金流</strong></span><span>（收入）。法币的价值，是以征税权作为其根基的。征税权背后的稳定收入即</span><span><strong>政府法币的永续现金流的资产</strong></span><span>。</span></p>
+<p><span>法币的链条，最终链接的是财政权（由支出权——政府的义务，引出收入权，政府的权利），在政府与其他私人部门的二元视角下，政府的支出最终变为其他私人部门的收入，整个流动的闭环即政府支出——私人收入——私人支出——政府收入。</span></p>
+<p><span>这又带来了一个额外的问题，如果说，稳定数字货币想要一种类似税权的永续现金流资产，这事实上隐含了永续支出义务。因为在现代主权货币的框架当中，财政先于货币，且支出先于收入。</span><span><strong>这是否意味着稳定数字货币脱离现代的财政框架是不可企及的呢？</strong></span></p>
+<p><span><strong>#货币的主权模型</strong></span></p>
+<p><span>在历史上，攫取收入需要依赖主权当局的强制力，比如美国的IRS。在第一步中，我们提到这种攫取的合法性来源出自政府的支出义务，即创造一种广义的针对非主权当局部门的收入。</span><span><strong>不过讽刺的是，美国政府的债务上限不断被调高</strong></span><span>。这说明，</span><span><strong>政府的支出义务并不能被其收入权利所覆盖，因此带来了越来越高的主权负债</strong></span><span>。这意味着支撑负债的资产——税权，所</span><span><strong>攫取的资源远不足以保障政府的开支</strong></span><span>，因而整个货币体系都笼罩在债务积压以及相应的违约风险所带来的不确定性之中。（奥地利学派的经济学者会毫不犹豫地抨击美国政府的开支无度，不过，我们在本文中不会就此议题继续展开下去。）</span></p>
+<p><span>这里我们不得不提到一个货币的核心要素——即现代货币体系当中</span><span><strong>权利/义务的混合性</strong></span><span>，持币人总会认为持币（无论是Coin还是Token）是作为自身权利的一种表征，但是，这种理解忽视了使用货币的</span><span><strong>隐含义务</strong></span><span>，尤其在法币体系内，这种权利/义务的二元驱动力更是通过</span><span><strong>货币发行权（政府负债）</strong></span><span>/</span><span><strong>税权（政府资产）</strong></span><span>得以直观地体现出来。这种对权利/义务关注度的</span><span><strong>非对称性</strong></span><span>起源于对债权关系的理解。即在债务关系中，债权人和债务人分别享受权利/承担义务。因此货币作为一种特殊的债权，</span><span><strong>会让持币人也产生“我仅是权利人”的错觉</strong></span><span>。类似的非对称性用词比如“支付”，给许多人的感觉就等同于“支出”，但实际上支付隐含的关系也是二元化的，即收/支的对应。</span></p>
+<p><span>如果对货币自身的内在二元性，即收入/支出，资产/负债，盈余/赤字，用途/来源的视角没有足够的理解，就难以构建现代的稳定数字货币。</span></p>
+<p><span>顺着这条逻辑线，我们再来看美元的案例，</span><span><strong>美元发行方的资产负债表</strong></span><span>与</span><span><strong>美元持有者的资产负债表</strong></span><span>是分别独立的。</span></p>
+<p><span>在三权分立的治理结构下，行政当局与总统掌握了整个经济体内的执政权（事权）与财税权，常人对政府支出的理解停留在先收后支的逻辑中，因为在日常生活中，我们确实需要先获得工资（收入/盈余，+），然后才可以进行花销（赤字/支出，-）。因此人们对于公共政策和政府支出的想象也是类似的：</span></p>
+<p><span>个人消费决策（假设是买方）——累积工资收入——收入存银行——支出款项——买入房产</span></p>
+<p><span>公共政策决策（假设是修路）——收取公民税款——税款入国库——支出款项——开始修路</span></p>
+<p><span>但是，美国的财政支出体系并</span><span><strong>不是由收入决定的</strong></span><span>，思考一个问题，</span><span><strong>第一笔收入是哪里来的</strong></span><span>？必然是支出所创造出来（二元化）。这一点似乎偏离了人的直觉，就像在货币银行学范畴以内，人们认为是先有存款再有贷款，银行的业务是吸收存款然后去放贷，但事实上银行的业务是</span><span><strong>先进行放贷（资产端记一笔信贷资产），然后再在负债端记一笔法币存款，根本不需要存款作为先决条件</strong></span><span>，整个流程只是货币的资产负债表魔术而已。</span></p>
+<p><span>我们回到上面的公共支出的案例，事实上，政府在实施支出政策时，不需要使用自己国库内的存量资金，只需要根据支出来发行特定的债券募集资金即可。如下图：</span></p>
+<p><span>首先（淡绿色流程），政府（Government）发行国债（T-Bill+），这部分国债被一级交易商（Dealer，即做市金融机构）买入，交易商为了买入这部分国债（T-Bill+），需要转账自己在银行的存款（Account at Bank-）给到财政部，银行（Bank）收到指令后，减记自己在中央银行的准备金存款（Reserve Balances-）支付给财政部，同时减记交易商的存款金额（Dealer's Account-）；中央银行（CB）收到银行的指令后，减记银行的准备金存款（Reserve Balances-），转入财政部的存款账户（Treasury Account+）。</span></p>
+<p><span>再来看淡蓝色的流程，政府在收到资金以后，支出给了收款方（修路方，Spending Recipient），修路方收到政府的资金后存入银行。央行此时减记了政府-财政部的存款，增加了银行的准备金存款，资产负债表并没有产生变化，政府通过增加负债完成了自己的修路政策，银行的准备金存款一进一出没有变化，但是变成了修路公司的债务人（存款转换），修路方通过财政政策得益，获取了盈余。</span></p>
+<p><span>整个支出环节中，政府在支出（赤字），私人部门获得了收入（盈余）。</span></p>
+<p><span data-src="https://upload-images.jianshu.io/upload_images/10566547-9f41896da1680514.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><img src="https://rocks.wisburg.com/87619322-eadd-43f9-90fa-2b856371faed.png" data-wisburg-media-id="2095" data-wisburg-media-mime="image/png" data-wisburg-media-fsize="798166"></span><span> </span></p>
+<p><span>那么，政府通过</span><span><strong>债务发行（或者直接的货币发行，即债务货币化）</strong></span><span>来履行自己的支出义务，那通过什么来支撑这部分货币（负债）呢？</span></p>
+<p><span>税收权利！因此，一个没有财政体系的货币体系是绝不可能成功的。</span></p>
+<p><span>图：财政部与央行的并表处理——看清主权模型的资产与负债！</span></p>
+<p><span data-src="https://voxeu.org/sites/default/files/image/FromMay2014/cecchettifig1.png"><img src="https://rocks.wisburg.com/34fb5cfe-0e30-4d24-bb6d-dfba30cd3f9e.png" data-wisburg-media-id="2096" data-wisburg-media-mime="image/png" data-wisburg-media-fsize="172861"></span><span> </span></p>
+<p><span><strong>#信仰模型</strong></span></p>
+<p><span>信仰模型的核心在于人的拜物倾向，而这种模型得以维系的一大前提是——货币的创造必须是无涉于人的，比特币的信仰模型与黄金的信仰模型有着相似的拜物心理，而无涉于人的前提加强了这种拜物心理，因为黄金没有发行者（天赐之物），而比特币的创造者（中本聪）仍然是个谜。</span></p>
+<p><span>*一些经济学者甚至将黄金作为一种超主权国债来定价。</span></p>
+<p><span>无涉于人这一点之所以得以成为信仰模型的核心，是因为这类货币天然地消除了潜在的发行者-使用者关系，使得它的运作模式非常符合安那其主义，并与主权模型形成了鲜明的对比。你不需要在信仰模型中建立对货币的“信任”，“信任”是被预设的，相比之下在法币世界中，货币当局要建立可信度却是一件非常困难的事情。</span></p>
+<p><span>有一些项目的发起人或许会因为长期的从业积累而被神化（比如圈内非常喜欢使用的X神称谓），但由于他（她）的行为、言论与能力都可以被证伪，事实上直接代替了（发行的）货币与所有“信众”产生了关系，因此，这种模式并不纯粹。</span></p>
+<p><span>信仰模型的永续资产即“布施”。即内生的、自发的行动力来积淀价值。</span></p>
+<h2><span><strong>创造可以带来永续现金流的资产（Creating Perpetual Cash Flow）</strong></span></h2>
+<p><span>#</span><span><strong>数字货币计价的债券</strong></span></p>
+<p><span>很遗憾，由于稳定数字货币的发行者往往来自于私人部门而非主权当局，因此，在发行货币这个方面先天地不具备很多优势——持币人大多以债权人或股东自居。他们并不认为自己持币的行为隐含着对应的税收义务，而只是通过稳定数字货币持有了100%准备金的狭义银行存款。但我们都知道天底下不存在免费的午餐，无论是造金库还是运维都是隐含了负利率的。因此，</span><span><strong>持币人的严苛事实上也限制了这个行业的发展</strong></span><span>，最为讽刺的是，我相信很多持币人也同时是银行存款的持有者，但他们绝对不会去过问存款银行的资产端是什么资产，也不会在意手中持有的现钞——人民币——对应的中国人民银行的资产端是些什么资产。要知道，法币体系是不具备可兑换性的，即你手中的纸钞无法兑付到任何东西，但人们仍然接纳了法币。这看上去非常怪诞，人们对于稳定数字货币的权利要求极为严苛，这在笔者看来像是一个不可能的任务：</span></p>
+<blockquote>
+<p><span>首先要保证100%的可兑换性和实时流动性；</span></p>
+<p><span>其次，要有100%的准备金和过抵押率（150%）；</span></p>
+<p><span>货币价值的波动不能过大，不能增发；</span></p>
+<p><span>维持整个项目的强透明度；</span></p>
+</blockquote>
+<p><span>这也就意味着，稳定数字货币的发行方手中几乎无法掌握到稳定的资源（比如税权）来维护整个货币体系，因此许多稳定数字货币不得不做出了我前文提及的二元化——选择Token和Coin的二元化必须</span><span><strong>明确地言明两者性质的差异</strong></span><span>，比如Coin是一种负债（兑付），Token是一种权益（无兑付），再在企业资本结构的视角下做实操，是更为审慎的做法。在笔者看来，</span><span><strong>许多项目盲目的二元化只是妄图在发行环节就攫取首次发行Token作为铸币税来维持自己的货币体系运营，因为Coin本身的发行似乎看上去无利可图，因此只能靠Token的ICO环节来完成首次的资源攫取</strong></span><span>。</span></p>
+<p><span>参照一些项目的做法，这个过程实质是把整个资产负债表当中的对应物做了细分的切割，比如传统的税权对应债务（货币/国债）发行权，而稳定数字货币的案例中，把链上的一些类型的不稳定收入（资产）导入给自己的Token，实际上就是给自己的权益人分红；此外则把Coin作为负债对应到足额或者过抵押的抵押品之上锁定住。但由于其收入的创造建基于足够多的交易之上，而在一个</span><span><strong>缺乏流动性</strong></span><span>的环境（依靠分布式支出）且Token融资额不具备可持续性的项目中要做到足够的交易额来支撑自己的Token本身就非常困难。这就形成了一个死循环，</span><span><strong>项目方最终沦为了法币资产或抵押品的数字托管方，其发行的稳定数字货币根本不具备流通、价值贮藏和定价基准的功能</strong></span><span>。</span></p>
+<p><span>这也是笔者支持引入</span><span><strong>数字财政体系（Digital Treasury System）</strong></span><span>的原因，现有的Tether体系在中心化的争议中仍然对数字资产交易起到了决定性的作用，那么以Tether计价的数字债券市场是否可以帮助中心化的机构尝试更多的货币体系扩散呢？</span></p>
+<p><span>创造一种数字世界的“国债”资产，甚至“数字金边债”，才能让稳定数字货币得以“两条腿走路”，这在主权模型当中尤为重要——稳定数字货币作为一种发行方的负债，需要对应的</span><span><strong>稳定（安全）资产</strong></span><span>来支撑它的价值。</span></p>
+<h2><span><strong>安全资产的构建（Safe Assets）</strong></span></h2>
+<p><span>知名博客Money and Banking中曾经罗列出货币、银行业以及金融市场的五大核心原则（The Five Core Principles of Money, Banking and Financial Markets），这些原则适用于货币的主权模型：</span></p>
+<blockquote>
+<p><span>Time has value.——时间是有价值的，这体现在货币的利率之上。 稳定货币（安全资产）的时际设计——期限/久期管理，在主权模型中，即主权资产负债表的管理。</span></p>
+<p><span>Risk requires compensation.——风险需要被补偿，这涉及风险的定价问题。 风险定价与风险流转的机制设计——涉及风险交易的金融工具（汇兑风险/跨链，信用风险/违约，利率风险/期限）。</span></p>
+<p><span>Information is the basis for decisions.——决策需要信息。 记录、透明度、对称性、披露，信息决定了风险与不确定性的水平。</span></p>
+<p><span>Markets determine prices and allocate resources.——市场负责定价与资源配置。价格机制与资源流动。</span></p>
+<p><span>Stability improves welfare.——稳定提升福利。</span></p>
+</blockquote>
+<p><span>在主权模型当中，安全资产的构建是可以辅佐货币体系的。如下图，通常，主权当局（发行方）发行的长短期债券（由财政部发行）被视为安全的流动性资产，他们的流动性仅次于央行的负债工具（现钞、准备金等等），但被视为无风险工具。当然，也有研究者指出，主权当局的债务史就是一部违约史——因为“国王有权处死债权人”。</span></p>
+<p><span>安全资产的概念即“蓄水池”，以发行的币种计价的更长期限的资产，一方面可以锁定流动性，不需要应对隔夜的兑付义务；另一方面在主权模型中可以被集中，以完成主权当局的治理目标（比如经济增长）。</span></p>
+<p><span>以美国为例，美元是国际货币体系的储备货币。这使得</span><span><strong>美元资产</strong></span><span>成为寻求安全资产的资金流动的首要目标。事实上，美元在危机时期是一个安全的避风港，当全球性的“逃向质量”发生时尤为如此。由于外国对安全资产的需求增长速度超过美国主权债务（国债的增长），美国金融中介向外国私人投资者发行了更多“安全”的负债，这些负债占外国流入总额的80%——事实上，如果我们配合上文中金融危机部分的内容阅读（金融的去中介化），会发现这两者之间是存在关联性的。寻求安全资产的资金流入的直接影响是对</span><span><strong>美国居民和金融中介更高的风险集中度</strong></span><span>。</span></p>
+<p><span data-src="https://upload-images.jianshu.io/upload_images/10566547-5ecd41f7006093f1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><img src="https://rocks.wisburg.com/683e62af-1fe6-4b92-83be-2c9a69d01128.png" data-wisburg-media-id="2097" data-wisburg-media-mime="image/png" data-wisburg-media-fsize="665010"></span><span> </span></p>
+<p><span>稳定数字货币的发行者如果希望纳入安全资产体系，则需要审慎地考虑资产池（这和抵押品池的选择其实是类似的）。</span></p>
+<blockquote>
+<p><span>没有资产是绝对安全的。</span></p>
+<p><span>安全资产是没有信用风险的无条件金融承诺，因此名义偿付是确定的。</span></p>
+<p><span>安全需求并</span><span><strong>不寻求获得其作为支付的功能（这也是安全资产与稳定货币的界限）</strong></span><span>，而是针对所有情况下的财富保护，是一种极端风险的规避行为。因此，它锚向公共债务或最安全的私人资产。</span></p>
+<p><span>在主权模型中，“安全的”政府发行的或担保的任何债务，意味着该国有自己的中央银行，有稳定的货币和良好的财产权保护。</span></p>
+<p><span>安全资产文献迄今为止忽视了通货膨胀风险，但低通货膨胀环境可能是安全资产的先决条件。这同样是主权模型的一大核心，即通胀目标承诺。</span></p>
+<p><span>最安全的私人发行的债权定义为</span><span><strong>准安全</strong></span><span>的，意味着他们在</span><span><strong>重大危机之外</strong></span><span>没有信用风险。之所以他们无法面对危机，是因为这类资产可能无法被主权当局纳入担保范围。私人准安全资产在私人金融中介创造内生货币的过程中产生，例如短期的和有抵押担保的债务。在系统性风险压力的情况下，这些私人资产会丧失其安全性并迅速的变得流动性很差。</span></p>
+<p><span>流动性需求寻求易于快速转换成货币的资产，例如政府债务和有流动性的借款人发行的短期债券。资产流动性是重要的，因为它可以满足消费或投资的突然需求，无论是服务消费还是生产目的。持有流动性强的或无产权负担（还没质押出去）的可抵押资产作为预防，可以避免信息不对称或道德风险导致的昂贵的外部融资。当非流动资产以“大甩卖”价格被出售时，囤积流动性资产变得尤为有利可图。</span></p>
+<p><span>安全性和流动性之间存在明显的正相关性，尽管这两个概念存在差异。</span></p>
+</blockquote>
+<h2><span><strong>交易/支付/结算体系的构建（Trade/Payment/Settelment</strong></span><span>）</span></h2>
+<p><span>第二步，是强资本开支、强运营以及专业知识强度极高的一环。</span></p>
+<p><span>交易的促进，需要更多的以稳定数字货币报价、询价的市场行为。使得市场习惯于以该币种定价。</span></p>
+<p><span>支付/结算体系的构建，在</span><span><strong>传统的中心化结构</strong></span><span>中并不困难。你存在支付宝的余额只是支付宝对你的人民币负债，而非“人民币”。因此，宽泛的说，支付宝的余额实质上就是一种中心化的稳定数字货币（人民币），备付金就作为抵押品支撑这类负债的价值。</span></p>
+<p><span>但是，要让整个结算和支付体系完全独立且平行于法币体系，则需要考虑更多的问题。比如，人民币的发行是建基于美元的积累的，但如果人民币要脱离美元（去美元化）就会很困难，这也是为什么许多新兴市场国家利用美元构建自身的货币及信用体系，且需要通过资本管制（无法自由兑换美元）——即消除本国法币与其名义抵押品（美元）的可兑换性来维持本币币值的原因。</span></p>
+<p><span>稳定数字货币如果也欲图基于美元或法币抵押品来构建自身的货币体系，则可能不得不消除掉自身的可兑换性（类似Tether），如果它100%可被自由地兑换为美元，那它可能永远无法摆脱美元的阴影。</span></p>
+<p><span>建立结算体系即是一个中心化过程，也是一个中介化过程。人和人之间经由银行存款（类似的，淘宝的买家和卖家经由支付宝）获取了支付和结算的便利性，银行和银行之间则经由清算联盟或中央银行达到了类似的目标。映射到数字货币的世界中来看，节点之间的转账可以经由UTXO或账户基础的钱包在无中介和无中心的情况下完成，但涉及到存在时滞和收付问题（产权转移）时候，人们仍然需要通过中介（交易商）来完成交易/支付与结算。交易所之间却没有出现类似的中介，比如清算联盟（债务共担与互助保险）与中央银行体系，如果整个体系无法独立形成网络范围内的结算交割体系，那么我们可能只能等待整个网络被法币的结算/交割体系接纳（并映射一整套KYC/AML以及法律、治理框架）。</span></p>
+<h2><span><strong>构建一套完善的治理体系（Governance）</strong></span></h2>
+<p><span>治理问题是一个非常容易被忽视的问题，稳定数字货币发展迄今，已经与传统的货币理论、央行-银行体系、抵押品框架、支付/结算系统等领域建立了关系。但在治理问题上，一直比较滞后。</span></p>
+<p><span>这并不让人感到诧异，正如人们总是热衷于分析现代中央银行的货币政策以及经济影响一样，很少有人会关注现代中央银行的治理问题，包括</span><span><strong>人事安排、治理结构、政策目标的范围以及与政府的关系</strong></span><span>等等。</span></p>
+<p><span>要回答“谁来决定”和“如何决定”的问题，毫无疑问将涉足政治学、社会学、法学、博弈论、机制设计甚至符号学的范畴。</span></p>
+<p><span>笔者将在gamma版中编写这一部分的内容。</span></p>
+<p><span><strong>IV.总结</strong></span></p>
+<p><span>感谢读者的耐心，稳定数字货币的设计机制、流程与治理Beta版本就此终结。笔者认为，稳定数字货币的未来需要</span><span><strong>科学的流程</strong></span><span>与</span><span><strong>合乎逻辑的设计</strong></span><span>，更需要避免重犯</span><span><strong>人类已经在历史上犯下过的有关货币的错误</strong></span><span>。现有的业态很难让我感到兴奋和满意，我依然认为，数字货币将成为法币体系的平行体系（Parallel System），而无法成为一种替代。如果从业者仍然沉溺于去中心化和区块链化而不去深究货币的本质，可能这个平行体系也会被扼杀。</span></p>
+<p><span>撰写本文的目的，是为了帮助投资者建立辨识能力，以规避有问题的项目和币种；同时帮助项目方发现自身设计的谬误，以避免自身信誉受损。在文章的最后我们将附上一些读物，有兴趣在稳定数字货币主题领域深挖下去的读者可以参考阅读。</span></p>
+<p><span><em>BlackRock Viewpoint: A Primer on ETF Primary Trading and the Role of Authorized Participants</em></span></p>
+<p><span><em>Shadow Banking by Zoltan Pozsar</em></span></p>
+<p><span><em>欧元体系的抵押品政策 ：调整是否恰当？by Guntram B. Wolff</em></span></p>
+<p><span><em>More fiatsplainin': let's play fiat-or-not by J.P. Koning</em></span></p>
+<p><span><em>Cryptocurrencies: looking beyond the hype from BIS AGM</em></span></p>
+<p><span><em>A Primer on Helicopter Money</em></span></p>
+<p><span><em>The Mechanisms of Governance</em></span></p>
+<p><span><em>A Tract on Monetary Reform</em></span></p>
+<p><span><em>Safe Assets: a Review</em></span></p></div></div>
+  <span></span> <!-- for IntersectionObserver -->
+
+</body><style>@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=IBM+Plex+Serif:wght@400;500;700&family=Montserrat:wght@400;700&family=Zilla+Slab:wght@400;500&display=swap'); body {
+      font-size:  19px;
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 28px;
+      width: 850px;
+    }</style><style>body {
+  padding-bottom: 64px;
+}
+a:link, a:link:hover, a:link:active {
+  color: #0095dd;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style></html>

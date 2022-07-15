@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <base target="_blank">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+  position: relative;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color:  #222;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color:  #eee;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color:  #5b4636;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color:  #586e75;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color:  #2e3440;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color:  #cec4ac;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #839496;
+  border-color:  #839496;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color:  #e5e9f0;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] ::selection {
+  background-color: #fff740;
+  color: #000;
+}
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+<title>铂程斋--19年时间他将一座破旧的“小红楼”，打造成迫害女性的无间地狱 :: Reader View</title></head>
+<body tabindex="1" data-images="true" data-mode="light" data-font="sans-serif" data-loaded="true" style="user-select: initial;"><h1 dir="auto" id="reader-title">上海小红楼</h1>
+  <br><div id="readability-page-1" class="page"><div>
+							</div>
+<span><br>
+</span> 
+				
+				<p id="0F12IHDG">
+	<strong>2021年伊始，随着一桩大案的尘埃落定，上海市杨浦区许昌路 632 号火了。</strong>
+</p>
+<p><img data-savepage-src="https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2021%2F1130%2Fe9148e9dj00r3d1dk0028c000u000ebm.jpg&amp;thumbnail=690x10000&amp;quality=75&amp;type=jpg" src="">
+</p>
+<p id="0F12IHDJ">
+	这个地方很邪乎，不管是在公开发行的纸质地图、电子地图、淘宝可送达的区域列表上，你都找不到。
+</p>
+<p id="0F12IHDL">
+	它另有一个名字，叫做——<strong>小红楼</strong>。
+</p>
+<p><img data-savepage-src="https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2021%2F1130%2F3ca9dbfej00r3d1dk0026c000u000etm.jpg&amp;thumbnail=690x10000&amp;quality=75&amp;type=jpg" src="">
+</p>
+<p id="0F12IHDP">
+	小红楼坐落在黄浦江北侧，外表上看起来普普通通，甚至有些破旧：
+</p>
+<p><img data-savepage-src="https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2021%2F1130%2Ffa7f2ddej00r3d1dk002fc000ra00fkm.jpg&amp;thumbnail=690x10000&amp;quality=75&amp;type=jpg" src="">
+</p>
+<p id="0F12IHDT">
+	但实际上，在过去的许多年，这个地方<strong>曾经是一个叫赵富强的裁缝发迹的地方</strong>，也是数十位女性噩梦开始的地方。
+</p>
+<p id="0F12IHDV">
+	它充斥着金钱、暴力、淫乱、胁迫与罪恶，是用女性血泪建筑而成的无间地狱。
+</p>
+<p id="0F12IHE1">
+	<strong>至于这其中的细节，说出来恐怕都没人信。</strong>
+</p>
+<p id="0F12IHE3">
+	<strong>02</strong>
+</p>
+<p id="0F12IHE4">
+	<strong>小裁缝，大野心</strong>
+</p>
+<p id="0F12IHE6">
+	小红楼是坊间的叫法，最早这里是杨浦区许昌路 632 号。
+</p>
+<p id="0F12IHE8">
+	2000年，刚到这里闯荡的赵富强还是一个小裁缝，为了最快地抓住最赚钱的行业，立足上海滩，他走了一条一本万利的捷径：<strong>皮肉生意</strong>。
+</p>
+<p><img data-savepage-src="https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2021%2F1130%2F18b88727j00r3d1dk000uc000re00h0m.jpg&amp;thumbnail=690x10000&amp;quality=75&amp;type=jpg" src="">
+</p>
+<p id="0F12IHEC">
+	时至今日，这个行业已经被各种好听的词汇所取代，运营也越来越“正规”，但赵富强依然延续了最古老的法则。
+</p>
+<p id="0F12IHEE">
+	<strong>他最早推下海的“小姐”是自己的老婆</strong>，然后通过老婆结识了很多农村来的打工妹。
+</p>
+<p id="0F12IHEG">
+	在那个PUA还没有流行的年代，赵富强不厌其烦地向这些刚刚进城的少女们讲述自己的妻子如何“献身赚钱”，实现人生价值的故事。
+</p>
+<p id="0F12IHEI">
+	<strong>对于不相信的，他会将她们强暴、殴打、拿裸照和视频威胁，甚至在她们的隐私部位刺上“赵富强专用”。</strong>
+</p>
+<p id="0F12IHEK">
+	然后把她们牢牢掌握在自己手里。
+</p>
+<p id="0F12IHEM">
+	积攒了一定数量的小姐，他又租了两个小门面，开了两间发廊，一个叫“旺盛美发店”，一个叫“双双美发店”。
+</p>
+<p id="0F12IHEO">
+	<strong>在这里，每次交易只需150元，小姐没有分成，全部上交。</strong>
+</p>
+<p id="0F12IHEQ">
+	在这样的低成本开支下，赵富强很快完成了<strong>资本的原始积累</strong>。
+</p>
+<p id="0F12IHES">
+	彼时上海城市正迅速发展，投资商铺是有钱人的首选。
+</p>
+<p id="0F12IHEU">
+	赵富强也开始转入商铺租赁生意，他从就近的杨浦区门面房入手，靠着豢养的打手，没花一分钱，控制了杨浦区的1000多家门面房。
+</p>
+<p><img data-savepage-src="https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2021%2F1130%2Fb1192b5bj00r3d1dk003ac000tu00jim.jpg&amp;thumbnail=690x10000&amp;quality=75&amp;type=jpg" src="">
+</p>
+<p id="0F12IHF2">
+	<strong>这样黑白通吃的买卖，赵富强在上海做了将近20年，可查的获利接近10亿。</strong>
+</p>
+<p id="0F12IHF4">
+	当然，这种勾搭不可能被司法所允许。
+</p>
+<p id="0F12IHF6">
+	所以赵富强借用手下的小姐们，进行性贿赂，构建了庞大又复杂的保护网。
+</p>
+<p id="0F12IHF8">
+	当然，达官贵人们是不可能进出发廊的。
+</p>
+<p id="0F12IHFA">
+	赵富强迫切的需要一个高端的“基地”。
+</p>
+<p id="0F12IHFC">
+	<strong>03</strong>
+</p>
+<p id="0F12IHFD">
+	<strong>皮条客的自我修养</strong>
+</p>
+<p id="0F12IHFF">
+	2014年，赵富强买下了距离“旺盛美发店”和“双双美发店”不到两公里的杨浦区“许昌路632号”，铺上了红色的墙砖。
+</p>
+<p id="0F12IHFH">
+	并改名为创富大厦，成立了文化公司。
+</p>
+<p id="0F12IHFJ">
+	他也摇身一变，成了一位在上海拥有1000多个商铺，创富大厦的控制人，《平安上海》栏目运营人等诸多头衔的成功商人。
+</p>
+<p><img data-savepage-src="https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2021%2F1130%2Fccbafc0bj00r3d1dk000zc000ht00a0m.jpg&amp;thumbnail=690x10000&amp;quality=75&amp;type=jpg" src="">
+</p>
+<p id="0F12IHFN">
+	此后，他频频邀请各级官员、名流在创富大厦里消费，然后拍下视频，以此威胁。
+</p>
+<p id="0F12IHFP">
+	这是网上流传出的红楼内景。
+</p>
+<p><img data-savepage-src="https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2021%2F1130%2Ffb980fc9j00r3d1dk000yc000g100c5m.jpg&amp;thumbnail=690x10000&amp;quality=75&amp;type=jpg" src="">
+</p>
+<p id="0F12IHFT">
+	房间的装饰以素雅的白色浮雕，辅以银灰色装饰及软包皮质。
+</p>
+<p id="0F12IHFV">
+	墙上是暗金色软包，全房间以白色为底，亮金色线条及金色镶嵌为主要特色，凸显贵气。
+</p>
+<p><img data-savepage-src="https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2021%2F1130%2Ff579ae74j00r3d1dk001gc000u000iwm.jpg&amp;thumbnail=690x10000&amp;quality=75&amp;type=jpg" src="">
+</p>
+<p id="0F12IHG3">
+	通道的尽头，墙上挂有一幅长4米、高2米的油画喷绘，喷绘画面是，一位身材极佳的古装美女。
+</p>
+<p><img data-savepage-src="https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2021%2F1130%2F854c5ff9j00r3d1dk001rc000u000j4m.jpg&amp;thumbnail=690x10000&amp;quality=75&amp;type=jpg" src="">
+</p>
+<p id="0F12IHG7">
+	该巨幅美女喷绘所在的空间，是一个南北长约4米、东西宽约3米的接待厅。
+</p>
+<p id="0F12IHG9">
+	接待厅向北，是两扇深色桃木门，上嵌鎏金。
+</p>
+<p><img data-savepage-src="https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2021%2F1130%2F2555d69ej00r3d1dl003gc000u000opm.jpg&amp;thumbnail=690x10000&amp;quality=75&amp;type=jpg" src="">
+</p>
+<p id="0F12IHGD">
+	迈进桃木门，迎面而来的是几乎漆黑的会客厅。
+</p>
+<p id="0F12IHGF">
+	左右墙体，均以黑色大理石作外包围，内嵌横竖各6块白色装饰板，每块装饰板有鎏金细纹，装饰板中央，为方形凹陷的长方形鎏金色块。
+</p>
+<p><img data-savepage-src="https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2021%2F1130%2F4b12b953j00r3d1dk001ic000qo00frm.jpg&amp;thumbnail=690x10000&amp;quality=75&amp;type=jpg" src="">
+</p>
+<p id="0F12IHGJ">
+	小红楼6楼“1号套房”的卫生间吊顶，除了用“皇宫”二字来准确、简要转述其奢华程度外，很难找到第二个词来形容该卫生间的装修奢华程度。
+</p>
+<p><img data-savepage-src="https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2021%2F1130%2F4cb80febj00r3d1dk002fc000u000g9m.jpg&amp;thumbnail=690x10000&amp;quality=75&amp;type=jpg" src="">
+</p>
+<p id="0F12IHGN">
+	天花板呈苍穹状弧形，上铺银灰色金属质地的垫底，上镶圆形或弧形的鎏金装饰物，再配黄铜件水晶吊灯，光线稍亮，就满屋金碧辉煌。
+</p>
+<p id="0F12IHGP">
+	除了装饰风格讨人喜欢，赵富强还留了三道暗门，以备顾客们的不时之需。
+</p>
+<p><img data-savepage-src="https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2021%2F1130%2Fa1350fbfj00r3d1dl003xc000u000msm.jpg&amp;thumbnail=690x10000&amp;quality=75&amp;type=jpg" src="">
+</p>
+<p id="0F12IHGT">
+	此外6楼的所有房间内的衣柜，均有几十件各式女性衣服，多以暴露的性感装为主，也有各类职业装用于角色扮演，以及一些胸罩、抹胸、束腰、丝袜。
+</p>
+<p id="0F12IHGV">
+	穿过2号房间的暗道，空间豁然开朗，这是一个可容纳14人住宿的集体闺房，装修风格依旧为白底嵌金，配以紫色软包、灰色床帘，有恬淡、雅致和轻奢的味道。
+</p>
+<p><img data-savepage-src="https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2021%2F1130%2F51d2e5bdj00r3d1dk001mc000u000ejm.jpg&amp;thumbnail=690x10000&amp;quality=75&amp;type=jpg" src="">
+</p>
+<p id="0F12IHH3">
+	闺房如此雅致、有格调，也彰显了他们所服务的客人的尊贵程度。
+</p>
+<p id="0F12IHH5">
+	当然，如此高端的居住环境，让原来那批已经老去的“小姐们”住，显然有些不合适，客人们也不会同意。
+</p>
+<p id="0F12IHH7">
+	赵富强急需招募一批年轻时尚受教育程度高的女性。
+</p>
+<p id="0F12IHH9">
+	<strong>04</strong>
+</p>
+<p id="0F12IHHA">
+	<strong>权钱色交易，小裁缝的天梯</strong>
+</p>
+<p id="0F12IHHC">
+	2017年初，赵富强在网上发布了招聘信息：招募上海徐汇、杨浦、虹口三个区连锁的“汇吃汇喝美食城”的<strong>运营专员</strong>，待遇丰厚。
+</p>
+<p><img data-savepage-src="https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2021%2F1130%2F4445259aj00r3d1dk001fc000dw008bm.jpg&amp;thumbnail=690x10000&amp;quality=75&amp;type=jpg" src="">
+</p>
+<p id="0F12IHHG">
+	<strong>在美国留过学的大学生陈倩通过招聘信息认识了赵富强，面试地点约在了创富大厦。</strong>
+</p>
+<p id="0F12IHHI">
+	大楼戒备森严，门口有退伍军人做保安，内部每个角落均布有摄像头，
+</p>
+<p id="0F12IHHK">
+	不同楼层不同房间都需要相应的门禁卡才能打开。
+</p>
+<p><img data-savepage-src="https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2021%2F1130%2F07fa6138j00r3d1dk000sc000qo00hsm.jpg&amp;thumbnail=690x10000&amp;quality=75&amp;type=jpg" src="">
+</p>
+<p id="0F12IHHO">
+	赵富强说这里隔三差五有政商界官员干部来访，安全最重要。
+</p>
+<p id="0F12IHHQ">
+	陈倩打消了疑虑，但没想到，等陈倩入职后，她的工作变成了，<strong>对来访的客人陪吃陪喝陪睡</strong>。
+</p>
+<p id="0F12IHHS">
+	陈倩想拒绝，却无处可逃：到处都是门禁和保安。
+</p>
+<p id="0F12IHHU">
+	直到2017年底，赵富强在一次强奸后，允许陈倩去银行领点补偿费，陈倩才找到机会拜托银行柜员报警。
+</p>
+<p id="0F12IHI0">
+	在派出所，陈倩说了一大堆没有人会相信的话——赵富强在创富大厦圈养性奴、卖卵、为政府官员提供小姐。
+</p>
+<p id="0F12IHI2">
+	<strong>在</strong><strong>治安全球最</strong><strong>好的魔都上海居然还能存在如此大范围强奸圈养性奴和黑社会势力？</strong>
+</p>
+<p id="0F12IHI4">
+	<strong>在警察疑惑的当口，赵富强带着陈倩母亲赶到警局，最后以家庭纠纷的名义撤案。</strong>
+</p>
+<p id="0F12IHI6">
+	“背叛者”陈倩的下场并不好，她被软禁在宿舍里，没收了手机。
+</p>
+<p id="0F12IHI8">
+	同样被关在宿舍的还有赵富强的“妻子”林某、舞蹈老师崔茜、为赵富强生下孩子的蒋某。
+</p>
+<p id="0F12IHIA">
+	因为逃跑，陈倩遭到了殴打，她向宿舍里的人求救，
+</p>
+<p id="0F12IHIC">
+	<strong>林某就拦住了想去解救她的人说，“你让他打，我们都挨过打，凭什么就她不能打”。</strong>
+</p>
+<p id="0F12IHIE">
+	<strong>此前，林某刚刚因为自愿为赵富强剪了输卵管，被提拔成了主管。</strong>
+</p>
+<p id="0F12IHIG">
+	她在这群女人里，最有威信，也是其他人“学习的榜样”。
+</p>
+<p id="0F12IHII">
+	被同样境遇的女人们暴打后，陈倩被送进了诊所，等待她的不是救治，而是取卵。
+</p>
+<p id="0F12IHIK">
+	<strong>这是赵富强最新研究出的致富方法，既可以卖卵赚钱，又能用以后出生的孩子拴住她们。</strong>
+</p>
+<p id="0F12IHIM">
+	<strong>05</strong>
+</p>
+<p id="0F12IHIN">
+	<strong>来自地狱的反杀</strong>
+</p>
+<p id="0F12IHIP">
+	诊所里的陈倩，因为连续十几天被强制注射催卵针，患上了严重的腹腔积水，永远失去了生育能力。
+</p>
+<p id="0F12IHIR">
+	在对陈倩“杀一儆百”后，赵富强趁势对新来的女孩们定了规矩：
+</p>
+<p id="0F12IHIT">
+	<strong>陪喝一壶酒奖励500元，能够陪领导唱歌的奖励600元，边唱边跳的奖励900元，陪睡一晚奖励7000</strong><strong>元到</strong><strong>1万元不等。</strong>
+</p>
+<p id="0F12IHIV">
+	她们的家属也要住在小红楼里，男性充当打手，女性充当保洁，每人每月3000元生活费。
+</p>
+<p id="0F12IHJ1">
+	此外，他指使林某在上海大连路开了一家名为“潇戈“的舞蹈学校，成为另一处性贿赂会所。
+</p>
+<p id="0F12IHJ3">
+	而有上海户口的崔茜，则被“提拔”为经理人。
+</p>
+<p><img data-savepage-src="https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2021%2F1130%2F2e35cccej00r3d1dk002lc000u000gpm.jpg&amp;thumbnail=690x10000&amp;quality=75&amp;type=jpg" src="">
+</p>
+<p id="0F12IHJ7">
+	2017年，在这个舞蹈学校，崔茜被赵富强暴力取卵，患上了重度抑郁、焦虑症。
+</p>
+<p id="0F12IHJ9">
+	赵富强则利用崔茜母亲赵敏爱女心切的心情，强迫其为私生子们报户口。
+</p>
+<p id="0F12IHJB">
+	因为拿到了上海户口，赵富强非常满意，<strong>对崔茜的看管也放松起来</strong>。
+</p>
+<p id="0F12IHJD">
+	2017年底，崔茜趁机逃离了小红楼，但赵富强发现后，马上派人在大街小巷播放崔茜的裸照，扬言要把她关到江苏老家。
+</p>
+<p id="0F12IHJF">
+	正是赵富强的步步紧逼，让崔茜决定破釜沉舟。
+</p>
+<p id="0F12IHJH">
+	2018年11月，崔茜母女向上海市纪委进行第一次举报，“控告赵富强强奸残害女性、使用钱色拉拢腐蚀干部”，但举报信没有引起重视。
+</p>
+<p id="0F12IHJJ">
+	2019年初，崔茜又向杨浦区公安局报案称被赵富强强奸，要求离婚，这才以“强奸案”立案。
+</p>
+<p id="0F12IHJL">
+	2019年3月，赵富强与崔茜的离婚诉讼开庭。
+</p>
+<p><img data-savepage-src="https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2021%2F1130%2F0d96cc16j00r3d1dk000xc000i20089m.jpg&amp;thumbnail=690x10000&amp;quality=75&amp;type=jpg" src="">
+</p>
+<p id="0F12IHJP">
+	法庭上，赵富强态度嚣张，“全程低头摆弄手机”，据说，他已经通过“内部渠道”，打听了案件走向。
+</p>
+<p id="0F12IHJR">
+	而另一边，法庭上的崔茜也豁了出去，以微信群发的方式，再次举报赵富强长期行贿、嫖宿，并实名列举多位政府官员、国企干部和警务人员。
+</p>
+<p id="0F12IHJT">
+	<strong>当时，正值中央扫黑除恶督导组到上海的前夕，赵富强的保护伞，终于撑不住了。</strong>
+</p>
+<p id="0F12IHJV">
+	<strong>06</strong>
+</p>
+<p id="0F12IHK1">
+	2019年3月24日，潇戈物业有限公司解散，小红楼的员工遣散干净。
+</p>
+<p><img data-savepage-src="https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2021%2F1130%2F19e7c627j00r3d1dk002jc000u000kxm.jpg&amp;thumbnail=690x10000&amp;quality=75&amp;type=jpg" src="">
+</p>
+<p id="0F12IHK5">
+	但此时，赵富强仍带着最后一丝侥幸心理，留在上海。
+</p>
+<p id="0F12IHK7">
+	直到5月15日杨浦区委政法委原书记卢焱把他拉到办公室告诉他，“快走吧，马上收网了”。
+</p>
+<p><img data-savepage-src="https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2021%2F1130%2F523a4edfj00r3d1dk0018c000u000iqm.jpg&amp;thumbnail=690x10000&amp;quality=75&amp;type=jpg" src="">
+</p>
+<p id="0F12IHKB">
+	他才匆忙带着4名女伴逃回江苏老家，次日被捕。
+</p>
+<p id="0F12IHKD">
+	<strong>经过上海高院终审，赵富强被判死缓并限制减刑入狱，背后13名官员、国企干部落马被判有期徒刑1年6个月至17年不等。</strong>
+</p>
+<p><img data-savepage-src="https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2021%2F1130%2F35e44705j00r3d1dk000uc000ht0084m.jpg&amp;thumbnail=690x10000&amp;quality=75&amp;type=jpg" src="">
+</p>
+<p id="0F12IHKG">
+	卢焱审判现场（图源《财新周刊》）
+</p>
+<p id="0F12IHKI">
+	至此，这座由女人血泪铸造的无间地狱终于倒塌。
+</p>
+<p id="0F12IHKK">
+	赵富强万万没想到，他的倒台，竟然是自己严密控制的女人所一手策划的。
+</p>
+<p><img data-savepage-src="https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2021%2F1130%2F56967a90j00r3d1dk002kc000tf00j3m.jpg&amp;thumbnail=690x10000&amp;quality=75&amp;type=jpg" src="">
+</p>
+<p id="0F12IHKO">
+	赵富强的案件被财新周刊报道之后，很多人的第一反应是，惊心动魄。
+</p>
+<p id="0F12IHKQ">
+	确实，我们难以相信，这样的事情，居然发生在2020年。
+</p>
+<p id="0F12IHKS">
+	<strong>更让人惊心的是，赵富强通过强奸、取卵等等手段，让这些女性生下了好几个孩子。</strong>
+</p>
+<p id="0F12IHKU">
+	这些孩子大部分没有户口，也没有经济来源，甚至无法上学。
+</p>
+<p id="0F12IHL0">
+	<strong>赵富强死有余辜，可是，孩子却是无辜的。</strong>
+</p>
+<p id="0F12IHL2">
+	<strong>他的罪，不是坐牢就能还清的。</strong>
+</p>
+<p id="0F12IHL4">
+	<strong>07</strong>
+</p>
+<p id="0F12IHL5">
+	<strong>没有结束</strong>
+</p>
+<p id="0F12IHL7">
+	在小红楼6楼3号房间更衣间及卫生间门左侧的空调遥控板上，插着一张半个手掌大的牛皮纸，上面有几行娟秀的手写字体，无法确认该字条作者的写作时间及动机，上书：
+</p>
+<blockquote id="0F12IHMC">
+	滚滚长江东逝水，浪花淘尽英雄。<p>
+
+是非成败转头空。</p><p>
+
+青山依旧在，几度夕阳红。</p><p>
+
+白发渔樵江渚上，惯看秋月春风。</p><p>
+
+一壶浊酒喜相逢。</p><p>
+
+古今多少事，都付笑谈中。</p></blockquote>
+<p id="0F12IHLL">
+	不知道这是不是赵富强自己的心理映射。
+</p>
+<p id="0F12IHLN">
+	在我看来，如果确实是他所书，那他实在是太高看自己，把自己同英雄豪杰相提并论。
+</p>
+<p id="0F12IHLP">
+	他至多不过是当代西门庆，但是比西门庆更嗜血更残暴。
+</p>
+<p id="0F12IHLR">
+	据说赵富强在得到消息之后，一边打探消息看举报是否立案，一边准备出逃到瓦鲁阿图。
+</p>
+<p id="0F12IHLT">
+	他拍下空荡荡的办公室发给崔茜，“一切都没了，你真的害苦我了。”
+</p>
+<p id="0F12IHLV">
+	他一直到最后，都觉得是女人害了他，而不是觉得他自己有罪。
+</p>
+<p id="0F12IHM1">
+	实际上，“小红楼”的版本不止上海这一个，早些年，还有厦门“小红楼”，让不少官员沉醉其中。
+</p>
+<p id="0F12IHM2">
+	电影《无间道》中有这样一句话：“受身无间永远不死，寿长乃无间地狱中之大劫”。
+</p>
+<p><img data-savepage-src="https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2021%2F1130%2F4dfe58f4j00r3d1dk0009c000fa005pm.jpg&amp;thumbnail=690x10000&amp;quality=75&amp;type=jpg" src="">
+</p>
+<p id="0F12IHM5">
+	而那些曾经被赵富强软禁、施暴，奴役做性奴的女人，曾经深陷这个小红楼——无间地狱。
+</p>
+<p id="0F12IHM7">
+	而赵富强被捕，也算是堕入无间地狱，还他造的孽，欠的债。
+</p>
+<p id="0F12IHM9">
+	只是那些受过伤的女人，被胁迫而生下的孩子，谁来负责？
+</p>
+<p id="0F12IHMB">
+	没有答案。
+</p>
+
+<p id="0F12IHMB"><br></p>
+				
+				
+				
+				
+			
+		</div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+</body><style>body {
+      font-size:  20px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 900px;
+      text-align: justify
+    }
+    .page {
+      line-height: 30.0px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

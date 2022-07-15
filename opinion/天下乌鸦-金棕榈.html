@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <base target="_blank">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+  position: relative;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color:  #222;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color:  #eee;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color:  #5b4636;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color:  #586e75;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color:  #2e3440;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color:  #cec4ac;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #839496;
+  border-color:  #839496;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color:  #e5e9f0;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] ::selection {
+  background-color: #fff740;
+  color: #000;
+}
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+<title>[Design Mode]</title></head>
+<body tabindex="1" data-images="true" data-mode="light" data-font="sans-serif" data-loaded="true" style="user-select: initial;"><div id="readability-page-1" class="page"><p><a href="https://weibo.com/u/1959830294" target="_blank">汪有</a>&nbsp;：我同学唐艺导演的短片《天下乌鸦》为什么能拿下金棕榈？</p>
+<p>
+	要点包括：<br>
+1. 这是向西方献媚迎合价值观才得奖的嘛？你们为什么喷都喷不到点子上？<br>
+2. 杨笠骂普信男大火，为什么？<br>
+3. 科班学生拿不到奖，你们的短片为什么不行？<br>
+4. 辩题：凝视回去，是不是应对男性凝视之道？<br>
+5. 唐艺电影的女性视角到底先进在哪？<br>
+正文开始：<br>
+去年，我大学同学唐艺，靠十五分钟的短片《天下乌鸦》，拿了戛纳金棕榈。被一片骂。豆瓣打分四点几。骂声主要包括：献媚西方，抹黑中国，拍摄中国阴暗面，给洋人当狗，拿了洋人的奖。<br><br></p><p>
+我女我也，感到不适，看她不爽，能看出来她要讽刺油腻男，但还不如我们学生作品。那她拍了什么？<br><br></p><p>
+故事特别简单（我全给你们剧透了，你们并不用真看）：<br>
+一位女中学生，被表姐叫去参加饭局。<br>
+局上都是些中年油腻男，开一些破烂玩笑。不过叔叔们还给了红包压岁钱。<br>
+局后去了KTV，油腻男点了小妹陪唱陪喝酒，露出了些油腻丑态。<br>
+也没对女生做啥。<br>
+只有一个胖大叔，没点小妹，看起来是个好人。女生跟大叔玩的还挺好。<br>
+结果发现，大叔没点小妹只是因为他是个gay，结尾和一位男青年看对了眼，去了小旅馆（扣回标题的天下乌鸦一般黑）。<br>
+女生无奈拿出秒表计时，说：他们肯定搞不了多久。<br>
+全剧终。<br>
+看了以后，大部分观众第一感都是：就这？？就这就拿金棕榈？？<br>
+金棕榈这么拉？？<br>
+一群电影学院所谓科班的学生，纷纷出来喷。他们实在想不清楚，只能自作聪明，在那解释：<br>
+踩中了西方政治正确，踩一脚中国。<br>
+这不就，拿了奖嘛？<br>
+这么简单的故事，全片成本11万港币，是这些年最便宜的金棕榈。<br>
+是什么打动了评委？<br>
+显然不是什么特效、大场面，只可能是因为某个idea，在特别的点上，展示了某种先锋性。<br>
+这部短片到底具备什么先锋性？（ ）<br>
+A. 她骂了中国，给洋人做狗；<br>
+B. 她向女拳下跪，讽刺油腻男；<br>
+C. 她是亚裔黄种女性，叠了buff；<br>
+D. 她结尾拍了一对gay，迎合LGBT。<br>
+答案是E，她创作出了独特的女性形象，不是迎合，而是引领突破了电影性别叙事角度。<br><br></p><p>
+回去看剧情，我们想想，哪一个角色、桥段，是最不可或缺的？是那个女学生。<br>
+换个导演，我拿掉女学生，我今天就迎合西方了，我拍陪睡，比陪酒更能抹黑，就能拿奖？不能。<br>
+一个俗套的女权片子，会拍这些人非礼了这个女生，伤害了这个女生。<br>
+戏剧冲突在：女生如何解决危险。导演会表现这个女生非常惨，呼唤大家重视妇女权益。“我们一起来帮帮女性吧！”唐艺没这么拍。<br><br></p><p>她创造的女学生，非常疏离，非常旁观，她没有被卷进酒局里，也没有被非礼揩油的危险，KTV大家搂着小妹嗷嗷乱叫时，她就在那旁观酒局荒诞的一幕。<br></p><p>
+<mark class="hghlght">她是个观察者，研究者，评论者（片名就评论是天下乌鸦一般黑），还是拿着表秒计时的测量者。</mark><br>
+<mark class="hghlght">这是极少出现的女性角色。</mark><br>
+她的原型正是导演本人。那一年我同学十八岁，刚刚高考完，等着上大学。莫名其妙，他爸的朋友，把她带去了一个酒局玩耍。她成绩很好，清华北大招生办轮番上门邀请，那个叔叔把她带去，也是想长长脸。席间当然会有油腻吹捧，但总体大家对她很客气。然后他们去了KTV，点了小妹。我同学跟我说，她当时巨震惊。你们很多人的老婆我还见过，你们就明晃晃叫来一排小妹？？？你们都不演一下的嘛？？？“上次那个Lily还在吗？”“上次那个不在，您看这个，可以嘛？”叔叔大步走向Lily，搂住小妹，说：“我今天就是最幸福的男人。”这就是发生在她眼前，颠覆十八岁女生三观的桥段。<br>
+她把这些原话也拍进了短片里。</p><p><br>
+很多女青年都经历过油腻饭局，但要不然太不被尊重，导致全程在保护自己，没法去观察；要不然太被尊重，自己说了算了那种，对方也不敢放肆。而我同学这个微妙的身份，恰恰给她提供了绝妙的观察角度。她是朋友的女儿，高材生，他们不会对她怎么样。所以她是安全的，可以大胆观察。<br>
+但她也只是朋友的女儿，也不用太过尊重。所以他们在她面前是没啥顾忌的，可以当面明晃晃对小妹搂搂抱抱。给了她观察到荒谬的机会。荒谬的冲突出现了：一个场子，一边是穿校服的女中学生，另一边是种种奇怪举动的中年男性。<br><br></p><p>
+网上喷我同学的科班学生，纷纷留言：“搞不懂这种片子怎么会得奖。”你们果然不但自己不思考，也不会上网查资料。评委很清晰地给出过评价，评委说：他们很久没有在电影里看到这种女性形象。一般来说，拍到第三世界的妇女，通常都挺苦的，要去记录她们的苦难，博取眼泪。而在本片，女生是超然的，居高临下的，唯一清醒的，带着审视的角度。这是非常新的女性形象。<br><br></p><p>
+往大里说：这是“拿回了叙事的主体性”。杨笠之前大火，为什么？仅仅因为她骂了男的？<br>
+反过来，为什么男性唯独对杨笠意见这么大？<br>
+杨笠不同时间骂男人的水平也不一样，我印象里她有三种骂法：<br>
+1. 男的，普通，自信。<br>
+2. 男的，垃圾。<br>
+3. 男的，见仁——见智。<br>
+<mark class="hghlght">你们发现没，这三句话，明明骂得最狠的是2和3,1是最轻的。2和3甚至算是过分的，但收到的反击还是比1小。</mark><br><mark class="hghlght">
+争议都是围绕1展开的。</mark><br>
+<mark class="hghlght">原因很简单，垃圾和贱人，是个人都会骂，只是发泄情绪而已，没什么了不起。</mark><br><mark class="hghlght">
+但“普通，自信”，来自于杨笠对生活的观察，她找到了荒谬。</mark><br><mark class="hghlght">
+杨笠成为了短片里的女生。</mark><br>
+她很安全，所以可以仔细观察，她没那么碰不得，所以其他人不介意在她面前提供素材。<br>
+她被喷了，也不仅是因为她骂了男的，而是很多人突然发现，<mark class="hghlght">天啊，竟然有一个女人，可以从旁观者审视者的角度，评判我们。</mark><br><mark class="hghlght">
+好不适应啊。</mark><br><mark class="hghlght">
+杨笠“拿回了叙事的主体性”。</mark><br>
+所以1的水平远高于2和3，争议也远高于2和3。<br>
+而喷我同学、表示“我不理解”、最后归结为“向洋人下跪”那些科班学生，你们的片子为什么不行？<br>
+你们太“做题家”了。<br>
+你们非要觉得，去拿国际电影奖项，是一道题。里面有预设好的评分标准。<br>
+西方喜欢喷中国，我就拍点中国的破烂事，拿到得分点。<br>
+西方喜欢LGBT，我就拍点LGBT，又得两分。<br>
+最后，我得奖了。<br>
+这个思路会彻底害死你们自己。<br>
+第一、这个思路并不仅会影响你在参加国外电影节的片子，也会影响你在国内拍的那些片子。<br>
+你们以为市场是有评分标准的。<br>
+啊，现在甜宠火，我加个甜宠吧。CP火，我加个CP吧。大女主火，还女权，我就写个大女主吧（想想前几天那个特别火的剧是怎么翻车的）。<br>
+你把艺术创作当题来做，你见过哪篇八股文进了语文课本嘛？<br>
+第二、当你们不断强化“向洋人下跪”就能拿奖这个价值观，觉得我不得奖只是不下跪，你们撑不住获奖的诱惑的。<br>
+迟早有天，你一想，我辛辛苦苦做电影，啥也没有，为什么不下跪一下，拿个大奖，我不就有了资源嘛？<br>
+你会下跪的。<br>
+今天她拍了陪酒，得奖了，我可算知道财富密码了。<br>
+她拍陪酒，我拍陪睡，真事儿不够，编假的来凑。<br>
+那完了，你这下真成境外势力了。<br>
+你会发现，就算你飞速滑跪摇尾乞怜，洋人也不会赏赐你什么的。<br>
+真是因为向洋人下跪？<br>
+洋人也很无知。<br>
+这部电影是香港选送的，她的身份是个香港导演。<br>
+很多外国电影人对中国缺乏了解，也不懂分辨简体字和繁体字。<br>
+不少人根本不知道这是在内地发生的故事，还以为是在香港。<br>
+片子在金马讨论，台湾一位男性电影人向大家介绍片子，笑着打趣：<br>
+“她这片子可把我们这些男人骂惨啦。”<br>
+你们看，人都没觉得这是在黑你。<br>
+何况，叫个陪酒小妹已经是网上对男性黑得最轻的行为，很多人都觉得只是陪酒唱歌没办法，业务所迫，比这离谱严重的多了去了。<br>
+这部短片恰恰不是在做题，唐艺恰恰是在挑战西方电影界的刻板影响。<br>
+洋人的东西就先进嘛？<br>
+好莱坞和戛纳评奖，无非还是白人男性主导。<br>
+他们当然有一套他们流行的女权电影叙事，而这套叙事往往是白男喜闻乐见的。<br>
+你们可以理解为西方所谓“女权男”。<br>
+他们掌握了电影资源，也允许你拍一些女权电影，但还是按照他们喜欢的方式来的。顺便彰显一波他们的同情心。<br>
+比如，“第三世界苦难的女性”，“女人好惨让我们来共情她们”，这就是白男框架下的女性电影。<br>
+白男也很少被反过来凝视、审视、评价、测量。<br>
+唐艺在突破这一点。<br>
+她有次跟我聊创作，知道我爱好科学史，想拍女科学家。<br>
+我说你去看看R·富兰克林，在DNA结构发现中做出重大贡献，由于男女不平等，待遇也不行，被排挤出学校，最后学术成果还被同事威尔金斯违规展示给了沃森，最后沃森和克里克拿了诺贝尔奖。<br>
+她看了一些简单资料，说：我不喜欢这个视角。<br>
+“这个视角，又是一位女科学家含辛茹苦被打压欺负，她好惨，呼吁大家同情女性的白男女性电影。<br>
+“我不喜欢这样，我想拍摄那种有力量的女性角色。”<br>
+我的天，她说到这里，我可太喜欢她了。这正是我的想法。<br>
+通话那几天，我刚刚微博上被一群女青年怼。<br>
+我微博提了一嘴沃森，一群女青年过来教我做事，让我了解一下富兰克林。<br>
+我被怼了半天，发现她们没一个人完整读过任何一版富兰克林传记。<br>
+她们的叙事角度就是传统的：女的好可怜，她被沃森欺负不可怜嘛。<br>
+可当我认真了解富兰克林，会发现她勇敢、刚毅、强大，她不需要我的可怜。我不配可怜她。<br>
+沃森绝顶聪明，谁也瞧不起，去上课从来不做笔记。<br>
+直到一次听了富兰克林的讲座，还不记笔记，这次吃亏了，根本没听懂。后来沃森每次都乖乖记笔记。<br>
+沃森最怕的科学家就是富兰克林，被富兰克林当学生训，去富兰克林实验室都尽量绕着走。<br>
+威尔金斯也怕富兰克林，有次系里出去划船，富兰克林的船没控制好水流，撞向了威尔金斯，威尔金斯大呼“啊呀她要撞死我”。<br>
+富兰克林有个版本的传记，标题叫Dark lady。我怀疑很多人都没理解这个dark lady是啥意思。<br>
+我看传统叙事版本科普，说富兰克林是什么“隐藏在黑暗中的DNA之母”。<br>
+可去你的吧。<br>
+Dark lady出自威尔金斯给沃森和克里克写的信，那时富兰克林已经辞职要走，威尔金斯很开心，说：那个Dark lady可算要走了。<br>
+我认为可以直译成“黑暗女”或者意译为“女魔头”。总之大家是很怕她的。<br>
+传记作者选黑暗女作为传记题目，显然是把这个蔑称用上，用作对威尔金斯的公开处刑。<br>
+“隐藏在黑暗中的DNA之母”和“女魔头”，气质立变。<br>
+我跟我同学讲了这些，她说：<mark class="hghlght">对，这正是我需要的叙事角度，女人为什么不可以是个强大甚至有点坏（bad ass）的角色呢？</mark><br>
+她又说：<mark class="hghlght">别瞎同情别人（Don't feel bad for anybody），因为那恰恰代表了你把自己放在了高位。</mark><br>
+我之前参与过一道辩题：<br>
+面对男性凝视，凝视回去是不是回击之道。<br>
+我当时觉得不是：你骂男的那方面不行、没有六块腹肌，杀伤力一样吗？<br>
+但我同学说服了我。<br>
+<mark class="hghlght">唐艺的片子女主凝视了回去。</mark><br><mark class="hghlght">
+这里的凝视非常高级，不是凝视腹肌的同态复仇。</mark><br><mark class="hghlght">
+而是“凝视你的凝视”，让你的凝视非常可笑。</mark><br>
+金棕榈评委的原话是：female gaze into male gaze.<br>
+以及，她说她会坚持这个创作理念。<br>
+白男当道的西方电影界，这一套观念也并不讨喜，他们还是喜欢“好惨啊第三世界女的”那一套。<br>
+但那又怎么样呢？她会继续发起冲击。<br>
+这一套创作理念先不先进？<br>
+高不高级？<br>
+得奖奇怪嘛？<br>
+好了，我好像已经把我同学魔术揭秘了。<br>
+这是不是把她的财富密码给卖了？<br>
+我反正完全不担心我同学，因为一旦你决定：啊，那让我来拍摄一些女性强大的电影吧。<br>
+<mark class="hghlght">那你就又把你的艺术创作变成了做题。</mark><br><mark class="hghlght">
+去观察生活中真正的荒谬。</mark><br><mark class="hghlght">
+不要天天做题。</mark>
+</p>
+
+
+<p><br></p>
+				
+				
+				
+				
+			
+		</div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+<span style="position: absolute; width: 16px; height: 16px; background-color: rgba(125, 0, 0, 0.5); border: 1px solid rgb(255, 255, 255); box-sizing: border-box; display: none; cursor: move;"></span></body><style>body {
+      font-size:  20px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 900px;
+      text-align: justify
+    }
+    .page {
+      line-height: 30.0px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <base target="_blank">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+  position: relative;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color:  #222;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color:  #eee;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color:  #5b4636;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color:  #586e75;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color:  #2e3440;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color:  #cec4ac;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #839496;
+  border-color:  #839496;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color:  #e5e9f0;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] ::selection {
+  background-color: #fff740;
+  color: #000;
+}
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+<title>妻子去世一个月，他已娶回新人，并报警驱赶前岳父母？ :: Reader View</title></head>
+<body tabindex="1" data-images="true" data-mode="sepia" data-font="sans-serif" data-loaded="true" style="user-select: initial;">
+  <span></span> <!-- for IntersectionObserver -->
+  <a id="reader-domain" href="https://mp.weixin.qq.com/s/kYD1djqyzDfOLjWWR4syuQ">
+    <span>mp.weixin.qq.com</span>
+    <span>/s/kYD1djqyzDfOLjWWR4syuQ</span>
+  </a>
+  <h1 dir="auto" id="reader-title">妻子去世一个月，他已娶回新人，并报警驱赶前岳父母？</h1>
+  <span dir="auto" id="reader-credits">wapi</span>
+  <span dir="auto" id="reader-estimated-time">4-5 minutes</span><div id="readability-page-1" class="page"><div id="js_content"><p><br></p><p><span>前几天看到大家都在讨论一个新闻。</span></p><p><span>一个48岁男人Y在结婚20多年的太太因病去世后，一个月就和国内小12岁的女子结婚，却把妻子的骨灰埋在前院，迟迟没有安葬。病逝女子的父母没有得到独生女儿的分文遗产，现在却被前女婿报警，即将被驱逐出境。</span></p><p><span>事情的起源是这对老人在网上求助，想募集钱回中国。</span></p><p><img data-galleryid="" data-ratio="0.5420420420420421" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_jpg/fKfsfulrRDAxibwwhvpRFZpTzOKaTYevpKMQ1gia18AQhZXqUspzYRZiaGlzy4N2cc83icpqicbGicZnQ21zBGeBjlWw/640?wx_fmt=jpeg" data-type="jpeg" data-w="666" _width="666px" src="https://mmbiz.qpic.cn/mmbiz_jpg/fKfsfulrRDAxibwwhvpRFZpTzOKaTYevpKMQ1gia18AQhZXqUspzYRZiaGlzy4N2cc83icpqicbGicZnQ21zBGeBjlWw/640?wx_fmt=jpeg&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" crossorigin="anonymous" alt="图片" data-fail="0"></p><p><span>随后一张图片在群里流传，讲述自己的一个大学同学D的遭遇，也就是这对老夫妇的女儿。</span></p><p><img data-galleryid="" data-ratio="1.30625" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_jpg/fKfsfulrRDAxibwwhvpRFZpTzOKaTYevpqaVgrtsWkZ6VOAPwNiaRwfRPlU1tk4v57Yz5q87usyWa5UJ1MnT8j4Q/640?wx_fmt=jpeg" data-type="jpeg" data-w="1440" _width="677px" src="https://mmbiz.qpic.cn/mmbiz_jpg/fKfsfulrRDAxibwwhvpRFZpTzOKaTYevpqaVgrtsWkZ6VOAPwNiaRwfRPlU1tk4v57Yz5q87usyWa5UJ1MnT8j4Q/640?wx_fmt=jpeg&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" crossorigin="anonymous" alt="图片" data-fail="0"></p><p><span>D和Y大学不同校，他们在就读北邮计算机系的研究生时认识，发展到后来恋爱、出国、结婚。到D去世时，两人已结婚20多年，有一个看似美满的家庭。</span></p><p><span>两人育有一儿一女，男方是谷歌的TPM（技术项目经理），据说L5级别，下面管了5个人；女方此前一直在做家庭主妇，全职照顾两个孩子长大，在学校当志愿者。2019年孩子大一些后，她进去脸书工作，职位也是TPM。</span></p><p><span>两人的年薪加上股份bonus大约在30-50万美元一年。现在住的六个房间的豪宅在网上估值在450万美元左右。此外，他们还共有股票、401K等等。可以说哪怕在富人云集的湾区也是条件优越了。</span></p><p><img data-galleryid="" data-ratio="1.1722222222222223" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_jpg/fKfsfulrRDAxibwwhvpRFZpTzOKaTYevpwSCZFugruL2egYfoSJRSv0ParLVh1VqwQgicEXcpSkhsJJviaceiaRR4A/640?wx_fmt=jpeg" data-type="jpeg" data-w="1080" _width="677px" src="https://mmbiz.qpic.cn/mmbiz_jpg/fKfsfulrRDAxibwwhvpRFZpTzOKaTYevpwSCZFugruL2egYfoSJRSv0ParLVh1VqwQgicEXcpSkhsJJviaceiaRR4A/640?wx_fmt=jpeg&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" crossorigin="anonymous" alt="图片" data-fail="0"></p><p><span>（两人豪宅，这个估值似乎被网友玩坏了，实际应该在4、500万）</span></p><p><span>但不幸的是，2020年8月，正在享受美好人生的年纪，D被查出了胃癌晚期。她接受了各种治疗。可能是怕父母伤心，瞒住了自己的病情，直到最后情况越来越糟才告知父母。于是她的父母在2021年3月，飞到美国照顾女儿。</span></p><p><img data-galleryid="" data-ratio="0.5768518518518518" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_jpg/fKfsfulrRDAxibwwhvpRFZpTzOKaTYevpE6LIlkl2tDuhN7qEKI6dN2iaxfiaBQTw4jBWrQR0qicxaARPPSJBiazL9A/640?wx_fmt=jpeg" data-type="jpeg" data-w="1080" _width="677px" src="https://mmbiz.qpic.cn/mmbiz_jpg/fKfsfulrRDAxibwwhvpRFZpTzOKaTYevpE6LIlkl2tDuhN7qEKI6dN2iaxfiaBQTw4jBWrQR0qicxaARPPSJBiazL9A/640?wx_fmt=jpeg&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" crossorigin="anonymous" alt="图片" data-fail="0"></p><p><span>我印象中去年3、4月美国还对中国实行旅行禁令，也就是说如果你14天内到过中国，是不能去美国的，必须先飞往不在禁令名单上的第三国，待满14天隔离后，才能辗转去美国。而且当时机票很昂贵。所以这对父母此次去美国花光了积蓄。没想到去了美国20多天，女儿就不幸离世。</span></p><p><span>根据网上爆料，D在去世前那段时间，<span>她丈夫Y并未参与</span>照顾，擦洗身体和上厕所等等，都是由D父母照顾。</span></p><p><img data-galleryid="" data-ratio="2" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_png/fKfsfulrRDAxibwwhvpRFZpTzOKaTYevpQsHmIjjS2YyAEaFVvvDQ9EOQKakeRtl8yGo1JdT1qDMA5YN9VJWUNA/640?wx_fmt=png" data-type="png" data-w="1280" _width="677px" src="https://mmbiz.qpic.cn/mmbiz_png/fKfsfulrRDAxibwwhvpRFZpTzOKaTYevpQsHmIjjS2YyAEaFVvvDQ9EOQKakeRtl8yGo1JdT1qDMA5YN9VJWUNA/640?wx_fmt=png&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" crossorigin="anonymous" alt="图片" data-fail="0"></p><p><span>Y似乎想证明两人感情很好，放出了两页聊天记录，他在D去世前哄她开心，说她长相是“要我现在也会追的那种”，还说，“你在我和孩子心里总是最好看的样子。”D被他的甜言蜜语哄得十分感动，回复：I love you，并说：“我没有遗憾了。”</span></p><p><img data-croporisrc="https://mmbiz.qlogo.cn/mmbiz_jpg/fKfsfulrRDAxibwwhvpRFZpTzOKaTYevpKZH2G15ziaTCWDia5Sg1wjfaHmOSLbcOjDB6ZCUpobo1Tr3vVCyBtFIQ/0?wx_fmt=jpeg" data-cropx1="0" data-cropx2="831" data-cropy1="0" data-cropy2="569.2197802197802" data-galleryid="" data-ratio="0.6835138387484958" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_jpg/fKfsfulrRDAxibwwhvpRFZpTzOKaTYevpViad3ZMJ0H6J6RWsaF5QTJlKVSop5xv8ppiaz4vSN4ia1vx9r9TfNFuPQ/640?wx_fmt=jpeg" data-type="jpeg" data-w="831" _width="546px" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" crossorigin="anonymous" alt="图片"></p><p><span>2021年5月， D撒手人寰。</span></p><p><span>在临终前三天，她在病床上完成手续，加入了美国籍。这一举动确实匪夷所思，看起来唯一的目的是防止她的父母继承遗产。</span></p><p><span><em><span>在美国加州，配偶、子女和父母并非同一顺序的继承人，在有配偶和子女时，父母并无权继承遗产，并且夫妻共同财产全部由被继承人配偶继承，被继承人的生前个人财产部分再由被继承人的配偶与儿女按比例继承。</span></em></span></p><p><span>根据Y的说法，D在病榻上签署了一些文件，把自己那部分房产（450万美金豪宅的一半）放在了家庭信托里，信托里只有丈夫和子女（丈夫再娶的妻子没有份）。其他D的股票等等给了两个孩子和丈夫，总之一分钱都没留给自己父母。</span></p><p><span>D是独生女儿，父母把她培养到研究生，父母和女儿感情不可能不好。而且父母是破产工厂的退休工人，退休金微薄，如果有大病大险根本不能抵御，她作为独生女儿就没替父母想一点吗？</span></p><p><span>照几个截图的说法，女儿问过他们，但当时他们说不需要，希望她的钱都给外孙、外孙女。由此可见，他们是那种一心只为后代付出的传统老人。而且想必当时沉浸在即将失去女儿的痛苦中，根本没去多考虑这些。而Y用一套套甜言蜜语，也让D以为丈夫情深义重，将来会替自己赡养父母。</span></p><p><img data-galleryid="" data-ratio="1.104417670682731" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_jpg/fKfsfulrRDAxibwwhvpRFZpTzOKaTYevpLw8JiaHPTsSSCdx6Zy5Q7iabRI0hkRTphBMqkBIjk7NWlUT1Tm06JCqQ/640?wx_fmt=jpeg" data-type="jpeg" data-w="498" _width="498px" src="https://mmbiz.qpic.cn/mmbiz_jpg/fKfsfulrRDAxibwwhvpRFZpTzOKaTYevpLw8JiaHPTsSSCdx6Zy5Q7iabRI0hkRTphBMqkBIjk7NWlUT1Tm06JCqQ/640?wx_fmt=jpeg&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" crossorigin="anonymous" alt="图片" data-fail="0"></p><p><strong><span>没想到她一去世，令人发指的事发生了！</span></strong></p><p><span>D5月去世，Y直到今天都没给她的骨灰下葬。</span></p><p><span>有网友给他们算了一笔账，一套450万美金的房子（2012买的时候就100多万美金，贷款不会多），股票、存款不详，这个年龄早就加入大厂，拿的股票不会少。此外，脸书给员工的死亡赔偿金丰富，会支付3.5万美元的丧葬费，还会支付一半工资给去世员工的配偶和子女，总共支付10年（也有说总共支付到孩子成年）。总之，妻子去世，他可以获取至少近200万美元的赔偿。不过他自称保险赔偿在孩子的账户名下。</span></p><p><img data-galleryid="" data-ratio="0.9861111111111112" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_jpg/fKfsfulrRDAxibwwhvpRFZpTzOKaTYevpibSPqI5WBhsHzs1TLtbs0M9ichZoYT82kMU9CLqkeISZHjLNtQFpkZnw/640?wx_fmt=jpeg" data-type="jpeg" data-w="1080" _width="677px" src="https://mmbiz.qpic.cn/mmbiz_jpg/fKfsfulrRDAxibwwhvpRFZpTzOKaTYevpibSPqI5WBhsHzs1TLtbs0M9ichZoYT82kMU9CLqkeISZHjLNtQFpkZnw/640?wx_fmt=jpeg&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" crossorigin="anonymous" alt="图片" data-fail="0"></p><p><span>公司给了丧葬费用，可是他却连墓地都不舍得买，先放在家里，后因为孩子害怕，把妻子骨灰埋在自己家前院花坛。现在因为遭到邻居反对，又拿回室内。</span></p><p><img data-ratio="0.8796875" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_jpg/fKfsfulrRDAxibwwhvpRFZpTzOKaTYevp5JbvrDIQgo1KzUsQa3EUgicktjcFwpXBKSiaTcYqo1QlkLCTyibpMPrwA/640?wx_fmt=jpeg" data-type="jpeg" data-w="640" _width="640px" src="https://mmbiz.qpic.cn/mmbiz_jpg/fKfsfulrRDAxibwwhvpRFZpTzOKaTYevp5JbvrDIQgo1KzUsQa3EUgicktjcFwpXBKSiaTcYqo1QlkLCTyibpMPrwA/640?wx_fmt=jpeg&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" crossorigin="anonymous" alt="图片" data-fail="0"></p><p><img data-ratio="0.9698189134808853" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_jpg/fKfsfulrRDAxibwwhvpRFZpTzOKaTYevpFjuDCzQslQhqiadZBIibbuWpo1OziayJejf0HBMK3vOic906NmPuhjJEiag/640?wx_fmt=jpeg" data-type="jpeg" data-w="497" _width="497px" src="https://mmbiz.qpic.cn/mmbiz_jpg/fKfsfulrRDAxibwwhvpRFZpTzOKaTYevpFjuDCzQslQhqiadZBIibbuWpo1OziayJejf0HBMK3vOic906NmPuhjJEiag/640?wx_fmt=jpeg&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" crossorigin="anonymous" alt="图片" data-fail="0"></p><p><span><strong>但这期间，他倒以光速娶了新妻。</strong></span></p><p><span>根据他的澄清文，他自称6月13日拿到死亡证明那一刻开始上网交友，8天后认识现在的太太（比他小12岁），认识9天后网上结婚。现在疫情严重，领事馆办各种事都拖拉，他们还能如此快完成结婚令人惊叹。</span></p><p><span>7月，也就是在太太去世2个月的时候，现任太太已经办好签证，来到了美国（根据现任太太自己的朋友圈，她其实7月26日已经到了美国）。</span></p><p><br><span>Y瞒住了同住的前岳父母，支他们带孩子去纽约玩。等后者回来时，发现家里被大扫除，女儿的东西都被丢弃，家中多了前女婿的新妻子。</span></p><p><span>现在新妻子已经怀孕，6月待产，据说找到了微软的工作。</span></p><p><span>根据群里的消息，Y给新妻子买了新车，在家里跑前跑后，不让她沾手家务，疼爱至极。两个老人实在</span><span>看不下去，因为过去家里的家务，Y全是丢给他们女儿D做的。</span></p><p><span>女婿在女儿去世后的一系列做法，让老人十分不满。此后双方因为买回程机票和买墓地的钱，发生冲突，Y打电话报警，要求驱逐前岳父母。前岳父母上网求助，此事闹大。</span></p><p><span>Y登陆了D的微信，在google群里，发出警告，让大家不要散播谣言，并且把亡妻的微信名字也改成了“谣言止于智者”。</span></p><p><img data-croporisrc="https://mmbiz.qpic.cn/mmbiz_jpg/fKfsfulrRDAxibwwhvpRFZpTzOKaTYevp4MhPq0whdpTMlY9Wn5sDONYNfYYSynf0iaGNJnE99lj39O4Dhsticbvw/0?wx_fmt=jpeg" data-cropx1="0" data-cropx2="840" data-cropy1="0" data-cropy2="892.3183391003461" data-galleryid="" data-ratio="1.061904761904762" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_jpg/fKfsfulrRDAxibwwhvpRFZpTzOKaTYevp2bJ9G35Otc8ibdHTbUvY7ia3aIYdqqLOqqx4XfKYs55pNRtXRmZAx7GQ/640?wx_fmt=jpeg" data-type="jpeg" data-w="840" _width="578px" src="https://mmbiz.qpic.cn/mmbiz_jpg/fKfsfulrRDAxibwwhvpRFZpTzOKaTYevp2bJ9G35Otc8ibdHTbUvY7ia3aIYdqqLOqqx4XfKYs55pNRtXRmZAx7GQ/640?wx_fmt=jpeg&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" crossorigin="anonymous" alt="图片" data-fail="0"></p><p><span>随后他自己发了一篇对这个情况的澄清文，可内容几乎承认了上面信息都是真的。</span><span></span></p><p><img data-croporisrc="https://mmbiz.qpic.cn/mmbiz_jpg/fKfsfulrRDAxibwwhvpRFZpTzOKaTYevpbKeKyP145mBgdXhrRjDqiaUNgFu7glDk7babQBjveunJufl8rEkhbGA/0?wx_fmt=jpeg" data-cropx1="0" data-cropx2="262" data-cropy1="0" data-cropy2="2127" data-galleryid="" data-ratio="8.114503816793894" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_jpg/fKfsfulrRDAxibwwhvpRFZpTzOKaTYevpYfd0CPhY2eHtuUu51Lobb2F8NnddibzHwrptoNUrR9lZt6HTqrtdmIA/640?wx_fmt=jpeg" data-type="jpeg" data-w="262" _width="262px" src="https://mmbiz.qpic.cn/mmbiz_jpg/fKfsfulrRDAxibwwhvpRFZpTzOKaTYevpYfd0CPhY2eHtuUu51Lobb2F8NnddibzHwrptoNUrR9lZt6HTqrtdmIA/640?wx_fmt=jpeg&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" crossorigin="anonymous" alt="图片" data-fail="0"></p><p><span><strong>他以为自己占理，对亡妻父母的指责，反倒坐实了他的极度自私。</strong></span></p><p><span>由于D没有为老人留下任何财产，老人来美国花光了钱。Y以老人会被骗钱为由，提出以后每年分批给赡养费，并说这是亡妻的意思。</span><span>而老人则希望要一笔钱回国。</span></p><p><span><br></span><span></span><span><strong>Y的字里行间似乎在谴责他们贪婪。但老人一次性要一笔钱，其实不好理解吗？他们开始完全放弃女儿遗产，是以为女婿对自己女儿有感情，希望他能用钱好好照顾外孙外孙女，但是他们被女婿的再婚再孕速度惊呆了，失去了信任。</strong></span></p><p><span>他说每年给，万一他的新媳妇哪天不愿意了呢？他们回了中国，他若不给，他们能怎么办？以后女儿的遗产还不知道会不会用来养新家的孩子，还不如自己拿一点回去，存着给亲外孙外孙女。</span></p><p><span>看了下老人的要求也不高，就是5.4万美元，加上4万美元的墓地钱，加上2万美元的机票钱，总共也就11.4万美元，对于D那部分遗产和赔偿金只是个零头。但他总共只愿意拿出5.4万美元，后来勉强答应了4万美元的墓地费，最后卡在那2万美元的机票钱上。他只愿意给6000美元机票费，让老人留美国，挑机票便宜的时候走。</span></p><p><span><img data-croporisrc="https://mmbiz.qpic.cn/mmbiz_jpg/fKfsfulrRDAxibwwhvpRFZpTzOKaTYevpY74N7eSwcTg6ibdtiaaNibCFAQl6icSRr5wSFXRldAciczcX9OHvqwJRTWg/640?wx_fmt=jpeg" data-cropx1="0" data-cropx2="496" data-cropy1="0" data-cropy2="846" data-galleryid="" data-ratio="1.7036290322580645" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_jpg/fKfsfulrRDAxibwwhvpRFZpTzOKaTYevp5nIo3770AChPIncZTrMjHfwbSQwEujibMtFOhXGoXHaZx3meFuvCkcQ/640?wx_fmt=jpeg" data-type="jpeg" data-w="496" _width="496px" src="https://mmbiz.qpic.cn/mmbiz_jpg/fKfsfulrRDAxibwwhvpRFZpTzOKaTYevp5nIo3770AChPIncZTrMjHfwbSQwEujibMtFOhXGoXHaZx3meFuvCkcQ/640?wx_fmt=jpeg&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" crossorigin="anonymous" alt="图片" data-fail="0"></span></p><p><span>疫情当前，现在机票都贵得离谱，回去还有14+14的自费隔离费用等等。我今天没查到最近机票价格，可能疫情+打仗都停航了。可就因为一万多美元的差价，他没早点送两个老人走，搬起石头砸自己的脚。</span></p><p><span>他还声称他们在国内有退休金，有医保，不愁钱。可显然退休工薪阶级的生活质量是很低的。这和该不该给他们钱也没有关系。</span><span>至于文中他为了证明自己对他们好，说给他们吃的是有机奶，有机鸡蛋，更是遭到群嘲。鸡蛋牛奶在美国本来就是最便宜的食品种类之一了，有机的也不过几美元，再说这难道不是因为他和怀孕的现任也要吃吗？</span></p><p><span>他责怪老人“至少五次训斥他以前对D不够体贴，哭诉他们女儿的不幸遭遇”。他认为老人这么做是因为嫉妒“其乐融融的新家庭”。</span></p><p><span><strong>他却不想，老人们为什么哭诉女儿的遭遇？还不是因为过去和自己女儿一样被蒙蔽，如今突然醒悟，替死去的女儿感到痛心疾首吗？</strong></span></p><p><span>我想老人们和许多网友一样，都会质疑他和现任认识的时间线。</span></p><p><span>网上有信息传，两人其实在亡妻生病期间就已经交往，当现任去佛罗里达开会时，他就曾飞去那里相见。为了娶现任，他还给了30万人民币的彩礼。</span></p><p><span>两人早就交往，互相了解，等D一去世迫不及待在一起，确实更合理。</span></p><p><span><br></span><span></span><span><strong>一，</strong></span><span>Y这样注重财产的精明之人，不太可能网上认识9天、连面都没见过，就匆忙领证结婚，毕竟仓促结婚对于他的财产有风险。</span></p><p><span><strong>二，</strong></span><span>根据微博某位博主的博文，美国网上登记结婚需要双方在过去2年内线下见过面。既然D去世后，他们都没来得及见面，那便只能是D去世前了……</span></p><p><img data-galleryid="" data-ratio="2.164814814814815" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_jpg/fKfsfulrRDAxibwwhvpRFZpTzOKaTYevprv1F37BSH9lrHrxI15vhPicHzwvJibaYvYhsTDpIVxNb2STRxWoosAhg/640?wx_fmt=jpeg" data-type="jpeg" data-w="1080" _width="677px" src="https://mmbiz.qpic.cn/mmbiz_jpg/fKfsfulrRDAxibwwhvpRFZpTzOKaTYevprv1F37BSH9lrHrxI15vhPicHzwvJibaYvYhsTDpIVxNb2STRxWoosAhg/640?wx_fmt=jpeg&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" crossorigin="anonymous" alt="图片" data-fail="0"></p><p><span>后续我还看到有人称，Y把D的骨灰冲入马桶，以及D的父母呼吁大家为了两个孩子的隐私不要发攻击Y的话，因为只有第三方转述后的截图，不清楚真假，所以咱不评论。</span></p><p><span>D女士带着虚幻的“无憾”离世了，而痛彻心扉的醒悟留给了父母。</span></p><p><span>这个故事给活着的人们上了一课。<span><span>越</span><span>有责任感的人往往越容易</span><span>疏忽自</span><span>己。</span><span>他们</span><span>照顾家人，</span><span>职场</span><span>赚钱，为</span><span>子女</span><span>积累</span><span>财富，平日还总是省吃俭用，</span><span>但疾病和意外</span><span>总</span><span>是来得那么突然。</span></span></span></p><p><span><span>不要被一时的花言巧语冲晕头脑，你永远不知道当你背过身去时，另一个人在你身后是什么表情。</span><span>不要轻信语言，因为语言可以欺骗，只有经时间验证的行动不会。</span></span><span>人生短暂，<span>爱惜自己的健康</span>，</span><span>抓紧时间</span><span>享受生活。</span></p><p><span></span><span>更重要的是，立遗嘱、写保险受益人时要考虑安全问题，毕竟还有更险恶的例子。</span></p><p><br></p><section><mpprofile data-pluginname="mpprofile" data-id="MzUyNDgyMzIzNA==" data-headimg="http://mmbiz.qpic.cn/mmbiz_png/fKfsfulrRDDpUNn1NE76jBQz0vXibkLJYiap8scDAwHD0rlPMIibBZkibicEV1v1BWkY9DCMEjKX5zJBzlcEGYe12ew/0?wx_fmt=png" data-nickname="没药花园" data-alias="moyaohy" data-signature="案件、谜题、逻辑、人类学、心理学。" data-from="0" wah-hotarea="click"> <!-- profile卡片 -->  </mpprofile></section><section><span>版权声明</span><br></section><section><strong><span>本文作者：袜皮</span></strong></section><section><span>文中观点仅代表作者个人</span></section><section><span>图片均来自互联网，如有侵权请联系删除</span></section><section><span>文字版权归没药花园和创作者所有</span></section><section><br></section>
+                </div></div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+</body><style>body {
+      font-size:  20px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 900px;
+      text-align: justify
+    }
+    .page {
+      line-height: 30.0px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

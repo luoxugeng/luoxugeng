@@ -1,0 +1,301 @@
+<html><head><title>[Design Mode]</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color: %light-color%;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color: %dark-color%;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color: %sepia-color%;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color: %solarized-light-color%;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color: %nord-light-color%;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color: %groove-dark-color%;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #93a1a1;
+  border-color: %solarized-dark-color%;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color: %nord-dark-color%;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] .tts-word {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  background-color: red;
+  height: 2px;
+}
+.tts-word.hidden,
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+</head>
+<body tabindex="1" data-images="false" data-mode="sepia" data-font="sans-serif" data-loaded="true" style="user-select: initial;"><h1 dir="auto" id="reader-title">辛波斯卡诺贝尔文学奖演说辞：诗人与世界_南方艺术</h1>
+  <span dir="auto" id="reader-credits"></span>
+  <span dir="auto" id="reader-estimated-time">4-5 minutes</span>
+  <span dir="auto" id="published-time"></span>
+  <hr>
+  <div id="readability-page-1" class="page"><div>
+
+     <p>
+	　　<strong>诗人与世界</strong><br>
+	　　——诺奖演说辞，1996年</p>
+<p>
+	　　<strong>辛波斯卡&nbsp; 胡桑 译</strong></p>
+<p>
+	<img alt="辛波斯卡" src="https://www.zgnfys.com/uploads/allimg/160406/1-160406105931545.jpg" original="/uploads/allimg/160406/1-160406105931545.jpg"></p>
+<p>
+	　　据说，演讲的第一句话总是最困难的。不过，这个问题我已解决。然而我感到，即将到来的句子——第三句、第六句、第十句，直至最后一句——是同样困难的，因为大家期待我谈论的是诗歌。对于这个话题，我谈论得很少——事实上，几乎从未谈过。每当稍有提及，我总是暗自怀疑，对于这一点自己并不擅长。因此，我的演讲会十分简短。小分量的缺憾总是更易于被容忍。</p>
+<p>
+	　　当代诗人都是怀疑论者，甚至，或者该说尤其是，怀疑自己。他们很不情愿公开声称自己是诗人，甚至似乎有些羞愧。<mark class="hghlght">在我们这个喧嚣的时代，比起认清自己的优点，承认自己的缺点显得更为容易，因为缺点总被装扮得十分华丽，优点却隐藏得更深，而你自己从未深信它们就存在于你内部</mark>。当诗人填写问卷或与陌生人聊天——即，当不得不揭示自己的职业——他们喜欢以笼统的名称“作家”称呼自己，或以写作之外的任何工作代替“诗人”。公务员或公共汽车乘客一旦发现在与诗人打交道，就会变得难以置信、惊慌失措。我猜，哲学家会遇到类似的反应。但他们的境遇要好些，因为他们往往会以某种学术头衔装点自己的职业。哲学教授：这样听起来更体面。</p>
+<p>
+	　　然而没有诗歌教授。毕竟，那意味着，诗歌将成为一种职业，需要专业化的学习、定期考试、附有参考文献和脚注的理论文章、最终在典礼上颁发的毕业证书。另外，这也意味着，在稿纸上写满诗歌，即使是最精致的诗歌，也不足以成为诗人。关键因素是某张盖有官方印鉴的文件。我们不妨回想一下：俄罗斯诗坛的骄傲、诺贝尔奖得主约瑟夫·布罗茨基正是以此为基础被判处境内流放。他们称他为“寄生虫”，因为他缺少授予其诗人权利的官方证书。</p>
+<p>
+	　　数年前，我有幸见到了他，这让我高兴。我注意到，在所有我认识的诗人当中，唯有他乐于以诗人自居。他说出这个词时，非但毫无抑制，反而带着挑衅性的自由。我想，那是因为他回忆起了青年时代经历的粗暴的羞辱。</p>
+<p>
+	　　在更为幸运的国家，人性尊严未轻易受到侵犯，诗人当然渴望出版诗集，被阅读，被理解，但他们不会为超越于普通民众和日常事务之上而有所行动。在并不久远的本世纪前几十年，诗人还竭力以奇装异服和乖张举止震撼我们。然而，这一切只不过是为了向公众炫耀。但那个时刻总会到来，当诗人们关上门，脱下披风、廉价而艳俗的衣饰以及其他诗歌道具，就需要在寂静之中面对依然空白的稿纸，耐心地守候他们的自我。因为，最终，这才是真正有价值的。</p>
+<p>
+	　　伟大科学家和艺术家的传记影片层出不穷，这并非偶然。越来越多富于野心的导演在探索如何去忠实地再现重要科学发现或杰作诞生的创造性过程。而且有人的确较为成功地刻画出了某些类型的科学劳作。实验室、各式各样的器械、精密的机器重现于眼前：这样的场景能在短时间内吸引住观众的注意力。这些充满变数的时刻——进行了上千次的实验，每一次都做了微小的改进，最终能否预期的成果？——是富于戏剧性的。关于画家的影片可以拍得引人入胜，它再现一幅名画成形的每一个阶段，从最初的铅笔线条到最后一笔油彩。音乐则可以弥漫于关于作曲家的影片中：从响起于音乐家耳内的旋律的最初几个音节，到最终融汇成一首成熟的交响乐作品。当然，这些都显得十分幼稚，而并未诠释灵魂中一般被称为灵感的奇异状态。但至少在视听上满足了观众。</p>
+<p>
+	　　诗人是糟糕的，他们的作品无法呈现为影像，这令人绝望。一个人坐在桌前，或躺在沙发上，目不转睛地凝视着墙壁或天花板。这个人时不时地写下六七行诗句，一刻钟后，又划掉其中一行，然后又过去了一小时，其间什么事也没发生……谁有耐心观看这样的场面？</p>
+<p>
+	　　我刚才提到了灵感。被问及何谓灵感以及灵感是否真的存在时，当代诗人总是闪烁其词。这不是说，他们从未感受到这种内在力量的庇佑，而只是很难向别人解释自己都无法理解的事情。</p>
+<p>
+	　　有时，我被问及灵感，也故意回避。不过，现在我可以回答：灵感并不是诗人或艺术家的特权。现在、过去和将来，灵感总会光顾某个群体的人。那些自觉地选择自己的职业并以爱与想象去完成工作的人都属于这个群体。也许包括医生、教师、园丁——我可以列出上百种其他职业。<mark class="hghlght">只要能够从中不断发现新的挑战，他们的工作就是一场持续的冒险。困难与挫败从来不会抑制他们的好奇。一大堆新的疑惑会从他们业已解决的问题中涌现出来。不论灵感是什么，它总是诞生于持续的“我不知道”。</mark></p>
+<p>
+	　　这样的人并不多。地球上的大多数居民只是为了应付生存而工作。他们工作，因为这是必须的。他们选择这种或那种职业，并非出于热情；生存环境替他们做出了选择。他们之所以珍惜令人厌恶的工作，无聊的工作，仅仅因为别人甚至连这样的工作也无法获取——这是人类最残酷的不幸之一。而且没有任何迹象表明，未来诸世纪中，这一情形会有所好转。</p>
+<p>
+	　　因此，尽管我否认诗人对灵感的垄断，我依然将他们列入为数不多的幸运的选民。</p>
+<p>
+	　　关于这点，我的听众中肯定会有人产生疑问。形形色色的虐待狂、专制者、狂热分子和蛊惑家借助一些大肆宣扬的口号去追逐权力。他们也热爱自己的工作，并以富于创造性的狂热履行自己的职责。是的，的确如此，然而，他们“知道”一切。他们知道的东西足够使他们一劳永逸。他们并不试图揭示其他事物，这会削弱他们论辩的力量。然而，任何知识如果不能引发新的疑惑，就会迅速枯萎：它无法保存维持存在所需的温度。我们可以从古代和现代历史看到，在最极端的情形中，这样的知识将对社会构成致命的威胁。</p>
+<p>
+	　　<mark class="hghlght">因此，我才如此重视“我不知道”这句话。</mark>这句话虽然短小，却具有坚实的翅膀。它拓展我们的生活，使之容纳我们的内在空间，以及渺小地球悬浮其中的浩瀚外空。如果牛顿从未对自己说“我不知道”，那小果园中的苹果将只是像冰雹一样掉落在地，他顶多会弯腰将它们捡起，并开心地大口吃起来。如果我的同胞居里夫人从未对自己说“我不知道”，她可能会成为某所私立高中的化学教师，教导那些来自富贵家庭的年轻女孩，在这份也可以说十分尊贵的职业中终其一生。但是，她一直对自己说“我不知道”，这句话引领她两次来到斯德哥尔摩，在这里，那些永不止步、不断追寻的灵魂不时被授予诺贝尔奖。</p>
+<p>
+	　　诗人，真正的诗人，也必须不断说“我不知道”。每一首诗都在努力回答这句话，但当稿纸被打上最后一个句点时，诗人就变得犹豫，开始领悟到，这个看似别致的答案纯粹是权宜之计，绝对不充分。于是，诗人永远在尝试，而这些并不自我满意的连续成果迟早会被文学史家们用大纸夹夹在一起，并命名为“作品全集”。</p>
+<p>
+	　　有时，我梦想置身于一些不可能成真的情境。例如，我无所畏惧地想象，我有幸与悲叹人类一切劳碌皆为虚空的《传道书》作者一起交谈。我深深地向他鞠躬，因为他是最伟大的诗人之一，至少对我而言。随后我抓住他的手。“太阳底下并无新事物”：这是你写过的，传道者。但是，你自己是太阳底下诞生的新人。你创作的诗歌也是太阳底下的新事物，因为在你之前无人能写下这样的诗。而你的全部读者也是太阳底下的新人，因为那些生活于你之前的人无法读到它们。你坐在丝柏之下，这株丝柏创世以来从未生长。它和其他相似的丝柏一样来到世上，却并非完全相同。</p>
+<p>
+	　　传道者，我还想问你，此刻，你还想在太阳底下创造哪些新事物？将你表述过的思想进一步增补？或者，如今可能想反驳你的部分观点？在你的早期作品中，你提到欢愉——如果它稍纵即逝，又怎么办？于是，你关于太阳底下并无新鲜事物的诗也许会是有关欢愉的？你是否做过笔记，打过草稿？我不信你会说：“我已写下一切，再也没有什么可以补充了。”世上没有一位诗人会说这样的话，更何况像你这样的伟大诗人。</p>
+<p>
+	　　世界——无论我们会怎么想，当我们被它的广博和自身的无能所惊吓，或者愤恨于它对人类、动物、甚至植物（我们为何如此确信植物不能感受疼痛）的苦难无动于衷；无论我们如何看待被星辰的光线所穿透的浩渺空间，这些星辰为我们正开始探索、早已死亡、依然死亡、我们一无所知的行星所环绕；无论我们如何看待这座无法测量的剧场，我们已经预定了门票，然而这些门票的寿命短得可笑，被两个武断的日期所限制；无论我们是否能以其他方式看待这个世界——它如此令人惊异。</p>
+<p>
+	　　但是，“令人惊异”是一个隐藏着逻辑陷阱的描述语。毕竟，令我们惊异的事物偏离了众所周知、举世公认的准则，偏离了我们习以为常的显见事物。但关键是，并不存在一个显见的世界。我们的惊异独自存在，并不以与其他事物的比较为基础。</p>
+<p>
+	　　即便如此，在日常言谈中，我们不必停下来思考每一个词语，我们都在使用诸如“日常世界”、“日常生活”、“事件的日常轨迹”之类的短语。然而，在诗歌语言中，每一个词语都被权衡，绝无寻常或正常之物。<mark class="hghlght">没有一块石头或一朵石头之上的云是寻常的。没有一个白昼和白昼之后的夜晚是寻常的。总之，没有一个存在，没有任何人的存在是寻常的</mark>。</p>
+<p>
+	　　看来，诗人将会一直拥有适合于他们的工作。</p>
+<p>
+	　　维斯瓦娃·辛波斯卡<br>
+	　　1996年12月7日<br>
+	　　斯德哥尔摩</p>
+<p>
+	　　收入《辛波斯卡诗选2：我曾这样寂寞生活》（胡桑译，湖南文艺出版社，2014）</p>
+
+
+    </div></div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+<span style="position: absolute; width: 16px; height: 16px; background-color: rgba(125, 0, 0, 0.5); border: 1px solid rgb(255, 255, 255); box-sizing: border-box; display: none; cursor: move;"></span></body><style>body {
+      font-size:  20px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 900px;
+    }
+    .page {
+      line-height: 30.0px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

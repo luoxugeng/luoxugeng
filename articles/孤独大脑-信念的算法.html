@@ -1,0 +1,138 @@
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style>
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 30px auto 0 auto;
+    padding: 10px;
+  }
+  body[data-mode="light"] {
+    color: #2B2B2B;
+    background-color: #EBEBEB;
+  }
+  body[data-mode="dark"] {
+    color: #D8D8D8;
+    background-color: #464646;
+  }
+  body[data-mode="sepia"] {
+    color: #2B2B2B;
+    background-color: #E7E2D5;
+  }
+  body[data-mode="black"] {
+    color: #ACACAC;
+    background-color: #121212;
+  }
+  body[data-loaded=true] {
+    transition: color 0.4s, background-color 0.4s;
+    margin-top: 56px;
+  }
+  body[data-images=false] img {
+    display: none;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  body[data-links=false] #reader-domain {
+    display: none;
+  }
+  #reader-domain {
+    font-size: 0.9em;
+    line-height: 1.48em;
+    padding-bottom: 4px;
+    font-family: Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    border-bottom-color: currentcolor;
+    color: #0095dd;
+  }
+  #reader-title {
+    font-size: 1.6em;
+    line-height: 1.25em;
+    width: 100%;
+    margin: 20px 0;
+    padding: 0;
+  }
+  #reader-credits {
+    font-size: 0.9em;
+    line-height: 1.48em;
+    margin: 0 0 10px 0;
+    padding: 0;
+    font-style: italic;
+  }
+  #reader-estimated-time {
+    font-size: 0.85em;
+    line-height: 1.48em;
+    margin: 0 0 10px 0;
+    padding: 0;
+  }
+  #reader-credits:empty {
+    disply: none;
+  }
+  </style>
+</head>
+<body data-images="false" data-links="true" data-mode="sepia" data-font="sans-serif" data-loaded="true">
+  <span></span> <!-- for IntersectionObserver -->
+  <a id="reader-domain" href="https://mp.weixin.qq.com/s/GpgOpu6E-0dZDAc_slH4Qw">mp.weixin.qq.com</a>
+  <h1 dir="auto" id="reader-title">信念的算法</h1>
+  <div dir="auto" id="reader-credits">老喻在加</div>
+  <div dir="auto" id="reader-estimated-time">8-10 minutes</div>
+  <hr>
+  <div id="readability-page-1" class="page"><div id="js_content">
+                    
+
+                    
+                    
+                    
+                    <p><span><strong><span>一</span></strong><br></span></p><p><span>我怎么也找不到相机皮套了。</span></p><p><span>它最有可能在我混乱的书架上。</span></p><p><span>书架上不仅有书，还有乱七八糟的数码玩具，以及各种零碎东西。</span></p><p><span>我把这些东西<strong>平铺</strong>在可以一眼看见的地方。</span></p><p><span>合理而整洁的收纳，也许应该是Windows的文件夹模式，文件夹套文件夹。</span></p><p><span>但是以我的经验，不管是物理世界，还是数字世界，进了文件夹的东西几乎就被遗忘了。</span></p><p><span>所以，iPhone式的对App的平铺，是我喜欢的收纳（确切说是乱堆）模式。</span></p><p><span>苹果很整洁，我很混乱。</span></p><p><span>对于信息的个人获取形态，苹果贡献了<strong>平铺</strong>，谷歌贡献了<strong>搜索</strong>，Facebook贡献了<strong>信息流</strong>。</span></p><ul><li><p><span>在信息世界，太多的平铺需要搜索。</span></p></li><li><p><span>信息流，则是引入了时间元素的、流动的平铺。</span></p></li></ul><p><span>可是，在物理世界，平铺并没有帮助我找到相机皮套，连找了两次都没找到。</span></p><p><span>今早，我决定继续在书架上找一次，终于在订书机后面发现了它。</span></p><p><span><strong><span>二</span></strong></span></p><p><span>假如你找不到一样东西，而且在它最可能在的地方也找过了，如果你继续找了些别的地方还没发现，那么你再在它最可能出现的地方多找一次，仍然可能是最优选择。</span></p><p><span>上面这句绕口令版的生活小常识背后，是我们这个世界最重要的概念之一，以及该概念背后的算法。</span></p><p><span><span>这个概念是：</span><span><strong>信念</strong></span><span>。</span></span></p><p><span><span>背后的算法是：</span><span><strong>贝叶斯公式</strong></span><span>。</span></span></p><p><span>我用贝叶斯公式来解释一下自己找相机皮套的过程：</span></p><ol><li><p><span>假如东西在最可能的那个地方出现的概率是a，你找了一遍，没发现。</span></p></li><li><p><span><span>假设你找了这一次但没看仔细的概率是b，所以该东西还在这个最可能的地方的概率是a</span><span>✖️</span><span>b。</span></span></p></li><li><p><span><span>找两次而不得后，这个概率继续降低为a</span><span>✖️</span><span>b</span><span>✖️</span><span>b。</span></span></p></li></ol><p><span><span>尽管有时候b很小，但因为a很大，所以a</span><span>✖️</span><span>b还是相对比较大。</span></span></p><p><span>更何况，很多时候我们会低估了b的数值。</span></p><p><span>例如，对平铺的<strong>习以为常所导致的先入为主</strong>，让我忽略了订书机后面还有东西。</span></p><p><span>b代表我们现实的愚蠢。先入为主是自以为知道的无知，这种愚蠢的b值高得惊人。</span></p><p><span>不过好处是，假如我愿意承认自己的愚蠢，较大的b值，令我在书架上找到相机皮套的概率更大了。</span></p><p><span>尽管上述“计算”简单得惊人，然而我敢打赌，真正理解的人，也许不足1%。</span></p><p><span><strong><span>三</span></strong></span></p><p><span>将“信念”引入计算，似乎有点儿奇怪。</span></p><p><span>假如你在街边，看见有人摆摊儿，玩扔硬币押大小的游戏。</span></p><p><span>庄家连续扔出了5次正面，接下来一次，你押什么？</span></p><p><span>据我某次在澳门的观察，不同的人会有不同的押注：</span></p><ul><li><p><span>新手会押正面，因为他们认为正面的火气很旺，要跟上；</span></p></li><li><p><span>老手会押反面，因为他们认为硬币正反概率都是50%，连续5次正面，该来一次反面了。</span></p></li></ul><p><span>聪明如你，会告诉他们：你们都错了。</span></p><p><span>你明白概率的道理，知道每次扔硬币都是独立事件：即使前面连续出现5次正面，下一次出现正面或者反面的机会还是一样的。</span></p><p><span>例如下图：假如生男生女的概率和扔硬币一样，两种结果都是50%，你会发现连续5次甚至10次都是男孩或者女孩某一性别，并不罕见（见黄色和绿色标识数据）。<br></span></p><p><img data-ratio="0.69921875" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_jpg/SF9cpK1TBCjxjvib9v7xJG4gKOKWvbSvWiaer0NTLvYL2HDbduWIUR5BKX5k02CCd2G8rSFhOHCaFFeQt271uJicA/640?wx_fmt=jpeg" data-type="jpeg" data-w="1280" _width="677px" src="https://mmbiz.qpic.cn/mmbiz_jpg/SF9cpK1TBCjxjvib9v7xJG4gKOKWvbSvWiaer0NTLvYL2HDbduWIUR5BKX5k02CCd2G8rSFhOHCaFFeQt271uJicA/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" crossorigin="anonymous" alt="图片" data-fail="0"></p><p><span><em><span>图片来自《统计与真理》</span></em></span></p><p><span>于是你说：即使5次都是正面，下一次是正面的概率还是50%。<br></span></p><p><span>然而，你忘记了一个事实：你是在街头玩儿这个扔硬币游戏。<br></span></p><p><span>你有一个先入为主的假设：硬币没有被做手脚。</span></p><p><span>这就是我在第一段里所说的“b”值：</span></p><p><span>b代表我们现实的愚蠢。先入为主，是自以为知道的无知。</span></p><p><span>概率有两个流派：</span></p><ul><li><p><span><strong><span>频率主义</span></strong><span>，是客观的，其基础是一件事发生的频率；</span></span></p></li><li><p><span><strong><span>贝叶斯主义</span></strong><span>，则是主观的，基础是你对一件事发生的“信念”。</span></span></p></li></ul><p><span>例如，一个标准的硬币，将其抛上一万次，结果分布符合“频率主义”的概率解释。<br></span></p><p><span>贝叶斯推断，则会先有一个猜测，然后根据信息来更新自己的猜测。例如：<br></span></p><blockquote data-type="2" data-url="" data-author-name="" data-content-utf8-length="37" data-source-title=""><section><section><span>嗯，一般来说，硬币正反面是一样的，但这是在街头，那个家伙真的没做手脚吗？</span></section></section></blockquote><p><span>这个推断过程就是：</span></p><p><span><strong>后验概率 = 观测数据决定的调整因子×先验概率</strong></span></p><p><span>所谓“先验概率”，是50%。后验概率，则是根据更新后的信息，加以调整后得到的数据。<br></span></p><p><span>贝叶斯推断里的“信念”，是这样的姿势：<br></span></p><p><span><span><strong><span>我相信，但我也可能是错的。</span></strong></span><span><br></span></span></p><p><span><strong><span>四</span></strong></span></p><p><span>作为牧师的贝叶斯，据说是为了驳斥“怀疑上帝并不存在”的休谟，从而提出了贝叶斯推断。</span></p><p><span>于是，作为“我相信”的贝叶斯牧师，和“我怀疑”的休谟，因为这个公式而成为思想上对立的好基友。<br></span></p><p><span>因为对立，反而构建了某种强大的思想张力。</span></p><ul><li><p><span>杠精休谟说，这世界哪里有什么因果？你们那些公式啊，信念啊，统统靠不住；</span></p></li><li><p><span>信仰者贝叶斯说，那你也要有信念。</span></p></li></ul><p><span>因为这种思想张力可以表述为一个简单的公式，所以这个关于信念的算法迄今仍在发挥着神奇的力量。</span></p><p><span>频次主义的概率，其客观的好处是客观，可是，我们的认知本身就是主观的，谈何客观呢？</span></p><p><span>就像牛顿的公式，即使在地球乃至太阳系被反复验证，仍然只是一个局部的真理。或者说，是一个有概率前提的“信念”。</span></p><p><span>然而，简单怀疑一切，会陷入虚无主义。</span></p><p><span>贝叶斯主义选择相信“信念”，但他们知道这只是“先入之见”，他们随时敞开认知的大门，接受各种性质的信息，并且更新自己的“信念”。</span></p><p><span>由于我们对世界的理解极其有限，频次主义的概率所依赖的大数定律，很容易因为数据的局限，以及环境的变化，而掉入“小数陷阱”，也就是赌徒谬误--就像前面说的，以为连续出现5次正面后，下一次出现反面的概率会变大。</span></p><p><span>贝叶斯主义更适合变化的世界，有限的世界。</span></p><p><span>包括我们每个人有限的一生。</span></p><p><span>然而，这个伟大的哲学，需要经由算法，才能从描述性的概念，变成拯救世界的工具。</span></p><p><span><strong><span>五</span></strong></span></p><p><span>请允许我用此前用过的例子，不同的是，我会给出关键环节的具体计算。</span></p><section><span>2009年5月31日晚10点，法航447不幸坠毁，搜救人员<span>动用当时最新技术，找了一周后，仅发现少量残骸碎片和29具遇难者遗体。</span></span></section><section><span>随后两年的艰苦搜索，更是一无所获。<br></span></section><section><span>这时，贝叶斯主义者登场了，他们的方法是：</span></section><ul><li><section><span><span>为</span><span>飞机失事建立一个数学模型；</span></span></section></li><li><section><span>整合评估各种导致失事的原因的概率；</span></section></li><li><section><span>根据更新信息，改进模型。</span></section></li></ul><section><img data-ratio="0.5227272727272727" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_png/SF9cpK1TBCiaqULJC6dn9F89IJ51uL82yeQpZFotuq8LSVMLrHbBgUK4LjvES7zKgW72x6VPW6ctLbPrYsNwIbQ/640?wx_fmt=png" data-type="png" data-w="1144" _width="677px" src="https://mmbiz.qpic.cn/mmbiz_png/SF9cpK1TBCiaqULJC6dn9F89IJ51uL82yeQpZFotuq8LSVMLrHbBgUK4LjvES7zKgW72x6VPW6ctLbPrYsNwIbQ/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" crossorigin="anonymous" alt="图片" data-fail="0"><span>如上，也是一张“格子”图。<br></span></section><section><span>救援队根据上述概率分布图，先从概率最大的区域搜索，如果没有发现，就在过往数据基础之上更新概率分布，继续搜索最大概率区域。</span></section><section><span>其中，贝叶斯更新的过程，简单示范如下：</span></section><section><img data-ratio="0.6989583333333333" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_png/SF9cpK1TBCiaqULJC6dn9F89IJ51uL82y0bLBMB0d7YnXY7dS0NCJAGG8hgp61hBfia59nu6lakQwfiaFaH0zTlfg/640?wx_fmt=jpeg" data-type="jpeg" data-w="1920" _width="677px" src="https://mmbiz.qpic.cn/mmbiz_png/SF9cpK1TBCiaqULJC6dn9F89IJ51uL82y0bLBMB0d7YnXY7dS0NCJAGG8hgp61hBfia59nu6lakQwfiaFaH0zTlfg/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" crossorigin="anonymous" alt="图片" data-fail="0"></section><section><span><em><span>（本图来自《科学世界》杂志）</span></em></span></section><section><span>上面的数字如何得到的呢？</span></section><section><span>我试着不用贝叶斯公式，用直观的方式来计算：</span></section><section><span>在B区域的“初始信念”是50%，搜索之后不在B区域，但是找不到的可能性是：</span></section><section><span>1、的确不在B区域；<br></span></section><section><span>2、在B区域但是被漏掉了。</span></section><section><span>我们假设漏掉的概率是25%（这也是一个信念），于是分析如下：</span></section><p><img data-ratio="0.25" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_jpg/SF9cpK1TBCjxjvib9v7xJG4gKOKWvbSvWDLMXeJU9QTp0cxU0MfgjqA0rPHedYOicRTLRzmh5oI9trBjO4zA4ibkg/640?wx_fmt=jpeg" data-type="jpeg" data-w="1280" _width="677px" src="https://mmbiz.qpic.cn/mmbiz_jpg/SF9cpK1TBCjxjvib9v7xJG4gKOKWvbSvWDLMXeJU9QTp0cxU0MfgjqA0rPHedYOicRTLRzmh5oI9trBjO4zA4ibkg/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" crossorigin="anonymous" alt="图片" data-fail="0"></p><section><span>想起我找相机皮套的故事了吗？还记得我描述自己愚蠢程度的“b值”吗？</span></section><section><span><span>这里有趣的地方是，对于一个贝叶斯主义者，不仅是“我相信，但我也怀疑我的相信”，甚至于，</span><strong><span>连我对自己的怀疑也是怀疑的</span></strong><span>。</span></span></section><section><span><span>假如你知道自己愚蠢，并且能够定义出愚蠢的边界，例如这里“找漏了”的概率之25%，那么该</span><span><strong>愚蠢就会成为智慧的一部分</strong></span><span>。</span></span></section><section><span>继续上面的不用公式的计算，搜索了B区域，由此更新的信息是：</span></section><ul><li><p><span>的确不在B区域的概率是37.5%<br></span></p></li><li><p><span>还是在B区域但是被漏掉的概率是12.5%。</span></p></li></ul><section><span>那么，不在B区域的37.5%可能性，就要在ABCD四个区域重新分配，如下图：<br></span></section><p><img data-ratio="0.559375" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_jpg/SF9cpK1TBCjGUhVjoPiaAlGwRRpTpOcE6vYia3XzbiatAYH8v4pFTf4x0SxJBiaZzAZ5ogJrebH5l23R1HN1jnmD6w/640?wx_fmt=jpeg" data-type="jpeg" data-w="1280" _width="677px" src="https://mmbiz.qpic.cn/mmbiz_jpg/SF9cpK1TBCjGUhVjoPiaAlGwRRpTpOcE6vYia3XzbiatAYH8v4pFTf4x0SxJBiaZzAZ5ogJrebH5l23R1HN1jnmD6w/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" crossorigin="anonymous" alt="图片" data-fail="0"></p><section><span>重新分配的基数是（30%+12.5%+5%+15%），以A区域为例，其因为重新分配那37.5%而增加的概率是：<br></span></section><section><span>30%➗<span>（30%+12.5%+5%+15%）✖️37.5%&nbsp;=&nbsp;0.18</span></span></section><section><span>于是，更新后A区域的概率是（0.3+0.18=0.48），整体更新后如下图：<br></span></section><p><img data-ratio="0.59140625" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_jpg/SF9cpK1TBCjxjvib9v7xJG4gKOKWvbSvWtBFyCt7YljNcexJJLiawECo169pibsmWNua42c1AjvaX4m9DialMj0zGw/640?wx_fmt=jpeg" data-type="jpeg" data-w="1280" _width="677px" src="https://mmbiz.qpic.cn/mmbiz_jpg/SF9cpK1TBCjxjvib9v7xJG4gKOKWvbSvWtBFyCt7YljNcexJJLiawECo169pibsmWNua42c1AjvaX4m9DialMj0zGw/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" crossorigin="anonymous" alt="图片" data-fail="0"></p><section><span>这时，A区域的“信念”数值上升为48%，接下来，搜救人员继续搜索A区域。</span></section><section><span>我们可以想象，假如某个区域的初始信念比较高，并且遗漏概率也比较高的话，即使搜索了该区域而不得，有可能该区域更新后的信念仍然是最高的，所以按照游戏规则仍然是最高的。<br></span></section><section><span>历史上的搜救案例里，的确出现过类似的状况，人们根据更新后的数据，重复去搜索此前找过但没找到目标的区域，结果最后找到了。</span></section><section><span>贝叶斯主义者，将概率理解为对某件事情的信念。</span></section><section><span>他们承认自己的“信念”是灰度的，而非绝对的判断。<br></span></section><section><span>他们会根据观察到的信息更新自己的信念：<br></span></section><ul><li><p><span>“初始信念”是先验概率，更新后的信念是后验概率。</span></p></li><li><p><span>在新一轮的观察中，后验概率又变成初始概率。</span></p></li></ul><section><span>我在《人生算法》里的<strong>认知飞轮</strong>，亚马逊的<strong>Day&nbsp;1</strong>，微软的<strong>刷新</strong>，投资人的<strong>打无记忆的球</strong>，都是类似逻辑。<br></span></section><section><span><span>贝叶斯推断保留不确定性，每一轮的</span><span>估算也许是模糊的，然而公式在模糊和犯错的情况下，依然可以发挥作用。</span></span></section><section><span>并且，贝叶斯算法具有连续性，可以程序化，以有限的信息，通过某种杠杆效应，快速逼近真相。</span></section><p><span><strong><span>六</span></strong></span></p><blockquote data-type="2" data-url="" data-author-name="" data-content-utf8-length="80" data-source-title=""><section><section><span><span>在威尔逊被赶走后，又有一个人越过了信念碑，那是一般游人与信念中心保持距离的界限。那人在碑后徘徊着，希恩斯很快注意到了他，招呼惠子说：“看那人，他应该是个军人！</span><span>”</span></span></section></section></blockquote><p><span>这是小说《三体》里的一段。面壁人希恩斯苏醒后，在推进计划过程中意外发现“思想钢印”能坚定人们的思想，并设立信念中心帮助太空军建立必胜信心。</span></p><blockquote data-type="2" data-url="" data-author-name="" data-content-utf8-length="36" data-source-title=""><section><section><span>“我叫吴岳，我来获取信仰。”来人说，希恩斯注意到他说的是信仰而不是信念。</span></section></section></blockquote><p><span>信念和信仰的区别是什么？<br></span></p><p><span><strong><span>信仰</span></strong><span>，为人类生而为人，选择其所相信之价值观、生活方式，以及人生意义的可靠确据之一。是不证自明的那些东西，例如父母对孩子的爱。</span></span></p><p><span><strong><span>信念</span></strong><span>，是个人判断和选择事物真伪的思想意识，信念的正确与否取决于个人的知识水平包括推理能力。</span></span></p><p><span>以上定义来自网络。请允许我用简单的描述来区隔二者：</span></p><ul><li><p><span>信仰，几乎是100%的；</span></p></li><li><p><span>信念，是介于0和100%之间的。</span></p></li></ul><p><span><strong><span>比特币是一种信仰吗？不，比特币是一种信念。</span></strong></span></p><p><span>这个信念值可以是1%，也可以是98%，是每个人的主观概率。</span></p><p><span>我们不去谈比特币的金融理论基础，也不去谈数字化时代的变迁，更不去讨论关于数字黄金的隐喻，而只说说信念本身。</span></p><p><span>信念是基于概率的。所以，是否投资比特币，不是一个“是”或者“非”的选择。<br></span></p><p><span>比如，你可以说，我对比特币涨到30万美金的信念是25%，我对比特币跌到一分钱不值的信念是10%，我对比特币在3万美金上蹿下跳的信念是65%，那么，你就可以根据这些信念来计算期望值，并根据自己的状况来做决策。<br></span></p><p><span>你并不需要选择是否“信仰”比特币。</span></p><p><span>当然，因为货币的“信念”属性，以及人类事务里信念的传染性，会有某些别的隐变量起作用，所以你的信念更需要一些未知的灰度空间。</span></p><p><span><strong><span>七</span></strong></span></p><p><span><span><strong><span>年轻时，每个人都有自己的信念。</span></strong></span></span></p><p><span>然而，岁数越大，信念越少。</span></p><p><span>《重庆森林》里有段台词：</span></p><blockquote data-type="2" data-url="" data-author-name="" data-content-utf8-length="73" data-source-title=""><section><section><span>不知道从什么时候开始，在什么东西上面都有个日期，秋刀鱼会过期，肉罐头会过期，连保鲜纸都会过期，我开始怀疑，在这个世界上，还有什么东西是不会过期的？</span></section></section></blockquote><p><span>一切东西都会过期，是热力学第二定律的文艺化表达。<br></span></p><p><span>这个伟大而残忍的定律，表述了热力学过程的不可逆性——孤立系统自发地朝着热力学平衡方向──最大熵状态──演化。</span></p><p><span>熵，是混乱程度的度量。同样，这个概念也是基于概率的。<br></span></p><p><span>根据熵增原理，一个玻璃杯子早晚会被打碎，而我们却看不到碎玻璃复原为一个完整的杯子。--这个说法并不精确。<br></span></p><p><span>正确的表述是：</span></p><ul><li><p><span>一个杯子被打碎的概率非常大，时间越长，越接近于100%（这是文物价值的概率原理）；</span></p></li><li><p><span>碎玻璃复原为完整杯子并非不可能，而是概率极小，再考虑到原子大小与杯子尺度之间的关系，几乎没人见过碎玻璃复原。即使这个概率极小，但仍然大于零。</span></p></li></ul><p><span><span>熵增理论里的Δ</span><em>S</em><span>&nbsp;≥ 0，是指“事物会变得更糟糕”。更具体地说，它认为物质和能量总是朝着混乱的方向发展。</span></span></p><p><span>《存在与科学》写道：</span></p><blockquote data-type="2" data-url="" data-author-name="" data-content-utf8-length="133" data-source-title=""><section><section><span>如果任由其自由发展，物质会分解，能量会扩散。比如在某个容器内，无序运动的气体分子会充满整个容器。炽热金属块中的原子会发生剧烈的碰撞，它们同时会与该金属块周围温度较低的原子发生碰撞，这会使金属块中的能量散发出来，然后其温度降低。这就是自然变化的根本原因——无序扩散。</span></section></section></blockquote><p><span>这就是墨菲定律：<span>凡是可能出错的事就一定会出错。</span></span></p><p><span>然而，Δ<em>S</em>&nbsp;≥ 0只能用于“孤立”系统。</span></p><p><span>例如，地球并不是一个孤立系统，因为地球不断地从太阳以太阳光的形式接收能量。于是，作为负熵过程的生命得以诞生。</span></p><blockquote data-type="2" data-url="" data-author-name="" data-content-utf8-length="122" data-source-title=""><section><section><span>然而令人惊讶的是，这种自然的无序扩散可以创造出精致的结构。这种扩散如果发生在引擎中，就可以让发动机吊起砖块建造教堂；这种扩散如果发生在种子里，就可以让分子形成花朵。这种扩散如果发生在你的身体里，在你的大脑中随机的电流和分子就可能会被加工成想法。</span></section></section></blockquote><p><span>这就是生命与创造的魅力，也是信念的价值和意义。</span></p><p><span>我们通过知识，通过机器，通过信息，操控了麦克斯韦妖，那些无序扩散得以被驯服，为人类做功。<br></span></p><p><span><span>就像我在大学时代主要靠把衣服泡在水盆里，利用布朗运动来实现“自动洗衣”。</span></span></p><p><span>一个凤梨罐头的加工，就是一个负熵的过程，人们以此对抗不可逆的时光。<br></span></p><p><span>然而，信念，罐头，和这个世界上所有的事物一样，都无法逃离那个最厉害的定律：</span></p><blockquote data-type="2" data-url="" data-author-name="" data-content-utf8-length="95" data-source-title=""><section><section><span>在1994年的5月1号，有一个女人跟我讲了一声“生日快乐”，因为这一句话，我会一直记住这个女人。如果记忆也是一个罐头的话，我希望这罐罐头不会过期；如果一定要加一个日子的话，我希望它是一万年。</span></section></section></blockquote><p><span>嗯，假如一个信念以一万年为尺度，也许我们该称之为信仰。</span></p><p><span><strong><span>八</span></strong></span></p><p><span><span><strong><span>信念的边界，比信念本身更重要。</span></strong></span></span></p><p><span>这种信念，重新定义了已知和未知。</span></p><p><span>我们看到的，知道的，理解的，都只是真实世界中很小的一部分。</span></p><p><span>这里既有空间上的未知，例如上面的搜救案例，也有时间上的未知，例如我们对未来的投资。</span></p><p><span>为了探寻未知，信念将自己作为方法和路径，与随机性共舞，去探寻自我的边界。</span></p><p><span><strong>蒙特卡洛方法，</strong><span>也称</span><strong>统计模拟方法</strong><span>，</span><span>是一种以概率统计理论为指导的数值计算方法。是指使用随机数（或更常见的伪随机数）来解决很多计算问题的方法。</span></span></p><p><span>例如，用该方法来求不规则图形的面积：</span></p><p><img data-ratio="0.9164705882352941" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_png/SF9cpK1TBCjGUhVjoPiaAlGwRRpTpOcE6DjpGsNuib9ygKoicuTZ5vUhn1kYwWbpOLmEfiam5gD432FqjmOVw1aXoQ/640?wx_fmt=jpeg" data-type="jpeg" data-w="850" _width="677px" src="https://mmbiz.qpic.cn/mmbiz_png/SF9cpK1TBCjGUhVjoPiaAlGwRRpTpOcE6DjpGsNuib9ygKoicuTZ5vUhn1kYwWbpOLmEfiam5gD432FqjmOVw1aXoQ/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" crossorigin="anonymous" alt="图片" data-fail="0"></p><p><span><em><span>图片来自《统计与真理》</span></em></span></p><p><span>假设我们随机地在上面的长方形上往下扔沙子：</span></p><p><span>当沙子足够多时，大数定律发挥作用，我们数一下落在不规则图形里的沙子的数量，再除以落在长方形里的沙子的数量，该比值非常接近于“不规则图形的面积/长方形的面积。</span></p><p><span>因为长方形面积已知，所以根据该比值，可以计算出不规则图形的面积。<br></span></p><p><span>（伽利略用过更加古典的方法，他会将不规则图形剪下来去称重量。）<br></span></p><p><span>这种看起来很笨的聪明方法，作为非确定性算法，可以在保持对不规则图形的无知的情况下，非常精确地计算出想要的数字，尤其是在计算机的帮助下。<br></span></p><p><span><strong>蒙特卡洛方法，能够解决那些确定性算法无法解决的问题。</strong></span></p><p><span>随机性和不确定性，不再是人类的敌人。</span></p><p><span>这种方法的名字，来自摩纳哥的蒙特卡洛赌场。</span></p><p><span>从卡尔达诺开始，赌徒再次“以身为骰”，为人类贡献出概率的智慧。<br></span></p><p><span><strong><span>九</span></strong></span></p><p><span>赌徒有赌徒的信念，</span><span>赌场有赌场的信念。</span></p><p><span>再回到蒙特卡洛方法的图片：</span></p><p><img data-croporisrc="https://mmbiz.qlogo.cn/mmbiz_png/SF9cpK1TBCiaibvNakQfXhTZibVIyfNKdz9vMNFKNIztBcv1zx3f92rnkxicjlzJqO2fNsROwWGrt6NZ2OcYNbCmMQ/0?wx_fmt=gif" data-cropx1="0" data-cropx2="850.0000000000001" data-cropy1="0" data-cropy2="614.7058823529411" data-ratio="0.7223529411764706" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_jpg/SF9cpK1TBCiaibvNakQfXhTZibVIyfNKdz9f9TibiaYE3pdoCI4nfzSu565UbMDJQrxOOnDpytP6EwvgR2omibEFcPsQ/640?wx_fmt=jpeg" data-type="jpeg" data-w="850" _width="578px" src="https://mmbiz.qpic.cn/mmbiz_jpg/SF9cpK1TBCiaibvNakQfXhTZibVIyfNKdz9f9TibiaYE3pdoCI4nfzSu565UbMDJQrxOOnDpytP6EwvgR2omibEFcPsQ/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" crossorigin="anonymous" alt="图片" data-fail="0"></p><p><span>我们假设，上图是一个赌徒与赌场的对赌游戏：</span></p><p><span>赌徒闭着眼睛在长方形上空往下扔沙子，假如掉在不规则图形里，一块钱变两块钱；假如掉在不规则图形之外，一块钱全输掉。</span></p><p><span>显然，赌场只要让不规则图形的面积小于长方形面积的50%，就可以稳赚了。<br></span></p><p><span>仅仅是靠大数定律，赌场让随机性成为赚钱机器。</span></p><p><span>随机扔沙子，是一种无序扩散的人类行为。<br></span></p><p><span>因为赌场有制定概率的权力，所以赌博游戏就是一台精心设计的机器，背后是暗中操控无序扩散的麦克斯韦妖，赌徒们“熵增”，而赌场“熵减”。</span></p><ul><li><p><span>单个沙子落在不规则图形内，还是不规则图形之外，是个无法预测的偶然事件；<br></span></p></li><li><p><span>很多个沙子落在“<span>不规</span><span>则图形内”和“</span><span>之外”的比例，几乎是必然的。</span></span></p></li></ul><p><span><span>赌场的信念，比赌徒的信念，优势大那么一点点。<br></span></span></p><p><span>不确定的游戏，不止是在赌场上。</span></p><p><span>投资，创业，甚至包括教育孩子，都是一个充满不确定性的游戏。<br></span></p><p><span>本质上，这些事情，都是一个探寻信念边界的过程。</span></p><p><span>创业者早期的试错，就是基于某个信念，然后在空中往下扔沙子。</span></p><p><span>沙子落在边界内，或者边界外，对于探寻边界而言是等价的。</span></p><p><span>生命的演化，孩子的成长，财富的起源，几乎都是基于随机性的进化。</span></p><p><span>这一过程的三步走公式是：</span></p><p><span><strong><span>变异，选择，放大。</span></strong></span><span></span></p><p><span>以创业为例：</span></p><ul><li><p><span>第一阶段是价值验证，快速地扔沙子，快速低成本地试错，去发现有概率优势的信念；</span></p></li><li><p><span>第二阶段，大规模复制这一信念。<br></span></p></li></ul><p><span>教育孩子与创业思维的内核一致性，在以色列得以验证。</span></p><p><span>《统计与真理》给出了一个风险管理的逻辑方程：<br></span></p><p><img data-croporisrc="https://mmbiz.qlogo.cn/mmbiz_png/SF9cpK1TBCiaibvNakQfXhTZibVIyfNKdz9mHeMu9DnA0g48yibWotIvDLiaH2fLo3eqbO8gU853FELDpibaJKQWnlYA/0?wx_fmt=gif" data-cropx1="0" data-cropx2="2834" data-cropy1="215.7370242214533" data-cropy2="446.18339100346026" data-ratio="0.08046875" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_jpg/SF9cpK1TBCiaibvNakQfXhTZibVIyfNKdz9xRJQ7ibaoP9G0tILCxibO81vYBlLQXEeMGzaScgCsfPKzTCToic62U0Xw/640?wx_fmt=jpeg" data-type="jpeg" data-w="1280" _width="578px" src="https://mmbiz.qpic.cn/mmbiz_jpg/SF9cpK1TBCiaibvNakQfXhTZibVIyfNKdz9xRJQ7ibaoP9G0tILCxibO81vYBlLQXEeMGzaScgCsfPKzTCToic62U0Xw/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" crossorigin="anonymous" alt="图片" data-fail="0"></p><p><span><span>由此，</span><span>该书总结道</span><span>：</span></span></p><ul><li><p><span>如果我们不得不在不确定性的前提下做出抉择，则错误是不可避免的；<br></span></p></li><li><p><span>如果错误是不可避免的，则在一定的规律下做出抉择（形成新的具有不确定性的知识）时，最好我们能知道犯错误的频率（对不确定性量度的知识）；<br></span></p></li><li><p><span>这样的知识能够用于找出制定决策的某种规律，从而使我们减少盲目性，使做出错误决策的频率最小，或者使由错误决策产生的损失最小。</span></p></li></ul><p><span>一个投资者的交易系统，一家创业公司的业务发展，一个孩子的成长路径，都是基于风险管理之下的信念之旅。</span></p><p><span>一个知道自己边界的灰度信念，也许比一个自认为100%正确的信念更牢靠。</span></p><p><span>一旦某个不确定的知识可以度量自己的不确定性，偶然就在某种程度上被驯服，热力学第二定律就被放进了机器里，随机性几乎可为我们创造除了时间之外的一切。</span></p><p><span><strong><span>十</span></strong></span></p><p><span><span><strong><span>为信念赋予概率数值，是智慧的跃升。</span></strong></span></span></p><p><span>假如“已知”是一阶智慧，那么，概率是二阶智慧，概率的演化是三阶智慧。</span></p><p><span>科学家已经接受了信念的不确定性，他们信仰科学，但会质疑理论、实验和数字，并在这质疑中坚定前行。<br></span></p><p><span>信念在人类事务方面，容易被忽略其概率属性。</span></p><p><span>对于一个人而言，拥有信念，相当于张开一个运气的风帆，能够大大增加自己捕获好运气的概率。<br></span></p><p><span>吸引力法则的背后，就是关于信念的风帆。</span></p><p><span>这一风帆会聚集个体零散的概率权，例如每个人获胜的信念都是51%，但仍然有49%的失败概率。<br></span></p><p><span>吸引力法则的运用者，能够聚集这些零散的概率权，就像历史上发生过的极少次数的（在期望值为正的意外情况下）合买彩票，偶然的、较小优势的概率，汇聚为必然的赚钱机会。<br></span></p><p><span>人类事务，信念风帆，吸引力法则，还能够构建一些社会属性的信念体系，例如此前谈到的比特币定价。</span></p><p><span>赌场的例子和成功学的道理，在我眼中都是概率世界鲜活的样本，因为每个人的命运就是一次随机事件，这个随机事件又在当事人的自由意志下努力去改变自己的命运。进而，人们共同的看似有序的无序扩散，探索出了世界的边界和轮廓。</span></p><p><span>一旦信念被赋予概率数值，我们就可以不再依赖于神秘主义的解释。<br></span></p><p><span><span>我们不仅</span><span>发现边界，还改变边界。</span></span></p><p><span><span>我们并不只是探寻51%的信念。<br></span></span></p><ul><li><p><span><span>当下的信念，我们要的是大概率；</span></span></p></li><li><p><span>未来的信念，可能只是微弱的小概率。</span></p></li></ul><p><span>前者可能是制造一辆车，后者是指探寻人类另外的居住星球。<br></span></p><p><span>人们通常高估了当下的信念，而低估了未来的信念。</span></p><p><span>例如，从厉害的人那里得到股票内幕消息，你对这一信念往往赋予了过高的概率数值。</span></p><p><span>人们又低估了为未来种下森林的信念。</span></p><p><span>幸而，热力学第二定律在我们的大脑里照旧发挥作用，人类的祖先第一次爬下树，第一次走出丛林，第一次点燃火，也许都只是极小概率的随机事件。</span></p><p><span>我们祖先的运气风帆，捕获了那些细微的变异，他们当中的极少数，做出了勇敢的选择。</span></p><p><span>我愿意相信他们第二次爬下树，第二次走出丛林，第二点次燃火，是基于某种微弱的信念。</span></p><p><span>接下来，历史放大了那些选择，我们在一个熵增的宇宙里，用信念，以及可计算的信念机器，局部驯化了热力学第二定律，并得以在地球上孤独地生存。</span></p><p><span><strong><span>最后</span></strong></span></p><p><span>我们并不需要一个保质期一万年的凤梨罐头。</span></p><p><span>但也许人类需要一个万年钟。</span></p><p><span>迄今为止，人类可及的宇宙里，空无一“人”，除了我们所在的星球。<br></span></p><p><span>对这一极小概率的感恩，在人类对地球的征服当中被忽略掉了。</span></p><p><span>本文开始的时候，试图将一个描述性的关于信念的概念，转化为可计算的概率化的信念系统。</span></p><p><span>休谟说：“聪明人会把自己的信念诉诸证据。”而贝叶斯则将休谟的哲学变成了可以计算的公式。</span></p><p><span>人类发明了引擎，在气缸里驾驭混乱。</span></p><p><span>而人的大脑，就是一个信念的引擎。<br></span></p><p><span>玻尔兹曼与香农的熵，一个作用于肉体，一个作用于思考。</span></p><p><span><span>为信念赋予</span><span>概率数值，</span><span>并不会摧毁人类的信仰</span><span>。</span><span>至少在我们发现意识</span><span>从何而来的秘密之前</span><span>。</span><span></span></span></p><p><span>我们相信，我们怀疑自己的相信，我们相信自己的怀疑。<br></span></p><p><span>这是未知世界与自由意志之间的翩翩起舞，值得用生命去赞美。</span></p><p><span>信念不在意数值的大小，因为几乎所有的伟大都有</span><span>微不</span><span>足道的开始。<br></span></p><p><span>如乔布斯所言：</span></p><blockquote data-type="2" data-url="" data-author-name="" data-content-utf8-length="123" data-source-title=""><section><section>“‭‮然虽‬‬你现在可能‭看不见未来，不知道你‭‮在现‬‬所拥有的、懂得的、‭‮解了‬‬的，能带领你到什么样的境界；‭‮到直‬‬未来的某一时刻，当你暮然‭‮首回‬‬时，你才将能所走过的路串起来，进而发现‭‮是就‬‬这些点点滴滴‭‮就造‬‬了你。”</section></section></blockquote><p><span>第一个爬下树的人类祖先，并非是最聪明、最强壮的那一个。然而，好奇或随机性激发了信念。</span><br></p><p><span>在我看来，乔布斯就是类似的人，一个伟大的普通人。他混乱，脆弱，愚蠢，会在马友友的大提琴声中哭泣，他也没有太高的智商。</span></p><p><span>但他曾经透露过自己一生中最重要的秘密。</span></p><p><span>这个秘密与信念有关：</span></p><blockquote data-type="2" data-url="" data-author-name="" data-content-utf8-length="97" data-source-title=""><section><section>“因此你得相信‭‮些这‬‬即将来临的事情在更远的‭‮来未‬‬肯定会连在一起，要有‭‮定一‬‬的信念：你的勇气、你的生命、你的缘分。‭‮份这‬‬信念从没让我失望过，而这也就是让我与不众同的地方。”</section></section></blockquote>
+                </div></div>
+  <span></span> <!-- for IntersectionObserver -->
+
+</body><style>@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=IBM+Plex+Serif:wght@400;500;700&family=Montserrat:wght@400;700&family=Zilla+Slab:wght@400;500&display=swap'); body {
+      font-size:  20px;
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 36px;
+      width: 950px;
+    }</style><style>body {
+  padding-bottom: 64px;
+}
+a:link, a:link:hover, a:link:active {
+  color: #0095dd;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style></html>

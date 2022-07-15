@@ -19,7 +19,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"nemolaw.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"nemolaw.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="但盼风雨来，能留你在此">
@@ -129,9 +129,19 @@
     <a href="/" rel="section"><i class="fas fa-home fa-fw"></i>首页</a>
 
   </li>
-        <li class="menu-item menu-item-about">
+        <li class="menu-item menu-item-moment">
 
-    <a href="/about/" rel="section"><i class="fas fa-address-card fa-fw"></i>关于我</a>
+    <a href="/moment" rel="section"><i class="fas fa-ghost fa-fw"></i>碎碎念</a>
+
+  </li>
+        <li class="menu-item menu-item-articles">
+
+    <a href="/articles" rel="section"><i class="fas fa-newspaper fa-fw"></i>文章收藏</a>
+
+  </li>
+        <li class="menu-item menu-item-opinion">
+
+    <a href="/opinion/" rel="section"><i class="fas fa-gavel fa-fw"></i>观点</a>
 
   </li>
         <li class="menu-item menu-item-sparethechild">
@@ -206,6 +216,46 @@
     <div class="collection-year">
       <span class="collection-header">2017</span>
     </div>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2017-12-25T22:12:11+08:00"
+              content="2017-12-25">
+          12-25
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/writing/2017-12-25-voyage/" itemprop="url">
+            <span itemprop="name">(书)在自己房间旅行</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2017-12-20T01:24:12+08:00"
+              content="2017-12-20">
+          12-20
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/writing/2017-12-05-ted_talk/" itemprop="url">
+            <span itemprop="name">网易公开课整理</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
 
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
@@ -567,46 +617,6 @@
     </header>
   </article>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2017-03-27T21:22:19+08:00"
-              content="2017-03-27">
-          03-27
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/writing/2017-03-27-the_one_thing/" itemprop="url">
-            <span itemprop="name">(书)最重要的事,只有一件</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2017-02-18T21:57:11+08:00"
-              content="2017-02-18">
-          02-18
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/writing/2017-02-18-little_warm/" itemprop="url">
-            <span itemprop="name">(书)睡前读物推荐:兔子什么都知道</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
     </div>
   </div>
   
@@ -682,7 +692,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">189</span>
+          <span class="site-state-item-count">205</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -706,7 +716,7 @@
         <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/archives/" title="archives → &#x2F;archives&#x2F;"><i class="fas fa-file-archive fa-fw"></i>archives</a>
+        <a href="/about/" title="about → &#x2F;about&#x2F;"><i class="fas fa-address-card fa-fw"></i>about</a>
       </span>
   </div>
 
@@ -740,12 +750,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">420k</span>
+    <span title="站点总字数">444k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">6:21</span>
+    <span title="站点阅读时长">6:44</span>
 </div>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "eafd7ba3dbda4f7a8bc9b6c0b096c5fb", "spa": true}'></script><!-- End Cloudflare Web Analytics -->
 

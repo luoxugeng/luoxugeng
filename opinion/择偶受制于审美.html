@@ -1,0 +1,250 @@
+<html dir="ltr"><head><title>择偶受制于审美 :: Reader View</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color: %light-color%;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color: %dark-color%;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color: %sepia-color%;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color: %solarized-light-color%;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color: %nord-light-color%;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color: %groove-dark-color%;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #93a1a1;
+  border-color: %solarized-dark-color%;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color: %nord-dark-color%;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] .tts-word {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  background-color: red;
+  height: 2px;
+}
+.tts-word.hidden,
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+</head>
+<body tabindex="1" data-images="false" data-mode="sepia" data-font="sans-serif" data-loaded="true">
+  <span></span> <!-- for IntersectionObserver -->
+
+  <h1 dir="auto" id="reader-title">择偶受制于审美</h1>
+  <span dir="auto" id="reader-credits"></span>
+  <span dir="auto" id="reader-estimated-time">2-2 minutes</span>
+  <span dir="auto" id="published-time"></span>
+  <hr>
+  <div id="readability-page-1" class="page"><div id="post-body-5247118742735313241" itemprop="description articleBody"><p>
+找不到好的对象，很多时候都是因为审美不行。</p><p>&nbsp;婚恋是阶层问题，优先解决实力，这个之前写过。但实力不是全部，还要解决的是审美问题。</p><p>&nbsp;说到这个，可能很多人不服气，都自认为自己的"眼光独到"，"看人很准"，"品位高雅"。其实并非如此。</p><p>&nbsp;多数人都是普通家庭出来的，从小对于识人看人的观点，都是来自于父母、同学、老师，而这些人往往也是票普通人，他们的观点都是很雷同的，而且非常脱离时代，长期灌输的"好"，为非就是稳定、踏实、靠谱。</p><p>&nbsp;进入社会，审美很多又来自于电视剧、娱乐节目的反复轰炸，商场里模特的大幅海报，电影里明星的举手投足，互联网世界的主流人设比如暖男、鲜肉、独立女性，都在潜移默化影响一个人的审美，而这些潮流和人设也是高度雷同的，因为要跟随当下各类消费品的推广需求。</p><p>&nbsp;也就是说，普通人从小到大，很少有机会得到关于对人"审美"的经验和建议，或者说他们本身也接触不到优秀的群体，连有能力给予建议的人都接触不到。</p><p>&nbsp;这导致他们眼里的好，高度趋同。比如在相亲中，女性喜欢的男性类型，基本就是那么两三个样版。</p><p>&nbsp;之前一位某著名相亲机构红娘告诉我，一个男性只要符合了几个确定性的指标，就基本符合大多数女性的择偶标准，如果他愿意一直来，每年核销掉上百个女性的见面次数很轻松。也就是说，这些女性，都会认为这个男性是"好"的，"靠谱"的，愿意发展的。</p><p>&nbsp;那么这几个确定性的指标是什么呢？年龄：上5岁到下一岁为佳；身高，180左右基本通吃；身材，不胖最好有一点点肌肉又不能太多；有房，最好无贷；工作"体面"+"稳定"，比如体制内、金融、互联网这类；长相比较难形容，反正和主流明星沾点边总归没错；另外：必须人品好，不花心，主动，会体贴人，能制造浪漫。</p><p>&nbsp;追求确定性，也没错，但问题是大多数人都是这么想的。这导致"优秀"的标准非常集中，非常脸谱化，让本来不平衡的供需，进一步加剧。你坚持，就必须在有限的时间窗口，面对惨烈的争夺。 </p><p>&nbsp;更不要说，这种审美倾向，本身就有很多问题。</p><p>&nbsp;比如职业，其实赚不赚钱有没有前途，和行业看起来是否"高大上"没什么关系。而且"稳定"和"发展"本来就是悖论，很难统一。</p><p>&nbsp;比如有房无贷，如果不是壕到一定程度，用房子获取低息贷款是基本操作，甚至说房子只是个接水的盆，贷款比房子还重要。在六套以内皆刚需的水库论坛，你要说你不贷款，简直让人笑掉大牙。强调无贷的，暴露出没有基本的财务意识，大概率无知+懒惰。</p><p>&nbsp;比如主动、体贴、浪漫这些，其实有实力的男性，绝不会花大量时间围着女人转，事业繁忙能够规律去健身的也是极少数，形象什么更不用说了，你把已经成功人士框进来都没几个符合的。拿这些东西去当标准，那只能说狭隘限制了你选择。</p><p>&nbsp;所以，很多人不敢面对的真相是：<mark class="hghlght">她们的硬性要求是按强者的标准去找的，但她们的思维又理解不了强者的习性，她们的眼光又分辨不出是非真假，最终软性的要求又回到找一个"好理解"、"好控制"、围着自己转的弱者。如此错配，导致持续失败，也就不难理解了</mark>。</p><p>&nbsp;实力是价值创造，审美是价值发现，这两者有相关性，但不完全是一回事。<br>在努力提升个人实力的同时，还要留意磨练眼光，多观察强者的习性，多领悟智者的观点。</p><p>婚恋终究不是一个人的事，你还需要有通透的眼光，去看见对方。
+</p>
+</div></div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+</body><style>body {
+      font-size:  20px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 900px;
+    }
+    .page {
+      line-height: 30.0px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

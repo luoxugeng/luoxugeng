@@ -1,0 +1,286 @@
+<html><head><title>铂程斋--米塞斯：战争无用 :: Reader View</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color: %light-color%;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color: %dark-color%;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color: %sepia-color%;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color: %solarized-light-color%;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color: %nord-light-color%;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color: %groove-dark-color%;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #93a1a1;
+  border-color: %solarized-dark-color%;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color: %nord-dark-color%;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] .tts-word {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  background-color: red;
+  height: 2px;
+}
+.tts-word.hidden,
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+</head>
+<body tabindex="1" data-images="true" data-mode="sepia" data-font="sans-serif" data-loaded="true" style="user-select: initial;"><h1 dir="auto" id="reader-title">米塞斯：战争无用</h1>
+  <div id="readability-page-1" class="page"><span><br>
+</span> 
+				
+				<p>
+	按：英文标题“The Futility of War”，意谓战争是没有好处的，徒劳的之意。
+</p>
+
+<p>
+	人之所以异于一般动物，在于他领悟到分工合作的好处。<strong>人，</strong><strong>&nbsp;</strong><strong>抑制他天生的侵略本能，以便和他人合作。他愈想改善自己的物质幸福，就必定愈想扩大分工体系</strong>；同时，他就必定愈来愈限缩自己采取军事行动的范围。国际分工体系的出现和发展，以完全废止战争为前提。这就是曼彻斯特学派自由放任哲学的精髓。
+</p>
+
+<p>
+	当然，这个哲学和邦国崇拜是互不相容的。在自由放任的哲学框架中，国家，一个执行暴力镇压的社会机构，被赋予保护市场经济顺畅运作的任务，使市场经济免于危害社会安宁的个人和团伙侵扰。<strong>国家的这种功能是必要的、有益的，但是，它毕竟是一辅助性的功能。没有理由把警察权力当作偶像崇拜，没有理由认为它是无所不能的、无所不知的。</strong>有些事情，它肯定做不到。包括，它做不到使生产要素缺稀的情况消失不见、做不到使人们更富裕，也做不到使劳动更有生产力。它所能做到的，只是防止匪徒阻挠那些下定决心、要增进物质幸福的人们的努力。
+</p>
+
+<p>
+	在边沁（Bentham）和巴斯夏（Bastiat）的哲学尚未得偿夙愿，消除贸易障碍、劝阻政府干预工商业时，提倡邦国神圣的伪神学已开始风行生效。企图以政府命令改善赚取工资者，和小农处境的各种措施，必然使每个国家的国内经济和他国的国内经济彼此的联系纽带变得愈来愈松散。经济民族主义——国内干预主义必要的互补教条——会伤害外国人民的利益，从而引起国际冲突。它会使人们起心动念，要以战争改正这个不能令人满意的状态。一个强国，为什么该容忍一个较弱小国家的挑衅呢？弱小的&nbsp;L&nbsp;国，若不是傲慢无礼，怎么会以关税、移民障碍、外汇管制、贸易数量管制，以及没收<strong>R&nbsp;</strong><strong>国</strong>在&nbsp;L&nbsp;国的投资，来伤害&nbsp;R&nbsp;国的人民？对&nbsp;<strong>R&nbsp;</strong><strong>国</strong>的军队来说，要碾压&nbsp;L国那一支不足为虑的部队，何其容易？
+</p>
+
+<p>
+	&nbsp;这就是德国、意大利和日本等国内好战份子的意识型态。我们必须承认，就新的“非正统”学说观点而言，他们的思想逻辑是一贯的。<strong>干预主义产生经济民族主义，而经济民族主义则产生好战心态。</strong>如果他国阻止我方人民和商品跨越国境，我方军队何尝不能试着为它们铺平道路呢？
+</p>
+
+<p>
+	&nbsp;从&nbsp;1911&nbsp;年意大利袭击土耳其开始，这世界便烽火不断，几乎一直有某些地方在战斗。过去签订的那些和平协议，实际上只是停火协议，而且它们也只和列强的军队有关。一些较弱小国家永远都处于战争之中。此外，还有不少同样致命的内战和革命。
+</p>
+
+
+<p>
+	我们现在的情况，和某些国际法规则首次发展出来时，那个有限战争的年代，距离多么遥远啊！现代战争是无情的，不会放过孕妇和婴儿，不分青红皂白地杀戮和破坏。它不尊重中立者的权利。数百万人被杀害、被俘虏，或被驱逐出他们和祖先已经生活了好几个世纪的居住地。这个无止境斗争下一步将发生什么事，谁也不能预言。
+</p>
+
+<p>
+	&nbsp;这和原子弹无关。<strong>祸害的根源，不在于建造更新、更可怕的武器，而在于征服的精神</strong>。将来科学家有可能发现某些防卫原子弹的方法，但是，这改变不了情势，仅仅使人类文明遭到彻底毁灭的历史过程稍微延长一点罢了。
+</p>
+
+<p>
+	<strong>现代文明是自由放任哲学的产物。在政府万能的意识型态下，现代文明是不可能保存的。邦国崇拜的信仰，大多得归因于黑格尔的学说。</strong>然而，我们也许可以放过黑格尔许多不可原谅的过错，因为他也创造出值得传颂的名言<strong>“胜利无用”</strong>（die Ohnmacht des Sieges）。击败侵略者，并不足以使和平持久；<strong>重要的是，抛弃产生战争的意识型态。</strong>（选自米塞斯《人的行动》，谢宗林译）
+</p> 
+				
+				<p><br></p>
+				
+				
+				
+				
+			
+		</div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+</body><style>body {
+      font-size:  20px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 900px;
+    }
+    .page {
+      line-height: 30.0px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

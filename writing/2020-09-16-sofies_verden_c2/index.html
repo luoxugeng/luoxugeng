@@ -19,7 +19,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"nemolaw.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"nemolaw.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="苏菲的世界-第二章-魔术师的帽子">
@@ -135,9 +135,19 @@
     <a href="/" rel="section"><i class="fas fa-home fa-fw"></i>首页</a>
 
   </li>
-        <li class="menu-item menu-item-about">
+        <li class="menu-item menu-item-moment">
 
-    <a href="/about/" rel="section"><i class="fas fa-address-card fa-fw"></i>关于我</a>
+    <a href="/moment" rel="section"><i class="fas fa-ghost fa-fw"></i>碎碎念</a>
+
+  </li>
+        <li class="menu-item menu-item-articles">
+
+    <a href="/articles" rel="section"><i class="fas fa-newspaper fa-fw"></i>文章收藏</a>
+
+  </li>
+        <li class="menu-item menu-item-opinion">
+
+    <a href="/opinion/" rel="section"><i class="fas fa-gavel fa-fw"></i>观点</a>
 
   </li>
         <li class="menu-item menu-item-sparethechild">
@@ -274,12 +284,12 @@
 
       <h2 id="苏菲的世界-第二章-魔术师的帽子"><a href="#苏菲的世界-第二章-魔术师的帽子" class="headerlink" title="苏菲的世界-第二章-魔术师的帽子"></a>苏菲的世界-第二章-魔术师的帽子</h2><p>这一章,苏菲的哲学课程总算是开了一个头了: 成为哲学家只有一个条件,那就是好奇心. 作者认为我们成人在长大的过程中,失去的是对这个世界探索的好奇心.小孩子反而会更纯粹(其实某种程度上来说,无知的确是一种纯粹).我是不认同作者的这个看法的,像我这种的确一天下来,大部分时间被琐事缠绕着,但有时候也会被一些事情惊叹,惊叹路边突然开出的花,看到雨后路边爬行的蜗牛🐌. 我们大多数人更多时候的状态是左右摇摆的,一边麻木看着这个世界,一边又惊叹于这个世界的存在. 有时候真的觉得自己还存在着这件事情真不可思议,当然也会悲伤要是自己不在了世界是不是真的不会有其它变化.第二章到这里啦</p>
 
-        <div id="aplayer-bHrchPhd" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-ajtMoqoB" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-bHrchPhd"),
+            element: document.getElementById("aplayer-ajtMoqoB"),
             narrow: false,
             autoplay: false,
             showlrc: false,
@@ -419,7 +429,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">189</span>
+          <span class="site-state-item-count">205</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -443,7 +453,7 @@
         <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/archives/" title="archives → &#x2F;archives&#x2F;"><i class="fas fa-file-archive fa-fw"></i>archives</a>
+        <a href="/about/" title="about → &#x2F;about&#x2F;"><i class="fas fa-address-card fa-fw"></i>about</a>
       </span>
   </div>
 
@@ -477,12 +487,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">420k</span>
+    <span title="站点总字数">444k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">6:21</span>
+    <span title="站点阅读时长">6:44</span>
 </div>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "eafd7ba3dbda4f7a8bc9b6c0b096c5fb", "spa": true}'></script><!-- End Cloudflare Web Analytics -->
 

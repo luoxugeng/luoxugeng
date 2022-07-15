@@ -1,0 +1,239 @@
+<html><head><title>[Design Mode]</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color: %light-color%;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color: %dark-color%;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color: %sepia-color%;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color: %solarized-light-color%;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color: %nord-light-color%;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color: %groove-dark-color%;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #93a1a1;
+  border-color: %solarized-dark-color%;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color: %nord-dark-color%;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] .tts-word {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  background-color: red;
+  height: 2px;
+}
+.tts-word.hidden,
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+</head>
+<body tabindex="1" data-images="true" data-mode="sepia" data-font="sans-serif" data-loaded="true" style="user-select: initial;"><h1 dir="auto" id="reader-title"><strong style="font-size: 20px;">投资中最重要的</strong><br></h1><div id="readability-page-1" class="page"><p><br>  以前上大学的时候<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>逻辑课老师曾给我们出过一道题<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>很有意思<h-char unicode="ff1a"><h-inner>：</h-inner></h-char>  <br>  当你看到一群鸟飞过<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>第一只是大雁<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>你能得出什么结论<h-char unicode="ff1f"><h-inner>？</h-inner></h-char>  <br> <strong>   <h-char unicode="2014"><h-inner>——</h-inner></h-char>正确答案是第二只鸟也是大雁<h-char unicode="3002"><h-inner>。</h-inner></h-char>  </strong> <br>  以前我就把这个当笑话看了<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>但是当我做了投资之后<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>我才发现这特么是世界上最完美的<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>且大部分人都不能理解或者接受的逻辑了<h-char unicode="ff1a"><h-inner>：</h-inner></h-char>  <br> <strong>   当市场跌破之前的低点<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>而且高点越来越低<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>那你觉得市场还会再出现新低吗<h-char unicode="ff1f"><h-inner>？</h-inner></h-char>  </strong> <br>  <mark class="hghlght">这也许是趋势投资最好的诠释了</mark><h-char unicode="ff01"><h-inner><mark class="hghlght">！</mark></h-inner></h-char>  <br>  <mark class="hghlght">当你看到第一只鸟是大雁</mark><h-char unicode="ff0c"><h-inner><mark class="hghlght">，</mark></h-inner></h-char><mark class="hghlght">那么第二只鸟呢</mark><h-char unicode="ff1f"><h-inner><mark class="hghlght">？</mark></h-inner></h-char><mark class="hghlght">会变成黑天鹅吗</mark><h-char unicode="ff1f"><h-inner><mark class="hghlght">？</mark></h-inner></h-char><mark class="hghlght">逻辑告诉你的答案是</mark><h-char unicode="ff1a"><h-inner><mark class="hghlght">：</mark></h-inner></h-char><mark class="hghlght">第二只鸟依旧是大雁</mark><h-char unicode="ff0c"><h-inner><mark class="hghlght">，</mark></h-inner></h-char><mark class="hghlght">不是黑天鹅</mark><h-char unicode="3002"><h-inner><mark class="hghlght">。</mark></h-inner></h-char>  <br>  黑天鹅会来吗<h-char unicode="ff1f"><h-inner>？</h-inner></h-char>会的<h-char unicode="3002"><h-inner>。</h-inner></h-char>它什么时候来<h-char unicode="ff1f"><h-inner>？</h-inner></h-char>逻辑告诉你答案<h-char unicode="ff1a"><h-inner>：</h-inner></h-char>当你看到第一只鸟变成黑天鹅后<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>第二只鸟就是黑天鹅了<h-char unicode="3002"><h-inner>。</h-inner></h-char>  <br>  不要猜大雁什么时候飞走<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>黑天鹅什么时候飞来<h-char unicode="3002"><h-inner>。</h-inner></h-char>  <br>  要做的是<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>当你看到大雁或者黑天鹅飞来又飞去的时候<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>没有躺在地上打盹<h-char unicode="3002"><h-inner>。</h-inner></h-char>  <br>  即使你不相信趋势的力量<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>但是<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>不可否认的<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>一旦进入熊市<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>哪怕是最好的公司<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>估值和价格也会打一个很大的折扣<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>事后看来<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>即使是那些穿越了牛熊的个股<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>熊市中的回调幅度<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>也是相当折磨人的<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>要知道<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>2008年<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>如果你一直拿着腾讯<h-char unicode="3001"><h-inner>、</h-inner></h-char>茅台<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>你的市值也会缩水过半<h-char unicode="3002"><h-inner>。</h-inner></h-char>  <br> <strong>   在跌市中装死不可取<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>伸手接飞刀更不可为<h-char unicode="3002"><h-inner>。</h-inner></h-char></strong></p><p>  所以投资中最重要的是什么<h-char unicode="ff1f"><h-inner>？</h-inner></h-char>  <br> <strong>   在价投圣经<h-char unicode="300a"><h-inner>《</h-inner></h-char>证券分析<h-char unicode="300b"><h-inner>》</h-inner></h-char>一书中<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>格雷厄姆对<h-char unicode="201c">“</h-char>投资<h-char unicode="201d">”</h-char>的定义<h-char unicode="ff1a"><h-inner>：</h-inner></h-char><mark class="hghlght">建立在详尽分析基础之上</mark><h-char unicode="ff0c"><h-inner><mark class="hghlght">，</mark></h-inner></h-char><mark class="hghlght">在确认本金安全的前提下</mark><h-char unicode="ff0c"><h-inner><mark class="hghlght">，</mark></h-inner></h-char><mark class="hghlght">追求令人满意收益的行为</mark><h-char unicode="ff0c"><h-inner>，</h-inner></h-char>一切无法满足上述条件的行为都是  </strong>  投机  <strong>   行为<h-char unicode="3002"><h-inner>。</h-inner></h-char>  </strong> <br>  确认本金的安全<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>是投资的前提<h-char unicode="3002"><h-inner>。</h-inner></h-char>  <br>  他的门徒巴菲特<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>也是我们公认的价值投资者中最为成功的代表<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>他最被广为流传的一句话是<h-char unicode="ff1a"><h-inner>：</h-inner></h-char>  <br><br></p><p>  Rule No.1: Never Lose Money.&nbsp;</p><p>RuleNo.2: Never Forget Rule No.1.<br></p><p>  赛思卡拉曼<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>也是深受价值投资者尊敬的投资大师<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>他在这本书中进一步阐述了关于不要亏钱的观点<h-char unicode="ff1a"><h-inner>：</h-inner></h-char>  <br>  <h-char unicode="201c">“</h-char>我也认为避免亏钱应是每个投资者的首要目标<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>但这不是说投资者不应承受一丁点儿亏钱的风险<h-char unicode="3002"><h-inner>。</h-inner></h-char><h-char unicode="201c"><mark class="hghlght">“</mark></h-char><mark class="hghlght">不要亏钱</mark><h-char unicode="201d"><mark class="hghlght">”</mark></h-char><mark class="hghlght">更多地是指在往后的几年中一个人的投资组合不要导致资本大量流失</mark><h-char unicode="3002"><h-inner>。</h-inner></h-char>   没有人想要承受损失<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>你也无法通过检验绝大多数投资者和投机者的行为来证明<h-char unicode="3002"><h-inner>。</h-inner></h-char>我们绝大多数人都有强烈的投机冲动<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>免费午餐的诱惑总是强烈的<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>特别是身边的人好像都已经吃到了<h-char unicode="3002"><h-inner>。</h-inner></h-char>   当别人都在贪婪地追逐利益<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>经纪人又在给你推荐时下最热的IPO股票时<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>你是很难静下心来想想亏钱的风险的<h-char unicode="3002"><h-inner>。</h-inner></h-char>但依然<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>避免亏钱<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>是保证你炒股赚钱的笃定之法<h-char unicode="3002"><h-inner>。</h-inner></h-char><h-char unicode="201d">”</h-char>  <br> <strong>   <mark class="hghlght">因为</mark><h-char unicode="ff0c"><h-inner><mark class="hghlght">，</mark></h-inner></h-char><mark class="hghlght">不亏损</mark><h-char unicode="ff0c"><h-inner><mark class="hghlght">，</mark></h-inner></h-char><mark class="hghlght">是</mark><h-char unicode="201c"><mark class="hghlght">“</mark></h-char><mark class="hghlght">复利</mark><h-char unicode="201d"><mark class="hghlght">”</mark></h-char><mark class="hghlght">的前提</mark><h-char unicode="3002"><h-inner><mark class="hghlght">。</mark></h-inner></h-char><mark class="hghlght">如果大幅亏损</mark><h-char unicode="ff0c"><h-inner><mark class="hghlght">，</mark></h-inner></h-char><mark class="hghlght">谈何复利</mark><h-char unicode="3002"><h-inner><mark class="hghlght">。</mark></h-inner></h-char>  </strong> <br>  <h-char unicode="201c">“</h-char>理解复利的魔力和获得它的困难是理解许多事情的核心和灵魂<h-char unicode="3002"><h-inner>。</h-inner></h-char><h-char unicode="201d">”</h-char>这句话来自查理<h-char unicode="b7"><h-inner>·</h-inner></h-char>芒格<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>他说<h-char unicode="ff1a"><h-inner>：</h-inner></h-char><h-char unicode="201c">“</h-char>复利是世界第八大奇迹<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>不到必要的时候<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>别去打断它<h-char unicode="3002"><h-inner>。</h-inner></h-char><h-char unicode="201d">”</h-char>  <br>  5%通货膨胀的复利能够让1万元在50年后仅相当于880元<h-char unicode="3002"><h-inner>。</h-inner></h-char>同样的<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>10%的复利增长<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>能让1万元在50年后变为117万<h-char unicode="ff08"><h-inner>（</h-inner></h-char>具体值1173908<h-char unicode="ff09"><h-inner>）</h-inner></h-char><h-char unicode="3002" prev="bd-close bd-end"><h-inner>。</h-inner></h-char>  <br>  <mark class="hghlght">不过</mark><h-char unicode="ff0c"><h-inner><mark class="hghlght">，</mark></h-inner></h-char><mark class="hghlght">复利的威力其实仍然抵挡不了亏损的侵蚀</mark><h-char unicode="3002"><h-inner>。</h-inner></h-char>  <br>  塞思.卡拉曼在<h-char unicode="300a"><h-inner>《</h-inner></h-char>安全边际<h-char unicode="300b"><h-inner>》</h-inner></h-char>提到一个案例<h-char unicode="ff1a"><h-inner>：</h-inner></h-char><h-char unicode="201c">“</h-char>一名在10年内连续获得16%回报率的投资者最终的财富<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>居然比一个连续 9 年获得 20%年回报率却在第十年损失15%的投资者的财富要多<h-char unicode="201d">”</h-char><h-char unicode="ff0c"><h-inner>，</h-inner></h-char>说的就是这个道理<h-char unicode="3002"><h-inner>。</h-inner></h-char>  <br>  股市中风险无处不在<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>无论是多么聪明的投资者都会惧怕股市的风险<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>但是现在像我们这种普通的老百姓对股市却<h-char unicode="201c">“</h-char>无所畏惧<h-char unicode="201d">”</h-char><h-char unicode="ff0c"><h-inner>，</h-inner></h-char>炒股全靠一股脑<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>把风险完全抛诸脑后<h-char unicode="3002"><h-inner>。</h-inner></h-char>  <br> <strong>   <mark class="hghlght">为什么  </mark></strong><mark class="hghlght">  散户  </mark><strong><mark class="hghlght">   总是拿不住一只好股票?</mark>  </strong> <br>  一<h-char unicode="3001"><h-inner>、</h-inner></h-char>害怕得到后再失去  <br>  二<h-char unicode="3001"><h-inner>、</h-inner></h-char>对股票的估值比较模糊  <br>  三<h-char unicode="3001"><h-inner>、</h-inner></h-char>经不起诱惑  <br>  四<h-char unicode="3001"><h-inner>、</h-inner></h-char>牛股不言顶  <br>  所以  <strong>   心态好坏  </strong>  在股市中是非常关键的<h-char unicode="3002"><h-inner>。</h-inner></h-char>也是炒股成功的一个前期<h-char unicode="3002"><h-inner>。</h-inner></h-char>这是先于技术的<h-char unicode="3002"><h-inner>。</h-inner></h-char>每一个炒股高手心理素质都很好<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>因为高超技术都是不断细致观察<h-char unicode="3001"><h-inner>、</h-inner></h-char>科学的总结<h-char unicode="3002"><h-inner>。</h-inner></h-char>需要人细心<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>有耐心<h-char unicode="3001"><h-inner>、</h-inner></h-char>有恒心<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>而且要不断面对挫折<h-char unicode="3001"><h-inner>、</h-inner></h-char>失败<h-char unicode="3002"><h-inner>。</h-inner></h-char>没有好的心理素质<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>根本学不到高超技术<h-char unicode="3002"><h-inner>。</h-inner></h-char>有谁见过哪个人素质不好却技术高超<h-char unicode="ff0c"><h-inner>，</h-inner></h-char>长久成功<h-char unicode="3002"><h-inner>。</h-inner></h-char><mark class="hghlght">一次</mark><h-char unicode="3001"><h-inner><mark class="hghlght">、</mark></h-inner></h-char><mark class="hghlght">两次靠运气的成功只会加快一个低素质的人的彻底失败</mark><h-char unicode="3002"><h-inner><mark class="hghlght">。</mark></h-inner></h-char></p></div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+<span style="position: absolute; width: 16px; height: 16px; background-color: rgba(125, 0, 0, 0.5); border: 1px solid rgb(255, 255, 255); box-sizing: border-box; display: none; cursor: move;"></span></body><style>body {
+      font-size:  20px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 900px;
+    }
+    .page {
+      line-height: 30.0px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

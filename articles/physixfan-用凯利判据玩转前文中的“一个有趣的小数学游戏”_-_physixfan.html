@@ -1,0 +1,189 @@
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style>
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 30px auto 0 auto;
+    padding: 10px;
+  }
+  body[data-mode="light"] {
+    color: #2B2B2B;
+    background-color: #EBEBEB;
+  }
+  body[data-mode="dark"] {
+    color: #D8D8D8;
+    background-color: #464646;
+  }
+  body[data-mode="sepia"] {
+    color: #2B2B2B;
+    background-color: #E7E2D5;
+  }
+  body[data-mode="black"] {
+    color: #ACACAC;
+    background-color: #121212;
+  }
+  body[data-loaded=true] {
+    transition: color 0.4s, background-color 0.4s;
+    margin-top: 56px;
+  }
+  body[data-images=false] img {
+    display: none;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  body[data-links=false] #reader-domain {
+    display: none;
+  }
+  #reader-domain {
+    font-size: 0.9em;
+    line-height: 1.48em;
+    padding-bottom: 4px;
+    font-family: Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    border-bottom-color: currentcolor;
+    color: #0095dd;
+  }
+  #reader-title {
+    font-size: 1.6em;
+    line-height: 1.25em;
+    width: 100%;
+    margin: 20px 0;
+    padding: 0;
+  }
+  #reader-credits {
+    font-size: 0.9em;
+    line-height: 1.48em;
+    margin: 0 0 10px 0;
+    padding: 0;
+    font-style: italic;
+  }
+  #reader-estimated-time {
+    font-size: 0.85em;
+    line-height: 1.48em;
+    margin: 0 0 10px 0;
+    padding: 0;
+  }
+  #reader-credits:empty {
+    disply: none;
+  }
+  </style>
+</head>
+<body data-images="true" data-links="true" data-mode="sepia" data-font="sans-serif" data-loaded="true">
+  <span></span> <!-- for IntersectionObserver -->
+  <a id="reader-domain" href="https://www.physixfan.com/yongkailipanjuwanzhuanqianwenzhongdeyigeyouqudexiaoshuxueyouxi/">www.physixfan.com</a>
+  <h1 dir="auto" id="reader-title">用凯利判据玩转前文中的“一个有趣的小数学游戏” - physixfan</h1>
+  <div dir="auto" id="reader-credits"></div>
+  <div dir="auto" id="reader-estimated-time">2-3 minutes</div>
+  <hr>
+  <div id="readability-page-1" class="page"><div id="post-3598">
+						
+						<div>
+
+						<p><strong>作者： physixfan </strong></p><p>在《<a href="https://www.physixfan.com/weishenmepinfanjiaoyiderendaduoshuzaigushishangdoupeiqianleyigeyouqudexiaoshuxueyouxiyexua/" target="_blank" rel="noopener noreferrer">为什么频繁交易的人大多数在股市上都赔钱了？一个有趣的小数学游戏也许可以解答</a> 》中我写道了如下有趣的小数学游戏：</p>
+<blockquote><p>假设有这么一家赌场提供了这么一个你可以玩无穷多次的游戏：扔一个硬币，若正面向上，则你的资产变成当下的 1.2 倍；若反面向上，则你的资产变成当下的 0.83 倍。你会选择玩这个游戏吗？</p></blockquote>
+<p>在那篇文章中，我做了个简单的模拟，验证了一下这个游戏会出现的结果：绝大多数玩家玩到最后都归零了，只有极少数玩家能够赢得超过本金的钱，而赢得最多的那个人的最终资产远远超过其他人很多很多。</p>
+<p>但若改动一个游戏条件，这个游戏就变得更加有趣了：若玩家可以自己选择投注金额呢？玩家应该如何投注才是最佳方案？</p>
+<p>直观的想：如果每次都押注100%金额，那其实就回到了一开始那个不能自己选投注金额的游戏，虽然每次玩收益很大，却有非常大的风险最后归零；如果每次都押注太小，那显然回报会很低。最佳的投注比例一定是平衡了这二者的。事实上这个新的游戏的最佳玩法，正是大名鼎鼎的<a href="https://en.wikipedia.org/wiki/Kelly_criterion" target="_blank" rel="noopener noreferrer">凯利判据 (Kelly Criterion)</a>（<a href="https://zhiqiang.org/tag/kelly-criterion.html" target="_blank" rel="noopener noreferrer">阅微堂对凯利判据的讲解</a>也很不错）。凯利判据就是通过最大化资金的log函数的期望而得到的投注比例。证明过程就略过了，基本上就是对这个函数求导就可以。最后得到的凯利判据 (Kelly Criterion)公式为：</p>
+<p>K = (pW-qL)/WL</p>
+<p>其中p为赢的概率 (0.5)，q=1-p为输的概率 (0.5)，W为赢的情况下的收益 (0.2)，L为输的情况下的损失 (0.17)。在我们这个游戏中，计算得知最佳投注比例 K 约为 0.44。</p>
+<p>于是我改动了一下模拟代码，来看看现在用凯利判据投注的话结果如何！</p>
+
+<div><div><pre><span>import</span> numpy <span>as</span> np
+<span>import</span> matplotlib.<span>pyplot</span> <span>as</span> plt
+&nbsp;
+P <span>=</span> <span>100</span> <span># Number of players</span>
+N <span>=</span> <span>30000</span> <span># Total times played for one player</span>
+win <span>=</span> <span>1.2</span>
+lose <span>=</span> <span>0.83</span>
+Num_of_winner <span>=</span> <span>0</span>
+Money_of_the_luckiest_winner <span>=</span> <span>0.0</span>
+&nbsp;
+W <span>=</span> <span>abs</span><span>(</span>win-<span>1</span><span>)</span>
+L <span>=</span> <span>abs</span><span>(</span>lose-<span>1</span><span>)</span>
+Kelly_percentage <span>=</span> <span>(</span><span>0.5</span>*W-<span>0.5</span>*L<span>)</span>/<span>(</span>W*L<span>)</span>
+<span>print</span><span>(</span>Kelly_percentage<span>)</span> <span># is about 0.44 in our case</span>
+&nbsp;
+<span>for</span> j <span>in</span> <span>range</span><span>(</span>P<span>)</span>:
+    m <span>=</span> np.<span>zeros</span><span>(</span>N<span>)</span>
+    m<span>[</span><span>0</span><span>]</span> <span>=</span> <span>10000.0</span>
+    <span>for</span> i <span>in</span> <span>range</span><span>(</span><span>1</span><span>,</span>N<span>)</span>:
+        <span>if</span> np.<span>random</span>.<span>randint</span><span>(</span><span>2</span><span>)</span>:
+            m<span>[</span>i<span>]</span> <span>=</span> m<span>[</span>i-<span>1</span><span>]</span>*win*Kelly_percentage + m<span>[</span>i-<span>1</span><span>]</span>*<span>(</span><span>1</span>-Kelly_percentage<span>)</span>
+        <span>else</span>:
+            m<span>[</span>i<span>]</span> <span>=</span> m<span>[</span>i-<span>1</span><span>]</span>*lose*Kelly_percentage + m<span>[</span>i-<span>1</span><span>]</span>*<span>(</span><span>1</span>-Kelly_percentage<span>)</span>
+&nbsp;
+    <span>if</span> m<span>[</span>-<span>1</span><span>]</span>&amp;gt<span>;</span>m<span>[</span><span>0</span><span>]</span>:
+        Num_of_winner +<span>=</span> <span>1</span>
+    <span>if</span> m<span>[</span>-<span>1</span><span>]</span>&amp;gt<span>;</span>Money_of_the_luckiest_winner:
+        Money_of_the_luckiest_winner <span>=</span> m<span>[</span>-<span>1</span><span>]</span>
+    plt.<span>semilogy</span><span>(</span>m<span>)</span>
+&nbsp;
+&nbsp;
+<span>print</span><span>(</span>Num_of_winner<span>)</span>
+<span>print</span><span>(</span>Money_of_the_luckiest_winner<span>)</span>
+plt.<span>xlabel</span><span>(</span><span>'Times played'</span><span>)</span>
+plt.<span>ylabel</span><span>(</span><span>'Money'</span><span>)</span>
+plt.<span>show</span><span>(</span><span>)</span></pre></div></div>
+
+<p>这下100个玩家全部最终资产大于初始本金了，最幸运的玩家最终的资产都是10^60+这种量级了… 在对数坐标轴下，所有玩家的资产都几乎直线上涨了。</p>
+<p><img loading="lazy" src="https://www.physixfan.com/wp-content/uploads/dice6-1024x768.png" alt="" width="1024" height="768" srcset="https://www.physixfan.com/wp-content/uploads/dice6-1024x768.png 1024w, https://www.physixfan.com/wp-content/uploads/dice6-300x225.png 300w, https://www.physixfan.com/wp-content/uploads/dice6-768x576.png 768w, https://www.physixfan.com/wp-content/uploads/dice6.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px"></p>
+<p>不知你是否有跟我一开始一样的一个疑惑：如果只是选择一个固定的投注比例，似乎只是让这个游戏每次赢的少了点，输的也少了点而已，为什么仅仅如此选择一个投注比例就可以扭转归零的颓势了呢？其实具体把数字计算一下就明白了：原本赢则变1.2倍，输则变0.83倍的游戏，若固定44%的投注比例，就变成了赢则变1.088倍，输则变0.9252倍。1.088*0.9252是多少呢？1.0066176！大于1了！这就解释的通为啥所有玩家的资产都纷纷上涨了。</p>
+<p>凯利判据貌似在投资中挺有用的，本文这个简单的小数学游戏也算是给大家一个直观印象了吧！</p>
+<p>//感谢<a href="https://zhiqiang.org/tag/kelly-criterion.html" target="_blank" rel="noopener noreferrer">zhiqiang</a>提供的宝贵讨论！</p>
+
+ 																				</div><!--end entry-->
+						<!--end meta-->
+					</div></div>
+  <span></span> <!-- for IntersectionObserver -->
+
+</body><style>@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=IBM+Plex+Serif:wght@400;500;700&family=Montserrat:wght@400;700&family=Zilla+Slab:wght@400;500&display=swap'); body {
+      font-size:  19px;
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 28px;
+      width: 850px;
+    }</style><style>body {
+  padding-bottom: 64px;
+}
+a:link, a:link:hover, a:link:active {
+  color: #0095dd;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style></html>

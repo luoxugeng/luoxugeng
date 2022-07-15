@@ -1,0 +1,282 @@
+<html><head><title>海星一样的互联网 :: Reader View</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color: %light-color%;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color: %dark-color%;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color: %sepia-color%;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color: %solarized-light-color%;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color: %nord-light-color%;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color: %groove-dark-color%;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #93a1a1;
+  border-color: %solarized-dark-color%;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color: %nord-dark-color%;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] .tts-word {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  background-color: red;
+  height: 2px;
+}
+.tts-word.hidden,
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+</head>
+<body tabindex="1" data-images="true" data-mode="sepia" data-font="sans-serif" data-loaded="true">
+  <span></span> <!-- for IntersectionObserver -->
+  <a id="reader-domain" href="https://book.douban.com/review/1294077/">
+    <span>book.douban.com</span>
+    <span>/review/1294077/</span>
+  </a>
+  <h1 dir="auto" id="reader-title">海星一样的互联网</h1>
+  <span dir="auto" id="reader-credits"></span>
+  <span dir="auto" id="reader-estimated-time">3-4 minutes</span>
+  <span dir="auto" id="published-time">2008/1/31</span>
+  <hr>
+  <div id="readability-page-1" class="page"><div id="review-1294077-content" data-ad-ext="有用14 · 没用0">
+
+    
+  
+    
+
+    <div id="link-report">
+      <div data-author="铂程斋@喷嚏网" data-url="https://book.douban.com/review/1294077/" data-original="0"><p>
+        （一）</p><p>&nbsp;很多时候，比喻是了解事物的一种方式。它会使陌生的事物看起来熟悉、亲切，便于理解和沟通。即使是有点盲人摸象的感觉，也没有关系。因为，如果有很多个盲人来一起摸，把摸着的部分摆放在一起，总还是有机会一步步靠近一头大象的真相或者轮廓。</p><p>&nbsp;<mark class="hghlght">这是人类认知未知世界的屡试不爽的基本方式：我们感觉、触摸、交谈，最后拼接出心目中完整的图像。</mark></p><p>&nbsp;所以，当我认识互联网这头大象的时候，也借鉴了这个方法。我所使用的几个盲人是：<mark class="hghlght">《长尾理论》、《维基经济学》、《世界是平的》，还有就是《海星模式》。</mark></p><p>&nbsp;《长尾理论》把互联网新经济比作一条长长的尾巴<mark class="hghlght">：尾巴的左边高高翘起，表示市场其价值不菲的部分不仅在于20%的头部</mark>（80/20规则），过了20%后，剩下的80%鸡肋部分，也就是尾巴无限延续的右边，由于技术进步的原因，使得尾巴永远不可能截断或为零。所有的利基市场成为了可以选择的肥肉。稀缺性的经济学，转化为了丰饶的经济学。</p><p>&nbsp;而《维基经济学》则隆重地用维基百科的示例暗示了互联网的基础：<mark class="hghlght">开放、对等、共享和全球化</mark>。从组织的观点出发，它指出了以维基为范本的产消者社区的价值，有点类似共产主义的理想。</p><p>&nbsp;美国的弗里德曼则看见大量的服务正从美国迁徙到印度，他以无比的爱美国主义的热忱，天才般煽情的文字描绘，大声疾呼：《世界是平的》！</p><p>&nbsp;《海星模式》则认同了上面所有的一切，它以辩证法的思维，讨论了互联网的专制和分权问题。它又打了一个比喻：说传统的组织就象蜘蛛一样，属于中央集权；而互联网的组织更象海星，那是一种切成两半后，马上就可以自动复制和恢复的生物。</p><p>&nbsp;<mark class="hghlght">《海星模式》谈到了一种互联网上的博弈：</mark>专制和分权该如何PK呢？在列举了N多的示例后，它给出了一种古老而熟悉的问题：在互联网时代，该如何实行民主集中制呢？</p><p>&nbsp;总的说来，盲人的思路一般是这样的：</p><p>&nbsp;互联网已经走进了我们的生活，但我们一直还没有回过味来。如果是这样的话，那我们可能会失去一些把玩的机会。所以，我们要以观看外星人的热情追随它，思考它：</p><p>&nbsp;【1】互联网时代颠覆或晃动了哪些传统的规则？</p><p>&nbsp;【2】互联网已经或将如何影响商业和组织的行为？</p><p>&nbsp;【3】我们该如何应对这些变化？</p><p>（二）</p><p>&nbsp;如今，互联网已经晃动了一些看似天经地义的事情：</p><p>&nbsp;【1】人做任何事情主要是为了赚钱。</p><p>&nbsp;在传统的观念中，人做任何工作主要是为了赚钱。传统的经济链条，能很好地控制金钱的投入和产出。</p><p>&nbsp;如果没有金钱，那工作还有什么劲？所以，金钱是衡量成功的主要依据。</p><p>&nbsp;而新观念对此颇有异议：人除了付费的工作，也有归属的追求，有倾诉和认同的需求。更加重要的是基于信任的价值观，释放了被金钱腐蚀的创造力。</p><p>&nbsp;也就是说：<mark class="hghlght">自主而免费的劳动是可能的，人有时需要的不一定是金钱衡量的报酬。</mark></p><p>&nbsp;相信钱，但不全相信钱，反而会带来更大的财富：这使得工作成为了价值和意义的载体，变得富有精神意味和生命力。</p><p>&nbsp;【2】知识产权保护是人类创新的动力</p><p>&nbsp;保守的知识产权策略会越来越不适合大众的口味，无论你用什么政策和手段，也不可能回到过去那样严格意义上的专制福利时代。</p><p>&nbsp;知识产权保护是人类创新的动力，但它也可能是创新的阻力和成本。</p><p>&nbsp;专利和版权保护需要新的思维方式来平衡开放和限制：应该针对不同的应用方式和渠道制定不同的策略。</p><p>&nbsp;知识当然可以用来积累财富，但从更广阔的发展来看，要适可而止，因为分享和传承，同样重要。</p><p>&nbsp;【3】业余等于肤浅</p><p>&nbsp;类似的结论还有：热门=成功，大成功=等于成功。</p><p>&nbsp;互联网的多样性，提供上述理念的反例。</p><p>&nbsp;麦克卢汉说：信息及媒介。意思是说：媒介并非只是一个容器。它本身即是形式，也是内容的方向。其自身也指出了相匹配的内容或行为模式。</p><p>&nbsp;互联网打开了一扇门，让专家和政客头痛不已。一个被恶搞的馒头、一张打死了也不认的虎照。新的渠道，新的呈现方式，使得传统的渠道显得狭隘和难堪。</p><p>&nbsp;互联网是一种新的渠道，但不仅仅是渠道。</p><p>&nbsp;【4】组织的职能就是要认真规划、精确控制</p><p>&nbsp;问题的关键不是：需不需要规划和控制的问题。而是是否需要一直控制的问题。</p><p>&nbsp;传统的组织是控制者和领导者，他们收集信息，判断信息，做出选择，客户的意见是重要的，但必须经过事先过滤，组织者根据自己的理解设计产品和服务。组织者控制一切。</p><p>&nbsp;新的组织要求客户的深度参与，组织者从一开始就让客户参与到需求、设计和改进中。组织者开始的时候，只是提供一些简单架构，然后，其产品或内容的发展就由用户来推动。组织者平衡协调其运作，提供自定义工具，恰如其分地释放其控制力。</p><p>&nbsp;新经济下理想的控制模式是：产消合一的社区驱动其自然生长。</p><p>（三）</p><p>&nbsp;《长尾理论》和《维基经济学》有点理想主义的色彩，对新经济大唱赞歌，有点报喜不报忧的感觉。而《海星模式》则采取了比较务实、中庸的做法：<mark class="hghlght">它提出最好的组织模式还是要变成蜘蛛和海星的混合体。</mark></p><p>&nbsp;考虑去到互联网的理想国的进化阶段，我们有必要看到一些现实的问题：</p><p>&nbsp;【1】知识是爆炸了，还是稀释了？</p><p>&nbsp;互联网把大家的热情都调动起来了，该裸的裸，该骂的骂。该跳的跳。声音多了。知识也肯定多了？</p><p>&nbsp;即便是天生我才没发现的人很多，我还是怀疑，知识更多的是被稀释了，而非真正的爆炸式增长。或者增长的未必都是知识，还有口水。</p><p>&nbsp;选择多是好事，但带来了第二个问题。</p><p>&nbsp;【2】<mark class="hghlght">信息生产的成本降低了，但选择的成本在增加</mark></p><p>&nbsp;信息垃圾该如何去除？去除垃圾信息的成本，又做何计算呢？</p><p>&nbsp;生产的稀缺性被多样性代替了，但随之带来的是信息的过载。</p><p>&nbsp;在这个问题上，信息过滤器的作用，还是非常明显。即使是在产消合一的社区里，意见领袖的作用也是非常大的。</p><p>&nbsp;【3】互联网的进化基础</p><p>&nbsp;现在人们都大致同意这样的观点：互联网时代取代了PC时代。</p><p>&nbsp;其实，这是一种幸灾乐祸的说法。如果没有PC的普及，就没有互联网时代普及的基础（事实也是如此，互联网的核心理念是在PC成熟前很久以前就存在）。没有大家前仆后继，风投疯狂的烧钱建立网站。也就没有搜索引擎发展的基础。</p><p>&nbsp;从这个意义上说，博客的发展、web 2.0的发展、网络视频的发展，不管它现在看起来赚钱渺茫，但可以肯定的是：它在为下一个互联网阶段垫底。每一轮炮灰都是有价值的。</p><p>&nbsp;我猜测的话：或许就是真正电子商务时代的前哨战。那些打不死的，熬过冬天的人，有可能能看到互联网理想国的前夜。</p><p>&nbsp;所以说，思维的速度再快，但互联网的进化基础是有限制的：</p><p>&nbsp;其一，设备的限制。最成熟的还是PC，数量最大的是手机。但应用来看，手机的应用还有距离；</p><p>&nbsp;其二，内容和文化的限制。一个纯粹的娱乐的文化，不会在极短的时间里改变的。这跟哪个年代的人是使用电脑的主流有关。这样的话，业务的选择和发展就极其重要。</p><p>（四）</p><p>&nbsp;《海星模式》关于“触媒式人物”的描述，<mark class="hghlght">也就是我们说的“意见领袖”，是与众不同的</mark>。这成为该书值得一读的理由。</p><p>&nbsp;通过对4个盲人的阅读，我们大致有了一些感触：我们正在经历着一个非凡的时代。有可能就像当初电刚发明后的一段时间，<mark class="hghlght">我们感到了一些不同的东西</mark>，知道电可能改变世界。同样，我们也知道互联网会改变我们的未来：商业模式、组织形式、我们每个人学习和成长的方式<mark class="hghlght">，但我们不知道它到底会变成什么，怎么变，到底要影响我们多远。</mark></p><p>&nbsp;但我们心怀好奇和激动，对未来充满信心和憧憬，相信那种神奇的感觉会引领着我们前进，一直到永远。</p><p>首发：喷嚏网 <a rel="nofollow" href="http://www.dapenti.com/" target="_blank">www.dapenti.com</a></p></div>
+
+      
+    &nbsp;
+    <p>投诉
+
+
+  
+
+  
+
+
+    </p></div>
+
+    
+
+    
+
+
+  <p>
+  
+    <span data-rid="1294077">      有关键情节透露    </span>
+</p>
+
+  </div></div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+</body><style>body {
+      font-size:  20px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 900px;
+    }
+    .page {
+      line-height: 30.0px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

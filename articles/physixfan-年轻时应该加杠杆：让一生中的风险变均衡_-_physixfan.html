@@ -1,0 +1,154 @@
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style>
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 30px auto 0 auto;
+    padding: 10px;
+  }
+  body[data-mode="light"] {
+    color: #2B2B2B;
+    background-color: #EBEBEB;
+  }
+  body[data-mode="dark"] {
+    color: #D8D8D8;
+    background-color: #464646;
+  }
+  body[data-mode="sepia"] {
+    color: #2B2B2B;
+    background-color: #E7E2D5;
+  }
+  body[data-mode="black"] {
+    color: #ACACAC;
+    background-color: #121212;
+  }
+  body[data-loaded=true] {
+    transition: color 0.4s, background-color 0.4s;
+    margin-top: 56px;
+  }
+  body[data-images=false] img {
+    display: none;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  body[data-links=false] #reader-domain {
+    display: none;
+  }
+  #reader-domain {
+    font-size: 0.9em;
+    line-height: 1.48em;
+    padding-bottom: 4px;
+    font-family: Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    border-bottom-color: currentcolor;
+    color: #0095dd;
+  }
+  #reader-title {
+    font-size: 1.6em;
+    line-height: 1.25em;
+    width: 100%;
+    margin: 20px 0;
+    padding: 0;
+  }
+  #reader-credits {
+    font-size: 0.9em;
+    line-height: 1.48em;
+    margin: 0 0 10px 0;
+    padding: 0;
+    font-style: italic;
+  }
+  #reader-estimated-time {
+    font-size: 0.85em;
+    line-height: 1.48em;
+    margin: 0 0 10px 0;
+    padding: 0;
+  }
+  #reader-credits:empty {
+    disply: none;
+  }
+  </style>
+</head>
+<body data-images="true" data-links="true" data-mode="sepia" data-font="sans-serif" data-loaded="true">
+  <span></span> <!-- for IntersectionObserver -->
+  <a id="reader-domain" href="https://www.physixfan.com/nianqingshiyinggaijiagangganrangyishengzhongdefengxianbianjunheng/">www.physixfan.com</a>
+  <h1 dir="auto" id="reader-title">年轻时应该加杠杆：让一生中的风险变均衡 - physixfan</h1>
+  <div dir="auto" id="reader-credits"></div>
+  <div dir="auto" id="reader-estimated-time">2-2 minutes</div>
+  <hr>
+  <div id="readability-page-1" class="page"><div id="post-3456">
+						
+						<div>
+
+						<p><strong>作者： physixfan </strong></p><p>今天读到了Bogleheads上的这个两个帖子（<a href="https://www.bogleheads.org/forum/viewtopic.php?f=10&amp;t=5934" target="_blank" rel="noopener noreferrer">帖子1</a>，<a href="https://www.bogleheads.org/forum/viewtopic.php?f=10&amp;t=274390" target="_blank" rel="noopener noreferrer">帖子2</a>），觉得很受启发。这两个帖子的日期相隔十多年，但其实基本说的都是一回事，引用的也都是同样作者的理论：</p>
+
+
+
+<ul>
+<li><a href="http://www.whynot.net/main/mortgage_retirement.pdf" target="_blank" rel="noopener noreferrer">http://www.whynot.net/main/mortgage_retirement.pdf</a> 简单的科普文</li>
+<li>《<a href="https://www.amazon.com/gp/product/0465018297?tag=physixfan0-20" target="_blank" rel="noopener noreferrer">Lifecycle Investing</a>》这个理论的书</li>
+</ul>
+
+
+
+<p>为了讲清楚这个理论主要讲的是什么意思，我们先来回顾一下美国理财投资的一些基础知识。在《<a href="https://www.physixfan.com/meiguotouzilicaixiaogonglue/" target="_blank" rel="noopener noreferrer">美国投资理财小攻略</a>》中我提到，美国这边传统上大家建议的投资方式是按一定的比例投资股票指数基金和债券。按照年龄，比如在30岁时建议80%的股票+20%的债券。逐渐变老的过程中，股票的比例逐渐降低以降低风险，到了退休年龄时比如70岁，就是40%的股票+60%的债券了。</p>
+<p>然而这样一个比例分配，其实未必是最优的。考虑投资是一辈子的事情，一个最优的一生中风险承担的比例应该是怎样的呢？这篇paper就是在讲，最佳方案是把风险均匀的平摊到一生中。如果认可这个假设，我们就来进一步看看如何做到在时间上均摊风险。一个典型的人生，是在20岁时一无所有，然后开始逐渐的攒钱，然后收入逐年上涨一直到中年或者退休。简单起见假设一生中的任何时刻，都在100%比例的投资股票。那么其实你在年轻时候因为资产少，承担的风险实际上很低；而到了年纪大了的时候，你才真正的有钱起来，那时候资产总量大，风险就相对高多了。同样的股票比例，并不等于同样的风险，因为资产总量不一样了。举个例子，比如你30岁时候总资产只有$100k，到了50岁时候有$1M。这就导致你50岁时候的投资风险偏好即使很保守，也可能承受了比年轻时候大得多的绝对波动。当然，要考虑到未来的钱不如当下的钱更值钱，需要稍微做一点调整，但是这并不影响结论。那么按照一个普通人不同年龄的典型收入和资产来定量计算，实际上就会发现，在年轻时候即使100%买股票，所承担的风险和年纪大了之后相比，也是过小的。另外就是，年轻人的投资 time horizon 长，即使遇到了股市低估也有充足的时间等待股市恢复。所以就引出了一个结论：年轻时候要加杠杆投资。书中的建议是，加杠杆不要超过2倍，否则风险就太大了。杠杆率也确实不是越高越好的，在《<a href="https://www.physixfan.com/kailipanjuzaimeiguzhongdeyingyongjisuanzuijiagangganshuai/" target="_blank" rel="noopener noreferrer">凯利判据在美股中的应用：计算最佳杠杆率</a>》中我讲到，美股标普500指数的最佳杠杆率大约就是略高于2的。</p>
+<p>有人可能觉得长期投资加杠杆投资的风险太大，而且长时间来看加杠杆会不会导致有可能资产归零。这种担心是不无道理的，但是实际上如果加杠杆买的是SP500指数基金或者长期债券这种长时间尺度来看永远上涨的标的的话，实际结果也许比你想象的要好很多。在《<a href="https://www.physixfan.com/40-upro-60-tmf/" target="_blank" rel="noopener noreferrer">一个简单但有效的投资策略：40% UPRO + 60% TMF</a>》里面有更详细的讨论，这里就不赘述了。</p>
+<p>这个让风险在一生中均摊的思路，让我更加坚定的要拿出更大比例的资产按照 40% UPRO + 60% TMF 的策略来投资了！</p>
+<p>P.S. 自从我开始按照&nbsp;40% UPRO + 60% TMF 的策略投资以来（三四个月），该策略已经有大约20%+的收益了。</p>
+
+ 																				</div><!--end entry-->
+						<!--end meta-->
+					</div></div>
+  <span></span> <!-- for IntersectionObserver -->
+
+</body><style>@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=IBM+Plex+Serif:wght@400;500;700&family=Montserrat:wght@400;700&family=Zilla+Slab:wght@400;500&display=swap'); body {
+      font-size:  19px;
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 28px;
+      width: 850px;
+    }</style><style>body {
+  padding-bottom: 64px;
+}
+a:link, a:link:hover, a:link:active {
+  color: #0095dd;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style></html>

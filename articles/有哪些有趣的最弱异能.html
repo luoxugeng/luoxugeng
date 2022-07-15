@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <base target="_blank">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+  position: relative;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color:  #222;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color:  #eee;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color:  #5b4636;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color:  #586e75;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color:  #2e3440;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color:  #cec4ac;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #839496;
+  border-color:  #839496;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color:  #e5e9f0;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] ::selection {
+  background-color: #fff740;
+  color: #000;
+}
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+<title>有哪些有趣的「最弱异能」？ - 知乎 :: Reader View</title></head>
+<body tabindex="1" data-images="true" data-mode="light" data-font="sans-serif" data-loaded="true" style="user-select: initial;"><h1 dir="auto" id="reader-title">有哪些有趣的「最弱异能」？ - 知乎</h1>
+  <span dir="auto" id="reader-credits"></span>
+  <span dir="auto" id="reader-estimated-time">6-7 minutes</span>
+  <span dir="auto" id="published-time"></span>
+  <hr>
+  <div id="readability-page-1" class="page"><article><p data-pid="2sNuJZc7">A的能力是叫出喜欢女孩的名字，</p><p data-pid="u8OAtXxU">他每天下班以后都守在路口，</p><p data-pid="BS-1kSBE">努力地不断喊出一个又一个漂亮姑娘的名字。</p><p data-pid="pj3ukwGJ">2.</p><p data-pid="WgubMioi">B的能力是一人吃饱全家不饿，</p><p data-pid="c6msaEXK">他去开了直播，</p><p data-pid="AFUpruqb">专门面向那些吃不饱饭的人们。</p><p data-pid="OAT0mJz0">他一口家人们，</p><p data-pid="LtIwXqDY">一口涮羊肉，</p><p data-pid="6Z1HfHL-">家人们的肚子暖呼呼的。</p><p data-pid="iwjCGYr2">3.</p><p data-pid="uD-GPtpJ">C可以为谎言画上颜色，</p><p data-pid="S0FU_jJa">她最喜欢出没在各种婚礼和恋人们相会的现场，</p><p data-pid="j7B4FAjZ">看着粉红色溢满全场。</p><p data-pid="h4qeifxL">4.</p><p data-pid="UPDXyr89">B的愿望是成为世界上最大的主播，</p><p data-pid="kdUov5rq">这样全世界所有人就都能每天吃饱饭了。</p><p data-pid="Mu0UGfNX">5.</p><p data-pid="hyLpe0JC">D的能力叫正月里剃头死舅舅。</p><p data-pid="OqcsbUFW">从那以后，</p><p data-pid="4qiGHU7p">D就隐居到了深山了，不知今夕何夕，披发如同野人。</p><p data-pid="122EF_hZ">只因为他妈妈生活在天津，</p><p data-pid="EyBORD2Y">那里所有人都喊姐姐。</p><p data-pid="6hN0Ctl9">6.</p><p data-pid="Cz-K_wnj">那天，A叫出了C的名字。</p><p data-pid="vYP52wB5">A说他喜欢C，</p><p data-pid="jP6VKcjk">C不能给这句话染上颜色。</p><p data-pid="U7vBN56k">但是那天的夕阳给他们的脸颊染成了红色。</p><p data-pid="h0pUunf-">7.</p><p data-pid="wRtwMpNM">E是一个富豪，但是他的能力是吃了辣椒就会死。</p><p data-pid="76kFot_t">为此，E每天小心翼翼地生活。</p><p data-pid="QUCrbx8Z">后来E找了C，</p><p data-pid="r9yzD30W">他资助了A和C的新婚旅行，</p><p data-pid="sKeHrpui">只求C帮助他做一个测试。</p><p data-pid="zFDxG_8d">E不断询问着关于世界本源和物理法则的假设，</p><p data-pid="ZSDIIR0l">叫属下说出是还是否，</p><p data-pid="NdYgCDef">再加C试着对属下的回答染色。</p><p data-pid="2NRe6paK">就这样，</p><p data-pid="247CYUux">E找到了时光旅行的办法。</p><p data-pid="U2jp9Wbq">他回到了<span><a data-za-not-track-link="true" href="https://www.zhihu.com/search?q=%E5%A4%A7%E8%88%AA%E6%B5%B7%E6%97%B6%E4%BB%A3&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A2395775363%7D" target="_blank">大航海时代<svg width="10px" height="10px" viewBox="0 0 15 15"><path d="M10.89 9.477l3.06 3.059a1 1 0 0 1-1.414 1.414l-3.06-3.06a6 6 0 1 1 1.414-1.414zM6 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" fill="currentColor"></path></svg></a></span>之前，</p><p data-pid="eAg3s5KX">那时辣椒还没有传入中国。</p><p data-pid="bZOLuNqw">8.</p><p data-pid="R-HS3Y9E">F的能力是不受任何超能力的影响。</p><p data-pid="oxy0l-dL">9.</p><p data-pid="9I48_1mi">G的能力是知识水平越高，战斗力就越低。</p><p data-pid="bi9pSNah">等G博士毕业后，</p><p data-pid="L-DgBmGd">已经打不过幼儿园大班的小朋友了。</p><p data-pid="neAgxk0k">后来G遇到了恐怖袭击，</p><p data-pid="Z9_V2IOX">被打成了失忆以后G反杀了所有的匪徒。</p><p data-pid="HblIZys0">10.</p><p data-pid="ysvLJGtx">H的能力是静止时间一个小时，</p><p data-pid="qY3Ptucn">但是H同时自己也会被静止住。</p><p data-pid="UqOctpg_">11.</p><p data-pid="vteH555r">I的能力是强迫别人发笑。</p><p data-pid="N1nulz0d">他经常被请作晚会的嘉宾，</p><p data-pid="jTEtEC9Y">尤其受到相声演员和脱口秀表演者的喜欢。</p><p data-pid="K8lk4B5f">背地里，</p><p data-pid="bmIeseB9">I是个杀手，</p><p data-pid="PS4bYrz4">他的目标都会死于窒息。</p><p data-pid="wk9qkvEU">12.</p><p data-pid="nkJfUzBF">J的能力是吃火锅不用沾小料，</p><p data-pid="yN1yVyIH">为此他剩下了十好几块钱。</p><p data-pid="OGoDZwS1">而J的女朋友K，只要拍照就会是美颜状态。</p><p data-pid="yfj8Et7A">这让她的手机剩下了安装美图软件的空间。</p><p data-pid="e9YS5a9j">13.</p><p data-pid="yiW9vMsm">L每天起床时都会看见自己今天要吃什么。</p><p data-pid="i0odAJ48">那天，L起床以后就受不了了，</p><p data-pid="BTgZGkaI">他吐了一个上午。</p><p data-pid="Fzx9l--G">L把情况汇报给了组织，</p><p data-pid="TLE55qOS">组织安排了会静止时间（包括自己）的H和不受任何超能力影响的F组队。</p><p data-pid="bizdnRsJ">14.</p><p data-pid="iAg0qOeO">M可以一眼看出所有东西的重量。</p><p data-pid="uErSmToQ">他受雇于政府，</p><p data-pid="FR08_RG3">每天在城市里巡逻，</p><p data-pid="MWmsDg8f">汇报那些体重过轻和过重的人。</p><p data-pid="tTGc9eBe">15.</p><p data-pid="8VSFz0ak">M接替的是N的工作，</p><p data-pid="rxeceVlE">N可以看见所有人衣服下面的样子。</p><p data-pid="Uuvu2s7v">后来N辞职了。</p><p data-pid="VUQR7zTK">16.</p><p data-pid="BZ0_Z9SN">政府严密监视着D的妈妈，</p><p data-pid="yPkwbBNg">防止她说出那句“<span><a data-za-not-track-link="true" href="https://www.zhihu.com/search?q=%E5%9B%9B%E6%B5%B7%E4%B9%8B%E5%86%85%E7%9A%86%E5%85%84%E5%BC%9F&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A2395775363%7D" target="_blank">四海之内皆兄弟<svg width="10px" height="10px" viewBox="0 0 15 15"><path d="M10.89 9.477l3.06 3.059a1 1 0 0 1-1.414 1.414l-3.06-3.06a6 6 0 1 1 1.414-1.414zM6 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" fill="currentColor"></path></svg></a></span>”。</p><p data-pid="BlNzwMpI">17.</p><p data-pid="CuGMotoH">L曾经起床时什么都没有看见。</p><p data-pid="iKRHFIHd">果然，</p><p data-pid="Jd6o6pml">他那天早上就不小心刷到了B的直播。</p><p data-pid="8vk_eeGK">18.</p><p data-pid="CqotPVnQ">O可以叫任何人爱上任何东西三秒钟，</p><p data-pid="Lc1KeG1s">但只有三秒钟。</p><p data-pid="U3Tz9SaC">组织里的领导想叫O和A组成搭档，</p><p data-pid="0zDR-KXn">这样便可以叫出所有人的名字了。</p><p data-pid="SSomfz3I">也或许能知道那些是什么。</p><p data-pid="tfRt5Olk">这都被负责人P否决了。</p><p data-pid="FpYybAq7">19.</p><p data-pid="eM5Ccx9b">K和C是大学同学。</p><p data-pid="NgQbRraT">C回忆说，K是一个拍照只P自己的人。</p><p data-pid="3t5AJ0iV">K则说，和C在女生宿舍的时候，好像都染上了回忆的粉色。</p><p data-pid="1AsJqDGG">20.</p><p data-pid="tHrEXJ6b">P是组织里的负责人，</p><p data-pid="kpUHznab">他负责找到那些<span><a data-za-not-track-link="true" href="https://www.zhihu.com/search?q=%E8%B6%85%E8%83%BD%E5%8A%9B%E8%80%85&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A2395775363%7D" target="_blank">超能力者<svg width="10px" height="10px" viewBox="0 0 15 15"><path d="M10.89 9.477l3.06 3.059a1 1 0 0 1-1.414 1.414l-3.06-3.06a6 6 0 1 1 1.414-1.414zM6 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" fill="currentColor"></path></svg></a></span>，并且好好管理和利用他们。</p><p data-pid="1AH_Xlu5">预言说，</p><p data-pid="1mZu3yVW">这个世界上会出现26个超能力者，</p><p data-pid="SFpUvCiC">他们每个人的能力或许不值一提，</p><p data-pid="6R2VZjH0">但是他们组合起来，</p><p data-pid="BRq0lMOx">将发挥出巨大的潜能。</p><p data-pid="L8IzA-Mt">只有他们，</p><p data-pid="OWzEMOFv">可以拯救人类的命运。</p><p data-pid="Vd_wGG9t">而P本身也是一个能力者，</p><p data-pid="la0u-D3A">他的能力是能在纸上记下其他超能力者的能力。</p><p data-pid="SFLrFa7G">他遇到A时，</p><p data-pid="XViv1rqO">在纸上写到：</p><p data-pid="c-N7wYP4">只能叫对真心爱着的人的名字。</p><p data-pid="YJBKaHhD">完。</p><p data-pid="3_tsIlAb">P.S.</p><p data-pid="jIY_Ef_u">P的记录：</p><p data-pid="QwjegbiD">A  只能叫对真心爱着的人的名字</p><p data-pid="LaCs6El6">B  可以通过自己的嘴，将任意食物输送到认知到其存在的个体的消化道中</p><p data-pid="aFxIY7CO">C  为谎言染上颜色</p><p data-pid="9wad9JKH">D  正月里剃头死舅舅</p><p data-pid="ggp0rnvX">E  吃到辣椒，世界就会毁灭</p><p data-pid="VE5XpXCW">F  成为主人公的能力</p><p data-pid="YnuAS6tm">G  博士顺利毕业的能力</p><p data-pid="9jn2KxJk">H  让所有事物停止运动55分钟</p><p data-pid="aI2MFcug">I   控制人体肌肉</p><p data-pid="B_fPiUZZ">J  控制水分的能力</p><p data-pid="0BvVLKUe">K  控制视觉的能力</p><p data-pid="f7Fx_vBQ">L  预知未来的能力</p><p data-pid="LS9vIuV5">M  看到各种物理量的数值</p><p data-pid="Bcg2iMhZ">N  看到事物的本质</p><p data-pid="jxfUSjH4">O  控制情绪的能力</p><p data-pid="8Rr8FQw1">P  能在纸上写出其他超能力者的能力，并修改他们对于自己能力的认知。</p></article></div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+</body><style>body {
+      font-size:  15px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 650px;
+      text-align: justify
+    }
+    .page {
+      line-height: 22.5px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

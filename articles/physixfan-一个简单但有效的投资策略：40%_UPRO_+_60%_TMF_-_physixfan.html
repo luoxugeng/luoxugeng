@@ -1,0 +1,286 @@
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style>
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 30px auto 0 auto;
+    padding: 10px;
+  }
+  body[data-mode="light"] {
+    color: #2B2B2B;
+    background-color: #EBEBEB;
+  }
+  body[data-mode="dark"] {
+    color: #D8D8D8;
+    background-color: #464646;
+  }
+  body[data-mode="sepia"] {
+    color: #2B2B2B;
+    background-color: #E7E2D5;
+  }
+  body[data-mode="black"] {
+    color: #ACACAC;
+    background-color: #121212;
+  }
+  body[data-loaded=true] {
+    transition: color 0.4s, background-color 0.4s;
+    margin-top: 56px;
+  }
+  body[data-images=false] img {
+    display: none;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  body[data-links=false] #reader-domain {
+    display: none;
+  }
+  #reader-domain {
+    font-size: 0.9em;
+    line-height: 1.48em;
+    padding-bottom: 4px;
+    font-family: Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    border-bottom-color: currentcolor;
+    color: #0095dd;
+  }
+  #reader-title {
+    font-size: 1.6em;
+    line-height: 1.25em;
+    width: 100%;
+    margin: 20px 0;
+    padding: 0;
+  }
+  #reader-credits {
+    font-size: 0.9em;
+    line-height: 1.48em;
+    margin: 0 0 10px 0;
+    padding: 0;
+    font-style: italic;
+  }
+  #reader-estimated-time {
+    font-size: 0.85em;
+    line-height: 1.48em;
+    margin: 0 0 10px 0;
+    padding: 0;
+  }
+  #reader-credits:empty {
+    disply: none;
+  }
+  </style>
+</head>
+<body data-images="false" data-links="true" data-mode="sepia" data-font="sans-serif" data-loaded="true">
+  <span></span> <!-- for IntersectionObserver -->
+  <a id="reader-domain" href="https://www.physixfan.com/40-upro-60-tmf/">www.physixfan.com</a>
+  <h1 dir="auto" id="reader-title">一个简单但有效的投资策略：40% UPRO + 60% TMF - physixfan</h1>
+  <div dir="auto" id="reader-credits"></div>
+  <div dir="auto" id="reader-estimated-time">5-6 minutes</div>
+  <hr>
+  <div id="readability-page-1" class="page"><div>
+
+						<p><strong>作者： physixfan </strong></p><p><span>【2021.2 更新】更新了”此策略何时失效？”这一章节。</span></p>
+<p><span>【2020.4 更新】写在前面：你能承受下图这样程度的回撤并且在这种时候不卖出吗？如果不能，请赶紧关掉这个页面不要往下看了，并移步适合新手小白的《<a href="https://www.physixfan.com/meiguotouzilicaixiaogonglue/" target="_blank" rel="noreferrer noopener">美国投资理财小攻略</a>》。</span></p>
+<p><img loading="lazy" src="https://www.physixfan.com/wp-content/uploads/Screen-Shot-2020-04-29-at-11.45.18--1024x569.png" alt="" width="500" height="278" srcset="https://www.physixfan.com/wp-content/uploads/Screen-Shot-2020-04-29-at-11.45.18--1024x569.png 1024w, https://www.physixfan.com/wp-content/uploads/Screen-Shot-2020-04-29-at-11.45.18--300x167.png 300w, https://www.physixfan.com/wp-content/uploads/Screen-Shot-2020-04-29-at-11.45.18--768x427.png 768w, https://www.physixfan.com/wp-content/uploads/Screen-Shot-2020-04-29-at-11.45.18--1536x853.png 1536w, https://www.physixfan.com/wp-content/uploads/Screen-Shot-2020-04-29-at-11.45.18--2048x1138.png 2048w" sizes="(max-width: 500px) 100vw, 500px"></p>
+<hr>
+<p>最近在逛Bogleheads论坛的时候，读到了<a href="https://www.bogleheads.org/forum/viewtopic.php?f=10&amp;t=272007" target="_blank" rel="noreferrer noopener">HEDGEFUNDIE的这个帖子</a>，觉得十分有趣，深受启发。里面讲了一个简单但有效的投资策略：40% UPRO + 60% TMF。这篇文章可以算作一个学习笔记，总结归纳一下那个帖子的内容，以及说说一点自己的想法。</p>
+
+
+
+
+<p>在《<a href="https://www.physixfan.com/meiguotouzilicaixiaogonglue/" target="_blank" rel="noreferrer noopener">美国投资理财小攻略</a>》里，我提到对于普通人来说可能最佳的投资方法：买大盘指数基金，并且加配一定比例的债券基金，比如 80% VOO + 20% BND（其中VOO是标普500指数基金，BND是债券基金）。然而对于年轻人来说，因为还有很长的时间可以承受波动而不用取出投资，其实可承受的风险还可以再大些，以求得更高的回报率。今天这篇文章讲的就是一种风险（波动）比100%的VOO稍大些，但收益率更高的投资策略。</p>
+
+
+
+<h2>40% UPRO + 60% TMF 策略描述</h2>
+
+
+
+<p>这个策略的主旨是：利用股票和长期债券的负相关性，用长期债券冲掉一部分股市的风险；股票和债券的配比，要达到风险均衡 (risk parity)；因为这样配置的话股票比例比较低，为了增强回报率，还需要加杠杆。大家先不要听到杠杆就摇头，请看接下来的分析。</p>
+
+
+
+<p>这个策略的具体内容是 40% <a href="https://finance.yahoo.com/quote/upro/" target="_blank" rel="noreferrer noopener">UPRO</a> + 60% <a href="https://finance.yahoo.com/quote/TMF" target="_blank" rel="noreferrer noopener">TMF</a>。其中 <a href="https://finance.yahoo.com/quote/upro/" target="_blank" rel="noreferrer noopener">UPRO</a>&nbsp;是3倍杠杆的标普500指数基金，<a href="https://finance.yahoo.com/quote/TMF" target="_blank" rel="noreferrer noopener">TMF</a> 则是3倍杠杆长期型债券基金。为什么比例是40%/60%呢？因为标普500指数的波动率和长期债券的波动率之比大约是3:2的样子，故为了让这两部分的波动大致相同（此即 risk parity），配比就要是2:3。然后每季度（或者每月，其实区别不大）重新平衡一下 (rebalance)，以始终保持这个比例。</p>
+
+
+
+<p>此策略不需要择时，即是一个可以长期以固定方法操作的策略，不论牛熊。</p>
+
+
+
+<h2>几十年来的历史回测数据</h2>
+
+
+
+<p>首先贴一下这个策略从1978年至2018年这40年间的表现：</p>
+
+
+
+<figure>
+
+</figure>
+
+
+
+
+
+<p>其中蓝线是此策略的执行结果，红线是标普500指数。可见，40年间，此策略让资产增长了100多倍！年化收益率高达16+%！而同期标普500指数只增长了20多倍。若选取一段市场不是很好的时间段，以2000.08-2010.04为例，这期间有两次金融危机（2000互联网泡沫和2008次贷危机），标普500在此期间总的年化收益率为0%，而此策略则在此时间段有5%的年化收益率。</p>
+
+
+
+<p>看完了这恐怖的收益，我们自然想问的就是，风险到底有多大，3x杠杆可不是开玩笑的。然而令人惊讶的是，上面的数据表明，此策略在40年间的最大回撤只有 -49.22%，而同期标普500指数的最大回撤可是有 -50.97% 呢！此策略在表现最差的一年回报率为 -21.06%，而同期标普500指数最差的一年回报率则为 -37%！其标准差大约是不到标普500的2倍，与100%的UPRO相比（3倍）小了不少。从这些数据上来看，此策略尽管波动率比标普500指数大，但其风险仍然属于可以接受的范围，不算比100%的VOO差很多。</p>
+
+
+
+<p>为什么加了杠杆，最终的风险却没那么恐怖？最主要的原因就是股票和长期债券的负相关性，只要此假设成立，我们就可以通过配比一定比例的债券来对冲一部分风险。为啥股票和债券会有负相关性呢？一个直观的理解就是当金融危机发生、股票价格跳水的时候，很多人会卖掉股票抢购长期债券（当然 金融危机发生的时候 你的总资产还是会跌的很惨的 债券部分涨只是让你相对不那么惨一点）。过去40年的数据也确实印证了这个负相关性是成立的。实际上，对冲基金的精髓，也正是杠杆+对冲。</p>
+
+
+
+<h2>此策略何时失效？</h2>
+
+
+
+<p>这个策略最怕的事情就是股票和债券一起跌，什么时候会发生这种事儿，让股票和债券的负相关性被打破呢？</p>
+<p>按照我的理解，有一种可能性：美联储若在一段时间内一直持续加息，就有可能会导致这俩一起跌。美联储加息肯定不是随便加的，其前提基本上是一段时间内通胀过高、需要美联储加息才能让通胀降温。不过从实际数据来看，自从1981年以来，通胀就被控制的非常好，大趋势就是在降息，加息都是暂时的，降息趋势却是长久的。</p>
+
+
+
+
+
+
+
+
+
+
+<p>说到这里，我也想提一下，原贴作者选取的时间段是1978-2018，这段时间恰好是在一个整体降息的大周期内。利息降低会导致债券价格升高，这种降息大趋势也确实导致了一个长达几十年的债券大牛市。因此过去40年的收益率数据，不能直接外推到未来，我们不应该期待接下来的40年还有过去40年那么高的收益率。当然，我认为，只要大基调不变，此策略的收益率显著大于标普500指数仍然是可以做到的。</p>
+
+
+
+<p>实际上，随着原贴下面的讨论越来越深入，原贴作者HEDGEFUNDIE在<a href="https://www.bogleheads.org/forum/viewtopic.php?f=10&amp;t=272007&amp;start=1050#p4426381" target="_blank" rel="noreferrer noopener" aria-label="这一层 (opens in a new tab)">这一层</a>里补充上了一些从更早开始的数据回测，见下图：</p>
+
+
+
+<figure>
+
+</figure>
+
+
+
+
+
+<p>可见，在大约1965-1983年间，此策略的表现非常非常糟糕。而这段时期，正是美国著名的滞涨时期，通胀一度非常高，因此这段时间美联储一直在持续加息。这可以印证我上面分析的，此策略最怕的就是持续上升的通胀和加息。</p>
+<p>可见这个策略非常依赖美联储对通胀的控制，市场对通胀的预期非常关键，投资这个策略的话需要保持对通胀的关注。关于对通胀的理解，大家可以阅读一下我写的《<a href="https://www.physixfan.com/duitongzhangdeyidiansikao/" target="_blank" rel="noopener noreferrer">对通胀的一些思考</a>》。如果定量一点，我个人认为只要通胀始终被控制在2.5%~3.0%以下，长期来看这个策略就依然可以执行（虽然短期总是有可能会股债一起跌）；但如果有迹象表明通胀将要不受控制的上涨、美联储也无能为力只能被迫一直加息，那这个策略就悬了，就得<a href="https://www.physixfan.com/risk-parity-touzicelue-difengxianbanben/" target="_blank" rel="noopener noreferrer">降杠杆</a>或者果断给抛了。</p>
+<p>关于负相关性何时失效的更多讨论见《<a href="https://www.physixfan.com/gupiaohechangqizhaiquandefuxiangguanxingdaodishifoukeyichixu/" target="_blank" rel="noopener noreferrer">股票和长期债券的负相关性到底是否可以持续？</a>》。</p>
+
+
+
+<h2>Q&amp;A：</h2>
+
+
+
+<p>问：3倍杠杆的ETF不是设计给日内交易用的吗，长期持有会不会有损耗？</p>
+
+
+
+<p>答：的确，一般的3倍杠杆ETF是设计给日内交易用的。不过还是要区分一下几种类型的杠杆ETF：short/bear equity ETF, commodity ETF 和 long equity ETF。前两者的损耗可能会很夸张，不可长期持有。Long equity ETF 也的确会有损耗，在震荡的趋势中它的收益率很可能是小于预期的3倍收益的，在标的本身回报率为0%的情况下3x杠杆ETF回报可能是负的，原贴中举了一个例子帮助理解大家感兴趣的话可以看看。但是在一个长期上涨的趋势下，反而这个3倍杠杆ETF的收益会大于3倍，大家可以自行对比一下2009至2019（一个长达十年的大牛市）UPRO和VOO的收益率，是4~5倍。而标普500指数和长期债券都属于这种长期来看会涨的标的。在《<a href="https://www.physixfan.com/gangganjijindesunhaowentiweishenmeuprohetmfkeyichangqichiyou/" target="_blank" rel="noopener noreferrer">杠杆基金的损耗问题：为什么UPRO和TMF可以长期持有？</a>》中有更详细的解释。</p>
+
+
+
+<p>问：这个策略中的 UPRO 会不会在严重金融危机时归零？</p>
+
+
+
+<p>答：UPRO 是每日平衡的，只有一天之内标普500指数跌33.4%或以上才会导致 UPRO 归零。如果是一周内跌了33.4%之类的，则只会导致 UPRO 跌得很惨，不会让它归零。</p>
+
+
+
+<p>问：如果这个策略这么厉害，为啥没有特别流行？没听说有什么对冲基金在使用？</p>
+
+
+
+<p>答：据说其实是有些对冲基金是在用的，例如 <a href="https://www.bridgewater.com/research-library/the-all-weather-strategy/" target="_blank" rel="noreferrer noopener">Bridgewater All Weather Fund</a> 使用的是同样的理念（当然我觉得他们的portfolio会更复杂些）。网上其实也有很多讨论，搜一搜 UPRO+TMF 就可以看到不少。</p>
+<p>问：哪个券商最适合玩这个策略？</p>
+<p>答：个人比较推荐&nbsp;<a href="https://m1.finance/wkFHvZU1J2gQ" target="_blank" rel="noopener noreferrer">M1finance</a>，这是一家比较新的公司，买卖股票/ETF完全不收手续费，跟Robinhood不同的是，这家主打功能是设定一个目标portfolio之后自动投资的，尤其适合本文。</p>
+<p>问：为什么原贴作者HEDGEFUNDIE在<a href="https://www.bogleheads.org/forum/viewtopic.php?t=288192" target="_blank" rel="noopener noreferrer">后来的帖子</a>中把比例变成了 55% UPRO + 45% TMF？你有何看法？</p>
+<p>答：他的主要考量是目前长期债券的收益率已经很低，价格的上升空间已经比较小了，尤其是考虑今后几十年的时间尺度的话。所以他最后放弃了 risk parity 的比例，而是手动提高了股票比例降低了长期债券比例。我个人有点认同他的这一看法，不过我个人更加倾向于另一种改进版，即每月根据上个月的volatility来调整一次比例的策略，详见《<a href="https://www.physixfan.com/risk-parity-touziceluegaijinbandongtaidiaozhenguprohetmfdebili/" target="_blank" rel="noopener noreferrer">Adaptive Risk Parity 投资策略：动态调整UPRO和TMF的比例</a>》。</p>
+
+
+
+<h2>结语</h2>
+
+
+
+<p>股债平衡再加杠杆是一个收益可能比较高的策略。投资此策略需要关注通胀和加息，一旦通胀不受控制的上升、美联储被迫持续加息，那此策略会表现很差。除了这种情况之外，就无需择时，在股市大跌时期债券价格往往上涨，按照计划rebalance就可以自动应对。如果你也感兴趣，请一定要先正确认知风险，再开始投资。</p>
+<hr>
+<p>在本文写完之后，我又写了几篇文章讨论了相关的内容，建议大家也读一读：</p>
+<ul>
+<li>《<a href="https://www.physixfan.com/risk-parity-touziceluegaijinbandongtaidiaozhenguprohetmfdebili/" target="_blank" rel="noopener noreferrer">Adaptive Risk Parity 投资策略：动态调整UPRO和TMF的比例</a>》讲了此策略的一个改进版，利用 20-day look back volatility 来动态调整比例分配。这是我后来用的主要投资方式了。其实40/60的固定比例有一点不是很科学：这个比例是用过去40年间的数据算的平均 volatility 而得到的，但是用它测之前的数据的时候其实是相当于用了未来信息了，这会产生bias。我个人认为利用 20-day look back volatility 来动态调整比例分配的 adaptive risk parity 策略更加好一点。</li>
+<li>《<a href="https://www.physixfan.com/risk-parity-touzicelue-difengxianbanben/" target="_blank" rel="noopener noreferrer">Risk Parity 投资策略 低风险版本</a>》讲了此策略的低杠杆版本，比如1.5x杠杆，适合风险偏好更低的朋友。</li>
+<li>《<a href="https://www.physixfan.com/gupiaohechangqizhaiquandefuxiangguanxingdaodishifoukeyichixu/" target="_blank" rel="noopener noreferrer">股票和长期债券的负相关性到底是否可以持续？</a>》讲了此策略的基础–负相关性假设到底在什么情况下可以外推到未来。</li>
+<li>《<a href="https://www.physixfan.com/gupiaohechangqizhaiquandefuxiangguanxingduanqineiqiangliezhengxiangguandekenengxing/" target="_blank" rel="noopener noreferrer">股票和长期债券的负相关性：短期内强烈正相关的可能性</a>》探讨了短期内股票和长期债券间强烈正相关的可能性。</li>
+</ul>
+<p>后来我在雪球也开了个组合记录一下这个策略的实际表现，大家感兴趣的话可以来这里看：</p>
+<ul>
+<li><a href="https://xueqiu.com/P/ZH1898719" target="_blank" rel="noopener noreferrer">https://xueqiu.com/P/ZH1898719</a></li>
+</ul>
+<hr>
+<p>最近我发现<a href="https://m1.finance/wkFHvZU1J2gQ" target="_blank" rel="noopener noreferrer">M1finance</a>这家券商真的特别适合做这种按比例分配的投资。这家的特色就是可以设定一个Pie然后一键按比例买入、一键rebalance。优点是0手续费，缺点则是不能随意交易，一般是点击一下rebalance然后它下一个工作日会自动帮你交易。所以M1fiance很适合按比例投资各式基金，不适合买个股或者通常说的“炒股”行为。如果你也用M1finance，可以直接点击我设置好的Pie然后跟着买：</p>
+<ul>
+<li><a href="https://m1.finance/WktwWTPC0" target="_blank" rel="noopener noreferrer">Risk Parity 1.5x 40/60</a> 策略</li>
+<li><a href="https://m1.finance/fQa0_WIS-" target="_blank" rel="noopener noreferrer">Risk Parity 3x 40/60</a> 策略</li>
+</ul>
+<hr>
+<p>友情提醒：此策略rebalance频率高的话，可能会产生很高的税，因此此策略不太适合在 taxable account 里操作，更适合在 tax advantage account (401k, Roth IRA 等) 里操作。</p>
+
+ 																				</div></div>
+  <span></span> <!-- for IntersectionObserver -->
+
+</body><style>@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=IBM+Plex+Serif:wght@400;500;700&family=Montserrat:wght@400;700&family=Zilla+Slab:wght@400;500&display=swap'); body {
+      font-size:  20px;
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 36px;
+      width: 950px;
+    }</style><style>body {
+  padding-bottom: 64px;
+}
+a:link, a:link:hover, a:link:active {
+  color: #0095dd;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style></html>

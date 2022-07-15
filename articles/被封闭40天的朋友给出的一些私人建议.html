@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <base target="_blank">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+  position: relative;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color:  #222;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color:  #eee;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color:  #5b4636;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color:  #586e75;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color:  #2e3440;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color:  #cec4ac;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #839496;
+  border-color:  #839496;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color:  #e5e9f0;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] ::selection {
+  background-color: #fff740;
+  color: #000;
+}
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+<title>乐活--被封闭40天的朋友给出的一些私人建议 :: Reader View</title></head>
+<body tabindex="1" data-images="true" data-mode="sepia" data-font="sans-serif" data-loaded="true" style="user-select: initial;"><h1 dir="auto" id="reader-title">被封闭40天的朋友给出的一些私人建议</h1>
+  <span dir="auto" id="reader-credits"></span>
+  <div id="readability-page-1" class="page"><div><p>来源：@藤井树小姐
+</p>
+
+<p>
+	以下是已在上海疫情中心被封闭40天的朋友给出的一些私人建议，请逐条仔细阅读——
+</p>
+<p>
+1、自己或家人有慢性病需要长期服药的，立即马上去医院配足两个月的量（一般一次可配一个月，向医生求情可以配到两个月）。一旦封城，配药就医是最最最最最最困难的事。常用药品也请准备一下。</p><p>
+
+2、如果有独居且身体不佳或长期住养老院的老人家属，尽量在封城前接到自己身边。你是他/她可能唯一的依靠。（此条非常重要！)</p><p>
+
+3、囤足食物。冰箱有限，优先可以长期常温储备的食物，包括并不限于常温牛奶、鸡蛋、部分水果、根茎类蔬菜、罐头、主食（非常重要）以及方便食品（午餐肉请作为战略储备）等。另，准备容器土培或水培葱、蒜等。</p><p>
+
+4、鉴于中国烹饪的复杂性，请留意家里的油盐酱醋等各种调料和烹饪用品（各多备一份）。</p><p>
+
+5、这其实是比4更重要的一条，家中卫生用品需超量储备，包括并不限于卫生纸、卫生巾、洗洁精、洗衣液、消毒用品、酒精喷雾、垃圾袋、保鲜膜等，因为封城期间你在家的时间大大增加，消耗成比例增加，请做好计算。</p><p>
+
+6、家里有位置的话，购入冰柜。</p><p>
+
+7、趁早检修家中的热水器、下水道、网络等坏了不会死，但会严重影响生活质量的设施。一旦封城，检修会很困难。</p><p>
+
+8、烟、酒、茶、咖啡等成瘾性物品请足量储存。烟的价格在封城一周后会有150%-300%的不同涨幅。</p><p>
+
+9、在家周围逛一圈，找到1公里范围内的老式超市、药房、水果铺、蔬菜铺、烟杂店等，立即记下他们的电话并加老板微信（或微信群），这些线下店能实实在在地解决一些（不是全部）需求。</p><p>
+
+10、买一套简易的理发工具。</p><p>
+
+11、开始认识你的邻居们。你需要他们，有时他们也会需要你。</p><p>
+
+12、找一些满足自己的兴趣爱好的物事，书也好，玩具也好，用来填满时间。</p><p>
+
+13、婴儿与宠物，所有消耗品足量储备。</p><p>
+
+14、家中有学龄儿童（小学到高中），备足打印机墨盒、A4纸，没有打印机的速速买打印机。以及其他文具用品，包括并不限于各类笔、本子、修正带等。</p><p>
+
+以上转需。</p></div></div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+</body><style>body {
+      font-size:  20px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 900px;
+      text-align: justify
+    }
+    .page {
+      line-height: 30.0px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

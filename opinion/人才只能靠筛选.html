@@ -1,0 +1,260 @@
+<html dir="ltr"><head><title>人才只能靠筛选 :: Reader View</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color: %light-color%;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color: %dark-color%;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color: %sepia-color%;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color: %solarized-light-color%;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color: %nord-light-color%;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color: %groove-dark-color%;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #93a1a1;
+  border-color: %solarized-dark-color%;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color: %nord-dark-color%;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] .tts-word {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  background-color: red;
+  height: 2px;
+}
+.tts-word.hidden,
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+</head>
+<body tabindex="1" data-images="false" data-mode="sepia" data-font="sans-serif" data-loaded="true">
+  <span></span> <!-- for IntersectionObserver -->
+
+  <h1 dir="auto" id="reader-title">人才只能靠筛选</h1>
+  <span dir="auto" id="reader-credits"></span>
+  <span dir="auto" id="reader-estimated-time">2-2 minutes</span>
+  <span dir="auto" id="published-time"></span>
+  <hr>
+  <div id="readability-page-1" class="page"><div id="post-body-4858102608331601040" itemprop="description articleBody">
+<meta http-equiv="Content-Type" content="text/html; charset=GB18030"><p>培养人是没有用的，只有傻逼才会培养人。要不断地筛选人。而且所谓的培养，本质上，其实还是筛选。</p><p>郭德纲不会只培养一个徒弟的，是同时培养200个徒弟，看谁能跑出来。</p><p>马化腾做即时通信软件的时候，整个公司同时3个团队在做，同时开始做，都给工资，都一样的政策待遇和条件，张小龙跑出来了，直接给副总裁的位置，一年3个亿的薪水，其他的两个团队裁掉。</p><p>王者荣耀也是这么跑出来的。</p><p>这也是为什么中产阶级只生一个孩子、只生两个孩子，是没法培养孩子的——因为如果你只生一个孩子，只生两个孩子，那就不是培养了，那就是溺爱了，那就没法筛选了，你两个孩子怎么筛吗？没法筛。都是心头肉。最后就是溺爱。只有5个孩子以上，才能筛选。古代的皇帝都是15个孩子以上，谁牛逼谁继承王位。</p><p>那很多人会说，我们家也没有王位继承啊。也没有企业继承啊。也没有钱啊。所以你穷嘛，你越穷，越不敢生孩子，越不敢生孩子，生了一个两个，就越是溺爱，你的孩子参与社会竞争就越差。你们家族离衰败就不远了。</p><p>王健林说过——他这辈子最后悔的事就是只剩了一个儿子。导致了他现在没法选择了。<mark class="hghlght">就一个孩子，他就算再怎么出去玩，哪怕30多岁了天天泡妞，他也没办法，因为他就一个孩子</mark>。就连万达想找人继承，他孩子不想去，只想玩，他也没办法。但是如果他有5个孩子呢？</p><p>这5个人只要有1个人愿意回去继承万达，另外4个都会想去的。因为一旦万达交给了一个人继承，其他4个人就分不到多少钱了。那么这5个人就会更努力，就会竞争。只有一两个孩子——父母是没有话语权的。最后只能是溺爱。白养。</p><p>你怎么能把希望放在一个人身上呢？</p><p>你只有一两个孩子，最终就是溺爱，就是哪一个都不听话。因为你没有资格和他对话，因为你就两个孩子，你总不能扔了吧？所以中产不可能培养出天才。样本量太少了。除非父母都是天才，姚明的父母都是国家队的。人家基因好。清华也不会一年只招收一个人的。如果清华一年只招一个人，那清华一个牛逼的校友也不会出现的。</p><p><mark class="hghlght">强者不是培养出来的，强者是竞争出来的。强者是嗜血的。强者是有狼性的。而且甚至很多人不知道——真正的强者，是听话的</mark>。</p><p>很多人以为强者都是不听话的——不听话的人，都是自以为是。都是觉得自己特别牛逼，实际什么成就都没有的傻缺。<mark class="hghlght">只有听话，才能执行好，才能学到最多的东西，才能兢兢业业的去练习</mark>。<mark class="hghlght">不听话的人，都是一上来就想创新，连走路都不会呢，就想跑步，最后摔死了。</mark></p><p>所以筛选——不仅是一个竞争的过程，竞争可以筛选强者，而且也是一个筛选忠诚度的过程，因为忠诚度高的人听话，而且更愿意相信你，更愿意相信你说的话，能够更好地执行出效果。哪怕他笨一点，但是其实很多东西不需要很高的智商，更重要的是在一点一点执行的过程中所积累的感悟。</p><p>但是自以为是的人不听你的，他也就不会去做，他也不会有什么真正有用的感悟。<br></p>
+
+</div></div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+<textarea class="hidden note" placeholder="Instruction:
+
+
+Delete: Press &quot;ESC&quot; when note is focused
+Color: Press &quot;Alt + Number&quot; or &quot;Option + Number&quot;
+" title="Instruction:
+
+
+Delete: Press &quot;ESC&quot; when note is focused
+Color: Press &quot;Alt + Number&quot; or &quot;Option + Number&quot;
+" data-color="#fff740" style="color: rgb(44, 44, 45); background-color: rgb(255, 247, 64); width: 300px; height: 300px; left: 149px; top: 601px;"></textarea></body><style>body {
+      font-size:  20px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 900px;
+    }
+    .page {
+      line-height: 30.0px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

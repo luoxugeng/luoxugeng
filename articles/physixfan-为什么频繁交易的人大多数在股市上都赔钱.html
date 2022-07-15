@@ -1,0 +1,196 @@
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style>
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 30px auto 0 auto;
+    padding: 10px;
+  }
+  body[data-mode="light"] {
+    color: #2B2B2B;
+    background-color: #EBEBEB;
+  }
+  body[data-mode="dark"] {
+    color: #D8D8D8;
+    background-color: #464646;
+  }
+  body[data-mode="sepia"] {
+    color: #2B2B2B;
+    background-color: #E7E2D5;
+  }
+  body[data-mode="black"] {
+    color: #ACACAC;
+    background-color: #121212;
+  }
+  body[data-loaded=true] {
+    transition: color 0.4s, background-color 0.4s;
+    margin-top: 56px;
+  }
+  body[data-images=false] img {
+    display: none;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  body[data-links=false] #reader-domain {
+    display: none;
+  }
+  #reader-domain {
+    font-size: 0.9em;
+    line-height: 1.48em;
+    padding-bottom: 4px;
+    font-family: Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    border-bottom-color: currentcolor;
+    color: #0095dd;
+  }
+  #reader-title {
+    font-size: 1.6em;
+    line-height: 1.25em;
+    width: 100%;
+    margin: 20px 0;
+    padding: 0;
+  }
+  #reader-credits {
+    font-size: 0.9em;
+    line-height: 1.48em;
+    margin: 0 0 10px 0;
+    padding: 0;
+    font-style: italic;
+  }
+  #reader-estimated-time {
+    font-size: 0.85em;
+    line-height: 1.48em;
+    margin: 0 0 10px 0;
+    padding: 0;
+  }
+  #reader-credits:empty {
+    disply: none;
+  }
+  </style>
+</head>
+<body data-images="true" data-links="true" data-mode="sepia" data-font="sans-serif" data-loaded="true">
+  <span></span> <!-- for IntersectionObserver -->
+  <a id="reader-domain" href="https://www.physixfan.com/weishenmepinfanjiaoyiderendaduoshuzaigushishangdoupeiqianleyigeyouqudexiaoshuxueyouxiyexua/">www.physixfan.com</a>
+  <h1 dir="auto" id="reader-title">为什么频繁交易的人大多数在股市上都赔钱了？一个有趣的小数学游戏也许可以解答 - physixfan</h1>
+  <div dir="auto" id="reader-credits"></div>
+  <div dir="auto" id="reader-estimated-time">2-3 minutes</div>
+  <hr>
+  <div id="readability-page-1" class="page"><div id="post-3579">
+						
+						<div>
+
+						<p><strong>作者： physixfan </strong></p><p>今天偶然读到了<a href="https://www.scientificamerican.com/article/is-inequality-inevitable/" target="_blank" rel="noopener noreferrer">这篇文章</a>，里面提到的一个简单的小数学游戏相当有意思。</p>
+<p>假设有这么一家赌场提供了这么一个你可以玩无穷多次的游戏：扔一个硬币，若正面向上，则你的资产变成当下的 1.2 倍；若反面向上，则你的资产变成当下的 0.83 倍。你会选择玩这个游戏吗？</p>
+<p>有两种分析这个游戏的方式。</p>
+<p>第一种：不论我玩的时候的本金m是多少，玩下一次的时候，收益的期望总是 m*(1.2-1)*1/2+m*(0.83-1)*1/2。因为赢钱的时候赢 0.2 总是大于赔钱的时候赔 -0.17，所以期望总是正的，那就应该玩，而且要一直玩无限多次。</p>
+<p>第二种：若一直玩下去，就会有赢有输，所以应该把 1.2 和 0.83 乘起来看是否大于1。结果是 1.2*0.83=0.996，小于1，因此久赌必输，不能玩。</p>
+<p>这两种分析哪一种更有道理呢？大家可以先想想看。</p>
+<p>我多年不学数学了，概率论早就忘光了，因此就写了个小代码来模拟一下如果玩这个游戏，会是什么结果。</p>
+
+<div><div><pre><span>import</span> numpy <span>as</span> np
+<span>import</span> matplotlib.<span>pyplot</span> <span>as</span> plt
+&nbsp;
+P <span>=</span> <span>100</span> <span># Number of players</span>
+N <span>=</span> <span>30000</span> <span># Total times played for one player</span>
+win <span>=</span> <span>1.2</span>
+lose <span>=</span> <span>0.83</span>
+Num_of_winner <span>=</span> <span>0</span>
+Money_of_the_luckiest_winner <span>=</span> <span>0.0</span>
+&nbsp;
+<span>for</span> j <span>in</span> <span>range</span><span>(</span>P<span>)</span>:
+    m <span>=</span> np.<span>zeros</span><span>(</span>N<span>)</span>
+    m<span>[</span><span>0</span><span>]</span> <span>=</span> <span>10000.0</span>
+    <span>for</span> i <span>in</span> <span>range</span><span>(</span><span>1</span><span>,</span>N<span>)</span>:
+        <span>if</span> np.<span>random</span>.<span>randint</span><span>(</span><span>2</span><span>)</span>:
+            m<span>[</span>i<span>]</span> <span>=</span> m<span>[</span>i-<span>1</span><span>]</span>*win
+        <span>else</span>:
+            m<span>[</span>i<span>]</span> <span>=</span> m<span>[</span>i-<span>1</span><span>]</span>*lose
+&nbsp;
+    <span>if</span> m<span>[</span>-<span>1</span><span>]</span><span>&gt;</span>m<span>[</span><span>0</span><span>]</span>:
+        Num_of_winner +<span>=</span> <span>1</span>
+    <span>if</span> m<span>[</span>-<span>1</span><span>]</span><span>&gt;</span>Money_of_the_luckiest_winner:
+        Money_of_the_luckiest_winner <span>=</span> m<span>[</span>-<span>1</span><span>]</span>
+    plt.<span>plot</span><span>(</span>m<span>)</span>
+&nbsp;
+&nbsp;
+<span>print</span><span>(</span>Num_of_winner<span>)</span>
+<span>print</span><span>(</span>Money_of_the_luckiest_winner<span>)</span>
+plt.<span>xlabel</span><span>(</span><span>'Times played'</span><span>)</span>
+plt.<span>ylabel</span><span>(</span><span>'Money'</span><span>)</span>
+plt.<span>show</span><span>(</span><span>)</span></pre></div></div>
+
+<p>在上面这段代码中，我模拟了100个玩家，每人玩30000次这个游戏，看看他们最后的资产有多少。</p>
+<p>结果很有意思：其中绝大多数玩家的资产都可算是归零了！</p>
+<p>最后print出来的 Num_of_winner 是资产大于本金的人，因为有随机性，所以每次运行结果肯定不同，但大多时候都是100人中有2~3人最终赢钱了而已。</p>
+<p>更有意思的是，最后print出来的100人里面最后资产最多的人最后到底有多少资产&nbsp;Money_of_the_luckiest_winner，经常是8位数9位数的资产（本金是1万）！这绝对是个赢者通吃的游戏。</p>
+<p>下面贴一下其中一次模拟的图，大家可以看看：</p>
+<p><img loading="lazy" src="https://www.physixfan.com/wp-content/uploads/dice2-1024x768.png" alt="" width="1024" height="768" srcset="https://www.physixfan.com/wp-content/uploads/dice2-1024x768.png 1024w, https://www.physixfan.com/wp-content/uploads/dice2-300x225.png 300w, https://www.physixfan.com/wp-content/uploads/dice2-768x576.png 768w, https://www.physixfan.com/wp-content/uploads/dice2.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px"></p>
+<p>过程中纵坐标最高都到了10^13这个量级了，但最后的时候肯定没这么多。放大一下最后的结果，是这样的：</p>
+<p><img loading="lazy" src="https://www.physixfan.com/wp-content/uploads/dice3-1024x768.png" alt="" width="1024" height="768" srcset="https://www.physixfan.com/wp-content/uploads/dice3-1024x768.png 1024w, https://www.physixfan.com/wp-content/uploads/dice3-300x225.png 300w, https://www.physixfan.com/wp-content/uploads/dice3-768x576.png 768w, https://www.physixfan.com/wp-content/uploads/dice3.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px"></p>
+<p>一个玩家遥遥领先，远远甩开了后面的其他所有玩家。</p>
+<p>把最后的那一块继续放大，在排除掉了前4名之后总算纵坐标不需要用科学计数法了😂，剩下的玩家的资产都集中在0那里：</p>
+<p><img loading="lazy" src="https://www.physixfan.com/wp-content/uploads/dice4-1024x768.png" alt="" width="1024" height="768" srcset="https://www.physixfan.com/wp-content/uploads/dice4-1024x768.png 1024w, https://www.physixfan.com/wp-content/uploads/dice4-300x225.png 300w, https://www.physixfan.com/wp-content/uploads/dice4-768x576.png 768w, https://www.physixfan.com/wp-content/uploads/dice4.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px"></p>
+<p>画一张纵坐标是对数坐标的图的话，可以更直观的看到大多数玩家资产向下的趋势（和上面几张不是同一个run）：</p>
+<p><img loading="lazy" src="https://www.physixfan.com/wp-content/uploads/dice1-1024x768.png" alt="" width="1024" height="768" srcset="https://www.physixfan.com/wp-content/uploads/dice1-1024x768.png 1024w, https://www.physixfan.com/wp-content/uploads/dice1-300x225.png 300w, https://www.physixfan.com/wp-content/uploads/dice1-768x576.png 768w, https://www.physixfan.com/wp-content/uploads/dice1.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px"></p>
+<p>总结一下模拟的结果：绝大多数玩家玩到最后都归零了，只有极少数玩家能够赢得超过本金的钱，而赢得最多的那个人的最终资产远远超过其他人很多很多。</p>
+<p>其实也不会有赌场提供这个游戏的，因为最一开始的第一种分析方式的确是没错的，玩家期望的确为正，赌场会赔钱。但第二种分析方式仍然有价值：只有1个人基本赢走了所有钱，剩下的人都归零了。</p>
+<p>虽然没有赌场提供这个游戏，但是现实生活中，有一个地方跟这个小游戏太像了：股市！股市不是零和博弈，整体而言长期来看股市肯定是往上涨的，因为人类的生产力在提升。你买大盘指数基金buy&amp;hold的话，期望肯定是正的。然而，股市每天都在涨涨跌跌，无数的人在里面频繁交易，最后血本无归。当然也有人最后成了大赢家，然而你能保证你是那个幸运的0.001%吗？</p>
+<p>//知乎网友Richard Xu为本文中的小数学游戏提供了解析的分析，感兴趣的朋友们可以读一下：《<a href="https://zhuanlan.zhihu.com/p/103297941" target="_blank" rel="noopener noreferrer">“有趣的数学小游戏”背后的数学原理</a>》。</p>
+<p>//在写完这篇文章后，经过讨论又学到了有意思的东西，详见《<a href="https://www.physixfan.com/yongkailipanjuwanzhuanqianwenzhongdeyigeyouqudexiaoshuxueyouxi/" target="_blank" rel="noopener noreferrer">用凯利判据玩转前文中的“一个有趣的小数学游戏”</a>》。</p>
+
+ 																				</div><!--end entry-->
+						<!--end meta-->
+					</div></div>
+  <span></span> <!-- for IntersectionObserver -->
+
+</body><style>@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=IBM+Plex+Serif:wght@400;500;700&family=Montserrat:wght@400;700&family=Zilla+Slab:wght@400;500&display=swap'); body {
+      font-size:  19px;
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 28px;
+      width: 850px;
+    }</style><style>body {
+  padding-bottom: 64px;
+}
+a:link, a:link:hover, a:link:active {
+  color: #0095dd;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style></html>

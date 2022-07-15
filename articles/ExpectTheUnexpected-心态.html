@@ -1,0 +1,175 @@
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style>
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 30px auto 0 auto;
+    padding: 10px;
+  }
+  body[data-mode="light"] {
+    color: #2B2B2B;
+    background-color: #EBEBEB;
+  }
+  body[data-mode="dark"] {
+    color: #D8D8D8;
+    background-color: #464646;
+  }
+  body[data-mode="sepia"] {
+    color: #2B2B2B;
+    background-color: #E7E2D5;
+  }
+  body[data-mode="black"] {
+    color: #ACACAC;
+    background-color: #121212;
+  }
+  body[data-loaded=true] {
+    transition: color 0.4s, background-color 0.4s;
+    margin-top: 56px;
+  }
+  body[data-images=false] img {
+    display: none;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  body[data-links=false] #reader-domain {
+    display: none;
+  }
+  #reader-domain {
+    font-size: 0.9em;
+    line-height: 1.48em;
+    padding-bottom: 4px;
+    font-family: Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    border-bottom-color: currentcolor;
+    color: #0095dd;
+  }
+  #reader-title {
+    font-size: 1.6em;
+    line-height: 1.25em;
+    width: 100%;
+    margin: 20px 0;
+    padding: 0;
+  }
+  #reader-credits {
+    font-size: 0.9em;
+    line-height: 1.48em;
+    margin: 0 0 10px 0;
+    padding: 0;
+    font-style: italic;
+  }
+  #reader-estimated-time {
+    font-size: 0.85em;
+    line-height: 1.48em;
+    margin: 0 0 10px 0;
+    padding: 0;
+  }
+  #reader-credits:empty {
+    disply: none;
+  }
+  </style>
+</head>
+<body data-images="true" data-links="true" data-mode="sepia" data-font="sans-serif" data-loaded="true">
+  <span></span> <!-- for IntersectionObserver -->
+  <a id="reader-domain" href="http://plaxy314.blogspot.com/2020/01/blog-post.html">plaxy314.blogspot.com</a>
+  <h1 dir="auto" id="reader-title">心态</h1>
+  <div dir="auto" id="reader-credits"></div>
+  <div dir="auto" id="reader-estimated-time">4-4 minutes</div>
+  <hr>
+  <div id="readability-page-1" class="page"><div id="post-body-2210059892278339784" itemprop="description articleBody"><p>
+投资股市心态很重要。股市很liquid，assets are highly diversified, transaction cost is low，加杠杆方式各种各样，杠杆率可高达20X。而且盘子极大，你一天之内你进出几百万，对市场一点影响也没有。这些都是股市的优点，但是大部分的散户反倒被这所害，关键还是因为他们是抱着一种投机而不是投资的心态。</p><p>
+
+
+大家先来看一下股市大盘,比如标普500，几十年下来的长期几何平均收益，daily return大概是~0.02%. 但实际上股市每天的价格1~2%波动是常有的事，也就是你的大脑要应付1：50~100的信噪比。No matter what genius you are, the part of your brain in charge of fight or flight response simply is not equipped to pick up such signals from the noises. </p><p>
+
+
+如果你的进出股市的频率是以天或以月计，你不用计算机实现你的策略，而是凭感觉来买卖，那么你会很难挣钱。这并不是说这样的操作没有人会挣到钱，相反每天总是会有很多人挣到钱，但是这些人挣到钱的原因大体都可以归结为运气（概率），而不是他们自己觉得的原因。</p><p>
+
+
+能够在这个频段上consistently挣钱是一些HFT和model-based trading strategy, 前者为了几毫秒的竞争优势可以自己去铺光缆, 后者是诸如James Simon之类的牛人. 即便在他们之间，竞争也是异常激烈，每年的利润空间都一直在压缩。</p><p>
+
+个人投资也并不是没有优势的。对于个人来说，投资的目的一般是为了几十年后的退休，这期间还会一直往里放钱。而机构投资者每年每季度都有报表的压力，一有风吹草动客户就要提现，经常是刚好要加仓的时候。所以个人投资这于专业人士最大的优势是真正长期投资和 commitment of future cash inflow. </p><p>
+
+个人投资者最好不要快进快出，想着一夜暴富，这是拿自己的短处和别人的长处相拼。不管你用什么投资策略,你至少要觉得这种策略会适用的将来3到5年，甚至更长。如果你觉得3到5年实在太长没法预测，那么你的策略可能本身就有大问题。这其实和很多地主和做实业的time horizon相吻合，很少有成功的投资者在买房产或开公司时想着三五个月后就卖的。</p><p>
+
+解决了time horizon的问题，再来说一下怎么应对市场的波动. 首先你要知道: Nothing is certain in the market but uncertainty, if you cannot stomach uncertainty, stay away from the market. PERIOD.</p><p>
+
+有些人用自己今天挣了或陪了多少钱来衡量市场的波动，这显然是有问题的，因为数目大小还和你的基数有关。大部分成熟的投资者知道要看相对的percentage change,而不是绝对的dollar amount。但是如果这个绝对数字和自己每年的工资或生活费用相比太大或太小，他们还是会乱了阵脚或行事轻率，做出些错误的决定。</p><p>
+
+过去十年，帮助我应付市场波动的方法有两种：一是把价格上的波动转化为时间上的波动来思考。比如2018年年底大跌, 跌幅和跌速都让人心惊肉跳，但如果你换算成时间，那只不过回到一年多以前，换句或说，I am just as rich or as poor as myself about one year ago and my lifestyle has changed very little since then. So, what's the big deal?</p><p>
+
+又比如，2000/2 dot com泡沫破灭和2008/9次贷危机相比，前者跌幕比后者大多了，但前者只把时间往回推了4,5年，而后者推回了十来年，所以后者对社会,经济的影响远大于前者.换句话说，后者是比前者更难得的一次机遇。</p><p>
+
+每个投资者都希望自己是个时间旅行者，哪怕是只看到明天报纸的头条就可以发大财了。每次市场的波动其实就是一次短暂的时间旅行，如果2008/9年的你有机会告诉1998/9年的你，市场到哪了，只要你相信世界不会永远停留在1998/9年或回到更以前，你就会发觉这机会和你可以时间旅行看明天的头条没什么区别。同理，2019涨得这么疯其实就是开始透支未来,哪天要回归现在你就不会太惊慌。</p><p>
+
+我另一种应对市场波动的方法就是，每次我要进入或退出某个仓位前，我都会把支持和反对的理由一一列出来，最好是写下来，然后放在一边凉一凉。过上一段时间在去看一下，这些理由还有没有效。如果因为这段时间内发生的事情自己的想法有所改变，可能自己以前的想法欠成熟，或是自己在思维方式上有重大的盲点。</p><p>
+
+如果这样反复考虑下来，几个月甚至一两后还是觉得某个策略是可行的话，自己再去执行起来就不会患得患失了。而且十天半个月间的市场波动应该丝毫不会影响我决定的执行。</p><p>
+
+不少投资者的思维方式还停留在，“我觉得市场明天（或将来）要涨或跌，所以我今天要买或卖”。但这个世界 fundamentally uncertain. 所有的结果都是有可能的，因此我们必须Always expect the unexpected! 在想某个事件发生的可能性时，不能只是是或否，涨或跌, 而应该是一个probability distribution. 我们的投资决定应该是评估了所有的可能后，基于自己的风险承受能力做出的一个trade off, 而不是跟着感觉走。</p><p>
+
+财经访谈节目上的新闻，专家的意见不是瞎掰就是有意的误导，即便是顶着Nobel光环的经济学家也是如此。这些人对他们的观点但凡有点信心，他们早会在市场上提现了，哪有时间上节目挣那点小钱。不要去指望有谁能给tips发大财，唯一有用的tips是insider information,但没有人会冒着坐牢的危险给你通风报信，有人有时候蒙对了也只是道听途说的结果。</p><p>
+
+最后聊一下杠杆。炒房也好，办企业也好，一个主要的事情就是融资。owners一般不想冲稀自己的股份，但只要一借钱就绕不过杠杆的问题。</p><p>
+
+房贷是大部分人加杠杆的方式，但房贷的利息其实是比较高的，而且银行的rate滞后Federal rate cut 很多。我记得2009-2011间，我天天给银行打电话想借钱，但每家银行都忙着修补自己的balance sheet, 贷款的门槛很紧，你只靠房贷会错失很多机会。</p><p>
+
+当时有个朋友给我介绍了Interactive Brokers,如果你有比较高的balance，IB的margin rate只比federal rate高一点，而且它紧跟rate cut。如果你已经决定了要上杠杆，IB的 margin loan可能要比房贷合算，而且借款的多少长短很随意，不像房贷总是一大笔长期的commitment。当然你必须维持足够大的cushion，不要太贪心，否则margin call就麻烦了。</p><p>
+
+还有一种加杠杆的方式是ES-minis. 它成本比IB的margin loan还要低些，杠杆一直可以加到20X以上。有兴趣的朋友可以自己去研究一下。我在这就不多讲，免得把一些不适合做金融衍生物的人引导上破产跳楼之路。</p><p>
+
+我对投资感兴趣，不但因为这是我实现财务自由之路，而且是对智力的挑战，行为处事的考验.o In the world of investing, you have to be curious, humble and brutally honest with yourself. At the same time, you must also be a &nbsp;decisive and displined practioner, able to execute your strategies with a sniper's precision, one shot, one kill.
+</p>
+</div></div>
+  <span></span> <!-- for IntersectionObserver -->
+
+</body><style>@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=IBM+Plex+Serif:wght@400;500;700&family=Montserrat:wght@400;700&family=Zilla+Slab:wght@400;500&display=swap'); body {
+      font-size:  19px;
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 28px;
+      width: 850px;
+    }</style><style>body {
+  padding-bottom: 64px;
+}
+a:link, a:link:hover, a:link:active {
+  color: #0095dd;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style></html>

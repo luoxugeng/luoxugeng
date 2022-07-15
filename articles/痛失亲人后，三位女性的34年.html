@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <base target="_blank">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+  position: relative;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color:  #222;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color:  #eee;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color:  #5b4636;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color:  #586e75;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color:  #2e3440;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color:  #cec4ac;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #839496;
+  border-color:  #839496;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color:  #e5e9f0;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] ::selection {
+  background-color: #fff740;
+  color: #000;
+}
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+<title>乐活--痛失亲人后，三位女性的34年 :: Reader View</title></head>
+<body tabindex="1" data-images="true" data-mode="sepia" data-font="sans-serif" style="user-select: initial;"><h1 dir="auto" id="reader-title">痛失亲人后，三位女性的34年</h1>
+  <span dir="auto" id="reader-credits"></span>
+  <span dir="auto" id="published-time"></span>
+  <hr>
+  <div id="readability-page-1" class="page">
+					<p><br>
+</p>
+
+<p>
+	最近，一则关于日航123号空难的故事引起了关注。
+</p>
+<p>
+空难发生在34年前，1985年8月12日，日航123号航班。有520人罹难。</p><p>
+
+这当中有一位年仅9岁的小男孩是第一次独自乘坐飞机。</p><p>
+
+在他遇难后，母亲长期被自责的情绪所折磨，因为她无法想象：</p><p>
+
+年幼的孩子是如何走完生命最后的恐惧时刻。</p><p>
+
+直到有一天，她接到一通来自陌生人的电话......</p><p>
+
+
+
+这位母亲向 Lens 讲述了这段往事， 还原了她的苦厄与救赎。</p><p>
+
+
+
+
+
+为了看一场棒球决赛，9岁的健独自坐上东京飞往大阪的飞机。</p><p>
+
+这是他自出生以来第一次独自远行。</p><p>
+
+把他送到机场后，母亲美谷岛邦子刚回到家，就看到了那架航班出事的消息。</p><p>
+
+她立刻折返回机场，并随着急救人员上了山——飞机坠毁在距离东京约100公里远的高天原山中。</p><p>
+	<img src="https://www.dapenti.com:99/dapenti/4d73c7d3/eecc8ca0.jpg" alt="">
+</p>
+
+<p>
+（左）9岁时的健；（右）美谷岛近照</p><p>
+
+
+
+一路上，美谷岛都在心中默念：“不是真的、不是真的......”</p><p>
+
+但这种信念在来到惨烈的现场后彻底粉碎了：509名乘客和15名机组人员中，仅4人生还。</p><p>
+
+
+
+她的丈夫在一旁不停地给儿子道歉，他们不得不痛苦地接受现实：</p><p>
+
+“已经不会回来了呢……我放弃了。我只有放弃了。”</p><p>
+
+一边说，美谷岛一边用力抚摸着一块飞机残骸。</p><p>
+
+那时，健的遗体还没找到。在美谷岛心中，飞机的残骸就像儿子遗体的一部分。</p>
+<p>
+美谷岛在遇难现场的视频资料</p><p>
+
+
+
+健的葬礼结束后，美谷岛每天在沉重的负罪感中以泪洗面。</p><p>
+
+“失去最爱的人后自己却活着，是比死亡还痛苦的事。”</p><p>
+
+“是我的错。我没能保护好他。”</p><p>
+
+她无法想象9岁的孩子在飞机坠毁前的那段时间是怎样的场景。</p><p>
+
+自责到深处，甚至动了自杀的念头。</p><p>
+	<img src="https://www.dapenti.com:99/dapenti/bdf1c016/d6c155c7.jpg" alt="">
+</p>
+
+<p>
+
+
+
+01</p><p>
+
+
+
+一个陌生来电：</p><p>
+
+“我的女儿生前是</p><p>
+
+一个很温柔的人，也很喜欢孩子”</p><p>
+
+
+
+直到有一天，美谷岛接到一通来自四国岛的电话。</p><p>
+
+电话的那头，是一位中年女性的声音。</p><p>
+
+她告诉美谷岛，自己的女儿也在那架飞机上，当时就坐在健的旁边。</p><p>
+
+“我女儿生前是一个很温柔的人，也很喜欢孩子，在最后的时刻，她一定有紧紧握住您孩子的双手，您的儿子不是孤单一人。”</p><p>
+	<img src="https://www.dapenti.com:99/dapenti/5eb57bfd/c50f68a6.jpg" alt="">
+</p>
+
+<p>
+能仁遇难的女儿，与健在飞机上邻座</p><p>
+
+
+
+时至今日，美谷岛清晰地记得那位母亲对她说的每个字。她告诉Lens，这段话就是把她的救命稻草。</p><p>
+
+
+
+“从接到电话的那天开始，我四分五裂的心开始一点一点地愈合。曾经刺穿我的悲伤得到了缓解。”</p><p>
+
+
+
+打来电话的人名叫能仁。</p><p>
+
+空难发生后，遇难者遗体都被汇集在附近一所中学的体育馆里，让家属认领。</p><p>
+
+在那里，美谷岛曾和能仁有过一面之缘。</p><p>
+
+
+
+当时，健的遗体还没有找到，美谷岛正一个人在体育馆外望着天空，身后突然传来一个女人的声音：“御巢鹰的天空是哪边呢？（当时媒体将事发地点误报为御巢鹰山）”</p><p>
+
+那个女人便是能仁。</p><p>
+	<img src="https://www.dapenti.com:99/dapenti/9826b680/3765d30c.jpg" alt="">
+</p>
+
+<p>
+日航123号的坠毁现场</p><p>
+
+
+
+两人简略地聊了聊，并不知晓他们的孩子坐在一起。随后便分别了，没有互留联络方式。</p><p>
+
+能仁再次联系到美谷岛，其实有些偶然。</p><p>
+
+
+
+空难发生后，一些遇难者家属希望可以共享信息，有人收集了大家的联络方式，并制成一份名单，其中就有美谷岛。</p><p>
+
+这份名单随后陆续发放，其中一份到了能仁手里。</p><p>
+	<img src="https://www.dapenti.com:99/dapenti/2246c97f/c8502c05.jpg" alt="">
+</p>
+<p>
+如今，遇难者家属之间已经有一本定期发行的共享信息的刊物</p><p>
+
+
+
+
+
+拨通电话时，能仁其实正处于和美谷岛相似的境地。</p><p>
+
+她是一个出家人。但女儿的遇难让习惯了淡然处事的她方寸大乱。</p><p>
+
+
+
+“我知道自己不应该憎恨任何人，要坦然接受女儿的死。</p><p>
+
+平日里我总给施主们讲类似道理，可现在，我自己却做不到。”</p><p>
+
+能仁在电话中告诉美谷岛。</p><p>
+
+
+
+这番互诉衷肠促使美谷岛做了一个重要的决定:</p><p>
+
+当年的12月，由遇难者家属组成的遗族会”8·12联络会“成立了。</p><p>
+
+
+美谷岛担任了这个遗族会的会长。</p><p>
+
+“只有家属才能懂得家属的心情。”</p><p>
+
+美谷岛说了自己成立遗族会的原因。</p><p>
+
+
+
+
+
+
+
+
+
+02</p><p>
+
+
+
+呕吐袋上的遗言：</p><p>
+
+“真知子，孩子就拜托你了”</p><p>
+	<img src="https://www.dapenti.com:99/dapenti/9c3a40c7/d37f8893.jpg" alt="">
+</p>
+
+<p>
+谷口真知子</p><p>
+
+
+
+还有一位女性，叫谷口真知子，她也是遗族会的成员。</p><p>
+
+
+
+飞机出事当天的深夜，由于丈夫谷口迟迟未归，又看到飞机失事的新闻，真知子忐忑地给谷口的同事打了个电话。</p><p>
+
+当确认谷口就在那架飞机上时，她直接昏厥在地。</p><p>
+	<img src="https://www.dapenti.com:99/dapenti/bf8cd4b0/fc1ed578.jpg" alt="">
+</p>
+
+<p>
+遗体停放在中学体育管里</p><p>
+
+
+
+
+
+
+现场，家属们必须一个棺材一个棺材地打开来进行遗体确认。</p><p>
+
+
+
+真知子因为身体虚弱无法前往，代替她前去的，是年幼的儿子。</p><p>
+
+男孩在看见父亲遗体后崩溃痛哭。</p><p>
+
+真知子则一夜白了头，体重短时间掉了10多公斤。</p><p>
+
+
+
+过了些日子，谷口随身的遗物被寄来了。</p><p>
+	<img src="https://www.dapenti.com:99/dapenti/11e9c35f/b89d22a4.jpg" alt="">
+</p>
+<p>
+谷口的遗物</p><p>
+
+
+
+在一个沾着血迹的旅客呕吐袋上，真知子发现了几行字迹：</p><p>
+
+“真知子，</p><p>
+
+孩子就拜托你了。</p><p>
+
+——谷口正胜”</p><p>
+
+
+
+这是谷口在颠簸的机舱中挣扎着写下的遗言。</p><p>
+
+真知子再次强烈地感受到：丈夫真的不在了。但也因这几行字，她决定振作起来：</p><p>
+
+”我必须好好回应丈夫的遗言。“</p><p>
+
+
+
+
+
+
+
+
+
+03</p><p>
+
+
+
+“不想让别人觉得我们</p><p>
+
+都是一副被悲伤击垮的样子”</p><p>
+
+
+
+一转眼，34年过去了。</p><p>
+
+空难发生时还荒僻无路的高天原山，如今已经修了路，以方便家属凭吊。山顶直升机曾把尸体运走的地方，如今竖着一座“升魂之碑”。</p><p>
+	<img src="https://www.dapenti.com:99/dapenti/41b995b5/b8d97f53.jpg" alt="">
+</p>
+
+<p>
+34年前的高天原山，搜救时还没有道路可走</p><p>
+	<img src="https://www.dapenti.com:99/dapenti/dfd6231f/5efa1ab0.jpg" alt="">
+</p>
+
+<p>
+现在的高天原山</p><p>
+
+
+
+
+8·12联络会一直步履不停地活动至今，在联络会的官网上，写着这样一句：</p><p>
+
+“我们不想让别人觉得我们都是一副被悲伤击垮、低着头苟活的样子。所以我们特意把‘遗族’两个字从名字中去掉了。”</p><p>
+
+
+
+在他们的呼吁下，13年前，日本成立了“航空安全启蒙中心”。</p><p>
+
+后来，其他重大灾难的遇难者家属也陆续加入，这已经成了一个社区、一种文化。</p><p>
+
+
+
+每年日航123号事故纪念日前一天，不同事故的遇难者家属们都会聚在高天原山中的河边放水灯，来悼念死者。</p>
+
+<p>
+去年的放水灯活动</p><p>
+
+
+
+而美谷岛、能仁和真知子也在过去的34年中，以不同的方式各自消化着亲人的离去。</p><p>
+
+
+
+
+
+04</p><p>
+
+
+34年过去，</p><p>
+
+她们过得怎么样？</p><p>
+
+
+
+真知子一路抚养两个儿子到结婚成家，她才如释重负地想：</p><p>
+
+“我这算是好好地回应了孩子父亲的遗言了吗？”</p><p>
+
+
+
+有一年秋天，真知子陪着孙女在庭院里看接满果实的柿子树。</p><p>
+
+“这棵柿子树是谁种的呀？”孙女问。</p><p>
+
+“是你爸爸的爸爸种下的。”真知子答道。</p><p>
+
+“我好想见一见爸爸的爸爸啊。”孙女不假思索地回了这句。</p>
+
+
+<p>
+	<img src="https://www.dapenti.com:99/dapenti/1a8969bf/46a4217d.jpg" alt="">
+</p>
+
+<p>
+
+因为这句话，两年后，一本叫做《爸爸的柿子树》的绘本出版了。</p><p>
+
+作者：“谷口真知子”。</p><p>
+
+其中写道：</p><p>
+
+“柿子虽然很美味。</p><p>
+
+但不知为何，总是有股眼泪的味道。”</p>
+
+<p>
+
+
+美谷岛在事故发生后的第一年，只要听到“健”这个名字就会泪流满面。</p><p>
+
+从那以后，她都拜托别人不要和她主动谈起健。</p><p>
+
+但最近几年，她慢慢能跟人聊起健了。</p><p>&nbsp;如果健还活着，现在应该已经43岁了。</p><p>
+
+在美谷岛心中，健还是9岁的样子。</p><p>
+
+
+
+所以，在健的墓牌下，她埋下了《哆啦A梦》的全套漫画——其中，同龄人熟知的大部分情节，健都没机会再看了。</p><p>
+	<img src="https://www.dapenti.com:99/dapenti/76a310a4/83229737.jpg" alt="">
+</p>
+
+<p>
+美谷岛在健的墓牌前</p><p>
+
+
+
+现在，美谷岛经营着一个残障人士的援助机构。在她看来，援助残障人士和援助事故受害者家属在很多地方都是相似的。&nbsp;</p><p>
+
+她希望这些人内心的痛苦能够被听到，被帮助：</p><p>
+
+
+
+“‘我想死’这句话实际上是‘我想活下去’的内心呐喊。</p><p>
+
+‘我是不被需要的’其实是在说‘我想继续留在这里’。</p><p>
+
+这些话都是求救信号，我们社会中必须有一个接收这些信号的组织。”</p><p>
+
+她这样对Lens讲述了自己从事援助工作的体会。</p><p>
+
+
+
+她很喜欢 Lens 官网上的这段话：</p><p>
+
+“我们希望让美好的事物有价值，希望认真生活的人有安慰。即使是一道最微弱的光，我们也要把它洒向需要温暖的生活……”</p><p>
+
+
+
+在闲暇时间，美谷岛会不定期去各种学校给小朋友们讲述健的故事，以此告诫大家生命的可贵。</p><p>
+
+“这是健留给我的作业。”</p><p>
+
+她说希望自己有一天，也能来给中国的小朋友们讲这些故事。</p><p>
+	<img src="https://www.dapenti.com:99/dapenti/639e1af0/cf31868a.jpg" alt="">
+</p>
+
+<p>
+美谷岛在活动中</p><p>
+
+
+至于能仁，在那通电话后，她就和美谷岛成了挚友。</p><p>
+
+30多年来，两人时常互相造访，促膝长谈。每年的空难纪念日那天，她们总是一起登上高天原山，一起悼念失去的两个孩子。</p><p>
+
+
+
+“能仁在去年突然离世了。”美谷岛对Lens说。</p><p>
+
+“那个熟悉的电话铃声再也不会响起了。我到现在都还没走出这种寂寞。”</p><p>
+
+但美谷岛也告诉我们，这段友谊已经有了传承：</p><p>
+
+今年的空难纪念日，能仁的长女将代替母亲，和美谷岛一起登上高天原山。</p><p>
+
+
+在自己的书中，美谷岛曾引用过这样几句诗：</p><p>
+
+“与喜悦的汇聚相比，悲伤的汇聚似乎要离幸福更近。</p><p>
+
+与强大的结合相比，弱小的结合似乎要离真实更近。</p><p>
+
+与幸福的集合相比，不幸的集合似乎要离爱更近。”</p><p>
+
+
+
+正是这样，34年前，因为悲伤、弱小与不幸而结下的羁绊，在能仁突然离世后显得愈发深刻。</p><p>
+
+美谷岛很确信地告诉Lens：</p><p>
+	“当年那通电话里的声音，直到现在都一直温柔地包裹着我。”</p>
+				</div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+</body><style>body {
+      font-size:  20px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 900px;
+      text-align: justify
+    }
+    .page {
+      line-height: 30.0px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>
