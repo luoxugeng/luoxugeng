@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 7.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -22,18 +22,18 @@
     var CONFIG = {"hostname":"nemolaw.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="前言: 关于数据 读书笔记: 统计陷阱 数据本身会有什么问题? 1 存在偏颇的样本: 2 精心挑选的平均数 3 利用不充分的样本:   我教你用数据来欺诈 毫无意义的比较 生动的展示: 相关性和因果性的混淆 换一种说法   清醒过来吧,各位 对数字可以提出的5个问题: 附上一些有趣的统计说法: 总结和摘录 总结 摘录前言: 关于数据      比起冰冷的数据, 我们的决策通常是依赖于其他别的东西">
+  <meta name="description" content="前言: 关于数据 读书笔记: 统计陷阱 数据本身会有什么问题? 1 存在偏颇的样本: 2 精心挑选的平均数 3 利用不充分的样本:   我教你用数据来欺诈 毫无意义的比较 生动的展示: 相关性和因果性的混淆 换一种说法   清醒过来吧,各位 对数字可以提出的5个问题: 附上一些有趣的统计说法: 总结和摘录 总结 摘录      前言: 关于数据比起冰冷的数据, 我们的决策通常是依赖于其他别的东西">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(书)统计数字会撒谎">
 <meta property="og:url" content="https://nemolaw.com/writing/2016-11-10-statistical_pitfalls/index.html">
 <meta property="og:site_name" content="Nemo的轨迹">
-<meta property="og:description" content="前言: 关于数据 读书笔记: 统计陷阱 数据本身会有什么问题? 1 存在偏颇的样本: 2 精心挑选的平均数 3 利用不充分的样本:   我教你用数据来欺诈 毫无意义的比较 生动的展示: 相关性和因果性的混淆 换一种说法   清醒过来吧,各位 对数字可以提出的5个问题: 附上一些有趣的统计说法: 总结和摘录 总结 摘录前言: 关于数据      比起冰冷的数据, 我们的决策通常是依赖于其他别的东西">
+<meta property="og:description" content="前言: 关于数据 读书笔记: 统计陷阱 数据本身会有什么问题? 1 存在偏颇的样本: 2 精心挑选的平均数 3 利用不充分的样本:   我教你用数据来欺诈 毫无意义的比较 生动的展示: 相关性和因果性的混淆 换一种说法   清醒过来吧,各位 对数字可以提出的5个问题: 附上一些有趣的统计说法: 总结和摘录 总结 摘录      前言: 关于数据比起冰冷的数据, 我们的决策通常是依赖于其他别的东西">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s3.amazonaws.com/nemolaw/reverie.jpg">
 <meta property="og:image" content="http://7xwegb.com1.z0.glb.clouddn.com/datacando.jpg-blog">
 <meta property="og:image" content="https://img1.doubanio.com/lpic/s1084707.jpg">
-<meta property="article:published_time" content="2016-11-10T14:23:38.000Z">
-<meta property="article:modified_time" content="2022-07-05T07:07:03.733Z">
+<meta property="article:published_time" content="2016-11-11T06:23:38.000Z">
+<meta property="article:modified_time" content="2022-08-12T23:56:21.000Z">
 <meta property="article:author" content="NemoLaw">
 <meta property="article:tag" content="数理知识">
 <meta name="twitter:card" content="summary">
@@ -240,7 +240,7 @@
             <i class="far fa-calendar"></i>
           </span>
           <span class="post-meta-item-text">发表于</span>
-          <time title="" itemprop="dateCreated datePublished" datetime="2016-11-10T22:23:38+08:00">2016-11-10</time>
+          <time title="" itemprop="dateCreated datePublished" datetime="2016-11-10T22:23:38-08:00">2016-11-10</time>
         </span>
         <span class="post-meta-item">
           <span class="post-meta-item-icon">
@@ -283,35 +283,35 @@
         </span>
 
       <ul>
-<li><a href="#前言-关于数据">前言: 关于数据</a></li>
-<li><a href="#读书笔记-统计陷阱">读书笔记: 统计陷阱</a><ul>
-<li><a href="#数据本身会有什么问题">数据本身会有什么问题?</a><ul>
-<li><a href="#1-存在偏颇的样本">1 存在偏颇的样本:</a></li>
-<li><a href="#2-精心挑选的平均数">2 精心挑选的平均数</a></li>
-<li><a href="#3-利用不充分的样本">3 利用不充分的样本:</a></li>
+<li><a href="#%E5%89%8D%E8%A8%80-%E5%85%B3%E4%BA%8E%E6%95%B0%E6%8D%AE">前言: 关于数据</a></li>
+<li><a href="#%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E7%BB%9F%E8%AE%A1%E9%99%B7%E9%98%B1">读书笔记: 统计陷阱</a><ul>
+<li><a href="#%E6%95%B0%E6%8D%AE%E6%9C%AC%E8%BA%AB%E4%BC%9A%E6%9C%89%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98">数据本身会有什么问题?</a><ul>
+<li><a href="#1-%E5%AD%98%E5%9C%A8%E5%81%8F%E9%A2%87%E7%9A%84%E6%A0%B7%E6%9C%AC">1 存在偏颇的样本:</a></li>
+<li><a href="#2-%E7%B2%BE%E5%BF%83%E6%8C%91%E9%80%89%E7%9A%84%E5%B9%B3%E5%9D%87%E6%95%B0">2 精心挑选的平均数</a></li>
+<li><a href="#3-%E5%88%A9%E7%94%A8%E4%B8%8D%E5%85%85%E5%88%86%E7%9A%84%E6%A0%B7%E6%9C%AC">3 利用不充分的样本:</a></li>
 </ul>
 </li>
-<li><a href="#我教你用数据来欺诈">我教你用数据来欺诈</a><ul>
-<li><a href="#毫无意义的比较">毫无意义的比较</a></li>
-<li><a href="#生动的展示">生动的展示:</a></li>
-<li><a href="#相关性和因果性的混淆">相关性和因果性的混淆</a></li>
-<li><a href="#换一种说法">换一种说法</a></li>
+<li><a href="#%E6%88%91%E6%95%99%E4%BD%A0%E7%94%A8%E6%95%B0%E6%8D%AE%E6%9D%A5%E6%AC%BA%E8%AF%88">我教你用数据来欺诈</a><ul>
+<li><a href="#%E6%AF%AB%E6%97%A0%E6%84%8F%E4%B9%89%E7%9A%84%E6%AF%94%E8%BE%83">毫无意义的比较</a></li>
+<li><a href="#%E7%94%9F%E5%8A%A8%E7%9A%84%E5%B1%95%E7%A4%BA">生动的展示:</a></li>
+<li><a href="#%E7%9B%B8%E5%85%B3%E6%80%A7%E5%92%8C%E5%9B%A0%E6%9E%9C%E6%80%A7%E7%9A%84%E6%B7%B7%E6%B7%86">相关性和因果性的混淆</a></li>
+<li><a href="#%E6%8D%A2%E4%B8%80%E7%A7%8D%E8%AF%B4%E6%B3%95">换一种说法</a></li>
 </ul>
 </li>
-<li><a href="#清醒过来吧各位">清醒过来吧,各位</a></li>
-<li><a href="#对数字可以提出的5个问题">对数字可以提出的5个问题:</a></li>
-<li><a href="#附上一些有趣的统计说法">附上一些有趣的统计说法:</a></li>
-<li><a href="#总结和摘录">总结和摘录</a><ul>
-<li><a href="#总结">总结</a></li>
-<li><a href="#摘录">摘录</a><h1 id="前言-关于数据"><a href="#前言-关于数据" class="headerlink" title="前言: 关于数据"></a>前言: 关于数据</h1></li>
-</ul>
-</li>
+<li><a href="#%E6%B8%85%E9%86%92%E8%BF%87%E6%9D%A5%E5%90%A7%E5%90%84%E4%BD%8D">清醒过来吧,各位</a></li>
+<li><a href="#%E5%AF%B9%E6%95%B0%E5%AD%97%E5%8F%AF%E4%BB%A5%E6%8F%90%E5%87%BA%E7%9A%845%E4%B8%AA%E9%97%AE%E9%A2%98">对数字可以提出的5个问题:</a></li>
+<li><a href="#%E9%99%84%E4%B8%8A%E4%B8%80%E4%BA%9B%E6%9C%89%E8%B6%A3%E7%9A%84%E7%BB%9F%E8%AE%A1%E8%AF%B4%E6%B3%95">附上一些有趣的统计说法:</a></li>
+<li><a href="#%E6%80%BB%E7%BB%93%E5%92%8C%E6%91%98%E5%BD%95">总结和摘录</a><ul>
+<li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
+<li><a href="#%E6%91%98%E5%BD%95">摘录</a></li>
 </ul>
 </li>
 </ul>
-<p>比起冰冷的数据, 我们的决策通常是依赖于其他别的东西.</p>
+</li>
+</ul>
+<h1 id="前言-关于数据"><a href="#前言-关于数据" class="headerlink" title="前言: 关于数据"></a>前言: 关于数据</h1><p>比起冰冷的数据, 我们的决策通常是依赖于其他别的东西.</p>
 <p><img src="https://s3.amazonaws.com/nemolaw/reverie.jpg" alt="reverie,more than data"></p>
-<a id="more"></a>
+<span id="more"></span>
 
 <p>我们先来说说数据. 数据对你意味着什么?<br>你每天浏览的每一个网页, 加入购物车的每一个宝贝, 跟你好友的互动关系, 这些在你无感知的情况下储存为你个人的数据中心. 当然,在这个”免费”的互联网时代里,你的数据可不属于你.</p>
 <p>现在我看到数据,我更多的不是关心数据本身, 而是在想:</p>
@@ -322,10 +322,10 @@
 </ul>
 <p>把这三个个问题弄清楚了,下面对数据真伪的判断才有意义.</p>
 <p>说来也有意思,我最近半年的工作也是跟数据打交道,我接触的运营,产品都认为数据很重要,但我却没看到他们很成功利用数据的案例. 我看到的只是对数据的痴迷, 就好像我大学的一段时间里拼命下载电子书一样,单单看着书名就可以获得极大的满足感. 这是一种信息过度带来的自我满足的幻觉.</p>
-<p><a href="http://open.163.com/movie/2016/1/E/V/MBCBMP41R_MBCBN6SEV.html" target="_blank" rel="noopener">TED:如何利用大数据做出正确的判断</a> Talker 分享了一个这样的观念:我们在解决复杂问题时,总的来说只是在做两件事: <strong>一是把问题拆解,一点一点的深入分析,另外一个是把这些分析的结果再次组合在一起.</strong> 不断重复,最后得出你的结论.<br><img src="http://7xwegb.com1.z0.glb.clouddn.com/datacando.jpg-blog" alt="whatdatacando"></p>
+<p><a href="http://open.163.com/movie/2016/1/E/V/MBCBMP41R_MBCBN6SEV.html">TED:如何利用大数据做出正确的判断</a> Talker 分享了一个这样的观念:我们在解决复杂问题时,总的来说只是在做两件事: <strong>一是把问题拆解,一点一点的深入分析,另外一个是把这些分析的结果再次组合在一起.</strong> 不断重复,最后得出你的结论.<br><img src="http://7xwegb.com1.z0.glb.clouddn.com/datacando.jpg-blog" alt="whatdatacando"></p>
 <p> 数据和数据分析擅长的是拆分,一点一滴找到各个问题的原因.但它却不擅长把这些碎片聚合在一起.擅长聚合的是我们的大脑.依赖数据本身做出的决定最多是中规中矩,而不是你想要的惊艳. 无论在什么时候,莫大的荣誉是伴随着极高的风险.最终能让你落在正态分布曲线右端的,不会是数据,而是风险. 聚合的这一过程,有点像 AHA!moment. 总有一些你无法解释的感觉将你和冰冷的数据分开来,让你的决策不仅仅是依靠于数据.</p>
 <p>我觉得怎么运用书里面的知识,完全是要看你想达到什么样的目的.你可以用这本书的内容去迷惑你的老板,投资者,或者你可以用它来当做自卫的武器.像我这种,暂时就是看着玩, 看着别人玩.</p>
-<h1 id="读书笔记-统计陷阱"><a href="#读书笔记-统计陷阱" class="headerlink" title="读书笔记: 统计陷阱"></a>读书笔记: <a href="https://book.douban.com/subject/1100657/" target="_blank" rel="noopener">统计陷阱</a></h1><p><img src="https://img1.doubanio.com/lpic/s1084707.jpg" alt="统计数字会说谎"></p>
+<h1 id="读书笔记-统计陷阱"><a href="#读书笔记-统计陷阱" class="headerlink" title="读书笔记: 统计陷阱"></a>读书笔记: <a href="https://book.douban.com/subject/1100657/">统计陷阱</a></h1><p><img src="https://img1.doubanio.com/lpic/s1084707.jpg" alt="统计数字会说谎"></p>
 <p>下面是数据分析的三个要点:</p>
 <ul>
 <li>基础数据</li>
@@ -337,26 +337,25 @@
 <p>这本书按豆瓣评价的,只是一个入门的工具书.大部分是作者的观点,有一些是打字的时候自己想到的观点,柔和在一起.</p>
 </blockquote>
 <h2 id="数据本身会有什么问题"><a href="#数据本身会有什么问题" class="headerlink" title="数据本身会有什么问题?"></a>数据本身会有什么问题?</h2><h3 id="1-存在偏颇的样本"><a href="#1-存在偏颇的样本" class="headerlink" title="1 存在偏颇的样本:"></a>1 存在偏颇的样本:</h3><ul>
-<li><p>调查问卷显示大多数人持肯定意见</p>
+<li>调查问卷显示大多数人持肯定意见</li>
+</ul>
 <blockquote>
 <p>大多数持否定意见的人,已经随手将你的问卷丢进最近的纸篓中</p>
 </blockquote>
-</li>
-<li><p>1924即耶鲁毕业生现在平均收入可达$25111</p>
+<ul>
+<li>1924即耶鲁毕业生现在平均收入可达$25111</li>
+</ul>
 <blockquote>
 <p>首先,这个数据准确得令人质疑, 其次,这个数字大得不像是真的.这里最大的误差是来自于抽样的合理性: 25年后大多数毕业生已经无法联系,况且这种收入问题还涉及隐私.<br>愿意被统计其收入的一般来说混得不会太差,混得差的你不会见到他们的踪影,这些人被”暴力 “忽视了.这调查问卷基本是那些现在还能取得联系而且愿意回答这些问题的人”垄断”,基本没什么意义.</p>
 </blockquote>
-</li>
-</ul>
 <ul>
-<li><p>男性平均有3.6个心伴侣,女性则只有1.6个.结论:男生真的是花心</p>
+<li>男性平均有3.6个心伴侣,女性则只有1.6个.结论:男生真的是花心</li>
+</ul>
 <blockquote>
 <p>人们在回答问题的时候也不会真的说真话,可能会美化自己的形象.或者迎合提问者的偏好.所以要想真的使统计数据有效,不要问别人他们会怎么做,想办法调查他们已经做了的.话说在XXOO的时候是异性双方的吧,这样男女数字应是相近的,差异的在于,男生有夸大自己心伴侣数量的倾向(雄性魅力) ,女性则相反(反荡妇机制)</p>
 </blockquote>
-<p>问:这类隐私的话题要怎么调查?</p>
-<p>简单,利用条件概率,例如,你现在抛一枚硬币头像向上,则回答真话,不然请撒谎. 这样回收上来的问卷大致会有一半真话,一半假话.</p>
-</li>
-</ul>
+<p> 问:这类隐私的话题要怎么调查?</p>
+<p> 简单,利用条件概率,例如,你现在抛一枚硬币头像向上,则回答真话,不然请撒谎. 这样回收上来的问卷大致会有一半真话,一半假话.</p>
 <h3 id="2-精心挑选的平均数"><a href="#2-精心挑选的平均数" class="headerlink" title="2 精心挑选的平均数"></a>2 精心挑选的平均数</h3><p> 要知道,数学上不仅仅只有平均数,还有方差.众数,中位数,为什么呢?存在即合理,因为平均数有时候就是坑爹.举例就不说了,因为太熟悉了, 什么全国人均收入高达XXX, 人均住房面积有 XXX ,我不知道这些出于什么目的写出来的,或者我看到之后引起情绪波动它的目的就已经达到了吧. 对于平均数, 我们可以提出的问题:</p>
 <ul>
 <li>这个统计群体是哪些人?</li>
@@ -389,12 +388,12 @@
 </ul>
 <p>数据比是2:1,要是我们显示的时候把柱形图长宽都扩大两倍,就会给人一种4:1的假象</p>
 <h3 id="相关性和因果性的混淆"><a href="#相关性和因果性的混淆" class="headerlink" title="相关性和因果性的混淆"></a>相关性和因果性的混淆</h3><ul>
-<li><p>尝试一下”挂羊头卖狗肉”的做法:</p>
-<p>数据来自 XX 大学和结论来自 XX大学可是两码事.把自己的结论跟知名品牌扯在一块倒是个不错的策略–利用名人效应.</p>
-<p>警惕权威人士,到底资料的内容是权威的,还是仅仅与权威人士沾边. 而且,结论和资料之间还经过人的再加工</p>
-</li>
-<li><p>将看上去相似但实际没什么关系的两件事混淆在一起:<br>数据与结论之间并不是因果关系,而是未透露的第三个因素的产物;</p>
-</li>
+<li>尝试一下”挂羊头卖狗肉”的做法:</li>
+</ul>
+<p> 数据来自 XX 大学和结论来自 XX大学可是两码事.把自己的结论跟知名品牌扯在一块倒是个不错的策略–利用名人效应.</p>
+<p> 警惕权威人士,到底资料的内容是权威的,还是仅仅与权威人士沾边. 而且,结论和资料之间还经过人的再加工</p>
+<ul>
+<li>将看上去相似但实际没什么关系的两件事混淆在一起:<br>数据与结论之间并不是因果关系,而是未透露的第三个因素的产物;</li>
 </ul>
 <h3 id="换一种说法"><a href="#换一种说法" class="headerlink" title="换一种说法"></a>换一种说法</h3><p>模凌两可的平均数;<br>回报率上一年是3%,今年是6%,你可以说,利润增长了100%;<br>像上面说的利用百分比;<br>改变对比的基准;(给人一种好吊感觉)</p>
 <blockquote>
@@ -415,7 +414,7 @@
 <li>是否偷换了概念?</li>
 <li>即使如此,资料是否有意义?</li>
 </ol>
-<p><a href="https://book.douban.com/subject/4865011/" target="_blank" rel="noopener">哈佛商学院的秘密</a>一书只有一个简单的指导原则: 不断地问 so what? </p>
+<p><a href="https://book.douban.com/subject/4865011/">哈佛商学院的秘密</a>一书只有一个简单的指导原则: 不断地问 so what? </p>
 <h2 id="附上一些有趣的统计说法"><a href="#附上一些有趣的统计说法" class="headerlink" title="附上一些有趣的统计说法:"></a>附上一些有趣的统计说法:</h2><p> 该消毒剂可以消灭99%的细菌 (那剩下的1%强力菌会不会要了你的命?)</p>
 <p> 正确的治疗可以在7天内治愈感冒(一般感冒即使放着不理,7天后要么自动痊愈,要么就升级为其它了,反正不是感冒)</p>
 <p> 某国家50%的人工资低于平均水平(不一定两级分化,不信看看这4个人工资: 10,20,30,40,你看分布均匀但还是符合前面的说法)</p>
@@ -539,7 +538,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言-关于数据"><span class="nav-number">1.</span> <span class="nav-text">前言: 关于数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#读书笔记-统计陷阱"><span class="nav-number">2.</span> <span class="nav-text">读书笔记: 统计陷阱</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据本身会有什么问题"><span class="nav-number">2.1.</span> <span class="nav-text">数据本身会有什么问题?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-存在偏颇的样本"><span class="nav-number">2.1.1.</span> <span class="nav-text">1 存在偏颇的样本:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-精心挑选的平均数"><span class="nav-number">2.1.2.</span> <span class="nav-text">2 精心挑选的平均数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-利用不充分的样本"><span class="nav-number">2.1.3.</span> <span class="nav-text">3 利用不充分的样本:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我教你用数据来欺诈"><span class="nav-number">2.2.</span> <span class="nav-text">我教你用数据来欺诈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#毫无意义的比较"><span class="nav-number">2.2.1.</span> <span class="nav-text">毫无意义的比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生动的展示"><span class="nav-number">2.2.2.</span> <span class="nav-text">生动的展示:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关性和因果性的混淆"><span class="nav-number">2.2.3.</span> <span class="nav-text">相关性和因果性的混淆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#换一种说法"><span class="nav-number">2.2.4.</span> <span class="nav-text">换一种说法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#清醒过来吧-各位"><span class="nav-number">2.3.</span> <span class="nav-text">清醒过来吧,各位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对数字可以提出的5个问题"><span class="nav-number">2.4.</span> <span class="nav-text">对数字可以提出的5个问题:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#附上一些有趣的统计说法"><span class="nav-number">2.5.</span> <span class="nav-text">附上一些有趣的统计说法:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结和摘录"><span class="nav-number">2.6.</span> <span class="nav-text">总结和摘录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.6.1.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#摘录"><span class="nav-number">2.6.2.</span> <span class="nav-text">摘录</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80-%E5%85%B3%E4%BA%8E%E6%95%B0%E6%8D%AE"><span class="nav-number">1.</span> <span class="nav-text">前言: 关于数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E7%BB%9F%E8%AE%A1%E9%99%B7%E9%98%B1"><span class="nav-number">2.</span> <span class="nav-text">读书笔记: 统计陷阱</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%9C%AC%E8%BA%AB%E4%BC%9A%E6%9C%89%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98"><span class="nav-number">2.1.</span> <span class="nav-text">数据本身会有什么问题?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AD%98%E5%9C%A8%E5%81%8F%E9%A2%87%E7%9A%84%E6%A0%B7%E6%9C%AC"><span class="nav-number">2.1.1.</span> <span class="nav-text">1 存在偏颇的样本:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%B2%BE%E5%BF%83%E6%8C%91%E9%80%89%E7%9A%84%E5%B9%B3%E5%9D%87%E6%95%B0"><span class="nav-number">2.1.2.</span> <span class="nav-text">2 精心挑选的平均数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%88%A9%E7%94%A8%E4%B8%8D%E5%85%85%E5%88%86%E7%9A%84%E6%A0%B7%E6%9C%AC"><span class="nav-number">2.1.3.</span> <span class="nav-text">3 利用不充分的样本:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%91%E6%95%99%E4%BD%A0%E7%94%A8%E6%95%B0%E6%8D%AE%E6%9D%A5%E6%AC%BA%E8%AF%88"><span class="nav-number">2.2.</span> <span class="nav-text">我教你用数据来欺诈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AF%AB%E6%97%A0%E6%84%8F%E4%B9%89%E7%9A%84%E6%AF%94%E8%BE%83"><span class="nav-number">2.2.1.</span> <span class="nav-text">毫无意义的比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E5%8A%A8%E7%9A%84%E5%B1%95%E7%A4%BA"><span class="nav-number">2.2.2.</span> <span class="nav-text">生动的展示:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E6%80%A7%E5%92%8C%E5%9B%A0%E6%9E%9C%E6%80%A7%E7%9A%84%E6%B7%B7%E6%B7%86"><span class="nav-number">2.2.3.</span> <span class="nav-text">相关性和因果性的混淆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8D%A2%E4%B8%80%E7%A7%8D%E8%AF%B4%E6%B3%95"><span class="nav-number">2.2.4.</span> <span class="nav-text">换一种说法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%85%E9%86%92%E8%BF%87%E6%9D%A5%E5%90%A7-%E5%90%84%E4%BD%8D"><span class="nav-number">2.3.</span> <span class="nav-text">清醒过来吧,各位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E6%95%B0%E5%AD%97%E5%8F%AF%E4%BB%A5%E6%8F%90%E5%87%BA%E7%9A%845%E4%B8%AA%E9%97%AE%E9%A2%98"><span class="nav-number">2.4.</span> <span class="nav-text">对数字可以提出的5个问题:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%99%84%E4%B8%8A%E4%B8%80%E4%BA%9B%E6%9C%89%E8%B6%A3%E7%9A%84%E7%BB%9F%E8%AE%A1%E8%AF%B4%E6%B3%95"><span class="nav-number">2.5.</span> <span class="nav-text">附上一些有趣的统计说法:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%E5%92%8C%E6%91%98%E5%BD%95"><span class="nav-number">2.6.</span> <span class="nav-text">总结和摘录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">2.6.1.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%91%98%E5%BD%95"><span class="nav-number">2.6.2.</span> <span class="nav-text">摘录</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -554,7 +553,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">205</span>
+          <span class="site-state-item-count">191</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -603,7 +602,7 @@
 <div class="copyright">
   
   &copy; 2015 – 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="heart"></i>
   </span>
@@ -612,12 +611,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">444k</span>
+    <span title="站点总字数">424k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">6:44</span>
+    <span title="站点阅读时长">6:25</span>
 </div>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "eafd7ba3dbda4f7a8bc9b6c0b096c5fb", "spa": true}'></script><!-- End Cloudflare Web Analytics -->
 

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 7.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -34,8 +34,8 @@
 <meta property="og:image" content="https://s3.amazonaws.com/nemolaw/mysql_lock.png">
 <meta property="og:image" content="https://s3.amazonaws.com/nemolaw/mysql_auto.png">
 <meta property="og:image" content="https://s3.amazonaws.com/nemolaw/mysql_index.png">
-<meta property="article:published_time" content="2018-01-23T13:11:02.000Z">
-<meta property="article:modified_time" content="2022-07-05T07:07:11.463Z">
+<meta property="article:published_time" content="2018-01-24T05:11:02.000Z">
+<meta property="article:modified_time" content="2022-08-12T23:56:21.000Z">
 <meta property="article:author" content="NemoLaw">
 <meta property="article:tag" content="计算机科学与技术">
 <meta name="twitter:card" content="summary">
@@ -242,7 +242,7 @@
             <i class="far fa-calendar"></i>
           </span>
           <span class="post-meta-item-text">发表于</span>
-          <time title="" itemprop="dateCreated datePublished" datetime="2018-01-23T21:11:02+08:00">2018-01-23</time>
+          <time title="" itemprop="dateCreated datePublished" datetime="2018-01-23T21:11:02-08:00">2018-01-23</time>
         </span>
         <span class="post-meta-item">
           <span class="post-meta-item-icon">
@@ -286,55 +286,55 @@
         <p>以前我觉得像这种概念上的知识大概知道,然后需要的时候能搜索就好.现在认知改变了,基础知识能记忆的应该尽量装在自己脑海里.你在跟别人沟通的时候,这些可以是共识而不再需要花时间去解释,效率更高.同时要是没意识到这些细微的差别,在定位问题的时候你的解决问题能力其实是差了一级.</p>
 
       <ul>
-<li><a href="#第一章-mysql-架构和历史">第一章 mysql 架构和历史</a><ul>
-<li><a href="#12-并发控制">1.2 并发控制</a><ul>
-<li><a href="#锁的种类">锁的种类</a></li>
-<li><a href="#锁粒度">锁粒度</a></li>
-<li><a href="#锁级别">锁级别</a></li>
-<li><a href="#加锁的方式">加锁的方式</a></li>
-<li><a href="#使用锁的方式">使用锁的方式</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-mysql-%E6%9E%B6%E6%9E%84%E5%92%8C%E5%8E%86%E5%8F%B2">第一章 mysql 架构和历史</a><ul>
+<li><a href="#12-%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6">1.2 并发控制</a><ul>
+<li><a href="#%E9%94%81%E7%9A%84%E7%A7%8D%E7%B1%BB">锁的种类</a></li>
+<li><a href="#%E9%94%81%E7%B2%92%E5%BA%A6">锁粒度</a></li>
+<li><a href="#%E9%94%81%E7%BA%A7%E5%88%AB">锁级别</a></li>
+<li><a href="#%E5%8A%A0%E9%94%81%E7%9A%84%E6%96%B9%E5%BC%8F">加锁的方式</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E9%94%81%E7%9A%84%E6%96%B9%E5%BC%8F">使用锁的方式</a></li>
 </ul>
 </li>
-<li><a href="#13-事务">1.3 事务</a><ul>
-<li><a href="#隔离级别">隔离级别</a></li>
-<li><a href="#死锁">死锁</a></li>
-<li><a href="#事务日志">事务日志</a></li>
-<li><a href="#mysql中的事务">mysql中的事务</a></li>
-<li><a href="#mysql-存储引擎">mysql 存储引擎</a><ul>
+<li><a href="#13-%E4%BA%8B%E5%8A%A1">1.3 事务</a><ul>
+<li><a href="#%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB">隔离级别</a></li>
+<li><a href="#%E6%AD%BB%E9%94%81">死锁</a></li>
+<li><a href="#%E4%BA%8B%E5%8A%A1%E6%97%A5%E5%BF%97">事务日志</a></li>
+<li><a href="#mysql%E4%B8%AD%E7%9A%84%E4%BA%8B%E5%8A%A1">mysql中的事务</a></li>
+<li><a href="#mysql-%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E">mysql 存储引擎</a><ul>
 <li><a href="#innodb">innodb</a></li>
 <li><a href="#myisam">myisam</a></li>
 <li><a href="#archive">Archive</a></li>
 <li><a href="#memory">memory</a></li>
-<li><a href="#其他引擎">其他引擎</a></li>
+<li><a href="#%E5%85%B6%E4%BB%96%E5%BC%95%E6%93%8E">其他引擎</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#第二章mysql-基准测试">第二章:mysql 基准测试</a></li>
-<li><a href="#第三章-服务器性能分析">第三章: 服务器性能分析</a><ul>
-<li><a href="#入门">入门</a></li>
-<li><a href="#一个诊断案例在疯狂中找到条理">一个诊断案例:在疯狂中找到条理</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0mysql-%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95">第二章:mysql 基准测试</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90">第三章: 服务器性能分析</a><ul>
+<li><a href="#%E5%85%A5%E9%97%A8">入门</a></li>
+<li><a href="#%E4%B8%80%E4%B8%AA%E8%AF%8A%E6%96%AD%E6%A1%88%E4%BE%8B%E5%9C%A8%E7%96%AF%E7%8B%82%E4%B8%AD%E6%89%BE%E5%88%B0%E6%9D%A1%E7%90%86">一个诊断案例:在疯狂中找到条理</a></li>
 </ul>
 </li>
-<li><a href="#第四章-schema与数据类型优化">第四章 Schema与数据类型优化</a><ul>
-<li><a href="#varchar-和-char">varchar 和 char</a></li>
-<li><a href="#使用enum存储字符串类型">使用enum存储字符串类型</a></li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-schema%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%BC%98%E5%8C%96">第四章 Schema与数据类型优化</a><ul>
+<li><a href="#varchar-%E5%92%8C-char">varchar 和 char</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8enum%E5%AD%98%E5%82%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B">使用enum存储字符串类型</a></li>
 <li><a href="#timestamp-and-datetime">timestamp and datetime</a></li>
 <li><a href="#bit">bit</a></li>
-<li><a href="#最后-建议">最后: 建议</a></li>
+<li><a href="#%E6%9C%80%E5%90%8E-%E5%BB%BA%E8%AE%AE">最后: 建议</a></li>
 </ul>
 </li>
-<li><a href="#第五章-高性能的索引">第五章: 高性能的索引</a><ul>
-<li><a href="#索引的类型">索引的类型</a></li>
-<li><a href="#还能优化的手段">还能优化的手段</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E7%B4%A2%E5%BC%95">第五章: 高性能的索引</a><ul>
+<li><a href="#%E7%B4%A2%E5%BC%95%E7%9A%84%E7%B1%BB%E5%9E%8B">索引的类型</a></li>
+<li><a href="#%E8%BF%98%E8%83%BD%E4%BC%98%E5%8C%96%E7%9A%84%E6%89%8B%E6%AE%B5">还能优化的手段</a></li>
 </ul>
 </li>
 </ul>
 <p>每一章其实都是很大的话题,所以我只是做一下摘要,至少让自己在概念上能过关.计划有上中下三篇.</p>
 <h3 id="第一章-mysql-架构和历史"><a href="#第一章-mysql-架构和历史" class="headerlink" title="第一章 mysql 架构和历史"></a>第一章 mysql 架构和历史</h3><p>直接上图,别像我,研究那么久的 mysql ,连整体架构都不知道( ps,mysql 的源代码组织太差,是人读的么 )</p>
-<p><img src="https://s3.amazonaws.com/nemolaw/mysql_server_struct.png" alt=""></p>
+<p><img src="https://s3.amazonaws.com/nemolaw/mysql_server_struct.png"></p>
 <h4 id="1-2-并发控制"><a href="#1-2-并发控制" class="headerlink" title="1.2 并发控制"></a>1.2 并发控制</h4><blockquote>
 <p>控制并发的一种思路是用锁</p>
 </blockquote>
@@ -356,7 +356,7 @@
 <h4 id="1-3-事务"><a href="#1-3-事务" class="headerlink" title="1.3 事务"></a>1.3 事务</h4><h5 id="隔离级别"><a href="#隔离级别" class="headerlink" title="隔离级别"></a>隔离级别</h5><blockquote>
 <p>在一个事务中(可能有多个 update,select), 数据修改后,针对不同时刻的查询,这个修改是否应该体现.这带来了脏读现象.从而也使用了不同的隔离级别来避免</p>
 </blockquote>
-<p>推荐阅读:深入分析事务的隔离级别](<a href="http://www.hollischuang.com/archives/943" target="_blank" rel="noopener">http://www.hollischuang.com/archives/943</a>)</p>
+<p>推荐阅读:深入分析事务的隔离级别](<a href="http://www.hollischuang.com/archives/943">http://www.hollischuang.com/archives/943</a>)</p>
 <p>4 种隔离级别: 未提交读;提交读;可重复读;可串行化;</p>
 <ul>
 <li><p>Read Uncommitted: 事务中的修改,即使没有提交, 其他事务是可见的. 一般不建议使用,在没有明显的好处下,带来了 dirty read (脏读)</p>
@@ -370,21 +370,21 @@
 <ul>
 <li>Serializale: 可串行化.最高的隔离级别.它通过强制事务串行执行,避免了前面说的幻读问题.</li>
 </ul>
-<p><img src="https://s3.amazonaws.com/nemolaw/mysql_geli.png" alt=""></p>
+<p><img src="https://s3.amazonaws.com/nemolaw/mysql_geli.png"></p>
 <h5 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h5><p>说一下,这里生成锁的原因不仅仅是时间凑巧,数据加载不是一条条的,磁盘是会预加载的,所以这里也有可能把锁加上导致死锁.有时候这才是分析的难点(我没遇到过,这是大神的 PPT 说的)</p>
-<p><img src="https://s3.amazonaws.com/nemolaw/mysql_lock.png" alt=""></p>
-<h5 id="事务日志"><a href="#事务日志" class="headerlink" title="事务日志"></a>事务日志</h5><p>写数据更快: 更新数据并不是将内存的拷贝值回写到数据本身硬盘所在的位置, 而是追加到事务日志中(使用磁盘一小块区域内的顺序 I/O), 随机 I/O 需要在磁盘的多个地方移动磁头.</p>
+<p><img src="https://s3.amazonaws.com/nemolaw/mysql_lock.png"></p>
+<h5 id="事务日志"><a href="#事务日志" class="headerlink" title="事务日志"></a>事务日志</h5><p>写数据更快: 更新数据并不是将内存的拷贝值回写到数据本身硬盘所在的位置, 而是追加到事务日志中(使用磁盘一小块区域内的顺序 I&#x2F;O), 随机 I&#x2F;O 需要在磁盘的多个地方移动磁头.</p>
 <p>事务日志持久后,内存中修改的数据在后台可以慢慢刷回到磁盘中去.所以修改数据需要些两次磁盘.</p>
 <blockquote>
 <p>这里可以体会一个思想,预写日志( Write####Ahead Logging). 当修改一次数据比较慢的时候,我们就找一个地方快速把我们的修改记录记下来.</p>
 </blockquote>
 <h5 id="mysql中的事务"><a href="#mysql中的事务" class="headerlink" title="mysql中的事务"></a>mysql中的事务</h5><p>mysql 提供了两种事务型的存储引擎: InnoDB 和 NDB Cluster.<br>mysql 默认采用自动提交( AutoCommit ) 模式,也就是说,如果不是显示地声明一个事务,每一个查询都被当做一个事物执行提交. 可以通过以下命令来查看</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show variables like &#39;%autocomm%&#39;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">show variables like &#x27;%autocomm%&#x27;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><img src="https://s3.amazonaws.com/nemolaw/mysql_auto.png" alt=""></p>
+<p><img src="https://s3.amazonaws.com/nemolaw/mysql_auto.png"></p>
 <p>值得注意的点:</p>
 <ul>
-<li><p>autocommit = 0 ,当前所有查询都是在一个事务中,除非显示执行 commit</p>
+<li><p>autocommit &#x3D; 0 ,当前所有查询都是在一个事务中,除非显示执行 commit</p>
 </li>
 <li><p>对于 MyIsam 这样存储引擎的表,由于没有事务的支持,可以把autocommit 当做一直是 <em>ON</em> 的状态</p>
 </li>
@@ -392,7 +392,7 @@
 </li>
 </ul>
 <h5 id="mysql-存储引擎"><a href="#mysql-存储引擎" class="headerlink" title="mysql 存储引擎"></a>mysql 存储引擎</h5><p>对下面 sql 执行结果的理解</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show table status like &#39;%table_name%&#39;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">show table status like &#x27;%table_name%&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>有点 sql 基础都能理解的几个字段: 表名( name );使用的存储引擎( MyIsam ); 创建时间;更新时间; 表注释(comment); 下面详细说一下其它字段的意义(感觉我这个笔记其实变成一个简短的手册了)</p>
 <ul>
@@ -433,7 +433,7 @@
 <li><p>加锁: 表锁,读取的时候共享锁, 写入的时候,排它锁</p>
 </li>
 <li><p>修复: 修复不等同于奔溃后恢复. 修复会使得一些数据丢失.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">check table t_name;</span><br><span class="line">repair table t_name ;</span><br><span class="line">检查和修复完之后可以在看到 check_time 的更新</span><br><span class="line">show table status like &#39;%t_name%&#39;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">check table t_name;</span><br><span class="line">repair table t_name ;</span><br><span class="line">检查和修复完之后可以在看到 check_time 的更新</span><br><span class="line">show table status like &#x27;%t_name%&#x27;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>索引: 对 BLOB 和 TEXT , 可以基于前500个字符创建索引; myisam 的全文索引是基于分词.</p>
 </li>
@@ -452,10 +452,10 @@
 <p>这是我之前的一种思维误区吧, 我一来就是先分析 sql.这也是没有整体把握的体现</p>
 </blockquote>
 <h4 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h4><p>分析慢查询日志: (my.cnf 里面可以设置当一个查询超过多少时间的时候,就会被记录下来.这样方便做性能优化) 作者建议使用 pt-query-digest 自顶向下的分析方法,先得到一个整体的分析报告. 而不是一来就打开整个慢查询日志开始干(好吧, 我的确是这样的)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">show variables like &#39;slow_query_log&#39;;</span><br><span class="line">show variables like &#39;long_query_time&#39;;</span><br><span class="line"></span><br><span class="line">set global slow_query_log&#x3D;1; # 这个只对当前数据库生效(对当前session, 建议退出重新登录 ),重启 mysql 就失效了.永久生效的方式是修改配置文件 my.cnf .</span><br><span class="line">slow_query_log &#x3D;1</span><br><span class="line">set global long_query_time&#x3D;3;</span><br><span class="line">slow_query_log_file&#x3D;&#x2F;tmp&#x2F;mysql_slow.log 默认是放在&#x2F;var&#x2F;lib&#x2F;mysql&#x2F;localhost-slow.log</span><br><span class="line">long_query_time 默认查询超过10s 会记录下来,可以在 my.cnf 修改.刚好等于10s 是不会记录下来的.</span><br><span class="line"></span><br><span class="line">然后可以通过命令 select sleep(5) 看看慢查询日志长什么样</span><br><span class="line"></span><br><span class="line"># User@Host: root[root] @ localhost []</span><br><span class="line"># Thread_id: 49 Schema: QC_hit: No</span><br><span class="line"># Query_time: 5.003580 Lock_time: 0.000000 Rows_sent: 1 Rows_examined: 0</span><br><span class="line">SET timestamp&#x3D;1515237341;</span><br><span class="line">select sleep(5);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">show variables like &#x27;slow_query_log&#x27;;</span><br><span class="line">show variables like &#x27;long_query_time&#x27;;</span><br><span class="line"></span><br><span class="line">set global slow_query_log=1; # 这个只对当前数据库生效(对当前session, 建议退出重新登录 ),重启 mysql 就失效了.永久生效的方式是修改配置文件 my.cnf .</span><br><span class="line">slow_query_log =1</span><br><span class="line">set global long_query_time=3;</span><br><span class="line">slow_query_log_file=/tmp/mysql_slow.log 默认是放在/var/lib/mysql/localhost-slow.log</span><br><span class="line">long_query_time 默认查询超过10s 会记录下来,可以在 my.cnf 修改.刚好等于10s 是不会记录下来的.</span><br><span class="line"></span><br><span class="line">然后可以通过命令 select sleep(5) 看看慢查询日志长什么样</span><br><span class="line"></span><br><span class="line"># User@Host: root[root] @ localhost []</span><br><span class="line"># Thread_id: 49 Schema: QC_hit: No</span><br><span class="line"># Query_time: 5.003580 Lock_time: 0.000000 Rows_sent: 1 Rows_examined: 0</span><br><span class="line">SET timestamp=1515237341;</span><br><span class="line">select sleep(5);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>有了慢查询日志的概念之后,我们学习一下 mysqldumpslow 这个工具的使用,例如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-c 访问计数</span><br><span class="line">-t top 的意思</span><br><span class="line">-g 可以是用正则过滤</span><br><span class="line">-r 返回记录</span><br><span class="line">-l 锁定的时间</span><br><span class="line">mysqldumpslow -s c -t 10 slow.log | less # 日志中记录最多的10个 sql</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-c 访问计数</span><br><span class="line">-t top 的意思</span><br><span class="line">-g 可以是用正则过滤</span><br><span class="line">-r 返回记录</span><br><span class="line">-l 锁定的时间</span><br><span class="line">mysqldumpslow -s c -t 10 slow.log | less # 日志中记录最多的10个 sql</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>使用第三方工具:</p>
 <blockquote>
@@ -467,16 +467,16 @@
 <p>到了这一步,定位到是单条查询的问题,这时候才是想办法优化 sql.( 好吧,我之前的文章一来就是在优化 sql, 现在在大神的上帝视角来看,我这是小毛孩 )</p>
 <p>sql 的优化手段有: 使用explain 查看 sql 的执行情况,主要关注命中的索引; 开启 profiles 查看 sql 消耗的资源.</p>
 <ul>
-<li><p>explain </p>
+<li>explain</li>
+</ul>
 <ol>
 <li>type: 命中索引类型. 结果好到坏– range(常数值的范围,索引范围扫描) &gt; index(索引全扫描) &gt; ALL (全表扫描). 一般查询应到达 range 级别</li>
 <li>rows: sql 执行检查的记录数<br>主要关注这两点,其他可以查资料了解</li>
 </ol>
-</li>
-<li><p>profiles </p>
-</li>
+<ul>
+<li>profiles</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; set profiling&#x3D;1; (默认没开启)</span><br><span class="line">&gt; your sql ;</span><br><span class="line">&gt; show profiles;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; set profiling=1; (默认没开启)</span><br><span class="line">&gt; your sql ;</span><br><span class="line">&gt; show profiles; </span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>SQL层面已经优化不动, 这时候我的建议:从客户端请求到最后获取数据,每一个链路都梳理一遍.性能肯定有办法提升.例如</p>
 <ul>
@@ -500,9 +500,9 @@
 <li>简单:整形比字符操作代价更低(用内建类型存储时间和用整形存储 ip)</li>
 <li>避免 NULL: 当可为 NULL 的字段作为索引,会多占一个字节的空间,同时在 myisam,可能是一个固定长度的 int 变成可变长度的索引.也有例外, innodb 使用单独的位 bit 储存,这对于稀疏矩阵是有很好的空间效率的.但这点不适用与 Myisam.</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">timestamp 和datetime都可以表示到秒的时间,但 timestamp 存储空间少一半,并且会根据时区改变,具有自动更新的能力,容易, timestamp 能表示的时间范围会小一些.</span><br><span class="line"></span><br><span class="line">timestamp 4个字节, 时间在1970到2037之间可以为空,但不允许自定义值.以 UTC 格式保存</span><br><span class="line"></span><br><span class="line">datetime 8个字节,可以 null, 可以自定义,系统不会修改其值.与时区无关.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">timestamp 和datetime都可以表示到秒的时间,但 timestamp 存储空间少一半,并且会根据时区改变,具有自动更新的能力,容易, timestamp 能表示的时间范围会小一些.</span><br><span class="line"></span><br><span class="line">timestamp 4个字节, 时间在1970到2037之间可以为空,但不允许自定义值.以 UTC 格式保存</span><br><span class="line"></span><br><span class="line">datetime 8个字节,可以 null, 可以自定义,系统不会修改其值.与时区无关.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>int(11) 里面11 的意思是’限制显示时候的宽度’,并不是限制 int 的大小.<br>尽量存储整形,然后了根据业务进行转换.</p>
-<h4 id="varchar-和-char"><a href="#varchar-和-char" class="headerlink" title="varchar 和 char"></a>varchar 和 char</h4><p>varchar 是按需存储,也就是说它存储的是可变字符串.(但是当你指定 row_format=fixed 的时候, varchar 就变成了定长存储)<br>一个 varchar(10) 需要11个字节的存储空间,varchar(1000) 则需要1002 个字节,其中2个字节是用来存储列的长度<br>varchar 是变长的,可以提高存储性能; 但update的时候,</p>
+<h4 id="varchar-和-char"><a href="#varchar-和-char" class="headerlink" title="varchar 和 char"></a>varchar 和 char</h4><p>varchar 是按需存储,也就是说它存储的是可变字符串.(但是当你指定 row_format&#x3D;fixed 的时候, varchar 就变成了定长存储)<br>一个 varchar(10) 需要11个字节的存储空间,varchar(1000) 则需要1002 个字节,其中2个字节是用来存储列的长度<br>varchar 是变长的,可以提高存储性能; 但update的时候,</p>
 <blockquote>
 <p>要是行可能比原来的更长,这会导致做额外的工作:如果一个行占用的空间增加,并且页内没有足够的空间可以存储,这种情况下,不同的存储引擎处理方式是不一样的, myisam 会将行拆成不同的片段存储, innodb 则需要分裂页来使行可以放进页内.其他的存储引擎也许从不在原数据位置更新数据.</p>
 </blockquote>
@@ -531,9 +531,9 @@
 <li>帮助服务器避免排序和临时表</li>
 <li>将随机 io 变成顺序 io</li>
 </ul>
-<p><a href="https://book.douban.com/subject/2410000/" target="_blank" rel="noopener">推荐:Relational Database Index Design and the Optimizers</a></p>
+<p><a href="https://book.douban.com/subject/2410000/">推荐:Relational Database Index Design and the Optimizers</a></p>
 <p>索引并不总是有效的: 小表, 简单的扫描全表更高效; 中大型表,索引是有效的,特大型表,建立和使用索引的代价随之增长.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">下面是无法使用索引的,但只要一个简单的变换就可以.体会这里面的区别</span><br><span class="line"></span><br><span class="line">select * from table where id + 1 &#x3D; 5 ;</span><br><span class="line">select * from table where to_days(current_date) - to_days(date_col) &lt;&#x3D; 10 ; </span><br><span class="line">select * from table where id &#x3D; 1 or cnt_id &#x3D; 3 (建议使用 union all ) 在早版本的4.1 mysql 是无法使用索引的, 后面引入了 索引合并</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">下面是无法使用索引的,但只要一个简单的变换就可以.体会这里面的区别</span><br><span class="line"></span><br><span class="line">select * from table where id + 1 = 5 ;</span><br><span class="line">select * from table where to_days(current_date) - to_days(date_col) &lt;= 10 ; </span><br><span class="line">select * from table where id = 1 or cnt_id = 3 (建议使用 union all ) 在早版本的4.1 mysql 是无法使用索引的, 后面引入了 索引合并</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <h4 id="索引的类型"><a href="#索引的类型" class="headerlink" title="索引的类型"></a>索引的类型</h4><ol>
 <li>B-tree 索引</li>
@@ -560,14 +560,14 @@
 </ul>
 <p>前缀索引: 优化的是索引本身的大小</p>
 <p>对于占用空间较多的字符串,全部作为索引是不划算的.所以有人提出了一种思想:那我们就用部分字符串当做索引不就好了,例如字段的前4个字符.但仔细想,这会带来什么问题呢? 要是有个字段,命名方式是 ‘nemo’ + 自定义部分,你会发现这时候索引就是无效的,每一个都是以 nemo 为索引. 所以有人提出了Cardinality 的概念. 去字段前4个字符为例,具体计算如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">select count(distinct left(字段名,4) )&#x2F; count(1) from table</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">select count(distinct left(字段名,4) )/ count(1) from table </span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>该值越大(值的差异越大),说明分散效果越好,说明越适合当索引.可以适当调整要取的字符数,怎么调,根据实际的数据和经验调</p>
 <p>缺点: 是无法使用前缀索引做order by 和 group by ,mysql 也无法利用前缀索引做覆盖扫描. </p>
 <ul>
 <li>联合索引</li>
 </ul>
-<p><img src="https://s3.amazonaws.com/nemolaw/mysql_index.png" alt=""></p>
+<p><img src="https://s3.amazonaws.com/nemolaw/mysql_index.png"></p>
 <p><strong>第五章索引未完,待续…</strong></p>
 
     </div>
@@ -677,7 +677,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一章-mysql-架构和历史"><span class="nav-number">1.</span> <span class="nav-text">第一章 mysql 架构和历史</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-并发控制"><span class="nav-number">1.1.</span> <span class="nav-text">1.2 并发控制</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#锁的种类"><span class="nav-number">1.1.1.</span> <span class="nav-text">锁的种类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#锁粒度"><span class="nav-number">1.1.2.</span> <span class="nav-text">锁粒度</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#锁级别"><span class="nav-number">1.1.3.</span> <span class="nav-text">锁级别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#加锁的方式"><span class="nav-number">1.1.4.</span> <span class="nav-text">加锁的方式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用锁的方式"><span class="nav-number">1.1.5.</span> <span class="nav-text">使用锁的方式</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-事务"><span class="nav-number">1.2.</span> <span class="nav-text">1.3 事务</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#隔离级别"><span class="nav-number">1.2.1.</span> <span class="nav-text">隔离级别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#死锁"><span class="nav-number">1.2.2.</span> <span class="nav-text">死锁</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#事务日志"><span class="nav-number">1.2.3.</span> <span class="nav-text">事务日志</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#mysql中的事务"><span class="nav-number">1.2.4.</span> <span class="nav-text">mysql中的事务</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#mysql-存储引擎"><span class="nav-number">1.2.5.</span> <span class="nav-text">mysql 存储引擎</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#innodb"><span class="nav-number">1.2.5.1.</span> <span class="nav-text">innodb</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#myisam"><span class="nav-number">1.2.5.2.</span> <span class="nav-text">myisam</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Archive"><span class="nav-number">1.2.5.3.</span> <span class="nav-text">Archive</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#memory"><span class="nav-number">1.2.5.4.</span> <span class="nav-text">memory</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#其他引擎"><span class="nav-number">1.2.5.5.</span> <span class="nav-text">其他引擎</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二章-mysql-基准测试"><span class="nav-number">2.</span> <span class="nav-text">第二章:mysql 基准测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三章-服务器性能分析"><span class="nav-number">3.</span> <span class="nav-text">第三章: 服务器性能分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#入门"><span class="nav-number">3.1.</span> <span class="nav-text">入门</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一个诊断案例-在疯狂中找到条理"><span class="nav-number">3.2.</span> <span class="nav-text">一个诊断案例:在疯狂中找到条理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四章-Schema与数据类型优化"><span class="nav-number">4.</span> <span class="nav-text">第四章 Schema与数据类型优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#varchar-和-char"><span class="nav-number">4.1.</span> <span class="nav-text">varchar 和 char</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用enum存储字符串类型"><span class="nav-number">4.2.</span> <span class="nav-text">使用enum存储字符串类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#timestamp-and-datetime"><span class="nav-number">4.3.</span> <span class="nav-text">timestamp and datetime</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bit"><span class="nav-number">4.4.</span> <span class="nav-text">bit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最后-建议"><span class="nav-number">4.5.</span> <span class="nav-text">最后: 建议</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第五章-高性能的索引"><span class="nav-number">5.</span> <span class="nav-text">第五章: 高性能的索引</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#索引的类型"><span class="nav-number">5.1.</span> <span class="nav-text">索引的类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#还能优化的手段"><span class="nav-number">5.2.</span> <span class="nav-text">还能优化的手段</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-mysql-%E6%9E%B6%E6%9E%84%E5%92%8C%E5%8E%86%E5%8F%B2"><span class="nav-number">1.</span> <span class="nav-text">第一章 mysql 架构和历史</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6"><span class="nav-number">1.1.</span> <span class="nav-text">1.2 并发控制</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%94%81%E7%9A%84%E7%A7%8D%E7%B1%BB"><span class="nav-number">1.1.1.</span> <span class="nav-text">锁的种类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%94%81%E7%B2%92%E5%BA%A6"><span class="nav-number">1.1.2.</span> <span class="nav-text">锁粒度</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%94%81%E7%BA%A7%E5%88%AB"><span class="nav-number">1.1.3.</span> <span class="nav-text">锁级别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8A%A0%E9%94%81%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="nav-number">1.1.4.</span> <span class="nav-text">加锁的方式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E9%94%81%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="nav-number">1.1.5.</span> <span class="nav-text">使用锁的方式</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-%E4%BA%8B%E5%8A%A1"><span class="nav-number">1.2.</span> <span class="nav-text">1.3 事务</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB"><span class="nav-number">1.2.1.</span> <span class="nav-text">隔离级别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%AD%BB%E9%94%81"><span class="nav-number">1.2.2.</span> <span class="nav-text">死锁</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1%E6%97%A5%E5%BF%97"><span class="nav-number">1.2.3.</span> <span class="nav-text">事务日志</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#mysql%E4%B8%AD%E7%9A%84%E4%BA%8B%E5%8A%A1"><span class="nav-number">1.2.4.</span> <span class="nav-text">mysql中的事务</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#mysql-%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E"><span class="nav-number">1.2.5.</span> <span class="nav-text">mysql 存储引擎</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#innodb"><span class="nav-number">1.2.5.1.</span> <span class="nav-text">innodb</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#myisam"><span class="nav-number">1.2.5.2.</span> <span class="nav-text">myisam</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Archive"><span class="nav-number">1.2.5.3.</span> <span class="nav-text">Archive</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#memory"><span class="nav-number">1.2.5.4.</span> <span class="nav-text">memory</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E5%BC%95%E6%93%8E"><span class="nav-number">1.2.5.5.</span> <span class="nav-text">其他引擎</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-mysql-%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95"><span class="nav-number">2.</span> <span class="nav-text">第二章:mysql 基准测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90"><span class="nav-number">3.</span> <span class="nav-text">第三章: 服务器性能分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%A5%E9%97%A8"><span class="nav-number">3.1.</span> <span class="nav-text">入门</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E8%AF%8A%E6%96%AD%E6%A1%88%E4%BE%8B-%E5%9C%A8%E7%96%AF%E7%8B%82%E4%B8%AD%E6%89%BE%E5%88%B0%E6%9D%A1%E7%90%86"><span class="nav-number">3.2.</span> <span class="nav-text">一个诊断案例:在疯狂中找到条理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-Schema%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%BC%98%E5%8C%96"><span class="nav-number">4.</span> <span class="nav-text">第四章 Schema与数据类型优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#varchar-%E5%92%8C-char"><span class="nav-number">4.1.</span> <span class="nav-text">varchar 和 char</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8enum%E5%AD%98%E5%82%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B"><span class="nav-number">4.2.</span> <span class="nav-text">使用enum存储字符串类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#timestamp-and-datetime"><span class="nav-number">4.3.</span> <span class="nav-text">timestamp and datetime</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bit"><span class="nav-number">4.4.</span> <span class="nav-text">bit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%80%E5%90%8E-%E5%BB%BA%E8%AE%AE"><span class="nav-number">4.5.</span> <span class="nav-text">最后: 建议</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E7%B4%A2%E5%BC%95"><span class="nav-number">5.</span> <span class="nav-text">第五章: 高性能的索引</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="nav-number">5.1.</span> <span class="nav-text">索引的类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%98%E8%83%BD%E4%BC%98%E5%8C%96%E7%9A%84%E6%89%8B%E6%AE%B5"><span class="nav-number">5.2.</span> <span class="nav-text">还能优化的手段</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -692,7 +692,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">205</span>
+          <span class="site-state-item-count">191</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -741,7 +741,7 @@
 <div class="copyright">
   
   &copy; 2015 – 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="heart"></i>
   </span>
@@ -750,12 +750,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">444k</span>
+    <span title="站点总字数">424k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">6:44</span>
+    <span title="站点阅读时长">6:25</span>
 </div>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "eafd7ba3dbda4f7a8bc9b6c0b096c5fb", "spa": true}'></script><!-- End Cloudflare Web Analytics -->
 

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <base target="_blank">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+  position: relative;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color:  #222;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color:  #eee;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color:  #5b4636;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color:  #586e75;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color:  #2e3440;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color:  #cec4ac;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #839496;
+  border-color:  #839496;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color:  #e5e9f0;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] ::selection {
+  background-color: #fff740;
+  color: #000;
+}
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+<title>成人世界经验汇总 :: Reader View</title></head>
+<body tabindex="1" data-images="true" data-mode="light" data-font="sans-serif" data-loaded="true" style="user-select: initial;">
+  <span></span> <!-- for IntersectionObserver -->
+  <a id="reader-domain" href="https://www.douban.com/note/835346413/?_i=9240146cQPOxl6">
+    <span>www.douban.com</span>
+    <span>/note/835346413/</span>
+  </a>
+  <h1 dir="auto" id="reader-title">成人世界经验汇总</h1>
+  <span dir="auto" id="reader-credits"></span>
+  <span dir="auto" id="reader-estimated-time">2-3 minutes</span>
+  <span dir="auto" id="published-time">2022/7/28</span>
+  <hr>
+  <div id="readability-page-1" class="page"><div id="note-835346413" data-url="https://www.douban.com/note/835346413/" data-author="山水居士" data-is-original="1"><p data-align="">-</p><p data-align="">看到很多年轻朋友私信中言说困惑于现实社会的种种，所以简单整理了一些成人世界的经验与真相，希望能有所帮助：</p><p data-align="">&nbsp;1、当人进入成年后会发现很多约定俗成的道理或道德规范并没有约束这个社会里的大多数人，当你认定是ta们的问题时你却会慢慢意识到你内心也有着同样的“犯规”倾向、并困惑于这种内心冲突。我们要明白道德规范的建立就是为克制相对应的人性问题的（即反人性的），当人性无法被压制、就会试探性地越过这些规范，然后认识到它们的本质。之所以现在还无法接受只不过是因为你还无法适应不遵守道德规范的自己，在条件允许的情况下每个人都会犯规。&nbsp;</p><p data-align="">&nbsp;2、婚姻存在一个隐性的bug：<mark class="hghlght">从结婚开始，“离婚”就作为终极解决方案潜藏在每一个婚姻参与者的日常生活磨合中</mark>，在找不到解决问题的方法时夫妻双方即把离婚当成伤害对方的武器也把它当成一劳永逸的切割器。&nbsp;</p><p data-align="">&nbsp;3、躲避职场劳作是人的天性，就像没有一个物种喜欢被奴役一样。为了生活、照顾家庭、符合社会预期，大多数人都在做着自己不喜欢或不擅长的工作。这是个很无奈的事情，因为我们就出生在一个以劳动换取生活条件的社会中（啃老除外），每个人都要寻找到一个“较为适合”自己的工作，然后磨合出相应的工作节奏、并劳逸结合。<mark class="hghlght">事实上，工作赚钱依然是大多数人60岁之前的人生主题</mark>。</p><p data-align="">4、我们不被ta人喜欢、重用、赏识、尊重是一个大概率事件，包括那些对我们很重要的人。即使你被ta人“积极对待”了，第一你要看清对方的目的、第二你要明白无论这种“积极对待”诚挚与否，未来都会随着时间变化的，因为这个世界唯一不变的就是“改变”。&nbsp;</p><p data-align="">&nbsp;5、我们要去正视旁边每一个和我们有重要关联的人的真实想法，<mark class="hghlght">而不是以我们的角度去揣测</mark>，可能里面有很多残酷的事实，但是你要试图去理解，抛开那些概念层面的情感与名号，能真正维系关系的理由并不是很多。只有当你认清了人与人之间所有“不合理”后，你才会找到人与人之间的合理。&nbsp;</p><p data-align="">&nbsp;6、当一个人告诉你ta最信奉什么的时候（例如“我这人最讲的就是江湖道义”），那你一定要小心了，大多数情况<mark class="hghlght">一个人嘴上所信奉的往往是ta最擅长用来实现自己目的的工具</mark>。&nbsp;</p><p data-align="">&nbsp;7、这个世界上没有绝对的事情，所有极端化的情绪、态度、决择一般都是长期外界对个体身心扭曲后的结果。当你理解并能对“中、正、平、和”这四个字知行合一的时候，你就成熟了。&nbsp;</p><p data-align="">&nbsp;8、我们在不同人生节点上必须要对一些人和一些事说再见，纠缠或难以忘怀于已发生的往往在于我们以为能改变、能挽救什么，其实当它们发生的那一刻已经没有什么可以改变了，唯一不让沉没成本继续增加的方法就是说“再见”，所有你损失的都会在下一次同类人生场景中收获回来。&nbsp;</p><p data-align="">&nbsp;9、要小心这个世界上冠以“稳定的X”（如稳定的工作）、“不动X”（如不动产）、“增值的X”、“永恒的X”、“规矩”等等这些看似牢靠或值得信任的事物。这个世界是流动的，任何“常”的东西都是人为包装的，它们的设置只是为了束缚住天性流动的人类并服从于游戏规则的制定者。<mark class="hghlght">人心是活水</mark>，被困为死水了就失去了生趣与喜乐，每个人的创造力、艺术能力、突破盲点的能力都源于活水般的心，只有心不是一潭死水我们的潜力才能激发出来，一味地用蛮力在这个固化的世界是没用的。&nbsp;</p><p data-align="">&nbsp;10、这个世界能够快速升值的物品或者说投资品都是被人为炒上去的，从邮票、文玩核桃、钻石玉料、保健品，到股票房产，如果你不是那个后面的操盘者，千万不要去当接盘侠。&nbsp;</p><p data-align="">&nbsp;11、物质利益在人与人之间是“润物细无声”的重要条件，你们有可能不是因为物质在一起的，但很有可能因为物质的原因分离，区别只是物质原因的占比。&nbsp;</p><p data-align="">&nbsp;12、你会在结婚后、生育后碰到很多有感觉的异性，但是你要坚守底线，因为当你进入一段关系后你要明白站在你旁边的那个人始终在注视着你，<mark class="hghlght">你越过道德底线的代价是你无法想象的，它将揭开三个人心底的至恶（加上孩子四个人），让参与者在折磨中变成一个个怪兽</mark>。&nbsp;</p><p data-align="">&nbsp;13、人类有爱表承诺的习惯，可以说是一种个体的心理需要，听听就好，千万别当真。&nbsp;</p><p data-align="">&nbsp;14、和异性交往一定要<mark class="hghlght">把情和性分开</mark>，一起投入进去是很危险的。&nbsp;</p><p data-align="">&nbsp;15、不要把金钱和权力把当成加持自己的一部分，或给自己贴上了某种优越于ta人的标签，那只是一种虚荣心的幻象，它只能把我们引向灾难。</p><p data-align="">16、在一个俗气的人情社会中，我们要学很多“规矩”，但是大多数人只是为了遵从俗理与规矩而遵从，忘了它们是手段、并非目的。当你无法把俗理与规矩转化成资源与价值时，它们就成了锁链与负累。
+
+希望每个人来世间一趟都能有所收获🙏。
+
+</p></div></div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+</body><style>body {
+      font-size:  20px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 900px;
+      text-align: justify
+    }
+    .page {
+      line-height: 30.0px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

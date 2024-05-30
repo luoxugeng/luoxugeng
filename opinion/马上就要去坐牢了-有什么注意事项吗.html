@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html dir="ltr"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <base target="_blank">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+  position: relative;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color:  #222;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color:  #eee;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color:  #5b4636;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color:  #586e75;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color:  #2e3440;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color:  #cec4ac;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #839496;
+  border-color:  #839496;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color:  #e5e9f0;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] ::selection {
+  background-color: #fff740;
+  color: #000;
+}
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+<title>[Design Mode]</title></head>
+<body tabindex="1" data-images="true" data-mode="light" data-font="sans-serif" data-loaded="true" style="user-select: initial;"><h1 dir="auto" id="reader-title">马上就要去坐牢了，有什么注意事项吗？</h1>
+  <br><div id="readability-page-1" class="page">
+            <p>来源：知乎</p>
+            <p>不得不佩服知乎的大数据，刚刚放出来就推给我，亲身经历给你回答一波。</p>
+            <p>首先不完全同意高赞的回答，<strong>每个监狱的情况不一样，但是大同小异</strong>，高赞那个说的可能像是河南的监狱，现在情况也变了不少。最新的情况我跟你具体讲讲：</p>
+            <p><strong>1.</strong>不要考虑带任何东西，包括内衣内裤袜子钱，这些通通进不去，<strong>能带的只有你的判决书，看守所期间寄给你的照片和信件</strong>。其他的不要想。进去的时候py都要掰开检查一遍。眼镜一定要配好，<mark class="hghlght">疫情期间里面配眼镜一年可能只有一次</mark>，监狱会委托银行给你办理银行卡，办理好了把卡号通知家人给你打钱。</p>
+            <p><strong>2.</strong>入监队期间跟高赞说的一样，一两个月的训练忍耐下来，分到其他监区后生活就会好很多。</p>
+            <p><strong>3.</strong>分到其他监区后你会在新犯组继续受苦，直到一两个月后下一批新犯把你顶出来。当然了有可能去的新犯没那么多，这时候如果你劳动和改造表现好的话，新犯组的组长老哥有可能跟民警打报告将你提前分出新犯组。<mark class="hghlght">所以</mark><strong><mark class="hghlght">跟老犯搞好关系很重要</mark></strong><mark class="hghlght">，他们是民警和大班犯之间沟通的桥梁。</mark></p>
+            <p><strong>4.</strong>刚到监狱你的业务大概率是踩电子缝纫机，现在全国大部分监狱都在做服装，箱包，鞋子，女性内衣，口罩防护服以及铁路公交制服。身体不好和年纪大的人会分配到烫工烫衣服。<mark class="hghlght">如果工序有的选，做衣服不要选挖口袋，做裤子不要选上腰，这两个工序俗称挖坟和上坟</mark>，一天干到晚一口气都没得喘。</p>
+            <p><strong>5.</strong><strong>每年可以买两次书</strong>，没有玄幻小说，但是庆余年赘婿三体这种还是有的，你能想到的世界名著全部都有，甚至包括柏拉图的理想国，以及各类建筑美术做菜等工具书，如果想看黄色内容可以买一套渡边淳一的书集，这种书为啥能在监狱买得到我也一直没搞懂，至于我本人订的都是杂志健身的《健与美》时事新闻《Vista看天下》军事《舰船知识》经济《第一财经》旅游《孤独星球》电影《环球银幕》，一次可订一年。监狱是个让你静下心来阅读的地方。书选的好出来以后跟社会基本不脱节，甚至网上各种梗都很清楚。</p>
+            <p><strong>6.</strong>如果可以的话就健身吧，坐牢并不能给你和家人带来什么好处，<strong>但你可以给自己一个好的身体</strong>，我进去之前身高180体重116，现在体重150，<mark class="hghlght">胸肌巨大6块腹肌只用了一年半</mark>。买东西多买牛奶少买零食。</p>
+            <p><strong>7.</strong>伙食很差，一周一顿红烧肉，一次鸡翅根（每人两个），一次鱼（全是碎肉鱼刺和汤）一周2到3个煮鸡蛋，但是可以跟别人合伙买包装熟食菜，比如烤鸭，牛肉等等，25一袋，每袋两个人合伙吃，每人买个4袋两个人可以一个月改善8次伙食。</p>
+            <p><strong>8.</strong><strong>监狱每年都会组织好多次高中本科或者研究生以上学历的人参加成人高考</strong>，对你没看错，研究生也可以报名成人高考，这个纯属自愿，我在一年半的监狱生涯里考了三次，最大的好处是可以有民警带你去其他监区的考点考试，路上十几分钟的车程可以看看外面的世界。</p>
+            <p><strong>9.</strong>虽然知乎人均百万是tree new be但是你既然能玩知乎就超过了监狱90%以上的人，里边九成人是不玩这玩意的，最多玩过B站，推测你是大学生好了，基本上大学生进去待遇还算不错，很多不需要参加劳动的岗位都需要大学生做，比如报道组长和政文组长这类，别人出工你可以在厂房用电脑做台账，登记统计各类罪犯的信息，完成民警交给你的任务。学过医的可以去发药，还可以做统计员统计一天的产量，还有机修工等等，还可以做质检员。这些都不需要体力上的劳动不需要做衣服，按能力上岗，这些岗位每月考核分最高，有改积分子名额优先考虑这部分人，不得不说大学学历真的救了我，<strong>记住一定要好好改造混个岗位</strong>。</p>
+            <p><strong>10.</strong>每周日周一是休息日学习日，不用干活，周日可以看电影，你能想到的最新电影都可以看，而且都是高清资源，我在里面看过包括《华尔街之狼》（这片这么黄都可以看）《自杀小队》《毒液2》《007无暇赴死》《蜘蛛侠英雄无归》等等等等，但是没有《海贼王》《进击的巨人》《鬼灭之刃》等等。好好混，混成分监区T1集团的骨干，基本上可以实现电影定制，民警一般都会和我们一起看大片，因为他们也不能明着玩手机，只有一台万年前的安卓工作机。大厅里有70寸壁挂电视，不爱在大厅看电影可以在寝室聊天下棋看书，周一学习日也可以看书。</p>
+            <p>还有人怀疑《毒液2》和《英雄无归》国内没上映怎么看的，有种东西叫海外超清+野生字幕组，《沙丘》这种的也老早就看了，监狱民警很多都是小年轻，找这种资源很简单。</p>
+            <p><strong>11.</strong>关于民警，里面的民警除了极个别特别坏的人以外其他的都非常好，<mark class="hghlght">他们也只是上班的，大家相安无事最重要</mark>，基本上你只要不去打架，很少管你们，对各种小违规都是睁一只眼，闭一只眼，里面最重要的就是平稳的改造秩序。<strong>不能打架是底线</strong>，动手前请三思。</p>
+            <p><strong>12.</strong>疫情期间他们的上班机制基本上是14+14，在里面上班14天在外隔离14天。里面一个管事情的民警（如年轻的管教和年轻生产队长以及年长的指导员）带着四个退居二线的老民警上班，老民警们啥事情都不管，都是唯一在里面的领导管，管生产的很少抓改造，管改造的很少抓生产。所以生产队长在的班改造上可能拉胯一点，比如周日的时候很多人躺床上睡大觉没人管，管教在的班生产会拉胯一点，大家都是完成个基本任务就行，毕竟管教不懂生产。也没人会问你明明不让看的玄幻小说是哪里来的。</p>
+            <p><strong>13.</strong>面对民警态度要好，有的监狱要求称警官，有的称干部，打报告时要正式，尤其是外面领导来检查的时候。要让民警觉得嗯你这个人不错，请记住正式场合他们代表的是背后的人民政府。私下场合我们也爱跟他们开玩笑，称呼都是某sir某老板，他们也不在意，里面生活太无聊了，有的民警可能会无聊到跟你们下棋，当然犯人坐牢太久了，能下得过犯人的民警属实不多。他们有时还会偷着把吃不掉的包子茶叶蛋等给犯人吃，虽然这是违反规定的，但是很暖心，某次我们饭不够我没吃饱，管教一边啃包子一边把剩下的仨都给了我，有被感动到。</p>
+            <p><strong>14.</strong>江浙沪的监狱全面禁烟，其他地方的不戒，过年的时候可以用葡萄干泡可乐酿酒，当然要看你所在监区管理弹性大不大，我们那边基本没事。</p>
+            <p><strong>15.</strong>里面发的衣服基本不合身，但是没关系，因为你学的就是做衣服，你可以拿别人不要的衣服拆掉重新裁剪自己做一身，但是不要去私自加个口袋加层内衬，这属于私改囚服，抓到要处理，你只要做一身合身的，穿起来舒服干净板板正正那一般没问题。</p>
+            <p><strong>16.</strong>私自做囚服属于干私活，明面规定是不可以，如果你生产任务干的确实是好，干到自己都没活干，那私下里做点也没事，我的内裤都是自己做的，用的布料好，比外面买的穿着都舒服，见过最狠的一个判死缓的大佬，一年到头没干多少公家活，鞋垫做了过几千双，分销到各分监区。</p>
+            <p><strong>17.</strong>出工一般在上午7点半到下午5点，收工之后除了看半个小时新闻联播之外就是自己的时间，看电视看书健身自己安排。</p>
+            <p><strong>18.</strong><strong>如果身体不好，在外面要提前开好病历，这个可以带进去</strong>，有些药里面没有，把病历给里面的医生看，可以通过分监区审批把外面的药寄进去。</p>
+            <p><strong>19.</strong><strong>在里面洗冷水澡，冬天零下的时候也一样</strong>。你不怕脏或者年纪大可以不洗，大部分人天天洗。冬天晚上的室外，一桶冷水从头浇到尾，所见之处每个人都在冒烟，真真切切的洗刷灵魂之感。</p>
+            <p><strong>20.</strong><strong>里面一切待遇都是跟着分级处遇来</strong>，分为ABC级，D和E是在里面打架违规犯错误享受的降级待遇。刚去的时候你是C级罪犯，一个月可以买总共200块的食品和生活用品以及每月1次亲情电话。半年左右是B级，一个月300，电话2次，拿到年度改造积极分子一个月500，电话3次。通信对象跟高赞所说相同。</p>
+            <p><strong>21.</strong><strong>想尽办法拿改积</strong>，拿到年度改积你就是A级，条件是在1月份到12月份期间不能有扣分违规且表现较好，所犯的罪没有从严，你的罪名就不属于从严类型。而且经罪犯和民警投票评选，200个罪犯里大约每年有20个改积名额，<mark class="hghlght">改积除了可以提高购物额度，最大的用处就是减刑假释</mark>，法官会优先给改积分子减假。所以这个是必须争取的。</p>
+            <p><strong>22.</strong>拿分数和表扬情况跟高赞所说一致，不一一赘述。一定要顺从民警和各类骨干犯。<strong>如果有问题解决不了就求助民警，不要与他人起冲突</strong>，吵架和打架都有可能扣分，扣分有可能导致表扬失效影响减刑假释。千万不要跟民警顶嘴，要有礼貌，不要主动违规，一般不是故意造成的违规大多数民警都会放你一马，但是你跟民警关系不好就另说了。我有过2次要扣分的情况，一次是胸卡丢失，一次是同犯打架我没拉住。都是民警放了我一马，就是因为我平时表现好，而且事情不严重，民警于心不忍没扣我的分。</p>
+            <p><strong>23.</strong>现在监狱的假释政策很好，当然2021年更好，21年的时候只要你符合条件监狱强行给你报假释，我们监区有人提前两年多出去，有的判过缓刑的也假释出去，有的退赔和罚金没有交完的也假释出去，那时候政策好到有点看不懂。22年假释收紧了，但是政策每年都会变，我在监狱的一年半里就变了两次。</p>
+            <p><strong>24.</strong>大体说说假释政策，<strong>没有从严的情形（涉黑涉恶涉枪以及十年以上暴力犯），不是累犯，没有吸毒史都可以假释。</strong>当然你有履行能力却没交完罚金和退赔还是不给你假释的。如果你确实没有履行能力，那么控制好你的消费，每月不要花超过150，卡上余额从不超过300，依然可以假释。而且最后不要有前科，有一次酒驾前科或者一次赌博史前科问题不大，但不能有吸毒史，不能有两次以上前科。</p>
+            <p><strong>25.</strong>看你还能用知乎有可能是取保候审，对你有利的消息是你<strong>有足够的时间去监狱拿表扬</strong>，然后减刑假释早日出来，很多判三四年的人由于在看守所期间羁押了一两年，没时间拿表扬，只好坐满。看你的情况，进去4年，刑期过半两年，隔一个月呈报耗时一个月，呈报上假释到下达裁定三个月，你可能只需要坐两年四个月就出来了，至于我本人，判三年半假释一年两个多月，做了两年三个月多一点。</p>
+            <p><strong>26.</strong>疫情之下很多服装企业发展不好，订单比较少，我所在的地方有很多分监区一周就出工两天，出工也是坐在工位上发呆，没办法实在没有订单。我所在的分监区有固定客户，订单没断过，因为生产效益好隔三差五加餐吃肉，<strong>劳动报酬人均每个月150</strong>，这意味着你带进去的钱大概率花不完。</p>
+            <p><strong>27.</strong><strong>在里面学到的最多的就是法律知识</strong>，出来之后刑法基本能摸透，见过有人乱倒垃圾乱排污水，污染环境判3年的，也见过有人在微信卖黄色小视频，获利1000块出售淫秽物品获利坐三年的。90%的人说他在外面混的有多好都是吹NB，但是玩游艇玩表玩手办的大佬也真的有，毕竟wyf这种也在里边。跟着人家见见世面也好，有些有实力的老哥出来互相帮扶一把也有，<strong>鱼龙混杂，自己分辨。</strong></p>
+            <p><strong>28.</strong>说一下打架，打架其实是普遍存在的，可能我所在的分监区秩序较差，所以每个月都有，打架的后果就是扣10分以上，严重的送到严管队矫治，相当于重回入监队，另外现在一次性扣10分基本上表扬就废掉了，如果需要表扬报减刑假释那就完蛋了。很多人不在乎打架是因为他们余刑较短，还剩两三个月就出去的人当然无所顾忌，见到这些余刑短又爱找事情的人绕道走，重复一遍，<strong>不能打架是底线</strong>，你跟别人吵起来骂的再脏都有可能不被处理，打架不行，有监控在，指挥中心一个电话打来民警也盖不住。</p>
+            <p>写这些是想告诉你，<strong><mark class="hghlght">既然错误已经无法挽回就不要害怕去坐牢，里面没有高墙外的自由，但是可以通过自己的努力获得最大限度的自由</mark></strong>，看到很多评论都在骂你，不要在意，错了就是错了，这些也都是你该承受的，好好赎罪好好改造，你我都是男人，犯错没什么大不了，别人看不起你不要自己看不起自己，把该受的罚受了，出来以后好好生活合法挣钱。我进去的时候24今年出来27，跟你差不多，好好努力还有机会。</p>
+            <p>从进去到出来，学点技能还是有用的，虽然我出来以后不会做服装行业，但是一件衣服拿到手上马上就能通过工艺看出这件衣服怎么样，属于什么档次，线毛多不多，拼缝规整不规整，缝线针距大不大领口正不正等等，我们做的是外贸单，大多数衣服都是出口欧美非洲东南亚，有很多衣服都是售价2k美元以上，所以你能清楚的分辨某宝和拼夕夕给你卖的都是些什么破烂玩意。</p>
+            <p>另外很多人说里面的条件比外面好，伙食方面我展开说一下，除了上面提到的荤菜和奖励加餐，能吃到的大部分都是水煮菜，水煮萝卜水煮胡萝卜水煮包心菜水煮白菜水煮洋葱等等，里面加点盐，飘着几朵油花，拿水煮包心菜举例，一大铁桶包心菜，最底下是烧糊的，最上面是翠绿的生的，就这，味道可想而知。米饭管够。红烧肉七肥三瘦，肉皮带着猪毛，还有一些嚼不烂的淋巴，还有猪咪咪各位看了还想进去吗？</p>
+            <p>有人问吴签在里面会怎样，首先吴签现在在看守所，还没被判刑，如果判了刑到了监狱混的肯定比大多数劳改犯要好，监狱里有句话是有钱钱改造，没钱人改造。钱多到一定程度量变可以引起质变，即使在最公正廉明的监狱也一样适用。</p>
+            <p>原文发布于2022-4-7</p>
+            <p><br></p>
+          </div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+<span style="position: absolute; width: 16px; height: 16px; background-color: rgba(125, 0, 0, 0.5); border: 1px solid rgb(255, 255, 255); box-sizing: border-box; display: none; cursor: move; left: 894px; top: 570.25px;"></span></body><style>body {
+      font-size:  20px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 900px;
+      text-align: justify
+    }
+    .page {
+      line-height: 30.0px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <base target="_blank">
+  <style>
+:root {
+  --fg: #000; /* foreground  */
+  --bg: #fff; /* background  */
+  --bd: #000; /* border  */
+  --lk: #0095dd; /* link */
+  --hg: #ffff81; /* highlight  */
+}
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+  position: relative;
+
+  color: var(--fg);
+  border-color: var(--bd);
+  background-color: var(--bg);
+}
+body[data-mode="light"] {
+  color-scheme: light;
+  --fg:  #222;
+  --bd:  #222;
+  --bg:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color-scheme: dark;
+  --fg:  #eee;
+  --bd:  #eee;
+  --bg:  #333;
+}
+body[data-mode="sepia"] {
+  color-scheme: light;
+  --fg:  #5b4636;
+  --bd:  #5b4636;
+  --bg:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color-scheme: light;
+  --fg:  #586e75;
+  --bd:  #586e75;
+  --bg:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color-scheme: light;
+  --fg:  #2e3440;
+  --bd:  #2e3440;
+  --bg:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color-scheme: dark;
+  --fg:  #cec4ac;
+  --bd:  #cec4ac;
+  --bg:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color-scheme: dark;
+  --fg:  #839496;
+  --bd:  #839496;
+  --bg:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color-scheme: dark;
+  --fg:  #e5e9f0;
+  --bd:  #e5e9f0;
+  --bg:  #2e3440;
+}
+@media print {
+  body {
+    --fg: #000;
+    --bd: #000;
+    --bg: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+svg:not([width]):not([height]) {
+  max-width: 25vmin;
+}
+a {
+  color: var(--lk);
+  text-decoration: none;
+}
+hr {
+  background-color: var(--bd);
+  height: 1px;
+  border: 0;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] ::selection {
+  background-color: #fff740;
+  color: #000;
+}
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: var(--hg);
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+<title>[Design Mode]</title></head>
+<body tabindex="1" data-images="true" data-mode="light" data-font="sans-serif" data-loaded="true" style="user-select: initial;">
+  <span></span> <!-- for IntersectionObserver -->
+  <a id="reader-domain" href="https://www.dapenti.com/blog/more.asp?name=xilei&amp;id=167256">
+    <span>www.dapenti.com</span>
+    <span>/blog/more.asp</span>
+  </a>
+  <h1 dir="auto" id="reader-title">铂程斋--死亡率下降26%，幸存者超1800万，美国癌症治疗做了什么？</h1>
+  <span dir="auto" id="reader-credits">dapenti</span>
+  <span dir="auto" id="reader-estimated-time">4-5 minutes</span>
+  <span dir="auto" id="published-time"></span>
+  <div id="readability-page-1" class="page"><p><br></p>
+		<p>
+			<strong>文/</strong><strong>张玉蛟 MD安德森癌症中心终身教授，</strong><strong>凤凰网《肿瘤情报局》特约专家</strong>
+		</p>
+		<p>
+			<strong>核心提要：</strong>
+		</p>
+		<p>
+			1. 今年9月底，美国癌症研究协会(AACR)发布了第12版(2022版)年度抗癌进展报告。该报告显示，2000-2019的20年间，美国的癌症死亡率下降了26%，平均每年下降1.3%，截至2022年1月，有超过1800万癌症幸存者生活在美国。
+		</p>
+		<p>
+			2. 美国癌症患者死亡率逐年下降的重要原因有：推广戒烟成效显著，乙肝疫苗、HPV疫苗的接种以及环境改善等措施降低癌症感染几率；美国推广早诊早治，肺癌等高发癌症筛查纳入国家与商业医保；在治疗癌症的基础手段上创新抗癌疗法；抗癌治疗多学科综合治疗成熟。
+		</p>
+		<p>
+			3. 由于人口基数庞大，中国是年新增癌症患者最多的国家。有文章预测2022年中国将有约482万例新发癌症病例，人口老龄化是我国癌症死亡人数增加的重要决定因素之一，中国与美国癌症患者结构状况逐渐趋同，美国的一些有效措施值得借鉴。
+		</p>
+		<p>
+			<strong><img src="https://d.ifengimg.com/w1080_h118_q90_webp/x0.ifengimg.com/ucms/2022_41/8A289891A10AE9C1A7BBEEBD1236DFE36D9C89AC_size5_w1080_h118.jpg"></strong>
+		</p>
+		<p>
+			<strong>新冠三年全球死亡600多万人，2020年全球死于癌症的患者达1000多万人</strong>
+		</p>
+		<p>
+			许多人最关心的健康问题是Covid-19，这个呼吸道传染病在过去的3年内造成全球600多万人病逝，平均每年200万左右。然而，大家别忘了人类健康的另外一个危害，癌症。
+		</p>
+		<p>
+			据权威学术期刊报道，<strong>2020年全球死于癌症的患者达一千多万人，是Covid-19 过去3年平均年死亡人数的5倍。</strong>仅中国2022年死于癌症的人数就预计高达300多万，这就是为什么国人“谈癌色变”。
+		</p>
+		<p><br></p>
+		<p>
+			▎图/ 9月底，美国癌症研究协会（AACR）发布了2022年抗癌进展报告（AACR Cancer Progress Report 2022）；AACR成立于1907年，是全球成立最早，规模最大的致力于全面、创新和高水平癌症研究的科学组织之一；这一份长达174页的综合性报告回顾了过去一年AACR在抗癌方面取得的进展，并提供了新的发病率、死亡率和存活率统计数据
+		</p>
+		<p>
+			<strong><img src="https://d.ifengimg.com/w1080_h118_q90_webp/x0.ifengimg.com/ucms/2022_41/128869E682DA51FDAFEE7B5F8FBEBB9A41BF991E_size5_w1080_h118.jpg"></strong>
+		</p>
+		<p>
+			<strong>美国癌症死亡率下降了26%，男性肺癌的死亡率下降了53%，超1800万癌症幸存者</strong>
+		</p>
+		<p>
+			9月底，美国癌症研究协会(AACR)发布了第12版(2022版)年度抗癌进展报告。该报告显示，在美国，确诊癌症后幸存的患者越来越多。<strong>截至2022年1月，有超过1800万癌症幸存者生活在美国。而且癌症死亡率仍在持续下降，且下降速度日益加快。</strong>
+		</p>
+		<p>
+			报告显示：<strong>2000-2019的20年间，美国的癌症死亡率下降了26%，平均每年下降1.3%；</strong>2016-2019的4年，平均每年的癌症死亡率下降幅度达到了2.3%。其中，<strong>男性肺癌的死亡率从90年代到现在下降了53%，近年平均每年下降5%。</strong>
+		</p>
+		<p>
+			与此同时，在中国因环境污染以及抽烟、酗酒、肥胖等生活习惯引起的癌症，比如肺癌、乳腺癌、结直肠癌、甲状腺癌等还在上升阶段。其中甲状腺癌的上升速度是最快的。
+		</p>
+		<p>
+			<img src="https://d.ifengimg.com/w828_h1190_ablur_q90_webp/x0.ifengimg.com/ucms/2022_41/62F1B49245596093D208E1D85074670E6496AF22_size125_w828_h1190.jpg">
+		</p>
+		<p>
+			<strong><img src="https://d.ifengimg.com/w1080_h118_q90_webp/x0.ifengimg.com/ucms/2022_41/BC14F7D403113247B1C514592F1FDA1B96A4CBB5_size5_w1080_h118.jpg"></strong>
+		</p>
+		<p>
+			<strong>美国是怎样做到癌症死亡率的逐年下降的？</strong>
+		</p>
+		<p>
+			<strong>1.首先是戒烟的推广，美国抽烟人数从82年的32%，降低至2007年的17%。同时乙肝疫苗、HPV 疫苗等疫苗的接种，有效地降低了因病毒导致的癌症。</strong>同时，环境保护也是做得越来越好。
+		</p>
+		<p>
+			值得注意的是，<strong>美国的另外一个致癌因素却替代了抽烟，成为日益严重的致癌因素，新的健康杀手，这就是肥胖。</strong>超过60%的美国人超重，40%左右的美国人患有肥胖症。除了一个国家的医疗水平，每个国家各个民族的生活习惯，也会明显影响他们的寿命。以美国为例，2019年人均寿命预期约为79岁。然而，亚裔美国人的人均寿命预期高达近86岁（另外一份报告说87岁），拉丁裔82岁，欧洲裔（白人）79岁，非裔75岁，印地语土住人73岁。差距高达13年。而其中，肥胖、酗酒、外伤、毒品是造成这种族裔区别的最重要的因素。令人担忧的是，中国在戒烟上进展缓慢，但肥胖的人却越来越多。
+		</p>
+		<p>
+			<img src="https://d.ifengimg.com/w830_h976_ablur_q90_webp/x0.ifengimg.com/ucms/2022_41/9A6DF1F1433343C2F9F2224A57EDA70B797B4719_size147_w830_h976.jpg">
+		</p>
+		<p>
+			<strong>2.推广早诊早治，肺癌、乳腺癌、</strong><strong>结直肠癌、前列腺癌、宫颈癌等癌症筛查进入国家和商业医保。</strong>
+		</p>
+		<p>
+			<strong>3.外科手术、放疗、化疗、分子靶向治疗和免疫治疗</strong>是癌症治疗的五大支柱。在这些方面，<strong>创新方法的进步正在拯救更多癌症患者的生命。</strong>据报告统计，<strong>近一年美国FDA批准了8种创新抗癌疗法，拓展了10种抗癌疗法的适用癌症类型。</strong>而这些创新药物和创新方法很快列入国家NCCN 指南，并获得国家医保和商业医保支付。
+		</p>
+		<p>
+			以肺癌为例，作为NCCN肺癌指南委员会MD Anderson 的代表，我今年参加几十次指南的修定投票，该指南每年的修改处，有250处左右。
+		</p>
+		<p>
+			<img src="https://d.ifengimg.com/w830_h796_q90_webp/x0.ifengimg.com/ucms/2022_41/6BDE3631BC3302D62D3263EDE15B095399FEB46E_size494_w830_h796.png">
+		</p>
+		<p>
+			▎图/据报告统计，近一年美国FDA批准了8种创新抗癌疗法，拓展了10种抗癌疗法的适用癌症类型；其中包括第一种治疗葡萄膜黑色素瘤（一种成人常见的眼癌）的药物，第一个治疗患有Von Hippel-Lindau综合征（一种罕见的遗传性疾病）的癌症患者的分子靶向治疗药物，八年来第一个针对新靶点的免疫检查点抑制剂等等；此外，AI（人工智能）在临床上的应用也有了深入的研究和令人兴奋的进展。为此FDA批准了许多基于人工智能的工具，帮助临床医生早期发现癌症，并提供更完整的诊断，以提高治愈效果
+		</p>
+		<p>
+			<img src="https://d.ifengimg.com/w830_h470_q90_webp/x0.ifengimg.com/ucms/2022_41/1C0CDC030FE3E7DDC908A4921E9A1C640022BCFC_size96_w830_h470.png">
+		</p>
+		<p>
+			▎ 图/ 根据世界卫生组织国际癌症研究机构（IARC）年内发布的2020年全球最新癌症负担数据，2020年中国新发病例和死亡人数全球第一
+		</p>
+		<p>
+			2020年全球新发癌症病例1929万例，中国新发癌症457万人，占全球23.7%，由于中国是世界第一人口大国，癌症新发人数远超世界其他国家。
+		</p>
+		<p>
+			癌症新发人数前十的国家分别是：中国457万，美国228万，印度132万，日本103万，德国63万，巴西59万，俄罗斯59万，法国47万，英国46万，意大利42万。
+		</p>
+		<p>
+			<img src="https://d.ifengimg.com/w828_h898_ablur_q90_webp/x0.ifengimg.com/ucms/2022_41/74F2C25C612373FDAC8192C255BEA96CCF876EB9_size71_w828_h898.jpg">
+		</p>
+		<p>
+			今年3月，中国医学科学院北京协和医院国家癌症中心陈万青教授团队在《中华医学杂志英文版》发表了题为：Cancer statistics in China and United States，2022：profiles，trends，and determinants 的论文。
+		</p>
+		<p>
+			在对比了中美两国的癌症数据后，这篇论文认为，在2022年中国和美国将分别有约482万和237万例新发癌症病例，以及321万和64万例癌症死亡。也就是说，中国癌症新发病例数约是美国的2倍，但死亡人数约是美国的5倍。
+		</p>
+		<p>
+			在中国，最常见的癌症是肺癌，而在美国则是乳腺癌。肺癌无论在中国还是美国，都是最主要的癌症死亡原因。美国肺癌和结直肠癌的年龄标准化发病率和死亡率最近显着下降，但肝癌的发病率略有上升。中国胃癌、肝癌和食管癌的发病率逐渐下降，但结直肠癌、男性前列腺癌和其他七种女性癌症的发病率都有所上升。&nbsp;<strong>成年人口规模的增加和人口老龄化是癌症死亡人数增加的主要决定因素。</strong>
+		</p>
+		<p>
+			肝癌、胃癌和食道癌症的负担减少，以及肺癌、结直肠癌、乳腺癌和前列腺癌的负担增加，意味着<strong>中国和美国的癌症状况正在趋同。人口老龄化是癌症患者增加的一个日益增长的决定因素。</strong>美国在癌症预防方面取得的一些成就可能会为中国癌症控制战略的发展提供参考和帮助。
+		</p>
+		<p>
+			<strong><img src="https://d.ifengimg.com/w1080_h118_q90_webp/x0.ifengimg.com/ucms/2022_41/46EAEBD92C0E469B12F9F3531B8459C5F2717960_size5_w1080_h118.jpg"></strong>
+		</p>
+		<p>
+			<strong>多学科综合治疗是现代医学不可缺少的一部分</strong>
+		</p>
+		<p>
+			最好的治疗方法是把外科、放疗、药物治疗用到恰倒好处。就像一场战役，情报、定位、攻击、打扫战场，恢复正常秩序每一步都要有特定的方法。
+		</p>
+		<p>
+			常常有朋友问我，“癌症复发了，有什么好药？”。这不是一个简单的问题，这包括什么样的癌，在什么地方复发，接受过什么样的治疗等等。
+		</p>
+		<p>
+			世上没有包治百病的好药，只有一把钥匙一把锁，把问题一个一个解开。一个好医生，不是因为他有什么仙丹妙药，而是他知道什么是这个战场的目的，面对的敌人是什么，藏在什么地方，要用什么样的方法去攻击，每种方法的优缺点，以及近期和远期的代价，又用什么样的方法去恢复正常状态等等。
+		</p>
+		<p>
+			<img src="https://d.ifengimg.com/w830_h978_ablur_q90_webp/x0.ifengimg.com/ucms/2022_41/D698C0174CB3E89B0890527124B9108F4632E41A_size105_w830_h978.jpg">
+		</p>
+		<p>
+			<img src="https://d.ifengimg.com/w1080_h118_q90_webp/x0.ifengimg.com/ucms/2022_41/91308AEF4F74E06CC17E92771C81DF9BDBE8A36E_size5_w1080_h118.jpg">
+		</p>
+		<p>
+			<strong>近50%的癌症是可以预防的，早期癌症是完全可以治愈的，关键你的选择是什么？</strong>
+		</p>
+		<p>
+			<strong>1. 近50%的癌症是可以预防的</strong>，看你自己愿意不愿意，能不能下决心，并持之以恒，早期癌症是完全可以治愈的。
+		</p>
+		<p>
+			<strong>2.&nbsp;</strong>以我们去年在《柳叶刀》肿瘤发表的针对早期肺癌的放射外科与手术治疗比较的论文为例，<strong>两种方法五年的肺癌特异的生存率都达95%以上。</strong>
+		</p>
+		<p>
+			<img src="https://d.ifengimg.com/w830_h682_q90_webp/x0.ifengimg.com/ucms/2022_41/7F8B8F87E6588CBA705027F6287344FC3D147C57_size74_w830_h682.jpg">
+		</p>
+		<p>
+			<strong>3.&nbsp;</strong>抗癌，就像一场战役，情报信息，陆海空多兵种协同，<strong>多学科(MDT)综合治理是现代癌症医疗的必备。</strong>单枪匹马的江湖好汉时代已一去不复返了。
+		</p>
+		<p>
+			<strong>4. 不断创新药物和创新方法，则是攻克癌症的必经之路。</strong>
+		</p>
+		<p>
+			<strong>让我们共同努力，创造一个无惧癌症的时代。</strong>
+		</p>
+	</div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+  
+
+
+<span style="position: absolute; width: 16px; height: 16px; background-color: rgba(125, 0, 0, 0.5); border: 1px solid rgb(255, 255, 255); box-sizing: border-box; display: none; cursor: move; left: 794px; top: 9379.7px;"></span></body><style>body {
+      font-size:  17px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 800px;
+      text-align: justify
+    }
+    .page {
+      line-height: 25.5px;
+      column-count: unset;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

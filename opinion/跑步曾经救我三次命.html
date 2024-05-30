@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <base target="_blank">
+  <style>
+:root {
+  --fg: #000; /* foreground  */
+  --bg: #fff; /* background  */
+  --bd: #000; /* border  */
+  --lk: #0095dd; /* link */
+  --hg: #ffff81; /* highlight  */
+}
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+  position: relative;
+
+  color: var(--fg);
+  border-color: var(--bd);
+  background-color: var(--bg);
+}
+body[data-mode="light"] {
+  color-scheme: light;
+  --fg:  #222;
+  --bd:  #222;
+  --bg:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color-scheme: dark;
+  --fg:  #eee;
+  --bd:  #eee;
+  --bg:  #333;
+}
+body[data-mode="sepia"] {
+  color-scheme: light;
+  --fg:  #5b4636;
+  --bd:  #5b4636;
+  --bg:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color-scheme: light;
+  --fg:  #586e75;
+  --bd:  #586e75;
+  --bg:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color-scheme: light;
+  --fg:  #2e3440;
+  --bd:  #2e3440;
+  --bg:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color-scheme: dark;
+  --fg:  #cec4ac;
+  --bd:  #cec4ac;
+  --bg:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color-scheme: dark;
+  --fg:  #839496;
+  --bd:  #839496;
+  --bg:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color-scheme: dark;
+  --fg:  #e5e9f0;
+  --bd:  #e5e9f0;
+  --bg:  #2e3440;
+}
+
+@media print {
+  body[data-mode] {
+    --fg: #000;
+    --bd: #000;
+    --bg: #fff;
+
+    width: unset;
+    padding: 0;
+    margin: 0;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+svg:not([width]):not([height]) {
+  max-width: 25vmin;
+}
+a {
+  color: var(--lk);
+  text-decoration: none;
+}
+hr {
+  background-color: var(--bd);
+  height: 1px;
+  border: 0;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] ::selection {
+  background-color: #fff740;
+  color: #000;
+}
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: var(--hg);
+}
+.hidden {
+  display: none;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+<title>[Design Mode]</title></head>
+<body tabindex="1" data-images="true" data-mode="sepia" data-font="sans-serif" data-loaded="true" style="user-select: initial;"><h1 dir="auto" id="reader-title">冯唐：跑步曾经救我三次命</h1>
+  <span dir="auto" id="reader-credits"></span>
+  
+  <div id="readability-page-1" class="page"><article>
+					我中学的同桌一直生得壮实，以前常住美国，最近常住北京，常运动，总发给我各种她跑步的路线图，路线图总在我生长的垂杨柳附近，总说一起去跑步，毫无私情，仿佛小时候在八十中、三里屯附近溜达。有次我正巧在，于是一起去，从广渠门向南，沿着护城河外圈跑到永定门，再换到护城河内圈折返，一身汗，又一次深切体会到你的好处。<p>
+
+跑步，你救过我两次，如今是第三次救我。</p><p>
+
+第一次是在小学。我从小多病，小学三年级之前总被父母带着去复兴门附近的儿童医院，那个儿童医院很大，后来我熟悉得常常指点父母哪里是哪里。小学三年级之后的一个班主任充满常识，很严肃地和我谈，身体这样下去不行啊！我说，这样，以后我走路的时候就跑，一路小跑，跑习惯了，身体或许就好了。后来，我就严格执行了，从小学门口到我家，跑十分钟，我书包叮当作响，我跑上三楼，跑进家，我爸的炒菜就上桌了。我爸说，他一听到我书包的响声就葱姜下锅，我跑进家门，菜就刚熟。我跑去报亭买报，我跑去副食店买散装白酒，我跑去工厂洗澡，后来，我真不用去儿童医院了。</p><p>
+
+第二次是在军校。我在念北大之前，在信阳陆军学院军训了一整年。到军校报到的时候，我一米八零，一百零八斤，一年之后，离开军校的时候，一百五十斤。在军校，每天早上六点起，跑半小时步，再吃饭，每顿早饭，两个馒头，每个馒头比我脑袋都大。</p><p>
+
+一年军校的底子让我吃了二十年，这二十年的运动只有：念书、思考、饮酒、蛋逼、写作、开会、坐车、乘机。我到了四十岁前后的时候，发现，底子吃没了，再不锻炼，再不用你，不行了。还是一百三四十斤，但是和以前的分布不同了，二十年前是一棵树，抵抗万有引力，昂扬挺立，现在是一口袋劈柴，顺着万有引力，就坡下驴。还是念书、写作，但是两三个小时之后，腰背就痛得叫喊，再也没有物我两忘、晨昏恍惚的状态了。</p><p>
+
+所以又想起在过去救过我两次的你，重新开始跑步。随身的行李箱里永远放一双跑鞋、一条短裤、两件换洗的圆领衫，我继续原来的野路子，<mark class="hghlght">按照以下五个原则，跑步：</mark></p><p>
+
+第一，敢于开始。和写作一样，最难的是开始。开始是成功的一半，挤出一个小时，逼逼自己，放下手机，去风里跑跑，风会抱你。</p><p>
+
+第二，必须坚持。又和写作一样，不想再继续的时候，再坚持一下，在所有的情况下，会越来越轻松。听各路神仙说，如果想有任何效果，至少跑半个小时，最好一个小时。</p><p>
+
+第三，忘掉胜负。又和写作一样，本来就没有输赢，不和这个世界争，也不和别人争，更不要和自己争。争的结果可能是一时牛逼，也可能是心脑血管意外，后者造成的持续影响大很多。</p><p>
+
+第四，享受成长。跑起来之后，很快发现，渐渐地，一千米不是问题了，渐渐地，三千米不是问题了，渐渐地，一万米不是问题了。身体很贱，给它足够时间适应，它就能干出很多让你想不到的事儿。又和写作一样，三年一本书，十几岁开始写起，四五十岁的时候，你就写完了十本书。</p><p>
+
+第五，没有终极。又和写作一样，涉及终极的事儿，听天，听命。让自己和身体尽人力，其他不必去想，多想无益，徒增烦恼。</p><p>
+
+在这五个跑步原则下，你给我带来<mark class="hghlght">十个好处：</mark></p><p>
+
+第一，欣快。肉体运动，肌腱伸缩，坚持一段时间，内啡肽和多巴胺分泌加强，不用药品不用酒精，自然欣快。</p><p>
+
+第二，甜睡。跑到量之后，身体持续微微热，倒头便睡，一觉儿天亮，做梦都梦到睡觉。</p><p>
+
+第三，能吃。跑完之后，洗个澡，真饿啊，上菜之前恨不得把筷子当成竹子吃了。等菜上来，狂吃，因为跑步已经耗掉了好几百大卡，心里毫无压力。</p><p>
+
+第四，能瘦。规律跑步之后，体重能抵抗年岁的压力。人过了四十，很多事儿逐渐看开，但是一觉儿醒来，发现腰身还能套进大学时代的牛仔裤，还有肉眼可及的髂骨和腹肌，还是会开心地笑出声来。</p><p>
+
+第五，去烦。与其一起搓饭，不如一起流汗。年纪大了之后，聚在一起常常不知道说些什么，尽管没去过南极，但是也见过了风雨，俗事已经懒得分析，不如一起一边慢跑，一边咒骂彼此生活中奇葩一样摇曳的傻逼。</p><p>
+
+第六，感受。航空业的确已经发达很久了，行万里路不再是牛逼的标准之一，但是很多小时候走过的路我们还没重新走过，和读老书一样，再走一次，再跑一次，很多复杂的感受会超出语言表达的极限。另外，很多小时候没走过的路还是该走。尽管生长在北京，北京很多好玩的地方我还是没去过，所以找个晴天，跑十公里，去牛街吃羊杂。</p><p>
+
+第七，充电。长期写作一次次提醒我，不跑步不行了。尽管鸡鸡还是能晨僵，但是一天写完五千字，如果不跑一小时，第二天完全写不出蹦蹦跳跳的段落和句子。四十岁之后的春节，我只做三项运动：写作、跑步、陪父母吃饭听他们骂街。</p><p>
+
+第八，放下。跑步能让脑子暂时停止思考，脑子的闪存清空，绝大多数的纠结抹平。如果还放不下，就再跑五公里。放下之后再拿起，心神中会多出很多新意。</p><p>
+
+第九，偶遇。我在跑步中遇上过黑莓、很多毛的狗、不知名的花、不知名的面目姣好的女子。</p><p>
+
+第十，独处。没有其他人、没有经常看手机的一个小时，胜却人间无数。</p><p>
+
+跑步，谢谢你。</p></article></div>
+  <span></span> <!-- for IntersectionObserver -->
+  <style id="note-styling">
+    .note {
+      position: absolute;
+      z-index: 10;
+      border: none;
+      outline: none;
+      font-family: inherit;
+      font-size: inherit;
+      padding: 5px;
+      min-width: 32px;
+      min-height: 32px;
+    }
+    .note:focus {
+      z-index: 11;
+    }
+    .note[type="0"] {
+      background-color: #fff740;
+      color: #2c2c2d;
+    }
+    .note[type="0"]::placeholder {
+      color: #868226;
+    }
+    .note[type="1"] {
+      background-color: #feff9c;
+      color: #2c2c2d;
+    }
+    .note[type="1"]::placeholder {
+      color: #6d6d3d;
+    }
+    .note[type="2"] {
+      background-color: #ff65a3;
+      color: #2c2c2d;
+    }
+    .note[type="2"]::placeholder {
+      color: #65263f;
+    }
+    .note[type="3"] {
+      background-color: #ff7eb9;
+      color: #2c2c2d;
+    }
+    .note[type="3"]::placeholder {
+      color: #562b3f;
+    }
+    .note[type="4"] {
+      background-color: #7afcff;
+      color: #295c5d;
+    }
+    .note[type="4"]::placeholder {
+      color: #377677;
+    }</style>
+  
+  
+  
+  
+
+
+<span style="position: absolute; width: 16px; height: 16px; background-color: rgba(125, 0, 0, 0.5); border: 1px solid rgb(255, 255, 255); box-sizing: border-box; display: none; cursor: move;"></span></body><style>body {
+      font-size:  15px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 600px;
+      text-align: justify
+    }
+    .page {
+      line-height: 22.5px;
+      column-count: unset;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

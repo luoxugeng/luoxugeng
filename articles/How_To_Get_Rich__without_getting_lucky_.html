@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <base target="_blank">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+  position: relative;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color:  #222;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color:  #eee;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color:  #5b4636;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color:  #586e75;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color:  #2e3440;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color:  #cec4ac;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #839496;
+  border-color:  #839496;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color:  #e5e9f0;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] ::selection {
+  background-color: #fff740;
+  color: #000;
+}
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+<title>[Design Mode]</title></head>
+<body tabindex="1" data-images="true" data-mode="light" data-font="sans-serif" data-loaded="true" style="user-select: initial;"><h1 dir="auto" id="reader-title">Naval Ravikant: How To Get Rich (without getting lucky)</h1>
+  <span dir="auto" id="reader-credits"></span>
+  <span dir="auto" id="reader-estimated-time">5-6 minutes</span>
+  <span dir="auto" id="published-time"></span>
+  <hr>
+  <div id="readability-page-1" class="page"><div id="readability-page-1" class="page"><article><figure></figure><p id="41ef" data-selectable-paragraph="">Naval Ravikant is an Indian American entrepreneur and founder of AngelList, a platform for anyone wanting to invest in, or work at, a startup. As an investor he has taken stakes in over 100 companies including Uber, FourSquare, Twitter.</p><p id="f422" data-selectable-paragraph="">It’s fair to say that Naval Ravikant know’s his shit.</p><p id="c157" data-selectable-paragraph="">What’s better is that he is not afraid to share it on <a href="https://twitter.com/naval?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" rel="noopener ugc nofollow" target="_blank">Twitter</a> and for us, he’s a must follow.</p><p id="bb3f" data-selectable-paragraph="">This is a straight repost of the awesome thread: ‘How to Get Rich (without getting lucky)’:</p><ol><li id="1f8d" data-selectable-paragraph="">Seek wealth, not money or status. <mark>Wealth is having assets that earn while you sleep</mark>. <mark>Money is </mark>how we transfer time and wealth. <mark>Status is </mark>your place in the social hierarchy.</li><li id="4bfd" data-selectable-paragraph="">Understand that ethical wealth creation is possible. If you secretly despise wealth, it will elude you.</li><li id="413b" data-selectable-paragraph="">Ignore people playing status games. They gain status by attacking people playing wealth creation games.</li><li id="c9d0" data-selectable-paragraph="">You’re not going to get rich renting out your time. You must own equity — a piece of a business — to gain your financial freedom.</li><li id="c2d9" data-selectable-paragraph="">You will get rich by giving society what it wants but does not yet know how to get. At scale.</li><li id="2915" data-selectable-paragraph="">Pick an industry where you can play <mark>long term games</mark> with long term people.</li><li id="915e" data-selectable-paragraph="">The Internet has massively broadened the possible space of careers. Most people haven’t figured this out yet.</li><li id="25a9" data-selectable-paragraph="">Play iterated games. All the returns in life, whether in wealth, relationships, or knowledge, come from compound interest.</li><li id="2040" data-selectable-paragraph="">Pick business partners with high intelligence, energy, and, above all, integrity.</li><li id="156b" data-selectable-paragraph="">Don’t partner with cynics and pessimists. Their beliefs are self-fulfilling.</li><li id="4f78" data-selectable-paragraph="">Learn to sell. Learn to build. If you can do both, you will be unstoppable.</li><li id="20f3" data-selectable-paragraph="">Arm yourself with specific knowledge, accountability, and leverage.</li><li id="7f69" data-selectable-paragraph="">Specific knowledge is knowledge that you cannot be trained for. If society can train you, it can train someone else, and replace you.</li><li id="d8e7" data-selectable-paragraph=""><mark>Specific knowledge is found by pursuing your genuine curiosity and passion rather than whatever is hot right now.</mark></li><li id="22fc" data-selectable-paragraph="">Building specific knowledge will feel like play to you but will look like work to others.</li><li id="a751" data-selectable-paragraph="">When specific knowledge is taught, it’s through apprenticeships, not schools.</li><li id="6ce6" data-selectable-paragraph="">Specific knowledge is often highly technical or creative. It cannot be outsourced or automated.</li><li id="654c" data-selectable-paragraph=""><mark>Embrace accountability, and take business risks under your own name. Society will reward you with responsibility, equity, and leverage.</mark></li><li id="b10f" data-selectable-paragraph="">The most accountable people have singular, public, and risky brands: Oprah, Trump, Kanye, Elon.</li><li id="108d" data-selectable-paragraph="">“Give me a lever long enough, and a place to stand, and I will move the earth.” — Archimedes</li><li id="ee6a" data-selectable-paragraph="">Fortunes require leverage. Business leverage comes from capital, people, and products with no marginal cost of replication (code and media).</li><li id="b4ea" data-selectable-paragraph="">Capital means money. To raise money, apply your specific knowledge, with accountability, and show resulting good judgement.</li><li id="54cf" data-selectable-paragraph="">Labor means people working for you. It’s the oldest and most fought-over form of leverage. Labor leverage will impress your parents, but don’t waste your life chasing it.</li><li id="7edc" data-selectable-paragraph="">Capital and labor are permissioned leverage. Everyone is chasing capital, but someone has to give it to you. Everyone is trying to lead, but someone has to follow you.</li><li id="6a31" data-selectable-paragraph="">Code and media are permissionless leverage. They’re the leverage behind the newly rich. You can create software and media that works for you while you sleep.</li><li id="0795" data-selectable-paragraph="">An army of robots is freely available — it’s just packed in data centers for heat and space efficiency. Use it.</li><li id="d8e6" data-selectable-paragraph="">If you can’t code, write books and blogs, record videos and podcasts.</li><li id="03a8" data-selectable-paragraph=""><mark>Leverage is a force multiplier for your judgement.</mark></li><li id="3134" data-selectable-paragraph="">Judgement requires experience, but can be built faster by learning foundational skills.</li><li id="8d25" data-selectable-paragraph="">There is no skill called “business.” Avoid business magazines and business classes.</li><li id="af30" data-selectable-paragraph="">Study microeconomics, game theory, psychology, persuasion, ethics, mathematics, and computers.</li><li id="ebd4" data-selectable-paragraph="">Reading is faster than listening. Doing is faster than watching.</li><li id="d21f" data-selectable-paragraph="">You should be too busy to “do coffee,” while still keeping an uncluttered calendar.</li><li id="3b52" data-selectable-paragraph="">Set and enforce an aspirational personal hourly rate. If fixing a problem will save less than your hourly rate, ignore it. If outsourcing a task will cost less than your hourly rate, outsource it.</li><li id="15ad" data-selectable-paragraph=""><mark>Work as hard as you can</mark>. Even though who you work with and what you work on are more important than how hard you work.</li><li id="aeda" data-selectable-paragraph="">Become the best in the world at what you do. Keep redefining what you do until this is true.</li><li id="56cc" data-selectable-paragraph="">There are no get rich quick schemes. That’s just someone else getting rich off you.</li><li id="4587" data-selectable-paragraph="">Apply specific knowledge, with leverage, and eventually you will get what you deserve.</li><li id="f1b7" data-selectable-paragraph="">When you’re finally wealthy, you’ll realize that it wasn’t what you were seeking in the first place. But that’s for another day.</li></ol><p id="25b7" data-selectable-paragraph="">Powerful stuff.</p></article></div></div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+<span style="position: absolute; width: 16px; height: 16px; background-color: rgba(125, 0, 0, 0.5); border: 1px solid rgb(255, 255, 255); box-sizing: border-box; display: none; cursor: move;"></span></body><style>body {
+      font-size:  21px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 900px;
+      text-align: justify
+    }
+    .page {
+      line-height: 31.5px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

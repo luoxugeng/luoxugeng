@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <base target="_blank">
+  <style>
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+  position: relative;
+}
+body[data-mode="light"] {
+  color:  #222;
+  border-color:  #222;
+  background-color:  whitesmoke;
+}
+body[data-mode="dark"] {
+  color:  #eee;
+  border-color:  #eee;
+  background-color:  #333;
+}
+body[data-mode="sepia"] {
+  color:  #5b4636;
+  border-color:  #5b4636;
+  background-color:  #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color:  #586e75;
+  border-color:  #586e75;
+  background-color:  #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color:  #2e3440;
+  border-color:  #2e3440;
+  background-color:  #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color:  #cec4ac;
+  border-color:  #cec4ac;
+  background-color:  #282828;
+}
+body[data-mode="solarized-dark"] {
+  color:  #839496;
+  border-color:  #839496;
+  background-color:  #002b36;
+}
+body[data-mode="nord-dark"] {
+  color:  #e5e9f0;
+  border-color:  #e5e9f0;
+  background-color:  #2e3440;
+}
+@media print {
+  body[data-mode="light"],
+  body[data-mode="dark"],
+  body[data-mode="sepia"],
+  body[data-mode="solarized-light"],
+  body[data-mode="nord-light"],
+  body[data-mode="groove-dark"],
+  body[data-mode="solarized-dark"],
+  body[data-mode="nord-dark"] {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+body[data-speech="true"] .tts-box {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 32px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000vw rgba(128, 128, 128, 0.2);
+}
+body[data-speech="true"] ::selection {
+  background-color: #fff740;
+  color: #000;
+}
+.tts-box.hidden {
+  display: none;
+}
+body[data-speech="false"] .tts-speaking::after {
+  display: none;
+}
+mark.hghlght {
+  background-color: #ffff81;
+}
+.hidden {
+  display: none;
+}
+.note {
+  position: absolute;
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.note:focus {
+  z-index: 11;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+a:visited {
+  color: #d33bf0;
+}
+a:link, a:link:hover, a:link:active, a:link * {
+  color: #0095dd;
+}
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {
+}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+<title>Buy, Borrow, Die — People's Tax Page :: Reader View</title></head>
+<body tabindex="1" data-images="true" data-mode="light" data-font="sans-serif" data-loaded="true">
+  <span></span> <!-- for IntersectionObserver -->
+  <a id="reader-domain" href="https://www.peoplestaxpage.org/buy-borrow-die-1-1">
+    <span>www.peoplestaxpage.org</span>
+    <span>/buy-borrow-die-1-1</span>
+  </a>
+  <h1 dir="auto" id="reader-title">Buy, Borrow, Die — People's Tax Page</h1>
+  <span dir="auto" id="reader-credits"></span>
+  <span dir="auto" id="reader-estimated-time">4-5 minutes</span>
+  <span dir="auto" id="published-time"></span>
+  <hr>
+  <div id="readability-page-1" class="page"><div data-block-type="2" id="block-b9e5b60b157981cdb303"><h2>What is <em>Buy, Borrow, Die</em>?</h2><p>There are two ways to earn income: from work or wealth. It is already common knowledge that income from wealth gets preferential treatment in the tax code, for example, the realization requirement, capital gains tax rate, and dividends tax rate. Before the <a href="https://www.propublica.org/article/the-secret-irs-files-trove-of-never-before-seen-records-reveal-how-the-wealthiest-avoid-income-tax">ProPublica</a> expose, very few knew that, with the current state of the tax code, individuals with income from wealth can avoid income tax altogether. We call this maneuver <em>Buy, Borrow, Die</em>; it<em> </em>is a simple, three-step process that helps the rich stay rich and live lavishly, without wasting a penny on taxes.</p>
+
+
+</div><div data-block-type="2" id="block-48d95a9c125fcdfbdfdd"><p>Step 1 is <em>Buy</em>: buy “appreciating assets”—something valuable that increases in value over time (and hold them because if you sell, you incur taxes). This step does require that you have enough money to invest in appreciating assets.&nbsp; This requirement goes without saying, but it’s important to mention because this simple requirement prevents the average, wage-earning American from using this strategy.&nbsp;</p><p>The bias in the tax code manifests itself here. Income from work is taxed before wage-earners can get their hands on it. After the government gets their cut, there isn’t a lot left over to devote to buying stocks, collectibles (e.g., art, classic cars, luxury watches, etc.), real estate, etc. Remember, we are trying to avoid taxes here; this means you need enough appreciating assets to free you from the need to work. <a href="https://bugle-dolphin-b779.squarespace.com/investment-advice">Broadly invested assets</a> often provide at least 3% growth every year after inflation, which means that $2 Million invested yields $60,000 a year, the median American household salary, without the investor having to lift a finger (we call this passive income). Obviously, the more money you invest, the more passive income you can earn—and the more money you’ll have to play with—so more is better. At that same conservative 3% return, $10 Million invested provides an annual passive income of $300,000, which is well into the 90th percentile of earners. That is the kind of money that makes a person consider quitting their day job. Unfortunately, most people would have a hard time accumulating $10 Million in investments. Indeed, most who use <em>Buy, Borrow, Die</em> start out wealthy.</p><h2>Borrow</h2><p>I hope it is clear that once you buy these appreciating assets, you can not sell them. Selling these assets is a realization event, which means you will have to pay taxes.&nbsp; Yes, it will most likely be at the favorable capital gains tax rate—for the highest tax bracket, the capital gains tax rate is about half of the normal income tax rate, but the purpose of this whole exercise is to avoid taxes altogether. You’re probably wondering now, “if I can’t sell these assets, and I can’t get a check from a job, how am I supposed to pay my bills—let alone buy luxuries.”&nbsp; This is where Step 2, <em>Borrow</em>, comes in.</p><p>Since you have this vast store of wealth, you can go borrow money from some creditor, using your assets as collateral. You can now spend that hard-earned passive income without triggering taxes because debt is not considered income under the current tax code, and thus is not taxed.&nbsp;</p><p>You’re probably thinking, “<em>Buy</em>, <em>Borrow</em>, <em>Die</em> doesn’t work because I will have to pay that debt at some point, so I will eventually have to sell and pay taxes then.” Never fear, creditors favor the wealthy as much as the tax code. You can keep spending and borrowing for the rest of your life, as long as that wealth keeps growing.</p><h2>Die</h2><p>You say, “okay, for the rest of my life, I’ll be tax-free, but surely when I die—”. Nope, there will be no capital gains taxes when you die either. Your heirs will inherit the wealth at a stepped-up basis. The stepped-up basis is the final piece of the puzzle. When you first buy an asset, the basis is whatever you paid for the asset initially. Capital gains taxes are taxes on any increase in value beyond the basis. The stepped-up basis means that when your assets are handed over to your heirs, whatever your assets are worth when you die is the new basis. If your heirs then sell those assets at that point in time, there would be no capital gains tax. Your creditors will finally be paid but taxes won’t (the unrealized gains were washed away with the initial basis). Your heirs will take the proceeds and, presumably, start <em>Buy</em>, <em>Borrow</em>, <em>Die</em> all over again.</p><p>Next: <a href="https://www.peoplestaxpage.org/taxation-overview-1">Read an overview of the tax lesson</a></p>
+
+
+</div></div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+</body><style>body {
+      font-size:  21px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 900px;
+      text-align: justify
+    }
+    .page {
+      line-height: 31.5px;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>

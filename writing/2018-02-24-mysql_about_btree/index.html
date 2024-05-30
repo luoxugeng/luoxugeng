@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 7.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -33,8 +33,8 @@
 <meta property="og:image" content="https://s3.amazonaws.com/nemolaw/bad_BST.png">
 <meta property="og:image" content="https://s3.amazonaws.com/nemolaw/AVL_singleRa.gif">
 <meta property="og:image" content="https://s3.amazonaws.com/nemolaw/BBtree.png">
-<meta property="article:published_time" content="2018-02-24T12:15:40.000Z">
-<meta property="article:modified_time" content="2022-07-05T07:07:11.926Z">
+<meta property="article:published_time" content="2018-02-25T04:15:40.000Z">
+<meta property="article:modified_time" content="2022-08-12T23:56:21.000Z">
 <meta property="article:author" content="NemoLaw">
 <meta property="article:tag" content="计算机科学与技术">
 <meta name="twitter:card" content="summary">
@@ -241,7 +241,7 @@
             <i class="far fa-calendar"></i>
           </span>
           <span class="post-meta-item-text">发表于</span>
-          <time title="" itemprop="dateCreated datePublished" datetime="2018-02-24T20:15:40+08:00">2018-02-24</time>
+          <time title="" itemprop="dateCreated datePublished" datetime="2018-02-24T20:15:40-08:00">2018-02-24</time>
         </span>
         <span class="post-meta-item">
           <span class="post-meta-item-icon">
@@ -302,17 +302,17 @@
 <li><p>对树的每个节点X: 左子树的所有 节点的值都小于 X的值, 右子树所有节点的值都大于 X 的值</p>
 </li>
 </ul>
-<p><img src="https://s3.amazonaws.com/nemolaw/normal_BST.png" alt=""></p>
-<p>BST 的思想来自于<a href="https://zh.wikipedia.org/wiki/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95" target="_blank" rel="noopener">二分查找</a>: 每一次我把要查找的数据量减半,这比我从头到尾遍历高效.<br>但 BST 会有退化的风险: 如图,在这样的情况下,</p>
-<p><img src="https://s3.amazonaws.com/nemolaw/bad_BST.png" alt=""></p>
-<h2 id="BST-强制平衡-AVL"><a href="#BST-强制平衡-AVL" class="headerlink" title="BST+强制平衡= AVL"></a>BST+强制平衡= AVL</h2><blockquote>
+<p><img src="https://s3.amazonaws.com/nemolaw/normal_BST.png"></p>
+<p>BST 的思想来自于<a href="https://zh.wikipedia.org/wiki/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95">二分查找</a>: 每一次我把要查找的数据量减半,这比我从头到尾遍历高效.<br>但 BST 会有退化的风险: 如图,在这样的情况下,</p>
+<p><img src="https://s3.amazonaws.com/nemolaw/bad_BST.png"></p>
+<h2 id="BST-强制平衡-AVL"><a href="#BST-强制平衡-AVL" class="headerlink" title="BST+强制平衡&#x3D; AVL"></a>BST+强制平衡&#x3D; AVL</h2><blockquote>
 <p>发现坑了怎么办,填呗.既然是高度引起的问题,我们在 BST 基础上强化一下条件:</p>
 </blockquote>
 <ul>
 <li>对树的任一节点 X: X左子树的高度和右子树的高度差不大于1</li>
 </ul>
 <p>这样带来的一个问题是: 每次我们对节点的改动( insert 或者 Delete ), 都要判断是否违法了高度差不能超过1的限制,超过了,我们需要做额外的工作:旋转.</p>
-<p><img src="https://s3.amazonaws.com/nemolaw/AVL_singleRa.gif" alt=""></p>
+<p><img src="https://s3.amazonaws.com/nemolaw/AVL_singleRa.gif"></p>
 <p>旋转分:单旋转, 双旋转,这里不展开了,因为网上一查一大把.</p>
 <h2 id="当平衡可以稍微放宽一些-RBT红黑树"><a href="#当平衡可以稍微放宽一些-RBT红黑树" class="headerlink" title="当平衡可以稍微放宽一些:RBT红黑树"></a>当平衡可以稍微放宽一些:RBT红黑树</h2><blockquote>
 <p>填了一个坑,又多了一个坑</p>
@@ -324,7 +324,7 @@
 </li>
 <li><p>插入: 每插入一个节点最多旋转一次(单旋转或者双旋转). 旋转其实是指针指向的变动,而这个是常数级别,查找插入的位置是 lg(N) ,总体时间 lg(N)</p>
 </li>
-<li><p>删除: 删除需要检查删除节点到根节点所有节点的平衡因子. 找到删除的节点 lg(N), 路径上最多会有 lg(N) 次旋转.所以删除的时间是 O(2lgN) </p>
+<li><p>删除: 删除需要检查删除节点到根节点所有节点的平衡因子. 找到删除的节点 lg(N), 路径上最多会有 lg(N) 次旋转.所以删除的时间是 O(2lgN)</p>
 </li>
 </ul>
 <p>所以删除的代价会更大. 问题出在删除节点到根节点的路径长度上.这时候要是对强制平衡稍微放宽一些: 不要求每一个节点都平衡,这样使得旋转次数减少.</p>
@@ -351,7 +351,7 @@
 <ul>
 <li><p>查找: 基本维持在 lg(N), 但在最坏情况下比 AVL 差(最长路径是最短路径的2倍少1 )</p>
 </li>
-<li><p>插入: 插入节点最多需要2次旋转 </p>
+<li><p>插入: 插入节点最多需要2次旋转</p>
 </li>
 </ul>
 <h2 id="到正题了-那为什么数据库不用-RBT"><a href="#到正题了-那为什么数据库不用-RBT" class="headerlink" title="到正题了:那为什么数据库不用 RBT"></a>到正题了:那为什么数据库不用 RBT</h2><p>这里我按我的理解来说: </p>
@@ -362,9 +362,9 @@
 <ul>
 <li><p>根节点至少两个孩子</p>
 </li>
-<li><p>每一个中间的节点,包含 k-1 个元素和 k 个孩子( m/2 &lt;= k &lt;= m )</p>
+<li><p>每一个中间的节点,包含 k-1 个元素和 k 个孩子( m&#x2F;2 &lt;&#x3D; k &lt;&#x3D; m )</p>
 </li>
-<li><p>叶子节点都位于同一层,且都包含 k-1 个元素( m/2 &lt;= k &lt;= m )</p>
+<li><p>叶子节点都位于同一层,且都包含 k-1 个元素( m&#x2F;2 &lt;&#x3D; k &lt;&#x3D; m )</p>
 </li>
 <li><p>每一个节点元素都是从小到大排序,每个节点第 k-1 个元素是第k 个孩子的值域切分点</p>
 </li>
@@ -378,7 +378,7 @@
 </li>
 <li><p>所有的叶子结点中包含了全部元素的信息,同时数据也都保存在叶子节点</p>
 </li>
-<li><p>中间节点的元素同时也存在与子节点,是子节点中的极值(极大/极小)</p>
+<li><p>中间节点的元素同时也存在与子节点,是子节点中的极值(极大&#x2F;极小)</p>
 </li>
 </ol>
 <p>B+树优于 B- 树的三个点:</p>
@@ -394,12 +394,12 @@
 <li>范围查询方便</li>
 </ol>
 <p>所有的叶子节点按迅速形成了一个链表.在范围查询中(体现了实用主义:数据库经常要范围查询) ,B+树只要找到两端的叶子,叶子节点之间的数据都是可遍历的. B- 树因为数据可能在中间节点,也可能在叶子节点,导致要一个个查询.</p>
-<h2 id="一图胜前言-B-树-Vs-B-树"><a href="#一图胜前言-B-树-Vs-B-树" class="headerlink" title="一图胜前言: B-树 Vs B+树"></a>一图胜前言: B-树 Vs B+树</h2><p><img src="https://s3.amazonaws.com/nemolaw/BBtree.png" alt=""></p>
+<h2 id="一图胜前言-B-树-Vs-B-树"><a href="#一图胜前言-B-树-Vs-B-树" class="headerlink" title="一图胜前言: B-树 Vs B+树"></a>一图胜前言: B-树 Vs B+树</h2><p><img src="https://s3.amazonaws.com/nemolaw/BBtree.png"></p>
 <h2 id="补充阅读"><a href="#补充阅读" class="headerlink" title="补充阅读"></a>补充阅读</h2><p>漫画算法这几篇总结得比我这篇要好:</p>
-<p><a href="http://www.imspender.com/articles/man-hua-suan-fa-shi-yao-shi-ho" target="_blank" rel="noopener">漫画算法:什么是红黑树?</a></p>
-<p><a href="http://www.imspender.com/articles/man-hua-suan-fa-shi-yao-shi-b" target="_blank" rel="noopener">漫画算法:什么是 B 树?</a></p>
-<p><a href="http://www.imspender.com/articles/man-hua-suan-fa-shi-yao-shi--1" target="_blank" rel="noopener">漫画算法:什么是 B+ 树?</a></p>
-<p><a href="http://blog.codinglabs.org/articles/theory-of-mysql-index.html" target="_blank" rel="noopener">MySQL索引背后的数据结构及算法原理</a>: 写得十分好的一篇文章,图文并茂.</p>
+<p><a href="http://www.imspender.com/articles/man-hua-suan-fa-shi-yao-shi-ho">漫画算法:什么是红黑树?</a></p>
+<p><a href="http://www.imspender.com/articles/man-hua-suan-fa-shi-yao-shi-b">漫画算法:什么是 B 树?</a></p>
+<p><a href="http://www.imspender.com/articles/man-hua-suan-fa-shi-yao-shi--1">漫画算法:什么是 B+ 树?</a></p>
+<p><a href="http://blog.codinglabs.org/articles/theory-of-mysql-index.html">MySQL索引背后的数据结构及算法原理</a>: 写得十分好的一篇文章,图文并茂.</p>
 
     </div>
 
@@ -508,7 +508,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#来自二分查找的启示-BST"><span class="nav-number">1.</span> <span class="nav-text">来自二分查找的启示: BST</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BST-强制平衡-AVL"><span class="nav-number">2.</span> <span class="nav-text">BST+强制平衡&#x3D; AVL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#当平衡可以稍微放宽一些-RBT红黑树"><span class="nav-number">3.</span> <span class="nav-text">当平衡可以稍微放宽一些:RBT红黑树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#到正题了-那为什么数据库不用-RBT"><span class="nav-number">4.</span> <span class="nav-text">到正题了:那为什么数据库不用 RBT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-树-为什么-B-树还不够好"><span class="nav-number">5.</span> <span class="nav-text">B+树: 为什么 B-树还不够好</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一图胜前言-B-树-Vs-B-树"><span class="nav-number">6.</span> <span class="nav-text">一图胜前言: B-树 Vs B+树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充阅读"><span class="nav-number">7.</span> <span class="nav-text">补充阅读</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%A5%E8%87%AA%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E7%9A%84%E5%90%AF%E7%A4%BA-BST"><span class="nav-number">1.</span> <span class="nav-text">来自二分查找的启示: BST</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BST-%E5%BC%BA%E5%88%B6%E5%B9%B3%E8%A1%A1-AVL"><span class="nav-number">2.</span> <span class="nav-text">BST+强制平衡&#x3D; AVL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BD%93%E5%B9%B3%E8%A1%A1%E5%8F%AF%E4%BB%A5%E7%A8%8D%E5%BE%AE%E6%94%BE%E5%AE%BD%E4%B8%80%E4%BA%9B-RBT%E7%BA%A2%E9%BB%91%E6%A0%91"><span class="nav-number">3.</span> <span class="nav-text">当平衡可以稍微放宽一些:RBT红黑树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%B0%E6%AD%A3%E9%A2%98%E4%BA%86-%E9%82%A3%E4%B8%BA%E4%BB%80%E4%B9%88%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8D%E7%94%A8-RBT"><span class="nav-number">4.</span> <span class="nav-text">到正题了:那为什么数据库不用 RBT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-%E6%A0%91-%E4%B8%BA%E4%BB%80%E4%B9%88-B-%E6%A0%91%E8%BF%98%E4%B8%8D%E5%A4%9F%E5%A5%BD"><span class="nav-number">5.</span> <span class="nav-text">B+树: 为什么 B-树还不够好</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E5%9B%BE%E8%83%9C%E5%89%8D%E8%A8%80-B-%E6%A0%91-Vs-B-%E6%A0%91"><span class="nav-number">6.</span> <span class="nav-text">一图胜前言: B-树 Vs B+树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A5%E5%85%85%E9%98%85%E8%AF%BB"><span class="nav-number">7.</span> <span class="nav-text">补充阅读</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -523,7 +523,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">205</span>
+          <span class="site-state-item-count">191</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -572,7 +572,7 @@
 <div class="copyright">
   
   &copy; 2015 – 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="heart"></i>
   </span>
@@ -581,12 +581,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">444k</span>
+    <span title="站点总字数">424k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">6:44</span>
+    <span title="站点阅读时长">6:25</span>
 </div>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "eafd7ba3dbda4f7a8bc9b6c0b096c5fb", "spa": true}'></script><!-- End Cloudflare Web Analytics -->
 
